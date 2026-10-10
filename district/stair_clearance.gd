@@ -68,7 +68,11 @@ static func _channel(stair: CollisionShape3D,y_min: float,y_max: float,floor: bo
 	var direction:=Vector2(end.x-start.x,end.z-start.z).normalized()
 	var a:=Vector2(start.x,start.z).lerp(Vector2(end.x,end.z),first)-direction*(.35 if floor else HALF_WIDTH)
 	var b:=Vector2(start.x,start.z).lerp(Vector2(end.x,end.z),last)+direction*(0.0 if floor else HALF_WIDTH)
-	var side:=Vector2(-direction.y,direction.x)*HALF_WIDTH
+	# Match the actual flight width, including enlarged switchback stairs.
+	var half_width: float=0
+	for point in stair.shape.points:half_width=maxf(half_width,absf(point.x))
+	half_width=maxf(HALF_WIDTH,half_width*stair.global_basis.x.length()+.10)
+	var side:=Vector2(-direction.y,direction.x)*half_width
 	var minimum: Vector2=(a-side).min(a+side).min(b-side).min(b+side)
 	var maximum: Vector2=(a-side).max(a+side).max(b-side).max(b+side)
 	return Rect2(minimum,maximum-minimum)

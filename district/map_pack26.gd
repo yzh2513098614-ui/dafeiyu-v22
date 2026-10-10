@@ -71,6 +71,7 @@ func build(id: String) -> Dictionary:
 		if not height in floor_heights:floor_heights.append(height)
 	floor_heights.sort()
 	level=load(definition.scene).instantiate();level.standalone_preview=false;game.world.add_child(level)
+	preload("res://district/stair_space.gd").apply(level.get_node("Architecture"))
 	_separate_stair_support()
 	preload("res://district/stair_clearance.gd").apply(level.get_node("Architecture"))
 	var slabs: Array=[]
