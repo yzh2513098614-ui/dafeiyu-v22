@@ -51,7 +51,7 @@ func configure(owner_game) -> void:
  feedback=UiStyle.label(self,"设置会自动保存，下次打开依然生效。",Vector2(33,553),Vector2(911,36),20,UiStyle.MUTED)
  UiStyle.label(self,"战斗界面使用 MiSans 字体 · Xiaomi",Vector2(33,589),Vector2(911,18),14,UiStyle.MUTED)
  var done: Button=game._button("回到鲸落港   ▸",Vector2(30,610),Vector2(920,42),self,func():game._settings(false))
- done.add_theme_stylebox_override("normal",PixelFrames.frame("nameplate"));done.add_theme_color_override("font_color",Color("fff8e7"))
+ PixelFrames.SkyStyle.primary(done)
  # Keep debug controls available to existing engine diagnostics, outside the player UI.
  game.settings_front_button=Button.new();game.settings_front_button.pressed.connect(func():game._set_actor_front(not game.actor_front));add_child(game.settings_front_button);game.settings_front_button.hide()
  game.settings_foot_button=Button.new();game.settings_foot_button.pressed.connect(func():game.foot_debug.visible=not game.foot_debug.visible);add_child(game.settings_foot_button);game.settings_foot_button.hide()

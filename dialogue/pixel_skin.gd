@@ -1,6 +1,6 @@
 extends RefCounted
 ## Compatibility facade for existing dialogue and menu callers.
-const SkyStyle=preload("res://ui/sky_skin.gd")
+const SkyStyle=preload("res://ui/handheld_skin.gd")
 const INK=SkyStyle.INK
 const MUTED=SkyStyle.MUTED
 const BLUE=SkyStyle.BLUE

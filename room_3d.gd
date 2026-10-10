@@ -858,7 +858,15 @@ func _style() -> StyleBox:
 func _button(text: String,pos: Vector2,size: Vector2,parent: Node,action: Callable) -> Button:
  var button:=Button.new();button.text=text;button.position=pos;button.size=size;button.focus_mode=Control.FOCUS_ALL
  button.add_theme_font_size_override("font_size",20);button.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
- button.pressed.connect(action);parent.add_child(button);return button
+ button.pressed.connect(action);parent.add_child(button)
+ var icon_key:=""
+ if text.begins_with("M "):icon_key="map"
+ elif text.begins_with("I "):icon_key="backpack"
+ elif text.begins_with("Q "):icon_key="chat"
+ elif text.begins_with("B "):icon_key="shop"
+ elif text=="Esc 菜单":icon_key="settings"
+ if icon_key!="":WhaleSkin.button_icon(button,icon_key,24)
+ return button
 
 func _ui() -> void:
  ui=CanvasLayer.new();ui.layer=20;add_child(ui)

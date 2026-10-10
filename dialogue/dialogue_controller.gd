@@ -84,15 +84,15 @@ func _build_ui() -> void:
  location_text=DialogueStyle.label(context_plate,"",Vector2(17,11),Vector2(827,34),18,Color("edf0f5"))
  portrait=TextureRect.new();portrait.position=Vector2(801,97);portrait.size=Vector2(569,913);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(portrait)
  UiFit.pin_right(portrait,569,78,97,913)
- box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230));box.gui_input.connect(_click_advance)
+ box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230),"screen");box.gui_input.connect(_click_advance)
  UiFit.pin_wide(box,72,72,794,230)
  # Nameplate overlaps the upper edge, as in SLG / galgame dialogue layouts.
  var nameplate:=DialogueStyle.panel(root,Vector2(102,759),Vector2(253,62),"speaker")
  speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(22,10),Vector2(213,39),25,DialogueStyle.INK)
- text_label=RichTextLabel.new();text_label.position=Vector2(37,35);text_label.size=Vector2(1201,115);text_label.bbcode_enabled=false;text_label.scroll_active=false;text_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text_label.add_theme_font_size_override("normal_font_size",27);text_label.add_theme_color_override("default_color",DialogueStyle.INK);text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(text_label)
+ text_label=RichTextLabel.new();text_label.position=Vector2(37,35);text_label.size=Vector2(1201,115);text_label.bbcode_enabled=false;text_label.scroll_active=false;text_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text_label.add_theme_font_size_override("normal_font_size",27);text_label.add_theme_color_override("default_color",DialogueStyle.SkyStyle.CREAM);text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(text_label)
  # 对话框变宽后，正文与右下角按钮要跟着拉通/贴右边，否则文字只有一小条、按钮挤在中间
  UiFit.pin_wide(text_label,37,66,35,115)
- advance_hint=DialogueStyle.label(box,"",Vector2(37,165),Vector2(646,32),18,DialogueStyle.MUTED)
+ advance_hint=DialogueStyle.label(box,"",Vector2(37,165),Vector2(646,32),18,DialogueStyle.SkyStyle.MINT)
  var b_log:=_button(box,"回看",Vector2(779,159),Vector2(103,48),func():show_backlog())
  UiFit.pin_right(b_log,103,422,159,48)
  auto_button=_button(box,"自动：关",Vector2(894,159),Vector2(131,48),func():set_auto(not auto_play))
@@ -114,10 +114,10 @@ func _build_ui() -> void:
  root.hide()
  hud_button=game._button("Q 和大肥鱼聊聊",Vector2(72,979),Vector2(248,55),game.ui.get_child(0),func():start_topic())
  UiFit.pin_design(hud_button,72,979,248,55)
- hud_button.add_theme_stylebox_override("normal",DialogueStyle.frame());hud_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));hud_button.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+ hud_button.add_theme_stylebox_override("normal",DialogueStyle.frame("button"));hud_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));hud_button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
  resume_button=game._button("接着上次",Vector2(334,979),Vector2(163,55),game.ui.get_child(0),func():resume())
  UiFit.pin_design(resume_button,334,979,163,55)
- resume_button.add_theme_stylebox_override("normal",DialogueStyle.frame());resume_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));resume_button.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+ resume_button.add_theme_stylebox_override("normal",DialogueStyle.frame("button"));resume_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));resume_button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 func world_changed() -> void:
  if active:close()

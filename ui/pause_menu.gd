@@ -72,8 +72,10 @@ func _button(id: String,text: String,pos: Vector2,dimensions: Vector2,action: Ca
  var button:=Button.new();button.text=text;button.position=pos;button.size=dimensions;button.add_theme_font_size_override("font_size",25);button.pressed.connect(action);panel.add_child(button);buttons[id]=button
  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=UiStyle.BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2);button.add_theme_stylebox_override("focus",focus)
  if primary:
-  for state in ["normal","hover","pressed"]:button.add_theme_stylebox_override(state,PixelFrames.frame("nameplate"))
-  button.add_theme_color_override("font_color",Color.WHITE);button.add_theme_color_override("font_focus_color",Color.WHITE);button.add_theme_color_override("font_hover_color",Color.WHITE);button.add_theme_color_override("font_pressed_color",Color.WHITE)
+  PixelFrames.SkyStyle.primary(button)
+ if id=="settings":UiStyle.button_icon(button,"settings")
+ elif id=="help":UiStyle.button_icon(button,"tasks")
+ elif id=="save":UiStyle.button_icon(button,"mail")
  return button
 
 func _help() -> void:

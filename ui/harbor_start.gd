@@ -86,15 +86,20 @@ func _ready() -> void:
 
 func _button(parent: Node,label: String,pos: Vector2,size: Vector2,action: Callable,selected: bool=false) -> Button:
  var b:=Button.new();b.text=label;b.position=pos;b.size=size;b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.pressed.connect(action);parent.add_child(b)
- b.add_theme_stylebox_override("normal",HarborStyle.frame("selected" if selected else "dialogue"));b.add_theme_font_size_override("font_size",22)
+ b.add_theme_stylebox_override("normal",HarborStyle.frame("selected" if selected else "button"));b.add_theme_font_size_override("font_size",22)
  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=HarborStyle.BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
  b.add_theme_stylebox_override("focus",focus)
+ var icon_key:=""
+ if label.contains("音乐"):icon_key="music"
+ elif label.contains("设置"):icon_key="settings"
+ elif label.contains("出发") or label.contains("新区") or label.contains("漫步"):icon_key="map"
+ elif label.contains("仓储"):icon_key="shop"
+ elif label.contains("研究"):icon_key="deck"
+ if icon_key!="":WhaleStyle.button_icon(b,icon_key,36)
  return b
 
 func _primary(b: Button) -> void:
- for key in ["normal","hover","pressed"]:b.add_theme_stylebox_override(key,HarborStyle.frame("nameplate"))
- for key in ["font_color","font_hover_color","font_pressed_color"]:b.add_theme_color_override(key,Color("fff8e7"))
- b.add_theme_color_override("font_hover_color",Color.WHITE);b.add_theme_font_size_override("font_size",28)
+ HarborStyle.SkyStyle.primary(b);b.add_theme_font_size_override("font_size",28)
 
 func _render() -> void:
  for child in content.get_children():

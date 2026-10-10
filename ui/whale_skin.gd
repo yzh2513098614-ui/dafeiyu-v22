@@ -1,10 +1,10 @@
 extends RefCounted
-## Shared native sky UI; existing icons and mascot remain unchanged.
-const SkyStyle=preload("res://ui/sky_skin.gd")
+## Shared ocean handheld UI with original function icons; the existing mascot is retained.
+const SkyStyle=preload("res://ui/handheld_skin.gd")
 const INK := SkyStyle.INK
 const MUTED := SkyStyle.MUTED
 const BLUE := SkyStyle.BLUE
-const GOLD := SkyStyle.BLUE
+const GOLD := SkyStyle.GOLD
 static var boxes: Dictionary = {}
 
 static func frame(kind: String = "panel") -> StyleBox:
@@ -14,25 +14,7 @@ static func frame(kind: String = "panel") -> StyleBox:
 
 static func theme(font: Font) -> Theme:
  var t:=SkyStyle.theme(font)
- for type in ["Label","RichTextLabel","Button","LineEdit","SpinBox","OptionButton"]:
-  t.set_color("font_color",type,INK);t.set_color("font_hover_color",type,BLUE)
-  t.set_color("font_pressed_color",type,INK);t.set_color("font_focus_color",type,INK)
-  t.set_color("font_disabled_color",type,MUTED)
- t.set_stylebox("panel","Panel",frame())
- for type in ["Button","OptionButton"]:
-  for state in {"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}:
-   t.set_stylebox(state,type,frame({"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}[state]))
-  var focus:=StyleBoxFlat.new();focus.bg_color=Color(0,0,0,0);focus.border_color=BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9)
-  t.set_stylebox("focus",type,focus)
- t.set_stylebox("normal","LineEdit",frame("paper"));t.set_stylebox("focus","LineEdit",frame("selected"))
- t.set_color("caret_color","LineEdit",BLUE);t.set_color("selection_color","LineEdit",Color("bdd5ff"))
- t.set_color("font_placeholder_color","LineEdit",MUTED)
- t.set_color("font_selected_color","LineEdit",INK)
  t.set_icon("up","SpinBox",load("res://assets/ui/arrow_up.svg"));t.set_icon("down","SpinBox",load("res://assets/ui/arrow_down.svg"))
- for type in ["VScrollBar","HScrollBar"]:
-  t.set_stylebox("scroll",type,frame("sky"));t.set_stylebox("scroll_focus",type,frame("sky"))
-  t.set_stylebox("grabber",type,frame("selected"));t.set_stylebox("grabber_highlight",type,frame("hover"));t.set_stylebox("grabber_pressed",type,frame("pressed"))
- t.set_constant("separation","VBoxContainer",12)
  return t
 
 static func label(parent: Node,text: String,pos: Vector2,size: Vector2,font_size: int = 22,color: Color = INK) -> Label:
@@ -45,8 +27,14 @@ static func panel(parent: Node,pos: Vector2,size: Vector2,kind: String = "panel"
 
 static func icon(parent: Node,name: String,pos: Vector2,size: Vector2) -> TextureRect:
  var r:=TextureRect.new();r.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;r.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
- r.texture=load("res://assets/ui/"+name+".svg");r.position=pos;r.size=size
- r.mouse_filter=Control.MOUSE_FILTER_IGNORE;r.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;parent.add_child(r);return r
+ var aliases={"chest":"backpack","star":"gift","heart":"shell","leaf":"map"}
+ r.texture=SkyStyle.icon_texture(str(aliases.get(name,name)))
+ if r.texture==null:r.texture=load("res://assets/ui/"+name+".svg")
+ r.position=pos;r.size=size
+ r.mouse_filter=Control.MOUSE_FILTER_IGNORE;r.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS;parent.add_child(r);return r
+
+static func button_icon(button: Button,key: String,side: int=26) -> void:
+ SkyStyle.button_icon(button,key,side)
 
 static func mascot(parent: Node,pos: Vector2,size: Vector2) -> TextureRect:
  var r:=TextureRect.new();r.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;r.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -77,10 +65,10 @@ static func _grabber() -> Texture2D:
 
 ## Shared blue slider for title and in-game settings.
 static func style_slider(bar: HSlider) -> void:
- var track:=StyleBoxFlat.new();track.bg_color=Color("e4f0f4");track.border_color=Color("cfdde5")
+ var track:=StyleBoxFlat.new();track.bg_color=Color("d7d0df");track.border_color=INK
  track.set_border_width_all(1);track.set_corner_radius_all(7)
  track.content_margin_top=7;track.content_margin_bottom=7
- var filled:=StyleBoxFlat.new();filled.bg_color=BLUE;filled.set_corner_radius_all(7)
+ var filled:=StyleBoxFlat.new();filled.bg_color=SkyStyle.MINT;filled.set_corner_radius_all(7)
  filled.content_margin_top=7;filled.content_margin_bottom=7
  bar.add_theme_stylebox_override("slider",track)
  bar.add_theme_stylebox_override("grabber_area",filled)

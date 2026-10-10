@@ -1,0 +1,134 @@
+{
+  "method": "original procedural SVG + Godot Control rendering",
+  "palette": {
+    "outline": "#403853",
+    "pink": "#F48BB7",
+    "mint": "#7ADCC4",
+    "yellow": "#FFE071",
+    "cream": "#FFF7DD",
+    "blue": "#6469DF"
+  },
+  "icons": [
+    {
+      "id": "backpack",
+      "name": "背包",
+      "svg": "icons/backpack.svg",
+      "png": "icons/backpack.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "tasks",
+      "name": "任务",
+      "svg": "icons/tasks.svg",
+      "png": "icons/tasks.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "chat",
+      "name": "对话",
+      "svg": "icons/chat.svg",
+      "png": "icons/chat.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "map",
+      "name": "导览",
+      "svg": "icons/map.svg",
+      "png": "icons/map.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shop",
+      "name": "商店",
+      "svg": "icons/shop.svg",
+      "png": "icons/shop.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "music",
+      "name": "音乐",
+      "svg": "icons/music.svg",
+      "png": "icons/music.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "deck",
+      "name": "卡牌",
+      "svg": "icons/deck.svg",
+      "png": "icons/deck.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "settings",
+      "name": "设置",
+      "svg": "icons/settings.svg",
+      "png": "icons/settings.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "mail",
+      "name": "邮件",
+      "svg": "icons/mail.svg",
+      "png": "icons/mail.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "gift",
+      "name": "礼物",
+      "svg": "icons/gift.svg",
+      "png": "icons/gift.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "calendar",
+      "name": "日历",
+      "svg": "icons/calendar.svg",
+      "png": "icons/calendar.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "shell",
+      "name": "贝壳",
+      "svg": "icons/shell.svg",
+      "png": "icons/shell.png",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "ui": "native layered StyleBoxFlat, independent prototype; adapted into dafeiyu v22 shared UI skin"
+}
