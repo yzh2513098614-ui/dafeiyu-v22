@@ -5,6 +5,7 @@ const Quay=preload("res://district/story_quay.gd")
 const Shape=preload("res://district/space_shape.gd")
 const Door=preload("res://district/interactive_door.gd")
 const WATER=preload("res://assets/modern/shaders/harbor_water.gdshader")
+const Details=preload("res://district/harbor_details.gd")
 const HEIGHT:=3.6
 const STONE=Color("dddcd3")
 const BLUE=Color("858ba7")
@@ -223,6 +224,7 @@ static func build(g) -> Dictionary:
  _lighthouse(g,upper);_warehouse(g,ground)
  for point in [Vector3(-4.7,.13,-1.5),Vector3(-3.0,.13,6.9),Vector3(-5.1,.13,5.9),Vector3(-14.0,.13,15.7)]:
   Geo.cylinder(ground,.105,.30,point,Color("e1bd50")).rotation.z=PI*.5
+ Details.build(g,level)
  _batch(ground);_batch(upper)
  var zones: Array=[]
  for spec in [["lower_quay","1F · 渔获码头",Rect2(-18,-20,27,40),0.0],["workshop","1F · 渔具工坊与桥下作业区",Rect2(9,-13,9,21),0.0],["east_plaza","1F · 东侧回港广场",Rect2(9,8,9,12),0.0],["north_pier","1F · 北栈桥",Rect2(-29,-8,11,4),0.0],["south_pier","1F · 南栈桥",Rect2(-29,7,11,4),0.0],["upper_back","2F · 灯塔海景步道",Rect2(-16,-20,34,7),HEIGHT],["upper_east","2F · 海风休息长廊",Rect2(9,-13,9,21),HEIGHT]]:
@@ -235,6 +237,8 @@ static func apply_lighting(atmosphere: Node3D,night: float) -> void:
  if material:material.set_shader_parameter("night_weight",night)
  for lamp in atmosphere.lamps:
   if lamp.has_meta("harbor_lamp"):
+   if lamp.has_meta("harbor_beacon"):
+    lamp.light_energy=night*float(lamp.get_meta("beacon_amount",0.0))*6.0;lamp.shadow_enabled=false;continue
    lamp.light_energy=lerpf(.08,.80,night)*float(lamp.get_meta("fixture_weight",1.0));lamp.shadow_enabled=false
    var glass: MeshInstance3D=lamp.get_parent().get_node_or_null("LanternGlass")
    if glass:glass.material_override.emission_energy_multiplier=lerpf(.03,1.6,night)
@@ -242,7 +246,7 @@ static func apply_lighting(atmosphere: Node3D,night: float) -> void:
 static func _batch(parent: Node3D) -> void:
  var groups: Dictionary={};var count:=0
  for node: MeshInstance3D in parent.find_children("*","MeshInstance3D",true,false):
-  if not node.visible or not node.mesh or not node.material_override:continue
+  if not node.visible or not node.mesh or not node.material_override or node.has_meta("harbor_wind"):continue
   var mesh: Mesh=node.mesh;var signature: String=str(mesh.get_instance_id())
   if mesh is CylinderMesh:signature="cylinder:"+str(snappedf(mesh.bottom_radius,.0001))+":"+str(snappedf(mesh.top_radius,.0001))+":"+str(snappedf(mesh.height,.0001))+":"+str(mesh.radial_segments)
   elif mesh is SphereMesh:signature="sphere:"+str(mesh.radius)+":"+str(mesh.height)+":"+str(mesh.radial_segments)+":"+str(mesh.rings)

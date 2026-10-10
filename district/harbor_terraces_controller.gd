@@ -7,15 +7,20 @@ var cutaway:=true
 var spawn:=Vector3(-2.4,.04,2.0)
 var boats: Array[Node3D]=[]
 var sea_clock:=0.0
+var gulls: Array[Node3D]=[]
+var facilities: Array[Node3D]=[]
 
 func configure(owner_game) -> void:game=owner_game
 
 func is_active() -> bool:return is_instance_valid(level) and game.location_id=="story_harbor"
 
 func build() -> Dictionary:
- var result: Dictionary=Scene.build(game);level=result.level;spawn=result.spawn;cutaway=HarborPrefs.values.follow;boats.clear();sea_clock=0.0
+ var result: Dictionary=Scene.build(game);level=result.level;spawn=result.spawn;cutaway=HarborPrefs.values.follow;boats.clear();gulls.clear();facilities.clear();sea_clock=0.0
  for node: Node3D in level.get_node("Sea").get_children():
   if node.has_meta("boat_origin"):boats.append(node)
+  elif node.has_meta("harbor_gull"):gulls.append(node)
+ for node: Node3D in game.world.get_children():
+  if node.has_meta("harbor_facility"):facilities.append(node)
  var slabs: Array=level.get_meta("walkable_slabs",[])
  game.player.set_meta("floor_slabs",slabs);game.silhouette_body.set_meta("floor_slabs",slabs)
  game.player.motion_mode=CharacterBody3D.MOTION_MODE_GROUNDED;game.player.collision_layer=4;game.player.collision_mask=3
@@ -30,15 +35,21 @@ func leave() -> void:
  game.player.remove_meta("floor_slabs");game.silhouette_body.remove_meta("floor_slabs")
  game.player.motion_mode=CharacterBody3D.MOTION_MODE_FLOATING;game.player.collision_mask=1
  game._configure_character_collision(false);game.character_material.set_shader_parameter("floor_height",game.CHARACTER_FLOOR_Y)
- level=null;boats.clear()
+ level=null;boats.clear();gulls.clear();facilities.clear()
 
 func _process(delta: float) -> void:
  if not is_active() or (game.pause_menu and game.pause_menu.active):return
  sea_clock+=delta
  for i in boats.size():
   var boat: Node3D=boats[i]
-  boat.position=boat.get_meta("boat_origin")+Vector3.UP*sin(sea_clock*.85+i*1.7)*.045
+  boat.position=boat.get_meta("boat_origin")+boat.get_meta("moor_offset",Vector3.ZERO)+Vector3.UP*sin(sea_clock*.85+i*1.7)*.045
   boat.rotation.z=sin(sea_clock*.65+i)*.012
+ for gull in gulls:
+  var phase: float=sea_clock*.19+float(gull.get_meta("phase"))
+  gull.position=Vector3(-28+cos(phase)*5.4,2.5+sin(phase*1.7)*.45,3+sin(phase)*8.0)
+  gull.rotation.y=-phase+PI;gull.rotation.z=sin(phase)*.10
+  var flap: float=sin(sea_clock*3.2+phase)*.22
+  gull.get_node("LeftWing").rotation.z=flap;gull.get_node("RightWing").rotation.z=-flap
 
 func overview_center() -> Vector3:return Vector3(-4.0,1.0,-1.0)
 
@@ -46,6 +57,7 @@ func set_layers() -> void:
  if not is_active():return
  var reveal: bool=not cutaway or game.player.position.y>2.95
  level.get_node("Upper").visible=reveal
+ for facility in facilities:facility.visible=reveal or float(facility.get_meta("floor_height",0.0))<1.0
  # Visibility changes never disable the floor, railing or furniture colliders.
 
 func handle_input(event: InputEvent) -> bool:
@@ -88,7 +100,7 @@ func physics(delta: float) -> void:
  if game.destination_hint:game.destination_hint.hide()
  game.view_button.visible=free;game.zone_label.visible=free;game.clock_panel.visible=free
  game.clock_label.text=game.atmosphere.clock_text();game._route_frame(free)
- if free:game.hint.text="WASD 漫步 · 沿楼梯步行上下层 · H 显示 / 隐藏上层 · Z 总览 · M 导览"
+ if free:game.hint.text="WASD 漫步 · 沿楼梯步行上下层 · H 上层切面 · Z 总览 · E 设施交互 · M 导览"
  if game.player.position.y< -3.0:
   game.player.position=spawn;game.player.velocity=Vector3.ZERO;game._queue_collision_recovery(true)
  if game.life_booted:
