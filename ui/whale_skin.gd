@@ -1,26 +1,19 @@
 extends RefCounted
-## Reusable pixel whale UI: scalable frames, readable text and native controls.
-const INK := Color("334475")
-const MUTED := Color("61769c")
-const BLUE := Color("5478bc")
-const GOLD := Color("dfb263")
-const PixelFrames=preload("res://dialogue/pixel_skin.gd")
+## Shared native sky UI; existing icons and mascot remain unchanged.
+const SkyStyle=preload("res://ui/sky_skin.gd")
+const INK := SkyStyle.INK
+const MUTED := SkyStyle.MUTED
+const BLUE := SkyStyle.BLUE
+const GOLD := SkyStyle.BLUE
 static var boxes: Dictionary = {}
 
 static func frame(kind: String = "panel") -> StyleBox:
  if boxes.has(kind):return boxes[kind]
- if kind in ["panel","button","hover","pressed","selected"]:
-  var texture:=PixelFrames.frame("selected" if kind in ["hover","pressed","selected"] else "dialogue").duplicate()
-  texture.content_margin_left=15;texture.content_margin_right=15;texture.content_margin_top=9;texture.content_margin_bottom=9
-  boxes[kind]=texture;return texture
- var fills: Dictionary={"panel":"f5f6f0","paper":"fffdf7","sky":"e5eef0","quote":"eef2e9","status":"e8f0ec","button":"ecf2f1","hover":"d3e6e6","pressed":"bdd8df","disabled":"e9edeb","selected":"c6dfe3","card":"f9faf5"}
- var s:=StyleBoxFlat.new();s.bg_color=Color(fills.get(kind,"f5f6f0"));s.border_color=Color("a8b9cd");s.set_border_width_all(2)
- s.content_margin_left=15;s.content_margin_right=15;s.content_margin_top=9;s.content_margin_bottom=9
- if kind=="panel":s.shadow_color=Color(.09,.18,.25,.13);s.shadow_size=12;s.shadow_offset=Vector2(0,5)
+ var s:=SkyStyle.frame(kind)
  boxes[kind]=s;return s
 
 static func theme(font: Font) -> Theme:
- var t:=Theme.new();t.default_font=font;t.default_font_size=22
+ var t:=SkyStyle.theme(font)
  for type in ["Label","RichTextLabel","Button","LineEdit","SpinBox","OptionButton"]:
   t.set_color("font_color",type,INK);t.set_color("font_hover_color",type,BLUE)
   t.set_color("font_pressed_color",type,INK);t.set_color("font_focus_color",type,INK)
@@ -29,7 +22,7 @@ static func theme(font: Font) -> Theme:
  for type in ["Button","OptionButton"]:
   for state in {"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}:
    t.set_stylebox(state,type,frame({"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}[state]))
-  var focus:=StyleBoxFlat.new();focus.bg_color=Color(0,0,0,0);focus.border_color=GOLD;focus.set_border_width_all(3)
+  var focus:=StyleBoxFlat.new();focus.bg_color=Color(0,0,0,0);focus.border_color=BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9)
   t.set_stylebox("focus",type,focus)
  t.set_stylebox("normal","LineEdit",frame("paper"));t.set_stylebox("focus","LineEdit",frame("selected"))
  t.set_color("caret_color","LineEdit",BLUE);t.set_color("selection_color","LineEdit",Color("bdd5ff"))
@@ -48,8 +41,7 @@ static func label(parent: Node,text: String,pos: Vector2,size: Vector2,font_size
  l.text=text;l.position=pos;l.size=size;parent.add_child(l);return l
 
 static func panel(parent: Node,pos: Vector2,size: Vector2,kind: String = "panel") -> Panel:
- var p:=Panel.new();p.position=pos;p.size=size;p.add_theme_stylebox_override("panel",frame(kind))
- p.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;parent.add_child(p);return p
+ return SkyStyle.panel(parent,pos,size,kind)
 
 static func icon(parent: Node,name: String,pos: Vector2,size: Vector2) -> TextureRect:
  var r:=TextureRect.new();r.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;r.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -68,7 +60,7 @@ static func card_button(b: Button,selected: bool = false) -> void:
 
 static var _grabber_tex: Texture2D
 
-## 程序化生成滑块把手；Godot 默认主题的把手和本工程的像素边框不搭。
+## Native slider handle; no external icon asset.
 static func _grabber() -> Texture2D:
  if _grabber_tex != null:return _grabber_tex
  var side:=18
@@ -79,14 +71,14 @@ static func _grabber() -> Texture2D:
    var dx:=float(x)-side/2.0+0.5;var dy:=float(y)-side/2.0+0.5
    var distance:=sqrt(dx*dx+dy*dy)
    if distance<=side/2.0-1.5:img.set_pixel(x,y,GOLD)
-   elif distance<=side/2.0-0.5:img.set_pixel(x,y,Color("8a6a33"))
+   elif distance<=side/2.0-0.5:img.set_pixel(x,y,Color("ffffff"))
  _grabber_tex=ImageTexture.create_from_image(img)
  return _grabber_tex
 
-## 给 HSlider 套上和像素边框一致的配色，供主菜单与游戏内设置共用。
+## Shared blue slider for title and in-game settings.
 static func style_slider(bar: HSlider) -> void:
- var track:=StyleBoxFlat.new();track.bg_color=Color("dde5ec");track.border_color=Color("a8b9cd")
- track.set_border_width_all(2);track.set_corner_radius_all(7)
+ var track:=StyleBoxFlat.new();track.bg_color=Color("e4f0f4");track.border_color=Color("cfdde5")
+ track.set_border_width_all(1);track.set_corner_radius_all(7)
  track.content_margin_top=7;track.content_margin_bottom=7
  var filled:=StyleBoxFlat.new();filled.bg_color=BLUE;filled.set_corner_radius_all(7)
  filled.content_margin_top=7;filled.content_margin_bottom=7

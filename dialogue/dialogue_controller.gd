@@ -87,8 +87,8 @@ func _build_ui() -> void:
  box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230));box.gui_input.connect(_click_advance)
  UiFit.pin_wide(box,72,72,794,230)
  # Nameplate overlaps the upper edge, as in SLG / galgame dialogue layouts.
- var nameplate:=DialogueStyle.panel(root,Vector2(102,759),Vector2(253,62),"nameplate")
- speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(22,10),Vector2(213,39),25,Color("fff9e9"))
+ var nameplate:=DialogueStyle.panel(root,Vector2(102,759),Vector2(253,62),"speaker")
+ speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(22,10),Vector2(213,39),25,DialogueStyle.INK)
  text_label=RichTextLabel.new();text_label.position=Vector2(37,35);text_label.size=Vector2(1201,115);text_label.bbcode_enabled=false;text_label.scroll_active=false;text_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text_label.add_theme_font_size_override("normal_font_size",27);text_label.add_theme_color_override("default_color",DialogueStyle.INK);text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(text_label)
  # 对话框变宽后，正文与右下角按钮要跟着拉通/贴右边，否则文字只有一小条、按钮挤在中间
  UiFit.pin_wide(text_label,37,66,35,115)
@@ -103,7 +103,7 @@ func _build_ui() -> void:
  UiFit.pin_right(portrait_button,178,101,46,47)
  var b_end:=_button(root,"结束对话",Vector2(965,46),Vector2(185,47),func():close())
  UiFit.pin_right(b_end,185,298,46,47)
- choice_panel=DialogueStyle.panel(root,Vector2(92,433),Vector2(645,299));choice_panel.hide()
+ choice_panel=DialogueStyle.panel(root,Vector2(92,433),Vector2(645,299),"quote");choice_panel.hide()
  backlog=DialogueStyle.panel(root,Vector2(154,112),Vector2(1140,831));backlog.hide()
  UiFit.pin_center(backlog,1140,112,831)
  DialogueStyle.label(backlog,"对话回看",Vector2(30,23),Vector2(769,43),30)

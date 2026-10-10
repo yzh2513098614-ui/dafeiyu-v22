@@ -28,6 +28,9 @@ func configure(owner_game) -> void:
  tab_buttons["display"]=game._button("画面",Vector2(139,110),Vector2(150,32),self,func():_set_tab("display"))
  tab_buttons["audio"]=game._button("声音",Vector2(297,110),Vector2(150,32),self,func():_set_tab("audio"))
  tab_buttons["audition"]=game._button("音效试听",Vector2(455,110),Vector2(150,32),self,func():_set_tab("audition"))
+ # Compact tabs must not inherit the tall margins used by full-size buttons.
+ for button in tab_buttons.values():
+  button.add_theme_font_size_override("font_size",18)
  game._button("Esc 关闭",Vector2(800,31),Vector2(150,50),self,func():game._settings(false))
  var options: Array=[["fullscreen","全屏显示","展开整个鲸落港"],["shadows","柔和阴影","保留建筑与家具的层次"],["effects","光影细节","墙角、物件底部与氛围微光"],["dusk","暮色暖光","让窗口亮起暖色的灯"],["follow","跟随人物","镜头靠近正在漫步的你"],["smooth_camera","柔顺镜头","走动时平缓地跟随"],["day_cycle","昼夜循环","清晨、午后、黄昏与夜晚"]]
  for i in options.size():
@@ -109,7 +112,13 @@ func _set_tab(id: String) -> void:
 func _refresh_tab() -> void:
  for id in tab_buttons:
   var button: Button=tab_buttons[id]
-  if is_instance_valid(button):UiStyle.card_button(button,id==settings_tab)
+  if is_instance_valid(button):
+   UiStyle.card_button(button,id==settings_tab)
+   for state in ["normal","hover","pressed"]:
+    var compact:=button.get_theme_stylebox(state).duplicate()
+    compact.content_margin_top=3;compact.content_margin_bottom=3
+    button.add_theme_stylebox_override(state,compact)
+   button.size.y=32
  for card in display_cards:
   if is_instance_valid(card):card.visible=settings_tab=="display"
  for card in audio_cards:
@@ -165,8 +174,8 @@ func _build_audition_cards() -> void:
    card.custom_minimum_size=Vector2(840,38)
    card.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
    card.add_theme_stylebox_override("normal",UiStyle.frame("dialogue"))
-   var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=Color("d6a24e")
-   focus.set_border_width_all(3);focus.set_expand_margin_all(3)
+   var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=UiStyle.BLUE
+   focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
    card.add_theme_stylebox_override("focus",focus)
    card.pressed.connect(func():_audition_one(id))
    list.add_child(card)

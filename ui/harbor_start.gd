@@ -87,14 +87,14 @@ func _ready() -> void:
 func _button(parent: Node,label: String,pos: Vector2,size: Vector2,action: Callable,selected: bool=false) -> Button:
  var b:=Button.new();b.text=label;b.position=pos;b.size=size;b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.pressed.connect(action);parent.add_child(b)
  b.add_theme_stylebox_override("normal",HarborStyle.frame("selected" if selected else "dialogue"));b.add_theme_font_size_override("font_size",22)
- var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=Color("d6a24e");focus.set_border_width_all(3);focus.set_expand_margin_all(3)
+ var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=HarborStyle.BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
  b.add_theme_stylebox_override("focus",focus)
  return b
 
 func _primary(b: Button) -> void:
  for key in ["normal","hover","pressed"]:b.add_theme_stylebox_override(key,HarborStyle.frame("nameplate"))
  for key in ["font_color","font_hover_color","font_pressed_color"]:b.add_theme_color_override(key,Color("fff8e7"))
- b.add_theme_color_override("font_hover_color",Color("ffe1a3"));b.add_theme_font_size_override("font_size",28)
+ b.add_theme_color_override("font_hover_color",Color.WHITE);b.add_theme_font_size_override("font_size",28)
 
 func _render() -> void:
  for child in content.get_children():
@@ -273,7 +273,7 @@ func _music() -> void:
    _refresh_music())
   card.add_theme_stylebox_override("normal",HarborStyle.frame("dialogue"))
   card.add_theme_font_size_override("font_size",21)
-  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=Color("d6a24e");focus.set_border_width_all(3);focus.set_expand_margin_all(3)
+  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=HarborStyle.BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
   card.add_theme_stylebox_override("focus",focus)
   list.add_child(card)
 
