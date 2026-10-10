@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/containers/pantry_ingredient_bin_opened.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(0.76, 0.74, 0.69)
+
+[node name="pantry_ingredient_bin_opened" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.37, 0)
+shape = SubResource("Shape0")
+

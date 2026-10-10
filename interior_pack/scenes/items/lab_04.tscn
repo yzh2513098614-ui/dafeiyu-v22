@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://interior_pack/assets/models/lab_04.glb" id="1"]
+[ext_resource type="Script" path="res://interior_pack/scripts/item_3d.gd" id="2"]
+
+[node name="lab_04" type="Node3D"]
+script = ExtResource("2")
+asset_id = "lab_04"
+passage = false
+
+[node name="Model" parent="." instance=ExtResource("1")]

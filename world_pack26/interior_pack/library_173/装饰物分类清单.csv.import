@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://h2vi2rk61chj"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/library_173/装饰物分类清单.分类代码.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.分类名称.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.中文名称.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.模型ID.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.摆放方式.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.适用场景.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.碰撞.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.宽m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.高m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.深m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.GLB路径.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.Godot场景路径.translation"]
+
+source_file="res://world_pack26/interior_pack/library_173/装饰物分类清单.csv"
+dest_files=["res://world_pack26/interior_pack/library_173/装饰物分类清单.分类代码.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.分类名称.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.中文名称.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.模型ID.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.摆放方式.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.适用场景.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.碰撞.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.宽m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.高m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.深m.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.GLB路径.translation", "res://world_pack26/interior_pack/library_173/装饰物分类清单.Godot场景路径.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

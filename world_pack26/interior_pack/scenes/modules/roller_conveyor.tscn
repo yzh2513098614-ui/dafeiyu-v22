@@ -1,0 +1,180 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(5.0,0.12,1.1)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(5.0,0.12,1.1)
+
+[sub_resource type="CylinderMesh" id="r2"]
+top_radius = 0.075
+bottom_radius = 0.075
+height = 0.96
+radial_segments = 16
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(0.075,0.82,0.075)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.22,0.12,0.18)
+
+[node name="RollerConveyor" type="Node3D"]
+
+
+[node name="Frame" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.86,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="FrameBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FrameBody"]
+position = Vector3(0.0,0.86,0.0)
+shape = SubResource("r1")
+
+[node name="Roller" type="MeshInstance3D" parent="."]
+position = Vector3(-2.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_2" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_3" type="MeshInstance3D" parent="."]
+position = Vector3(-1.75,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_4" type="MeshInstance3D" parent="."]
+position = Vector3(-1.5,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_5" type="MeshInstance3D" parent="."]
+position = Vector3(-1.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_6" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_7" type="MeshInstance3D" parent="."]
+position = Vector3(-0.75,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_8" type="MeshInstance3D" parent="."]
+position = Vector3(-0.5,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_9" type="MeshInstance3D" parent="."]
+position = Vector3(-0.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_10" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_11" type="MeshInstance3D" parent="."]
+position = Vector3(0.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_12" type="MeshInstance3D" parent="."]
+position = Vector3(0.5,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_13" type="MeshInstance3D" parent="."]
+position = Vector3(0.75,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_14" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_15" type="MeshInstance3D" parent="."]
+position = Vector3(1.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_16" type="MeshInstance3D" parent="."]
+position = Vector3(1.5,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_17" type="MeshInstance3D" parent="."]
+position = Vector3(1.75,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_18" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Roller_19" type="MeshInstance3D" parent="."]
+position = Vector3(2.25,0.98,0.0)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Leg" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.41,-0.45)
+mesh = SubResource("r3")
+material_override = ExtResource("e0")
+
+[node name="Leg_2" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.41,0.45)
+mesh = SubResource("r3")
+material_override = ExtResource("e0")
+
+[node name="Leg_3" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.41,-0.45)
+mesh = SubResource("r3")
+material_override = ExtResource("e0")
+
+[node name="Leg_4" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.41,0.45)
+mesh = SubResource("r3")
+material_override = ExtResource("e0")
+
+[node name="EmergencyStop" type="MeshInstance3D" parent="."]
+position = Vector3(-2.2,1.05,0.64)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")

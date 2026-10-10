@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "direction": "up_right",
+  "mirrored_from": "up_left",
+  "loop_frames": 26,
+  "native_rgba_exact_horizontal_flip": true,
+  "alpha_mask_exact": true,
+  "canvas_resolution": [
+    1024,
+    1152
+  ],
+  "native_pixel_size_preserved": true,
+  "standing_and_interact_mirrored": true,
+  "lighting_regions_mirrored": true,
+  "actual_left_and_right_movement_verified": true,
+  "fixed_floor_anchor_verified": true,
+  "log": "预览/右上镜像替换_20261010/scene_check.log"
+}

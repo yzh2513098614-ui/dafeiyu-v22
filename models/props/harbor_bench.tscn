@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/props/harbor_bench.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(1.7, 1.1, 0.65)
+
+[node name="harbor_bench" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.55, 0)
+shape = SubResource("Shape0")
+

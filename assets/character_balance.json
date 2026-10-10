@@ -1,0 +1,181 @@
+{
+  "initial": {
+    "strength": 4,
+    "endurance": 5,
+    "insight": 5,
+    "charm": 6,
+    "agility": 4,
+    "luck": 3
+  },
+  "labels": {
+    "strength": "力量",
+    "endurance": "耐力",
+    "insight": "学识",
+    "charm": "亲和",
+    "agility": "灵巧",
+    "luck": "幸运"
+  },
+  "rules": {
+    "walk_cost_per_meter": 0.28,
+    "sprint_cost_per_second": 1.8,
+    "idle_recovery_per_second": 2.0,
+    "hunger_per_second": 0.025,
+    "sprint_multiplier": 1.5,
+    "low_stamina_threshold": 15,
+    "low_stamina_multiplier": 0.8,
+    "max_level": 30,
+    "xp_first_level": 60,
+    "xp_step": 20,
+    "discovery_xp": 12,
+    "rest_hunger_cost": 4,
+    "rest_stamina": 35,
+    "rest_health": 10,
+    "rest_mood": 5
+  },
+  "starter": {
+    "token_cracker": 3,
+    "sea_biscuit": 2,
+    "retry_tea": 1,
+    "first_aid": 1,
+    "prompt_pen": 1
+  },
+  "items": {
+    "token_cracker": {
+      "action": "consume",
+      "effects": {
+        "stamina": 24,
+        "hunger": 8,
+        "mood": 3
+      },
+      "summary": "体力 +24 · 饱食 +8 · 心情 +3"
+    },
+    "sea_biscuit": {
+      "action": "consume",
+      "effects": {
+        "health": 10,
+        "stamina": 18,
+        "hunger": 22
+      },
+      "summary": "生命 +10 · 体力 +18 · 饱食 +22"
+    },
+    "retry_tea": {
+      "action": "consume",
+      "effects": {
+        "health": 4,
+        "stamina": 12,
+        "mood": 12
+      },
+      "buff": "calm",
+      "duration": 90,
+      "summary": "生命 +4 · 体力 +12 · 心情 +12\n暖茶 90 秒：停下时体力恢复 +1/秒"
+    },
+    "first_aid": {
+      "action": "consume",
+      "effects": {
+        "health": 35
+      },
+      "summary": "生命 +35 · 满生命时不会消耗"
+    },
+    "lemon_water": {
+      "action": "consume",
+      "effects": {
+        "stamina": 20,
+        "mood": 5
+      },
+      "summary": "体力 +20 · 心情 +5"
+    },
+    "sea_soup": {
+      "action": "consume",
+      "effects": {
+        "health": 20,
+        "stamina": 35,
+        "hunger": 40
+      },
+      "summary": "生命 +20 · 体力 +35 · 饱食 +40"
+    },
+    "prompt_pen": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "insight": 2
+      },
+      "summary": "工具位：学识 +2 · 不消耗物品"
+    },
+    "tide_compass": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "luck": 2,
+        "agility": 1
+      },
+      "summary": "工具位：幸运 +2 · 灵巧 +1"
+    },
+    "fish_badge": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "charm": 2
+      },
+      "summary": "随身物：亲和 +2 · 不消耗物品"
+    },
+    "stopped_pillow": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "max_stamina": 10
+      },
+      "summary": "随身物：体力上限 +10"
+    },
+    "thinking_lamp": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "insight": 1
+      },
+      "summary": "随身物：学识 +1"
+    },
+    "context_note": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "hallucination_map": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "cache_book": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "whale_letter": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "branch_bookmark": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "sea_shell": {
+      "action": "material",
+      "summary": "材料：保留备用，暂未开放制作"
+    },
+    "soft_linen": {
+      "action": "material",
+      "summary": "材料：保留备用，暂未开放制作"
+    },
+    "butter_bread": {
+      "action": "consume",
+      "effects": {
+        "stamina": 20,
+        "hunger": 25
+      },
+      "summary": "体力 +20 · 饱食 +25"
+    },
+    "whale_soap": {
+      "action": "consume",
+      "effects": {
+        "mood": 12
+      },
+      "summary": "心情 +12 · 心情充足时不会消耗"
+    }
+  }
+}

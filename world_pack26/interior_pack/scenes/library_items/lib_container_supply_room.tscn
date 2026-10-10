@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/scenes/container_supply_room.glb" id="e0"]
+
+[sub_resource type="BoxShape3D" id="r0"]
+size = Vector3(8.0,0.16,6.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(8.0,2.6,0.14)
+
+[sub_resource type="BoxShape3D" id="r2"]
+size = Vector3(0.14,0.7,6.0)
+
+[sub_resource type="BoxShape3D" id="r3"]
+size = Vector3(0.14,0.7,6.0)
+
+[sub_resource type="BoxShape3D" id="r4"]
+size = Vector3(0.9,1.2,0.79)
+
+[sub_resource type="BoxShape3D" id="r5"]
+size = Vector3(0.76,1.8,0.7)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(0.87,1.24,0.72)
+
+[sub_resource type="BoxShape3D" id="r7"]
+size = Vector3(0.72,1.02,0.68)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(1.12,0.74,0.86)
+
+[sub_resource type="BoxShape3D" id="r9"]
+size = Vector3(1.18,0.82,0.77)
+
+[sub_resource type="BoxShape3D" id="r10"]
+size = Vector3(1.26,0.58,0.84)
+
+[sub_resource type="BoxShape3D" id="r11"]
+size = Vector3(1.72,0.39,0.59)
+
+[node name="lib_container_supply_room" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_container_supply_room", "name": "现代补给室·容器布局", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Body0" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body0"]
+position = Vector3(0.0,0.08,0.0)
+shape = SubResource("r0")
+
+[node name="Body1" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body1"]
+position = Vector3(0.0,1.46,3.0)
+shape = SubResource("r1")
+
+[node name="Body2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body2"]
+position = Vector3(-4.0,0.51,0.0)
+shape = SubResource("r2")
+
+[node name="Body3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body3"]
+position = Vector3(4.0,0.51,0.0)
+shape = SubResource("r3")
+
+[node name="Body4" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body4"]
+position = Vector3(-2.85,0.76,2.25)
+shape = SubResource("r4")
+
+[node name="Body5" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body5"]
+position = Vector3(-1.3,1.06,2.28)
+shape = SubResource("r5")
+
+[node name="Body6" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body6"]
+position = Vector3(0.25,0.78,2.25)
+shape = SubResource("r6")
+
+[node name="Body7" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body7"]
+position = Vector3(1.72,0.67,2.28)
+shape = SubResource("r7")
+
+[node name="Body8" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body8"]
+position = Vector3(2.65,0.53,-0.45)
+shape = SubResource("r8")
+
+[node name="Body9" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body9"]
+position = Vector3(0.9,0.57,-1.35)
+shape = SubResource("r9")
+
+[node name="Body10" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body10"]
+position = Vector3(-1.0,0.45,-0.8)
+shape = SubResource("r10")
+
+[node name="Body11" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body11"]
+position = Vector3(-2.5,0.355,-2.0)
+shape = SubResource("r11")

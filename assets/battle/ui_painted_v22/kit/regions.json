@@ -1,0 +1,298 @@
+{
+  "paper": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      8,
+      240,
+      414,
+      178
+    ],
+    "source_corner": 44,
+    "rim": 14,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      25,
+      14,
+      25,
+      14
+    ]
+  },
+  "hand_tray": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      430,
+      240,
+      392,
+      178
+    ],
+    "source_corner": 44,
+    "rim": 10,
+    "face_lighten": 0.35,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      18,
+      10,
+      18,
+      10
+    ]
+  },
+  "status": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      831,
+      241,
+      417,
+      173
+    ],
+    "source_corner": 44,
+    "rim": 12,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      22,
+      12,
+      22,
+      12
+    ]
+  },
+  "title": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      10,
+      530,
+      423,
+      196
+    ],
+    "source_corner": 44,
+    "rim": 12,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      22,
+      12,
+      22,
+      12
+    ]
+  },
+  "energy": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      479,
+      486,
+      299,
+      260
+    ],
+    "source_corner": 52,
+    "rim": 12
+  },
+  "primary": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      818,
+      532,
+      426,
+      186
+    ],
+    "source_corner": 44,
+    "rim": 12,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      22,
+      12,
+      22,
+      12
+    ]
+  },
+  "secondary": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      10,
+      829,
+      414,
+      180
+    ],
+    "source_corner": 44,
+    "rim": 9,
+    "face_lighten": 0.18,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      16,
+      9,
+      16,
+      9
+    ]
+  },
+  "target": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      430,
+      828,
+      391,
+      173
+    ],
+    "source_corner": 44,
+    "rim": 10,
+    "face_lighten": 0.12,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      18,
+      10,
+      18,
+      10
+    ]
+  },
+  "tag": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      833,
+      842,
+      415,
+      159
+    ],
+    "source_corner": 44,
+    "rim": 8,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      14,
+      8,
+      14,
+      8
+    ]
+  },
+  "info": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/panels_and_buttons.png",
+    "region": [
+      8,
+      240,
+      414,
+      178
+    ],
+    "source_corner": 44,
+    "rim": 9,
+    "source_corners": [
+      72,
+      44,
+      72,
+      44
+    ],
+    "native_border": [
+      16,
+      9,
+      16,
+      9
+    ]
+  },
+  "gauge_track": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/gauges_and_portrait.png",
+    "region": [
+      34,
+      343,
+      575,
+      145
+    ],
+    "source_corners": [
+      72,
+      33,
+      72,
+      33
+    ],
+    "native_border": [
+      12,
+      4,
+      12,
+      4
+    ]
+  },
+  "gauge_fill": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/gauges_and_portrait.png",
+    "region": [
+      648,
+      368,
+      574,
+      100
+    ],
+    "source_corners": [
+      50,
+      24,
+      50,
+      24
+    ],
+    "native_border": [
+      8,
+      4,
+      8,
+      4
+    ],
+    "face_lighten": 0.22
+  },
+  "portrait": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/gauges_and_portrait.png",
+    "region": [
+      76,
+      659,
+      441,
+      437
+    ],
+    "source_corner": 65,
+    "rim": 10
+  },
+  "enemy_plate": {
+    "atlas": "res://assets/battle/ui_painted_v22/kit/gauges_and_portrait.png",
+    "region": [
+      563,
+      784,
+      657,
+      213
+    ],
+    "source_corners": [
+      72,
+      52,
+      72,
+      52
+    ],
+    "native_border": [
+      12,
+      5,
+      12,
+      5
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+﻿ID,名称,尺寸,资源路径
+oak_grain,橡木纹,128×128,res://assets/materials/oak_grain.png
+walnut_grain,胡桃木纹,128×128,res://assets/materials/walnut_grain.png
+aged_plaster,旧灰泥,128×128,res://assets/materials/aged_plaster.png
+navy_weave,靛蓝织物,128×128,res://assets/materials/navy_weave.png
+sage_weave,鼠尾草绿织物,128×128,res://assets/materials/sage_weave.png
+linen_weave,亚麻织物,128×128,res://assets/materials/linen_weave.png
+slate_stone,石板,128×128,res://assets/materials/slate_stone.png
+brushed_iron,刷纹金属,128×128,res://assets/materials/brushed_iron.png
+rust_rug,编织地毯,128×128,res://assets/materials/rust_rug.png

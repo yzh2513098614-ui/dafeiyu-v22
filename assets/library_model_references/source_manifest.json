@@ -1,0 +1,195 @@
+{
+  "archive": "C:\\Users\\Administrator\\Downloads\\Token大肥鱼_全部生成资源_卡牌UI人物场景_总包.zip",
+  "files": [
+    {
+      "file": "bench.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/bench.png",
+      "sha256": "7ab71f9f32c4f4cbf6ac2ca672395d8203307dc32e231c7559f58736bf5e4cc3"
+    },
+    {
+      "file": "bush_berry.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/bush_berry.png",
+      "sha256": "943669334f7e91c6f126189541cde85d8c9c878d432fae542e6ebad850e91e0d"
+    },
+    {
+      "file": "crystal_blue.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/crystal_blue.png",
+      "sha256": "b74f251915528440b3e5108b1100a5e539dd227d731cbb551faedf0887bb9dd2"
+    },
+    {
+      "file": "fallen_log.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/fallen_log.png",
+      "sha256": "b1fb15bff7972493cf5196e86e02e50b5067af4f054bed064b0637368fa434f1"
+    },
+    {
+      "file": "flowers_white.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/flowers_white.png",
+      "sha256": "27186490e76cf2438a0c462ebf779e1b28b66894b71af34c3982a45c69670706"
+    },
+    {
+      "file": "grass.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/grass.png",
+      "sha256": "cb1b8fc4a30468382193fd28051df981e9150de63966990e2c330722043181fc"
+    },
+    {
+      "file": "hedge.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/hedge.png",
+      "sha256": "415f868c7e278684fe6050e2edf228c08bc6baf950ed1187d3543208eb0ce394"
+    },
+    {
+      "file": "mushrooms.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/mushrooms.png",
+      "sha256": "a275f61962b5a70d96979de83716000a4ef5b1f3045f82e8db57ea24c6f20ebb"
+    },
+    {
+      "file": "ore_gold.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/ore_gold.png",
+      "sha256": "ebc80e8c9e03feb1d78d251d3b01b71bba4ddcd3a5e9e1819f4ce6ae59a9f263"
+    },
+    {
+      "file": "pebbles.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/pebbles.png",
+      "sha256": "ab805da439961762b473ef41820e7fe3f1077d33d7c885886ec29b2bc5128887"
+    },
+    {
+      "file": "recycling_bin.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/recycling_bin.png",
+      "sha256": "685516b362cefa3d77765b0e3ff31a8579e7abf937b9d7e3620cd62a22dabd81"
+    },
+    {
+      "file": "rock_basalt.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/rock_basalt.png",
+      "sha256": "2aae530282bb06f00cf13920b4579beb5fb8f19cd8e9b9eb317d3637c5c1e194"
+    },
+    {
+      "file": "rock_granite.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/rock_granite.png",
+      "sha256": "98ed83aa60eb7f85876ac4bf25846b42743da8eda9831093ae135c7b0005829e"
+    },
+    {
+      "file": "rock_moss.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/rock_moss.png",
+      "sha256": "669bb0af6c6192979e933536488e0dc1ded0113b9b31a52f6ad14e2d5377197c"
+    },
+    {
+      "file": "rock_sandstone.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/rock_sandstone.png",
+      "sha256": "e783e69977c11a2497c66b561eae74dc742db2b0931d65f7f2508cbc16479447"
+    },
+    {
+      "file": "rock_snow.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/rock_snow.png",
+      "sha256": "5237145cd9b0f5df51c326003d9d1dc087eb7d4bb34b731533a3276dcd7b9dc3"
+    },
+    {
+      "file": "safe_compact.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/safe_compact.png",
+      "sha256": "81c74afa2e6ba0cef19bb3a03c853efe4329dacd6bbdf5d29dbe67b652850118"
+    },
+    {
+      "file": "safe_floor.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/safe_floor.png",
+      "sha256": "add9b29eba7b161ad3ea5e47bbd2ada5071e1b22316b076c6faf4b902bf65e26"
+    },
+    {
+      "file": "safe_tall.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/safe_tall.png",
+      "sha256": "23f0a4dad3efc8365987914b8736de52ac9c6ab27db2d26fcd52de2af76c5c96"
+    },
+    {
+      "file": "street_lamp.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/street_lamp.png",
+      "sha256": "bf9855862961be079b48f03439d4bd9bd40b5e79e4abe29d56f5dd3e9581937e"
+    },
+    {
+      "file": "stump.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/stump.png",
+      "sha256": "319d7464572a916ddb2bf14812ac9cb466d078495f7e9b17f8d7b5c8aba78d9f"
+    },
+    {
+      "file": "supply_crate.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/supply_crate.png",
+      "sha256": "a8871bd4a8b287302a208cb9b4d7a5e573c31633ba0ca910ab2e5418c18b6ee4"
+    },
+    {
+      "file": "token_atm.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/token_atm.png",
+      "sha256": "9c3c6cbb343865c7ffdae346a311a1da03e884bf8c7a681b024105cd78913954"
+    },
+    {
+      "file": "town.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sources/town.png",
+      "sha256": "526e1178abfa08e5c8ac510361c9fdc54188b39d8720e53dc05917abf9c2f375"
+    },
+    {
+      "file": "tree_autumn.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_autumn.png",
+      "sha256": "6daded784ee5460bc3951a252c1874c5aa4d37e4d7aeb6888a702438b748892e"
+    },
+    {
+      "file": "tree_birch.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_birch.png",
+      "sha256": "b450e21fd09b306816138d2829d7c924a90f664c4129595fe886347fff3d0a06"
+    },
+    {
+      "file": "tree_cherry.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_cherry.png",
+      "sha256": "ed61123c5f8f095f1bafd0e1983e6af942dfb30f27804669f7e50579ef4361ae"
+    },
+    {
+      "file": "tree_dead.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_dead.png",
+      "sha256": "367ec86ce0136a19fcc273229e471ed0be176ff8ad11c95fd2af3e3485f2294c"
+    },
+    {
+      "file": "tree_oak.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_oak.png",
+      "sha256": "e682db5547f8c18d20a2fe2328045be50491c3c6ad1544b7a6ac8aef0213ae9b"
+    },
+    {
+      "file": "tree_palm.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_palm.png",
+      "sha256": "fa1fcbebf27aae473f40ed4c071b2f2ae642f06c1d31cb0702f41765933b2db3"
+    },
+    {
+      "file": "tree_pine.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_pine.png",
+      "sha256": "0abf6c815f7be6b315b6400e8832e58c5094f1d3a654e66bda6b0f2e8217c1fe"
+    },
+    {
+      "file": "tree_snow_pine.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/tree_snow_pine.png",
+      "sha256": "7435661fe14184810b6ffee981f9fc04fbbc2476d0f7b62643be9d52cd6e99a2"
+    },
+    {
+      "file": "trees.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sources/trees.png",
+      "sha256": "b6139795ee1ea0423eb9c12a163a894c7612eacd8da7b03bad170812a5753865"
+    },
+    {
+      "file": "water_barrel.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/water_barrel.png",
+      "sha256": "79e9539f5183989191e3e5cbc922799f07039c1daba0b08aba759393401b43d0"
+    },
+    {
+      "file": "whale_fountain.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/whale_fountain.png",
+      "sha256": "e253cef3209ae9d6c4fc78df76d7c39e8324c8f999ceddf385899fb1f9ddf3a6"
+    },
+    {
+      "file": "whale_sign.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/whale_sign.png",
+      "sha256": "b1fe6e29f0e47af53642246d3d548e6a4a0cc0b2ea1e75c4554c6b9dacd323c0"
+    },
+    {
+      "file": "whale_statue.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/town/whale_statue.png",
+      "sha256": "9d14e7d976b2dffb8e994613b005b5bf3270ec64f822f99e36cb3da23fd7c25f"
+    },
+    {
+      "file": "whale_tablet.png",
+      "archive_entry": "TokenWhale_AllAssets/01_BaseAssets/sprites_4x/nature/whale_tablet.png",
+      "sha256": "57fcd73048d8828672e280437962fc8dc4c5f3c5e369789e5c5ea9606ad4b11d"
+    }
+  ]
+}

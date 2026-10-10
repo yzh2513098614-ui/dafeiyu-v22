@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/props/supply_service_trolley.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(1.100000023841858, 1.0575000047683716, 0.6800000071525574)
+
+[node name="supply_service_trolley" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.5487499833106995, 0.0)
+shape = SubResource("Shape0")
+

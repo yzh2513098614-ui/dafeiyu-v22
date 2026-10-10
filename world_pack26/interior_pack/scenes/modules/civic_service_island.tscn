@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/ivory.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e2"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/campus_04.tscn" id="e4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_binder_bookend_set.tscn" id="e5"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_08.tscn" id="e6"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(2.05,0.88,0.68)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(2.05,0.88,0.68)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(2.17,0.06,0.8)
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(2.04,0.15,0.018)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(1.84,0.018,0.018)
+
+[node name="CivicServiceIsland" type="Node3D"]
+
+
+[node name="DeskBody" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.44,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="DeskBodyBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="DeskBodyBody"]
+position = Vector3(0.0,0.44,0.0)
+shape = SubResource("r1")
+
+[node name="Desktop" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.91,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="BlueBand" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.25,0.351)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="StatusLight" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.59,0.365)
+mesh = SubResource("r4")
+material_override = ExtResource("e3")
+
+[node name="Screen" parent="." instance=ExtResource("e4")]
+position = Vector3(-0.53,0.94,-0.02)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.25,0.25,0.25)
+
+[node name="DeskDocuments" parent="." instance=ExtResource("e5")]
+position = Vector3(0.53,0.94,0.03)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="ClerkSeat" parent="." instance=ExtResource("e6")]
+position = Vector3(0.0,0.0,-0.83)
+rotation = Vector3(0.0,0.0,0.0)

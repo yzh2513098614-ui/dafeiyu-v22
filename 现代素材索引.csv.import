@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://db7rxmqh0gxuw"
+
+[deps]
+
+files=["res://现代素材索引.名称.translation", "res://现代素材索引.可复用资源.translation", "res://现代素材索引.实际三维模块缩略图.translation"]
+
+source_file="res://现代素材索引.csv"
+dest_files=["res://现代素材索引.名称.translation", "res://现代素材索引.可复用资源.translation", "res://现代素材索引.实际三维模块缩略图.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bsy2faoo85kpr"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/389GLB素材索引.名称.translation", "res://world_pack26/interior_pack/389GLB素材索引.类别.translation", "res://world_pack26/interior_pack/389GLB素材索引.宽m.translation", "res://world_pack26/interior_pack/389GLB素材索引.高m.translation", "res://world_pack26/interior_pack/389GLB素材索引.深m.translation", "res://world_pack26/interior_pack/389GLB素材索引.三角形数.translation", "res://world_pack26/interior_pack/389GLB素材索引.有可动部件.translation", "res://world_pack26/interior_pack/389GLB素材索引.来源.translation", "res://world_pack26/interior_pack/389GLB素材索引.GLB路径.translation", "res://world_pack26/interior_pack/389GLB素材索引.适配场景路径.translation", "res://world_pack26/interior_pack/389GLB素材索引.使用地图.translation"]
+
+source_file="res://world_pack26/interior_pack/389GLB素材索引.csv"
+dest_files=["res://world_pack26/interior_pack/389GLB素材索引.名称.translation", "res://world_pack26/interior_pack/389GLB素材索引.类别.translation", "res://world_pack26/interior_pack/389GLB素材索引.宽m.translation", "res://world_pack26/interior_pack/389GLB素材索引.高m.translation", "res://world_pack26/interior_pack/389GLB素材索引.深m.translation", "res://world_pack26/interior_pack/389GLB素材索引.三角形数.translation", "res://world_pack26/interior_pack/389GLB素材索引.有可动部件.translation", "res://world_pack26/interior_pack/389GLB素材索引.来源.translation", "res://world_pack26/interior_pack/389GLB素材索引.GLB路径.translation", "res://world_pack26/interior_pack/389GLB素材索引.适配场景路径.translation", "res://world_pack26/interior_pack/389GLB素材索引.使用地图.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

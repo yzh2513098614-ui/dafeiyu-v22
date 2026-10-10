@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c8rvnisgub6yk"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/关卡素材使用清单.room.translation", "res://world_pack26/interior_pack/关卡素材使用清单.zone.translation", "res://world_pack26/interior_pack/关卡素材使用清单.asset.translation", "res://world_pack26/interior_pack/关卡素材使用清单.name.translation", "res://world_pack26/interior_pack/关卡素材使用清单.node.translation", "res://world_pack26/interior_pack/关卡素材使用清单.pos.translation"]
+
+source_file="res://world_pack26/interior_pack/关卡素材使用清单.csv"
+dest_files=["res://world_pack26/interior_pack/关卡素材使用清单.room.translation", "res://world_pack26/interior_pack/关卡素材使用清单.zone.translation", "res://world_pack26/interior_pack/关卡素材使用清单.asset.translation", "res://world_pack26/interior_pack/关卡素材使用清单.name.translation", "res://world_pack26/interior_pack/关卡素材使用清单.node.translation", "res://world_pack26/interior_pack/关卡素材使用清单.pos.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

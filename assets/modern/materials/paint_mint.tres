@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "paint_mint"
+albedo_color = Color(0.7764706, 0.84705883, 0.84313726, 1)
+roughness = 0.61

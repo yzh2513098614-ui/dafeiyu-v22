@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://interior_pack/assets/models/lounge_08.glb" id="1"]
+[ext_resource type="Script" path="res://interior_pack/scripts/item_3d.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="Shape"]
+size = Vector3(1.9,0.898,1.04)
+
+[node name="lounge_08" type="Node3D"]
+script = ExtResource("2")
+asset_id = "lounge_08"
+passage = false
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.449,0.0)
+shape = SubResource("Shape")

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "library_whale_fountain",
+    "name": "资料库 · 蓝鲸环池喷泉",
+    "parts": 142,
+    "surfaces": 5,
+    "size": [
+      3.654,
+      1.634592,
+      3.654
+    ],
+    "center": [
+      0.0,
+      0.822296,
+      0.0
+    ],
+    "bytes": 669536,
+    "reference": "res://assets/library_model_references/whale_fountain.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_whale_statue",
+    "name": "资料库 · 奶白鲸鱼雕塑",
+    "parts": 29,
+    "surfaces": 6,
+    "size": [
+      1.8108989879456754,
+      2.0701992864479135,
+      1.27
+    ],
+    "center": [
+      0.005449493972837671,
+      1.0200996432239569,
+      0.0
+    ],
+    "bytes": 134760,
+    "reference": "res://assets/library_model_references/whale_statue.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_whale_sign",
+    "name": "资料库 · 鲸鱼吊牌路标",
+    "parts": 26,
+    "surfaces": 3,
+    "size": [
+      1.5850000000000002,
+      2.6664612715154696,
+      0.65
+    ],
+    "center": [
+      0.4675,
+      1.318230635757735,
+      0.0
+    ],
+    "bytes": 248636,
+    "reference": "res://assets/library_model_references/whale_sign.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_water_barrel",
+    "name": "资料库 · 蓝金鲸纹水桶",
+    "parts": 126,
+    "surfaces": 4,
+    "size": [
+      1.244,
+      1.2999999999999998,
+      1.248
+    ],
+    "center": [
+      0.0,
+      0.6749999999999999,
+      0.0020000000000000018
+    ],
+    "bytes": 561856,
+    "reference": "res://assets/library_model_references/water_barrel.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_token_atm",
+    "name": "资料库 · 蓝金 Token 终端",
+    "parts": 15,
+    "surfaces": 5,
+    "size": [
+      1.1400000000000001,
+      2.0349999999999997,
+      1.0214999999999999
+    ],
+    "center": [
+      0.0,
+      1.0025,
+      0.025749999999999995
+    ],
+    "bytes": 90660,
+    "reference": "res://assets/library_model_references/token_atm.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_tree_cherry",
+    "name": "资料库 · 粉樱分枝树",
+    "parts": 156,
+    "surfaces": 4,
+    "size": [
+      3.419255696400287,
+      4.132464013326663,
+      2.4193912148576073
+    ],
+    "center": [
+      -0.045842441076759055,
+      2.0322846600033357,
+      0.022527159036869415
+    ],
+    "bytes": 1077748,
+    "reference": "res://assets/library_model_references/tree_cherry.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_birch",
+    "name": "资料库 · 白桦层簇树",
+    "parts": 165,
+    "surfaces": 5,
+    "size": [
+      3.419255696400287,
+      4.132464013326663,
+      2.4193912148576073
+    ],
+    "center": [
+      -0.045842441076759055,
+      2.0322846600033357,
+      0.022527159036869415
+    ],
+    "bytes": 1127200,
+    "reference": "res://assets/library_model_references/tree_birch.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_pine",
+    "name": "资料库 · 分层针叶松",
+    "parts": 37,
+    "surfaces": 4,
+    "size": [
+      2.5783990324267236,
+      4.165,
+      2.5723517290794824
+    ],
+    "center": [
+      0.0,
+      2.0925000000000002,
+      0.0
+    ],
+    "bytes": 228140,
+    "reference": "res://assets/library_model_references/tree_pine.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_safe_floor",
+    "name": "资料库 · 立式转轮保险柜",
+    "parts": 54,
+    "surfaces": 4,
+    "size": [
+      1.24,
+      1.3900000000000001,
+      1.389
+    ],
+    "center": [
+      0.0,
+      0.68,
+      0.09050000000000002
+    ],
+    "bytes": 318932,
+    "reference": "res://assets/library_model_references/safe_floor.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_safe_tall",
+    "name": "资料库 · 高身电子保险柜",
+    "parts": 54,
+    "surfaces": 6,
+    "size": [
+      0.98,
+      2.03,
+      1.1925000000000001
+    ],
+    "center": [
+      -0.0050000000000000044,
+      1.0,
+      0.07724999999999999
+    ],
+    "bytes": 333164,
+    "reference": "res://assets/library_model_references/safe_tall.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_safe_compact",
+    "name": "资料库 · 低身组合保险柜",
+    "parts": 58,
+    "surfaces": 4,
+    "size": [
+      1.78,
+      0.9500000000000001,
+      1.329
+    ],
+    "center": [
+      0.0,
+      0.46,
+      0.09050000000000002
+    ],
+    "bytes": 324780,
+    "reference": "res://assets/library_model_references/safe_compact.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_bench",
+    "name": "资料库 · 蓝金鲸纹长椅",
+    "parts": 41,
+    "surfaces": 5,
+    "size": [
+      2.32,
+      1.2374999999999998,
+      0.8011286962631852
+    ],
+    "center": [
+      0.0,
+      0.6037499999999999,
+      0.045564348131592575
+    ],
+    "bytes": 199836,
+    "reference": "res://assets/library_model_references/bench.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_street_lamp",
+    "name": "资料库 · 蓝金暖光路灯",
+    "parts": 33,
+    "surfaces": 5,
+    "size": [
+      0.67,
+      3.2899999999999996,
+      0.67
+    ],
+    "center": [
+      0.0,
+      1.63,
+      0.0
+    ],
+    "bytes": 331916,
+    "reference": "res://assets/library_model_references/street_lamp.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_supply_crate",
+    "name": "资料库 · 奶白鲸纹补给箱",
+    "parts": 31,
+    "surfaces": 5,
+    "size": [
+      1.31,
+      0.9745,
+      1.1780000000000002
+    ],
+    "center": [
+      0.0,
+      0.47225,
+      0.0
+    ],
+    "bytes": 204760,
+    "reference": "res://assets/library_model_references/supply_crate.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_recycling_bin",
+    "name": "资料库 · 蓝金分类回收桶",
+    "parts": 11,
+    "surfaces": 3,
+    "size": [
+      1.0,
+      1.4525,
+      0.8499999999999999
+    ],
+    "center": [
+      0.0,
+      0.7112499999999999,
+      0.0
+    ],
+    "bytes": 81692,
+    "reference": "res://assets/library_model_references/recycling_bin.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_tree_oak",
+    "name": "资料库 · 阔叶橡树",
+    "parts": 194,
+    "surfaces": 4,
+    "size": [
+      3.3258245309657974,
+      4.114579587007428,
+      2.6950329878571555
+    ],
+    "center": [
+      0.009061982856040096,
+      2.0198435398296186,
+      -0.1906931507199474
+    ],
+    "bytes": 1330288,
+    "reference": "res://assets/library_model_references/tree_oak.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_autumn",
+    "name": "资料库 · 金秋阔叶树",
+    "parts": 194,
+    "surfaces": 4,
+    "size": [
+      3.3258245309657974,
+      4.114579587007428,
+      2.6950329878571555
+    ],
+    "center": [
+      0.009061982856040096,
+      2.0198435398296186,
+      -0.1906931507199474
+    ],
+    "bytes": 1330288,
+    "reference": "res://assets/library_model_references/tree_autumn.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_palm",
+    "name": "资料库 · 弯干棕榈树",
+    "parts": 83,
+    "surfaces": 5,
+    "size": [
+      2.971059727803827,
+      3.837401541849855,
+      3.0160324057844083
+    ],
+    "center": [
+      0.5052305344105685,
+      1.9561442348028275,
+      0.07999999999999996
+    ],
+    "bytes": 1056688,
+    "reference": "res://assets/library_model_references/tree_palm.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_snow_pine",
+    "name": "资料库 · 积雪针叶松",
+    "parts": 8,
+    "surfaces": 5,
+    "size": [
+      2.578398971557617,
+      4.206581457883701,
+      2.572351722717285
+    ],
+    "center": [
+      0.0,
+      2.1132907293143792,
+      0.0
+    ],
+    "bytes": 279892,
+    "reference": "res://assets/library_model_references/tree_snow_pine.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_tree_dead",
+    "name": "资料库 · 分叉枯树",
+    "parts": 19,
+    "surfaces": 1,
+    "size": [
+      2.1672514340893234,
+      3.595448241159673,
+      1.140517421144026
+    ],
+    "center": [
+      0.03191313660872708,
+      1.7534985758790558,
+      5.551115123125783e-17
+    ],
+    "bytes": 81740,
+    "reference": "res://assets/library_model_references/tree_dead.png",
+    "representation": "solid_3d",
+    "collision": "trunk"
+  },
+  {
+    "id": "library_bush_berry",
+    "name": "资料库 · 红果灌木",
+    "parts": 400,
+    "surfaces": 5,
+    "size": [
+      1.7535059261979038,
+      1.0554000000000001,
+      1.6494870242242257
+    ],
+    "center": [
+      0.0432389421589815,
+      0.5227,
+      0.018409336087785777
+    ],
+    "bytes": 2880448,
+    "reference": "res://assets/library_model_references/bush_berry.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_shrub",
+    "name": "资料库 · 层簇绿篱",
+    "parts": 376,
+    "surfaces": 4,
+    "size": [
+      1.7535059261979038,
+      0.9870458333333334,
+      1.6494870242242257
+    ],
+    "center": [
+      0.0432389421589815,
+      0.4885229166666667,
+      0.018409336087785777
+    ],
+    "bytes": 2832240,
+    "reference": "res://assets/library_model_references/hedge.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_stump",
+    "name": "资料库 · 年轮树桩",
+    "parts": 26,
+    "surfaces": 2,
+    "size": [
+      1.3336410868107997,
+      0.8930344827586207,
+      1.3632144919713618
+    ],
+    "center": [
+      0.030593249698048497,
+      0.43748275862068964,
+      0.0
+    ],
+    "bytes": 247168,
+    "reference": "res://assets/library_model_references/stump.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  },
+  {
+    "id": "library_fallen_log",
+    "name": "资料库 · 苔藓倒木",
+    "parts": 24,
+    "surfaces": 3,
+    "size": [
+      2.081,
+      0.8220000000000001,
+      0.784
+    ],
+    "center": [
+      -0.015499999999999958,
+      0.399,
+      0.0
+    ],
+    "bytes": 261640,
+    "reference": "res://assets/library_model_references/fallen_log.png",
+    "representation": "solid_3d",
+    "collision": "bounds"
+  }
+]

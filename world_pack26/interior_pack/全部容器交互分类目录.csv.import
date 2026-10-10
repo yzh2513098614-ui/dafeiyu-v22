@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://y8wqjqh45ukb"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/全部容器交互分类目录.地图.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.区域ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.区域.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.楼层.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.标高.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.交互ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.分类.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.容器资产ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.容器名称.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.接入方式.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.模型节点.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.靠近点.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.战利品.translation"]
+
+source_file="res://world_pack26/interior_pack/全部容器交互分类目录.csv"
+dest_files=["res://world_pack26/interior_pack/全部容器交互分类目录.地图.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.区域ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.区域.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.楼层.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.标高.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.交互ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.分类.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.容器资产ID.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.容器名称.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.接入方式.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.模型节点.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.靠近点.translation", "res://world_pack26/interior_pack/全部容器交互分类目录.战利品.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

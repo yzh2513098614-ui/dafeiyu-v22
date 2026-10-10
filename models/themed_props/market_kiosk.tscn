@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/themed_props/market_kiosk.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(1.71000, 2.18511, 1.49978)
+[node name="market_kiosk" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 1.10256, -0.05000)
+shape = SubResource("Collision")

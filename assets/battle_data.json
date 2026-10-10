@@ -1,0 +1,85 @@
+{
+  "rules": {
+    "damage_variance": 0.08,
+    "crit_base": 0.03,
+    "crit_per_luck": 0.012,
+    "crit_multiplier": 1.6,
+    "speed_jitter": 0.10,
+    "flee_base": 0.45,
+    "flee_per_agility": 0.05,
+    "max_rounds": 60,
+    "stamina_regen_per_round": 4,
+    "shield_reduction": 0.5,
+    "enemy_speed_scale": 3.0,
+
+    "ap_max": 100,
+    "ap_gain_deal": 12,
+    "ap_gain_take": 9,
+    "ap_gain_round": 5
+  },
+
+  "skills": {
+    "wave_touch": {
+      "name": "水波轻击",
+      "desc": "最基础的潮汐一击。",
+      "cost": 6, "kind": "damage", "target": "one",
+      "power": 1.0, "stat": "strength", "stat_scale": 2.0,
+      "cooldown": 0, "unlock_level": 1
+    },
+    "tide_shield": {
+      "name": "潮汐护盾",
+      "desc": "两层水膜护身，受到的伤害减半。",
+      "cost": 12, "kind": "shield", "target": "self",
+      "turns": 2, "stat": "endurance",
+      "cooldown": 4, "unlock_level": 1
+    },
+    "bubble_bind": {
+      "name": "泡泡束缚",
+      "desc": "用气泡困住目标，使其下一回合无法行动。",
+      "cost": 14, "kind": "bind", "target": "one",
+      "turns": 1, "stat": "insight",
+      "cooldown": 3, "unlock_level": 2
+    },
+    "sea_breeze": {
+      "name": "海风治愈",
+      "desc": "借一阵海风恢复生命。",
+      "cost": 16, "kind": "heal", "target": "self",
+      "power": 12.0, "stat": "charm", "stat_scale": 3.0,
+      "cooldown": 2, "unlock_level": 3
+    },
+    "current_dash": {
+      "name": "海流加速",
+      "desc": "乘上海流，3 回合内行动更快。",
+      "cost": 18, "kind": "haste", "target": "self",
+      "turns": 3, "stat": "agility",
+      "cooldown": 5, "unlock_level": 5
+    },
+    "whale_song": {
+      "name": "鲸歌",
+      "desc": "鲸歌回荡，对所有敌人造成伤害。",
+      "cost": 24, "kind": "damage", "target": "all",
+      "power": 1.3, "stat": "insight", "stat_scale": 2.0,
+      "cooldown": 4, "unlock_level": 7
+    }
+  },
+
+  "link": {
+    "name": "潮汐连携",
+    "desc": "AP 蓄满后发动。与海流合击，对所有敌人造成大量伤害，发动后 AP 清零。",
+    "power": 1.6, "stat": "insight", "stat_scale": 3.0
+  },
+
+  "enemy_skills": {
+    "slam":       {"name": "泼浪",     "kind": "damage", "power": 1.0},
+    "foam_shot":  {"name": "泡沫喷射", "kind": "damage", "power": 0.8},
+    "shell_guard":{"name": "缩壳",     "kind": "shield", "turns": 1},
+    "tide_crush": {"name": "涌潮重击", "kind": "damage", "power": 1.5}
+  },
+
+  "enemies": {
+    "slime":    {"skills": ["slam", "foam_shot"],           "ai": "random"},
+    "crab":     {"skills": ["slam", "shell_guard"],          "ai": "random"},
+    "guardian": {"skills": ["tide_crush", "slam", "shell_guard"], "ai": "boss"},
+    "gpt6":     {"skills": ["tide_crush", "foam_shot", "shell_guard"], "ai": "boss"}
+  }
+}

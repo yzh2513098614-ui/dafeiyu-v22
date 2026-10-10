@@ -1,0 +1,336 @@
+{
+  "alley": {
+    "group": "outside",
+    "links": [
+      "garden",
+      "east_street"
+    ],
+    "name": "绿荫小巷",
+    "subtitle": "连接街角花园与东街的安静近路",
+    "type": "alley"
+  },
+  "cafe": {
+    "group": "outside",
+    "layout": 2,
+    "links": [
+      "street"
+    ],
+    "name": "潮汐咖啡馆",
+    "subtitle": "临街咖啡与阅读角",
+    "type": "room"
+  },
+  "east_street": {
+    "group": "outside",
+    "links": [
+      "street",
+      "florist",
+      "market",
+      "alley",
+      "waterfront"
+    ],
+    "name": "海风东街",
+    "subtitle": "花店、便利铺与通往港湾的路",
+    "type": "east_street"
+  },
+  "florist": {
+    "custom": "florist",
+    "group": "outside",
+    "layout": 2,
+    "links": [
+      "east_street"
+    ],
+    "name": "青柠花房",
+    "subtitle": "挑一盆植物，也留一点光给新叶",
+    "type": "room"
+  },
+  "garden": {
+    "group": "outside",
+    "links": [
+      "street",
+      "alley"
+    ],
+    "name": "街角小花园",
+    "subtitle": "花箱、长椅与小树下的休息处",
+    "type": "garden"
+  },
+  "hall_1": {
+    "floor": 1,
+    "group": "floor1",
+    "links": [
+      "home_101",
+      "home_102",
+      "home_103",
+      "lobby",
+      "hall_2"
+    ],
+    "name": "1F · 云湾走廊",
+    "subtitle": "三个房间，一条连通的生活走廊",
+    "type": "hall"
+  },
+  "hall_2": {
+    "floor": 2,
+    "group": "floor2",
+    "links": [
+      "suite_entry",
+      "home_202",
+      "home_203",
+      "lobby",
+      "hall_1",
+      "hall_3"
+    ],
+    "name": "2F · 云湾走廊",
+    "subtitle": "三个房间，一条连通的生活走廊",
+    "type": "hall"
+  },
+  "hall_3": {
+    "floor": 3,
+    "group": "floor3",
+    "links": [
+      "home_301",
+      "home_302",
+      "home_303",
+      "lobby",
+      "hall_2",
+      "roof"
+    ],
+    "name": "3F · 云湾走廊",
+    "subtitle": "三个房间，一条连通的生活走廊",
+    "type": "hall"
+  },
+  "home_101": {
+    "floor": 1,
+    "group": "floor1",
+    "layout": 2,
+    "links": [
+      "hall_1"
+    ],
+    "name": "101 · 共享客厅",
+    "subtitle": "柔软沙发和一张可以聊天的茶几",
+    "theme": 0,
+    "type": "room"
+  },
+  "home_102": {
+    "floor": 1,
+    "group": "floor1",
+    "layout": 2,
+    "links": [
+      "hall_1"
+    ],
+    "name": "102 · 生活厨房",
+    "subtitle": "收好餐具，准备今天的热饭",
+    "theme": 1,
+    "type": "room"
+  },
+  "home_103": {
+    "floor": 1,
+    "group": "floor1",
+    "layout": 2,
+    "links": [
+      "hall_1"
+    ],
+    "name": "103 · 漂流书房",
+    "subtitle": "旧书、便签与安静的阅读角",
+    "theme": 2,
+    "type": "room"
+  },
+  "home_201": {
+    "floor": 2,
+    "group": "floor2",
+    "layout": 0,
+    "links": [
+      "suite_entry",
+      "home_202"
+    ],
+    "name": "201 · 卧室",
+    "subtitle": "蓝色床铺、窗边书桌与生活小物",
+    "theme": 3,
+    "type": "room"
+  },
+  "home_202": {
+    "floor": 2,
+    "group": "floor2",
+    "layout": 1,
+    "links": [
+      "hall_2",
+      "home_201"
+    ],
+    "name": "202 · 个人工作间",
+    "subtitle": "连接卧室的安静创作房间",
+    "theme": 4,
+    "type": "room"
+  },
+  "home_203": {
+    "floor": 2,
+    "group": "floor2",
+    "layout": 0,
+    "links": [
+      "hall_2"
+    ],
+    "name": "203 · 朋友的客房",
+    "subtitle": "为来做客的朋友准备的房间",
+    "theme": 5,
+    "type": "room"
+  },
+  "home_301": {
+    "floor": 3,
+    "group": "floor3",
+    "layout": 2,
+    "links": [
+      "hall_3"
+    ],
+    "name": "301 · 植物房",
+    "subtitle": "给新叶子留一点阳光",
+    "theme": 6,
+    "type": "room"
+  },
+  "home_302": {
+    "floor": 3,
+    "group": "floor3",
+    "layout": 1,
+    "links": [
+      "hall_3"
+    ],
+    "name": "302 · 手作室",
+    "subtitle": "收纳、展示和慢慢完成的小作品",
+    "theme": 7,
+    "type": "room"
+  },
+  "home_303": {
+    "floor": 3,
+    "group": "floor3",
+    "layout": 2,
+    "links": [
+      "hall_3"
+    ],
+    "name": "303 · 观景茶室",
+    "subtitle": "三楼的窗景与午后茶点",
+    "theme": 8,
+    "type": "room"
+  },
+  "laundry": {
+    "custom": "laundry",
+    "group": "floor3",
+    "layout": 1,
+    "links": [
+      "roof"
+    ],
+    "name": "屋顶 · 洗衣房",
+    "subtitle": "洗衣、整理，再去露台晒晒太阳",
+    "type": "room"
+  },
+  "lobby": {
+    "group": "outside",
+    "links": [
+      "street",
+      "hall_1",
+      "hall_2",
+      "hall_3"
+    ],
+    "name": "云湾公寓 · 大厅",
+    "subtitle": "信箱、等候区与上楼的阶梯",
+    "type": "lobby"
+  },
+  "market": {
+    "custom": "market",
+    "group": "outside",
+    "layout": 1,
+    "links": [
+      "east_street"
+    ],
+    "name": "鲸邮便利铺",
+    "subtitle": "日常补给、包裹与街区消息",
+    "type": "room"
+  },
+  "roof": {
+    "group": "floor3",
+    "links": [
+      "hall_3",
+      "laundry"
+    ],
+    "name": "屋顶露台",
+    "subtitle": "晾晒、种植和远处的城市",
+    "type": "roof"
+  },
+  "street": {
+    "group": "outside",
+    "links": [
+      "lobby",
+      "cafe",
+      "workshop",
+      "garden",
+      "east_street",
+      "waterfront"
+    ],
+    "name": "鲸落街",
+    "subtitle": "蓝白店面、树影和慢行街道",
+    "type": "street"
+  },
+  "suite_bath": {
+    "custom": "bath",
+    "group": "floor2",
+    "layout": 0,
+    "links": [
+      "suite_entry"
+    ],
+    "name": "201 · 卫浴",
+    "subtitle": "蓝白瓷砖、淋浴与温暖的干净毛巾",
+    "type": "room"
+  },
+  "suite_entry": {
+    "custom": "entry",
+    "group": "floor2",
+    "layout": 0,
+    "links": [
+      "hall_2",
+      "home_201",
+      "suite_living",
+      "suite_bath"
+    ],
+    "name": "201 · 玄关",
+    "subtitle": "从走廊回到家，换鞋、放下钥匙",
+    "type": "room"
+  },
+  "suite_kitchen": {
+    "custom": "kitchen",
+    "group": "floor2",
+    "layout": 2,
+    "links": [
+      "suite_living"
+    ],
+    "name": "201 · 厨房",
+    "subtitle": "冰箱、灶台和两个人的小餐桌",
+    "type": "room"
+  },
+  "suite_living": {
+    "custom": "living",
+    "group": "floor2",
+    "layout": 2,
+    "links": [
+      "suite_entry",
+      "suite_kitchen"
+    ],
+    "name": "201 · 客厅",
+    "subtitle": "窗边的沙发与连通厨房的日常空间",
+    "type": "room"
+  },
+  "waterfront": {
+    "group": "outside",
+    "links": [
+      "street",
+      "east_street"
+    ],
+    "name": "港湾步道",
+    "subtitle": "沿着水边走一小段，听风经过栏杆",
+    "type": "waterfront"
+  },
+  "workshop": {
+    "group": "outside",
+    "layout": 1,
+    "links": [
+      "street"
+    ],
+    "name": "深潜工作室",
+    "subtitle": "街区创作与工作空间",
+    "type": "room"
+  }
+}

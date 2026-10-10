@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/glass.tres" id="e2"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e3"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(2.4,0.82,1.25)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(2.4,0.82,1.25)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(2.42,0.035,1.27)
+
+[sub_resource type="StandardMaterial3D" id="r3"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.60,0.85,0.93,0.12)
+roughness = 0.18
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.016,0.7,1.26)
+
+[sub_resource type="BoxMesh" id="r5"]
+size = Vector3(2.4,0.7,0.016)
+
+[sub_resource type="BoxMesh" id="r6"]
+size = Vector3(2.43,0.018,1.28)
+
+[sub_resource type="BoxMesh" id="r7"]
+size = Vector3(2.18,0.015,0.016)
+
+[node name="MuseumVitrine" type="Node3D"]
+
+
+[node name="Plinth" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.41,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="PlinthBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="PlinthBody"]
+position = Vector3(0.0,0.41,0.0)
+shape = SubResource("r1")
+
+[node name="Shelf" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.847,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="SideGlass" type="MeshInstance3D" parent="."]
+position = Vector3(-1.2,1.22,0.0)
+mesh = SubResource("r4")
+material_override = SubResource("r3")
+
+[node name="SideGlass_2" type="MeshInstance3D" parent="."]
+position = Vector3(1.2,1.22,0.0)
+mesh = SubResource("r4")
+material_override = SubResource("r3")
+
+[node name="FaceGlass" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.22,-0.625)
+mesh = SubResource("r5")
+material_override = SubResource("r3")
+
+[node name="FaceGlass_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.22,0.625)
+mesh = SubResource("r5")
+material_override = SubResource("r3")
+
+[node name="TopGlass" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.58,0.0)
+mesh = SubResource("r6")
+material_override = SubResource("r3")
+
+[node name="DisplayLED" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.88,0.63)
+mesh = SubResource("r7")
+material_override = ExtResource("e3")

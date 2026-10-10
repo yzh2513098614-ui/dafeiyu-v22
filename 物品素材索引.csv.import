@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cdppyfhwucwf8"
+
+[deps]
+
+files=["res://物品素材索引.名称.translation", "res://物品素材索引.类别.translation", "res://物品素材索引.图标.translation", "res://物品素材索引.物品数据.translation"]
+
+source_file="res://物品素材索引.csv"
+dest_files=["res://物品素材索引.名称.translation", "res://物品素材索引.类别.translation", "res://物品素材索引.图标.translation", "res://物品素材索引.物品数据.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

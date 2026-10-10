@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "shoreline_samples": 1539,
+  "shoreline_travel_metres": 2.25,
+  "checks": [
+    "Cycle starts low, peaks high, returns low, and stays within level bounds",
+    "1539 shoreline points lie on the terrain-water intersection and separate wet/dry land",
+    "The 0.36 m vertical tidal range moves the shore by 2.25 m along the 0.16 beach slope",
+    "Shell clusters and driftwood locations are dry at low tide and submerged at high tide",
+    "Dry-land kiosk and safe plateau, and the lowest pier walking surface, stay above high water",
+    "Automatic tide resumes at the current level without a jump",
+    "Every explicit GDScript/scene resource reference resolves to a packaged file",
+    "Shader and mesh use the same coast profile; animation uses controlled time so pause stops both waves and tide"
+  ],
+  "godot_runtime_test": "Separate Godot 4.4.1 headless test completed; see runtime_validation.json. This file records offline geometry checks only."
+}

@@ -1,0 +1,313 @@
+{
+  "directions": {
+    "up_left": [
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_00.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          49,
+          52,
+          333,
+          463
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          220,
+          84
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_01.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          416,
+          51,
+          326,
+          471
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          242,
+          67
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_02.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          779,
+          52,
+          317,
+          468
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          236,
+          73
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_03.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          1139,
+          52,
+          309,
+          469
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          225,
+          71
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_04.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          48,
+          567,
+          333,
+          475
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          216,
+          58
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_05.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          410,
+          567,
+          330,
+          477
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          225,
+          54
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_06.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          779,
+          568,
+          329,
+          473
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          231,
+          63
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_left/pose_07.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_left_final.png",
+        "source_rect": [
+          1147,
+          568,
+          301,
+          474
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          216,
+          60
+        ],
+        "source_scale": 2.16
+      }
+    ],
+    "up_right": [
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_00.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          38,
+          54,
+          316,
+          463
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          106,
+          84
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_01.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          413,
+          54,
+          296,
+          449
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          136,
+          114
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_02.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          772,
+          54,
+          307,
+          463
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          128,
+          84
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_03.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          1139,
+          54,
+          296,
+          463
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          140,
+          84
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_04.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          42,
+          586,
+          307,
+          458
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          115,
+          95
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_05.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          413,
+          585,
+          296,
+          457
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          136,
+          97
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_06.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          774,
+          585,
+          300,
+          455
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          132,
+          102
+        ],
+        "source_scale": 2.16
+      },
+      {
+        "native_frame": "res://assets/character/jimeng_v20/generated_native/up_right/pose_07.png",
+        "source_sheet": "res://art_source/jimeng_20261001/generated/up_right_final.png",
+        "source_rect": [
+          1138,
+          585,
+          294,
+          461
+        ],
+        "source_size": [
+          1448,
+          1086
+        ],
+        "target": [
+          138,
+          89
+        ],
+        "source_scale": 2.16
+      }
+    ]
+  },
+  "transform": "whole image uniform 2.16x scale, then integer translation; original native RGBA saved"
+}

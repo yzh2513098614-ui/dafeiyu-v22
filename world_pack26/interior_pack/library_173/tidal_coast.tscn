@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/library_173/tidal_coast.gd" id="1"]
+
+[node name="TidalCoast" type="Node3D"]
+script = ExtResource("1")

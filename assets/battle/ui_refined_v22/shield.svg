@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+ <defs><linearGradient id="ward" x2="0" y2="1"><stop stop-color="#b3e4d8"/><stop offset="1" stop-color="#72b8a9"/></linearGradient></defs>
+ <path d="M24 5C29 9 35 11 41 12V26C40 35 33 40 24 44C15 40 8 35 7 26V12C13 11 19 9 24 5Z" fill="url(#ward)" stroke="#3c665e" stroke-width="3" stroke-linejoin="round"/>
+ <path d="M24 16V32M16 24H32" stroke="#f2fff8" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

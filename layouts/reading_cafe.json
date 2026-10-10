@@ -1,0 +1,195 @@
+{
+  "name": "木色阅读室",
+  "floor": "pale_oak",
+  "wall": "plaster_mint",
+  "spawn": [
+    710,
+    735
+  ],
+  "items": [
+    {
+      "id": "window_oak",
+      "x": 390,
+      "y": 262
+    },
+    {
+      "id": "window_oak",
+      "x": 720,
+      "y": 262
+    },
+    {
+      "id": "door_walnut",
+      "x": 1120,
+      "y": 285
+    },
+    {
+      "id": "lamp_wall",
+      "x": 185,
+      "y": 217
+    },
+    {
+      "id": "painting_mountain",
+      "x": 995,
+      "y": 223
+    },
+    {
+      "id": "shelf_books",
+      "x": 620,
+      "y": 218
+    },
+    {
+      "id": "plant_hanging",
+      "x": 1260,
+      "y": 258
+    },
+    {
+      "id": "bookcase",
+      "x": 190,
+      "y": 536
+    },
+    {
+      "id": "bookcase",
+      "x": 350,
+      "y": 536
+    },
+    {
+      "id": "cubby",
+      "x": 535,
+      "y": 487
+    },
+    {
+      "id": "fern",
+      "x": 540,
+      "y": 408,
+      "sort_y": 487
+    },
+    {
+      "id": "bakery_case",
+      "x": 880,
+      "y": 482
+    },
+    {
+      "id": "bar_cabinet",
+      "x": 1040,
+      "y": 482
+    },
+    {
+      "id": "espresso",
+      "x": 1040,
+      "y": 345,
+      "sort_y": 482
+    },
+    {
+      "id": "vending_machine",
+      "x": 1230,
+      "y": 490
+    },
+    {
+      "id": "dining_round",
+      "x": 385,
+      "y": 749
+    },
+    {
+      "id": "chair_oak",
+      "x": 266,
+      "y": 811
+    },
+    {
+      "id": "chair_white",
+      "x": 510,
+      "y": 804
+    },
+    {
+      "id": "tea_tray",
+      "x": 392,
+      "y": 633,
+      "sort_y": 749
+    },
+    {
+      "id": "flowers",
+      "x": 353,
+      "y": 647,
+      "sort_y": 749
+    },
+    {
+      "id": "dining_white",
+      "x": 968,
+      "y": 763
+    },
+    {
+      "id": "chair_oak",
+      "x": 940,
+      "y": 867
+    },
+    {
+      "id": "chair_white",
+      "x": 1080,
+      "y": 867
+    },
+    {
+      "id": "open_book",
+      "x": 944,
+      "y": 633,
+      "sort_y": 763
+    },
+    {
+      "id": "whale_mug",
+      "x": 1026,
+      "y": 648,
+      "sort_y": 763
+    },
+    {
+      "id": "sofa_cream",
+      "x": 665,
+      "y": 565
+    },
+    {
+      "id": "cushion",
+      "x": 700,
+      "y": 508,
+      "sort_y": 565
+    },
+    {
+      "id": "books",
+      "x": 587,
+      "y": 478,
+      "sort_y": 487
+    },
+    {
+      "id": "armchair_sage",
+      "x": 680,
+      "y": 856
+    },
+    {
+      "id": "side_table",
+      "x": 800,
+      "y": 858
+    },
+    {
+      "id": "lantern",
+      "x": 800,
+      "y": 785,
+      "sort_y": 858
+    },
+    {
+      "id": "plant_broadleaf",
+      "x": 1220,
+      "y": 810
+    },
+    {
+      "id": "menu_easel",
+      "x": 1120,
+      "y": 590
+    },
+    {
+      "id": "tea_trolley",
+      "x": 185,
+      "y": 848
+    },
+    {
+      "id": "basket",
+      "x": 575,
+      "y": 874
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "apt_1": {
+    "building": "apartment",
+    "building_name": "云湾公寓",
+    "floor": 1,
+    "floors": 3,
+    "group": "floor1",
+    "links": [
+      "city",
+      "apt_2"
+    ],
+    "name": "云湾公寓 · 1F 整层",
+    "prefix": "apt",
+    "subtitle": "共享客厅 / 厨房 / 阅读室 / 客房 / 卫浴 / 休息室",
+    "type": "floor"
+  },
+  "apt_2": {
+    "building": "apartment",
+    "building_name": "云湾公寓",
+    "floor": 2,
+    "floors": 3,
+    "group": "floor2",
+    "links": [
+      "city",
+      "apt_1",
+      "apt_3"
+    ],
+    "name": "云湾公寓 · 2F 整层",
+    "prefix": "apt",
+    "subtitle": "卧室 / 工作间 / 客厅 / 厨房 / 卫浴 / 客房",
+    "type": "floor"
+  },
+  "apt_3": {
+    "building": "apartment",
+    "building_name": "云湾公寓",
+    "floor": 3,
+    "floors": 3,
+    "group": "floor3",
+    "links": [
+      "city",
+      "apt_2"
+    ],
+    "name": "云湾公寓 · 3F 整层",
+    "prefix": "apt",
+    "subtitle": "植物房 / 手作室 / 茶室 / 洗衣房 / 储藏室 / 露台",
+    "type": "floor"
+  },
+  "city": {
+    "group": "outside",
+    "links": [
+      "apt_1",
+      "community_1",
+      "inn_1"
+    ],
+    "name": "鲸落港 · 连续街区",
+    "subtitle": "12 栋建筑 · 一张连续大地图 · 重点建筑可进入多层内部",
+    "type": "city"
+  },
+  "community_1": {
+    "building": "community",
+    "building_name": "潮汐社区馆",
+    "floor": 1,
+    "floors": 2,
+    "group": "floor1",
+    "links": [
+      "city",
+      "community_2"
+    ],
+    "name": "潮汐社区馆 · 1F 整层",
+    "prefix": "community",
+    "subtitle": "咖啡厅 / 书店 / 接待 / 活动室 / 厨房 / 卫浴",
+    "type": "floor"
+  },
+  "community_2": {
+    "building": "community",
+    "building_name": "潮汐社区馆",
+    "floor": 2,
+    "floors": 2,
+    "group": "floor2",
+    "links": [
+      "city",
+      "community_1"
+    ],
+    "name": "潮汐社区馆 · 2F 整层",
+    "prefix": "community",
+    "subtitle": "创作间 / 会议室 / 展示室 / 办公室 / 资料室 / 茶室",
+    "type": "floor"
+  },
+  "inn_1": {
+    "building": "inn",
+    "building_name": "海风旅舍",
+    "floor": 1,
+    "floors": 3,
+    "group": "floor1",
+    "links": [
+      "city",
+      "inn_2"
+    ],
+    "name": "海风旅舍 · 1F 整层",
+    "prefix": "inn",
+    "subtitle": "接待 / 休息厅 / 餐厅 / 厨房 / 行李间 / 卫浴",
+    "type": "floor"
+  },
+  "inn_2": {
+    "building": "inn",
+    "building_name": "海风旅舍",
+    "floor": 2,
+    "floors": 3,
+    "group": "floor2",
+    "links": [
+      "city",
+      "inn_1",
+      "inn_3"
+    ],
+    "name": "海风旅舍 · 2F 整层",
+    "prefix": "inn",
+    "subtitle": "201 / 202 / 203 / 204 / 公共客厅 / 洗衣房",
+    "type": "floor"
+  },
+  "inn_3": {
+    "building": "inn",
+    "building_name": "海风旅舍",
+    "floor": 3,
+    "floors": 3,
+    "group": "floor3",
+    "links": [
+      "city",
+      "inn_2"
+    ],
+    "name": "海风旅舍 · 3F 整层",
+    "prefix": "inn",
+    "subtitle": "301 / 302 / 303 / 304 / 阅读室 / 茶室",
+    "type": "floor"
+  }
+}

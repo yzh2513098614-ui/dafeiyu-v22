@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/ivory.tres" id="e2"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e3"]
+
+[sub_resource type="CylinderMesh" id="r0"]
+top_radius = 1.55
+bottom_radius = 1.55
+height = 0.16
+radial_segments = 6
+
+[sub_resource type="CylinderShape3D" id="r1"]
+radius = 1.55
+height = 0.16
+
+[sub_resource type="CylinderMesh" id="r2"]
+top_radius = 1.35
+bottom_radius = 1.35
+height = 0.56
+radial_segments = 6
+
+[sub_resource type="CylinderShape3D" id="r3"]
+radius = 1.35
+height = 0.56
+
+[sub_resource type="CylinderMesh" id="r4"]
+top_radius = 1.58
+bottom_radius = 1.58
+height = 0.08
+radial_segments = 6
+
+[sub_resource type="CylinderShape3D" id="r5"]
+radius = 1.58
+height = 0.08
+
+[sub_resource type="CylinderMesh" id="r6"]
+top_radius = 0.55
+bottom_radius = 0.55
+height = 0.025
+radial_segments = 32
+
+[node name="HexExhibitionIsland" type="Node3D"]
+
+
+[node name="HexBase" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.08,0.0)
+rotation_degrees = Vector3(0.0,30.0,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="HexBaseBody" type="StaticBody3D" parent="."]
+
+
+[node name="Shape" type="CollisionShape3D" parent="HexBaseBody"]
+position = Vector3(0.0,0.08,0.0)
+shape = SubResource("r1")
+
+[node name="HexPedestal" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.44,0.0)
+rotation_degrees = Vector3(0.0,30.0,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="HexPedestalBody" type="StaticBody3D" parent="."]
+
+
+[node name="Shape" type="CollisionShape3D" parent="HexPedestalBody"]
+position = Vector3(0.0,0.44,0.0)
+shape = SubResource("r3")
+
+[node name="HexCounter" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.76,0.0)
+rotation_degrees = Vector3(0.0,30.0,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="HexCounterBody" type="StaticBody3D" parent="."]
+
+
+[node name="Shape" type="CollisionShape3D" parent="HexCounterBody"]
+position = Vector3(0.0,0.76,0.0)
+shape = SubResource("r5")
+
+[node name="DisplayPad" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.813,0.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+mesh = SubResource("r6")
+material_override = ExtResource("e3")

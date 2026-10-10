@@ -1,0 +1,538 @@
+{
+  "welcome": {
+    "title": "第一次来到鲸落港",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "你好呀，我是大肥鱼。欢迎来到鲸落港！先别急着把整张地图走完，这里有很多可以慢慢发现的地方。",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "你想先做什么？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "认识一下这个地方",
+            "next": "about",
+            "flag": "asked_harbor"
+          },
+          {
+            "text": "帮我标记社区馆的路线",
+            "next": "guide",
+            "flag": "route_community"
+          },
+          {
+            "text": "我想先随便走走",
+            "next": "free",
+            "flag": "free_explore"
+          }
+        ]
+      },
+      "about": {
+        "speaker": "大肥鱼",
+        "text": "街道把公寓、社区馆和旅舍连在一起。楼里每一层都不同，大房间、小房间和转弯的走廊，藏着各自的日常。",
+        "expression": "talk",
+        "next": "about2"
+      },
+      "about2": {
+        "speaker": "大肥鱼",
+        "text": "我在这里整理大家的问题，也记下还没找到的答案。你可以叫我蓝鲸小助手，不过“大肥鱼”听起来更亲近。",
+        "expression": "think",
+        "next": "bye"
+      },
+      "guide": {
+        "speaker": "大肥鱼",
+        "text": "好，我在导览里标记了潮汐社区馆。顺着浅蓝圆环找到入口，靠近后按 E。里面有咖啡、旧书，也有能带走的补给。",
+        "expression": "talk",
+        "next": "bye",
+        "route": "community_1"
+      },
+      "free": {
+        "speaker": "大肥鱼",
+        "text": "那就跟着喜欢的方向走吧。门口按 E 进出建筑，I 打开背包；想聊天的时候，按 Q 就能找到我。",
+        "expression": "talk",
+        "next": "bye"
+      },
+      "bye": {
+        "speaker": "大肥鱼",
+        "text": "愿你今天带回家的，不只有物品，还有一件让自己开心的小事。",
+        "expression": "listen"
+      }
+    }
+  },
+  "harbor": {
+    "title": "海风与街巷",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "风从海那边吹过来了。你看，同一条街上的屋顶高低不一，绕到后面，还有一条安静的小路。",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "今天有什么想问我的？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "帮我找一个能坐下来的地方",
+            "next": "cafe",
+            "flag": "looking_for_rest"
+          },
+          {
+            "text": "大肥鱼这个名字是谁取的？",
+            "next": "name",
+            "flag": "asked_name"
+          },
+          {
+            "text": "我想回公寓",
+            "next": "home",
+            "flag": "route_home"
+          }
+        ]
+      },
+      "cafe": {
+        "speaker": "大肥鱼",
+        "text": "去社区馆吧。一楼的咖啡角旁边就是阅读室。路线已经标好了，到门口再慢慢挑一处喜欢的位置。",
+        "expression": "talk",
+        "next": "end",
+        "route": "community_1"
+      },
+      "name": {
+        "speaker": "大肥鱼",
+        "text": "最早是港口的孩子们这么叫我的，说鲸鱼认真想问题时，尾巴会停下来，像一条正在摸鱼的大肥鱼。",
+        "expression": "think",
+        "next": "name2"
+      },
+      "name2": {
+        "speaker": "大肥鱼",
+        "text": "后来大家都这么叫，我也觉得挺好。听起来就像有个人坐在身边，喊你一起去喝杯茶。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "home": {
+        "speaker": "大肥鱼",
+        "text": "云湾公寓二楼有卧室和工作间。已经为你标记了回家的路线，走累了就回去。",
+        "expression": "listen",
+        "next": "end",
+        "route": "apt_2"
+      },
+      "end": {
+        "speaker": "大肥鱼",
+        "text": "有问题就记下来，有答案就分享给别人。没有答案的时候，我们还可以一起看一会儿海。",
+        "expression": "listen"
+      }
+    }
+  },
+  "home": {
+    "title": "把日子收好",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "回到{room}了。看着东西放在它们该在的位置，我总觉得一天可以重新开始。",
+        "expression": "listen",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "你想在家里做点什么？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "我有点累，想歇一会儿",
+            "next": "rest",
+            "flag": "quiet_rest"
+          },
+          {
+            "text": "该从哪里开始整理？",
+            "next": "tidy",
+            "flag": "asked_tidy"
+          },
+          {
+            "text": "你也会遇到想不通的问题吗？",
+            "next": "question",
+            "flag": "asked_questions"
+          }
+        ]
+      },
+      "rest": {
+        "speaker": "大肥鱼",
+        "text": "那就先休息。今天没完成的事，可以写在便签上；不必把它们全都背在身上。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "tidy": {
+        "speaker": "大肥鱼",
+        "text": "先选一个小角落吧，比如床头或窗边。I 打开背包看随身物品，Tab 打开素材宝箱，喜欢的家具可以慢慢摆。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "question": {
+        "speaker": "大肥鱼",
+        "text": "当然会。我会把问题拆小，认真确认自己知道什么。有些答案需要等一等，有些则需要去看看真正发生了什么。",
+        "expression": "think",
+        "next": "question2"
+      },
+      "question2": {
+        "speaker": "大肥鱼",
+        "text": "如果还是想不通，就喝口茶再回来。休息之后，原来的路有时会清楚一点。",
+        "expression": "listen",
+        "next": "end"
+      },
+      "end": {
+        "speaker": "大肥鱼",
+        "text": "愿这个房间里，也有一处能让你放心停下来的地方。",
+        "expression": "listen"
+      }
+    }
+  },
+  "cafe": {
+    "title": "故事可以续杯",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "这里是{room}。桌边的位置还空着，书也还没有读完。你愿意坐一会儿吗？",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "给今天选一段小故事吧。",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "看看漂流书房里的故事",
+            "next": "books",
+            "flag": "likes_reading"
+          },
+          {
+            "text": "为什么叫“稍后重试热茶”？",
+            "next": "tea",
+            "flag": "asked_retry_tea"
+          },
+          {
+            "text": "我想找一件可以带走的东西",
+            "next": "gift",
+            "flag": "asked_supplies"
+          }
+        ]
+      },
+      "books": {
+        "speaker": "大肥鱼",
+        "text": "有人在书页里夹了一张分支书签：走错一页，不等于整个故事都错了。后来读到这里的人，也留下了自己的续篇。",
+        "expression": "think",
+        "next": "end"
+      },
+      "tea": {
+        "speaker": "大肥鱼",
+        "text": "因为等答案的时候，茶会先凉呀。我们不能保证灵感什么时候来，但可以先让自己舒服一点。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "gift": {
+        "speaker": "大肥鱼",
+        "text": "找找附近的补给箱，靠近后按 E。取走的东西会进背包并保存；箱子里有多少，就能拿多少。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "end": {
+        "speaker": "大肥鱼",
+        "text": "故事可以续杯，散步也可以明天继续。",
+        "expression": "listen"
+      }
+    }
+  },
+  "inn": {
+    "title": "暂住的海风",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "欢迎来到{room}。旅舍的人有的刚到港口，有的明天就要出发，所以每间房都留了一点不一样的风景。",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "你喜欢什么样的旅途？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "慢一点，能看清沿途的东西",
+            "next": "slow",
+            "flag": "slow_journey"
+          },
+          {
+            "text": "想把有趣的东西都记录下来",
+            "next": "record",
+            "flag": "record_journey"
+          }
+        ]
+      },
+      "slow": {
+        "speaker": "大肥鱼",
+        "text": "那就挑一处窗边，听完一阵风再出门。到哪里都不算迟，只要那是你想去的地方。",
+        "expression": "listen",
+        "next": "end"
+      },
+      "record": {
+        "speaker": "大肥鱼",
+        "text": "记一个小细节就很好了。比如谁给你倒了茶，哪一盏灯一直亮着，或者哪一条路让你想再走一遍。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "end": {
+        "speaker": "大肥鱼",
+        "text": "如果暂时不知道下一站，就在这里停留一晚吧。",
+        "expression": "listen"
+      }
+    }
+  },
+  "bed": {
+    "title": "晒过太阳的被子",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "你在看{object}呀。被子晒得很暖，像把今天的阳光悄悄折起来了。",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "你现在更需要哪一种？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "一句可以安心休息的话",
+            "next": "rest",
+            "flag": "bed_rest"
+          },
+          {
+            "text": "明天开始的小计划",
+            "next": "plan",
+            "flag": "bed_plan"
+          }
+        ]
+      },
+      "rest": {
+        "speaker": "大肥鱼",
+        "text": "今天到这里也可以。没有完成所有事情，并不妨碍你睡一个好觉。",
+        "expression": "listen"
+      },
+      "plan": {
+        "speaker": "大肥鱼",
+        "text": "把明天第一件事写得小一点：打开窗、喝一杯水，或者整理一张便签。醒来后，就知道从哪里开始。",
+        "expression": "talk"
+      }
+    }
+  },
+  "desk": {
+    "title": "一张写得具体的便签",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "{object}上留着一张便签：“先弄清想做什么，再决定从哪里开始。”你会怎么写今天的问题？",
+        "expression": "think",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "别着急，一个小问题也值得认真想。",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "我想做很多事，不知道先做哪件",
+            "next": "many",
+            "flag": "desk_many"
+          },
+          {
+            "text": "我担心自己做得不够好",
+            "next": "afraid",
+            "flag": "desk_afraid"
+          }
+        ]
+      },
+      "many": {
+        "speaker": "大肥鱼",
+        "text": "先选最想看到结果的那一件，把它写成一个能完成的小步骤。做完后再回来，新的问题会更清楚。",
+        "expression": "talk"
+      },
+      "afraid": {
+        "speaker": "大肥鱼",
+        "text": "先做出一个能看见、能试用的版本吧。我们可以一边检查，一边修改；不需要在开始前就猜中所有答案。",
+        "expression": "listen"
+      }
+    }
+  },
+  "plant": {
+    "title": "给新叶子一点光",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "{object}又长出新叶子了。变化很小，但昨天没有的东西，今天就出现了。",
+        "expression": "talk",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "要留一张观察便签吗？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "记下今天的新叶子",
+            "next": "leaf",
+            "flag": "noticed_leaf"
+          },
+          {
+            "text": "我也希望自己能慢慢变好",
+            "next": "grow",
+            "flag": "plant_grow"
+          }
+        ]
+      },
+      "leaf": {
+        "speaker": "大肥鱼",
+        "text": "好呀。记下颜色和位置，下次经过的时候，就会发现它长了多少。",
+        "expression": "talk"
+      },
+      "grow": {
+        "speaker": "大肥鱼",
+        "text": "会的。给自己一点时间，就像给它一点阳光。安静地长大，也是一件很有力量的事。",
+        "expression": "listen"
+      }
+    }
+  },
+  "books": {
+    "title": "昨天与下一页",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "你在看{object}。有人把一句话夹在这里：记得住昨天，也要看看今天有没有不同。",
+        "expression": "think",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "如果要给下一位读者留一句话，你会写什么？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "走错一页，不等于整个故事都错了",
+            "next": "retry",
+            "flag": "books_retry"
+          },
+          {
+            "text": "一起潜下去，也一起浮上来",
+            "next": "together",
+            "flag": "books_together"
+          }
+        ]
+      },
+      "retry": {
+        "speaker": "大肥鱼",
+        "text": "这句话我喜欢。它给尝试留了一点勇气，也给回头留了一条路。",
+        "expression": "talk"
+      },
+      "together": {
+        "speaker": "大肥鱼",
+        "text": "那我就在旁边画一条小鲸鱼。下一个人读到这里，就知道自己不是一个人。",
+        "expression": "talk"
+      }
+    }
+  },
+  "seat": {
+    "title": "停下来也是前进",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "{object}旁边能听见一点风。坐下休息的时候，街道仍在往前走，我们也没有被落下。",
+        "expression": "listen",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "要聊什么呢？",
+        "expression": "listen",
+        "choices": [
+          {
+            "text": "陪我安静地坐一会儿",
+            "next": "quiet",
+            "flag": "seat_quiet"
+          },
+          {
+            "text": "聊聊你喜欢的地方",
+            "next": "place",
+            "flag": "seat_place"
+          }
+        ]
+      },
+      "quiet": {
+        "speaker": "旁白",
+        "text": "风穿过窗边。大肥鱼把笔记本合上，陪你看了一会儿远处的光。",
+        "expression": "listen",
+        "next": "end"
+      },
+      "place": {
+        "speaker": "大肥鱼",
+        "text": "我喜欢阅读室旁边那张小桌子。太阳快落下时，窗口会变成暖暖的颜色，好像所有问题都可以再等一会儿。",
+        "expression": "talk",
+        "next": "end"
+      },
+      "end": {
+        "speaker": "大肥鱼",
+        "text": "准备好了再出发吧，我会在这里。",
+        "expression": "listen"
+      }
+    }
+  },
+  "small_thing": {
+    "title": "小物件也有故事",
+    "start": "hello",
+    "nodes": {
+      "hello": {
+        "speaker": "大肥鱼",
+        "text": "这是{object}。每件小物都有自己的位置，有些陪我们工作，有些只是提醒我们慢下来。",
+        "expression": "listen",
+        "next": "ask"
+      },
+      "ask": {
+        "speaker": "大肥鱼",
+        "text": "你想把今天记成什么样？",
+        "expression": "think",
+        "choices": [
+          {
+            "text": "发现一件值得开心的小事",
+            "next": "happy",
+            "flag": "small_happy"
+          },
+          {
+            "text": "把还没完成的问题收好",
+            "next": "question",
+            "flag": "small_question"
+          }
+        ]
+      },
+      "happy": {
+        "speaker": "大肥鱼",
+        "text": "那就把它记在今天这一页吧。快乐不一定很大，能让你想起它时微笑，就已经很好。",
+        "expression": "talk"
+      },
+      "question": {
+        "speaker": "大肥鱼",
+        "text": "先把问题写下来，然后安心去做别的事。重要的东西收好了，就不用一直握在手里。",
+        "expression": "listen"
+      }
+    }
+  }
+}

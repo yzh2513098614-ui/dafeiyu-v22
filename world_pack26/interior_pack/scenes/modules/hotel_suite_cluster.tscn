@@ -1,0 +1,85 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e0"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_11.tscn" id="e1"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_12.tscn" id="e2"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/decor_04.tscn" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/storage_04.tscn" id="e4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_06.tscn" id="e5"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_07.tscn" id="e6"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_08.tscn" id="e7"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/decor_09.tscn" id="e8"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_02.tscn" id="e9"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_09.tscn" id="e10"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_ceramic_tea_set.tscn" id="e11"]
+
+[sub_resource type="StandardMaterial3D" id="r0"]
+albedo_color = Color(0.24,0.39,0.57,1.0)
+roughness = 0.8
+metallic = 0
+
+[sub_resource type="BoxMesh" id="r1"]
+size = Vector3(5.2,0.014,5.8)
+
+[node name="HotelSuiteCluster" type="Node3D"]
+
+
+[node name="SoftRug" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.012,0.0)
+mesh = SubResource("r1")
+material_override = SubResource("r0")
+
+[node name="Bed" parent="." instance=ExtResource("e1")]
+position = Vector3(-2.8,0.0,-2.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Bedside" parent="." instance=ExtResource("e2")]
+position = Vector3(-1.75,0.0,-2.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="ReadingLamp" parent="." instance=ExtResource("e3")]
+position = Vector3(-1.75,0.61,-2.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Wardrobe" parent="." instance=ExtResource("e4")]
+position = Vector3(3.3,0.0,-2.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="TV" parent="." instance=ExtResource("e5")]
+position = Vector3(3.3,0.0,0.2)
+rotation = Vector3(0.0,-1.5708,0.0)
+
+[node name="Desk" parent="." instance=ExtResource("e6")]
+position = Vector3(-2.8,0.0,2.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="DeskChair" parent="." instance=ExtResource("e7")]
+position = Vector3(-2.8,0.0,3.1)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="WhaleCup" parent="." instance=ExtResource("e8")]
+position = Vector3(-2.55,0.84,2.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="LoungeSeat" parent="." instance=ExtResource("e9")]
+position = Vector3(2.9,0.0,2.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="SideTable" parent="." instance=ExtResource("e10")]
+position = Vector3(1.9,0.0,2.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="TeaSet" parent="." instance=ExtResource("e11")]
+position = Vector3(1.9,0.57,2.8)
+rotation = Vector3(0.0,0.0,0.0)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/office/three_tier_mail_sorter.glb" id="1"]
+
+[node name="three_tier_mail_sorter" type="Node3D"]
+metadata/asset_id = "three_tier_mail_sorter"
+metadata/asset_label = "三层文件托架"
+metadata/code = "OF-04"
+metadata/category_code = "OF"
+metadata/category_label = "办公陈设"
+metadata/folder = "office"
+metadata/placement = "桌面"
+metadata/scene_tags = ["办公室", "学校", "港务室"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

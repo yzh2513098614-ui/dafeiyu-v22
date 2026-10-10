@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/leisure/portable_beach_radio.glb" id="1"]
+
+[node name="portable_beach_radio" type="Node3D"]
+metadata/asset_id = "portable_beach_radio"
+metadata/asset_label = "便携沙滩收音机"
+metadata/code = "LS-01"
+metadata/category_code = "LS"
+metadata/category_label = "休闲摆件"
+metadata/folder = "leisure"
+metadata/placement = "桌面"
+metadata/scene_tags = ["住宅", "海滩", "休息室", "礼品店"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-322d2fa1-5e20-4300-b81a-eab1949c2ac8.png",
+  "assets": [
+    {
+      "id": "plaster_ivory",
+      "path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0f810-45ed-7032-80df-e7ebb8acf899\\exec-a8664db2-17a2-43fd-b557-85d161871ea0.png",
+      "prompt": "Use case: stylized-concept. Asset type: one seamless square albedo tile for an existing clean, softly colored 2.5D Godot harbor town game. The supplied screenshot is a STYLE REFERENCE ONLY: restrained ivory, pale oak, muted blue-grey palette, fine readable surface texture similar to its plank flooring. Generate ONLY a flat front-facing material texture filling the entire image edge to edge, ideally 1024x1024 or larger. True periodic tiling at all four borders. Completely uniform diffuse illumination, no cast shadows, no bevel shadows, no gradients, no lighting baked in, no perspective, no scene or objects, no borders, no text, no labels, no watermark. Fine surface variation must remain subtle and low contrast, with broad quiet areas. Clean modern finish, no cracks, no dirt, no wear.\nMaterial: warm ivory fine lime plaster. Very small irregular mineral pores and faint trowel mottling. Nearly uniform light cream around RGB 210 206 194, total brightness variation around 5 percent. Do not draw tiles, panel seams or bricks; this is raw surface grain.",
+      "project_file": "res://assets/modern/wall_surfaces/plaster_ivory_v1.png"
+    },
+    {
+      "id": "oak_fine",
+      "path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0f810-45ed-7032-80df-e7ebb8acf899\\exec-c25b0d37-6b1e-47ee-bbe3-08879a742c38.png",
+      "prompt": "Use case: stylized-concept. Asset type: one seamless square albedo tile for an existing clean, softly colored 2.5D Godot harbor town game. The supplied screenshot is a STYLE REFERENCE ONLY: restrained ivory, pale oak, muted blue-grey palette, fine readable surface texture similar to its plank flooring. Generate ONLY a flat front-facing material texture filling the entire image edge to edge, ideally 1024x1024 or larger. True periodic tiling at all four borders. Completely uniform diffuse illumination, no cast shadows, no bevel shadows, no gradients, no lighting baked in, no perspective, no scene or objects, no borders, no text, no labels, no watermark. Fine surface variation must remain subtle and low contrast, with broad quiet areas. Clean modern finish, no cracks, no dirt, no wear.\nMaterial: pale desaturated natural oak veneer, fine vertical grain with calm elongated fibers running from bottom to top. Pale beige around RGB 201 188 161. Small gentle wood-grain ribbons, no conspicuous knots, no plank divisions or board seams; just one continuous seamless wood surface.",
+      "project_file": "res://assets/modern/wall_surfaces/oak_fine_v1.png"
+    },
+    {
+      "id": "stone_limestone",
+      "path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0f810-45ed-7032-80df-e7ebb8acf899\\exec-1b4e3871-01d2-437d-ad5a-6413f326eaa2.png",
+      "prompt": "Use case: stylized-concept. Create ONE seamless square albedo texture of clean light limestone, for wall and facade materials of a softly shaded 2.5D Godot harbor game. Flat front view, raw material only, edge to edge. Fine muted mineral grain with small soft pale fossil flecks, restrained warm grey beige RGB about 192 190 179. Very low contrast, overall illumination perfectly even. All four borders must seamlessly tile. Do NOT draw masonry joints or tiles. No shadows, no lighting gradients, no perspective, no scene, no props, no bevels, no text, no watermark, no dirt or cracks. Match the quiet fine-grained flooring quality of the reference screenshot. Square high resolution.",
+      "project_file": "res://assets/modern/wall_surfaces/stone_limestone_v1.png"
+    },
+    {
+      "id": "linen_bluegrey",
+      "path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0f810-45ed-7032-80df-e7ebb8acf899\\exec-74a9d527-ac18-4d4b-9a15-e456865e41ee.png",
+      "prompt": "Use case: stylized-concept. Asset type: one seamless square albedo tile for an existing clean, softly colored 2.5D Godot harbor town game. The supplied screenshot is a STYLE REFERENCE ONLY: restrained ivory, pale oak, muted blue-grey palette, fine readable surface texture similar to its plank flooring. Generate ONLY a flat front-facing material texture filling the entire image edge to edge, ideally 1024x1024 or larger. True periodic tiling at all four borders. Completely uniform diffuse illumination, no cast shadows, no bevel shadows, no gradients, no lighting baked in, no perspective, no scene or objects, no borders, no text, no labels, no watermark. Fine surface variation must remain subtle and low contrast, with broad quiet areas. Clean modern finish, no cracks, no dirt, no wear.\nMaterial: woven fine linen wallcovering, muted blue-grey around RGB 165 178 182. Clearly woven delicate vertical and horizontal fibers but no moire, no coarse burlap, no stitching seams. Restrained fine textile microstructure.",
+      "project_file": "res://assets/modern/wall_surfaces/linen_bluegrey_v1.png"
+    }
+  ]
+}

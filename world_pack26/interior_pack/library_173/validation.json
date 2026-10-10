@@ -1,0 +1,1403 @@
+{
+  "models": 173,
+  "triangles": 347468,
+  "status": "passed",
+  "checks": [
+    "GLB header and chunks",
+    "buffer offsets and bounds",
+    "finite vertex coordinates",
+    "unit normals",
+    "nondegenerate triangle geometry",
+    "triangle winding matches normals",
+    "catalog counts and bounds",
+    "Godot wrapper references",
+    "positive collision dimensions"
+  ],
+  "godot_runtime_test": "This offline validator does not run Godot; see runtime_validation.json for the separate engine test",
+  "results": [
+    {
+      "model": "supply_case",
+      "status": "passed",
+      "triangles": 1272,
+      "parts": 30,
+      "glb_bytes": 113372,
+      "colliders": 1
+    },
+    {
+      "model": "digital_safe",
+      "status": "passed",
+      "triangles": 1272,
+      "parts": 30,
+      "glb_bytes": 113352,
+      "colliders": 1
+    },
+    {
+      "model": "vintage_safe",
+      "status": "passed",
+      "triangles": 1144,
+      "parts": 26,
+      "glb_bytes": 102176,
+      "colliders": 1
+    },
+    {
+      "model": "token_vault",
+      "status": "passed",
+      "triangles": 1144,
+      "parts": 26,
+      "glb_bytes": 102016,
+      "colliders": 1
+    },
+    {
+      "model": "medical_case",
+      "status": "passed",
+      "triangles": 1212,
+      "parts": 29,
+      "glb_bytes": 108404,
+      "colliders": 1
+    },
+    {
+      "model": "waterproof_case",
+      "status": "passed",
+      "triangles": 1272,
+      "parts": 30,
+      "glb_bytes": 113248,
+      "colliders": 1
+    },
+    {
+      "model": "locker_safe",
+      "status": "passed",
+      "triangles": 1272,
+      "parts": 30,
+      "glb_bytes": 113320,
+      "colliders": 1
+    },
+    {
+      "model": "compact_safe",
+      "status": "passed",
+      "triangles": 1272,
+      "parts": 30,
+      "glb_bytes": 113284,
+      "colliders": 1
+    },
+    {
+      "model": "supply_case_open",
+      "status": "passed",
+      "triangles": 1404,
+      "parts": 33,
+      "glb_bytes": 124528,
+      "colliders": 1
+    },
+    {
+      "model": "digital_safe_open",
+      "status": "passed",
+      "triangles": 1404,
+      "parts": 33,
+      "glb_bytes": 124528,
+      "colliders": 1
+    },
+    {
+      "model": "token_vault_open",
+      "status": "passed",
+      "triangles": 1276,
+      "parts": 29,
+      "glb_bytes": 113176,
+      "colliders": 1
+    },
+    {
+      "model": "harbor_bench",
+      "status": "passed",
+      "triangles": 484,
+      "parts": 11,
+      "glb_bytes": 46696,
+      "colliders": 1
+    },
+    {
+      "model": "planter",
+      "status": "passed",
+      "triangles": 720,
+      "parts": 9,
+      "glb_bytes": 62676,
+      "colliders": 1
+    },
+    {
+      "model": "streetlamp",
+      "status": "passed",
+      "triangles": 252,
+      "parts": 5,
+      "glb_bytes": 26872,
+      "colliders": 1
+    },
+    {
+      "model": "notice_board",
+      "status": "passed",
+      "triangles": 308,
+      "parts": 7,
+      "glb_bytes": 31960,
+      "colliders": 1
+    },
+    {
+      "model": "trash_bin",
+      "status": "passed",
+      "triangles": 280,
+      "parts": 6,
+      "glb_bytes": 29460,
+      "colliders": 1
+    },
+    {
+      "model": "terminal",
+      "status": "passed",
+      "triangles": 368,
+      "parts": 8,
+      "glb_bytes": 36752,
+      "colliders": 1
+    },
+    {
+      "model": "buoy",
+      "status": "passed",
+      "triangles": 872,
+      "parts": 18,
+      "glb_bytes": 78524,
+      "colliders": 1
+    },
+    {
+      "model": "table_round",
+      "status": "passed",
+      "triangles": 364,
+      "parts": 5,
+      "glb_bytes": 34956,
+      "colliders": 1
+    },
+    {
+      "model": "chair",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28168,
+      "colliders": 1
+    },
+    {
+      "model": "bar_counter",
+      "status": "passed",
+      "triangles": 280,
+      "parts": 6,
+      "glb_bytes": 29440,
+      "colliders": 1
+    },
+    {
+      "model": "menu_stand",
+      "status": "passed",
+      "triangles": 396,
+      "parts": 9,
+      "glb_bytes": 39376,
+      "colliders": 1
+    },
+    {
+      "model": "beach_umbrella",
+      "status": "passed",
+      "triangles": 132,
+      "parts": 14,
+      "glb_bytes": 22640,
+      "colliders": 1
+    },
+    {
+      "model": "sun_lounger",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28204,
+      "colliders": 1
+    },
+    {
+      "model": "palm",
+      "status": "passed",
+      "triangles": 398,
+      "parts": 15,
+      "glb_bytes": 42552,
+      "colliders": 1
+    },
+    {
+      "model": "rocks",
+      "status": "passed",
+      "triangles": 126,
+      "parts": 3,
+      "glb_bytes": 16812,
+      "colliders": 1
+    },
+    {
+      "model": "wood_crate",
+      "status": "passed",
+      "triangles": 220,
+      "parts": 5,
+      "glb_bytes": 24496,
+      "colliders": 1
+    },
+    {
+      "model": "beach_sign",
+      "status": "passed",
+      "triangles": 280,
+      "parts": 6,
+      "glb_bytes": 29488,
+      "colliders": 1
+    },
+    {
+      "model": "bollard",
+      "status": "passed",
+      "triangles": 180,
+      "parts": 3,
+      "glb_bytes": 20620,
+      "colliders": 1
+    },
+    {
+      "model": "barrel",
+      "status": "passed",
+      "triangles": 944,
+      "parts": 20,
+      "glb_bytes": 84728,
+      "colliders": 1
+    },
+    {
+      "model": "surfboard_rack",
+      "status": "passed",
+      "triangles": 868,
+      "parts": 8,
+      "glb_bytes": 72904,
+      "colliders": 1
+    },
+    {
+      "model": "rope_coil",
+      "status": "passed",
+      "triangles": 2688,
+      "parts": 96,
+      "glb_bytes": 251788,
+      "colliders": 1
+    },
+    {
+      "model": "restaurant_cutaway",
+      "status": "passed",
+      "triangles": 5092,
+      "parts": 96,
+      "glb_bytes": 423212,
+      "colliders": 18
+    },
+    {
+      "model": "restaurant_exterior",
+      "status": "passed",
+      "triangles": 2652,
+      "parts": 46,
+      "glb_bytes": 221136,
+      "colliders": 1
+    },
+    {
+      "model": "beach_kiosk",
+      "status": "passed",
+      "triangles": 776,
+      "parts": 17,
+      "glb_bytes": 70980,
+      "colliders": 1
+    },
+    {
+      "model": "lifeguard_tower",
+      "status": "passed",
+      "triangles": 860,
+      "parts": 20,
+      "glb_bytes": 78488,
+      "colliders": 0
+    },
+    {
+      "model": "lighthouse",
+      "status": "passed",
+      "triangles": 1076,
+      "parts": 19,
+      "glb_bytes": 93664,
+      "colliders": 1
+    },
+    {
+      "model": "wooden_pier",
+      "status": "passed",
+      "triangles": 2304,
+      "parts": 56,
+      "glb_bytes": 201804,
+      "colliders": 3
+    },
+    {
+      "model": "tide_gauge",
+      "status": "passed",
+      "triangles": 1112,
+      "parts": 26,
+      "glb_bytes": 100148,
+      "colliders": 1
+    },
+    {
+      "model": "intertidal_rocks",
+      "status": "passed",
+      "triangles": 768,
+      "parts": 30,
+      "glb_bytes": 77504,
+      "colliders": 1
+    },
+    {
+      "model": "shell_cluster",
+      "status": "passed",
+      "triangles": 610,
+      "parts": 30,
+      "glb_bytes": 66068,
+      "colliders": 0
+    },
+    {
+      "model": "seaweed_patch",
+      "status": "passed",
+      "triangles": 18,
+      "parts": 6,
+      "glb_bytes": 10568,
+      "colliders": 0
+    },
+    {
+      "model": "driftwood",
+      "status": "passed",
+      "triangles": 196,
+      "parts": 5,
+      "glb_bytes": 22924,
+      "colliders": 0
+    },
+    {
+      "model": "floating_buoy",
+      "status": "passed",
+      "triangles": 396,
+      "parts": 4,
+      "glb_bytes": 36808,
+      "colliders": 0
+    },
+    {
+      "model": "harbor_seawall",
+      "status": "passed",
+      "triangles": 552,
+      "parts": 14,
+      "glb_bytes": 53344,
+      "colliders": 1
+    },
+    {
+      "model": "sloped_beach_module",
+      "status": "passed",
+      "triangles": 2850,
+      "parts": 5,
+      "glb_bytes": 213900,
+      "colliders": 0
+    },
+    {
+      "model": "water_surface",
+      "status": "passed",
+      "triangles": 1600,
+      "parts": 1,
+      "glb_bytes": 121884,
+      "colliders": 0
+    },
+    {
+      "model": "shore_foam_strip",
+      "status": "passed",
+      "triangles": 128,
+      "parts": 1,
+      "glb_bytes": 15936,
+      "colliders": 0
+    },
+    {
+      "model": "beach_scene",
+      "status": "passed",
+      "triangles": 22698,
+      "parts": 561,
+      "glb_bytes": 1947776,
+      "colliders": 26
+    },
+    {
+      "model": "beach_low_tide",
+      "status": "passed",
+      "triangles": 22698,
+      "parts": 561,
+      "glb_bytes": 1947740,
+      "colliders": 26
+    },
+    {
+      "model": "beach_high_tide",
+      "status": "passed",
+      "triangles": 22698,
+      "parts": 561,
+      "glb_bytes": 1947748,
+      "colliders": 26
+    },
+    {
+      "model": "harbor_plaza",
+      "status": "passed",
+      "triangles": 9672,
+      "parts": 189,
+      "glb_bytes": 800604,
+      "colliders": 13
+    },
+    {
+      "model": "field_supply_crate",
+      "status": "passed",
+      "triangles": 2312,
+      "parts": 54,
+      "glb_bytes": 201988,
+      "colliders": 1
+    },
+    {
+      "model": "field_supply_crate_opened",
+      "status": "passed",
+      "triangles": 2312,
+      "parts": 54,
+      "glb_bytes": 201988,
+      "colliders": 1
+    },
+    {
+      "model": "long_equipment_case",
+      "status": "passed",
+      "triangles": 2432,
+      "parts": 56,
+      "glb_bytes": 211804,
+      "colliders": 1
+    },
+    {
+      "model": "long_equipment_case_opened",
+      "status": "passed",
+      "triangles": 2432,
+      "parts": 56,
+      "glb_bytes": 211800,
+      "colliders": 1
+    },
+    {
+      "model": "reinforced_flight_case",
+      "status": "passed",
+      "triangles": 2248,
+      "parts": 54,
+      "glb_bytes": 197192,
+      "colliders": 1
+    },
+    {
+      "model": "reinforced_flight_case_opened",
+      "status": "passed",
+      "triangles": 2248,
+      "parts": 54,
+      "glb_bytes": 197248,
+      "colliders": 1
+    },
+    {
+      "model": "field_medical_chest",
+      "status": "passed",
+      "triangles": 2080,
+      "parts": 48,
+      "glb_bytes": 181936,
+      "colliders": 1
+    },
+    {
+      "model": "field_medical_chest_opened",
+      "status": "passed",
+      "triangles": 2080,
+      "parts": 48,
+      "glb_bytes": 182052,
+      "colliders": 1
+    },
+    {
+      "model": "marine_waterproof_case",
+      "status": "passed",
+      "triangles": 2488,
+      "parts": 58,
+      "glb_bytes": 216844,
+      "colliders": 1
+    },
+    {
+      "model": "marine_waterproof_case_opened",
+      "status": "passed",
+      "triangles": 2488,
+      "parts": 58,
+      "glb_bytes": 216832,
+      "colliders": 1
+    },
+    {
+      "model": "encrypted_electronics_case",
+      "status": "passed",
+      "triangles": 2124,
+      "parts": 49,
+      "glb_bytes": 185772,
+      "colliders": 1
+    },
+    {
+      "model": "encrypted_electronics_case_opened",
+      "status": "passed",
+      "triangles": 2124,
+      "parts": 49,
+      "glb_bytes": 185836,
+      "colliders": 1
+    },
+    {
+      "model": "industrial_tool_chest",
+      "status": "passed",
+      "triangles": 2048,
+      "parts": 48,
+      "glb_bytes": 179528,
+      "colliders": 1
+    },
+    {
+      "model": "industrial_tool_chest_opened",
+      "status": "passed",
+      "triangles": 2048,
+      "parts": 48,
+      "glb_bytes": 179556,
+      "colliders": 1
+    },
+    {
+      "model": "office_armored_safe",
+      "status": "passed",
+      "triangles": 2188,
+      "parts": 49,
+      "glb_bytes": 190548,
+      "colliders": 1
+    },
+    {
+      "model": "office_armored_safe_opened",
+      "status": "passed",
+      "triangles": 2188,
+      "parts": 49,
+      "glb_bytes": 190548,
+      "colliders": 1
+    },
+    {
+      "model": "wall_data_safe",
+      "status": "passed",
+      "triangles": 1740,
+      "parts": 41,
+      "glb_bytes": 153736,
+      "colliders": 1
+    },
+    {
+      "model": "wall_data_safe_opened",
+      "status": "passed",
+      "triangles": 1740,
+      "parts": 41,
+      "glb_bytes": 153740,
+      "colliders": 1
+    },
+    {
+      "model": "secure_equipment_locker",
+      "status": "passed",
+      "triangles": 2004,
+      "parts": 47,
+      "glb_bytes": 175920,
+      "colliders": 1
+    },
+    {
+      "model": "secure_equipment_locker_opened",
+      "status": "passed",
+      "triangles": 2004,
+      "parts": 47,
+      "glb_bytes": 175944,
+      "colliders": 1
+    },
+    {
+      "model": "searchable_file_cabinet",
+      "status": "passed",
+      "triangles": 1596,
+      "parts": 37,
+      "glb_bytes": 141360,
+      "colliders": 1
+    },
+    {
+      "model": "searchable_file_cabinet_opened",
+      "status": "passed",
+      "triangles": 1596,
+      "parts": 37,
+      "glb_bytes": 141400,
+      "colliders": 1
+    },
+    {
+      "model": "cold_chain_medical_cabinet",
+      "status": "passed",
+      "triangles": 2048,
+      "parts": 48,
+      "glb_bytes": 179736,
+      "colliders": 1
+    },
+    {
+      "model": "cold_chain_medical_cabinet_opened",
+      "status": "passed",
+      "triangles": 2048,
+      "parts": 48,
+      "glb_bytes": 179720,
+      "colliders": 1
+    },
+    {
+      "model": "container_supply_room",
+      "status": "passed",
+      "triangles": 17800,
+      "parts": 414,
+      "glb_bytes": 1531352,
+      "colliders": 12
+    },
+    {
+      "model": "restaurant_tall_fridge",
+      "status": "passed",
+      "triangles": 1916,
+      "parts": 45,
+      "glb_bytes": 168936,
+      "colliders": 1
+    },
+    {
+      "model": "restaurant_tall_fridge_opened",
+      "status": "passed",
+      "triangles": 1916,
+      "parts": 45,
+      "glb_bytes": 168916,
+      "colliders": 1
+    },
+    {
+      "model": "pantry_ingredient_bin",
+      "status": "passed",
+      "triangles": 1464,
+      "parts": 34,
+      "glb_bytes": 129964,
+      "colliders": 1
+    },
+    {
+      "model": "pantry_ingredient_bin_opened",
+      "status": "passed",
+      "triangles": 1464,
+      "parts": 34,
+      "glb_bytes": 130004,
+      "colliders": 1
+    },
+    {
+      "model": "undercounter_service_drawer",
+      "status": "passed",
+      "triangles": 1288,
+      "parts": 30,
+      "glb_bytes": 115272,
+      "colliders": 1
+    },
+    {
+      "model": "undercounter_service_drawer_opened",
+      "status": "passed",
+      "triangles": 1288,
+      "parts": 30,
+      "glb_bytes": 115288,
+      "colliders": 1
+    },
+    {
+      "model": "insulated_seafood_chest",
+      "status": "passed",
+      "triangles": 1552,
+      "parts": 36,
+      "glb_bytes": 137320,
+      "colliders": 1
+    },
+    {
+      "model": "insulated_seafood_chest_opened",
+      "status": "passed",
+      "triangles": 1552,
+      "parts": 36,
+      "glb_bytes": 137332,
+      "colliders": 1
+    },
+    {
+      "model": "restaurant_cash_drop_safe",
+      "status": "passed",
+      "triangles": 1320,
+      "parts": 30,
+      "glb_bytes": 117564,
+      "colliders": 1
+    },
+    {
+      "model": "restaurant_cash_drop_safe_opened",
+      "status": "passed",
+      "triangles": 1320,
+      "parts": 30,
+      "glb_bytes": 117580,
+      "colliders": 1
+    },
+    {
+      "model": "bottle_storage_cabinet",
+      "status": "passed",
+      "triangles": 2400,
+      "parts": 56,
+      "glb_bytes": 209656,
+      "colliders": 1
+    },
+    {
+      "model": "bottle_storage_cabinet_opened",
+      "status": "passed",
+      "triangles": 2400,
+      "parts": 56,
+      "glb_bytes": 209676,
+      "colliders": 1
+    },
+    {
+      "model": "harbor_cargo_cage",
+      "status": "passed",
+      "triangles": 3004,
+      "parts": 69,
+      "glb_bytes": 259932,
+      "colliders": 1
+    },
+    {
+      "model": "harbor_cargo_cage_opened",
+      "status": "passed",
+      "triangles": 3004,
+      "parts": 69,
+      "glb_bytes": 260004,
+      "colliders": 1
+    },
+    {
+      "model": "port_manifest_drawer",
+      "status": "passed",
+      "triangles": 1376,
+      "parts": 32,
+      "glb_bytes": 122720,
+      "colliders": 1
+    },
+    {
+      "model": "port_manifest_drawer_opened",
+      "status": "passed",
+      "triangles": 1376,
+      "parts": 32,
+      "glb_bytes": 122736,
+      "colliders": 1
+    },
+    {
+      "model": "maritime_signal_locker",
+      "status": "passed",
+      "triangles": 1452,
+      "parts": 33,
+      "glb_bytes": 128680,
+      "colliders": 1
+    },
+    {
+      "model": "maritime_signal_locker_opened",
+      "status": "passed",
+      "triangles": 1452,
+      "parts": 33,
+      "glb_bytes": 128704,
+      "colliders": 1
+    },
+    {
+      "model": "lifesaving_deck_box",
+      "status": "passed",
+      "triangles": 1496,
+      "parts": 34,
+      "glb_bytes": 132228,
+      "colliders": 1
+    },
+    {
+      "model": "lifesaving_deck_box_opened",
+      "status": "passed",
+      "triangles": 1496,
+      "parts": 34,
+      "glb_bytes": 132232,
+      "colliders": 1
+    },
+    {
+      "model": "diver_equipment_case",
+      "status": "passed",
+      "triangles": 2008,
+      "parts": 46,
+      "glb_bytes": 175620,
+      "colliders": 1
+    },
+    {
+      "model": "diver_equipment_case_opened",
+      "status": "passed",
+      "triangles": 2008,
+      "parts": 46,
+      "glb_bytes": 175612,
+      "colliders": 1
+    },
+    {
+      "model": "rolling_logistics_case",
+      "status": "passed",
+      "triangles": 2100,
+      "parts": 47,
+      "glb_bytes": 182560,
+      "colliders": 1
+    },
+    {
+      "model": "rolling_logistics_case_opened",
+      "status": "passed",
+      "triangles": 2100,
+      "parts": 47,
+      "glb_bytes": 182552,
+      "colliders": 1
+    },
+    {
+      "model": "server_service_cabinet",
+      "status": "passed",
+      "triangles": 2916,
+      "parts": 67,
+      "glb_bytes": 252620,
+      "colliders": 1
+    },
+    {
+      "model": "server_service_cabinet_opened",
+      "status": "passed",
+      "triangles": 2916,
+      "parts": 67,
+      "glb_bytes": 252664,
+      "colliders": 1
+    },
+    {
+      "model": "battery_module_crate",
+      "status": "passed",
+      "triangles": 2124,
+      "parts": 49,
+      "glb_bytes": 185672,
+      "colliders": 1
+    },
+    {
+      "model": "battery_module_crate_opened",
+      "status": "passed",
+      "triangles": 2124,
+      "parts": 49,
+      "glb_bytes": 185648,
+      "colliders": 1
+    },
+    {
+      "model": "sample_transport_case",
+      "status": "passed",
+      "triangles": 2376,
+      "parts": 54,
+      "glb_bytes": 206468,
+      "colliders": 1
+    },
+    {
+      "model": "sample_transport_case_opened",
+      "status": "passed",
+      "triangles": 2376,
+      "parts": 54,
+      "glb_bytes": 206464,
+      "colliders": 1
+    },
+    {
+      "model": "laboratory_specimen_freezer",
+      "status": "passed",
+      "triangles": 1452,
+      "parts": 33,
+      "glb_bytes": 128620,
+      "colliders": 1
+    },
+    {
+      "model": "laboratory_specimen_freezer_opened",
+      "status": "passed",
+      "triangles": 1452,
+      "parts": 33,
+      "glb_bytes": 128668,
+      "colliders": 1
+    },
+    {
+      "model": "wall_emergency_supply_cabinet",
+      "status": "passed",
+      "triangles": 1696,
+      "parts": 40,
+      "glb_bytes": 150536,
+      "colliders": 1
+    },
+    {
+      "model": "wall_emergency_supply_cabinet_opened",
+      "status": "passed",
+      "triangles": 1696,
+      "parts": 40,
+      "glb_bytes": 150488,
+      "colliders": 1
+    },
+    {
+      "model": "currency_transport_case",
+      "status": "passed",
+      "triangles": 1464,
+      "parts": 34,
+      "glb_bytes": 130216,
+      "colliders": 1
+    },
+    {
+      "model": "currency_transport_case_opened",
+      "status": "passed",
+      "triangles": 1464,
+      "parts": 34,
+      "glb_bytes": 130240,
+      "colliders": 1
+    },
+    {
+      "model": "stainless_prep_table",
+      "status": "passed",
+      "triangles": 308,
+      "parts": 7,
+      "glb_bytes": 32088,
+      "colliders": 1
+    },
+    {
+      "model": "supply_service_trolley",
+      "status": "passed",
+      "triangles": 924,
+      "parts": 21,
+      "glb_bytes": 83880,
+      "colliders": 1
+    },
+    {
+      "model": "port_plastic_pallet",
+      "status": "passed",
+      "triangles": 352,
+      "parts": 8,
+      "glb_bytes": 35808,
+      "colliders": 1
+    },
+    {
+      "model": "compact_pallet_jack",
+      "status": "passed",
+      "triangles": 528,
+      "parts": 12,
+      "glb_bytes": 50568,
+      "colliders": 1
+    },
+    {
+      "model": "token_currency_counter",
+      "status": "passed",
+      "triangles": 396,
+      "parts": 9,
+      "glb_bytes": 39440,
+      "colliders": 1
+    },
+    {
+      "model": "relay_service_terminal",
+      "status": "passed",
+      "triangles": 352,
+      "parts": 8,
+      "glb_bytes": 35760,
+      "colliders": 1
+    },
+    {
+      "model": "oxygen_cylinder_pair",
+      "status": "passed",
+      "triangles": 752,
+      "parts": 14,
+      "glb_bytes": 67716,
+      "colliders": 1
+    },
+    {
+      "model": "kitchen_sink_station",
+      "status": "passed",
+      "triangles": 808,
+      "parts": 18,
+      "glb_bytes": 73828,
+      "colliders": 1
+    },
+    {
+      "model": "restaurant_backroom",
+      "status": "passed",
+      "triangles": 12464,
+      "parts": 288,
+      "glb_bytes": 1073004,
+      "colliders": 13
+    },
+    {
+      "model": "harbor_logistics_room",
+      "status": "passed",
+      "triangles": 13904,
+      "parts": 314,
+      "glb_bytes": 1189852,
+      "colliders": 14
+    },
+    {
+      "model": "equipment_service_room",
+      "status": "passed",
+      "triangles": 12172,
+      "parts": 281,
+      "glb_bytes": 1047712,
+      "colliders": 12
+    },
+    {
+      "model": "medical_storage_room",
+      "status": "passed",
+      "triangles": 11060,
+      "parts": 255,
+      "glb_bytes": 952896,
+      "colliders": 10
+    },
+    {
+      "model": "fern_floor_pot",
+      "status": "passed",
+      "triangles": 772,
+      "parts": 12,
+      "glb_bytes": 68424,
+      "colliders": 1
+    },
+    {
+      "model": "broadleaf_square_planter",
+      "status": "passed",
+      "triangles": 644,
+      "parts": 16,
+      "glb_bytes": 61264,
+      "colliders": 1
+    },
+    {
+      "model": "round_shrub_planter",
+      "status": "passed",
+      "triangles": 540,
+      "parts": 7,
+      "glb_bytes": 49040,
+      "colliders": 1
+    },
+    {
+      "model": "succulent_display_tray",
+      "status": "passed",
+      "triangles": 1844,
+      "parts": 25,
+      "glb_bytes": 152776,
+      "colliders": 0
+    },
+    {
+      "model": "three_flower_vase",
+      "status": "passed",
+      "triangles": 976,
+      "parts": 22,
+      "glb_bytes": 88564,
+      "colliders": 0
+    },
+    {
+      "model": "tiered_plant_stand",
+      "status": "passed",
+      "triangles": 1820,
+      "parts": 25,
+      "glb_bytes": 150860,
+      "colliders": 1
+    },
+    {
+      "model": "condiment_bottle_set",
+      "status": "passed",
+      "triangles": 572,
+      "parts": 13,
+      "glb_bytes": 54680,
+      "colliders": 0
+    },
+    {
+      "model": "ceramic_tea_set",
+      "status": "passed",
+      "triangles": 1264,
+      "parts": 12,
+      "glb_bytes": 103900,
+      "colliders": 0
+    },
+    {
+      "model": "ceramic_plate_stack",
+      "status": "passed",
+      "triangles": 1904,
+      "parts": 8,
+      "glb_bytes": 147848,
+      "colliders": 0
+    },
+    {
+      "model": "cutlery_holder",
+      "status": "passed",
+      "triangles": 496,
+      "parts": 11,
+      "glb_bytes": 48016,
+      "colliders": 0
+    },
+    {
+      "model": "bread_display_basket",
+      "status": "passed",
+      "triangles": 724,
+      "parts": 14,
+      "glb_bytes": 66036,
+      "colliders": 0
+    },
+    {
+      "model": "countertop_menu_stand",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28732,
+      "colliders": 0
+    },
+    {
+      "model": "angled_desk_lamp",
+      "status": "passed",
+      "triangles": 236,
+      "parts": 5,
+      "glb_bytes": 26132,
+      "colliders": 0
+    },
+    {
+      "model": "minimal_wall_clock",
+      "status": "passed",
+      "triangles": 836,
+      "parts": 17,
+      "glb_bytes": 75736,
+      "colliders": 0
+    },
+    {
+      "model": "binder_bookend_set",
+      "status": "passed",
+      "triangles": 504,
+      "parts": 12,
+      "glb_bytes": 49168,
+      "colliders": 0
+    },
+    {
+      "model": "three_tier_mail_sorter",
+      "status": "passed",
+      "triangles": 880,
+      "parts": 20,
+      "glb_bytes": 80564,
+      "colliders": 0
+    },
+    {
+      "model": "clipped_notice_panel",
+      "status": "passed",
+      "triangles": 352,
+      "parts": 8,
+      "glb_bytes": 36108,
+      "colliders": 0
+    },
+    {
+      "model": "wire_waste_basket",
+      "status": "passed",
+      "triangles": 1356,
+      "parts": 16,
+      "glb_bytes": 112752,
+      "colliders": 0
+    },
+    {
+      "model": "first_aid_wall_sign",
+      "status": "passed",
+      "triangles": 132,
+      "parts": 3,
+      "glb_bytes": 17588,
+      "colliders": 0
+    },
+    {
+      "model": "disinfectant_pump_stand",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28696,
+      "colliders": 0
+    },
+    {
+      "model": "sample_tube_display_rack",
+      "status": "passed",
+      "triangles": 448,
+      "parts": 12,
+      "glb_bytes": 45156,
+      "colliders": 0
+    },
+    {
+      "model": "medicine_bottle_display",
+      "status": "passed",
+      "triangles": 660,
+      "parts": 15,
+      "glb_bytes": 62084,
+      "colliders": 0
+    },
+    {
+      "model": "sharps_disposal_decor",
+      "status": "passed",
+      "triangles": 176,
+      "parts": 4,
+      "glb_bytes": 21320,
+      "colliders": 0
+    },
+    {
+      "model": "folded_medical_linen",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28704,
+      "colliders": 0
+    },
+    {
+      "model": "retail_wire_basket",
+      "status": "passed",
+      "triangles": 1232,
+      "parts": 28,
+      "glb_bytes": 110448,
+      "colliders": 0
+    },
+    {
+      "model": "retail_poster_pedestal",
+      "status": "passed",
+      "triangles": 308,
+      "parts": 7,
+      "glb_bytes": 32380,
+      "colliders": 1
+    },
+    {
+      "model": "shopping_bag_pair",
+      "status": "passed",
+      "triangles": 1344,
+      "parts": 16,
+      "glb_bytes": 111588,
+      "colliders": 0
+    },
+    {
+      "model": "small_price_display",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28744,
+      "colliders": 0
+    },
+    {
+      "model": "gift_box_stack",
+      "status": "passed",
+      "triangles": 360,
+      "parts": 8,
+      "glb_bytes": 36604,
+      "colliders": 0
+    },
+    {
+      "model": "tiered_display_pedestal",
+      "status": "passed",
+      "triangles": 264,
+      "parts": 6,
+      "glb_bytes": 28500,
+      "colliders": 0
+    },
+    {
+      "model": "mooring_rope_coil",
+      "status": "passed",
+      "triangles": 1580,
+      "parts": 5,
+      "glb_bytes": 122908,
+      "colliders": 0
+    },
+    {
+      "model": "hanging_marine_fender",
+      "status": "passed",
+      "triangles": 536,
+      "parts": 5,
+      "glb_bytes": 47720,
+      "colliders": 0
+    },
+    {
+      "model": "drying_net_rack",
+      "status": "passed",
+      "triangles": 880,
+      "parts": 20,
+      "glb_bytes": 80436,
+      "colliders": 1
+    },
+    {
+      "model": "coastal_warning_cone",
+      "status": "passed",
+      "triangles": 224,
+      "parts": 4,
+      "glb_bytes": 24724,
+      "colliders": 0
+    },
+    {
+      "model": "shore_portable_lantern",
+      "status": "passed",
+      "triangles": 592,
+      "parts": 8,
+      "glb_bytes": 53428,
+      "colliders": 0
+    },
+    {
+      "model": "dock_arrow_sign",
+      "status": "passed",
+      "triangles": 148,
+      "parts": 4,
+      "glb_bytes": 19240,
+      "colliders": 1
+    },
+    {
+      "model": "coiled_cable_reel",
+      "status": "passed",
+      "triangles": 2160,
+      "parts": 10,
+      "glb_bytes": 167356,
+      "colliders": 0
+    },
+    {
+      "model": "wall_ventilation_grille",
+      "status": "passed",
+      "triangles": 308,
+      "parts": 7,
+      "glb_bytes": 32384,
+      "colliders": 0
+    },
+    {
+      "model": "wall_power_junction",
+      "status": "passed",
+      "triangles": 248,
+      "parts": 6,
+      "glb_bytes": 27560,
+      "colliders": 0
+    },
+    {
+      "model": "compact_cooling_unit",
+      "status": "passed",
+      "triangles": 1180,
+      "parts": 18,
+      "glb_bytes": 101020,
+      "colliders": 1
+    },
+    {
+      "model": "mini_solar_panel",
+      "status": "passed",
+      "triangles": 396,
+      "parts": 9,
+      "glb_bytes": 39816,
+      "colliders": 0
+    },
+    {
+      "model": "floor_warning_beacon",
+      "status": "passed",
+      "triangles": 304,
+      "parts": 6,
+      "glb_bytes": 31580,
+      "colliders": 0
+    },
+    {
+      "model": "portable_beach_radio",
+      "status": "passed",
+      "triangles": 688,
+      "parts": 9,
+      "glb_bytes": 60904,
+      "colliders": 0
+    },
+    {
+      "model": "folded_beach_towels",
+      "status": "passed",
+      "triangles": 396,
+      "parts": 9,
+      "glb_bytes": 39760,
+      "colliders": 0
+    },
+    {
+      "model": "sand_bucket_and_spade",
+      "status": "passed",
+      "triangles": 512,
+      "parts": 5,
+      "glb_bytes": 46056,
+      "colliders": 0
+    },
+    {
+      "model": "tabletop_board_game",
+      "status": "passed",
+      "triangles": 1844,
+      "parts": 43,
+      "glb_bytes": 162432,
+      "colliders": 0
+    },
+    {
+      "model": "token_souvenir_display",
+      "status": "passed",
+      "triangles": 624,
+      "parts": 5,
+      "glb_bytes": 54108,
+      "colliders": 0
+    },
+    {
+      "model": "swim_ring_display_stand",
+      "status": "passed",
+      "triangles": 516,
+      "parts": 4,
+      "glb_bytes": 45800,
+      "colliders": 0
+    }
+  ]
+}

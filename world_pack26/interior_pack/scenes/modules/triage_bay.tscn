@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/medical_01.tscn" id="e0"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/medical_04.tscn" id="e1"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/medical_03.tscn" id="e2"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/medical_07.tscn" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/medical_12.tscn" id="e4"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e5"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(1.7,0.025,0.02)
+
+[node name="TriageBay" type="Node3D"]
+
+
+[node name="Bed" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Monitor" parent="." instance=ExtResource("e1")]
+position = Vector3(0.88,0.0,-0.7)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Infusion" parent="." instance=ExtResource("e2")]
+position = Vector3(-0.8,0.0,-0.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Supplies" parent="." instance=ExtResource("e3")]
+position = Vector3(0.94,0.0,0.7)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Privacy" parent="." instance=ExtResource("e4")]
+position = Vector3(0.0,0.0,-1.25)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="StatusBar" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.5,-1.28)
+mesh = SubResource("r0")
+material_override = ExtResource("e5")

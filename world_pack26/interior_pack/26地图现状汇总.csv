@@ -1,0 +1,27 @@
+﻿地图ID,地图名称,空间组织,楼层标高米,区域数量,连接数量,楼梯数量,搜查容器数量,实际使用原模型ID数量,原物品直接实例数量,场景路径,分类标记,改造轮次,本轮新增模型实例数量,本轮装饰实例数量
+school,鲸蓝三层庭院学院,三层教学楼＋庭院＋折返楼梯,0.0 / 3.6 / 7.2,33,47,4,33,59,296,res://interior_pack/scenes/levels/school_exploration.tscn,地图/school,4,124,96
+hospital,深潜双层综合医院,门诊主街＋二层病区,0.0 / 3.6,22,35,2,30,57,185,res://interior_pack/scenes/levels/hospital_exploration.tscn,地图/hospital,3,62,38
+mall,Token三层挑空商业中心,三层中庭＋空中跨桥,0.0 / 3.6 / 7.2,27,37,4,17,53,145,res://interior_pack/scenes/levels/mall_exploration.tscn,地图/mall,3,42,30
+residence,鲸蓝公寓社区,庭院回廊 · 居家生活与社区服务,0.0,9,10,0,16,74,100,res://interior_pack/scenes/levels/residence_exploration.tscn,地图/residence,1,54,44
+research,深潜错层研究中心,实验环廊＋设备半层＋二层分析区,0.0 / 1.8 / 3.6,27,44,5,30,55,206,res://interior_pack/scenes/levels/research_exploration.tscn,地图/research,4,94,70
+datacenter,Token三层动力数据中心,L形服务器翼＋检修栈道＋地下动力机房,-3.6 / 0.0 / 3.6,35,58,4,40,50,393,res://interior_pack/scenes/levels/datacenter_exploration.tscn,地图/datacenter,5,74,50
+harbor,鲸蓝立体滨水物流港,双仓物流大厅＋巡检夹层＋滨海步道,0.0 / 3.6,27,38,2,33,71,213,res://interior_pack/scenes/levels/harbor_exploration.tscn,地图/harbor,4,71,46
+transit,鲸蓝双层立体换乘站,站厅＋三站台＋跨线桥,0.0 / 3.6,16,22,3,9,40,88,res://interior_pack/scenes/levels/transit_exploration.tscn,地图/transit,3,14,10
+library,鲸蓝双层城市图书馆,中央书厅＋静音阅览夹层,0.0 / 3.6,20,27,2,24,40,159,res://interior_pack/scenes/levels/library_exploration.tscn,地图/library,3,71,52
+sports,鲸蓝错层立体体育中心,挑空球馆＋双侧M1看台＋二层活动环廊,0.0 / 1.8 / 3.6,29,43,4,28,74,225,res://interior_pack/scenes/levels/sports_exploration.tscn,地图/sports,5,75,56
+foodhall,鲸蓝三层餐饮市场,U形市场街＋厨房后勤＋屋面设备层,0.0 / 3.6 / 7.2,33,55,3,36,74,330,res://interior_pack/scenes/levels/foodhall_exploration.tscn,地图/foodhall,5,98,72
+museum,鲸蓝三层展陈博物馆,地下藏品后勤＋挑空展厅＋二层环廊,-3.6 / 0.0 / 3.6,28,46,4,26,68,190,res://interior_pack/scenes/levels/museum_exploration.tscn,地图/museum,4,71,52
+fabrication,Token立体智造工厂,作业大厅＋管理检修夹层,0.0 / 3.6,20,27,2,21,56,185,res://interior_pack/scenes/levels/fabrication_exploration.tscn,地图/fabrication,3,45,34
+skypark,城市空中花园,屋顶漫步 · 观景、休闲与设备支线,0.0,7,8,0,8,38,48,res://interior_pack/scenes/levels/skypark_exploration.tscn,地图/skypark,1,14,10
+civic,Token双层T形行政中心,T形办事大厅＋办公翼＋议事区,0.0 / 3.6,28,45,2,38,57,198,res://interior_pack/scenes/levels/civic_exploration.tscn,地图/civic,4,114,81
+hotel,云鲸双层中庭酒店,公共大堂＋客房环廊,0.0 / 3.6,25,36,2,28,52,162,res://interior_pack/scenes/levels/hotel_exploration.tscn,地图/hotel,3,75,52
+emergency,深潜双层应急调度站,T形调度主轴＋车库仓储＋值班居住层,0.0 / 3.6,29,48,2,32,80,301,res://interior_pack/scenes/levels/emergency_exploration.tscn,地图/emergency,5,73,54
+media,Token三层立体传媒中心,双翼演播建筑＋弧形摄影布景＋高空观察桥,0.0 / 3.6 / 7.2,37,60,4,32,66,319,res://interior_pack/scenes/levels/media_exploration.tscn,地图/media,5,100,76
+expo,Token三层大跨会展馆,L形会展服务翼＋跨厅桥＋高层观察区,0.0 / 3.6 / 7.2,45,78,4,45,80,475,res://interior_pack/scenes/levels/expo_exploration.tscn,地图/expo,5,152,116
+underground,Token双层地下服务网络,街面设备入口＋地下主廊＋多支管线间,-3.6 / 0.0,26,41,2,32,52,190,res://interior_pack/scenes/levels/underground_exploration.tscn,地图/underground,4,71,48
+nightmarket,鲸蓝U形滨海餐饮夜市,U形庭院,0.0,7,6,0,12,60,69,res://interior_pack/scenes/levels/nightmarket_exploration.tscn,地图/nightmarket,2,26,22
+customs,Token双层查验仓库,大跨仓储＋办公与巡检夹层,0.0 / 3.6,15,17,2,22,55,220,res://interior_pack/scenes/levels/customs_exploration.tscn,地图/customs,3,46,34
+campsite,云鲸T形海滩度假营地,T形营地,0.0,9,10,0,16,58,62,res://interior_pack/scenes/levels/campsite_exploration.tscn,地图/campsite,2,32,22
+observatory,深潜L形海洋观测站,L形观测站,0.0,7,6,0,12,51,59,res://interior_pack/scenes/levels/observatory_exploration.tscn,地图/observatory,2,24,22
+shipyard,鲸蓝错位船舶维修基地,错位阶梯轮廓,0.0,7,8,0,14,37,61,res://interior_pack/scenes/levels/shipyard_exploration.tscn,地图/shipyard,2,17,14
+boardwalk,大肥鱼双层挑空滨水商场,L形外轮廓＋双层U形回廊,0.0 / 3.6,13,16,2,12,61,67,res://interior_pack/scenes/levels/boardwalk_exploration.tscn,地图/boardwalk,2,26,20

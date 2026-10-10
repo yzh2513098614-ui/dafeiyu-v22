@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/assets/models/mall_09.glb" id="1"]
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/item_3d.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="Step0"]
+size = Vector3(0.92,0.14,0.18)
+
+[sub_resource type="BoxShape3D" id="Step1"]
+size = Vector3(0.92,0.28,0.18)
+
+[sub_resource type="BoxShape3D" id="Step2"]
+size = Vector3(0.92,0.42,0.18)
+
+[sub_resource type="BoxShape3D" id="Step3"]
+size = Vector3(0.92,0.56,0.18)
+
+[sub_resource type="BoxShape3D" id="Step4"]
+size = Vector3(0.92,0.7,0.18)
+
+[sub_resource type="BoxShape3D" id="Step5"]
+size = Vector3(0.92,0.84,0.18)
+
+[sub_resource type="BoxShape3D" id="Step6"]
+size = Vector3(0.92,0.98,0.18)
+
+[sub_resource type="BoxShape3D" id="Step7"]
+size = Vector3(0.92,1.12,0.18)
+
+[sub_resource type="BoxShape3D" id="Step8"]
+size = Vector3(0.92,1.26,0.18)
+
+[sub_resource type="BoxShape3D" id="Step9"]
+size = Vector3(0.92,1.4,0.18)
+
+[node name="mall_09" type="Node3D"]
+script = ExtResource("2")
+asset_id = "mall_09"
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Step0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.07,0.81)
+shape = SubResource("Step0")
+
+[node name="Step1" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.14,0.63)
+shape = SubResource("Step1")
+
+[node name="Step2" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.21,0.45)
+shape = SubResource("Step2")
+
+[node name="Step3" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.28,0.27)
+shape = SubResource("Step3")
+
+[node name="Step4" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.35,0.09)
+shape = SubResource("Step4")
+
+[node name="Step5" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.42,-0.09)
+shape = SubResource("Step5")
+
+[node name="Step6" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.49,-0.27)
+shape = SubResource("Step6")
+
+[node name="Step7" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.56,-0.45)
+shape = SubResource("Step7")
+
+[node name="Step8" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.63,-0.63)
+shape = SubResource("Step8")
+
+[node name="Step9" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,0.7,-0.81)
+shape = SubResource("Step9")

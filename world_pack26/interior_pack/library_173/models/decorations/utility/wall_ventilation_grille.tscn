@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/utility/wall_ventilation_grille.glb" id="1"]
+
+[node name="wall_ventilation_grille" type="Node3D"]
+metadata/asset_id = "wall_ventilation_grille"
+metadata/asset_label = "墙面通风格栅"
+metadata/code = "UT-02"
+metadata/category_code = "UT"
+metadata/category_label = "设备装饰"
+metadata/folder = "utility"
+metadata/placement = "墙面"
+metadata/scene_tags = ["设备间", "仓库", "办公楼"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

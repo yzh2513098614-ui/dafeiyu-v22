@@ -1,0 +1,654 @@
+[gd_scene load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/room_runtime.gd" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e1"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/floor_1m.tscn" id="e2"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/window_wall_2m.tscn" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/wall_panel_2m.tscn" id="e4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/lit_column.tscn" id="e5"]
+
+[ext_resource type="FontFile" path="res://world_pack26/interior_pack/assets/NotoSansSC.ttf" id="e6"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_03.tscn" id="e7"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_02.tscn" id="e8"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/lounge_01.tscn" id="e9"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_05.tscn" id="e10"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_04.tscn" id="e11"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_01.tscn" id="e12"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_08.tscn" id="e13"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_06.tscn" id="e14"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_11.tscn" id="e15"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/school_09.tscn" id="e16"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/decor_01.tscn" id="e17"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(12.0,0.1,8.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(12.0,0.1,8.0)
+
+[sub_resource type="FontVariation" id="r2"]
+base_font = ExtResource("e6")
+variation_opentype = {2003265652:650.0}
+
+[sub_resource type="Environment" id="r3"]
+background_mode = 1
+background_color = Color(0.043,0.073,0.114,1)
+ambient_light_source = 3
+ambient_light_color = Color(0.82,0.9,1,1)
+ambient_light_energy = 0.28
+
+[node name="SchoolClassroom" type="Node3D"]
+
+script = ExtResource("e0")
+
+[node name="Structure" type="Node3D" parent="."]
+
+
+[node name="Furnishings" type="Node3D" parent="."]
+
+
+[node name="Foundation" type="MeshInstance3D" parent="Structure"]
+position = Vector3(0.0,-0.12,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FoundationBody" type="StaticBody3D" parent="Structure"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Structure/FoundationBody"]
+position = Vector3(0.0,-0.12,0.0)
+shape = SubResource("r1")
+
+[node name="Tile_0_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_0_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-5.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_1_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-4.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_2_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-3.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_3_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-2.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_4_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-1.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_5_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(-0.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_6_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(0.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_7_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(1.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_8_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(2.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_9_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(3.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_10_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(4.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_0" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_1" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_2" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,-1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_3" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,-0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_4" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,0.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_5" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,1.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_6" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Tile_11_7" parent="Structure" instance=ExtResource("e2")]
+position = Vector3(5.5,0.0,3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall0" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(-5.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall1" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(-3.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall2" parent="Structure" instance=ExtResource("e4")]
+position = Vector3(-1.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall3" parent="Structure" instance=ExtResource("e4")]
+position = Vector3(1.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall4" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(3.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="BackWall5" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(5.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="LeftWall0" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(-6.0,0.0,-3.0)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="LeftWall1" parent="Structure" instance=ExtResource("e4")]
+position = Vector3(-6.0,0.0,-1.0)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="LeftWall2" parent="Structure" instance=ExtResource("e3")]
+position = Vector3(-6.0,0.0,1.0)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="LeftWall3" parent="Structure" instance=ExtResource("e4")]
+position = Vector3(-6.0,0.0,3.0)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="Column-6.0" parent="Structure" instance=ExtResource("e5")]
+position = Vector3(-6.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Column6.0" parent="Structure" instance=ExtResource("e5")]
+position = Vector3(6.0,0.0,-4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Sign114" type="Label3D" parent="."]
+position = Vector3(0.0,2.25,-3.88)
+text = "鲸蓝学院 · 智能教室"
+font = SubResource("r2")
+font_size = 62
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+
+[node name="PreviewRig" type="Node3D" parent="."]
+
+
+[node name="Environment" type="WorldEnvironment" parent="PreviewRig"]
+environment = SubResource("r3")
+
+[node name="Key" type="DirectionalLight3D" parent="PreviewRig"]
+rotation_degrees = Vector3(-48,-32,0)
+light_color = Color(1,0.945,0.87,1)
+light_energy = 0.50
+shadow_enabled = true
+
+[node name="Fill" type="DirectionalLight3D" parent="PreviewRig"]
+rotation_degrees = Vector3(-25,145,0)
+light_color = Color(0.79,0.90,1,1)
+light_energy = 0.12
+
+[node name="Camera" type="Camera3D" parent="PreviewRig"]
+transform = Transform3D(0.961055,0,-0.276356,-0.188375,0.731689,-0.655093,0.202206,0.681639,0.703194,4.044127,14.632775,14.063871)
+projection = 1
+size = 14.76
+current = true
+
+[node name="school_03_1" parent="Furnishings" instance=ExtResource("e7")]
+position = Vector3(0.0,0.94,-3.85)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_02_1" parent="Furnishings" instance=ExtResource("e8")]
+position = Vector3(4.1,0.0,-2.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_1" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(4.1,0.0,-3.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_05_1" parent="Furnishings" instance=ExtResource("e10")]
+position = Vector3(4.45,1.0,-2.54)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_04_1" parent="Furnishings" instance=ExtResource("e11")]
+position = Vector3(0.0,2.28,-1.35)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_01_1" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-3.4,0.0,-0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_2" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-3.4,0.0,-0.3)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_2" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-3.4,0.0,0.85)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_3" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-3.4,0.0,1.45)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_3" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-3.4,0.0,2.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_4" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-3.4,0.0,3.2)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_4" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-0.55,0.0,-0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_5" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-0.55,0.0,-0.3)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_5" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-0.55,0.0,0.85)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_6" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-0.55,0.0,1.45)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_6" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-0.55,0.0,2.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_7" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-0.55,0.0,3.2)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_7" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(2.3,0.0,-0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_8" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(2.3,0.0,-0.3)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_8" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(2.3,0.0,0.85)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_9" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(2.3,0.0,1.45)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_01_9" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(2.3,0.0,2.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_10" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(2.3,0.0,3.2)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="school_08_1" parent="Furnishings" instance=ExtResource("e13")]
+position = Vector3(-4.8,0.0,-3.43)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_06_1" parent="Furnishings" instance=ExtResource("e14")]
+position = Vector3(-3.65,1.1,-3.89)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_11_1" parent="Furnishings" instance=ExtResource("e15")]
+position = Vector3(4.7,0.0,0.1)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="school_09_1" parent="Furnishings" instance=ExtResource("e16")]
+position = Vector3(4.8,0.0,2.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="decor_01_1" parent="Furnishings" instance=ExtResource("e17")]
+position = Vector3(-5.45,0.0,2.8)
+rotation = Vector3(0.0,0.0,0.0)

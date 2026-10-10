@@ -1,0 +1,41 @@
+# ===== 大肥鱼 v22 · 方案 C（0.69 GB）=====
+# 原则：只排除「可重新生成」与「工具链」两类。
+# 游戏运行时真正加载的素材（assets/ models/ world_pack26/ interior_pack/）全部保留。
+
+# --- 引擎缓存（删掉后 Godot 会重新导入，约 621 MB）---
+.godot/
+
+# --- 工具链（可重装；内含 83 MB 的 ffmpeg-win-x86_64.exe）---
+.mcp/
+tools/video_runtime/
+__pycache__/
+*.pyc
+*.pyo
+
+# --- 过程产物（体积最大，均可重新生成）---
+# 预览\    794 MB  逐帧截图与前后对照，只是过程记录
+# art_source\ 523 MB  即梦等原始生成源料
+预览/
+art_source/
+备份/
+.battle_art_before_redesign_20261004/
+.battle_ui_backup_20261004/
+
+# --- 运行日志与临时输出 ---
+*.log
+play_stdout.log
+play_stderr.log
+_audio_ui_test.cfg
+_probe_*.png
+_thumb_test_*.png
+
+# --- 操作系统杂项 ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== 刻意不排除（勿改动）=====
+# *.import  Godot 4 导入设置，必须入库；忽略后会用默认值重新导入，丢掉调好的参数
+# *.uid     Godot 4.4+ 的稳定引用标识，忽略会导致移动文件后引用断裂
+# *.tscn *.tres *.glb *.png *.ttf 在 assets/ models/ 内均为运行时依赖
+# 素材包\*.zip 与 大肥鱼_城镇物品与植物_24件3D模型.zip 为交付留档（21 MB）

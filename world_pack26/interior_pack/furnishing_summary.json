@@ -1,0 +1,142 @@
+{
+  "maps": 26,
+  "original_containers": 124,
+  "added_searchable_containers": 522,
+  "new_container_instances": 444,
+  "reused_container_instances": 78,
+  "decoration_instances": 1221,
+  "total_searchable_containers": 646,
+  "preserved_models": 389,
+  "per_map": {
+    "school": {
+      "title": "鲸蓝三层庭院学院",
+      "added_containers": 28,
+      "added_decorations": 96
+    },
+    "hospital": {
+      "title": "深潜双层综合医院",
+      "added_containers": 25,
+      "added_decorations": 38
+    },
+    "mall": {
+      "title": "Token三层挑空商业中心",
+      "added_containers": 12,
+      "added_decorations": 30
+    },
+    "residence": {
+      "title": "鲸蓝公寓社区",
+      "added_containers": 11,
+      "added_decorations": 44
+    },
+    "research": {
+      "title": "深潜错层研究中心",
+      "added_containers": 25,
+      "added_decorations": 70
+    },
+    "datacenter": {
+      "title": "Token三层动力数据中心",
+      "added_containers": 35,
+      "added_decorations": 50
+    },
+    "harbor": {
+      "title": "鲸蓝立体滨水物流港",
+      "added_containers": 28,
+      "added_decorations": 46
+    },
+    "transit": {
+      "title": "鲸蓝双层立体换乘站",
+      "added_containers": 4,
+      "added_decorations": 10
+    },
+    "library": {
+      "title": "鲸蓝双层城市图书馆",
+      "added_containers": 19,
+      "added_decorations": 52
+    },
+    "sports": {
+      "title": "鲸蓝错层立体体育中心",
+      "added_containers": 23,
+      "added_decorations": 56
+    },
+    "foodhall": {
+      "title": "鲸蓝三层餐饮市场",
+      "added_containers": 31,
+      "added_decorations": 72
+    },
+    "museum": {
+      "title": "鲸蓝三层展陈博物馆",
+      "added_containers": 21,
+      "added_decorations": 52
+    },
+    "fabrication": {
+      "title": "Token立体智造工厂",
+      "added_containers": 16,
+      "added_decorations": 34
+    },
+    "skypark": {
+      "title": "城市空中花园",
+      "added_containers": 4,
+      "added_decorations": 10
+    },
+    "civic": {
+      "title": "Token双层T形行政中心",
+      "added_containers": 33,
+      "added_decorations": 81
+    },
+    "hotel": {
+      "title": "云鲸双层中庭酒店",
+      "added_containers": 23,
+      "added_decorations": 52
+    },
+    "emergency": {
+      "title": "深潜双层应急调度站",
+      "added_containers": 27,
+      "added_decorations": 54
+    },
+    "media": {
+      "title": "Token三层立体传媒中心",
+      "added_containers": 27,
+      "added_decorations": 76
+    },
+    "expo": {
+      "title": "Token三层大跨会展馆",
+      "added_containers": 40,
+      "added_decorations": 116
+    },
+    "underground": {
+      "title": "Token双层地下服务网络",
+      "added_containers": 27,
+      "added_decorations": 48
+    },
+    "nightmarket": {
+      "title": "鲸蓝U形滨海餐饮夜市",
+      "added_containers": 8,
+      "added_decorations": 22
+    },
+    "customs": {
+      "title": "Token双层查验仓库",
+      "added_containers": 17,
+      "added_decorations": 34
+    },
+    "campsite": {
+      "title": "云鲸T形海滩度假营地",
+      "added_containers": 12,
+      "added_decorations": 22
+    },
+    "observatory": {
+      "title": "深潜L形海洋观测站",
+      "added_containers": 8,
+      "added_decorations": 22
+    },
+    "shipyard": {
+      "title": "鲸蓝错位船舶维修基地",
+      "added_containers": 10,
+      "added_decorations": 14
+    },
+    "boardwalk": {
+      "title": "大肥鱼双层挑空滨水商场",
+      "added_containers": 8,
+      "added_decorations": 20
+    }
+  }
+}

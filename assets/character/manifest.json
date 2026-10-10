@@ -1,0 +1,422 @@
+{
+  "atlas_order": [
+    "down",
+    "down_left",
+    "left",
+    "up_left",
+    "up",
+    "up_right",
+    "right",
+    "down_right"
+  ],
+  "baked_source_manifest": "res://assets/character/jimeng_v24/source_manifest.json",
+  "border_cleanup": "native alpha edge color bleed, exterior rim cleanup, fixed foot re-registration; no resize or body deformation",
+  "border_cleanup_source_manifest": "res://assets/character/jimeng_v21/source_manifest.json",
+  "canvas_size": [
+    1024.0,
+    1152.0
+  ],
+  "cycle_distance": 1.1,
+  "frame_counts": {
+    "idle": 1.0,
+    "interact": 1.0,
+    "walk": 12.0
+  },
+  "frame_counts_by_direction": {
+    "down": 12.0,
+    "down_left": 12.0,
+    "down_right": 12.0,
+    "left": 16.0,
+    "right": 13.0,
+    "up": 12.0,
+    "up_left": 26,
+    "up_right": 26
+  },
+  "frame_size": [
+    1024.0,
+    1152.0
+  ],
+  "frames_by_state": {
+    "idle": {
+      "down": [
+        "res://assets/character/jimeng_v24/down/walk_03.png"
+      ],
+      "down_left": [
+        "res://assets/character/jimeng_v24/down_left/walk_04.png"
+      ],
+      "down_right": [
+        "res://assets/character/jimeng_v24/down_right/walk_04.png"
+      ],
+      "left": [
+        "res://assets/character/jimeng_v24/left/walk_01.png"
+      ],
+      "right": [
+        "res://assets/character/jimeng_v24/right/walk_10.png"
+      ],
+      "up": [
+        "res://assets/character/jimeng_v24/up/walk_01.png"
+      ],
+      "up_left": [
+        "res://assets/character/up_left_video_20261010/walk_09.png"
+      ],
+      "up_right": [
+        "res://assets/character/up_right_mirror_20261010/walk_09.png"
+      ]
+    },
+    "interact": {
+      "down": [
+        "res://assets/character/jimeng_v24/down/walk_03.png"
+      ],
+      "down_left": [
+        "res://assets/character/jimeng_v24/down_left/walk_04.png"
+      ],
+      "down_right": [
+        "res://assets/character/jimeng_v24/down_right/walk_04.png"
+      ],
+      "left": [
+        "res://assets/character/jimeng_v24/left/walk_01.png"
+      ],
+      "right": [
+        "res://assets/character/jimeng_v24/right/walk_10.png"
+      ],
+      "up": [
+        "res://assets/character/jimeng_v24/up/walk_01.png"
+      ],
+      "up_left": [
+        "res://assets/character/up_left_video_20261010/walk_09.png"
+      ],
+      "up_right": [
+        "res://assets/character/up_right_mirror_20261010/walk_09.png"
+      ]
+    },
+    "walk": {
+      "down": [
+        "res://assets/character/jimeng_v24/down/walk_00.png",
+        "res://assets/character/jimeng_v24/down/walk_01.png",
+        "res://assets/character/jimeng_v24/down/walk_02.png",
+        "res://assets/character/jimeng_v24/down/walk_03.png",
+        "res://assets/character/jimeng_v24/down/walk_04.png",
+        "res://assets/character/jimeng_v24/down/walk_05.png",
+        "res://assets/character/jimeng_v24/down/walk_06.png",
+        "res://assets/character/jimeng_v24/down/walk_07.png",
+        "res://assets/character/jimeng_v24/down/walk_08.png",
+        "res://assets/character/jimeng_v24/down/walk_09.png",
+        "res://assets/character/jimeng_v24/down/walk_10.png",
+        "res://assets/character/jimeng_v24/down/walk_11.png"
+      ],
+      "down_left": [
+        "res://assets/character/jimeng_v24/down_left/walk_00.png",
+        "res://assets/character/jimeng_v24/down_left/walk_01.png",
+        "res://assets/character/jimeng_v24/down_left/walk_02.png",
+        "res://assets/character/jimeng_v24/down_left/walk_03.png",
+        "res://assets/character/jimeng_v24/down_left/walk_04.png",
+        "res://assets/character/jimeng_v24/down_left/walk_05.png",
+        "res://assets/character/jimeng_v24/down_left/walk_06.png",
+        "res://assets/character/jimeng_v24/down_left/walk_07.png",
+        "res://assets/character/jimeng_v24/down_left/walk_08.png",
+        "res://assets/character/jimeng_v24/down_left/walk_09.png",
+        "res://assets/character/jimeng_v24/down_left/walk_10.png",
+        "res://assets/character/jimeng_v24/down_left/walk_11.png"
+      ],
+      "down_right": [
+        "res://assets/character/jimeng_v24/down_right/walk_00.png",
+        "res://assets/character/jimeng_v24/down_right/walk_01.png",
+        "res://assets/character/jimeng_v24/down_right/walk_02.png",
+        "res://assets/character/jimeng_v24/down_right/walk_03.png",
+        "res://assets/character/jimeng_v24/down_right/walk_04.png",
+        "res://assets/character/jimeng_v24/down_right/walk_05.png",
+        "res://assets/character/jimeng_v24/down_right/walk_06.png",
+        "res://assets/character/jimeng_v24/down_right/walk_07.png",
+        "res://assets/character/jimeng_v24/down_right/walk_08.png",
+        "res://assets/character/jimeng_v24/down_right/walk_09.png",
+        "res://assets/character/jimeng_v24/down_right/walk_10.png",
+        "res://assets/character/jimeng_v24/down_right/walk_11.png"
+      ],
+      "left": [
+        "res://assets/character/jimeng_v24/left/walk_00.png",
+        "res://assets/character/jimeng_v24/left/walk_01.png",
+        "res://assets/character/jimeng_v24/left/walk_02.png",
+        "res://assets/character/jimeng_v24/left/walk_03.png",
+        "res://assets/character/jimeng_v24/left/walk_04.png",
+        "res://assets/character/jimeng_v24/left/walk_05.png",
+        "res://assets/character/jimeng_v24/left/walk_06.png",
+        "res://assets/character/jimeng_v24/left/walk_07.png",
+        "res://assets/character/jimeng_v24/left/walk_08.png",
+        "res://assets/character/jimeng_v24/left/walk_09.png",
+        "res://assets/character/jimeng_v24/left/walk_10.png",
+        "res://assets/character/jimeng_v24/left/walk_11.png",
+        "res://assets/character/jimeng_v24/left/walk_12.png",
+        "res://assets/character/jimeng_v24/left/walk_13.png",
+        "res://assets/character/jimeng_v24/left/walk_14.png",
+        "res://assets/character/jimeng_v24/left/walk_15.png"
+      ],
+      "right": [
+        "res://assets/character/jimeng_v24/right/walk_00.png",
+        "res://assets/character/jimeng_v24/right/walk_01.png",
+        "res://assets/character/jimeng_v24/right/walk_02.png",
+        "res://assets/character/jimeng_v24/right/walk_03.png",
+        "res://assets/character/jimeng_v24/right/walk_04.png",
+        "res://assets/character/jimeng_v24/right/walk_05.png",
+        "res://assets/character/jimeng_v24/right/walk_06.png",
+        "res://assets/character/jimeng_v24/right/walk_07.png",
+        "res://assets/character/jimeng_v24/right/walk_08.png",
+        "res://assets/character/jimeng_v24/right/walk_09.png",
+        "res://assets/character/jimeng_v24/right/walk_10.png",
+        "res://assets/character/jimeng_v24/right/walk_11.png",
+        "res://assets/character/jimeng_v24/right/walk_12.png"
+      ],
+      "up": [
+        "res://assets/character/jimeng_v24/up/walk_00.png",
+        "res://assets/character/jimeng_v24/up/walk_01.png",
+        "res://assets/character/jimeng_v24/up/walk_02.png",
+        "res://assets/character/jimeng_v24/up/walk_03.png",
+        "res://assets/character/jimeng_v24/up/walk_04.png",
+        "res://assets/character/jimeng_v24/up/walk_05.png",
+        "res://assets/character/jimeng_v24/up/walk_06.png",
+        "res://assets/character/jimeng_v24/up/walk_07.png",
+        "res://assets/character/jimeng_v24/up/walk_08.png",
+        "res://assets/character/jimeng_v24/up/walk_09.png",
+        "res://assets/character/jimeng_v24/up/walk_10.png",
+        "res://assets/character/jimeng_v24/up/walk_11.png"
+      ],
+      "up_left": [
+        "res://assets/character/up_left_video_20261010/walk_00.png",
+        "res://assets/character/up_left_video_20261010/walk_01.png",
+        "res://assets/character/up_left_video_20261010/walk_02.png",
+        "res://assets/character/up_left_video_20261010/walk_03.png",
+        "res://assets/character/up_left_video_20261010/walk_04.png",
+        "res://assets/character/up_left_video_20261010/walk_05.png",
+        "res://assets/character/up_left_video_20261010/walk_06.png",
+        "res://assets/character/up_left_video_20261010/walk_07.png",
+        "res://assets/character/up_left_video_20261010/walk_08.png",
+        "res://assets/character/up_left_video_20261010/walk_09.png",
+        "res://assets/character/up_left_video_20261010/walk_10.png",
+        "res://assets/character/up_left_video_20261010/walk_11.png",
+        "res://assets/character/up_left_video_20261010/walk_12.png",
+        "res://assets/character/up_left_video_20261010/walk_13.png",
+        "res://assets/character/up_left_video_20261010/walk_14.png",
+        "res://assets/character/up_left_video_20261010/walk_15.png",
+        "res://assets/character/up_left_video_20261010/walk_16.png",
+        "res://assets/character/up_left_video_20261010/walk_17.png",
+        "res://assets/character/up_left_video_20261010/walk_18.png",
+        "res://assets/character/up_left_video_20261010/walk_19.png",
+        "res://assets/character/up_left_video_20261010/walk_20.png",
+        "res://assets/character/up_left_video_20261010/walk_21.png",
+        "res://assets/character/up_left_video_20261010/walk_22.png",
+        "res://assets/character/up_left_video_20261010/walk_23.png",
+        "res://assets/character/up_left_video_20261010/walk_24.png",
+        "res://assets/character/up_left_video_20261010/walk_25.png"
+      ],
+      "up_right": [
+        "res://assets/character/up_right_mirror_20261010/walk_00.png",
+        "res://assets/character/up_right_mirror_20261010/walk_01.png",
+        "res://assets/character/up_right_mirror_20261010/walk_02.png",
+        "res://assets/character/up_right_mirror_20261010/walk_03.png",
+        "res://assets/character/up_right_mirror_20261010/walk_04.png",
+        "res://assets/character/up_right_mirror_20261010/walk_05.png",
+        "res://assets/character/up_right_mirror_20261010/walk_06.png",
+        "res://assets/character/up_right_mirror_20261010/walk_07.png",
+        "res://assets/character/up_right_mirror_20261010/walk_08.png",
+        "res://assets/character/up_right_mirror_20261010/walk_09.png",
+        "res://assets/character/up_right_mirror_20261010/walk_10.png",
+        "res://assets/character/up_right_mirror_20261010/walk_11.png",
+        "res://assets/character/up_right_mirror_20261010/walk_12.png",
+        "res://assets/character/up_right_mirror_20261010/walk_13.png",
+        "res://assets/character/up_right_mirror_20261010/walk_14.png",
+        "res://assets/character/up_right_mirror_20261010/walk_15.png",
+        "res://assets/character/up_right_mirror_20261010/walk_16.png",
+        "res://assets/character/up_right_mirror_20261010/walk_17.png",
+        "res://assets/character/up_right_mirror_20261010/walk_18.png",
+        "res://assets/character/up_right_mirror_20261010/walk_19.png",
+        "res://assets/character/up_right_mirror_20261010/walk_20.png",
+        "res://assets/character/up_right_mirror_20261010/walk_21.png",
+        "res://assets/character/up_right_mirror_20261010/walk_22.png",
+        "res://assets/character/up_right_mirror_20261010/walk_23.png",
+        "res://assets/character/up_right_mirror_20261010/walk_24.png",
+        "res://assets/character/up_right_mirror_20261010/walk_25.png"
+      ]
+    }
+  },
+  "generated_extraction": "res://assets/character/jimeng_v20/generated_extraction.json",
+  "generated_source_sequences": {},
+  "ground": [
+    512.0,
+    1080.0
+  ],
+  "inner_matte": "Video-source neutral hair openings and leg gaps only; RGB and all generated directions unchanged",
+  "inner_matte_source_manifest": "res://assets/character/jimeng_v22/source_manifest.json",
+  "mask_note": "Explicit per-frame alpha masks; original size and sequence; no runtime colour key or erosion. Ink baked once, disable runtime ink.",
+  "method": "native_complete_frames_baked_alpha_masks_and_blue_ink",
+  "note": "Source artwork retained separately. Full character pictures only; RGB inside retained silhouette unchanged. Transparent RGB prepared for linear sampling.",
+  "pixel_size": 0.0022,
+  "provenance": {
+    "down": "video",
+    "down_left": "video",
+    "down_right": "video",
+    "left": "video",
+    "right": "video",
+    "up": "video",
+    "up_left": "user upLeft.mp4, native 24 fps complete video frames, fixed green-screen alpha",
+    "up_right": "exact native RGBA horizontal mirror of user upLeft.mp4 video frames"
+  },
+  "runtime_matte_baked": true,
+  "source_video": "res://art_source/jimeng_20261001/source_video.mp4",
+  "version": 13,
+  "video_extraction": "res://assets/character/jimeng_v20/video_extraction.json",
+  "walk_fps": 12.0,
+  "white_fringe": "Trim 4.6px around newly cleared studio holes, decontaminate opaque edge colours and transparent RGB bleed",
+  "white_fringe_source_manifest": "res://assets/character/jimeng_v23/source_manifest.json",
+  "pixel_size_by_direction": {
+    "up_left": 0.0037219047619047618,
+    "up_right": 0.0037219047619047618
+  },
+  "walk_fps_by_direction": {
+    "up_left": 24,
+    "up_right": 24
+  },
+  "video_extraction_by_direction": {
+    "up_left": "res://assets/character/up_left_video_20261010/extraction.json",
+    "up_right": "res://assets/character/up_right_mirror_20261010/extraction.json"
+  },
+  "surface_profiles_by_direction": {
+    "up_left": {
+      "head": [
+        0.504,
+        0.592,
+        0.112,
+        0.108
+      ],
+      "body": [
+        0.48,
+        0.809,
+        0.103,
+        0.089
+      ],
+      "tail": [
+        0.598,
+        0.869,
+        0.106,
+        0.07
+      ],
+      "face": [
+        0.412,
+        0.621,
+        0.029,
+        0.037
+      ],
+      "head_split": [
+        0.68,
+        0.75
+      ],
+      "hair_split": [
+        0.71,
+        0.8
+      ],
+      "tail_split": [
+        0.8,
+        0.85
+      ]
+    },
+    "up_right": {
+      "head": [
+        0.496,
+        0.592,
+        0.112,
+        0.108
+      ],
+      "body": [
+        0.52,
+        0.809,
+        0.103,
+        0.089
+      ],
+      "tail": [
+        0.402,
+        0.869,
+        0.106,
+        0.07
+      ],
+      "face": [
+        0.5880000000000001,
+        0.621,
+        0.029,
+        0.037
+      ],
+      "head_split": [
+        0.68,
+        0.75
+      ],
+      "hair_split": [
+        0.71,
+        0.8
+      ],
+      "tail_split": [
+        0.8,
+        0.85
+      ]
+    }
+  },
+  "mirrored_directions": {
+    "up_right": "up_left"
+  },
+  "proportion_warp_by_direction": {
+    "down": {
+      "enabled": true,
+      "head_end": 0.5,
+      "body_end": 0.82,
+      "body_extension": 0.03,
+      "leg_extension": 0.008,
+      "body_width": 0.12,
+      "skirt_width": 0.06,
+      "method": "continuous full-picture UV remap, rigid face, locally wider body and skirt, fixed original foot row; original RGBA images unchanged"
+    }
+  },
+  "palette_match_by_direction": {
+    "up_left": {
+      "enabled": true,
+      "hair_palette_gamma": [
+        0.86,
+        0.91,
+        0.75
+      ],
+      "skin_palette_gamma": [
+        0.44,
+        0.47,
+        0.48
+      ],
+      "hair_palette_strength": 1.0,
+      "skin_palette_strength": 1.0,
+      "contour_strength": 0.58,
+      "contour_width": 1.8,
+      "contour_colour": [
+        0.055,
+        0.075,
+        0.16
+      ],
+      "method": "selective linear-space pigment gamma before scene lighting; identical for mirrored directions; original RGB and alpha untouched"
+    },
+    "up_right": {
+      "enabled": true,
+      "hair_palette_gamma": [
+        0.86,
+        0.91,
+        0.75
+      ],
+      "skin_palette_gamma": [
+        0.44,
+        0.47,
+        0.48
+      ],
+      "hair_palette_strength": 1.0,
+      "skin_palette_strength": 1.0,
+      "contour_strength": 0.58,
+      "contour_width": 1.8,
+      "contour_colour": [
+        0.055,
+        0.075,
+        0.16
+      ],
+      "method": "selective linear-space pigment gamma before scene lighting; identical for mirrored directions; original RGB and alpha untouched"
+    }
+  }
+}

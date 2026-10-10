@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b0xjaucu521jp"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/容器交互分类与战利品.地图.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.区域ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.区域.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.楼层.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.标高.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.交互ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.容器资产ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.容器名称.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.接入方式.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.模型节点.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.靠近点.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.战利品.translation"]
+
+source_file="res://world_pack26/interior_pack/容器交互分类与战利品.csv"
+dest_files=["res://world_pack26/interior_pack/容器交互分类与战利品.地图.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.区域ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.区域.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.楼层.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.标高.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.交互ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.容器资产ID.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.容器名称.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.接入方式.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.模型节点.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.靠近点.translation", "res://world_pack26/interior_pack/容器交互分类与战利品.战利品.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

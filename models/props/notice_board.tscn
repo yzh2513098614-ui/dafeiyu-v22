@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/props/notice_board.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(1.3200000524520874, 1.6749999523162842, 0.12549999356269836)
+
+[node name="notice_board" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.8374999761581421, -0.017749998718500137)
+shape = SubResource("Shape0")
+

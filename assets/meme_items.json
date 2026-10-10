@@ -1,0 +1,308 @@
+{
+  "token_cracker": {
+    "name": "Token 小饼干",
+    "icon": "bakery_case",
+    "kind": "补给 · 可使用",
+    "description": "大肥鱼把一句句没说完的话烤成了小饼干。吃下去后，今天的灵感看起来又够用了。",
+    "quote": "先吃一口，再慢慢思考。",
+    "use": "小饼干咔嚓一声。大肥鱼：思考额度恢复了，至少心情恢复了。",
+    "icon_path": "res://assets/v18/items/token_cracker.png"
+  },
+  "context_note": {
+    "name": "上下文便签",
+    "icon": "open_book",
+    "kind": "线索 · 可阅读",
+    "description": "鲸落港的街道每天都会被潮水重排。居民把昨天的约定写在便签上，提醒彼此：新的一天，也要记得老朋友。",
+    "quote": "别把重要的人挤出上下文。",
+    "use": "便签上写着：大肥鱼只是大家给蓝鲸信使起的昵称。它在鲸落港收集问题，把未完成的答案送去 DeepSeek 深潜站。",
+    "icon_path": "res://assets/v18/items/context_note.png"
+  },
+  "stopped_pillow": {
+    "name": "已停止思考抱枕",
+    "icon": "whale_plush",
+    "kind": "收藏 · 可查看",
+    "description": "蓝色鲸鱼抱枕。翻到背面写着‘已停止思考’，翻回正面写着‘正在摸鱼’。抱着休息也是正经事。",
+    "quote": "脑袋下班，尾巴还在上班。",
+    "use": "你抱住大肥鱼。它没有给出答案，但给出了一个很舒服的午觉建议。",
+    "icon_path": "res://assets/v18/items/stopped_pillow.png"
+  },
+  "retry_tea": {
+    "name": "稍后重试热茶",
+    "icon": "whale_mug",
+    "kind": "补给 · 可使用",
+    "description": "深潜站窗口排队太久时，值班员会递来这杯茶。杯底的小字：问题不会跑掉，茶凉了倒是真的。",
+    "quote": "等水烧开，也等灵感上线。",
+    "use": "热茶喝完了。远处传来一句：稍后重试，先别着急。",
+    "icon_path": "res://assets/v18/items/retry_tea.png"
+  },
+  "thinking_lamp": {
+    "name": "思考中夜灯",
+    "icon": "lamp_table",
+    "kind": "收藏 · 可查看",
+    "description": "DeepSeek 深潜站的旧夜灯。鲸落港传说，灯亮得越久，值班的大肥鱼越可能在认真想，也可能在认真困。",
+    "quote": "思考中……别催，鱼在潜水。",
+    "use": "夜灯标签：深潜不等于消失。好问题值得慢慢想，困的时候也值得睡一觉。",
+    "icon_path": "res://assets/v18/items/thinking_lamp.png"
+  },
+  "prompt_pen": {
+    "name": "提示词钢笔",
+    "icon": "keyboard",
+    "kind": "工具 · 可查看",
+    "description": "笔杆刻着三个提醒：说清目标，给出条件，留一点想象。把问题写得具体些，港口的信使才知道去哪里。",
+    "quote": "‘帮我做一个房间’和‘我想住在里面’不一样。",
+    "use": "你在笔记上写下：把生活过得具体一点。大肥鱼在旁边画了一个歪歪的笑脸。",
+    "icon_path": "res://assets/v18/items/prompt_pen.png"
+  },
+  "hallucination_map": {
+    "name": "幻觉地图",
+    "icon": "painting_mountain",
+    "kind": "线索 · 可阅读",
+    "description": "这张地图把鲸落港的面包店画在了海底。绘图员说是一个很自信的梦。地图可以参考，路还是要自己看。",
+    "quote": "看上去很有道理，走过去却是水。",
+    "use": "地图背面：深潜站三原则——不懂就问，重要的再核对，找不到的路不要硬编。",
+    "icon_path": "res://assets/v18/items/hallucination_map.png"
+  },
+  "cache_book": {
+    "name": "缓存旧书",
+    "icon": "books",
+    "kind": "线索 · 可阅读",
+    "description": "书页记录着居民反复问过的小问题。大肥鱼把熟悉的答案夹在页间；每次打开，仍会先看看今天是否不同。",
+    "quote": "记得住，也要更新。",
+    "use": "旧书里的手写信：如果海浪带走了答案，就重新找一次。我们会在灯下等你回来。",
+    "icon_path": "res://assets/v18/items/cache_book.png"
+  },
+  "fish_badge": {
+    "name": "摸鱼许可证",
+    "icon": "painting_whale",
+    "kind": "收藏 · 可查看",
+    "description": "鲸落港居民委员会盖章的小徽章。正面是蓝鲸，背面是一行认真得可疑的字：今日休息，明日继续。",
+    "quote": "休息合法，熬夜可疑。",
+    "use": "许可证第零条：再大的肥鱼，也不用二十四小时给所有人答案。",
+    "icon_path": "res://assets/v18/items/fish_badge.png"
+  },
+  "sea_biscuit": {
+    "name": "鲸落海盐饼",
+    "icon": "plate_rack",
+    "kind": "补给 · 可使用",
+    "description": "阅读室老板做的海盐小饼。甜味很轻，适合慢慢读完一页书，再看一眼窗外。",
+    "quote": "故事可以续杯。",
+    "use": "你吃了一块海盐饼。阅读室老板：一页书，一口茶，今天的进度已经很好了。",
+    "icon_path": "res://assets/v18/items/sea_biscuit.png"
+  },
+  "branch_bookmark": {
+    "name": "分支书签",
+    "icon": "open_book",
+    "kind": "收藏 · 可查看",
+    "description": "书签有两条蓝色细带：一条标记尝试，一条标记回头。鲸落港不奖励猜得快，只欢迎愿意再试一次的人。",
+    "quote": "走错一页，不等于整个故事都错了。",
+    "use": "你把书签夹在今天这一页。下一页还没写完，但它已经属于你。",
+    "icon_path": "res://assets/v18/items/branch_bookmark.png"
+  },
+  "whale_letter": {
+    "name": "大肥鱼的来信",
+    "icon": "open_book",
+    "kind": "线索 · 可阅读",
+    "description": "信封上画着一只胖乎乎的蓝鲸，收件人写着‘还在寻找答案的人’。",
+    "quote": "一起潜下去，也一起浮上来。",
+    "use": "大肥鱼：欢迎来到鲸落港。DeepSeek 深潜站负责寻找，居民负责生活。拿走需要的物资，留下新的问题。房间是小的，世界可以慢慢长大。",
+    "icon_path": "res://assets/v18/items/whale_letter.png"
+  },
+  "first_aid": {
+    "name": "港口急救包",
+    "icon": "chest",
+    "icon_path": "res://assets/ui/chest.svg",
+    "kind": "补给 · 可使用",
+    "description": "港口医务室准备的绷带与消毒用品。受伤时恢复生命，生命充足时会留在背包。",
+    "quote": "先照顾好自己。",
+    "use": "伤口已经处理好了。"
+  },
+  "lemon_water": {
+    "name": "海盐柠檬水",
+    "icon": "whale_mug",
+    "icon_path": "res://assets/item_icons/retry_tea.svg",
+    "kind": "补给 · 可使用",
+    "description": "清爽的海盐柠檬水，适合逛完一段街道后慢慢喝。",
+    "quote": "歇一口气，再看远处的海。",
+    "use": "清凉的柠檬水让你恢复了一点精神。"
+  },
+  "sea_soup": {
+    "name": "暖心海藻汤",
+    "icon": "whale_mug",
+    "icon_path": "res://assets/item_icons/sea_biscuit.svg",
+    "kind": "补给 · 可使用",
+    "description": "社区厨房煮的一碗热汤，同时恢复生命、体力与饱食。",
+    "quote": "今天也要好好吃饭。",
+    "use": "热汤喝完，肚子暖暖的。"
+  },
+  "tide_compass": {
+    "name": "潮汐指南针",
+    "icon": "painting_mountain",
+    "icon_path": "res://assets/item_icons/hallucination_map.svg",
+    "kind": "工具 · 可装备",
+    "description": "旧信使留下的指南针。装备在工具位，提升幸运与灵巧；与钢笔互相替换。",
+    "quote": "不用着急，总有一条路通往海边。",
+    "use": "指南针收进了随身工具袋。"
+  },
+  "sea_shell": {
+    "name": "潮纹贝壳",
+    "icon": "painting_whale",
+    "icon_path": "res://assets/item_icons/fish_badge.svg",
+    "kind": "材料 · 可查看",
+    "description": "海边拾到的带着潮纹的贝壳。先收好，未来可以用于制作。",
+    "quote": "海也有自己的笔迹。",
+    "use": "你把贝壳翻过来，看见一圈浅浅的海纹。"
+  },
+  "soft_linen": {
+    "name": "柔软亚麻",
+    "icon": "whale_plush",
+    "icon_path": "res://assets/item_icons/stopped_pillow.svg",
+    "kind": "材料 · 可查看",
+    "description": "手作室整理好的亚麻布。先收好，未来可以用于制作。",
+    "quote": "一针一线，也是一种慢生活。",
+    "use": "柔软的亚麻布可以留给以后的手作。"
+  },
+  "sea_glass": {
+    "name": "海玻璃小瓶",
+    "kind": "收藏 · 可查看",
+    "description": "海浪把玻璃磨成柔软的颜色。瓶里装着今天捡到的蓝绿碎片。",
+    "quote": "把尖锐的日子慢慢磨圆。",
+    "use": "你轻轻晃动小瓶，听见一小段海风。",
+    "icon_path": "res://assets/v18/items/sea_glass.png",
+    "icon": "open_book"
+  },
+  "whale_compass": {
+    "name": "蓝鲸罗盘",
+    "kind": "工具 · 可查看",
+    "description": "黄铜表盖下的小鲸鱼总朝着海面。能提醒旅人记得回家的方向。",
+    "quote": "走远一点，也记得回家。",
+    "use": "罗盘指针轻轻转动，鲸落港就在导览里。",
+    "icon_path": "res://assets/v18/items/whale_compass.png",
+    "icon": "open_book"
+  },
+  "butter_bread": {
+    "name": "晨光黄油面包",
+    "kind": "补给 · 可使用",
+    "description": "集市刚出炉的圆面包，表皮脆脆，里面柔软。",
+    "quote": "今天也要好好吃饭。",
+    "use": "你吃掉一份面包，暖暖的黄油香留在指尖。",
+    "icon_path": "res://assets/v18/items/butter_bread.png",
+    "icon": "open_book"
+  },
+  "hydrangea_bouquet": {
+    "name": "蓝白绣球花束",
+    "kind": "收藏 · 可查看",
+    "description": "青柠花房扎好的小花束，纸绳上还留着水汽。",
+    "quote": "让房间有一点夏天。",
+    "use": "你闻了闻花束，今天的房间似乎明亮了一点。",
+    "icon_path": "res://assets/v18/items/hydrangea_bouquet.png",
+    "icon": "open_book"
+  },
+  "harbor_ticket": {
+    "name": "海风纪念票",
+    "kind": "线索 · 可阅读",
+    "description": "旧渡船纪念票，背面记着港口潮汐与投递日。",
+    "quote": "每一次出发都值得留下。",
+    "use": "白帆艺廊周末开灯，青柠花房午后送花。",
+    "icon_path": "res://assets/v18/items/harbor_ticket.png",
+    "icon": "open_book"
+  },
+  "whale_sketchbook": {
+    "name": "蓝鲸写生本",
+    "kind": "工具 · 可查看",
+    "description": "还没画满的厚纸本，留给街角与小故事。",
+    "quote": "先画下来，慢慢补完。",
+    "use": "你记下今天去过的地方。",
+    "icon_path": "res://assets/v18/items/whale_sketchbook.png",
+    "icon": "open_book"
+  },
+  "seed_packet": {
+    "name": "青柠种子袋",
+    "kind": "工具 · 可查看",
+    "description": "花房送的小袋种子，养护卡提醒你先给它一点时间。",
+    "quote": "生长不用赶进度。",
+    "use": "有光、有水，也要有耐心。",
+    "icon_path": "res://assets/v18/items/seed_packet.png",
+    "icon": "open_book"
+  },
+  "blue_teapot": {
+    "name": "海盐蓝茶壶",
+    "kind": "收藏 · 可查看",
+    "description": "奶白陶瓷与海蓝釉面，装下一壶午后茶。",
+    "quote": "把下午泡得慢一点。",
+    "use": "茶壶映着窗外的蓝天。",
+    "icon_path": "res://assets/v18/items/blue_teapot.png",
+    "icon": "open_book"
+  },
+  "sewing_kit": {
+    "name": "小小缝纫盒",
+    "kind": "工具 · 可查看",
+    "description": "蓝绿线轴、金色剪刀与一根修补旧物的针。",
+    "quote": "把喜欢的东西再留久一点。",
+    "use": "你整理好线轴，想起还没完成的小布包。",
+    "icon_path": "res://assets/v18/items/sewing_kit.png",
+    "icon": "open_book"
+  },
+  "ivory_shell": {
+    "name": "奶白海贝",
+    "kind": "收藏 · 可查看",
+    "description": "海边拾到的扇贝，纹路里藏着珍珠光。",
+    "quote": "听听海，也听听自己。",
+    "use": "海贝贴近耳边，响起安静的沙沙声。",
+    "icon_path": "res://assets/v18/items/ivory_shell.png",
+    "icon": "open_book"
+  },
+  "instant_camera": {
+    "name": "深蓝拍立得",
+    "kind": "工具 · 可查看",
+    "description": "拍下海风、窗边和朋友，每张照片是一段小日子。",
+    "quote": "普通的一天也可以被记住。",
+    "use": "你把最喜欢的街角留给下一张照片。",
+    "icon_path": "res://assets/v18/items/instant_camera.png",
+    "icon": "open_book"
+  },
+  "picnic_blanket": {
+    "name": "格纹野餐毯",
+    "kind": "工具 · 可查看",
+    "description": "奶白与鼠尾草绿格纹，卷好就能带去庭院。",
+    "quote": "找一片树影，坐一会儿。",
+    "use": "野餐毯已经卷好，庭院的树下很适合休息。",
+    "icon_path": "res://assets/v18/items/picnic_blanket.png",
+    "icon": "open_book"
+  },
+  "whale_music_box": {
+    "name": "蓝鲸八音盒",
+    "kind": "收藏 · 可查看",
+    "description": "打开后，小鲸鱼在金色星星之间慢慢游动。",
+    "quote": "歌很短，回忆很长。",
+    "use": "你打开八音盒，想起旅舍窗边的海风。",
+    "icon_path": "res://assets/v18/items/whale_music_box.png",
+    "icon": "open_book"
+  },
+  "harbor_key": {
+    "name": "蓝湾旧钥匙",
+    "kind": "线索 · 可阅读",
+    "description": "挂着蓝色珠子的旧钥匙，门牌已被海风磨淡。",
+    "quote": "有些门要慢慢找到。",
+    "use": "纸签写着：云湾公寓二楼，交给等你的朋友。",
+    "icon_path": "res://assets/v18/items/harbor_key.png",
+    "icon": "open_book"
+  },
+  "paper_boat": {
+    "name": "漂流小纸船",
+    "kind": "线索 · 可阅读",
+    "description": "从艺廊写生纸折出的白帆小船。",
+    "quote": "愿你每次都能平安靠岸。",
+    "use": "船底写着：不必赶路，也不要忘了出发。",
+    "icon_path": "res://assets/v18/items/paper_boat.png",
+    "icon": "open_book"
+  },
+  "whale_soap": {
+    "name": "海盐蓝鲸皂",
+    "kind": "补给 · 可使用",
+    "description": "花房小铺送的香皂，有清淡海盐与草木香。",
+    "quote": "照顾自己也是今天的事情。",
+    "use": "你用掉一份蓝鲸皂，留下清爽的海盐香。",
+    "icon_path": "res://assets/v18/items/whale_soap.png",
+    "icon": "open_book"
+  }
+}

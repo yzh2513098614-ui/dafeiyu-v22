@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "LED / ice"
+albedo_color = Color(0.5411765, 0.84313726, 0.8980392, 1)
+roughness = 0.61
+emission_enabled = true
+emission = Color(0.5411765, 0.84313726, 0.8980392, 1)
+emission_energy_multiplier = 0.35

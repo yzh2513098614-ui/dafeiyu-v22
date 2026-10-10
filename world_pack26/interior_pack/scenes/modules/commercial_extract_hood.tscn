@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(3.6,0.34,1.3)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(3.6,0.34,1.3)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(1.2,0.65,0.65)
+
+[sub_resource type="BoxShape3D" id="r3"]
+size = Vector3(1.2,0.65,0.65)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.48,0.08,0.98)
+
+[sub_resource type="BoxMesh" id="r5"]
+size = Vector3(0.025,0.014,0.82)
+
+[sub_resource type="BoxMesh" id="r6"]
+size = Vector3(3.3,0.03,0.04)
+
+[node name="CommercialExtractHood" type="Node3D"]
+
+
+[node name="Canopy" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.35,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CanopyBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="CanopyBody"]
+position = Vector3(0.0,2.35,0.0)
+shape = SubResource("r1")
+
+[node name="Duct" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.85,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="DuctBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="DuctBody"]
+position = Vector3(0.0,2.85,0.0)
+shape = SubResource("r3")
+
+[node name="FilterPanel" type="MeshInstance3D" parent="."]
+position = Vector3(-1.25,2.15,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="FilterSlot" type="MeshInstance3D" parent="."]
+position = Vector3(-1.4,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.25,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_3" type="MeshInstance3D" parent="."]
+position = Vector3(-1.1,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterPanel_2" type="MeshInstance3D" parent="."]
+position = Vector3(-0.65,2.15,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="FilterSlot_4" type="MeshInstance3D" parent="."]
+position = Vector3(-0.8,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_5" type="MeshInstance3D" parent="."]
+position = Vector3(-0.65,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_6" type="MeshInstance3D" parent="."]
+position = Vector3(-0.5,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterPanel_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.15,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="FilterSlot_7" type="MeshInstance3D" parent="."]
+position = Vector3(-0.15,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_8" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_9" type="MeshInstance3D" parent="."]
+position = Vector3(0.15,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterPanel_4" type="MeshInstance3D" parent="."]
+position = Vector3(0.65,2.15,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="FilterSlot_10" type="MeshInstance3D" parent="."]
+position = Vector3(0.5,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_11" type="MeshInstance3D" parent="."]
+position = Vector3(0.65,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_12" type="MeshInstance3D" parent="."]
+position = Vector3(0.8,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterPanel_5" type="MeshInstance3D" parent="."]
+position = Vector3(1.25,2.15,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="FilterSlot_13" type="MeshInstance3D" parent="."]
+position = Vector3(1.1,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_14" type="MeshInstance3D" parent="."]
+position = Vector3(1.25,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="FilterSlot_15" type="MeshInstance3D" parent="."]
+position = Vector3(1.4,2.1,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e0")
+
+[node name="TaskLight" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.15,0.59)
+mesh = SubResource("r6")
+material_override = ExtResource("e2")

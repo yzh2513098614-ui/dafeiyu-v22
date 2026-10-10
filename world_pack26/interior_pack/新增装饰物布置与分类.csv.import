@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://0mp58jhpllsr"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/新增装饰物布置与分类.区域ID.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.区域.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.标高.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.功能分类.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.素材ID.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.素材名称.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.布置类型.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.摆放位置.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.坐标.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.模型节点.translation"]
+
+source_file="res://world_pack26/interior_pack/新增装饰物布置与分类.csv"
+dest_files=["res://world_pack26/interior_pack/新增装饰物布置与分类.区域ID.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.区域.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.标高.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.功能分类.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.素材ID.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.素材名称.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.布置类型.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.摆放位置.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.坐标.translation", "res://world_pack26/interior_pack/新增装饰物布置与分类.模型节点.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

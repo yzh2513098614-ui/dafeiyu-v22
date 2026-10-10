@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/props/relay_service_terminal.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(0.6100000143051147, 1.2858220338821411, 0.4000000059604645)
+
+[node name="relay_service_terminal" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.6529110074043274, 0.0)
+shape = SubResource("Shape0")
+

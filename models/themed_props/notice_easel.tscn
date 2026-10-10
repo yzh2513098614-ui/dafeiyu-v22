@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/themed_props/notice_easel.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(1.40000, 1.94167, 0.65260)
+[node name="notice_easel" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 0.97616, 0.00000)
+shape = SubResource("Collision")

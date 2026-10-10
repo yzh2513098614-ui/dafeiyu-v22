@@ -1,0 +1,13 @@
+﻿ID,名称,类别,图标,物品数据
+token_cracker,Token 小饼干,补给 · 可使用,res://assets/item_icons/token_cracker.svg,res://assets/meme_items.json
+context_note,上下文便签,线索 · 可阅读,res://assets/item_icons/context_note.svg,res://assets/meme_items.json
+stopped_pillow,已停止思考抱枕,收藏 · 可查看,res://assets/item_icons/stopped_pillow.svg,res://assets/meme_items.json
+retry_tea,稍后重试热茶,补给 · 可使用,res://assets/item_icons/retry_tea.svg,res://assets/meme_items.json
+thinking_lamp,思考中夜灯,收藏 · 可查看,res://assets/item_icons/thinking_lamp.svg,res://assets/meme_items.json
+prompt_pen,提示词钢笔,工具 · 可查看,res://assets/item_icons/prompt_pen.svg,res://assets/meme_items.json
+hallucination_map,幻觉地图,线索 · 可阅读,res://assets/item_icons/hallucination_map.svg,res://assets/meme_items.json
+cache_book,缓存旧书,线索 · 可阅读,res://assets/item_icons/cache_book.svg,res://assets/meme_items.json
+fish_badge,摸鱼许可证,收藏 · 可查看,res://assets/item_icons/fish_badge.svg,res://assets/meme_items.json
+sea_biscuit,鲸落海盐饼,补给 · 可使用,res://assets/item_icons/sea_biscuit.svg,res://assets/meme_items.json
+branch_bookmark,分支书签,收藏 · 可查看,res://assets/item_icons/branch_bookmark.svg,res://assets/meme_items.json
+whale_letter,大肥鱼的来信,线索 · 可阅读,res://assets/item_icons/whale_letter.svg,res://assets/meme_items.json

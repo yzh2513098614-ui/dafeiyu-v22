@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c2b4cjld064wr"
+
+[deps]
+
+files=["res://材质索引.名称.translation", "res://材质索引.尺寸.translation", "res://材质索引.资源路径.translation"]
+
+source_file="res://材质索引.csv"
+dest_files=["res://材质索引.名称.translation", "res://材质索引.尺寸.translation", "res://材质索引.资源路径.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

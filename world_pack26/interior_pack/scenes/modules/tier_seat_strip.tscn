@@ -1,0 +1,424 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(5.0,0.22,0.8)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(5.0,0.22,0.8)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(0.78,0.1,0.5)
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(0.78,0.42,0.09)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.055,0.32,0.055)
+
+[sub_resource type="BoxMesh" id="r5"]
+size = Vector3(5.0,0.65,0.65)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(5.0,0.65,0.65)
+
+[sub_resource type="BoxMesh" id="r7"]
+size = Vector3(5.0,0.47,0.8)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(5.0,0.47,0.8)
+
+[sub_resource type="BoxMesh" id="r9"]
+size = Vector3(5.0,0.72,0.8)
+
+[sub_resource type="BoxShape3D" id="r10"]
+size = Vector3(5.0,0.72,0.8)
+
+[node name="TierSeatStrip" type="Node3D"]
+
+
+[node name="SteppedRiser" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.11,-0.8)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="SteppedRiserBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="SteppedRiserBody"]
+position = Vector3(0.0,0.11,-0.8)
+shape = SubResource("r1")
+
+[node name="Seat" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.54,-0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.8,-0.57)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg" type="MeshInstance3D" parent="."]
+position = Vector3(-2.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.72,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,0.54,-0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,0.8,-0.57)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_3" type="MeshInstance3D" parent="."]
+position = Vector3(-1.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_4" type="MeshInstance3D" parent="."]
+position = Vector3(-0.72,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.54,-0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.8,-0.57)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_5" type="MeshInstance3D" parent="."]
+position = Vector3(-0.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_6" type="MeshInstance3D" parent="."]
+position = Vector3(0.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_4" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,0.54,-0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_4" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,0.8,-0.57)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_7" type="MeshInstance3D" parent="."]
+position = Vector3(0.72,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_8" type="MeshInstance3D" parent="."]
+position = Vector3(1.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_5" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.54,-0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_5" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.8,-0.57)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_9" type="MeshInstance3D" parent="."]
+position = Vector3(1.72,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_10" type="MeshInstance3D" parent="."]
+position = Vector3(2.28,0.38,-0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="OccupiedSeatRow" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.545,-0.8)
+mesh = SubResource("r5")
+material_override = ExtResource("e1")
+visible = false
+
+[node name="OccupiedSeatRowBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="OccupiedSeatRowBody"]
+position = Vector3(0.0,0.545,-0.8)
+shape = SubResource("r6")
+
+[node name="SteppedRiser_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.235,0.0)
+mesh = SubResource("r7")
+material_override = ExtResource("e0")
+
+[node name="SteppedRiserBody_2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="SteppedRiserBody_2"]
+position = Vector3(0.0,0.235,0.0)
+shape = SubResource("r8")
+
+[node name="Seat_6" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,0.79,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_6" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,1.05,0.23)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_11" type="MeshInstance3D" parent="."]
+position = Vector3(-2.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_12" type="MeshInstance3D" parent="."]
+position = Vector3(-1.72,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_7" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,0.79,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_7" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,1.05,0.23)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_13" type="MeshInstance3D" parent="."]
+position = Vector3(-1.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_14" type="MeshInstance3D" parent="."]
+position = Vector3(-0.72,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_8" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.79,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_8" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.05,0.23)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_15" type="MeshInstance3D" parent="."]
+position = Vector3(-0.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_16" type="MeshInstance3D" parent="."]
+position = Vector3(0.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_9" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,0.79,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_9" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,1.05,0.23)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_17" type="MeshInstance3D" parent="."]
+position = Vector3(0.72,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_18" type="MeshInstance3D" parent="."]
+position = Vector3(1.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_10" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,0.79,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_10" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,1.05,0.23)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_19" type="MeshInstance3D" parent="."]
+position = Vector3(1.72,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_20" type="MeshInstance3D" parent="."]
+position = Vector3(2.28,0.63,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="OccupiedSeatRow_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.795,0.0)
+mesh = SubResource("r5")
+material_override = ExtResource("e1")
+visible = false
+
+[node name="OccupiedSeatRowBody_2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="OccupiedSeatRowBody_2"]
+position = Vector3(0.0,0.795,0.0)
+shape = SubResource("r6")
+
+[node name="SteppedRiser_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.36,0.8)
+mesh = SubResource("r9")
+material_override = ExtResource("e0")
+
+[node name="SteppedRiserBody_3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="SteppedRiserBody_3"]
+position = Vector3(0.0,0.36,0.8)
+shape = SubResource("r10")
+
+[node name="Seat_11" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,1.04,0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_11" type="MeshInstance3D" parent="."]
+position = Vector3(-2.0,1.3,1.03)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_21" type="MeshInstance3D" parent="."]
+position = Vector3(-2.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_22" type="MeshInstance3D" parent="."]
+position = Vector3(-1.72,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_12" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,1.04,0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_12" type="MeshInstance3D" parent="."]
+position = Vector3(-1.0,1.3,1.03)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_23" type="MeshInstance3D" parent="."]
+position = Vector3(-1.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_24" type="MeshInstance3D" parent="."]
+position = Vector3(-0.72,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_13" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.04,0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_13" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.3,1.03)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_25" type="MeshInstance3D" parent="."]
+position = Vector3(-0.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_26" type="MeshInstance3D" parent="."]
+position = Vector3(0.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_14" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,1.04,0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_14" type="MeshInstance3D" parent="."]
+position = Vector3(1.0,1.3,1.03)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_27" type="MeshInstance3D" parent="."]
+position = Vector3(0.72,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_28" type="MeshInstance3D" parent="."]
+position = Vector3(1.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Seat_15" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,1.04,0.8)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Backrest_15" type="MeshInstance3D" parent="."]
+position = Vector3(2.0,1.3,1.03)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="SeatLeg_29" type="MeshInstance3D" parent="."]
+position = Vector3(1.72,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="SeatLeg_30" type="MeshInstance3D" parent="."]
+position = Vector3(2.28,0.88,0.8)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="OccupiedSeatRow_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.045,0.8)
+mesh = SubResource("r5")
+material_override = ExtResource("e1")
+visible = false
+
+[node name="OccupiedSeatRowBody_3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="OccupiedSeatRowBody_3"]
+position = Vector3(0.0,1.045,0.8)
+shape = SubResource("r6")

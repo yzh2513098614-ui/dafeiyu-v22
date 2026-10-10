@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "warm"
+albedo_color = Color(1, 0.8117647, 0.4862745, 1)
+metallic = 0.1
+roughness = 0.4
+emission_enabled = true
+emission = Color(0.82665706, 0.66935, 0.39733982, 1)

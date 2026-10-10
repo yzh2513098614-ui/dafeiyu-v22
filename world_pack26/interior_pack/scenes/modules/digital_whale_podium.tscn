@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/digital_whale_runtime.gd" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/navy.tres" id="e2"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/decor_10.tscn" id="e4"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(2.8,0.48,1.8)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(2.8,0.48,1.8)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(2.68,0.035,1.68)
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(2.55,0.025,0.024)
+
+[sub_resource type="StandardMaterial3D" id="r4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.22,0.76,0.92,0.14)
+
+[sub_resource type="CylinderMesh" id="r5"]
+top_radius = 0.9
+bottom_radius = 0.25
+height = 1.45
+radial_segments = 32
+
+[node name="DigitalWhalePodium" type="Node3D"]
+
+script = ExtResource("e0")
+
+[node name="Plinth" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.24,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="PlinthBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="PlinthBody"]
+position = Vector3(0.0,0.24,0.0)
+shape = SubResource("r1")
+
+[node name="ProjectorSurface" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.497,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="EdgeLight" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.36,0.913)
+mesh = SubResource("r3")
+material_override = ExtResource("e3")
+
+[node name="Whale" type="Node3D" parent="."]
+position = Vector3(0,1.36,0)
+
+[node name="WhaleModel" parent="Whale" instance=ExtResource("e4")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(2.25,2.25,2.25)
+
+[node name="Projection" type="MeshInstance3D" parent="."]
+position = Vector3(0,1.22,0)
+mesh = SubResource("r5")
+material_override = SubResource("r4")

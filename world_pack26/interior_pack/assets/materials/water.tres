@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "water"
+albedo_color = Color(0.47058827, 0.7137255, 0.8117647, 1)
+metallic = 0.1
+roughness = 0.16

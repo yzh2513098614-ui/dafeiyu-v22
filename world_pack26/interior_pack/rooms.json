@@ -1,0 +1,62 @@
+[
+  {
+    "id": "school_classroom",
+    "name": "学校教室",
+    "size": [
+      12,
+      8
+    ],
+    "instances": 28,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/school_classroom.tscn"
+  },
+  {
+    "id": "school_library",
+    "name": "学校图书馆",
+    "size": [
+      12,
+      10
+    ],
+    "instances": 33,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/school_library.tscn"
+  },
+  {
+    "id": "hospital_outpatient",
+    "name": "医院候诊厅",
+    "size": [
+      12,
+      10
+    ],
+    "instances": 17,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/hospital_outpatient.tscn"
+  },
+  {
+    "id": "hospital_ward",
+    "name": "医院住院病房",
+    "size": [
+      12,
+      8
+    ],
+    "instances": 28,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/hospital_ward.tscn"
+  },
+  {
+    "id": "mall_atrium",
+    "name": "商场中庭",
+    "size": [
+      14,
+      10
+    ],
+    "instances": 21,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/mall_atrium.tscn"
+  },
+  {
+    "id": "mall_foodcourt",
+    "name": "商场餐饮区",
+    "size": [
+      14,
+      10
+    ],
+    "instances": 51,
+    "scene": "res://world_pack26/interior_pack/scenes/rooms/mall_foodcourt.tscn"
+  }
+]

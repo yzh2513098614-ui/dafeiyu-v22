@@ -1,0 +1,188 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/disabled.svg" id="1_4asxw"]
+[ext_resource type="Texture2D" path="res://assets/ui/hover.svg" id="2_d2ghv"]
+[ext_resource type="Texture2D" path="res://assets/ui/pressed.svg" id="3_05eg6"]
+[ext_resource type="Texture2D" path="res://assets/ui/button.svg" id="4_st1an"]
+[ext_resource type="Texture2D" path="res://assets/ui/selected.svg" id="5_68qvq"]
+[ext_resource type="Texture2D" path="res://assets/ui/sky.svg" id="6_6l50r"]
+[ext_resource type="Texture2D" path="res://assets/ui/paper.svg" id="7_fd8yy"]
+[ext_resource type="Texture2D" path="res://assets/ui/panel.svg" id="8_esceq"]
+[ext_resource type="Texture2D" path="res://assets/ui/arrow_down.svg" id="9_7ogba"]
+[ext_resource type="Texture2D" path="res://assets/ui/arrow_up.svg" id="10_1w6wo"]
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="11_vqe7q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hw6j7"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("1_4asxw")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hcag"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8745098, 0.69803923, 0.3882353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdv4x"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("2_d2ghv")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4thne"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("3_05eg6")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5i2m"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("4_st1an")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwtmq"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("5_68qvq")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4acyp"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("6_6l50r")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wslto"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("7_fd8yy")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gwep"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8745098, 0.69803923, 0.3882353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hfo8x"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+texture = ExtResource("8_esceq")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="FontVariation" id="FontVariation_fjtda"]
+base_font = ExtResource("11_vqe7q")
+variation_opentype = {
+2003265652: 650.0
+}
+
+[resource]
+default_font = SubResource("FontVariation_fjtda")
+default_font_size = 22
+Button/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+Button/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+Button/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+Button/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_hw6j7")
+Button/styles/focus = SubResource("StyleBoxFlat_4hcag")
+Button/styles/hover = SubResource("StyleBoxTexture_qdv4x")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_4thne")
+Button/styles/normal = SubResource("StyleBoxTexture_m5i2m")
+Button/styles/pressed = SubResource("StyleBoxTexture_4thne")
+HScrollBar/styles/grabber = SubResource("StyleBoxTexture_jwtmq")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_qdv4x")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_4thne")
+HScrollBar/styles/scroll = SubResource("StyleBoxTexture_4acyp")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_4acyp")
+Label/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+Label/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+Label/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+Label/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+Label/colors/font_pressed_color = Color(1, 1, 1, 1)
+LineEdit/colors/caret_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+LineEdit/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+LineEdit/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+LineEdit/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+LineEdit/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+LineEdit/colors/font_pressed_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_selected_color = Color(0.2, 0.26666668, 0.45882353, 1)
+LineEdit/colors/selection_color = Color(0.7411765, 0.8352941, 1, 1)
+LineEdit/styles/focus = SubResource("StyleBoxTexture_jwtmq")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_wslto")
+OptionButton/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+OptionButton/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+OptionButton/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+OptionButton/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_hw6j7")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_8gwep")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_qdv4x")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxTexture_4thne")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_m5i2m")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_4thne")
+Panel/styles/panel = SubResource("StyleBoxTexture_hfo8x")
+RichTextLabel/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+RichTextLabel/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+RichTextLabel/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+RichTextLabel/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+RichTextLabel/colors/font_pressed_color = Color(1, 1, 1, 1)
+SpinBox/colors/font_color = Color(0.2, 0.26666668, 0.45882353, 1)
+SpinBox/colors/font_disabled_color = Color(0.38039216, 0.4627451, 0.6117647, 1)
+SpinBox/colors/font_focus_color = Color(0.2, 0.26666668, 0.45882353, 1)
+SpinBox/colors/font_hover_color = Color(0.32941177, 0.47058824, 0.7372549, 1)
+SpinBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+SpinBox/icons/down = ExtResource("9_7ogba")
+SpinBox/icons/up = ExtResource("10_1w6wo")
+VBoxContainer/constants/separation = 12
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_jwtmq")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_qdv4x")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_4thne")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_4acyp")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_4acyp")

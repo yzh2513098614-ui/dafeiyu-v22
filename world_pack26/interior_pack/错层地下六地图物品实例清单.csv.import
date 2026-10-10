@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dlmu1du6n7265"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/错层地下六地图物品实例清单.region.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.asset.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.name.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.node.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.x.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.y.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.z.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.source.translation"]
+
+source_file="res://world_pack26/interior_pack/错层地下六地图物品实例清单.csv"
+dest_files=["res://world_pack26/interior_pack/错层地下六地图物品实例清单.region.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.asset.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.name.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.node.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.x.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.y.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.z.translation", "res://world_pack26/interior_pack/错层地下六地图物品实例清单.source.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

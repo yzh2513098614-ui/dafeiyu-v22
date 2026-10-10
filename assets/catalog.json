@@ -1,0 +1,4564 @@
+[
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "plaster_ivory",
+    "layer": "wall",
+    "name": "浅灰平涂墙板",
+    "preview_texture": "res://assets/solid3d/previews/plaster_ivory.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      17.0,
+      78.0,
+      230.0,
+      181.0
+    ],
+    "texture": "res://assets/modules/plaster_ivory.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "oak_slats",
+    "layer": "wall",
+    "name": "橡木格栅",
+    "preview_texture": "res://assets/solid3d/previews/oak_slats.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      271.0,
+      77.0,
+      230.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/oak_slats.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "walnut_slats",
+    "layer": "wall",
+    "name": "胡桃格栅",
+    "preview_texture": "res://assets/solid3d/previews/walnut_slats.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      525.0,
+      77.0,
+      230.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/walnut_slats.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "slate_panels",
+    "layer": "wall",
+    "name": "石板墙",
+    "preview_texture": "res://assets/solid3d/previews/slate_panels.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      780.0,
+      77.0,
+      230.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/slate_panels.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "concrete_panels",
+    "layer": "wall",
+    "name": "混凝土墙",
+    "preview_texture": "res://assets/solid3d/previews/concrete_panels.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1034.0,
+      77.0,
+      232.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/concrete_panels.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "navy_padded",
+    "layer": "wall",
+    "name": "深蓝软包",
+    "preview_texture": "res://assets/solid3d/previews/navy_padded.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1290.0,
+      77.0,
+      231.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/navy_padded.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "plaster_mint",
+    "layer": "wall",
+    "name": "薄荷墙",
+    "preview_texture": "res://assets/solid3d/previews/plaster_mint.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      17.0,
+      344.0,
+      230.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/plaster_mint.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "cream_tile",
+    "layer": "wall",
+    "name": "奶油瓷砖",
+    "preview_texture": "res://assets/solid3d/previews/cream_tile.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      271.0,
+      344.0,
+      230.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/cream_tile.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "brushed_metal",
+    "layer": "wall",
+    "name": "拉丝金属",
+    "preview_texture": "res://assets/solid3d/previews/brushed_metal.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      525.0,
+      344.0,
+      230.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/brushed_metal.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "beige_wainscot",
+    "layer": "wall",
+    "name": "冷灰科技墙板",
+    "preview_texture": "res://assets/solid3d/previews/beige_wainscot.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      780.0,
+      344.0,
+      230.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/beige_wainscot.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "white_marble",
+    "layer": "wall",
+    "name": "白色大理石",
+    "preview_texture": "res://assets/solid3d/previews/white_marble.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1034.0,
+      344.0,
+      231.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/white_marble.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "pale_wainscot",
+    "layer": "wall",
+    "name": "浅灰科技墙板",
+    "preview_texture": "res://assets/solid3d/previews/pale_wainscot.png",
+    "size": [
+      128.0,
+      192.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1290.0,
+      344.0,
+      231.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/pale_wainscot.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "cap_charcoal",
+    "layer": "wall",
+    "name": "深灰压顶",
+    "preview_texture": "res://assets/solid3d/previews/cap_charcoal.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      17.0,
+      592.0,
+      230.0,
+      45.0
+    ],
+    "texture": "res://assets/modules/cap_charcoal.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "cap_oak",
+    "layer": "wall",
+    "name": "橡木压顶",
+    "preview_texture": "res://assets/solid3d/previews/cap_oak.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      271.0,
+      591.0,
+      230.0,
+      46.0
+    ],
+    "texture": "res://assets/modules/cap_oak.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "base_charcoal",
+    "layer": "wall",
+    "name": "深灰踢脚线",
+    "preview_texture": "res://assets/solid3d/previews/base_charcoal.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      526.0,
+      589.0,
+      229.0,
+      49.0
+    ],
+    "texture": "res://assets/modules/base_charcoal.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "base_oak",
+    "layer": "wall",
+    "name": "橡木踢脚线",
+    "preview_texture": "res://assets/solid3d/previews/base_oak.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      780.0,
+      589.0,
+      229.0,
+      52.0
+    ],
+    "texture": "res://assets/modules/base_oak.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "rail_cyan",
+    "layer": "wall",
+    "name": "蓝色灯带",
+    "preview_texture": "res://assets/solid3d/previews/rail_cyan.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1035.0,
+      593.0,
+      230.0,
+      35.0
+    ],
+    "texture": "res://assets/modules/rail_cyan.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "rail_amber",
+    "layer": "wall",
+    "name": "暖色灯带",
+    "preview_texture": "res://assets/solid3d/previews/rail_amber.png",
+    "size": [
+      128.0,
+      16.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1291.0,
+      591.0,
+      229.0,
+      37.0
+    ],
+    "texture": "res://assets/modules/rail_amber.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "post_charcoal",
+    "layer": "wall",
+    "name": "深灰立柱",
+    "preview_texture": "res://assets/solid3d/previews/post_charcoal.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      109.0,
+      712.0,
+      50.0,
+      289.0
+    ],
+    "texture": "res://assets/modules/post_charcoal.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "post_oak",
+    "layer": "wall",
+    "name": "橡木立柱",
+    "preview_texture": "res://assets/solid3d/previews/post_oak.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      360.0,
+      711.0,
+      52.0,
+      291.0
+    ],
+    "texture": "res://assets/modules/post_oak.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "post_cream",
+    "layer": "wall",
+    "name": "奶油立柱",
+    "preview_texture": "res://assets/solid3d/previews/post_cream.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      613.0,
+      711.0,
+      53.0,
+      290.0
+    ],
+    "texture": "res://assets/modules/post_cream.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "corner_charcoal",
+    "layer": "wall",
+    "name": "深灰转角柱",
+    "preview_texture": "res://assets/solid3d/previews/corner_charcoal.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      855.0,
+      702.0,
+      79.0,
+      305.0
+    ],
+    "texture": "res://assets/modules/corner_charcoal.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "corner_oak",
+    "layer": "wall",
+    "name": "橡木转角柱",
+    "preview_texture": "res://assets/solid3d/previews/corner_oak.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1110.0,
+      702.0,
+      80.0,
+      305.0
+    ],
+    "texture": "res://assets/modules/corner_oak.png"
+  },
+  {
+    "category": "structure",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "post_cyan",
+    "layer": "wall",
+    "name": "蓝灯立柱",
+    "preview_texture": "res://assets/solid3d/previews/post_cyan.png",
+    "size": [
+      24.0,
+      176.0
+    ],
+    "solid": false,
+    "source": "structure_1ec0ce84.png",
+    "source_bounds": [
+      1373.0,
+      707.0,
+      63.0,
+      294.0
+    ],
+    "texture": "res://assets/modules/post_cyan.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      160.0,
+      200.0
+    ],
+    "id": "bed_navy",
+    "layer": "object",
+    "name": "蓝白现代床",
+    "preview_texture": "res://assets/solid3d/previews/bed_navy.png",
+    "size": [
+      192.0,
+      279.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      49.0,
+      42.0,
+      179.0,
+      258.0
+    ],
+    "texture": "res://assets/modules/bed_navy.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      160.0,
+      200.0
+    ],
+    "id": "bed_sage",
+    "layer": "object",
+    "name": "冰蓝现代床",
+    "preview_texture": "res://assets/solid3d/previews/bed_sage.png",
+    "size": [
+      192.0,
+      277.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      301.0,
+      42.0,
+      180.0,
+      258.0
+    ],
+    "texture": "res://assets/modules/bed_sage.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      192.0,
+      63.0
+    ],
+    "id": "desk_oak",
+    "layer": "object",
+    "name": "浅色现代书桌",
+    "preview_texture": "res://assets/solid3d/previews/desk_oak.png",
+    "size": [
+      240.0,
+      158.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      529.0,
+      98.0,
+      260.0,
+      173.0
+    ],
+    "texture": "res://assets/modules/desk_oak.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      192.0,
+      63.0
+    ],
+    "id": "desk_white",
+    "layer": "object",
+    "name": "白色书桌",
+    "preview_texture": "res://assets/solid3d/previews/desk_white.png",
+    "size": [
+      240.0,
+      158.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      823.0,
+      98.0,
+      261.0,
+      173.0
+    ],
+    "texture": "res://assets/modules/desk_white.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      102.0,
+      95.0
+    ],
+    "id": "bookcase",
+    "layer": "object",
+    "name": "书架",
+    "preview_texture": "res://assets/solid3d/previews/bookcase.png",
+    "size": [
+      128.0,
+      238.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1127.0,
+      27.0,
+      143.0,
+      262.0
+    ],
+    "texture": "res://assets/modules/bookcase.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      115.0,
+      112.0
+    ],
+    "id": "wardrobe",
+    "layer": "object",
+    "name": "衣柜",
+    "preview_texture": "res://assets/solid3d/previews/wardrobe.png",
+    "size": [
+      144.0,
+      281.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1345.0,
+      27.0,
+      136.0,
+      262.0
+    ],
+    "texture": "res://assets/modules/wardrobe.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      205.0,
+      66.0
+    ],
+    "id": "loveseat_navy",
+    "layer": "object",
+    "name": "双人沙发",
+    "preview_texture": "res://assets/solid3d/previews/loveseat_navy.png",
+    "size": [
+      256.0,
+      164.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      26.0,
+      335.0,
+      277.0,
+      179.0
+    ],
+    "texture": "res://assets/modules/loveseat_navy.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      211.0,
+      64.0
+    ],
+    "id": "sofa_cream",
+    "layer": "object",
+    "name": "奶白双人沙发",
+    "preview_texture": "res://assets/solid3d/previews/sofa_cream.png",
+    "size": [
+      264.0,
+      159.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      332.0,
+      335.0,
+      294.0,
+      179.0
+    ],
+    "texture": "res://assets/modules/sofa_cream.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      106.0,
+      55.0
+    ],
+    "id": "armchair_navy",
+    "layer": "object",
+    "name": "蓝色扶手椅",
+    "preview_texture": "res://assets/solid3d/previews/armchair_navy.png",
+    "size": [
+      132.0,
+      137.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      662.0,
+      329.0,
+      179.0,
+      185.0
+    ],
+    "texture": "res://assets/modules/armchair_navy.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      106.0,
+      54.0
+    ],
+    "id": "armchair_sage",
+    "layer": "object",
+    "name": "冰蓝单人沙发",
+    "preview_texture": "res://assets/solid3d/previews/armchair_sage.png",
+    "size": [
+      132.0,
+      136.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      882.0,
+      329.0,
+      180.0,
+      186.0
+    ],
+    "texture": "res://assets/modules/armchair_sage.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      83.0,
+      46.0
+    ],
+    "id": "side_table",
+    "layer": "object",
+    "name": "圆形现代边几",
+    "preview_texture": "res://assets/solid3d/previews/side_table.png",
+    "size": [
+      104.0,
+      115.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1104.0,
+      359.0,
+      140.0,
+      154.0
+    ],
+    "texture": "res://assets/modules/side_table.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      160.0,
+      45.0
+    ],
+    "id": "coffee_table",
+    "layer": "object",
+    "name": "玻璃茶几",
+    "preview_texture": "res://assets/solid3d/previews/coffee_table.png",
+    "size": [
+      200.0,
+      112.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1268.0,
+      376.0,
+      245.0,
+      139.0
+    ],
+    "texture": "res://assets/modules/coffee_table.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      128.0,
+      48.0
+    ],
+    "id": "dining_round",
+    "layer": "object",
+    "name": "圆餐桌",
+    "preview_texture": "res://assets/solid3d/previews/dining_round.png",
+    "size": [
+      160.0,
+      120.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      34.0,
+      555.0,
+      246.0,
+      185.0
+    ],
+    "texture": "res://assets/modules/dining_round.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      192.0,
+      52.0
+    ],
+    "id": "dining_white",
+    "layer": "object",
+    "name": "白餐桌",
+    "preview_texture": "res://assets/solid3d/previews/dining_white.png",
+    "size": [
+      240.0,
+      129.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      311.0,
+      563.0,
+      331.0,
+      180.0
+    ],
+    "texture": "res://assets/modules/dining_white.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      64.0,
+      52.0
+    ],
+    "id": "chair_oak",
+    "layer": "object",
+    "name": "木椅",
+    "preview_texture": "res://assets/solid3d/previews/chair_oak.png",
+    "size": [
+      80.0,
+      130.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      686.0,
+      544.0,
+      128.0,
+      205.0
+    ],
+    "texture": "res://assets/modules/chair_oak.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      64.0,
+      53.0
+    ],
+    "id": "chair_white",
+    "layer": "object",
+    "name": "白椅",
+    "preview_texture": "res://assets/solid3d/previews/chair_white.png",
+    "size": [
+      80.0,
+      133.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      893.0,
+      544.0,
+      125.0,
+      205.0
+    ],
+    "texture": "res://assets/modules/chair_white.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      74.0,
+      56.0
+    ],
+    "id": "office_chair",
+    "layer": "object",
+    "name": "办公椅",
+    "preview_texture": "res://assets/solid3d/previews/office_chair.png",
+    "size": [
+      92.0,
+      141.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1103.0,
+      536.0,
+      151.0,
+      230.0
+    ],
+    "texture": "res://assets/modules/office_chair.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      83.0,
+      47.0
+    ],
+    "id": "nightstand",
+    "layer": "object",
+    "name": "床头柜",
+    "preview_texture": "res://assets/solid3d/previews/nightstand.png",
+    "size": [
+      104.0,
+      117.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1329.0,
+      570.0,
+      151.0,
+      170.0
+    ],
+    "texture": "res://assets/modules/nightstand.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      160.0,
+      47.0
+    ],
+    "id": "dresser",
+    "layer": "object",
+    "name": "斗柜",
+    "preview_texture": "res://assets/solid3d/previews/dresser.png",
+    "size": [
+      200.0,
+      117.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      22.0,
+      817.0,
+      270.0,
+      160.0
+    ],
+    "texture": "res://assets/modules/dresser.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      122.0,
+      64.0
+    ],
+    "id": "cubby",
+    "layer": "object",
+    "name": "格子柜",
+    "preview_texture": "res://assets/solid3d/previews/cubby.png",
+    "size": [
+      152.0,
+      159.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      318.0,
+      767.0,
+      204.0,
+      213.0
+    ],
+    "texture": "res://assets/modules/cubby.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      205.0,
+      38.0
+    ],
+    "id": "tv_cabinet",
+    "layer": "object",
+    "name": "电视柜",
+    "preview_texture": "res://assets/solid3d/previews/tv_cabinet.png",
+    "size": [
+      256.0,
+      96.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      549.0,
+      847.0,
+      346.0,
+      132.0
+    ],
+    "texture": "res://assets/modules/tv_cabinet.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      77.0,
+      54.0
+    ],
+    "id": "shoe_cabinet",
+    "layer": "object",
+    "name": "鞋柜",
+    "preview_texture": "res://assets/solid3d/previews/shoe_cabinet.png",
+    "size": [
+      96.0,
+      134.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      927.0,
+      793.0,
+      134.0,
+      186.0
+    ],
+    "texture": "res://assets/modules/shoe_cabinet.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      144.0,
+      35.0
+    ],
+    "id": "entry_bench",
+    "layer": "object",
+    "name": "入口长凳",
+    "preview_texture": "res://assets/solid3d/previews/entry_bench.png",
+    "size": [
+      180.0,
+      87.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1094.0,
+      855.0,
+      243.0,
+      119.0
+    ],
+    "texture": "res://assets/modules/entry_bench.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      69.0,
+      72.0
+    ],
+    "id": "coat_rack",
+    "layer": "object",
+    "name": "衣帽架",
+    "preview_texture": "res://assets/solid3d/previews/coat_rack.png",
+    "size": [
+      86.0,
+      181.0
+    ],
+    "solid": true,
+    "source": "furniture_2c12c835.png",
+    "source_bounds": [
+      1392.0,
+      750.0,
+      111.0,
+      229.0
+    ],
+    "texture": "res://assets/modules/coat_rack.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "window_oak",
+    "layer": "wall",
+    "name": "城市全景窗 · A",
+    "preview_texture": "res://assets/solid3d/previews/window_oak.png",
+    "size": [
+      168.0,
+      174.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      38.0,
+      57.0,
+      224.0,
+      232.0
+    ],
+    "texture": "res://assets/modules/window_oak.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "window_city",
+    "layer": "wall",
+    "name": "城市全景窗 · B",
+    "preview_texture": "res://assets/solid3d/previews/window_city.png",
+    "size": [
+      252.0,
+      159.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      327.0,
+      56.0,
+      366.0,
+      233.0
+    ],
+    "texture": "res://assets/modules/window_city.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "window_frost",
+    "layer": "wall",
+    "name": "磨砂窗",
+    "preview_texture": "res://assets/solid3d/previews/window_frost.png",
+    "size": [
+      136.0,
+      146.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      758.0,
+      79.0,
+      186.0,
+      200.0
+    ],
+    "texture": "res://assets/modules/window_frost.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "window_arch",
+    "layer": "wall",
+    "name": "拱形窗",
+    "preview_texture": "res://assets/solid3d/previews/window_arch.png",
+    "size": [
+      118.0,
+      161.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      1014.0,
+      33.0,
+      194.0,
+      264.0
+    ],
+    "texture": "res://assets/modules/window_arch.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "door_walnut",
+    "layer": "wall",
+    "name": "现代深色门",
+    "preview_texture": "res://assets/solid3d/previews/door_walnut.png",
+    "size": [
+      104.0,
+      162.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      53.0,
+      335.0,
+      193.0,
+      298.0
+    ],
+    "texture": "res://assets/modules/door_walnut.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "door_ivory",
+    "layer": "wall",
+    "name": "现代浅灰门",
+    "preview_texture": "res://assets/solid3d/previews/door_ivory.png",
+    "size": [
+      104.0,
+      161.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      370.0,
+      335.0,
+      194.0,
+      298.0
+    ],
+    "texture": "res://assets/modules/door_ivory.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "door_glass",
+    "layer": "wall",
+    "name": "蓝灰玻璃门",
+    "preview_texture": "res://assets/solid3d/previews/door_glass.png",
+    "size": [
+      108.0,
+      163.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      676.0,
+      333.0,
+      200.0,
+      300.0
+    ],
+    "texture": "res://assets/modules/door_glass.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "door_sliding",
+    "layer": "wall",
+    "name": "双滑门",
+    "preview_texture": "res://assets/solid3d/previews/door_sliding.png",
+    "size": [
+      144.0,
+      161.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      953.0,
+      334.0,
+      265.0,
+      296.0
+    ],
+    "texture": "res://assets/modules/door_sliding.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "curtains_ivory",
+    "layer": "wall",
+    "name": "白窗帘",
+    "preview_texture": "res://assets/solid3d/previews/curtains_ivory.png",
+    "size": [
+      188.0,
+      187.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      19.0,
+      674.0,
+      282.0,
+      280.0
+    ],
+    "texture": "res://assets/modules/curtains_ivory.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "curtains_navy",
+    "layer": "wall",
+    "name": "蓝窗帘",
+    "preview_texture": "res://assets/solid3d/previews/curtains_navy.png",
+    "size": [
+      188.0,
+      172.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      336.0,
+      673.0,
+      306.0,
+      281.0
+    ],
+    "texture": "res://assets/modules/curtains_navy.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "blind",
+    "layer": "wall",
+    "name": "百叶帘",
+    "preview_texture": "res://assets/solid3d/previews/blind.png",
+    "size": [
+      168.0,
+      171.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      676.0,
+      677.0,
+      251.0,
+      255.0
+    ],
+    "texture": "res://assets/modules/blind.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "shutters",
+    "layer": "wall",
+    "name": "木百叶",
+    "preview_texture": "res://assets/solid3d/previews/shutters.png",
+    "size": [
+      144.0,
+      181.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      986.0,
+      670.0,
+      226.0,
+      283.0
+    ],
+    "texture": "res://assets/modules/shutters.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "terminal",
+    "layer": "wall",
+    "name": "终端",
+    "preview_texture": "res://assets/solid3d/previews/terminal.png",
+    "size": [
+      76.0,
+      80.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      63.0,
+      999.0,
+      193.0,
+      204.0
+    ],
+    "texture": "res://assets/modules/terminal.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "intercom",
+    "layer": "wall",
+    "name": "门禁",
+    "preview_texture": "res://assets/solid3d/previews/intercom.png",
+    "size": [
+      80.0,
+      73.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      374.0,
+      999.0,
+      224.0,
+      204.0
+    ],
+    "texture": "res://assets/modules/intercom.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "vent",
+    "layer": "wall",
+    "name": "通风口",
+    "preview_texture": "res://assets/solid3d/previews/vent.png",
+    "size": [
+      88.0,
+      89.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      689.0,
+      1010.0,
+      173.0,
+      175.0
+    ],
+    "texture": "res://assets/modules/vent.png"
+  },
+  {
+    "category": "opening",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "air_conditioner",
+    "layer": "wall",
+    "name": "空调",
+    "preview_texture": "res://assets/solid3d/previews/air_conditioner.png",
+    "size": [
+      180.0,
+      75.0
+    ],
+    "solid": false,
+    "source": "opening_caad694e.png",
+    "source_bounds": [
+      916.0,
+      1030.0,
+      306.0,
+      130.0
+    ],
+    "texture": "res://assets/modules/air_conditioner.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      74.0,
+      50.0
+    ],
+    "id": "plant_broadleaf",
+    "layer": "object",
+    "name": "阔叶盆栽",
+    "preview_texture": "res://assets/solid3d/previews/plant_broadleaf.png",
+    "size": [
+      92.0,
+      124.0
+    ],
+    "solid": true,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      44.0,
+      35.0,
+      249.0,
+      333.0
+    ],
+    "texture": "res://assets/modules/plant_broadleaf.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      69.0,
+      52.0
+    ],
+    "id": "plant_fiddle",
+    "layer": "object",
+    "name": "琴叶榕",
+    "preview_texture": "res://assets/solid3d/previews/plant_fiddle.png",
+    "size": [
+      86.0,
+      131.0
+    ],
+    "solid": true,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      370.0,
+      35.0,
+      220.0,
+      333.0
+    ],
+    "texture": "res://assets/modules/plant_fiddle.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      51.0,
+      51.0
+    ],
+    "id": "plant_snake",
+    "layer": "object",
+    "name": "虎尾兰",
+    "preview_texture": "res://assets/solid3d/previews/plant_snake.png",
+    "size": [
+      64.0,
+      128.0
+    ],
+    "solid": true,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      703.0,
+      48.0,
+      161.0,
+      319.0
+    ],
+    "texture": "res://assets/modules/plant_snake.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "plant_hanging",
+    "layer": "wall",
+    "name": "吊绿萝",
+    "preview_texture": "res://assets/solid3d/previews/plant_hanging.png",
+    "size": [
+      90.0,
+      146.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      995.0,
+      35.0,
+      215.0,
+      346.0
+    ],
+    "texture": "res://assets/modules/plant_hanging.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "bonsai",
+    "layer": "surface",
+    "name": "盆景",
+    "preview_texture": "res://assets/solid3d/previews/bonsai.png",
+    "size": [
+      70.0,
+      72.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      37.0,
+      401.0,
+      256.0,
+      262.0
+    ],
+    "texture": "res://assets/modules/bonsai.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "succulents",
+    "layer": "surface",
+    "name": "多肉",
+    "preview_texture": "res://assets/solid3d/previews/succulents.png",
+    "size": [
+      58.0,
+      55.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      347.0,
+      431.0,
+      260.0,
+      245.0
+    ],
+    "texture": "res://assets/modules/succulents.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "flowers",
+    "layer": "surface",
+    "name": "花瓶",
+    "preview_texture": "res://assets/solid3d/previews/flowers.png",
+    "size": [
+      46.0,
+      69.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      691.0,
+      399.0,
+      181.0,
+      268.0
+    ],
+    "texture": "res://assets/modules/flowers.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      67.0,
+      34.0
+    ],
+    "id": "fern",
+    "layer": "object",
+    "name": "蕨类",
+    "preview_texture": "res://assets/solid3d/previews/fern.png",
+    "size": [
+      84.0,
+      84.0
+    ],
+    "solid": true,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      959.0,
+      390.0,
+      278.0,
+      278.0
+    ],
+    "texture": "res://assets/modules/fern.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "books",
+    "layer": "surface",
+    "name": "叠书",
+    "preview_texture": "res://assets/solid3d/previews/books.png",
+    "size": [
+      44.0,
+      33.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      24.0,
+      719.0,
+      274.0,
+      206.0
+    ],
+    "texture": "res://assets/modules/books.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "open_book",
+    "layer": "surface",
+    "name": "打开的书",
+    "preview_texture": "res://assets/solid3d/previews/open_book.png",
+    "size": [
+      64.0,
+      37.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      333.0,
+      744.0,
+      303.0,
+      178.0
+    ],
+    "texture": "res://assets/modules/open_book.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "whale_mug",
+    "layer": "surface",
+    "name": "鲸鱼杯",
+    "preview_texture": "res://assets/solid3d/previews/whale_mug.png",
+    "size": [
+      30.0,
+      29.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      698.0,
+      732.0,
+      194.0,
+      189.0
+    ],
+    "texture": "res://assets/modules/whale_mug.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "tea_tray",
+    "layer": "surface",
+    "name": "茶盘",
+    "preview_texture": "res://assets/solid3d/previews/tea_tray.png",
+    "size": [
+      84.0,
+      60.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      927.0,
+      704.0,
+      314.0,
+      224.0
+    ],
+    "texture": "res://assets/modules/tea_tray.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "laptop",
+    "layer": "surface",
+    "name": "笔记本电脑",
+    "preview_texture": "res://assets/solid3d/previews/laptop.png",
+    "size": [
+      88.0,
+      75.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      36.0,
+      971.0,
+      276.0,
+      236.0
+    ],
+    "texture": "res://assets/modules/laptop.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "monitor",
+    "layer": "surface",
+    "name": "显示器",
+    "preview_texture": "res://assets/solid3d/previews/monitor.png",
+    "size": [
+      86.0,
+      74.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      352.0,
+      971.0,
+      260.0,
+      224.0
+    ],
+    "texture": "res://assets/modules/monitor.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "keyboard",
+    "layer": "surface",
+    "name": "键鼠",
+    "preview_texture": "res://assets/solid3d/previews/keyboard.png",
+    "size": [
+      74.0,
+      25.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      631.0,
+      1042.0,
+      315.0,
+      107.0
+    ],
+    "texture": "res://assets/modules/keyboard.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "folded_blanket",
+    "layer": "surface",
+    "name": "叠毯",
+    "preview_texture": "res://assets/solid3d/previews/folded_blanket.png",
+    "size": [
+      60.0,
+      47.0
+    ],
+    "solid": false,
+    "source": "decor_4018d5da.png",
+    "source_bounds": [
+      963.0,
+      991.0,
+      263.0,
+      209.0
+    ],
+    "texture": "res://assets/modules/folded_blanket.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "lamp_table",
+    "layer": "surface",
+    "name": "磨砂球形台灯",
+    "preview_texture": "res://assets/solid3d/previews/lamp_table.png",
+    "size": [
+      42.0,
+      57.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      67.0,
+      82.0,
+      203.0,
+      274.0
+    ],
+    "texture": "res://assets/modules/lamp_table.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      53.0,
+      62.0
+    ],
+    "id": "lamp_floor",
+    "layer": "object",
+    "name": "磨砂球形落地灯",
+    "preview_texture": "res://assets/solid3d/previews/lamp_floor.png",
+    "size": [
+      66.0,
+      155.0
+    ],
+    "solid": true,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      398.0,
+      17.0,
+      148.0,
+      342.0
+    ],
+    "texture": "res://assets/modules/lamp_floor.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "lamp_wall",
+    "layer": "wall",
+    "name": "壁灯",
+    "preview_texture": "res://assets/solid3d/previews/lamp_wall.png",
+    "size": [
+      40.0,
+      47.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      686.0,
+      110.0,
+      180.0,
+      212.0
+    ],
+    "texture": "res://assets/modules/lamp_wall.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "light_cyan",
+    "layer": "wall",
+    "name": "蓝光灯",
+    "preview_texture": "res://assets/solid3d/previews/light_cyan.png",
+    "size": [
+      104.0,
+      35.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      956.0,
+      181.0,
+      279.0,
+      96.0
+    ],
+    "texture": "res://assets/modules/light_cyan.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "painting_mountain",
+    "layer": "wall",
+    "name": "山景画",
+    "preview_texture": "res://assets/solid3d/previews/painting_mountain.png",
+    "size": [
+      100.0,
+      95.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      37.0,
+      385.0,
+      261.0,
+      248.0
+    ],
+    "texture": "res://assets/modules/painting_mountain.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "painting_whale",
+    "layer": "wall",
+    "name": "鲸鱼画",
+    "preview_texture": "res://assets/solid3d/previews/painting_whale.png",
+    "size": [
+      100.0,
+      98.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      339.0,
+      378.0,
+      266.0,
+      261.0
+    ],
+    "texture": "res://assets/modules/painting_whale.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "clock",
+    "layer": "wall",
+    "name": "时钟",
+    "preview_texture": "res://assets/solid3d/previews/clock.png",
+    "size": [
+      54.0,
+      54.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      658.0,
+      390.0,
+      249.0,
+      251.0
+    ],
+    "texture": "res://assets/modules/clock.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "mirror",
+    "layer": "wall",
+    "name": "镜子",
+    "preview_texture": "res://assets/solid3d/previews/mirror.png",
+    "size": [
+      82.0,
+      86.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      961.0,
+      378.0,
+      279.0,
+      294.0
+    ],
+    "texture": "res://assets/modules/mirror.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      45.0,
+      20.0
+    ],
+    "id": "basket",
+    "layer": "object",
+    "name": "便携收纳盒",
+    "preview_texture": "res://assets/solid3d/previews/basket.png",
+    "size": [
+      56.0,
+      49.0
+    ],
+    "solid": true,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      30.0,
+      685.0,
+      260.0,
+      228.0
+    ],
+    "texture": "res://assets/modules/basket.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      53.0,
+      21.0
+    ],
+    "id": "storage_box",
+    "layer": "object",
+    "name": "收纳箱",
+    "preview_texture": "res://assets/solid3d/previews/storage_box.png",
+    "size": [
+      66.0,
+      53.0
+    ],
+    "solid": true,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      335.0,
+      702.0,
+      264.0,
+      211.0
+    ],
+    "texture": "res://assets/modules/storage_box.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "slippers",
+    "layer": "surface",
+    "name": "拖鞋",
+    "preview_texture": "res://assets/solid3d/previews/slippers.png",
+    "size": [
+      52.0,
+      36.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      643.0,
+      716.0,
+      287.0,
+      198.0
+    ],
+    "texture": "res://assets/modules/slippers.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "cushion",
+    "layer": "surface",
+    "name": "抱枕",
+    "preview_texture": "res://assets/solid3d/previews/cushion.png",
+    "size": [
+      60.0,
+      49.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      965.0,
+      693.0,
+      265.0,
+      219.0
+    ],
+    "texture": "res://assets/modules/cushion.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "whale_plush",
+    "layer": "surface",
+    "name": "鲸鱼玩偶",
+    "preview_texture": "res://assets/solid3d/previews/whale_plush.png",
+    "size": [
+      80.0,
+      48.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      26.0,
+      1006.0,
+      301.0,
+      183.0
+    ],
+    "texture": "res://assets/modules/whale_plush.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      35.0,
+      23.0
+    ],
+    "id": "waste_bin",
+    "layer": "object",
+    "name": "垃圾桶",
+    "preview_texture": "res://assets/solid3d/previews/waste_bin.png",
+    "size": [
+      44.0,
+      58.0
+    ],
+    "solid": true,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      380.0,
+      963.0,
+      187.0,
+      244.0
+    ],
+    "texture": "res://assets/modules/waste_bin.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "lantern",
+    "layer": "surface",
+    "name": "提灯",
+    "preview_texture": "res://assets/solid3d/previews/lantern.png",
+    "size": [
+      46.0,
+      75.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      686.0,
+      937.0,
+      166.0,
+      269.0
+    ],
+    "texture": "res://assets/modules/lantern.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "shelf_books",
+    "layer": "wall",
+    "name": "书本壁架",
+    "preview_texture": "res://assets/solid3d/previews/shelf_books.png",
+    "size": [
+      100.0,
+      82.0
+    ],
+    "solid": false,
+    "source": "decor_d719fb5b.png",
+    "source_bounds": [
+      917.0,
+      968.0,
+      317.0,
+      260.0
+    ],
+    "texture": "res://assets/modules/shelf_books.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      96.0,
+      71.0
+    ],
+    "id": "fridge",
+    "layer": "object",
+    "name": "冰箱",
+    "preview_texture": "res://assets/solid3d/previews/fridge.png",
+    "size": [
+      120.0,
+      177.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      62.0,
+      22.0,
+      206.0,
+      302.0
+    ],
+    "texture": "res://assets/modules/fridge.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      53.0
+    ],
+    "id": "sink_counter",
+    "layer": "object",
+    "name": "水槽台",
+    "preview_texture": "res://assets/solid3d/previews/sink_counter.png",
+    "size": [
+      128.0,
+      132.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      342.0,
+      58.0,
+      257.0,
+      265.0
+    ],
+    "texture": "res://assets/modules/sink_counter.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      40.0
+    ],
+    "id": "stove_counter",
+    "layer": "object",
+    "name": "灶台",
+    "preview_texture": "res://assets/solid3d/previews/stove_counter.png",
+    "size": [
+      128.0,
+      99.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      642.0,
+      105.0,
+      282.0,
+      218.0
+    ],
+    "texture": "res://assets/modules/stove_counter.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      41.0
+    ],
+    "id": "counter_blank",
+    "layer": "object",
+    "name": "空台面",
+    "preview_texture": "res://assets/solid3d/previews/counter_blank.png",
+    "size": [
+      128.0,
+      103.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      963.0,
+      111.0,
+      259.0,
+      210.0
+    ],
+    "texture": "res://assets/modules/counter_blank.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      48.0
+    ],
+    "id": "oven_counter",
+    "layer": "object",
+    "name": "烤箱柜",
+    "preview_texture": "res://assets/solid3d/previews/oven_counter.png",
+    "size": [
+      128.0,
+      120.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      30.0,
+      369.0,
+      276.0,
+      259.0
+    ],
+    "texture": "res://assets/modules/oven_counter.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      45.0
+    ],
+    "id": "corner_counter",
+    "layer": "object",
+    "name": "转角台",
+    "preview_texture": "res://assets/solid3d/previews/corner_counter.png",
+    "size": [
+      128.0,
+      113.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      343.0,
+      368.0,
+      288.0,
+      255.0
+    ],
+    "texture": "res://assets/modules/corner_counter.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      102.0,
+      92.0
+    ],
+    "id": "bar_cabinet",
+    "layer": "object",
+    "name": "吧台柜",
+    "preview_texture": "res://assets/solid3d/previews/bar_cabinet.png",
+    "size": [
+      128.0,
+      229.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      695.0,
+      345.0,
+      160.0,
+      283.0
+    ],
+    "texture": "res://assets/modules/bar_cabinet.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      163.0,
+      58.0
+    ],
+    "id": "bakery_case",
+    "layer": "object",
+    "name": "展示柜",
+    "preview_texture": "res://assets/solid3d/previews/bakery_case.png",
+    "size": [
+      204.0,
+      146.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      917.0,
+      393.0,
+      320.0,
+      230.0
+    ],
+    "texture": "res://assets/modules/bakery_case.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "espresso",
+    "layer": "surface",
+    "name": "咖啡机",
+    "preview_texture": "res://assets/solid3d/previews/espresso.png",
+    "size": [
+      76.0,
+      77.0
+    ],
+    "solid": false,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      39.0,
+      662.0,
+      236.0,
+      238.0
+    ],
+    "texture": "res://assets/modules/espresso.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "microwave",
+    "layer": "surface",
+    "name": "微波炉",
+    "preview_texture": "res://assets/solid3d/previews/microwave.png",
+    "size": [
+      88.0,
+      61.0
+    ],
+    "solid": false,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      335.0,
+      704.0,
+      262.0,
+      182.0
+    ],
+    "texture": "res://assets/modules/microwave.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "upper_cabinet",
+    "layer": "wall",
+    "name": "吊柜",
+    "preview_texture": "res://assets/solid3d/previews/upper_cabinet.png",
+    "size": [
+      144.0,
+      100.0
+    ],
+    "solid": false,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      636.0,
+      692.0,
+      271.0,
+      190.0
+    ],
+    "texture": "res://assets/modules/upper_cabinet.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "plate_rack",
+    "layer": "wall",
+    "name": "盘架",
+    "preview_texture": "res://assets/solid3d/previews/plate_rack.png",
+    "size": [
+      132.0,
+      87.0
+    ],
+    "solid": false,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      940.0,
+      698.0,
+      280.0,
+      186.0
+    ],
+    "texture": "res://assets/modules/plate_rack.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      51.0,
+      47.0
+    ],
+    "id": "bar_stool",
+    "layer": "object",
+    "name": "吧凳",
+    "preview_texture": "res://assets/solid3d/previews/bar_stool.png",
+    "size": [
+      64.0,
+      118.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      84.0,
+      923.0,
+      161.0,
+      293.0
+    ],
+    "texture": "res://assets/modules/bar_stool.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      99.0,
+      48.0
+    ],
+    "id": "tea_trolley",
+    "layer": "object",
+    "name": "茶水车",
+    "preview_texture": "res://assets/solid3d/previews/tea_trolley.png",
+    "size": [
+      124.0,
+      119.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      330.0,
+      948.0,
+      273.0,
+      263.0
+    ],
+    "texture": "res://assets/modules/tea_trolley.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      62.0,
+      37.0
+    ],
+    "id": "menu_easel",
+    "layer": "object",
+    "name": "菜单架",
+    "preview_texture": "res://assets/solid3d/previews/menu_easel.png",
+    "size": [
+      78.0,
+      92.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      670.0,
+      947.0,
+      223.0,
+      261.0
+    ],
+    "texture": "res://assets/modules/menu_easel.png"
+  },
+  {
+    "category": "kitchen",
+    "footprint": [
+      96.0,
+      67.0
+    ],
+    "id": "vending_machine",
+    "layer": "object",
+    "name": "售货机",
+    "preview_texture": "res://assets/solid3d/previews/vending_machine.png",
+    "size": [
+      120.0,
+      167.0
+    ],
+    "solid": true,
+    "source": "kitchen_7047e461.png",
+    "source_bounds": [
+      970.0,
+      904.0,
+      224.0,
+      311.0
+    ],
+    "texture": "res://assets/modules/vending_machine.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_oak",
+    "layer": "floor",
+    "name": "米灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_oak.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/oak.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_pale_oak",
+    "layer": "floor",
+    "name": "暖白地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_pale_oak.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/pale_oak.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_walnut",
+    "layer": "floor",
+    "name": "深灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_walnut.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/walnut.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_herringbone",
+    "layer": "floor",
+    "name": "中灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_herringbone.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/herringbone.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_ivory_tile",
+    "layer": "floor",
+    "name": "浅灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_ivory_tile.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/ivory_tile.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_slate_tile",
+    "layer": "floor",
+    "name": "石板灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_slate_tile.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/slate_tile.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_concrete",
+    "layer": "floor",
+    "name": "混凝土灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_concrete.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/concrete.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_marble",
+    "layer": "floor",
+    "name": "云白地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_marble.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/marble.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_terrazzo",
+    "layer": "floor",
+    "name": "青灰地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_terrazzo.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/terrazzo.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_navy_carpet",
+    "layer": "floor",
+    "name": "海军蓝软质地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_navy_carpet.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/navy_carpet.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_tatami",
+    "layer": "floor",
+    "name": "浅绿地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_tatami.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/tatami.png"
+  },
+  {
+    "category": "floor",
+    "footprint": [
+      0.0,
+      0.0
+    ],
+    "id": "floor_metal_grid",
+    "layer": "floor",
+    "name": "金属格栅地砖",
+    "preview_texture": "res://assets/solid3d/previews/floor_metal_grid.png",
+    "size": [
+      64.0,
+      64.0
+    ],
+    "solid": false,
+    "texture": "res://assets/floors/metal_grid.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      288.0,
+      82.0
+    ],
+    "id": "district_awning",
+    "layer": "object",
+    "name": "蓝白遮阳篷",
+    "preview_texture": "res://assets/solid3d/previews/district_awning.png",
+    "size": [
+      330.0,
+      127.0
+    ],
+    "solid": false,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      330.0,
+      127.0
+    ],
+    "texture": "res://assets/district/awning.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      198.0,
+      86.0
+    ],
+    "id": "district_bathtub",
+    "layer": "object",
+    "name": "独立浴缸",
+    "preview_texture": "res://assets/solid3d/previews/district_bathtub.png",
+    "size": [
+      238.0,
+      137.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      238.0,
+      137.0
+    ],
+    "texture": "res://assets/district/bathtub.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      150.0,
+      50.0
+    ],
+    "id": "district_bench",
+    "layer": "object",
+    "name": "街边长椅",
+    "preview_texture": "res://assets/solid3d/previews/district_bench.png",
+    "size": [
+      173.0,
+      149.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      173.0,
+      149.0
+    ],
+    "texture": "res://assets/district/bench.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      124.0,
+      34.0
+    ],
+    "id": "district_bicycle",
+    "layer": "object",
+    "name": "蓝色自行车",
+    "preview_texture": "res://assets/solid3d/previews/district_bicycle.png",
+    "size": [
+      152.0,
+      113.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      152.0,
+      113.0
+    ],
+    "texture": "res://assets/district/bicycle.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      184.0,
+      46.0
+    ],
+    "id": "district_bike_rack",
+    "layer": "object",
+    "name": "自行车停放架",
+    "preview_texture": "res://assets/solid3d/previews/district_bike_rack.png",
+    "size": [
+      200.0,
+      110.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      200.0,
+      110.0
+    ],
+    "texture": "res://assets/district/bike_rack.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      20.0,
+      18.0
+    ],
+    "id": "district_bollard",
+    "layer": "object",
+    "name": "道路护柱",
+    "preview_texture": "res://assets/solid3d/previews/district_bollard.png",
+    "size": [
+      22.0,
+      75.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      22.0,
+      75.0
+    ],
+    "texture": "res://assets/district/bollard.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      260.0,
+      72.0
+    ],
+    "id": "district_bus_stop",
+    "layer": "object",
+    "name": "鲸落港候车亭",
+    "preview_texture": "res://assets/solid3d/previews/district_bus_stop.png",
+    "size": [
+      311.0,
+      303.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      311.0,
+      303.0
+    ],
+    "texture": "res://assets/district/bus_stop.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      182.0,
+      28.0
+    ],
+    "id": "district_clothesline",
+    "layer": "object",
+    "name": "阳台晾衣架",
+    "preview_texture": "res://assets/solid3d/previews/district_clothesline.png",
+    "size": [
+      206.0,
+      236.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      206.0,
+      236.0
+    ],
+    "texture": "res://assets/district/clothesline.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      114.0,
+      146.0
+    ],
+    "id": "district_dinghy",
+    "layer": "object",
+    "name": "蓝湾小船",
+    "preview_texture": "res://assets/solid3d/previews/district_dinghy.png",
+    "size": [
+      176.0,
+      123.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      176.0,
+      123.0
+    ],
+    "texture": "res://assets/district/dinghy.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      186.0,
+      28.0
+    ],
+    "id": "district_elevator",
+    "layer": "object",
+    "name": "公寓电梯",
+    "preview_texture": "res://assets/solid3d/previews/district_elevator.png",
+    "size": [
+      196.0,
+      294.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      196.0,
+      294.0
+    ],
+    "texture": "res://assets/district/elevator.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      130.0,
+      86.0
+    ],
+    "id": "district_flower_stand",
+    "layer": "object",
+    "name": "花店阶梯花架",
+    "preview_texture": "res://assets/solid3d/previews/district_flower_stand.png",
+    "size": [
+      173.0,
+      174.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      173.0,
+      174.0
+    ],
+    "texture": "res://assets/district/flower_stand.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      40.0,
+      28.0
+    ],
+    "id": "district_hydrant",
+    "layer": "object",
+    "name": "消防水栓",
+    "preview_texture": "res://assets/solid3d/previews/district_hydrant.png",
+    "size": [
+      46.0,
+      78.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      46.0,
+      78.0
+    ],
+    "texture": "res://assets/district/hydrant.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      168.0,
+      90.0
+    ],
+    "id": "district_kiosk",
+    "layer": "object",
+    "name": "街角报刊亭",
+    "preview_texture": "res://assets/solid3d/previews/district_kiosk.png",
+    "size": [
+      200.0,
+      208.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      200.0,
+      208.0
+    ],
+    "texture": "res://assets/district/kiosk.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      22.0,
+      20.0
+    ],
+    "id": "district_lifebuoy",
+    "layer": "object",
+    "name": "港湾救生圈",
+    "preview_texture": "res://assets/solid3d/previews/district_lifebuoy.png",
+    "size": [
+      52.0,
+      117.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      52.0,
+      117.0
+    ],
+    "texture": "res://assets/district/lifebuoy.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      174.0,
+      30.0
+    ],
+    "id": "district_mailboxes",
+    "layer": "object",
+    "name": "住户信箱",
+    "preview_texture": "res://assets/solid3d/previews/district_mailboxes.png",
+    "size": [
+      179.0,
+      181.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      179.0,
+      181.0
+    ],
+    "texture": "res://assets/district/mailboxes.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      164.0,
+      28.0
+    ],
+    "id": "district_noticeboard",
+    "layer": "object",
+    "name": "社区公告栏",
+    "preview_texture": "res://assets/solid3d/previews/district_noticeboard.png",
+    "size": [
+      160.0,
+      226.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      160.0,
+      226.0
+    ],
+    "texture": "res://assets/district/noticeboard.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      226.0,
+      62.0
+    ],
+    "id": "district_outdoor_table",
+    "layer": "object",
+    "name": "街边双人桌",
+    "preview_texture": "res://assets/solid3d/previews/district_outdoor_table.png",
+    "size": [
+      220.0,
+      137.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      220.0,
+      137.0
+    ],
+    "texture": "res://assets/district/outdoor_table.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      164.0,
+      56.0
+    ],
+    "id": "district_parcel_locker",
+    "layer": "object",
+    "name": "蓝白包裹柜",
+    "preview_texture": "res://assets/solid3d/previews/district_parcel_locker.png",
+    "size": [
+      180.0,
+      237.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      180.0,
+      237.0
+    ],
+    "texture": "res://assets/district/parcel_locker.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      120.0,
+      46.0
+    ],
+    "id": "district_planter",
+    "layer": "object",
+    "name": "蓝白花箱",
+    "preview_texture": "res://assets/solid3d/previews/district_planter.png",
+    "size": [
+      148.0,
+      103.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      148.0,
+      103.0
+    ],
+    "texture": "res://assets/district/planter.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      126.0,
+      44.0
+    ],
+    "id": "district_recycling",
+    "layer": "object",
+    "name": "分类回收箱",
+    "preview_texture": "res://assets/solid3d/previews/district_recycling.png",
+    "size": [
+      146.0,
+      115.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      146.0,
+      115.0
+    ],
+    "texture": "res://assets/district/recycling.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      116.0,
+      96.0
+    ],
+    "id": "district_shower",
+    "layer": "object",
+    "name": "玻璃淋浴间",
+    "preview_texture": "res://assets/solid3d/previews/district_shower.png",
+    "size": [
+      170.0,
+      273.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      170.0,
+      273.0
+    ],
+    "texture": "res://assets/district/shower.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      160.0,
+      140.0
+    ],
+    "id": "district_stairs",
+    "layer": "object",
+    "name": "楼层阶梯",
+    "preview_texture": "res://assets/solid3d/previews/district_stairs.png",
+    "size": [
+      267.0,
+      300.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      267.0,
+      300.0
+    ],
+    "texture": "res://assets/district/stairs.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      22.0,
+      20.0
+    ],
+    "id": "district_streetlamp",
+    "layer": "object",
+    "name": "港湾路灯",
+    "preview_texture": "res://assets/solid3d/previews/district_streetlamp.png",
+    "size": [
+      92.0,
+      276.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      92.0,
+      276.0
+    ],
+    "texture": "res://assets/district/streetlamp.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      76.0,
+      26.0
+    ],
+    "id": "district_towel_rack",
+    "layer": "object",
+    "name": "浴室毛巾架",
+    "preview_texture": "res://assets/solid3d/previews/district_towel_rack.png",
+    "size": [
+      74.0,
+      133.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      74.0,
+      133.0
+    ],
+    "texture": "res://assets/district/towel_rack.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      54.0,
+      34.0
+    ],
+    "id": "district_tree",
+    "layer": "object",
+    "name": "街道小树",
+    "preview_texture": "res://assets/solid3d/previews/district_tree.png",
+    "size": [
+      197.0,
+      301.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      197.0,
+      301.0
+    ],
+    "texture": "res://assets/district/tree.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      118.0,
+      54.0
+    ],
+    "id": "district_vanity",
+    "layer": "object",
+    "name": "洗手台与镜子",
+    "preview_texture": "res://assets/solid3d/previews/district_vanity.png",
+    "size": [
+      146.0,
+      233.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      146.0,
+      233.0
+    ],
+    "texture": "res://assets/district/vanity.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      88.0,
+      68.0
+    ],
+    "id": "district_washer",
+    "layer": "object",
+    "name": "蓝白滚筒洗衣机",
+    "preview_texture": "res://assets/solid3d/previews/district_washer.png",
+    "size": [
+      127.0,
+      142.0
+    ],
+    "solid": true,
+    "source": "district/street_asset.gd",
+    "source_bounds": [
+      0.0,
+      0.0,
+      127.0,
+      142.0
+    ],
+    "texture": "res://assets/district/washer.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      55.0,
+      30.0
+    ],
+    "id": "v18_whale_planter",
+    "layer": "object",
+    "name": "蓝鲸陶瓷花盆",
+    "pixel_size": 0.00324675324675324,
+    "preview_texture": "res://assets/solid3d/previews/v18_whale_planter.png",
+    "size": [
+      339.0,
+      308.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/whale_planter.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      110.0,
+      60.0
+    ],
+    "id": "v18_pastry_cart",
+    "layer": "object",
+    "name": "海风烘焙车",
+    "pixel_size": 0.00549450549450549,
+    "preview_texture": "res://assets/solid3d/previews/v18_pastry_cart.png",
+    "size": [
+      317.0,
+      364.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/pastry_cart.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      63.25,
+      34.5
+    ],
+    "id": "v18_hydrangea",
+    "layer": "object",
+    "name": "蓝白绣球盆栽",
+    "pixel_size": 0.00388513513513513,
+    "preview_texture": "res://assets/solid3d/previews/v18_hydrangea.png",
+    "size": [
+      304.0,
+      296.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/hydrangea.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      93.5,
+      51.0
+    ],
+    "id": "v18_record_cabinet",
+    "layer": "object",
+    "name": "深蓝唱片柜",
+    "pixel_size": 0.00485714285714285,
+    "preview_texture": "res://assets/solid3d/previews/v18_record_cabinet.png",
+    "size": [
+      188.0,
+      350.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/record_cabinet.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      60.5,
+      33.0
+    ],
+    "id": "v18_reading_chair",
+    "layer": "object",
+    "name": "海盐阅读椅",
+    "pixel_size": 0.00354838709677419,
+    "preview_texture": "res://assets/solid3d/previews/v18_reading_chair.png",
+    "size": [
+      310.0,
+      310.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/reading_chair.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      88.0,
+      48.0
+    ],
+    "id": "v18_easel",
+    "layer": "object",
+    "name": "白帆画架",
+    "pixel_size": 0.00479041916167664,
+    "preview_texture": "res://assets/solid3d/previews/v18_easel.png",
+    "size": [
+      247.0,
+      334.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/easel.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      71.5,
+      39.0
+    ],
+    "id": "v18_tea_cart",
+    "layer": "object",
+    "name": "暖茶推车",
+    "pixel_size": 0.0039039039039039,
+    "preview_texture": "res://assets/solid3d/previews/v18_tea_cart.png",
+    "size": [
+      314.0,
+      333.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/tea_cart.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      99.0,
+      54.0
+    ],
+    "id": "v18_greenhouse_shelf",
+    "layer": "object",
+    "name": "玻璃育苗架",
+    "pixel_size": 0.0054054054054054,
+    "preview_texture": "res://assets/solid3d/previews/v18_greenhouse_shelf.png",
+    "size": [
+      229.0,
+      333.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/greenhouse_shelf.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      49.5,
+      27.0
+    ],
+    "id": "v18_parcels",
+    "layer": "object",
+    "name": "鲸邮包裹箱",
+    "pixel_size": 0.00306122448979591,
+    "preview_texture": "res://assets/solid3d/previews/v18_parcels.png",
+    "size": [
+      307.0,
+      294.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/parcels.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      35.75,
+      24.0
+    ],
+    "id": "v18_sewing_basket",
+    "layer": "object",
+    "name": "手作收纳篮",
+    "pixel_size": 0.00232974910394265,
+    "preview_texture": "res://assets/solid3d/previews/v18_sewing_basket.png",
+    "size": [
+      311.0,
+      279.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/sewing_basket.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      63.25,
+      34.5
+    ],
+    "id": "v18_aquarium",
+    "layer": "object",
+    "name": "小小水族箱",
+    "pixel_size": 0.00382059800664451,
+    "preview_texture": "res://assets/solid3d/previews/v18_aquarium.png",
+    "size": [
+      262.0,
+      301.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/aquarium.png"
+  },
+  {
+    "category": "decor",
+    "footprint": [
+      35.75,
+      24.0
+    ],
+    "id": "v18_picnic_hamper",
+    "layer": "object",
+    "name": "海风野餐篮",
+    "pixel_size": 0.00243445692883895,
+    "preview_texture": "res://assets/solid3d/previews/v18_picnic_hamper.png",
+    "size": [
+      292.0,
+      267.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/props/picnic_hamper.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      312.8,
+      184.0
+    ],
+    "id": "v18_buildings_bakery",
+    "layer": "object",
+    "name": "晨光烘焙店",
+    "pixel_size": 0.0114427860696517,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_bakery.png",
+    "size": [
+      434.0,
+      402.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/bakery.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      462.4,
+      272.0
+    ],
+    "id": "v18_buildings_cafe",
+    "layer": "object",
+    "name": "潮汐转角咖啡馆",
+    "pixel_size": 0.0143763213530655,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_cafe.png",
+    "size": [
+      430.0,
+      473.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/cafe.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      326.4,
+      192.0
+    ],
+    "id": "v18_buildings_florist",
+    "layer": "object",
+    "name": "青柠玻璃花房",
+    "pixel_size": 0.0114832535885167,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_florist.png",
+    "size": [
+      472.0,
+      418.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/florist.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      680.0,
+      400.0
+    ],
+    "id": "v18_buildings_apartment",
+    "layer": "object",
+    "name": "云湾三层公寓",
+    "pixel_size": 0.0200400801603206,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_apartment.png",
+    "size": [
+      419.0,
+      499.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/apartment.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      462.4,
+      272.0
+    ],
+    "id": "v18_buildings_bookstore",
+    "layer": "object",
+    "name": "漂流书店",
+    "pixel_size": 0.0150110375275938,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_bookstore.png",
+    "size": [
+      428.0,
+      453.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/bookstore.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      421.6,
+      248.0
+    ],
+    "id": "v18_buildings_gallery",
+    "layer": "object",
+    "name": "白帆错层艺廊",
+    "pixel_size": 0.0139325842696629,
+    "preview_texture": "res://assets/solid3d/previews/v18_buildings_gallery.png",
+    "size": [
+      519.0,
+      445.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/buildings/gallery.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      150.0,
+      120.0
+    ],
+    "id": "v18_street_lantern",
+    "layer": "object",
+    "name": "海风旗帜路灯",
+    "pixel_size": 0.00847457627118644,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_lantern.png",
+    "size": [
+      174.0,
+      354.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/lantern.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_street_bench",
+    "layer": "object",
+    "name": "蓝鲸木长椅",
+    "pixel_size": 0.00353356890459363,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_bench.png",
+    "size": [
+      343.0,
+      283.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/bench.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      125.0,
+      100.0
+    ],
+    "id": "v18_street_bus_shelter",
+    "layer": "object",
+    "name": "蓝湾候车亭",
+    "pixel_size": 0.00755287009063444,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_bus_shelter.png",
+    "size": [
+      318.0,
+      331.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/bus_shelter.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      62.5,
+      50.0
+    ],
+    "id": "v18_street_postbox",
+    "layer": "object",
+    "name": "鲸邮信箱",
+    "pixel_size": 0.00419463087248322,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_postbox.png",
+    "size": [
+      184.0,
+      298.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/postbox.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      57.5,
+      46.0
+    ],
+    "id": "v18_street_bicycle",
+    "layer": "object",
+    "name": "花篮自行车",
+    "pixel_size": 0.00379537953795379,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_bicycle.png",
+    "size": [
+      338.0,
+      303.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/bicycle.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      125.0,
+      100.0
+    ],
+    "id": "v18_street_parasol_table",
+    "layer": "object",
+    "name": "条纹伞咖啡桌椅",
+    "pixel_size": 0.00741839762611276,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_parasol_table.png",
+    "size": [
+      306.0,
+      337.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/parasol_table.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_street_flower_trough",
+    "layer": "object",
+    "name": "绣球长花槽",
+    "pixel_size": 0.00363636363636363,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_flower_trough.png",
+    "size": [
+      356.0,
+      275.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/flower_trough.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      92.5,
+      74.0
+    ],
+    "id": "v18_street_info_board",
+    "layer": "object",
+    "name": "白帆导览牌",
+    "pixel_size": 0.00579937304075235,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_info_board.png",
+    "size": [
+      285.0,
+      319.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/info_board.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_street_recycling_bins",
+    "layer": "object",
+    "name": "蓝白分类箱",
+    "pixel_size": 0.00346020761245674,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_recycling_bins.png",
+    "size": [
+      284.0,
+      289.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/recycling_bins.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      85.0,
+      68.0
+    ],
+    "id": "v18_street_whale_fountain",
+    "layer": "object",
+    "name": "蓝鲸小喷泉",
+    "pixel_size": 0.00580204778156996,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_whale_fountain.png",
+    "size": [
+      330.0,
+      293.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/whale_fountain.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      57.5,
+      46.0
+    ],
+    "id": "v18_street_harbor_crates",
+    "layer": "object",
+    "name": "系绳港口木箱",
+    "pixel_size": 0.00415162454873646,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_harbor_crates.png",
+    "size": [
+      309.0,
+      277.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/harbor_crates.png"
+  },
+  {
+    "category": "street",
+    "footprint": [
+      90.0,
+      72.0
+    ],
+    "id": "v18_street_parcel_locker",
+    "layer": "object",
+    "name": "蓝湾包裹柜",
+    "pixel_size": 0.00584415584415584,
+    "preview_texture": "res://assets/solid3d/previews/v18_street_parcel_locker.png",
+    "size": [
+      196.0,
+      308.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/street/parcel_locker.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      67.5,
+      54.0
+    ],
+    "id": "v18_interior_whale_bed",
+    "layer": "object",
+    "name": "蓝湾鲸鱼床",
+    "pixel_size": 0.00391304347826087,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_whale_bed.png",
+    "size": [
+      390.0,
+      345.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/whale_bed.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_interior_cream_sofa",
+    "layer": "object",
+    "name": "奶白云朵沙发",
+    "pixel_size": 0.00374531835205992,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_cream_sofa.png",
+    "size": [
+      344.0,
+      267.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/cream_sofa.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      100.0,
+      80.0
+    ],
+    "id": "v18_interior_ivory_bookcase",
+    "layer": "object",
+    "name": "海蓝满书书架",
+    "pixel_size": 0.00581395348837209,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_ivory_bookcase.png",
+    "size": [
+      229.0,
+      344.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/ivory_bookcase.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      65.0,
+      52.0
+    ],
+    "id": "v18_interior_writing_desk",
+    "layer": "object",
+    "name": "窗边写字桌",
+    "pixel_size": 0.00427631578947368,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_writing_desk.png",
+    "size": [
+      279.0,
+      304.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/writing_desk.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      100.0,
+      80.0
+    ],
+    "id": "v18_interior_navy_wardrobe",
+    "layer": "object",
+    "name": "深蓝圆顶衣柜",
+    "pixel_size": 0.00604229607250755,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_navy_wardrobe.png",
+    "size": [
+      225.0,
+      331.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/navy_wardrobe.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      75.0,
+      60.0
+    ],
+    "id": "v18_interior_sink_cabinet",
+    "layer": "object",
+    "name": "蓝白水槽柜",
+    "pixel_size": 0.00454545454545454,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_sink_cabinet.png",
+    "size": [
+      273.0,
+      330.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/sink_cabinet.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_interior_tea_table",
+    "layer": "object",
+    "name": "午后圆茶桌",
+    "pixel_size": 0.00340136054421768,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_tea_table.png",
+    "size": [
+      267.0,
+      294.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/tea_table.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      90.0,
+      72.0
+    ],
+    "id": "v18_interior_floor_lamp",
+    "layer": "object",
+    "name": "海风褶裙落地灯",
+    "pixel_size": 0.00560747663551401,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_floor_lamp.png",
+    "size": [
+      134.0,
+      321.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/floor_lamp.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      50.0,
+      40.0
+    ],
+    "id": "v18_interior_clawfoot_bath",
+    "layer": "object",
+    "name": "海盐浴缸",
+    "pixel_size": 0.00348432055749128,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_clawfoot_bath.png",
+    "size": [
+      348.0,
+      287.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/clawfoot_bath.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      70.0,
+      56.0
+    ],
+    "id": "v18_interior_ivory_drawers",
+    "layer": "object",
+    "name": "奶白花瓶斗柜",
+    "pixel_size": 0.00457516339869281,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_ivory_drawers.png",
+    "size": [
+      248.0,
+      306.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/ivory_drawers.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      85.0,
+      68.0
+    ],
+    "id": "v18_interior_blue_fridge",
+    "layer": "object",
+    "name": "小鲸鱼冰箱",
+    "pixel_size": 0.00576271186440678,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_blue_fridge.png",
+    "size": [
+      189.0,
+      295.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/blue_fridge.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      55.0,
+      44.0
+    ],
+    "id": "v18_interior_shoe_cabinet",
+    "layer": "object",
+    "name": "蓝湾玄关鞋柜",
+    "pixel_size": 0.00378006872852233,
+    "preview_texture": "res://assets/solid3d/previews/v18_interior_shoe_cabinet.png",
+    "size": [
+      260.0,
+      291.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/interior/shoe_cabinet.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      120.0,
+      96.0
+    ],
+    "id": "v18_special_telescope",
+    "interaction": "潮汐天文望远镜。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "潮汐天文望远镜",
+    "pixel_size": 0.0072072072072072,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_telescope.png",
+    "size": [
+      240.0,
+      333.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/telescope.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      82.5,
+      66.0
+    ],
+    "id": "v18_special_radio_console",
+    "interaction": "海洋无线电工作台。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "海洋无线电工作台",
+    "pixel_size": 0.00463483146067415,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_radio_console.png",
+    "size": [
+      316.0,
+      356.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/radio_console.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      105.0,
+      84.0
+    ],
+    "id": "v18_special_weather_station",
+    "interaction": "蓝湾气象仪。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "蓝湾气象仪",
+    "pixel_size": 0.00617647058823529,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_weather_station.png",
+    "size": [
+      191.0,
+      340.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/weather_station.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      100.0,
+      80.0
+    ],
+    "id": "v18_special_specimen_tank",
+    "interaction": "海洋生态标本柜。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "海洋生态标本柜",
+    "pixel_size": 0.0056657223796034,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_specimen_tank.png",
+    "size": [
+      259.0,
+      353.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/specimen_tank.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      67.5,
+      54.0
+    ],
+    "id": "v18_special_star_desk",
+    "interaction": "星图测算工作桌。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "星图测算工作桌",
+    "pixel_size": 0.00423197492163009,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_star_desk.png",
+    "size": [
+      324.0,
+      319.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/star_desk.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      90.0,
+      72.0
+    ],
+    "id": "v18_special_chart_cabinet",
+    "interaction": "航海图纸档案柜。观测海风、潮汐与星空的专属设备。",
+    "layer": "object",
+    "name": "航海图纸档案柜",
+    "pixel_size": 0.00542168674698795,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_chart_cabinet.png",
+    "size": [
+      202.0,
+      332.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/chart_cabinet.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      75.0,
+      60.0
+    ],
+    "id": "v18_special_upright_piano",
+    "interaction": "奶白蓝鲸立式钢琴。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "奶白蓝鲸立式钢琴",
+    "pixel_size": 0.00474683544303797,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_upright_piano.png",
+    "size": [
+      291.0,
+      316.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/upright_piano.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      82.5,
+      66.0
+    ],
+    "id": "v18_special_drum_kit",
+    "interaction": "蓝鲸排练鼓组。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "蓝鲸排练鼓组",
+    "pixel_size": 0.00557432432432432,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_drum_kit.png",
+    "size": [
+      343.0,
+      296.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/drum_kit.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      70.0,
+      56.0
+    ],
+    "id": "v18_special_guitar_stand",
+    "interaction": "海蓝吉他与琴架。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "海蓝吉他与琴架",
+    "pixel_size": 0.00425531914893617,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_guitar_stand.png",
+    "size": [
+      211.0,
+      329.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/guitar_stand.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      70.0,
+      56.0
+    ],
+    "id": "v18_special_mixing_console",
+    "interaction": "蓝湾混音工作台。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "蓝湾混音工作台",
+    "pixel_size": 0.00453074433656957,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_mixing_console.png",
+    "size": [
+      305.0,
+      309.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/mixing_console.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      90.0,
+      72.0
+    ],
+    "id": "v18_special_speaker_stack",
+    "interaction": "深蓝演出音箱。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "深蓝演出音箱",
+    "pixel_size": 0.00580645161290322,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_speaker_stack.png",
+    "size": [
+      198.0,
+      310.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/speaker_stack.png"
+  },
+  {
+    "category": "furniture",
+    "footprint": [
+      90.0,
+      72.0
+    ],
+    "id": "v18_special_microphone",
+    "interaction": "海风录音话筒。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "海风录音话筒",
+    "pixel_size": 0.00573248407643312,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_microphone.png",
+    "size": [
+      199.0,
+      314.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special/microphone.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      748.0,
+      440.0
+    ],
+    "id": "v18_special_buildings_observatory",
+    "interaction": "三层潮汐观测站。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "三层潮汐观测站",
+    "pixel_size": 0.0123180291153415,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_buildings_observatory.png",
+    "size": [
+      742.0,
+      893.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special_buildings/observatory.png"
+  },
+  {
+    "category": "building",
+    "footprint": [
+      544.0,
+      320.0
+    ],
+    "id": "v18_special_buildings_music",
+    "interaction": "两层蓝鲸音乐馆。用海风和旋律记录鲸落港的日常。",
+    "layer": "object",
+    "name": "两层蓝鲸音乐馆",
+    "pixel_size": 0.0112359550561798,
+    "preview_texture": "res://assets/solid3d/previews/v18_special_buildings_music.png",
+    "size": [
+      734.0,
+      712.0
+    ],
+    "solid": true,
+    "texture": "res://assets/v18/special_buildings/music.png"
+  }
+]

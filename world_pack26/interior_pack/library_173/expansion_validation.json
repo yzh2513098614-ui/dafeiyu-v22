@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "new_container_designs": 18,
+  "opening_pose_samples": 126,
+  "new_props": 8,
+  "new_layouts": 4,
+  "total_models": 173,
+  "checks": [
+    "18 original designs each have closed and open geometry",
+    "126 rigid opening samples preserve static walls and moving-part geometry",
+    "Double doors have separate opposing hinges and a closed seam clearance",
+    "All moving parts belong to exactly one double-door hinge",
+    "Low drawer floors stay above the fixed body floor",
+    "Fridge thermostat stays clear of door tops",
+    "Cargo cage walls and door use real open bars",
+    "Sink uses separate floor and basin walls",
+    "All original 125 models remain in the current catalog",
+    "Pallet-jack angled stem connects to both pump column and grip"
+  ],
+  "results": [
+    {
+      "id": "restaurant_tall_fridge",
+      "kind": "double_door",
+      "pose_samples": 7,
+      "moving_parts": 22,
+      "status": "passed"
+    },
+    {
+      "id": "pantry_ingredient_bin",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 8,
+      "status": "passed"
+    },
+    {
+      "id": "undercounter_service_drawer",
+      "kind": "drawer",
+      "pose_samples": 7,
+      "moving_parts": 16,
+      "status": "passed"
+    },
+    {
+      "id": "insulated_seafood_chest",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 7,
+      "status": "passed"
+    },
+    {
+      "id": "restaurant_cash_drop_safe",
+      "kind": "door",
+      "pose_samples": 7,
+      "moving_parts": 11,
+      "status": "passed"
+    },
+    {
+      "id": "bottle_storage_cabinet",
+      "kind": "double_door",
+      "pose_samples": 7,
+      "moving_parts": 18,
+      "status": "passed"
+    },
+    {
+      "id": "harbor_cargo_cage",
+      "kind": "door",
+      "pose_samples": 7,
+      "moving_parts": 24,
+      "status": "passed"
+    },
+    {
+      "id": "port_manifest_drawer",
+      "kind": "drawer",
+      "pose_samples": 7,
+      "moving_parts": 16,
+      "status": "passed"
+    },
+    {
+      "id": "maritime_signal_locker",
+      "kind": "door",
+      "pose_samples": 7,
+      "moving_parts": 13,
+      "status": "passed"
+    },
+    {
+      "id": "lifesaving_deck_box",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 9,
+      "status": "passed"
+    },
+    {
+      "id": "diver_equipment_case",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 15,
+      "status": "passed"
+    },
+    {
+      "id": "rolling_logistics_case",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 15,
+      "status": "passed"
+    },
+    {
+      "id": "server_service_cabinet",
+      "kind": "door",
+      "pose_samples": 7,
+      "moving_parts": 22,
+      "status": "passed"
+    },
+    {
+      "id": "battery_module_crate",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 16,
+      "status": "passed"
+    },
+    {
+      "id": "sample_transport_case",
+      "kind": "lid",
+      "pose_samples": 7,
+      "moving_parts": 15,
+      "status": "passed"
+    },
+    {
+      "id": "laboratory_specimen_freezer",
+      "kind": "door",
+      "pose_samples": 7,
+      "moving_parts": 7,
+      "status": "passed"
+    },
+    {
+      "id": "wall_emergency_supply_cabinet",
+      "kind": "double_door",
+      "pose_samples": 7,
+      "moving_parts": 20,
+      "status": "passed"
+    },
+    {
+      "id": "currency_transport_case",
+      "kind": "drawer",
+      "pose_samples": 7,
+      "moving_parts": 19,
+      "status": "passed"
+    }
+  ]
+}

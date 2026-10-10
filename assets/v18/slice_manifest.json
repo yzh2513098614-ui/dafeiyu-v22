@@ -1,0 +1,398 @@
+{
+  "props": [
+    {
+      "id": "whale_planter",
+      "source_rect": [
+        57,
+        63,
+        396,
+        371
+      ],
+      "size": [
+        339,
+        308
+      ],
+      "component_area": 59310
+    },
+    {
+      "id": "pastry_cart",
+      "source_rect": [
+        454,
+        11,
+        771,
+        375
+      ],
+      "size": [
+        317,
+        364
+      ],
+      "component_area": 71771
+    },
+    {
+      "id": "hydrangea",
+      "source_rect": [
+        827,
+        58,
+        1131,
+        354
+      ],
+      "size": [
+        304,
+        296
+      ],
+      "component_area": 52045
+    },
+    {
+      "id": "record_cabinet",
+      "source_rect": [
+        1268,
+        23,
+        1456,
+        373
+      ],
+      "size": [
+        188,
+        350
+      ],
+      "component_area": 49830
+    },
+    {
+      "id": "reading_chair",
+      "source_rect": [
+        54,
+        388,
+        364,
+        698
+      ],
+      "size": [
+        310,
+        310
+      ],
+      "component_area": 62464
+    },
+    {
+      "id": "easel",
+      "source_rect": [
+        477,
+        364,
+        724,
+        698
+      ],
+      "size": [
+        247,
+        334
+      ],
+      "component_area": 40999
+    },
+    {
+      "id": "tea_cart",
+      "source_rect": [
+        820,
+        373,
+        1134,
+        706
+      ],
+      "size": [
+        314,
+        333
+      ],
+      "component_area": 61841
+    },
+    {
+      "id": "greenhouse_shelf",
+      "source_rect": [
+        1247,
+        369,
+        1476,
+        702
+      ],
+      "size": [
+        229,
+        333
+      ],
+      "component_area": 56183
+    },
+    {
+      "id": "parcels",
+      "source_rect": [
+        70,
+        705,
+        377,
+        999
+      ],
+      "size": [
+        307,
+        294
+      ],
+      "component_area": 62042
+    },
+    {
+      "id": "sewing_basket",
+      "source_rect": [
+        448,
+        709,
+        759,
+        988
+      ],
+      "size": [
+        311,
+        279
+      ],
+      "component_area": 56391
+    },
+    {
+      "id": "aquarium",
+      "source_rect": [
+        848,
+        699,
+        1110,
+        1000
+      ],
+      "size": [
+        262,
+        301
+      ],
+      "component_area": 50140
+    },
+    {
+      "id": "picnic_hamper",
+      "source_rect": [
+        1217,
+        723,
+        1509,
+        990
+      ],
+      "size": [
+        292,
+        267
+      ],
+      "component_area": 54600
+    }
+  ],
+  "items": [
+    {
+      "id": "sea_glass",
+      "source_rect": [
+        54,
+        17,
+        263,
+        311
+      ],
+      "size": [
+        209,
+        294
+      ],
+      "component_area": 41646
+    },
+    {
+      "id": "whale_compass",
+      "source_rect": [
+        331,
+        17,
+        612,
+        302
+      ],
+      "size": [
+        281,
+        285
+      ],
+      "component_area": 44131
+    },
+    {
+      "id": "butter_bread",
+      "source_rect": [
+        649,
+        63,
+        932,
+        293
+      ],
+      "size": [
+        283,
+        230
+      ],
+      "component_area": 42441
+    },
+    {
+      "id": "hydrangea_bouquet",
+      "source_rect": [
+        959,
+        38,
+        1236,
+        319
+      ],
+      "size": [
+        277,
+        281
+      ],
+      "component_area": 47428
+    },
+    {
+      "id": "harbor_ticket",
+      "source_rect": [
+        14,
+        345,
+        325,
+        601
+      ],
+      "size": [
+        311,
+        256
+      ],
+      "component_area": 43697
+    },
+    {
+      "id": "whale_sketchbook",
+      "source_rect": [
+        334,
+        337,
+        618,
+        620
+      ],
+      "size": [
+        284,
+        283
+      ],
+      "component_area": 57844
+    },
+    {
+      "id": "seed_packet",
+      "source_rect": [
+        660,
+        334,
+        901,
+        618
+      ],
+      "size": [
+        241,
+        284
+      ],
+      "component_area": 43918
+    },
+    {
+      "id": "blue_teapot",
+      "source_rect": [
+        941,
+        348,
+        1246,
+        604
+      ],
+      "size": [
+        305,
+        256
+      ],
+      "component_area": 44440
+    },
+    {
+      "id": "sewing_kit",
+      "source_rect": [
+        18,
+        625,
+        315,
+        920
+      ],
+      "size": [
+        297,
+        295
+      ],
+      "component_area": 61245
+    },
+    {
+      "id": "ivory_shell",
+      "source_rect": [
+        341,
+        665,
+        611,
+        900
+      ],
+      "size": [
+        270,
+        235
+      ],
+      "component_area": 44226
+    },
+    {
+      "id": "instant_camera",
+      "source_rect": [
+        634,
+        655,
+        939,
+        907
+      ],
+      "size": [
+        305,
+        252
+      ],
+      "component_area": 57550
+    },
+    {
+      "id": "picnic_blanket",
+      "source_rect": [
+        942,
+        665,
+        1242,
+        911
+      ],
+      "size": [
+        300,
+        246
+      ],
+      "component_area": 47517
+    },
+    {
+      "id": "whale_music_box",
+      "source_rect": [
+        37,
+        925,
+        283,
+        1233
+      ],
+      "size": [
+        246,
+        308
+      ],
+      "component_area": 51198
+    },
+    {
+      "id": "harbor_key",
+      "source_rect": [
+        339,
+        937,
+        633,
+        1218
+      ],
+      "size": [
+        294,
+        281
+      ],
+      "component_area": 26528
+    },
+    {
+      "id": "paper_boat",
+      "source_rect": [
+        644,
+        942,
+        927,
+        1203
+      ],
+      "size": [
+        283,
+        261
+      ],
+      "component_area": 34776
+    },
+    {
+      "id": "whale_soap",
+      "source_rect": [
+        949,
+        961,
+        1239,
+        1195
+      ],
+      "size": [
+        290,
+        234
+      ],
+      "component_area": 43590
+    }
+  ]
+}

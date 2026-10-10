@@ -1,0 +1,7 @@
+﻿模型ID,中文名称,分类标记,使用地图,结构细节,场景路径,模型形式,来源,数量含义
+tier_seat_strip,阶梯观众座席,建筑内部/座席/看台,sports,分层踏步、座垫、靠背、支架与占位碰撞,res://interior_pack/scenes/modules/tier_seat_strip.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化
+commercial_extract_hood,厨房排烟罩,设备/厨房/排烟,foodhall,罩体、滤板、排烟管与任务灯,res://interior_pack/scenes/modules/commercial_extract_hood.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化
+hex_exhibition_island,六边形展台,陈列/展台/六边形,expo,六边形台座、台面与展示垫,res://interior_pack/scenes/modules/hex_exhibition_island.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化
+server_cable_ladder,机房架空桥架,设备/管线/架空桥架,datacenter,侧梁、横档、线束与吊杆,res://interior_pack/scenes/modules/server_cable_ladder.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化
+response_van,应急车辆,交通/车辆/应急,emergency,车厢、驾驶室、车窗、轮胎与警示灯,res://interior_pack/scenes/modules/response_van.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化
+curved_studio_backdrop,弧形演播布景,装饰/传媒/摄影布景,media,十一片弧形排布墙板、竖杆与上下收边,res://interior_pack/scenes/modules/curved_studio_backdrop.tscn,原生Godot可编辑MeshInstance3D与独立碰撞,本轮原创构件,一种构件，场景中可重复实例化

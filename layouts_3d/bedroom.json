@@ -1,0 +1,309 @@
+{
+  "name": "云湾公寓",
+  "floor": "ivory_tile",
+  "wall": "plaster_ivory",
+  "spawn": [
+    0,
+    0,
+    1.0
+  ],
+  "items": [
+    {
+      "id": "window_oak",
+      "pos": [
+        -3.5,
+        1.0,
+        -3.17
+      ],
+      "angle": 0
+    },
+    {
+      "id": "curtains_ivory",
+      "pos": [
+        -3.5,
+        0.84,
+        -3.12
+      ],
+      "angle": 0
+    },
+    {
+      "id": "window_city",
+      "pos": [
+        2.4,
+        1.14,
+        -3.17
+      ],
+      "angle": 0
+    },
+    {
+      "id": "door_ivory",
+      "pos": [
+        4.78,
+        0,
+        -3.16
+      ],
+      "angle": 0
+    },
+    {
+      "id": "painting_whale",
+      "pos": [
+        -0.1,
+        1.66,
+        -3.16
+      ],
+      "angle": 0
+    },
+    {
+      "id": "shelf_books",
+      "pos": [
+        1.13,
+        1.75,
+        -3.13
+      ],
+      "angle": 0
+    },
+    {
+      "id": "clock",
+      "pos": [
+        5.7,
+        2.13,
+        -3.16
+      ],
+      "angle": 0
+    },
+    {
+      "id": "lamp_wall",
+      "pos": [
+        -5.97,
+        1.82,
+        -2.42
+      ],
+      "angle": 90
+    },
+    {
+      "id": "bed_navy",
+      "pos": [
+        -3.4,
+        0,
+        -0.16
+      ],
+      "angle": 0
+    },
+    {
+      "id": "nightstand",
+      "pos": [
+        -5.1,
+        0,
+        -2.1
+      ],
+      "angle": 0
+    },
+    {
+      "id": "lamp_table",
+      "pos": [
+        -5.1,
+        0.73,
+        -2.5
+      ],
+      "angle": 0
+    },
+    {
+      "id": "books",
+      "pos": [
+        -4.89,
+        0.73,
+        -2.4
+      ],
+      "angle": 0
+    },
+    {
+      "id": "wardrobe",
+      "pos": [
+        -1.2,
+        0,
+        -2.32
+      ],
+      "angle": 0
+    },
+    {
+      "id": "plant_broadleaf",
+      "pos": [
+        5.25,
+        0,
+        -1.8
+      ],
+      "angle": 0
+    },
+    {
+      "id": "desk_oak",
+      "pos": [
+        2.4,
+        0,
+        -2.13
+      ],
+      "angle": 0
+    },
+    {
+      "id": "monitor",
+      "pos": [
+        2.48,
+        0.97,
+        -2.94
+      ],
+      "angle": 0
+    },
+    {
+      "id": "keyboard",
+      "pos": [
+        2.35,
+        0.97,
+        -2.55
+      ],
+      "angle": 0
+    },
+    {
+      "id": "whale_mug",
+      "pos": [
+        3.18,
+        0.98,
+        -2.61
+      ],
+      "angle": 0
+    },
+    {
+      "id": "office_chair",
+      "pos": [
+        2.4,
+        0,
+        -0.85
+      ],
+      "angle": 0
+    },
+    {
+      "id": "waste_bin",
+      "pos": [
+        3.78,
+        0,
+        -1.58
+      ],
+      "angle": 0
+    },
+    {
+      "id": "armchair_sage",
+      "pos": [
+        4.33,
+        0,
+        2.37
+      ],
+      "angle": 0
+    },
+    {
+      "id": "side_table",
+      "pos": [
+        5.45,
+        0,
+        2.5
+      ],
+      "angle": 0
+    },
+    {
+      "id": "tea_tray",
+      "pos": [
+        5.45,
+        0.66,
+        2.01
+      ],
+      "angle": 0
+    },
+    {
+      "id": "lamp_floor",
+      "pos": [
+        5.37,
+        0,
+        0.63
+      ],
+      "angle": 0
+    },
+    {
+      "id": "bookcase",
+      "pos": [
+        -5.33,
+        0,
+        1.62
+      ],
+      "angle": 90
+    },
+    {
+      "id": "entry_bench",
+      "pos": [
+        -3.2,
+        0,
+        3.1
+      ],
+      "angle": 0
+    },
+    {
+      "id": "basket",
+      "pos": [
+        -1.88,
+        0,
+        2.76
+      ],
+      "angle": 0
+    },
+    {
+      "id": "slippers",
+      "pos": [
+        -3.52,
+        0,
+        0.57
+      ],
+      "angle": 0
+    },
+    {
+      "id": "plant_snake",
+      "pos": [
+        -0.86,
+        0,
+        -1.06
+      ],
+      "angle": 0
+    },
+    {
+      "id": "cushion",
+      "pos": [
+        4.38,
+        0.71,
+        1.75
+      ],
+      "angle": 0
+    },
+    {
+      "id": "whale_plush",
+      "pos": [
+        -3.1,
+        0.85,
+        -2.17
+      ],
+      "angle": 0
+    },
+    {
+      "id": "folded_blanket",
+      "pos": [
+        -3.15,
+        0.83,
+        -0.92
+      ],
+      "angle": 0
+    },
+    {
+      "id": "flowers",
+      "pos": [
+        1.51,
+        0.97,
+        -2.78
+      ],
+      "angle": 0
+    }
+  ]
+}

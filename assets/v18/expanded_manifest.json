@@ -1,0 +1,542 @@
+[
+  {
+    "group": "buildings",
+    "id": "bakery",
+    "name": "晨光烘焙店",
+    "height_m": 4.6,
+    "texture": "res://assets/v18/buildings/bakery.png",
+    "source_rect": [
+      38,
+      74,
+      472,
+      476
+    ],
+    "size": [
+      434,
+      402
+    ],
+    "component_area": 120288
+  },
+  {
+    "group": "buildings",
+    "id": "cafe",
+    "name": "潮汐转角咖啡馆",
+    "height_m": 6.8,
+    "texture": "res://assets/v18/buildings/cafe.png",
+    "source_rect": [
+      537,
+      33,
+      967,
+      506
+    ],
+    "size": [
+      430,
+      473
+    ],
+    "component_area": 152894
+  },
+  {
+    "group": "buildings",
+    "id": "florist",
+    "name": "青柠玻璃花房",
+    "height_m": 4.8,
+    "texture": "res://assets/v18/buildings/florist.png",
+    "source_rect": [
+      1038,
+      79,
+      1510,
+      497
+    ],
+    "size": [
+      472,
+      418
+    ],
+    "component_area": 143141
+  },
+  {
+    "group": "buildings",
+    "id": "apartment",
+    "name": "云湾三层公寓",
+    "height_m": 10.0,
+    "texture": "res://assets/v18/buildings/apartment.png",
+    "source_rect": [
+      46,
+      488,
+      465,
+      987
+    ],
+    "size": [
+      419,
+      499
+    ],
+    "component_area": 148942
+  },
+  {
+    "group": "buildings",
+    "id": "bookstore",
+    "name": "漂流书店",
+    "height_m": 6.8,
+    "texture": "res://assets/v18/buildings/bookstore.png",
+    "source_rect": [
+      504,
+      521,
+      932,
+      974
+    ],
+    "size": [
+      428,
+      453
+    ],
+    "component_area": 140794
+  },
+  {
+    "group": "buildings",
+    "id": "gallery",
+    "name": "白帆错层艺廊",
+    "height_m": 6.2,
+    "texture": "res://assets/v18/buildings/gallery.png",
+    "source_rect": [
+      991,
+      519,
+      1510,
+      964
+    ],
+    "size": [
+      519,
+      445
+    ],
+    "component_area": 173136
+  },
+  {
+    "group": "street",
+    "id": "lantern",
+    "name": "海风旗帜路灯",
+    "height_m": 3.0,
+    "texture": "res://assets/v18/street/lantern.png",
+    "source_rect": [
+      99,
+      10,
+      273,
+      364
+    ],
+    "size": [
+      174,
+      354
+    ],
+    "component_area": 22924
+  },
+  {
+    "group": "street",
+    "id": "bench",
+    "name": "蓝鲸木长椅",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/street/bench.png",
+    "source_rect": [
+      391,
+      81,
+      734,
+      364
+    ],
+    "size": [
+      343,
+      283
+    ],
+    "component_area": 46975
+  },
+  {
+    "group": "street",
+    "id": "bus_shelter",
+    "name": "蓝湾候车亭",
+    "height_m": 2.5,
+    "texture": "res://assets/v18/street/bus_shelter.png",
+    "source_rect": [
+      822,
+      39,
+      1140,
+      370
+    ],
+    "size": [
+      318,
+      331
+    ],
+    "component_area": 70227
+  },
+  {
+    "group": "street",
+    "id": "postbox",
+    "name": "鲸邮信箱",
+    "height_m": 1.25,
+    "texture": "res://assets/v18/street/postbox.png",
+    "source_rect": [
+      1269,
+      62,
+      1453,
+      360
+    ],
+    "size": [
+      184,
+      298
+    ],
+    "component_area": 37140
+  },
+  {
+    "group": "street",
+    "id": "bicycle",
+    "name": "花篮自行车",
+    "height_m": 1.15,
+    "texture": "res://assets/v18/street/bicycle.png",
+    "source_rect": [
+      32,
+      390,
+      370,
+      693
+    ],
+    "size": [
+      338,
+      303
+    ],
+    "component_area": 53275
+  },
+  {
+    "group": "street",
+    "id": "parasol_table",
+    "name": "条纹伞咖啡桌椅",
+    "height_m": 2.5,
+    "texture": "res://assets/v18/street/parasol_table.png",
+    "source_rect": [
+      440,
+      362,
+      746,
+      699
+    ],
+    "size": [
+      306,
+      337
+    ],
+    "component_area": 58604
+  },
+  {
+    "group": "street",
+    "id": "flower_trough",
+    "name": "绣球长花槽",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/street/flower_trough.png",
+    "source_rect": [
+      797,
+      422,
+      1153,
+      697
+    ],
+    "size": [
+      356,
+      275
+    ],
+    "component_area": 59308
+  },
+  {
+    "group": "street",
+    "id": "info_board",
+    "name": "白帆导览牌",
+    "height_m": 1.85,
+    "texture": "res://assets/v18/street/info_board.png",
+    "source_rect": [
+      1213,
+      380,
+      1498,
+      699
+    ],
+    "size": [
+      285,
+      319
+    ],
+    "component_area": 50674
+  },
+  {
+    "group": "street",
+    "id": "recycling_bins",
+    "name": "蓝白分类箱",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/street/recycling_bins.png",
+    "source_rect": [
+      70,
+      709,
+      354,
+      998
+    ],
+    "size": [
+      284,
+      289
+    ],
+    "component_area": 60579
+  },
+  {
+    "group": "street",
+    "id": "whale_fountain",
+    "name": "蓝鲸小喷泉",
+    "height_m": 1.7,
+    "texture": "res://assets/v18/street/whale_fountain.png",
+    "source_rect": [
+      427,
+      706,
+      757,
+      999
+    ],
+    "size": [
+      330,
+      293
+    ],
+    "component_area": 53717
+  },
+  {
+    "group": "street",
+    "id": "harbor_crates",
+    "name": "系绳港口木箱",
+    "height_m": 1.15,
+    "texture": "res://assets/v18/street/harbor_crates.png",
+    "source_rect": [
+      842,
+      724,
+      1151,
+      1001
+    ],
+    "size": [
+      309,
+      277
+    ],
+    "component_area": 59655
+  },
+  {
+    "group": "street",
+    "id": "parcel_locker",
+    "name": "蓝湾包裹柜",
+    "height_m": 1.8,
+    "texture": "res://assets/v18/street/parcel_locker.png",
+    "source_rect": [
+      1255,
+      684,
+      1451,
+      992
+    ],
+    "size": [
+      196,
+      308
+    ],
+    "component_area": 47701
+  },
+  {
+    "group": "interior",
+    "id": "whale_bed",
+    "name": "蓝湾鲸鱼床",
+    "height_m": 1.35,
+    "texture": "res://assets/v18/interior/whale_bed.png",
+    "source_rect": [
+      30,
+      15,
+      420,
+      360
+    ],
+    "size": [
+      390,
+      345
+    ],
+    "component_area": 78693
+  },
+  {
+    "group": "interior",
+    "id": "cream_sofa",
+    "name": "奶白云朵沙发",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/interior/cream_sofa.png",
+    "source_rect": [
+      469,
+      86,
+      813,
+      353
+    ],
+    "size": [
+      344,
+      267
+    ],
+    "component_area": 59712
+  },
+  {
+    "group": "interior",
+    "id": "ivory_bookcase",
+    "name": "海蓝满书书架",
+    "height_m": 2.0,
+    "texture": "res://assets/v18/interior/ivory_bookcase.png",
+    "source_rect": [
+      881,
+      23,
+      1110,
+      367
+    ],
+    "size": [
+      229,
+      344
+    ],
+    "component_area": 60334
+  },
+  {
+    "group": "interior",
+    "id": "writing_desk",
+    "name": "窗边写字桌",
+    "height_m": 1.3,
+    "texture": "res://assets/v18/interior/writing_desk.png",
+    "source_rect": [
+      1214,
+      72,
+      1493,
+      376
+    ],
+    "size": [
+      279,
+      304
+    ],
+    "component_area": 36577
+  },
+  {
+    "group": "interior",
+    "id": "navy_wardrobe",
+    "name": "深蓝圆顶衣柜",
+    "height_m": 2.0,
+    "texture": "res://assets/v18/interior/navy_wardrobe.png",
+    "source_rect": [
+      124,
+      368,
+      349,
+      699
+    ],
+    "size": [
+      225,
+      331
+    ],
+    "component_area": 58908
+  },
+  {
+    "group": "interior",
+    "id": "sink_cabinet",
+    "name": "蓝白水槽柜",
+    "height_m": 1.5,
+    "texture": "res://assets/v18/interior/sink_cabinet.png",
+    "source_rect": [
+      478,
+      366,
+      751,
+      696
+    ],
+    "size": [
+      273,
+      330
+    ],
+    "component_area": 63919
+  },
+  {
+    "group": "interior",
+    "id": "tea_table",
+    "name": "午后圆茶桌",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/interior/tea_table.png",
+    "source_rect": [
+      849,
+      399,
+      1116,
+      693
+    ],
+    "size": [
+      267,
+      294
+    ],
+    "component_area": 38969
+  },
+  {
+    "group": "interior",
+    "id": "floor_lamp",
+    "name": "海风褶裙落地灯",
+    "height_m": 1.8,
+    "texture": "res://assets/v18/interior/floor_lamp.png",
+    "source_rect": [
+      1272,
+      376,
+      1406,
+      697
+    ],
+    "size": [
+      134,
+      321
+    ],
+    "component_area": 19387
+  },
+  {
+    "group": "interior",
+    "id": "clawfoot_bath",
+    "name": "海盐浴缸",
+    "height_m": 1.0,
+    "texture": "res://assets/v18/interior/clawfoot_bath.png",
+    "source_rect": [
+      63,
+      706,
+      411,
+      993
+    ],
+    "size": [
+      348,
+      287
+    ],
+    "component_area": 54720
+  },
+  {
+    "group": "interior",
+    "id": "ivory_drawers",
+    "name": "奶白花瓶斗柜",
+    "height_m": 1.4,
+    "texture": "res://assets/v18/interior/ivory_drawers.png",
+    "source_rect": [
+      498,
+      691,
+      746,
+      997
+    ],
+    "size": [
+      248,
+      306
+    ],
+    "component_area": 50045
+  },
+  {
+    "group": "interior",
+    "id": "blue_fridge",
+    "name": "小鲸鱼冰箱",
+    "height_m": 1.7,
+    "texture": "res://assets/v18/interior/blue_fridge.png",
+    "source_rect": [
+      895,
+      700,
+      1084,
+      995
+    ],
+    "size": [
+      189,
+      295
+    ],
+    "component_area": 46361
+  },
+  {
+    "group": "interior",
+    "id": "shoe_cabinet",
+    "name": "蓝湾玄关鞋柜",
+    "height_m": 1.1,
+    "texture": "res://assets/v18/interior/shoe_cabinet.png",
+    "source_rect": [
+      1207,
+      705,
+      1467,
+      996
+    ],
+    "size": [
+      260,
+      291
+    ],
+    "component_area": 48294
+  }
+]

@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/scenes/harbor_plaza.glb" id="e0"]
+
+[sub_resource type="BoxShape3D" id="r0"]
+size = Vector3(15.0,0.2,12.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(5.6,2.6,4.7)
+
+[sub_resource type="BoxShape3D" id="r2"]
+size = Vector3(0.8,1.56,0.775)
+
+[sub_resource type="BoxShape3D" id="r3"]
+size = Vector3(1.7,1.1,0.65)
+
+[sub_resource type="BoxShape3D" id="r4"]
+size = Vector3(0.60532,1.08,0.58)
+
+[sub_resource type="BoxShape3D" id="r5"]
+size = Vector3(1.7,1.1,0.65)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(0.60532,1.08,0.58)
+
+[sub_resource type="BoxShape3D" id="r7"]
+size = Vector3(0.25,2.0,0.25)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(0.25,2.0,0.25)
+
+[sub_resource type="BoxShape3D" id="r9"]
+size = Vector3(0.25,2.0,0.25)
+
+[sub_resource type="BoxShape3D" id="r10"]
+size = Vector3(1.32,1.675,0.1255)
+
+[sub_resource type="BoxShape3D" id="r11"]
+size = Vector3(1.2,0.65,0.72)
+
+[sub_resource type="BoxShape3D" id="r12"]
+size = Vector3(0.61,0.865,0.555)
+
+[node name="lib_harbor_plaza" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_harbor_plaza", "name": "港口餐厅广场", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Body0" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body0"]
+position = Vector3(0.0,-0.1,0.0)
+shape = SubResource("r0")
+
+[node name="Body1" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body1"]
+position = Vector3(-2.0,1.52,2.15)
+shape = SubResource("r1")
+
+[node name="Body2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body2"]
+position = Vector3(4.0,0.78,0.9375)
+shape = SubResource("r2")
+
+[node name="Body3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body3"]
+position = Vector3(-5.0,0.55,-3.0)
+shape = SubResource("r3")
+
+[node name="Body4" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body4"]
+position = Vector3(-3.8,0.54,-3.0)
+shape = SubResource("r4")
+
+[node name="Body5" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body5"]
+position = Vector3(1.5,0.55,-3.0)
+shape = SubResource("r5")
+
+[node name="Body6" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body6"]
+position = Vector3(2.7,0.54,-3.0)
+shape = SubResource("r6")
+
+[node name="Body7" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body7"]
+position = Vector3(-6.0,1.0,4.0)
+shape = SubResource("r7")
+
+[node name="Body8" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body8"]
+position = Vector3(5.0,1.0,-4.0)
+shape = SubResource("r8")
+
+[node name="Body9" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body9"]
+position = Vector3(5.0,1.0,4.0)
+shape = SubResource("r9")
+
+[node name="Body10" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body10"]
+position = Vector3(3.0,0.8375,3.98225)
+shape = SubResource("r10")
+
+[node name="Body11" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body11"]
+position = Vector3(3.8,0.375,-2.5)
+shape = SubResource("r11")
+
+[node name="Body12" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body12"]
+position = Vector3(5.7,0.4325,0.9875)
+shape = SubResource("r12")

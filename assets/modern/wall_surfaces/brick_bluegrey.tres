@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/modern/shaders/wall_surface.gdshader" id="1_kawy8"]
+[ext_resource type="Texture2D" path="res://assets/modern/wall_surfaces/plaster_ivory_v1.png" id="2_hnb2w"]
+
+[resource]
+resource_name = "wall_surface_brick_bluegrey"
+render_priority = 0
+shader = ExtResource("1_kawy8")
+shader_parameter/grain_texture = ExtResource("2_hnb2w")
+shader_parameter/wall_color = Vector3(0.72156864, 0.7764706, 0.8117647)
+shader_parameter/wall_axis = Vector3(1, 0, 0)
+shader_parameter/grain_mean = 0.7857335322380066
+shader_parameter/grain_scale = Vector2(1.4, 1.4)
+shader_parameter/grain_strength = 0.55
+shader_parameter/unit_size = Vector2(0.45, 0.22)
+shader_parameter/joint_width = 0.008
+shader_parameter/joint_contrast = 0.18
+shader_parameter/pattern = 2
+shader_parameter/roughness_value = 0.88
+shader_parameter/metal_value = 0.0
+shader_parameter/normal_strength = 0.16
+shader_parameter/specular_value = 0.2
+shader_parameter/roughness_variation = 0.025
+shader_parameter/relief_depth = 0.003
+shader_parameter/surface_type = 0
+shader_parameter/wainscot_height = 0.0
+shader_parameter/facade = true
+shader_parameter/plinth = true

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/medical/disinfectant_pump_stand.glb" id="1"]
+
+[node name="disinfectant_pump_stand" type="Node3D"]
+metadata/asset_id = "disinfectant_pump_stand"
+metadata/asset_label = "消毒液立式支架"
+metadata/code = "MD-02"
+metadata/category_code = "MD"
+metadata/category_label = "医疗装饰"
+metadata/folder = "medical"
+metadata/placement = "地面"
+metadata/scene_tags = ["医院", "诊所", "实验室"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

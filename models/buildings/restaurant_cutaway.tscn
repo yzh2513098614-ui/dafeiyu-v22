@@ -1,0 +1,136 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="PackedScene" path="res://models/buildings/restaurant_cutaway.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(6, 0.16, 5)
+
+[sub_resource type="BoxShape3D" id="Shape1"]
+size = Vector3(6, 2.65, 0.16)
+
+[sub_resource type="BoxShape3D" id="Shape2"]
+size = Vector3(0.16, 2.65, 5)
+
+[sub_resource type="BoxShape3D" id="Shape3"]
+size = Vector3(0.16, 0.75, 5)
+
+[sub_resource type="BoxShape3D" id="Shape4"]
+size = Vector3(2.2, 0.75, 0.16)
+
+[sub_resource type="BoxShape3D" id="Shape5"]
+size = Vector3(2.2, 0.75, 0.16)
+
+[sub_resource type="BoxShape3D" id="Shape6"]
+size = Vector3(1.2000000476837158, 0.9700000286102295, 1.2000000476837158)
+
+[sub_resource type="BoxShape3D" id="Shape7"]
+size = Vector3(0.46000000834465027, 0.9750000238418579, 0.4699999988079071)
+
+[sub_resource type="BoxShape3D" id="Shape8"]
+size = Vector3(0.4600000083446503, 0.9750000238418579, 0.46999999880790716)
+
+[sub_resource type="BoxShape3D" id="Shape9"]
+size = Vector3(1.2000000476837158, 0.9700000286102295, 1.2000000476837158)
+
+[sub_resource type="BoxShape3D" id="Shape10"]
+size = Vector3(0.46000000834465027, 0.9750000238418579, 0.4699999988079071)
+
+[sub_resource type="BoxShape3D" id="Shape11"]
+size = Vector3(0.4600000083446503, 0.9750000238418579, 0.46999999880790716)
+
+[sub_resource type="BoxShape3D" id="Shape12"]
+size = Vector3(1.2000000476837158, 0.9700000286102295, 1.2000000476837158)
+
+[sub_resource type="BoxShape3D" id="Shape13"]
+size = Vector3(0.46000000834465027, 0.9750000238418579, 0.4699999988079071)
+
+[sub_resource type="BoxShape3D" id="Shape14"]
+size = Vector3(0.4600000083446503, 0.9750000238418579, 0.46999999880790716)
+
+[sub_resource type="BoxShape3D" id="Shape15"]
+size = Vector3(2.799999952316284, 1.1299999952316284, 0.8299999833106995)
+
+[sub_resource type="BoxShape3D" id="Shape16"]
+size = Vector3(0.6053169369697571, 1.0800000429153442, 0.5799999833106995)
+
+[sub_resource type="BoxShape3D" id="Shape17"]
+size = Vector3(0.6899999976158142, 1.177139401435852, 0.36161673069000244)
+
+[node name="restaurant_cutaway" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.08, 0)
+shape = SubResource("Shape0")
+
+[node name="Collision1" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 1.4849999999999999, 2.5)
+shape = SubResource("Shape1")
+
+[node name="Collision2" type="CollisionShape3D" parent="Body"]
+position = Vector3(-3.0, 1.4849999999999999, 0)
+shape = SubResource("Shape2")
+
+[node name="Collision3" type="CollisionShape3D" parent="Body"]
+position = Vector3(3.0, 0.535, 0)
+shape = SubResource("Shape3")
+
+[node name="Collision4" type="CollisionShape3D" parent="Body"]
+position = Vector3(-1.9, 0.535, -2.5)
+shape = SubResource("Shape4")
+
+[node name="Collision5" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.9, 0.535, -2.5)
+shape = SubResource("Shape5")
+
+[node name="Collision6" type="CollisionShape3D" parent="Body"]
+position = Vector3(-1.9, 0.6450000143051148, -0.8)
+shape = SubResource("Shape6")
+
+[node name="Collision7" type="CollisionShape3D" parent="Body"]
+position = Vector3(-1.9, 0.647500011920929, -1.589999994635582)
+shape = SubResource("Shape7")
+
+[node name="Collision8" type="CollisionShape3D" parent="Body"]
+position = Vector3(-1.9, 0.647500011920929, -0.01000000536441803)
+shape = SubResource("Shape8")
+
+[node name="Collision9" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.6450000143051148, -0.8)
+shape = SubResource("Shape9")
+
+[node name="Collision10" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.647500011920929, -1.589999994635582)
+shape = SubResource("Shape10")
+
+[node name="Collision11" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.2246474560990901e-18, 0.647500011920929, -0.01000000536441803)
+shape = SubResource("Shape11")
+
+[node name="Collision12" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.9, 0.6450000143051148, -0.8)
+shape = SubResource("Shape12")
+
+[node name="Collision13" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.9, 0.647500011920929, -1.589999994635582)
+shape = SubResource("Shape13")
+
+[node name="Collision14" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.9, 0.647500011920929, -0.01000000536441803)
+shape = SubResource("Shape14")
+
+[node name="Collision15" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0, 0.7249999976158142, 1.6)
+shape = SubResource("Shape15")
+
+[node name="Collision16" type="CollisionShape3D" parent="Body"]
+position = Vector3(-2.55, 0.7000000214576722, -1.9)
+shape = SubResource("Shape16")
+
+[node name="Collision17" type="CollisionShape3D" parent="Body"]
+position = Vector3(2.25, 0.756430242061615, -1.7791916266083718)
+shape = SubResource("Shape17")
+

@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "container_designs": 12,
+  "opening_pose_samples": 84,
+  "checks": [
+    "Each design has independent moving and stationary geometry",
+    "Exported open models match the same hinge/translation used by the controller",
+    "Opening leaves stationary container walls unchanged",
+    "Movement preserves rigid triangle edge lengths",
+    "Lids rotate upward rather than through the cavity",
+    "Door panels fit inside their frames with clearance",
+    "Armored-safe bolts retract before the door begins to turn",
+    "Every scene and script resource reference resolves to a packaged file"
+  ],
+  "results": [
+    {
+      "id": "field_supply_crate",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 15,
+      "static_parts": 39
+    },
+    {
+      "id": "long_equipment_case",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 17,
+      "static_parts": 39
+    },
+    {
+      "id": "reinforced_flight_case",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 11,
+      "static_parts": 43
+    },
+    {
+      "id": "field_medical_chest",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 11,
+      "static_parts": 37
+    },
+    {
+      "id": "marine_waterproof_case",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 15,
+      "static_parts": 43
+    },
+    {
+      "id": "encrypted_electronics_case",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 11,
+      "static_parts": 38
+    },
+    {
+      "id": "industrial_tool_chest",
+      "status": "passed",
+      "mechanism": "lid",
+      "moving_parts": 11,
+      "static_parts": 37
+    },
+    {
+      "id": "office_armored_safe",
+      "status": "passed",
+      "mechanism": "door",
+      "moving_parts": 31,
+      "static_parts": 18
+    },
+    {
+      "id": "wall_data_safe",
+      "status": "passed",
+      "mechanism": "door",
+      "moving_parts": 23,
+      "static_parts": 18
+    },
+    {
+      "id": "secure_equipment_locker",
+      "status": "passed",
+      "mechanism": "door",
+      "moving_parts": 28,
+      "static_parts": 19
+    },
+    {
+      "id": "searchable_file_cabinet",
+      "status": "passed",
+      "mechanism": "drawer",
+      "moving_parts": 15,
+      "static_parts": 22
+    },
+    {
+      "id": "cold_chain_medical_cabinet",
+      "status": "passed",
+      "mechanism": "door",
+      "moving_parts": 25,
+      "static_parts": 23
+    }
+  ],
+  "godot_runtime_test": "This offline validator does not run Godot; see runtime_validation.json for the separate engine test"
+}

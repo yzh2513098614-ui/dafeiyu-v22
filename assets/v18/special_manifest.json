@@ -1,0 +1,254 @@
+[
+  {
+    "group": "special",
+    "id": "telescope",
+    "name": "潮汐天文望远镜",
+    "height_m": 2.4,
+    "texture": "res://assets/v18/special/telescope.png",
+    "source_rect": [
+      81,
+      26,
+      321,
+      359
+    ],
+    "size": [
+      240,
+      333
+    ],
+    "component_area": 27745
+  },
+  {
+    "group": "special",
+    "id": "radio_console",
+    "name": "海洋无线电工作台",
+    "height_m": 1.65,
+    "texture": "res://assets/v18/special/radio_console.png",
+    "source_rect": [
+      436,
+      8,
+      752,
+      364
+    ],
+    "size": [
+      316,
+      356
+    ],
+    "component_area": 60330
+  },
+  {
+    "group": "special",
+    "id": "weather_station",
+    "name": "蓝湾气象仪",
+    "height_m": 2.1,
+    "texture": "res://assets/v18/special/weather_station.png",
+    "source_rect": [
+      876,
+      22,
+      1067,
+      362
+    ],
+    "size": [
+      191,
+      340
+    ],
+    "component_area": 32509
+  },
+  {
+    "group": "special",
+    "id": "specimen_tank",
+    "name": "海洋生态标本柜",
+    "height_m": 2.0,
+    "texture": "res://assets/v18/special/specimen_tank.png",
+    "source_rect": [
+      1223,
+      11,
+      1482,
+      364
+    ],
+    "size": [
+      259,
+      353
+    ],
+    "component_area": 64963
+  },
+  {
+    "group": "special",
+    "id": "star_desk",
+    "name": "星图测算工作桌",
+    "height_m": 1.35,
+    "texture": "res://assets/v18/special/star_desk.png",
+    "source_rect": [
+      46,
+      366,
+      370,
+      685
+    ],
+    "size": [
+      324,
+      319
+    ],
+    "component_area": 61822
+  },
+  {
+    "group": "special",
+    "id": "chart_cabinet",
+    "name": "航海图纸档案柜",
+    "height_m": 1.8,
+    "texture": "res://assets/v18/special/chart_cabinet.png",
+    "source_rect": [
+      488,
+      351,
+      690,
+      683
+    ],
+    "size": [
+      202,
+      332
+    ],
+    "component_area": 47651
+  },
+  {
+    "group": "special",
+    "id": "upright_piano",
+    "name": "奶白蓝鲸立式钢琴",
+    "height_m": 1.5,
+    "texture": "res://assets/v18/special/upright_piano.png",
+    "source_rect": [
+      797,
+      373,
+      1088,
+      689
+    ],
+    "size": [
+      291,
+      316
+    ],
+    "component_area": 67413
+  },
+  {
+    "group": "special",
+    "id": "drum_kit",
+    "name": "蓝鲸排练鼓组",
+    "height_m": 1.65,
+    "texture": "res://assets/v18/special/drum_kit.png",
+    "source_rect": [
+      1164,
+      398,
+      1507,
+      694
+    ],
+    "size": [
+      343,
+      296
+    ],
+    "component_area": 56242
+  },
+  {
+    "group": "special",
+    "id": "guitar_stand",
+    "name": "海蓝吉他与琴架",
+    "height_m": 1.4,
+    "texture": "res://assets/v18/special/guitar_stand.png",
+    "source_rect": [
+      85,
+      675,
+      296,
+      1004
+    ],
+    "size": [
+      211,
+      329
+    ],
+    "component_area": 31050
+  },
+  {
+    "group": "special",
+    "id": "mixing_console",
+    "name": "蓝湾混音工作台",
+    "height_m": 1.4,
+    "texture": "res://assets/v18/special/mixing_console.png",
+    "source_rect": [
+      429,
+      695,
+      734,
+      1004
+    ],
+    "size": [
+      305,
+      309
+    ],
+    "component_area": 54396
+  },
+  {
+    "group": "special",
+    "id": "speaker_stack",
+    "name": "深蓝演出音箱",
+    "height_m": 1.8,
+    "texture": "res://assets/v18/special/speaker_stack.png",
+    "source_rect": [
+      868,
+      694,
+      1066,
+      1004
+    ],
+    "size": [
+      198,
+      310
+    ],
+    "component_area": 46874
+  },
+  {
+    "group": "special",
+    "id": "microphone",
+    "name": "海风录音话筒",
+    "height_m": 1.8,
+    "texture": "res://assets/v18/special/microphone.png",
+    "source_rect": [
+      1248,
+      699,
+      1447,
+      1013
+    ],
+    "size": [
+      199,
+      314
+    ],
+    "component_area": 13860
+  },
+  {
+    "group": "special_buildings",
+    "id": "observatory",
+    "name": "三层潮汐观测站",
+    "height_m": 11.0,
+    "texture": "res://assets/v18/special_buildings/observatory.png",
+    "source_rect": [
+      14,
+      47,
+      756,
+      940
+    ],
+    "size": [
+      742,
+      893
+    ],
+    "component_area": 413464
+  },
+  {
+    "group": "special_buildings",
+    "id": "music",
+    "name": "两层蓝鲸音乐馆",
+    "height_m": 8.0,
+    "texture": "res://assets/v18/special_buildings/music.png",
+    "source_rect": [
+      790,
+      212,
+      1524,
+      924
+    ],
+    "size": [
+      734,
+      712
+    ],
+    "component_area": 379501
+  }
+]

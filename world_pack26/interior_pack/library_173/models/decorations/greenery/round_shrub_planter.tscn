@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/greenery/round_shrub_planter.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(0.8650000095367432, 1.0399999618530273, 0.6000000238418579)
+
+[node name="round_shrub_planter" type="Node3D"]
+metadata/asset_id = "round_shrub_planter"
+metadata/asset_label = "圆冠灌木花盆"
+metadata/code = "GR-03"
+metadata/category_code = "GR"
+metadata/category_label = "绿植花艺"
+metadata/folder = "greenery"
+metadata/placement = "地面"
+metadata/scene_tags = ["住宅", "学校", "餐厅", "商场"]
+metadata/collision_mode = "主体近似碰撞"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.002499997615814209, 0.5199999809265137, 0.0)
+shape = SubResource("Shape0")
+

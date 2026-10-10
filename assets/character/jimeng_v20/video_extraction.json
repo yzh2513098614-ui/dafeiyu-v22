@@ -1,0 +1,1406 @@
+{
+  "canvas_size": [
+    1024,
+    1152
+  ],
+  "ground": [
+    512,
+    1080
+  ],
+  "video_fps": 24,
+  "source_resolution": [
+    834,
+    1112
+  ],
+  "clips": {
+    "down": [
+      1,
+      25,
+      7
+    ],
+    "down_left": [
+      111,
+      135,
+      119
+    ],
+    "left": [
+      174,
+      206,
+      176
+    ],
+    "up": [
+      262,
+      286,
+      265
+    ],
+    "right": [
+      417,
+      443,
+      437
+    ],
+    "down_right": [
+      502,
+      526,
+      510
+    ]
+  },
+  "frames": {
+    "down": [
+      "res://assets/character/jimeng_v20/down/walk_00.png",
+      "res://assets/character/jimeng_v20/down/walk_01.png",
+      "res://assets/character/jimeng_v20/down/walk_02.png",
+      "res://assets/character/jimeng_v20/down/walk_03.png",
+      "res://assets/character/jimeng_v20/down/walk_04.png",
+      "res://assets/character/jimeng_v20/down/walk_05.png",
+      "res://assets/character/jimeng_v20/down/walk_06.png",
+      "res://assets/character/jimeng_v20/down/walk_07.png",
+      "res://assets/character/jimeng_v20/down/walk_08.png",
+      "res://assets/character/jimeng_v20/down/walk_09.png",
+      "res://assets/character/jimeng_v20/down/walk_10.png",
+      "res://assets/character/jimeng_v20/down/walk_11.png"
+    ],
+    "down_left": [
+      "res://assets/character/jimeng_v20/down_left/walk_00.png",
+      "res://assets/character/jimeng_v20/down_left/walk_01.png",
+      "res://assets/character/jimeng_v20/down_left/walk_02.png",
+      "res://assets/character/jimeng_v20/down_left/walk_03.png",
+      "res://assets/character/jimeng_v20/down_left/walk_04.png",
+      "res://assets/character/jimeng_v20/down_left/walk_05.png",
+      "res://assets/character/jimeng_v20/down_left/walk_06.png",
+      "res://assets/character/jimeng_v20/down_left/walk_07.png",
+      "res://assets/character/jimeng_v20/down_left/walk_08.png",
+      "res://assets/character/jimeng_v20/down_left/walk_09.png",
+      "res://assets/character/jimeng_v20/down_left/walk_10.png",
+      "res://assets/character/jimeng_v20/down_left/walk_11.png"
+    ],
+    "left": [
+      "res://assets/character/jimeng_v20/left/walk_00.png",
+      "res://assets/character/jimeng_v20/left/walk_01.png",
+      "res://assets/character/jimeng_v20/left/walk_02.png",
+      "res://assets/character/jimeng_v20/left/walk_03.png",
+      "res://assets/character/jimeng_v20/left/walk_04.png",
+      "res://assets/character/jimeng_v20/left/walk_05.png",
+      "res://assets/character/jimeng_v20/left/walk_06.png",
+      "res://assets/character/jimeng_v20/left/walk_07.png",
+      "res://assets/character/jimeng_v20/left/walk_08.png",
+      "res://assets/character/jimeng_v20/left/walk_09.png",
+      "res://assets/character/jimeng_v20/left/walk_10.png",
+      "res://assets/character/jimeng_v20/left/walk_11.png",
+      "res://assets/character/jimeng_v20/left/walk_12.png",
+      "res://assets/character/jimeng_v20/left/walk_13.png",
+      "res://assets/character/jimeng_v20/left/walk_14.png",
+      "res://assets/character/jimeng_v20/left/walk_15.png"
+    ],
+    "up": [
+      "res://assets/character/jimeng_v20/up/walk_00.png",
+      "res://assets/character/jimeng_v20/up/walk_01.png",
+      "res://assets/character/jimeng_v20/up/walk_02.png",
+      "res://assets/character/jimeng_v20/up/walk_03.png",
+      "res://assets/character/jimeng_v20/up/walk_04.png",
+      "res://assets/character/jimeng_v20/up/walk_05.png",
+      "res://assets/character/jimeng_v20/up/walk_06.png",
+      "res://assets/character/jimeng_v20/up/walk_07.png",
+      "res://assets/character/jimeng_v20/up/walk_08.png",
+      "res://assets/character/jimeng_v20/up/walk_09.png",
+      "res://assets/character/jimeng_v20/up/walk_10.png",
+      "res://assets/character/jimeng_v20/up/walk_11.png"
+    ],
+    "right": [
+      "res://assets/character/jimeng_v20/right/walk_00.png",
+      "res://assets/character/jimeng_v20/right/walk_01.png",
+      "res://assets/character/jimeng_v20/right/walk_02.png",
+      "res://assets/character/jimeng_v20/right/walk_03.png",
+      "res://assets/character/jimeng_v20/right/walk_04.png",
+      "res://assets/character/jimeng_v20/right/walk_05.png",
+      "res://assets/character/jimeng_v20/right/walk_06.png",
+      "res://assets/character/jimeng_v20/right/walk_07.png",
+      "res://assets/character/jimeng_v20/right/walk_08.png",
+      "res://assets/character/jimeng_v20/right/walk_09.png",
+      "res://assets/character/jimeng_v20/right/walk_10.png",
+      "res://assets/character/jimeng_v20/right/walk_11.png",
+      "res://assets/character/jimeng_v20/right/walk_12.png"
+    ],
+    "down_right": [
+      "res://assets/character/jimeng_v20/down_right/walk_00.png",
+      "res://assets/character/jimeng_v20/down_right/walk_01.png",
+      "res://assets/character/jimeng_v20/down_right/walk_02.png",
+      "res://assets/character/jimeng_v20/down_right/walk_03.png",
+      "res://assets/character/jimeng_v20/down_right/walk_04.png",
+      "res://assets/character/jimeng_v20/down_right/walk_05.png",
+      "res://assets/character/jimeng_v20/down_right/walk_06.png",
+      "res://assets/character/jimeng_v20/down_right/walk_07.png",
+      "res://assets/character/jimeng_v20/down_right/walk_08.png",
+      "res://assets/character/jimeng_v20/down_right/walk_09.png",
+      "res://assets/character/jimeng_v20/down_right/walk_10.png",
+      "res://assets/character/jimeng_v20/down_right/walk_11.png"
+    ]
+  },
+  "idle": {
+    "down": [
+      "res://assets/character/jimeng_v20/down/walk_03.png"
+    ],
+    "down_left": [
+      "res://assets/character/jimeng_v20/down_left/walk_04.png"
+    ],
+    "left": [
+      "res://assets/character/jimeng_v20/left/walk_01.png"
+    ],
+    "up": [
+      "res://assets/character/jimeng_v20/up/walk_01.png"
+    ],
+    "right": [
+      "res://assets/character/jimeng_v20/right/walk_10.png"
+    ],
+    "down_right": [
+      "res://assets/character/jimeng_v20/down_right/walk_04.png"
+    ]
+  },
+  "records": {
+    "down": [
+      {
+        "source_frame": 1,
+        "source_time": 0.0,
+        "translation": [
+          93,
+          32
+        ],
+        "source_bounds": [
+          135,
+          72,
+          719,
+          1048
+        ],
+        "foreground_pixels": 356142,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 3,
+        "source_time": 0.08333333333333333,
+        "translation": [
+          93,
+          34
+        ],
+        "source_bounds": [
+          136,
+          72,
+          716,
+          1046
+        ],
+        "foreground_pixels": 356109,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 5,
+        "source_time": 0.16666666666666666,
+        "translation": [
+          93,
+          44
+        ],
+        "source_bounds": [
+          138,
+          66,
+          712,
+          1036
+        ],
+        "foreground_pixels": 354640,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 7,
+        "source_time": 0.25,
+        "translation": [
+          93,
+          52
+        ],
+        "source_bounds": [
+          136,
+          60,
+          710,
+          1028
+        ],
+        "foreground_pixels": 356599,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 9,
+        "source_time": 0.3333333333333333,
+        "translation": [
+          93,
+          52
+        ],
+        "source_bounds": [
+          134,
+          56,
+          708,
+          1028
+        ],
+        "foreground_pixels": 355207,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 11,
+        "source_time": 0.4166666666666667,
+        "translation": [
+          93,
+          38
+        ],
+        "source_bounds": [
+          130,
+          58,
+          710,
+          1042
+        ],
+        "foreground_pixels": 353091,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 13,
+        "source_time": 0.5,
+        "translation": [
+          93,
+          32
+        ],
+        "source_bounds": [
+          128,
+          66,
+          712,
+          1048
+        ],
+        "foreground_pixels": 349434,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 15,
+        "source_time": 0.5833333333333334,
+        "translation": [
+          93,
+          36
+        ],
+        "source_bounds": [
+          130,
+          70,
+          712,
+          1044
+        ],
+        "foreground_pixels": 350555,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 17,
+        "source_time": 0.6666666666666666,
+        "translation": [
+          93,
+          48
+        ],
+        "source_bounds": [
+          136,
+          66,
+          710,
+          1032
+        ],
+        "foreground_pixels": 356850,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 19,
+        "source_time": 0.75,
+        "translation": [
+          93,
+          54
+        ],
+        "source_bounds": [
+          138,
+          60,
+          712,
+          1026
+        ],
+        "foreground_pixels": 359621,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 21,
+        "source_time": 0.8333333333333334,
+        "translation": [
+          93,
+          42
+        ],
+        "source_bounds": [
+          138,
+          60,
+          722,
+          1038
+        ],
+        "foreground_pixels": 360465,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 23,
+        "source_time": 0.9166666666666666,
+        "translation": [
+          93,
+          34
+        ],
+        "source_bounds": [
+          136,
+          66,
+          724,
+          1046
+        ],
+        "foreground_pixels": 360606,
+        "rgb_exact": true
+      }
+    ],
+    "down_left": [
+      {
+        "source_frame": 111,
+        "source_time": 4.583333333333333,
+        "translation": [
+          99,
+          20
+        ],
+        "source_bounds": [
+          114,
+          52,
+          782,
+          1060
+        ],
+        "foreground_pixels": 390157,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 113,
+        "source_time": 4.666666666666667,
+        "translation": [
+          99,
+          16
+        ],
+        "source_bounds": [
+          114,
+          56,
+          784,
+          1064
+        ],
+        "foreground_pixels": 386815,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 115,
+        "source_time": 4.75,
+        "translation": [
+          99,
+          24
+        ],
+        "source_bounds": [
+          116,
+          52,
+          780,
+          1056
+        ],
+        "foreground_pixels": 391706,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 117,
+        "source_time": 4.833333333333333,
+        "translation": [
+          99,
+          40
+        ],
+        "source_bounds": [
+          126,
+          46,
+          792,
+          1040
+        ],
+        "foreground_pixels": 404710,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 119,
+        "source_time": 4.916666666666667,
+        "translation": [
+          99,
+          26
+        ],
+        "source_bounds": [
+          126,
+          44,
+          804,
+          1054
+        ],
+        "foreground_pixels": 411884,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 121,
+        "source_time": 5.0,
+        "translation": [
+          99,
+          24
+        ],
+        "source_bounds": [
+          124,
+          50,
+          820,
+          1056
+        ],
+        "foreground_pixels": 411869,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 123,
+        "source_time": 5.083333333333333,
+        "translation": [
+          99,
+          10
+        ],
+        "source_bounds": [
+          124,
+          56,
+          824,
+          1070
+        ],
+        "foreground_pixels": 411347,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 125,
+        "source_time": 5.166666666666667,
+        "translation": [
+          99,
+          20
+        ],
+        "source_bounds": [
+          129,
+          54,
+          826,
+          1060
+        ],
+        "foreground_pixels": 407753,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 127,
+        "source_time": 5.25,
+        "translation": [
+          99,
+          30
+        ],
+        "source_bounds": [
+          128,
+          50,
+          822,
+          1050
+        ],
+        "foreground_pixels": 408238,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 129,
+        "source_time": 5.333333333333333,
+        "translation": [
+          99,
+          27
+        ],
+        "source_bounds": [
+          122,
+          44,
+          800,
+          1053
+        ],
+        "foreground_pixels": 394654,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 131,
+        "source_time": 5.416666666666667,
+        "translation": [
+          99,
+          26
+        ],
+        "source_bounds": [
+          118,
+          46,
+          784,
+          1054
+        ],
+        "foreground_pixels": 393108,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 133,
+        "source_time": 5.5,
+        "translation": [
+          99,
+          18
+        ],
+        "source_bounds": [
+          114,
+          54,
+          784,
+          1062
+        ],
+        "foreground_pixels": 389578,
+        "rgb_exact": true
+      }
+    ],
+    "left": [
+      {
+        "source_frame": 174,
+        "source_time": 7.208333333333333,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          134,
+          44,
+          796,
+          1062
+        ],
+        "foreground_pixels": 359887,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 176,
+        "source_time": 7.291666666666667,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          132,
+          40,
+          804,
+          1062
+        ],
+        "foreground_pixels": 375049,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 178,
+        "source_time": 7.375,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          130,
+          42,
+          810,
+          1062
+        ],
+        "foreground_pixels": 381266,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 180,
+        "source_time": 7.458333333333333,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          130,
+          46,
+          812,
+          1062
+        ],
+        "foreground_pixels": 379800,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 182,
+        "source_time": 7.541666666666667,
+        "translation": [
+          154,
+          24
+        ],
+        "source_bounds": [
+          132,
+          50,
+          816,
+          1056
+        ],
+        "foreground_pixels": 376720,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 184,
+        "source_time": 7.625,
+        "translation": [
+          154,
+          24
+        ],
+        "source_bounds": [
+          132,
+          48,
+          812,
+          1056
+        ],
+        "foreground_pixels": 368159,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 186,
+        "source_time": 7.708333333333333,
+        "translation": [
+          154,
+          20
+        ],
+        "source_bounds": [
+          132,
+          42,
+          798,
+          1060
+        ],
+        "foreground_pixels": 370672,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 188,
+        "source_time": 7.791666666666667,
+        "translation": [
+          154,
+          23
+        ],
+        "source_bounds": [
+          130,
+          40,
+          786,
+          1057
+        ],
+        "foreground_pixels": 380213,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 190,
+        "source_time": 7.875,
+        "translation": [
+          154,
+          22
+        ],
+        "source_bounds": [
+          130,
+          44,
+          772,
+          1058
+        ],
+        "foreground_pixels": 379583,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 192,
+        "source_time": 7.958333333333333,
+        "translation": [
+          154,
+          20
+        ],
+        "source_bounds": [
+          130,
+          48,
+          772,
+          1060
+        ],
+        "foreground_pixels": 376385,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 194,
+        "source_time": 8.041666666666666,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          132,
+          48,
+          784,
+          1062
+        ],
+        "foreground_pixels": 369813,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 196,
+        "source_time": 8.125,
+        "translation": [
+          154,
+          18
+        ],
+        "source_bounds": [
+          134,
+          44,
+          794,
+          1062
+        ],
+        "foreground_pixels": 358915,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 198,
+        "source_time": 8.208333333333334,
+        "translation": [
+          154,
+          16
+        ],
+        "source_bounds": [
+          130,
+          40,
+          808,
+          1064
+        ],
+        "foreground_pixels": 380449,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 200,
+        "source_time": 8.291666666666666,
+        "translation": [
+          154,
+          16
+        ],
+        "source_bounds": [
+          130,
+          40,
+          810,
+          1064
+        ],
+        "foreground_pixels": 381328,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 202,
+        "source_time": 8.375,
+        "translation": [
+          154,
+          16
+        ],
+        "source_bounds": [
+          130,
+          48,
+          814,
+          1064
+        ],
+        "foreground_pixels": 379861,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 204,
+        "source_time": 8.458333333333334,
+        "translation": [
+          154,
+          24
+        ],
+        "source_bounds": [
+          132,
+          50,
+          818,
+          1056
+        ],
+        "foreground_pixels": 377082,
+        "rgb_exact": true
+      }
+    ],
+    "up": [
+      {
+        "source_frame": 262,
+        "source_time": 10.875,
+        "translation": [
+          95,
+          6
+        ],
+        "source_bounds": [
+          140,
+          68,
+          698,
+          1074
+        ],
+        "foreground_pixels": 355524,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 264,
+        "source_time": 10.958333333333334,
+        "translation": [
+          95,
+          -2
+        ],
+        "source_bounds": [
+          138,
+          66,
+          700,
+          1082
+        ],
+        "foreground_pixels": 355940,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 266,
+        "source_time": 11.041666666666666,
+        "translation": [
+          95,
+          -6
+        ],
+        "source_bounds": [
+          138,
+          72,
+          702,
+          1086
+        ],
+        "foreground_pixels": 357630,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 268,
+        "source_time": 11.125,
+        "translation": [
+          95,
+          0
+        ],
+        "source_bounds": [
+          140,
+          78,
+          698,
+          1080
+        ],
+        "foreground_pixels": 357318,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 270,
+        "source_time": 11.208333333333334,
+        "translation": [
+          95,
+          20
+        ],
+        "source_bounds": [
+          142,
+          74,
+          694,
+          1060
+        ],
+        "foreground_pixels": 357080,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 272,
+        "source_time": 11.291666666666666,
+        "translation": [
+          95,
+          20
+        ],
+        "source_bounds": [
+          142,
+          70,
+          692,
+          1060
+        ],
+        "foreground_pixels": 358648,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 274,
+        "source_time": 11.375,
+        "translation": [
+          95,
+          12
+        ],
+        "source_bounds": [
+          138,
+          66,
+          694,
+          1068
+        ],
+        "foreground_pixels": 359020,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 276,
+        "source_time": 11.458333333333334,
+        "translation": [
+          95,
+          6
+        ],
+        "source_bounds": [
+          138,
+          68,
+          696,
+          1074
+        ],
+        "foreground_pixels": 359066,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 278,
+        "source_time": 11.541666666666666,
+        "translation": [
+          95,
+          0
+        ],
+        "source_bounds": [
+          140,
+          76,
+          694,
+          1080
+        ],
+        "foreground_pixels": 357891,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 280,
+        "source_time": 11.625,
+        "translation": [
+          95,
+          14
+        ],
+        "source_bounds": [
+          142,
+          76,
+          694,
+          1066
+        ],
+        "foreground_pixels": 355551,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 282,
+        "source_time": 11.708333333333334,
+        "translation": [
+          95,
+          18
+        ],
+        "source_bounds": [
+          142,
+          72,
+          696,
+          1062
+        ],
+        "foreground_pixels": 355905,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 284,
+        "source_time": 11.791666666666666,
+        "translation": [
+          95,
+          7
+        ],
+        "source_bounds": [
+          140,
+          66,
+          698,
+          1073
+        ],
+        "foreground_pixels": 356144,
+        "rgb_exact": true
+      }
+    ],
+    "right": [
+      {
+        "source_frame": 417,
+        "source_time": 17.333333333333332,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          14,
+          46,
+          688,
+          1064
+        ],
+        "foreground_pixels": 386403,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 419,
+        "source_time": 17.416666666666668,
+        "translation": [
+          51,
+          18
+        ],
+        "source_bounds": [
+          22,
+          48,
+          686,
+          1062
+        ],
+        "foreground_pixels": 382281,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 421,
+        "source_time": 17.5,
+        "translation": [
+          51,
+          18
+        ],
+        "source_bounds": [
+          38,
+          44,
+          684,
+          1062
+        ],
+        "foreground_pixels": 369903,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 423,
+        "source_time": 17.583333333333332,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          46,
+          40,
+          684,
+          1064
+        ],
+        "foreground_pixels": 357431,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 425,
+        "source_time": 17.666666666666668,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          54,
+          36,
+          686,
+          1064
+        ],
+        "foreground_pixels": 377896,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 427,
+        "source_time": 17.75,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          58,
+          36,
+          688,
+          1064
+        ],
+        "foreground_pixels": 377675,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 429,
+        "source_time": 17.833333333333332,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          60,
+          42,
+          694,
+          1064
+        ],
+        "foreground_pixels": 379757,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 431,
+        "source_time": 17.916666666666668,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          58,
+          46,
+          686,
+          1064
+        ],
+        "foreground_pixels": 378122,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 433,
+        "source_time": 18.0,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          52,
+          46,
+          684,
+          1064
+        ],
+        "foreground_pixels": 373281,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 435,
+        "source_time": 18.083333333333332,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          40,
+          42,
+          684,
+          1064
+        ],
+        "foreground_pixels": 364867,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 437,
+        "source_time": 18.166666666666668,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          24,
+          38,
+          686,
+          1064
+        ],
+        "foreground_pixels": 378565,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 439,
+        "source_time": 18.25,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          16,
+          36,
+          688,
+          1064
+        ],
+        "foreground_pixels": 385745,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 441,
+        "source_time": 18.333333333333332,
+        "translation": [
+          51,
+          16
+        ],
+        "source_bounds": [
+          14,
+          40,
+          688,
+          1064
+        ],
+        "foreground_pixels": 388527,
+        "rgb_exact": true
+      }
+    ],
+    "down_right": [
+      {
+        "source_frame": 502,
+        "source_time": 20.875,
+        "translation": [
+          95,
+          22
+        ],
+        "source_bounds": [
+          54,
+          38,
+          716,
+          1058
+        ],
+        "foreground_pixels": 404492,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 504,
+        "source_time": 20.958333333333332,
+        "translation": [
+          95,
+          18
+        ],
+        "source_bounds": [
+          54,
+          40,
+          716,
+          1062
+        ],
+        "foreground_pixels": 399237,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 506,
+        "source_time": 21.041666666666668,
+        "translation": [
+          95,
+          29
+        ],
+        "source_bounds": [
+          64,
+          36,
+          710,
+          1051
+        ],
+        "foreground_pixels": 395517,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 508,
+        "source_time": 21.125,
+        "translation": [
+          95,
+          38
+        ],
+        "source_bounds": [
+          60,
+          32,
+          706,
+          1042
+        ],
+        "foreground_pixels": 403510,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 510,
+        "source_time": 21.208333333333332,
+        "translation": [
+          95,
+          32
+        ],
+        "source_bounds": [
+          50,
+          28,
+          704,
+          1048
+        ],
+        "foreground_pixels": 413324,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 512,
+        "source_time": 21.291666666666668,
+        "translation": [
+          95,
+          29
+        ],
+        "source_bounds": [
+          40,
+          32,
+          706,
+          1051
+        ],
+        "foreground_pixels": 414910,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 514,
+        "source_time": 21.375,
+        "translation": [
+          95,
+          18
+        ],
+        "source_bounds": [
+          34,
+          40,
+          706,
+          1062
+        ],
+        "foreground_pixels": 414008,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 516,
+        "source_time": 21.458333333333332,
+        "translation": [
+          95,
+          22
+        ],
+        "source_bounds": [
+          36,
+          40,
+          702,
+          1058
+        ],
+        "foreground_pixels": 411538,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 518,
+        "source_time": 21.541666666666668,
+        "translation": [
+          95,
+          34
+        ],
+        "source_bounds": [
+          38,
+          34,
+          702,
+          1046
+        ],
+        "foreground_pixels": 409614,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 520,
+        "source_time": 21.625,
+        "translation": [
+          95,
+          40
+        ],
+        "source_bounds": [
+          40,
+          30,
+          706,
+          1040
+        ],
+        "foreground_pixels": 404280,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 522,
+        "source_time": 21.708333333333332,
+        "translation": [
+          95,
+          30
+        ],
+        "source_bounds": [
+          50,
+          31,
+          714,
+          1050
+        ],
+        "foreground_pixels": 404151,
+        "rgb_exact": true
+      },
+      {
+        "source_frame": 524,
+        "source_time": 21.791666666666668,
+        "translation": [
+          95,
+          24
+        ],
+        "source_bounds": [
+          54,
+          34,
+          716,
+          1056
+        ],
+        "foreground_pixels": 406142,
+        "rgb_exact": true
+      }
+    ]
+  },
+  "matte": "neutral border-connected studio background; main character component",
+  "transform": "integer whole-frame translation only; source RGB exact; no resize"
+}

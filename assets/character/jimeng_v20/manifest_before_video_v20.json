@@ -1,0 +1,268 @@
+{
+  "version": 4,
+  "method": "complete_png_normalized_user_selected",
+  "sheet": "res://assets/character/v16/walk_atlas.png",
+  "sheet_by_state": {
+    "walk": "res://assets/character/v16/walk_atlas.png",
+    "idle": "res://assets/character/v16/idle_atlas.png",
+    "interact": "res://assets/character/v16/idle_atlas.png"
+  },
+  "frame_size": [
+    512,
+    512
+  ],
+  "canvas_size": [
+    512,
+    512
+  ],
+  "ground": [
+    256.0,
+    420.0
+  ],
+  "pixel_size": 0.0064,
+  "cycle_distance": 0.82,
+  "frame_counts": {
+    "walk": 6,
+    "idle": 1,
+    "interact": 1
+  },
+  "atlas_order": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "idle_columns": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "regions": [
+    [
+      [
+        0,
+        0,
+        512,
+        512
+      ],
+      [
+        512,
+        0,
+        512,
+        512
+      ],
+      [
+        1024,
+        0,
+        512,
+        512
+      ],
+      [
+        1536,
+        0,
+        512,
+        512
+      ],
+      [
+        2048,
+        0,
+        512,
+        512
+      ],
+      [
+        2560,
+        0,
+        512,
+        512
+      ]
+    ],
+    [
+      [
+        0,
+        512,
+        512,
+        512
+      ],
+      [
+        512,
+        512,
+        512,
+        512
+      ],
+      [
+        1024,
+        512,
+        512,
+        512
+      ],
+      [
+        1536,
+        512,
+        512,
+        512
+      ],
+      [
+        2048,
+        512,
+        512,
+        512
+      ],
+      [
+        2560,
+        512,
+        512,
+        512
+      ]
+    ],
+    [
+      [
+        0,
+        1024,
+        512,
+        512
+      ],
+      [
+        512,
+        1024,
+        512,
+        512
+      ],
+      [
+        1024,
+        1024,
+        512,
+        512
+      ],
+      [
+        1536,
+        1024,
+        512,
+        512
+      ],
+      [
+        2048,
+        1024,
+        512,
+        512
+      ],
+      [
+        2560,
+        1024,
+        512,
+        512
+      ]
+    ],
+    [
+      [
+        0,
+        1536,
+        512,
+        512
+      ],
+      [
+        512,
+        1536,
+        512,
+        512
+      ],
+      [
+        1024,
+        1536,
+        512,
+        512
+      ],
+      [
+        1536,
+        1536,
+        512,
+        512
+      ],
+      [
+        2048,
+        1536,
+        512,
+        512
+      ],
+      [
+        2560,
+        1536,
+        512,
+        512
+      ]
+    ]
+  ],
+  "regions_by_state": {
+    "idle": [
+      [
+        [
+          0,
+          0,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          512,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          1024,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          1536,
+          512,
+          512
+        ]
+      ]
+    ],
+    "interact": [
+      [
+        [
+          0,
+          0,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          512,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          1024,
+          512,
+          512
+        ]
+      ],
+      [
+        [
+          0,
+          1536,
+          512,
+          512
+        ]
+      ]
+    ]
+  },
+  "source_manifest": "res://assets/character/v16/completeframes.json",
+  "source_art": "res://art_source/用户选定_完整人物.png",
+  "note": "Complete character pictures only; all textures now share one canvas and world pivot. New redraw drafts are not used."
+}

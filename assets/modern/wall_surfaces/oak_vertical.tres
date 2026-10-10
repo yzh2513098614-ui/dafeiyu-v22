@@ -1,0 +1,131 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/modern/wall_surfaces/oak_fine_v1.png" id="1_n5qw3"]
+
+[sub_resource type="Shader" id="Shader_r7gsg"]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, shadows_disabled;
+#include \"res://assets/modern/shaders/filtered_grid.gdshaderinc\"
+
+uniform sampler2D grain_texture : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform vec3 wall_color = vec3(.65);
+uniform vec3 wall_axis = vec3(1.,0.,0.);
+uniform float grain_mean = .5;
+uniform vec2 grain_scale = vec2(1.0);
+uniform float grain_strength = .2;
+uniform vec2 unit_size = vec2(.5,.25);
+uniform float joint_width = .008;
+uniform float joint_contrast = .16;
+uniform int pattern = 0;
+uniform float roughness_value = .84;
+uniform float metal_value = 0.;
+uniform float normal_strength = .12;
+uniform float specular_value = .22;
+uniform float roughness_variation = .04;
+uniform float relief_depth = .002;
+uniform int surface_type = 0;
+uniform float wainscot_height = 0.;
+uniform bool facade = false;
+uniform bool plinth = false;
+varying vec3 world_point;
+varying vec3 world_normal;
+
+float hash21(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
+float joints(vec2 coords, vec2 size, bool stagger){
+ vec2 cells=coords/size;
+ if(stagger){cells.x+=mod(floor(cells.y),2.)*.5;}
+ vec2 edges=filtered_grid_axes(cells,vec2(joint_width*.5)/size);
+ return edges.x+edges.y-edges.x*edges.y;
+}
+
+void vertex(){
+ world_point=(MODEL_MATRIX*vec4(VERTEX,1.)).xyz;
+ world_normal=normalize(MODEL_NORMAL_MATRIX*NORMAL);
+}
+
+void fragment(){
+ vec3 across=vec3(-wall_axis.z,0.,wall_axis.x);
+ float along=dot(world_point,wall_axis);
+ if(facade && abs(dot(world_normal,wall_axis))>abs(dot(world_normal,across))){along=dot(world_point,across);}
+ vec2 coords=vec2(along,world_point.y);
+ vec2 uv=coords/grain_scale;
+ if(pattern==5){uv=uv.yx;}
+ // Mirror the fine grain at each repeat: the original PNG stays lossless and
+ // the low contrast grain has no hard color discontinuity at a texture edge.
+ uv=1.-abs(mod(uv,2.)-1.);
+ float sample_value=dot(texture(grain_texture,uv).rgb,vec3(.2126,.7152,.0722));
+ float grain=clamp(sample_value/grain_mean,.70,1.30)-1.;
+ float seam=0.;
+ if(pattern==1){seam=joints(coords,unit_size,false);}
+ else if(pattern==2 || pattern==4){seam=joints(coords,unit_size,true);}
+ else if(pattern==3 || pattern==5){seam=joints(coords,unit_size,false);}
+ else if(pattern==7){
+  seam=joints(coords,unit_size,false);
+  vec2 ribs=filtered_grid_axes(coords/vec2(.16,6.),vec2(.014,.0));
+  seam=max(seam,ribs.x*.23);
+ }
+ float variation=0.;
+ if(pattern>0 && pattern!=9){
+  vec2 cell=floor(coords/unit_size);
+  if(pattern==2 || pattern==4){cell.x=floor(coords.x/unit_size.x+mod(cell.y,2.)*.5);}
+  variation=(hash21(cell)-.5)*.045;
+ }
+ if(pattern==9){
+  vec2 dots=coords*32.;float random=hash21(floor(dots));
+  float footprint=max(length(fwidth(dots)),.06);
+  float coverage=1.-smoothstep(.11-footprint*.5,.11+footprint*.5,length(fract(dots)-.5));
+  grain+=coverage*(random>.55?.13:-.10)*(1.-smoothstep(.5,1.2,footprint));
+ }
+ float vertical=1.-smoothstep(.25,.75,abs(world_normal.y));
+ vec3 tint=wall_color;
+ if(wainscot_height>0. && world_point.y>wainscot_height){
+  tint=mix(wall_color,vec3(.71,.72,.68),.83);seam=0.;grain*=.16;variation=0.;
+ }
+ if(plinth && world_point.y<.52){
+  tint=mix(wall_color,vec3(.32,.38,.40),.46);
+  seam=joints(coords,vec2(1.25,.52),false);variation=0.;
+ }
+ float footprint=max(length(dFdx(coords)),length(dFdy(coords)));
+ float grain_visibility=1.-smoothstep(.045,.20,footprint);
+ if(surface_type==2){grain*=grain_visibility;}
+ ALBEDO=tint*(1.+grain*grain_strength+variation*vertical)*(1.-seam*joint_contrast*vertical);
+ // Glazed faces and mineral joints have separate responses to the same light.
+ float joint_roughness=surface_type==3?.30:.08;
+ ROUGHNESS=clamp(roughness_value+grain*roughness_variation+seam*joint_roughness*vertical,.16,.99);
+ METALLIC=metal_value;SPECULAR=specular_value;
+ // Tiny surface relief changes lighting without growing the wall silhouette.
+ // Relief is deliberately shallower than the color variation. Dark grain is
+ // not automatically a deep scratch, and grout remains matte at any zoom.
+ float height=(grain*.0015*grain_visibility-seam*relief_depth)*vertical;
+ vec3 sx=dFdx(VERTEX);vec3 sy=dFdy(VERTEX);
+ vec3 rx=cross(sy,NORMAL);vec3 ry=cross(NORMAL,sx);
+ float determinant=dot(sx,rx);
+ vec3 gradient=(rx*dFdx(height)+ry*dFdy(height))*sign(determinant)/max(abs(determinant),.0001);
+ NORMAL=normalize(NORMAL-gradient*normal_strength);
+}
+"
+
+[resource]
+resource_name = "wall_surface_oak_vertical"
+render_priority = 0
+shader = SubResource("Shader_r7gsg")
+shader_parameter/grain_texture = ExtResource("1_n5qw3")
+shader_parameter/wall_color = Vector3(0.79607844, 0.7490196, 0.65882355)
+shader_parameter/wall_axis = Vector3(1, 0, 0)
+shader_parameter/grain_mean = 0.721076270866394
+shader_parameter/grain_scale = Vector2(0.75, 1.8)
+shader_parameter/grain_strength = 0.46
+shader_parameter/unit_size = Vector2(0.36, 2.1)
+shader_parameter/joint_width = 0.004
+shader_parameter/joint_contrast = 0.15
+shader_parameter/pattern = 1
+shader_parameter/roughness_value = 0.68
+shader_parameter/metal_value = 0.0
+shader_parameter/normal_strength = 0.16
+shader_parameter/specular_value = 0.28
+shader_parameter/roughness_variation = 0.06
+shader_parameter/relief_depth = 0.003
+shader_parameter/surface_type = 1
+shader_parameter/wainscot_height = 0.8
+shader_parameter/facade = false
+shader_parameter/plinth = false

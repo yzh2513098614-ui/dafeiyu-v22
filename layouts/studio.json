@@ -1,0 +1,183 @@
+{
+  "name": "蓝光工作室",
+  "floor": "concrete",
+  "wall": "plaster_ivory",
+  "spawn": [
+    710,
+    745
+  ],
+  "items": [
+    {
+      "id": "window_city",
+      "x": 430,
+      "y": 266
+    },
+    {
+      "id": "window_city",
+      "x": 1000,
+      "y": 266
+    },
+    {
+      "id": "door_glass",
+      "x": 720,
+      "y": 282
+    },
+    {
+      "id": "rail_cyan",
+      "x": 710,
+      "y": 144
+    },
+    {
+      "id": "light_cyan",
+      "x": 1100,
+      "y": 172
+    },
+    {
+      "id": "clock",
+      "x": 1280,
+      "y": 205
+    },
+    {
+      "id": "painting_mountain",
+      "x": 190,
+      "y": 219
+    },
+    {
+      "id": "fridge",
+      "x": 220,
+      "y": 465
+    },
+    {
+      "id": "sink_counter",
+      "x": 360,
+      "y": 458
+    },
+    {
+      "id": "stove_counter",
+      "x": 488,
+      "y": 458
+    },
+    {
+      "id": "counter_blank",
+      "x": 616,
+      "y": 458
+    },
+    {
+      "id": "espresso",
+      "x": 608,
+      "y": 378,
+      "sort_y": 458
+    },
+    {
+      "id": "upper_cabinet",
+      "x": 430,
+      "y": 244
+    },
+    {
+      "id": "plate_rack",
+      "x": 560,
+      "y": 250
+    },
+    {
+      "id": "desk_white",
+      "x": 1080,
+      "y": 480
+    },
+    {
+      "id": "monitor",
+      "x": 1093,
+      "y": 391,
+      "sort_y": 480
+    },
+    {
+      "id": "keyboard",
+      "x": 1080,
+      "y": 423,
+      "sort_y": 480
+    },
+    {
+      "id": "plant_fiddle",
+      "x": 1240,
+      "y": 485
+    },
+    {
+      "id": "office_chair",
+      "x": 1080,
+      "y": 585
+    },
+    {
+      "id": "bookcase",
+      "x": 840,
+      "y": 488
+    },
+    {
+      "id": "lamp_table",
+      "x": 992,
+      "y": 399,
+      "sort_y": 480
+    },
+    {
+      "id": "loveseat_navy",
+      "x": 405,
+      "y": 776
+    },
+    {
+      "id": "coffee_table",
+      "x": 410,
+      "y": 890
+    },
+    {
+      "id": "tea_tray",
+      "x": 440,
+      "y": 818,
+      "sort_y": 890
+    },
+    {
+      "id": "open_book",
+      "x": 355,
+      "y": 829,
+      "sort_y": 890
+    },
+    {
+      "id": "armchair_navy",
+      "x": 700,
+      "y": 820
+    },
+    {
+      "id": "side_table",
+      "x": 845,
+      "y": 811
+    },
+    {
+      "id": "whale_plush",
+      "x": 845,
+      "y": 751,
+      "sort_y": 811
+    },
+    {
+      "id": "lamp_floor",
+      "x": 790,
+      "y": 690
+    },
+    {
+      "id": "plant_broadleaf",
+      "x": 195,
+      "y": 760
+    },
+    {
+      "id": "shoe_cabinet",
+      "x": 1200,
+      "y": 860
+    },
+    {
+      "id": "coat_rack",
+      "x": 1240,
+      "y": 720
+    },
+    {
+      "id": "mirror",
+      "x": 1080,
+      "y": 226
+    }
+  ]
+}

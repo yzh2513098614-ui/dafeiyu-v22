@@ -1,0 +1,846 @@
+{
+  "failures": 0,
+  "frames": [
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/down/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down/walk_11.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_left/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/down_left/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_left/walk_11.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_11.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_12.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_12.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_12.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_13.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_13.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_13.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_14.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_14.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_14.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/left/masks/walk_15.png",
+      "frame": "res://assets/character/jimeng_v24/left/walk_15.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/left/walk_15.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_left/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/up_left/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_left/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_left/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/up_left/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_left/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_left/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/up_left/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_left/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/up/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up/walk_11.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_right/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/up_right/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_right/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_right/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/up_right/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_right/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_right/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/up_right/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_right/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/up_right/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/up_right/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/up_right/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_11.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/right/masks/walk_12.png",
+      "frame": "res://assets/character/jimeng_v24/right/walk_12.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/right/walk_12.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_00.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_00.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_00.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_01.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_01.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_01.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_02.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_02.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_02.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_03.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_03.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_03.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_04.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_04.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_04.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_05.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_05.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_05.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_06.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_06.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_06.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_07.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_07.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_07.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_08.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_08.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_08.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_09.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_09.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_09.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_10.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_10.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_10.png"
+    },
+    {
+      "alpha_mask": "res://assets/character/jimeng_v24/down_right/masks/walk_11.png",
+      "frame": "res://assets/character/jimeng_v24/down_right/walk_11.png",
+      "mask_diffs": 0,
+      "size": [
+        1024,
+        1152
+      ],
+      "source": "res://assets/character/jimeng_v23/down_right/walk_11.png"
+    }
+  ],
+  "unique_frames": 84
+}

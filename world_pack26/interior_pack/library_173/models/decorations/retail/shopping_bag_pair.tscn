@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/retail/shopping_bag_pair.glb" id="1"]
+
+[node name="shopping_bag_pair" type="Node3D"]
+metadata/asset_id = "shopping_bag_pair"
+metadata/asset_label = "购物纸袋组合"
+metadata/code = "SH-03"
+metadata/category_code = "SH"
+metadata/category_label = "商店展示"
+metadata/folder = "retail"
+metadata/placement = "桌面"
+metadata/scene_tags = ["商场", "便利店", "礼品店"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

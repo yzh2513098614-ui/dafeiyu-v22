@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/assets/models/mall_07.glb" id="1"]
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/item_3d.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="Back"]
+size = Vector3(1.385,2.0,0.035)
+
+[sub_resource type="BoxShape3D" id="Left"]
+size = Vector3(0.035,2.0,1.231)
+
+[sub_resource type="BoxShape3D" id="Right"]
+size = Vector3(0.035,2.0,1.231)
+
+[node name="mall_07" type="Node3D"]
+script = ExtResource("2")
+asset_id = "mall_07"
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Back" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,1.0,-0.6155)
+shape = SubResource("Back")
+
+[node name="Left" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.6925,1.0,0.0)
+shape = SubResource("Left")
+
+[node name="Right" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.6925,1.0,0.0)
+shape = SubResource("Right")

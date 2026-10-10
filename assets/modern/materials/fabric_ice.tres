@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "fabric_ice"
+albedo_color = Color(0.63529414, 0.74509805, 0.77254903, 1)
+roughness = 0.91

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://deckeo5vtydlp"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/现实复杂地图分层分类标记.地图名称.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.区域ID.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.区域名称.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.楼层.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.高度米.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.功能标记.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.开放布局.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.素材直接实例数.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.编辑节点.translation"]
+
+source_file="res://world_pack26/interior_pack/现实复杂地图分层分类标记.csv"
+dest_files=["res://world_pack26/interior_pack/现实复杂地图分层分类标记.地图名称.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.区域ID.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.区域名称.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.楼层.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.高度米.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.功能标记.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.开放布局.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.素材直接实例数.translation", "res://world_pack26/interior_pack/现实复杂地图分层分类标记.编辑节点.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

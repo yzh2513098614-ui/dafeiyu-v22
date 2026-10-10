@@ -1,0 +1,16 @@
+{
+  "source_library_file_id": "libfile_96d56e8c94988191999fd27fe3e1d081",
+  "source_version": 12,
+  "source_zip_sha256": "3bab871978a16a66392ffd1cac35f45ce4ad9d9fb3fbad6ff0577de6f284a45a",
+  "updated_architecture_maps": [
+    "datacenter",
+    "emergency",
+    "expo",
+    "foodhall",
+    "media",
+    "sports"
+  ],
+  "retained_placement_maps": 20,
+  "retained_placement_records": 1136,
+  "preserved_model_count": 389
+}

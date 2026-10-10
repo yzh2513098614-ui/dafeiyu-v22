@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/themed_props/bus_shelter.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(2.80000, 2.37270, 1.12000)
+[node name="bus_shelter" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 1.18352, 0.06000)
+shape = SubResource("Collision")

@@ -1,0 +1,8 @@
+{
+	"checks": 420,
+	"decorations": 48,
+	"engine": "4.4.1-stable (official)",
+	"failures": [],
+	"passed": true,
+	"scope": "Imported meshes, wrapper classification metadata, category/scene/placement/search filters; no GPU visual test"
+}

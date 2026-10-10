@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/library_props/library_water_barrel.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(1.24400, 1.30000, 1.24800)
+[node name="library_water_barrel" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 0.67500, 0.00200)
+shape = SubResource("Collision")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/medical/sample_tube_display_rack.glb" id="1"]
+
+[node name="sample_tube_display_rack" type="Node3D"]
+metadata/asset_id = "sample_tube_display_rack"
+metadata/asset_label = "样本管展示架"
+metadata/code = "MD-03"
+metadata/category_code = "MD"
+metadata/category_label = "医疗装饰"
+metadata/folder = "medical"
+metadata/placement = "桌面"
+metadata/scene_tags = ["医院", "诊所", "实验室"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

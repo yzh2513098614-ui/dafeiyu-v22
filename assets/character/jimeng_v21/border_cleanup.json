@@ -1,0 +1,929 @@
+{
+  "frames": [
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/down/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down/walk_11.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_left/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_left/walk_11.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/left/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_11.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/left/walk_12.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_12.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_13.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_13.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/left/walk_14.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_14.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/left/walk_15.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/left/walk_15.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_left/walk_00.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_left/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_left/walk_02.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_left/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_left/walk_04.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_left/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/up/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 4,
+      "output": "res://assets/character/jimeng_v21/up/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/up/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/up/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/up/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/up/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/up/walk_11.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 6,
+      "output": "res://assets/character/jimeng_v21/up_right/walk_00.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_right/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_right/walk_02.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_right/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_right/walk_04.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_right/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 7,
+      "output": "res://assets/character/jimeng_v21/up_right/walk_06.png",
+      "rim_pixels": 6.0,
+      "source": "res://assets/character/jimeng_v20/up_right/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_11.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/right/walk_12.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/right/walk_12.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_00.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_00.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_01.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_01.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 3,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_02.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_02.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_03.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_03.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_04.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_04.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_05.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_05.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_06.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_06.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_07.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_07.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_08.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_08.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_09.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_09.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_10.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_10.png"
+    },
+    {
+      "canvas": [
+        1024,
+        1152
+      ],
+      "floor_y": 1080,
+      "foot_shift": 2,
+      "output": "res://assets/character/jimeng_v21/down_right/walk_11.png",
+      "rim_pixels": 2.0,
+      "source": "res://assets/character/jimeng_v20/down_right/walk_11.png"
+    }
+  ],
+  "unique_frames": 84
+}

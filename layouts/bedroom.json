@@ -1,0 +1,186 @@
+{
+  "name": "晨光卧室",
+  "floor": "oak",
+  "wall": "beige_wainscot",
+  "spawn": [
+    710,
+    735
+  ],
+  "items": [
+    {
+      "id": "window_oak",
+      "x": 388,
+      "y": 262
+    },
+    {
+      "id": "window_city",
+      "x": 980,
+      "y": 262
+    },
+    {
+      "id": "curtains_ivory",
+      "x": 390,
+      "y": 278
+    },
+    {
+      "id": "painting_whale",
+      "x": 682,
+      "y": 224
+    },
+    {
+      "id": "clock",
+      "x": 1268,
+      "y": 217
+    },
+    {
+      "id": "door_ivory",
+      "x": 1160,
+      "y": 285
+    },
+    {
+      "id": "lamp_wall",
+      "x": 175,
+      "y": 230
+    },
+    {
+      "id": "shelf_books",
+      "x": 786,
+      "y": 240
+    },
+    {
+      "id": "bed_navy",
+      "x": 364,
+      "y": 610
+    },
+    {
+      "id": "nightstand",
+      "x": 220,
+      "y": 490
+    },
+    {
+      "id": "lamp_table",
+      "x": 220,
+      "y": 407,
+      "sort_y": 490
+    },
+    {
+      "id": "books",
+      "x": 220,
+      "y": 420,
+      "sort_y": 490
+    },
+    {
+      "id": "wardrobe",
+      "x": 550,
+      "y": 480
+    },
+    {
+      "id": "plant_broadleaf",
+      "x": 1210,
+      "y": 416
+    },
+    {
+      "id": "desk_oak",
+      "x": 974,
+      "y": 486
+    },
+    {
+      "id": "monitor",
+      "x": 986,
+      "y": 397,
+      "sort_y": 486
+    },
+    {
+      "id": "keyboard",
+      "x": 978,
+      "y": 429,
+      "sort_y": 486
+    },
+    {
+      "id": "whale_mug",
+      "x": 1052,
+      "y": 410,
+      "sort_y": 486
+    },
+    {
+      "id": "office_chair",
+      "x": 980,
+      "y": 585
+    },
+    {
+      "id": "waste_bin",
+      "x": 1120,
+      "y": 535
+    },
+    {
+      "id": "armchair_sage",
+      "x": 1115,
+      "y": 804
+    },
+    {
+      "id": "side_table",
+      "x": 1224,
+      "y": 785
+    },
+    {
+      "id": "tea_tray",
+      "x": 1224,
+      "y": 707,
+      "sort_y": 785
+    },
+    {
+      "id": "lamp_floor",
+      "x": 1230,
+      "y": 670
+    },
+    {
+      "id": "bookcase",
+      "x": 190,
+      "y": 790
+    },
+    {
+      "id": "entry_bench",
+      "x": 410,
+      "y": 865
+    },
+    {
+      "id": "basket",
+      "x": 515,
+      "y": 860
+    },
+    {
+      "id": "slippers",
+      "x": 365,
+      "y": 653
+    },
+    {
+      "id": "plant_snake",
+      "x": 550,
+      "y": 410
+    },
+    {
+      "id": "cushion",
+      "x": 1113,
+      "y": 750,
+      "sort_y": 804
+    },
+    {
+      "id": "whale_plush",
+      "x": 402,
+      "y": 432,
+      "sort_y": 610
+    },
+    {
+      "id": "folded_blanket",
+      "x": 411,
+      "y": 538,
+      "sort_y": 610
+    },
+    {
+      "id": "flowers",
+      "x": 917,
+      "y": 405,
+      "sort_y": 486
+    }
+  ]
+}

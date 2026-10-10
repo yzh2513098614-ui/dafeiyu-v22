@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bh2qyutii1rui"
+
+[deps]
+
+files=["res://素材索引.中文名称.translation", "res://素材索引.分类.translation", "res://素材索引.资源路径.translation", "res://素材索引.宽.translation", "res://素材索引.高.translation", "res://素材索引.碰撞宽.translation", "res://素材索引.碰撞高.translation", "res://素材索引.层级.translation", "res://素材索引.SHA256.translation"]
+
+source_file="res://素材索引.csv"
+dest_files=["res://素材索引.中文名称.translation", "res://素材索引.分类.translation", "res://素材索引.资源路径.translation", "res://素材索引.宽.translation", "res://素材索引.高.translation", "res://素材索引.碰撞宽.translation", "res://素材索引.碰撞高.translation", "res://素材索引.层级.translation", "res://素材索引.SHA256.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

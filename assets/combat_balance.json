@@ -1,0 +1,11 @@
+{
+ "player":{"attack_cost":6,"attack_cooldown":0.45,"attack_range":2.7,"dodge_cost":14,"dodge_duration":0.2,"dodge_speed":12,"dodge_cooldown":0.9,"hurt_immunity":0.65},
+ "monsters":{
+  "slime":{"name":"海沫团","health":28,"attack":13,"defense":1,"speed":1.05,"range":1.15,"windup":0.8,"recovery":1.2,"aggro":6,"xp":12,"drops":{"sea_shell":1},"texture":"res://assets/monsters/sea_slime.png","height":1.05},
+  "crab":{"name":"珊瑚蟹","health":42,"attack":17,"defense":3,"speed":1.3,"range":1.35,"windup":0.95,"recovery":1.35,"aggro":6.5,"xp":20,"drops":{"first_aid":1,"sea_shell":2},"texture":"res://assets/monsters/shore_crab.png","height":1.05},
+  "guardian":{"name":"守潮者 · 精英","health":85,"attack":24,"defense":5,"speed":0.85,"range":2.25,"windup":1.25,"recovery":1.6,"aggro":9,"xp":50,"drops":{"tide_compass":1,"sea_soup":2},"texture":"res://assets/monsters/tide_guardian.png","height":1.75},
+  "gpt6":{"name":"gpt6","health":65,"attack":21,"defense":4,"speed":1.15,"range":2.10,"windup":1.10,"recovery":1.50,"aggro":9,"xp":60,"drops":{"first_aid":2,"sea_soup":2,"sea_shell":3},"texture":"res://assets/monsters/gpt6.png","map_texture":"res://assets/monsters/gpt6_map.png","height":2.35}
+ },
+ "spawns":[{"id":"slime_a","type":"slime","position":[-5,-2]},{"id":"slime_b","type":"slime","position":[3,-4]},{"id":"crab_a","type":"crab","position":[6,2]},{"id":"gpt6_a","type":"gpt6","position":[-7,3]}],
+ "boss":{"id":"guardian","type":"guardian","position":[0,-4]}
+}

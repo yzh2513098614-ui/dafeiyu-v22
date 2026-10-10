@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e2"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e3"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(0.16,2.45,0.42)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(0.16,2.45,0.42)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(0.42,0.07,0.62)
+
+[sub_resource type="CylinderMesh" id="r3"]
+top_radius = 0.085
+bottom_radius = 0.085
+height = 5.8
+radial_segments = 16
+
+[sub_resource type="CylinderMesh" id="r4"]
+top_radius = 0.115
+bottom_radius = 0.115
+height = 0.09
+radial_segments = 16
+
+[sub_resource type="BoxMesh" id="r5"]
+size = Vector3(5.2,0.03,0.02)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(5.8,2.45,0.55)
+
+[node name="UtilityPipeRack" type="Node3D"]
+
+
+[node name="Support" type="MeshInstance3D" parent="."]
+position = Vector3(-2.75,1.225,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="SupportBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="SupportBody"]
+position = Vector3(-2.75,1.225,0.0)
+shape = SubResource("r1")
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+position = Vector3(-2.75,0.035,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Support_2" type="MeshInstance3D" parent="."]
+position = Vector3(2.75,1.225,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="SupportBody_2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="SupportBody_2"]
+position = Vector3(2.75,1.225,0.0)
+shape = SubResource("r1")
+
+[node name="Foot_2" type="MeshInstance3D" parent="."]
+position = Vector3(2.75,0.035,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Pipe" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.95,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="PipeCollar" type="MeshInstance3D" parent="."]
+position = Vector3(-2.7,0.95,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_2" type="MeshInstance3D" parent="."]
+position = Vector3(-0.9,0.95,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.9,0.95,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_4" type="MeshInstance3D" parent="."]
+position = Vector3(2.7,0.95,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="Pipe_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,1.53,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="PipeCollar_5" type="MeshInstance3D" parent="."]
+position = Vector3(-2.7,1.53,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_6" type="MeshInstance3D" parent="."]
+position = Vector3(-0.9,1.53,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_7" type="MeshInstance3D" parent="."]
+position = Vector3(0.9,1.53,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_8" type="MeshInstance3D" parent="."]
+position = Vector3(2.7,1.53,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="Pipe_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.12,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="PipeCollar_9" type="MeshInstance3D" parent="."]
+position = Vector3(-2.7,2.12,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_10" type="MeshInstance3D" parent="."]
+position = Vector3(-0.9,2.12,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_11" type="MeshInstance3D" parent="."]
+position = Vector3(0.9,2.12,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="PipeCollar_12" type="MeshInstance3D" parent="."]
+position = Vector3(2.7,2.12,0.0)
+rotation_degrees = Vector3(0.0,0.0,90.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e0")
+
+[node name="StatusStrip" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.58,0.23)
+mesh = SubResource("r5")
+material_override = ExtResource("e3")
+
+[node name="RackBody" type="StaticBody3D" parent="."]
+
+
+[node name="Shape" type="CollisionShape3D" parent="RackBody"]
+position = Vector3(0,1.225,0)
+shape = SubResource("r6")

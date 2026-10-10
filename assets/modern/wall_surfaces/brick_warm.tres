@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/modern/shaders/wall_surface.gdshader" id="1_xydrt"]
+[ext_resource type="Texture2D" path="res://assets/modern/wall_surfaces/stone_limestone_v1.png" id="2_2gj1e"]
+
+[resource]
+resource_name = "wall_surface_brick_warm"
+render_priority = 0
+shader = ExtResource("1_xydrt")
+shader_parameter/grain_texture = ExtResource("2_2gj1e")
+shader_parameter/wall_color = Vector3(0.8235294, 0.79607844, 0.7254902)
+shader_parameter/wall_axis = Vector3(1, 0, 0)
+shader_parameter/grain_mean = 0.7155766946434975
+shader_parameter/grain_scale = Vector2(1.3, 1.3)
+shader_parameter/grain_strength = 0.56
+shader_parameter/unit_size = Vector2(0.52, 0.24)
+shader_parameter/joint_width = 0.008
+shader_parameter/joint_contrast = 0.18
+shader_parameter/pattern = 2
+shader_parameter/roughness_value = 0.89
+shader_parameter/metal_value = 0.0
+shader_parameter/normal_strength = 0.16
+shader_parameter/specular_value = 0.2
+shader_parameter/roughness_variation = 0.025
+shader_parameter/relief_depth = 0.003
+shader_parameter/surface_type = 0
+shader_parameter/wainscot_height = 0.0
+shader_parameter/facade = true
+shader_parameter/plinth = true

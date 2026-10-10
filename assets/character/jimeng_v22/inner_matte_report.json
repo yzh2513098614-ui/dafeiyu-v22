@@ -1,0 +1,2913 @@
+[
+  {
+    "direction": "down",
+    "frame": "walk_00.png",
+    "removed_pixels": 4123,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          693,
+          434,
+          771,
+          460
+        ],
+        "pixels": 867,
+        "mean_rgb": [
+          242.0,
+          237.7,
+          240.0
+        ],
+        "ring_blue": 0.71
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          247,
+          438,
+          324,
+          464
+        ],
+        "pixels": 887,
+        "mean_rgb": [
+          243.0,
+          238.1,
+          240.3
+        ],
+        "ring_blue": 0.63
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          717,
+          500,
+          751,
+          556
+        ],
+        "pixels": 850,
+        "mean_rgb": [
+          240.4,
+          240.5,
+          242.3
+        ],
+        "ring_blue": 0.77
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          506,
+          303,
+          564
+        ],
+        "pixels": 823,
+        "mean_rgb": [
+          240.4,
+          239.6,
+          243.4
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          765,
+          612,
+          787,
+          648
+        ],
+        "pixels": 310,
+        "mean_rgb": [
+          238.0,
+          238.9,
+          242.9
+        ],
+        "ring_blue": 0.88
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          251,
+          618,
+          269,
+          650
+        ],
+        "pixels": 237,
+        "mean_rgb": [
+          238.6,
+          239.1,
+          245.9
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_01.png",
+    "removed_pixels": 2191,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          715,
+          500,
+          749,
+          556
+        ],
+        "pixels": 817,
+        "mean_rgb": [
+          241.0,
+          240.3,
+          242.3
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          508,
+          303,
+          564
+        ],
+        "pixels": 799,
+        "mean_rgb": [
+          241.0,
+          240.0,
+          243.5
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          765,
+          614,
+          786,
+          648
+        ],
+        "pixels": 285,
+        "mean_rgb": [
+          238.7,
+          238.8,
+          242.5
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          253,
+          620,
+          269,
+          650
+        ],
+        "pixels": 196,
+        "mean_rgb": [
+          240.2,
+          239.3,
+          245.7
+        ],
+        "ring_blue": 0.78
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_02.png",
+    "removed_pixels": 2232,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          504,
+          747,
+          559
+        ],
+        "pixels": 819,
+        "mean_rgb": [
+          241.2,
+          240.1,
+          241.7
+        ],
+        "ring_blue": 0.79
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          510,
+          303,
+          566
+        ],
+        "pixels": 800,
+        "mean_rgb": [
+          240.7,
+          239.8,
+          243.7
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          760,
+          618,
+          781,
+          653
+        ],
+        "pixels": 303,
+        "mean_rgb": [
+          238.6,
+          238.7,
+          242.3
+        ],
+        "ring_blue": 0.88
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          253,
+          622,
+          271,
+          654
+        ],
+        "pixels": 224,
+        "mean_rgb": [
+          240.2,
+          239.3,
+          246.4
+        ],
+        "ring_blue": 0.82
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_03.png",
+    "removed_pixels": 4251,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          508,
+          745,
+          564
+        ],
+        "pixels": 791,
+        "mean_rgb": [
+          241.4,
+          239.9,
+          243.0
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          512,
+          303,
+          568
+        ],
+        "pixels": 798,
+        "mean_rgb": [
+          240.8,
+          239.7,
+          243.9
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          759,
+          624,
+          779,
+          658
+        ],
+        "pixels": 275,
+        "mean_rgb": [
+          238.4,
+          237.6,
+          242.1
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          253,
+          626,
+          271,
+          658
+        ],
+        "pixels": 212,
+        "mean_rgb": [
+          240.6,
+          239.1,
+          246.7
+        ],
+        "ring_blue": 0.89
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          500,
+          896,
+          527,
+          1032
+        ],
+        "pixels": 2013,
+        "mean_rgb": [
+          240.3,
+          239.1,
+          241.7
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_04.png",
+    "removed_pixels": 5362,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          249,
+          445,
+          325,
+          470
+        ],
+        "pixels": 848,
+        "mean_rgb": [
+          243.4,
+          238.1,
+          241.8
+        ],
+        "ring_blue": 0.64
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          714,
+          507,
+          747,
+          564
+        ],
+        "pixels": 798,
+        "mean_rgb": [
+          240.6,
+          239.7,
+          243.1
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          269,
+          510,
+          301,
+          568
+        ],
+        "pixels": 813,
+        "mean_rgb": [
+          240.8,
+          239.7,
+          243.9
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          249,
+          624,
+          267,
+          656
+        ],
+        "pixels": 236,
+        "mean_rgb": [
+          239.8,
+          238.8,
+          245.6
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          759,
+          624,
+          779,
+          660
+        ],
+        "pixels": 296,
+        "mean_rgb": [
+          238.1,
+          237.5,
+          241.9
+        ],
+        "ring_blue": 0.89
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          499,
+          898,
+          527,
+          1033
+        ],
+        "pixels": 2174,
+        "mean_rgb": [
+          240.5,
+          239.3,
+          241.7
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_05.png",
+    "removed_pixels": 3891,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          714,
+          498,
+          747,
+          554
+        ],
+        "pixels": 772,
+        "mean_rgb": [
+          241.2,
+          240.0,
+          243.4
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          267,
+          502,
+          299,
+          556
+        ],
+        "pixels": 788,
+        "mean_rgb": [
+          241.2,
+          240.1,
+          244.0
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          247,
+          612,
+          265,
+          644
+        ],
+        "pixels": 204,
+        "mean_rgb": [
+          239.9,
+          239.2,
+          245.3
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          761,
+          616,
+          779,
+          648
+        ],
+        "pixels": 259,
+        "mean_rgb": [
+          237.3,
+          236.6,
+          242.5
+        ],
+        "ring_blue": 0.88
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          499,
+          890,
+          525,
+          1011
+        ],
+        "pixels": 1716,
+        "mean_rgb": [
+          240.5,
+          239.0,
+          242.4
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_06.png",
+    "removed_pixels": 2161,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          267,
+          502,
+          301,
+          558
+        ],
+        "pixels": 806,
+        "mean_rgb": [
+          241.2,
+          240.3,
+          243.8
+        ],
+        "ring_blue": 0.8
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          715,
+          504,
+          747,
+          558
+        ],
+        "pixels": 763,
+        "mean_rgb": [
+          241.3,
+          240.5,
+          243.8
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          245,
+          614,
+          265,
+          646
+        ],
+        "pixels": 217,
+        "mean_rgb": [
+          239.5,
+          239.4,
+          246.1
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          761,
+          618,
+          781,
+          652
+        ],
+        "pixels": 275,
+        "mean_rgb": [
+          237.9,
+          237.2,
+          244.1
+        ],
+        "ring_blue": 0.87
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_07.png",
+    "removed_pixels": 2099,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          269,
+          506,
+          303,
+          562
+        ],
+        "pixels": 780,
+        "mean_rgb": [
+          241.5,
+          240.7,
+          244.0
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          715,
+          508,
+          747,
+          562
+        ],
+        "pixels": 769,
+        "mean_rgb": [
+          241.9,
+          240.4,
+          244.0
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          247,
+          616,
+          267,
+          648
+        ],
+        "pixels": 211,
+        "mean_rgb": [
+          239.7,
+          238.6,
+          244.7
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          763,
+          624,
+          781,
+          654
+        ],
+        "pixels": 248,
+        "mean_rgb": [
+          237.4,
+          238.0,
+          243.8
+        ],
+        "ring_blue": 0.82
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_08.png",
+    "removed_pixels": 4229,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          714,
+          508,
+          747,
+          564
+        ],
+        "pixels": 806,
+        "mean_rgb": [
+          241.7,
+          240.2,
+          243.4
+        ],
+        "ring_blue": 0.8
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          273,
+          510,
+          305,
+          566
+        ],
+        "pixels": 781,
+        "mean_rgb": [
+          241.0,
+          240.0,
+          244.1
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          251,
+          622,
+          271,
+          654
+        ],
+        "pixels": 212,
+        "mean_rgb": [
+          240.6,
+          238.9,
+          244.7
+        ],
+        "ring_blue": 0.87
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          761,
+          626,
+          779,
+          658
+        ],
+        "pixels": 266,
+        "mean_rgb": [
+          238.1,
+          237.3,
+          243.7
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          498,
+          890,
+          525,
+          1036
+        ],
+        "pixels": 1978,
+        "mean_rgb": [
+          239.8,
+          238.8,
+          241.6
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_09.png",
+    "removed_pixels": 4565,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          714,
+          508,
+          747,
+          566
+        ],
+        "pixels": 801,
+        "mean_rgb": [
+          242.0,
+          240.5,
+          244.0
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          275,
+          514,
+          305,
+          570
+        ],
+        "pixels": 755,
+        "mean_rgb": [
+          240.9,
+          239.9,
+          243.2
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          255,
+          628,
+          271,
+          656
+        ],
+        "pixels": 204,
+        "mean_rgb": [
+          240.4,
+          239.2,
+          244.7
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          761,
+          628,
+          779,
+          660
+        ],
+        "pixels": 274,
+        "mean_rgb": [
+          239.2,
+          238.0,
+          243.7
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          501,
+          888,
+          523,
+          949
+        ],
+        "pixels": 761,
+        "mean_rgb": [
+          239.9,
+          238.9,
+          241.0
+        ],
+        "ring_blue": 0.0
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          497,
+          951,
+          525,
+          1038
+        ],
+        "pixels": 1611,
+        "mean_rgb": [
+          240.5,
+          239.6,
+          242.3
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_10.png",
+    "removed_pixels": 4418,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          717,
+          502,
+          749,
+          556
+        ],
+        "pixels": 794,
+        "mean_rgb": [
+          241.9,
+          240.4,
+          244.5
+        ],
+        "ring_blue": 0.74
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          273,
+          506,
+          303,
+          562
+        ],
+        "pixels": 763,
+        "mean_rgb": [
+          240.8,
+          239.5,
+          244.0
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          253,
+          618,
+          271,
+          650
+        ],
+        "pixels": 215,
+        "mean_rgb": [
+          240.4,
+          239.5,
+          245.3
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          763,
+          618,
+          783,
+          652
+        ],
+        "pixels": 278,
+        "mean_rgb": [
+          238.6,
+          237.9,
+          242.6
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          499,
+          876,
+          525,
+          1024
+        ],
+        "pixels": 2211,
+        "mean_rgb": [
+          240.5,
+          239.4,
+          242.1
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down",
+    "frame": "walk_11.png",
+    "removed_pixels": 4030,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          719,
+          500,
+          751,
+          552
+        ],
+        "pixels": 787,
+        "mean_rgb": [
+          241.9,
+          240.7,
+          244.1
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          504,
+          301,
+          558
+        ],
+        "pixels": 728,
+        "mean_rgb": [
+          241.2,
+          239.8,
+          244.3
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          765,
+          612,
+          785,
+          644
+        ],
+        "pixels": 269,
+        "mean_rgb": [
+          238.8,
+          237.9,
+          243.1
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          253,
+          616,
+          269,
+          646
+        ],
+        "pixels": 196,
+        "mean_rgb": [
+          238.2,
+          238.5,
+          245.5
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          501,
+          873,
+          525,
+          1014
+        ],
+        "pixels": 1885,
+        "mean_rgb": [
+          240.4,
+          239.4,
+          242.1
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_00.png",
+    "removed_pixels": 779,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          241,
+          416,
+          297,
+          445
+        ],
+        "pixels": 737,
+        "mean_rgb": [
+          245.1,
+          240.4,
+          242.8
+        ],
+        "ring_blue": 0.71
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_01.png",
+    "removed_pixels": 746,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          243,
+          418,
+          299,
+          444
+        ],
+        "pixels": 713,
+        "mean_rgb": [
+          245.7,
+          240.5,
+          243.9
+        ],
+        "ring_blue": 0.7
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_02.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_03.png",
+    "removed_pixels": 681,
+    "islands": [
+      {
+        "kind": "leg_gap",
+        "box": [
+          501,
+          888,
+          525,
+          942
+        ],
+        "pixels": 640,
+        "mean_rgb": [
+          243.1,
+          239.1,
+          241.0
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_04.png",
+    "removed_pixels": 758,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          243,
+          418,
+          301,
+          444
+        ],
+        "pixels": 708,
+        "mean_rgb": [
+          245.0,
+          240.4,
+          242.4
+        ],
+        "ring_blue": 0.7
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_05.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_06.png",
+    "removed_pixels": 739,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          245,
+          410,
+          299,
+          436
+        ],
+        "pixels": 691,
+        "mean_rgb": [
+          244.9,
+          239.9,
+          242.6
+        ],
+        "ring_blue": 0.63
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_07.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_08.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_09.png",
+    "removed_pixels": 724,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          247,
+          419,
+          301,
+          445
+        ],
+        "pixels": 691,
+        "mean_rgb": [
+          244.9,
+          239.8,
+          242.5
+        ],
+        "ring_blue": 0.71
+      }
+    ]
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_10.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_left",
+    "frame": "walk_11.png",
+    "removed_pixels": 768,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          241,
+          414,
+          297,
+          442
+        ],
+        "pixels": 715,
+        "mean_rgb": [
+          245.2,
+          239.8,
+          243.6
+        ],
+        "ring_blue": 0.7
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_00.png",
+    "removed_pixels": 1242,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          754,
+          518,
+          802,
+          584
+        ],
+        "pixels": 1192,
+        "mean_rgb": [
+          242.2,
+          241.1,
+          244.2
+        ],
+        "ring_blue": 0.84
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_01.png",
+    "removed_pixels": 3300,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          757,
+          512,
+          806,
+          578
+        ],
+        "pixels": 1202,
+        "mean_rgb": [
+          241.7,
+          240.7,
+          244.2
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "leg_gap",
+        "box": [
+          449,
+          931,
+          504,
+          988
+        ],
+        "pixels": 1969,
+        "mean_rgb": [
+          240.5,
+          235.6,
+          239.2
+        ],
+        "ring_blue": 0.0
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_02.png",
+    "removed_pixels": 1225,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          758,
+          512,
+          810,
+          574
+        ],
+        "pixels": 1168,
+        "mean_rgb": [
+          241.4,
+          240.5,
+          244.4
+        ],
+        "ring_blue": 0.84
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_03.png",
+    "removed_pixels": 1213,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          754,
+          518,
+          808,
+          580
+        ],
+        "pixels": 1177,
+        "mean_rgb": [
+          241.3,
+          240.6,
+          244.2
+        ],
+        "ring_blue": 0.87
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_04.png",
+    "removed_pixels": 1195,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          752,
+          532,
+          800,
+          596
+        ],
+        "pixels": 1139,
+        "mean_rgb": [
+          242.1,
+          241.1,
+          244.5
+        ],
+        "ring_blue": 0.85
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_05.png",
+    "removed_pixels": 1204,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          751,
+          527,
+          798,
+          594
+        ],
+        "pixels": 1166,
+        "mean_rgb": [
+          242.0,
+          241.2,
+          243.7
+        ],
+        "ring_blue": 0.85
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_06.png",
+    "removed_pixels": 1217,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          758,
+          518,
+          804,
+          582
+        ],
+        "pixels": 1176,
+        "mean_rgb": [
+          241.7,
+          240.7,
+          243.8
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_07.png",
+    "removed_pixels": 1224,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          758,
+          518,
+          810,
+          580
+        ],
+        "pixels": 1174,
+        "mean_rgb": [
+          241.9,
+          240.6,
+          243.6
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_08.png",
+    "removed_pixels": 1199,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          756,
+          522,
+          810,
+          582
+        ],
+        "pixels": 1153,
+        "mean_rgb": [
+          241.8,
+          240.5,
+          244.0
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_09.png",
+    "removed_pixels": 1221,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          752,
+          526,
+          804,
+          586
+        ],
+        "pixels": 1185,
+        "mean_rgb": [
+          241.6,
+          240.3,
+          243.8
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_10.png",
+    "removed_pixels": 1178,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          751,
+          526,
+          798,
+          590
+        ],
+        "pixels": 1131,
+        "mean_rgb": [
+          241.6,
+          240.3,
+          244.0
+        ],
+        "ring_blue": 0.84
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_11.png",
+    "removed_pixels": 1215,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          754,
+          520,
+          800,
+          586
+        ],
+        "pixels": 1181,
+        "mean_rgb": [
+          241.1,
+          240.2,
+          243.7
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_12.png",
+    "removed_pixels": 1209,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          759,
+          514,
+          808,
+          576
+        ],
+        "pixels": 1161,
+        "mean_rgb": [
+          241.1,
+          240.0,
+          243.5
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_13.png",
+    "removed_pixels": 1225,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          758,
+          510,
+          810,
+          574
+        ],
+        "pixels": 1188,
+        "mean_rgb": [
+          241.1,
+          240.1,
+          243.1
+        ],
+        "ring_blue": 0.87
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_14.png",
+    "removed_pixels": 1196,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          754,
+          523,
+          804,
+          584
+        ],
+        "pixels": 1158,
+        "mean_rgb": [
+          241.5,
+          240.4,
+          243.3
+        ],
+        "ring_blue": 0.81
+      }
+    ]
+  },
+  {
+    "direction": "left",
+    "frame": "walk_15.png",
+    "removed_pixels": 1216,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          750,
+          531,
+          800,
+          596
+        ],
+        "pixels": 1183,
+        "mean_rgb": [
+          241.3,
+          240.5,
+          243.5
+        ],
+        "ring_blue": 0.85
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_00.png",
+    "removed_pixels": 2079,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          472,
+          743,
+          526
+        ],
+        "pixels": 710,
+        "mean_rgb": [
+          242.9,
+          240.6,
+          243.8
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          476,
+          309,
+          530
+        ],
+        "pixels": 744,
+        "mean_rgb": [
+          242.2,
+          240.6,
+          245.1
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          753,
+          584,
+          769,
+          618
+        ],
+        "pixels": 256,
+        "mean_rgb": [
+          241.5,
+          239.7,
+          245.3
+        ],
+        "ring_blue": 0.89
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          586,
+          285,
+          622
+        ],
+        "pixels": 272,
+        "mean_rgb": [
+          241.8,
+          240.8,
+          245.2
+        ],
+        "ring_blue": 0.76
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_01.png",
+    "removed_pixels": 2063,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          462,
+          745,
+          516
+        ],
+        "pixels": 728,
+        "mean_rgb": [
+          242.6,
+          241.4,
+          244.2
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          466,
+          309,
+          520
+        ],
+        "pixels": 715,
+        "mean_rgb": [
+          242.0,
+          240.5,
+          245.0
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          755,
+          574,
+          771,
+          606
+        ],
+        "pixels": 232,
+        "mean_rgb": [
+          242.1,
+          240.3,
+          244.8
+        ],
+        "ring_blue": 0.8
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          576,
+          285,
+          614
+        ],
+        "pixels": 292,
+        "mean_rgb": [
+          241.3,
+          240.2,
+          245.9
+        ],
+        "ring_blue": 0.8
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_02.png",
+    "removed_pixels": 2082,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          712,
+          465,
+          743,
+          520
+        ],
+        "pixels": 712,
+        "mean_rgb": [
+          242.5,
+          241.5,
+          243.7
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          472,
+          309,
+          526
+        ],
+        "pixels": 723,
+        "mean_rgb": [
+          242.5,
+          240.9,
+          244.9
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          753,
+          576,
+          771,
+          610
+        ],
+        "pixels": 248,
+        "mean_rgb": [
+          242.0,
+          239.7,
+          245.3
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          582,
+          285,
+          620
+        ],
+        "pixels": 296,
+        "mean_rgb": [
+          241.7,
+          240.7,
+          245.0
+        ],
+        "ring_blue": 0.78
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_03.png",
+    "removed_pixels": 2087,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          710,
+          473,
+          741,
+          529
+        ],
+        "pixels": 710,
+        "mean_rgb": [
+          242.3,
+          241.3,
+          244.0
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          479,
+          309,
+          535
+        ],
+        "pixels": 728,
+        "mean_rgb": [
+          242.0,
+          241.0,
+          244.5
+        ],
+        "ring_blue": 0.87
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          751,
+          587,
+          767,
+          617
+        ],
+        "pixels": 243,
+        "mean_rgb": [
+          242.1,
+          240.3,
+          243.8
+        ],
+        "ring_blue": 0.78
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          591,
+          285,
+          627
+        ],
+        "pixels": 299,
+        "mean_rgb": [
+          240.8,
+          240.1,
+          244.4
+        ],
+        "ring_blue": 0.82
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_04.png",
+    "removed_pixels": 2079,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          709,
+          490,
+          739,
+          545
+        ],
+        "pixels": 709,
+        "mean_rgb": [
+          242.1,
+          240.7,
+          243.9
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          493,
+          309,
+          547
+        ],
+        "pixels": 732,
+        "mean_rgb": [
+          242.1,
+          240.9,
+          244.1
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          271,
+          603,
+          287,
+          639
+        ],
+        "pixels": 308,
+        "mean_rgb": [
+          240.7,
+          239.9,
+          244.6
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          747,
+          603,
+          763,
+          635
+        ],
+        "pixels": 240,
+        "mean_rgb": [
+          242.4,
+          239.7,
+          245.1
+        ],
+        "ring_blue": 0.81
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_05.png",
+    "removed_pixels": 2084,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          709,
+          485,
+          739,
+          540
+        ],
+        "pixels": 703,
+        "mean_rgb": [
+          241.9,
+          240.4,
+          243.8
+        ],
+        "ring_blue": 0.79
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          486,
+          309,
+          542
+        ],
+        "pixels": 724,
+        "mean_rgb": [
+          242.2,
+          241.1,
+          244.5
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          269,
+          596,
+          285,
+          634
+        ],
+        "pixels": 312,
+        "mean_rgb": [
+          241.3,
+          240.2,
+          245.5
+        ],
+        "ring_blue": 0.91
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          747,
+          598,
+          763,
+          632
+        ],
+        "pixels": 256,
+        "mean_rgb": [
+          242.2,
+          239.3,
+          245.3
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_06.png",
+    "removed_pixels": 2044,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          275,
+          477,
+          307,
+          532
+        ],
+        "pixels": 721,
+        "mean_rgb": [
+          242.1,
+          241.0,
+          244.7
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          480,
+          741,
+          532
+        ],
+        "pixels": 688,
+        "mean_rgb": [
+          241.9,
+          240.4,
+          243.7
+        ],
+        "ring_blue": 0.76
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          265,
+          588,
+          279,
+          622
+        ],
+        "pixels": 280,
+        "mean_rgb": [
+          241.8,
+          240.7,
+          245.7
+        ],
+        "ring_blue": 0.74
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          749,
+          592,
+          765,
+          624
+        ],
+        "pixels": 248,
+        "mean_rgb": [
+          241.6,
+          239.7,
+          243.5
+        ],
+        "ring_blue": 0.82
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_07.png",
+    "removed_pixels": 2118,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          273,
+          473,
+          306,
+          526
+        ],
+        "pixels": 723,
+        "mean_rgb": [
+          242.2,
+          241.1,
+          244.6
+        ],
+        "ring_blue": 0.82
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          712,
+          476,
+          743,
+          530
+        ],
+        "pixels": 721,
+        "mean_rgb": [
+          241.9,
+          240.5,
+          243.4
+        ],
+        "ring_blue": 0.79
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          261,
+          584,
+          277,
+          618
+        ],
+        "pixels": 296,
+        "mean_rgb": [
+          240.9,
+          240.9,
+          245.2
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          749,
+          588,
+          765,
+          622
+        ],
+        "pixels": 264,
+        "mean_rgb": [
+          241.4,
+          239.6,
+          243.0
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_08.png",
+    "removed_pixels": 2080,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          275,
+          475,
+          307,
+          528
+        ],
+        "pixels": 717,
+        "mean_rgb": [
+          242.6,
+          241.4,
+          244.6
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          712,
+          477,
+          741,
+          532
+        ],
+        "pixels": 711,
+        "mean_rgb": [
+          242.1,
+          240.9,
+          243.3
+        ],
+        "ring_blue": 0.81
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          263,
+          584,
+          279,
+          620
+        ],
+        "pixels": 296,
+        "mean_rgb": [
+          242.3,
+          241.0,
+          246.1
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          749,
+          592,
+          765,
+          624
+        ],
+        "pixels": 252,
+        "mean_rgb": [
+          241.8,
+          240.0,
+          244.0
+        ],
+        "ring_blue": 0.78
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_09.png",
+    "removed_pixels": 2094,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          277,
+          488,
+          309,
+          542
+        ],
+        "pixels": 702,
+        "mean_rgb": [
+          242.4,
+          241.4,
+          245.3
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          711,
+          488,
+          741,
+          542
+        ],
+        "pixels": 725,
+        "mean_rgb": [
+          241.9,
+          241.0,
+          242.7
+        ],
+        "ring_blue": 0.84
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          265,
+          598,
+          281,
+          632
+        ],
+        "pixels": 300,
+        "mean_rgb": [
+          242.4,
+          241.3,
+          245.2
+        ],
+        "ring_blue": 0.85
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          747,
+          600,
+          765,
+          636
+        ],
+        "pixels": 274,
+        "mean_rgb": [
+          240.1,
+          240.3,
+          243.9
+        ],
+        "ring_blue": 0.89
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_10.png",
+    "removed_pixels": 2045,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          711,
+          484,
+          743,
+          538
+        ],
+        "pixels": 706,
+        "mean_rgb": [
+          242.6,
+          240.7,
+          244.0
+        ],
+        "ring_blue": 0.8
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          486,
+          311,
+          540
+        ],
+        "pixels": 704,
+        "mean_rgb": [
+          242.5,
+          241.1,
+          245.4
+        ],
+        "ring_blue": 0.83
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          749,
+          596,
+          765,
+          630
+        ],
+        "pixels": 248,
+        "mean_rgb": [
+          243.0,
+          239.9,
+          245.1
+        ],
+        "ring_blue": 0.8
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          269,
+          598,
+          283,
+          632
+        ],
+        "pixels": 276,
+        "mean_rgb": [
+          241.4,
+          239.8,
+          245.5
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "up",
+    "frame": "walk_11.png",
+    "removed_pixels": 2053,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          713,
+          472,
+          743,
+          524
+        ],
+        "pixels": 696,
+        "mean_rgb": [
+          242.2,
+          240.6,
+          244.0
+        ],
+        "ring_blue": 0.78
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          279,
+          474,
+          310,
+          530
+        ],
+        "pixels": 707,
+        "mean_rgb": [
+          242.0,
+          240.6,
+          245.4
+        ],
+        "ring_blue": 0.86
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          751,
+          584,
+          767,
+          616
+        ],
+        "pixels": 236,
+        "mean_rgb": [
+          242.4,
+          240.2,
+          244.9
+        ],
+        "ring_blue": 0.78
+      },
+      {
+        "kind": "hair_opening",
+        "box": [
+          269,
+          586,
+          285,
+          620
+        ],
+        "pixels": 284,
+        "mean_rgb": [
+          241.2,
+          239.6,
+          245.3
+        ],
+        "ring_blue": 0.81
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_00.png",
+    "removed_pixels": 1217,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          215,
+          506,
+          267,
+          564
+        ],
+        "pixels": 1183,
+        "mean_rgb": [
+          241.6,
+          240.8,
+          243.3
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_01.png",
+    "removed_pixels": 1185,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          221,
+          512,
+          269,
+          570
+        ],
+        "pixels": 1132,
+        "mean_rgb": [
+          241.6,
+          240.6,
+          243.7
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_02.png",
+    "removed_pixels": 1214,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          225,
+          508,
+          273,
+          570
+        ],
+        "pixels": 1171,
+        "mean_rgb": [
+          241.8,
+          241.0,
+          244.3
+        ],
+        "ring_blue": 0.85
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_03.png",
+    "removed_pixels": 1206,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          225,
+          501,
+          272,
+          566
+        ],
+        "pixels": 1161,
+        "mean_rgb": [
+          241.9,
+          240.8,
+          243.7
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_04.png",
+    "removed_pixels": 1221,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          219,
+          498,
+          267,
+          560
+        ],
+        "pixels": 1190,
+        "mean_rgb": [
+          241.6,
+          240.6,
+          243.7
+        ],
+        "ring_blue": 0.88
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_05.png",
+    "removed_pixels": 1241,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          213,
+          498,
+          263,
+          558
+        ],
+        "pixels": 1199,
+        "mean_rgb": [
+          241.9,
+          240.8,
+          243.5
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_06.png",
+    "removed_pixels": 1252,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          211,
+          502,
+          265,
+          560
+        ],
+        "pixels": 1223,
+        "mean_rgb": [
+          241.7,
+          240.6,
+          243.7
+        ],
+        "ring_blue": 0.87
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_07.png",
+    "removed_pixels": 1198,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          217,
+          508,
+          267,
+          564
+        ],
+        "pixels": 1152,
+        "mean_rgb": [
+          241.7,
+          240.6,
+          243.5
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_08.png",
+    "removed_pixels": 1194,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          223,
+          508,
+          272,
+          568
+        ],
+        "pixels": 1150,
+        "mean_rgb": [
+          241.8,
+          240.8,
+          243.7
+        ],
+        "ring_blue": 0.84
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_09.png",
+    "removed_pixels": 1212,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          225,
+          504,
+          273,
+          568
+        ],
+        "pixels": 1165,
+        "mean_rgb": [
+          242.1,
+          241.2,
+          243.5
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_10.png",
+    "removed_pixels": 1226,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          223,
+          500,
+          269,
+          564
+        ],
+        "pixels": 1176,
+        "mean_rgb": [
+          242.3,
+          240.8,
+          244.2
+        ],
+        "ring_blue": 0.83
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_11.png",
+    "removed_pixels": 1211,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          217,
+          497,
+          266,
+          560
+        ],
+        "pixels": 1180,
+        "mean_rgb": [
+          242.1,
+          240.8,
+          244.9
+        ],
+        "ring_blue": 0.86
+      }
+    ]
+  },
+  {
+    "direction": "right",
+    "frame": "walk_12.png",
+    "removed_pixels": 1247,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          211,
+          499,
+          264,
+          558
+        ],
+        "pixels": 1207,
+        "mean_rgb": [
+          242.0,
+          241.0,
+          243.9
+        ],
+        "ring_blue": 0.85
+      }
+    ]
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_00.png",
+    "removed_pixels": 738,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          728,
+          416,
+          785,
+          444
+        ],
+        "pixels": 704,
+        "mean_rgb": [
+          245.2,
+          240.0,
+          241.8
+        ],
+        "ring_blue": 0.64
+      }
+    ]
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_01.png",
+    "removed_pixels": 753,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          725,
+          418,
+          783,
+          444
+        ],
+        "pixels": 721,
+        "mean_rgb": [
+          244.6,
+          239.3,
+          241.0
+        ],
+        "ring_blue": 0.72
+      }
+    ]
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_02.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_03.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_04.png",
+    "removed_pixels": 728,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          725,
+          420,
+          781,
+          446
+        ],
+        "pixels": 693,
+        "mean_rgb": [
+          244.7,
+          239.7,
+          240.7
+        ],
+        "ring_blue": 0.63
+      }
+    ]
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_05.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_06.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_07.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_08.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_09.png",
+    "removed_pixels": 0,
+    "islands": []
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_10.png",
+    "removed_pixels": 768,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          727,
+          420,
+          781,
+          446
+        ],
+        "pixels": 723,
+        "mean_rgb": [
+          244.3,
+          239.8,
+          242.7
+        ],
+        "ring_blue": 0.72
+      }
+    ]
+  },
+  {
+    "direction": "down_right",
+    "frame": "walk_11.png",
+    "removed_pixels": 784,
+    "islands": [
+      {
+        "kind": "hair_opening",
+        "box": [
+          728,
+          416,
+          785,
+          444
+        ],
+        "pixels": 758,
+        "mean_rgb": [
+          244.0,
+          240.0,
+          241.3
+        ],
+        "ring_blue": 0.69
+      }
+    ]
+  }
+]

@@ -1,0 +1,716 @@
+[
+  {
+    "id": "never_surrender",
+    "name": "绝不投降",
+    "group": "base",
+    "image": "res://assets/cards/base/never_surrender.png",
+    "cost": 2,
+    "target": "self",
+    "description": "获得 12 点格挡；下一次伤害 +4",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 12
+      },
+      {
+        "kind": "amplify",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "id": "whale_impact",
+    "name": "鲸落冲击",
+    "group": "base",
+    "image": "res://assets/cards/base/whale_impact.png",
+    "cost": 2,
+    "target": "one",
+    "description": "造成 18 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 18
+      }
+    ]
+  },
+  {
+    "id": "deep_blue_shield",
+    "name": "深蓝屏障",
+    "group": "base",
+    "image": "res://assets/cards/base/deep_blue_shield.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 10 点格挡",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "tidal_healing",
+    "name": "潮汐治愈",
+    "group": "base",
+    "image": "res://assets/cards/base/tidal_healing.png",
+    "cost": 1,
+    "target": "self",
+    "description": "恢复 8 点生命",
+    "effects": [
+      {
+        "kind": "heal",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "id": "token_torrent",
+    "name": "Token洪流",
+    "group": "base",
+    "image": "res://assets/cards/base/token_torrent.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 1 点能量；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "energy",
+        "value": 1
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "echo_summon",
+    "name": "回声召唤",
+    "group": "base",
+    "image": "res://assets/cards/base/echo_summon.png",
+    "cost": 2,
+    "target": "all",
+    "description": "造成 9 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 9
+      }
+    ]
+  },
+  {
+    "id": "precise_search",
+    "name": "精准检索",
+    "group": "base",
+    "image": "res://assets/cards/base/precise_search.png",
+    "cost": 1,
+    "target": "self",
+    "description": "抽 2 张牌",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "deep_thinking",
+    "name": "深度思考",
+    "group": "base",
+    "image": "res://assets/cards/base/deep_thinking.png",
+    "cost": 1,
+    "target": "self",
+    "description": "抽 2 张牌；下一次伤害 +3",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 2
+      },
+      {
+        "kind": "amplify",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "memory_recall",
+    "name": "记忆回溯",
+    "group": "base",
+    "image": "res://assets/cards/base/memory_recall.png",
+    "cost": 1,
+    "target": "self",
+    "description": "从弃牌堆取回 1 张牌",
+    "effects": [
+      {
+        "kind": "retrieve",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "compute_overdrive",
+    "name": "算力超频",
+    "group": "base",
+    "image": "res://assets/cards/base/compute_overdrive.png",
+    "cost": 2,
+    "target": "self",
+    "description": "下一次伤害 +10",
+    "effects": [
+      {
+        "kind": "amplify",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "ocean_echo",
+    "name": "幻海分身",
+    "group": "base",
+    "image": "res://assets/cards/base/ocean_echo.png",
+    "cost": 2,
+    "target": "one",
+    "description": "获得 8 点格挡；造成 7 点基础伤害",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 8
+      },
+      {
+        "kind": "damage",
+        "value": 7
+      }
+    ]
+  },
+  {
+    "id": "zero_restart",
+    "name": "零点重启",
+    "group": "base",
+    "image": "res://assets/cards/base/zero_restart.png",
+    "cost": 3,
+    "target": "self",
+    "description": "解除束缚；恢复 12 点生命",
+    "effects": [
+      {
+        "kind": "cleanse",
+        "value": 1
+      },
+      {
+        "kind": "heal",
+        "value": 12
+      }
+    ]
+  },
+  {
+    "id": "tidal_slash",
+    "name": "潮刃挥斩",
+    "group": "character",
+    "image": "res://assets/cards/character/tidal_slash.png",
+    "cost": 1,
+    "target": "one",
+    "description": "造成 11 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 11
+      }
+    ]
+  },
+  {
+    "id": "blue_lightning",
+    "name": "深蓝闪击",
+    "group": "character",
+    "image": "res://assets/cards/character/blue_lightning.png",
+    "cost": 1,
+    "target": "one",
+    "description": "造成 14 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 14
+      }
+    ]
+  },
+  {
+    "id": "water_spear",
+    "name": "凝流之枪",
+    "group": "character",
+    "image": "res://assets/cards/character/water_spear.png",
+    "cost": 2,
+    "target": "one",
+    "description": "造成 19 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 19
+      }
+    ]
+  },
+  {
+    "id": "wave_advance",
+    "name": "破浪前行",
+    "group": "character",
+    "image": "res://assets/cards/character/wave_advance.png",
+    "cost": 1,
+    "target": "one",
+    "description": "造成 9 点基础伤害；获得 5 点格挡",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 9
+      },
+      {
+        "kind": "block",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "id": "whale_combo",
+    "name": "鲸伴合击",
+    "group": "character",
+    "image": "res://assets/cards/character/whale_combo.png",
+    "cost": 2,
+    "target": "all",
+    "description": "造成 11 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 11
+      }
+    ]
+  },
+  {
+    "id": "ocean_release",
+    "name": "幻海释放",
+    "group": "character",
+    "image": "res://assets/cards/character/ocean_release.png",
+    "cost": 3,
+    "target": "all",
+    "description": "造成 17 点基础伤害",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 17
+      }
+    ]
+  },
+  {
+    "id": "whale_guard",
+    "name": "鲸拥守护",
+    "group": "character",
+    "image": "res://assets/cards/character/whale_guard.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 13 点格挡",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 13
+      }
+    ]
+  },
+  {
+    "id": "pearl_healing",
+    "name": "掌心治愈",
+    "group": "character",
+    "image": "res://assets/cards/character/pearl_healing.png",
+    "cost": 1,
+    "target": "self",
+    "description": "恢复 10 点生命",
+    "effects": [
+      {
+        "kind": "heal",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "inspired_thought",
+    "name": "灵感闪现",
+    "group": "character",
+    "image": "res://assets/cards/character/inspired_thought.png",
+    "cost": 1,
+    "target": "self",
+    "description": "抽 2 张牌",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "token_reward",
+    "name": "Token馈赠",
+    "group": "character",
+    "image": "res://assets/cards/character/token_reward.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 1 点能量；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "energy",
+        "value": 1
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "quiet_rest",
+    "name": "安心小憩",
+    "group": "character",
+    "image": "res://assets/cards/character/quiet_rest.png",
+    "cost": 1,
+    "target": "self",
+    "description": "恢复 8 点生命；恢复 8 点体力",
+    "effects": [
+      {
+        "kind": "heal",
+        "value": 8
+      },
+      {
+        "kind": "stamina",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "id": "together_forward",
+    "name": "携手同行",
+    "group": "character",
+    "image": "res://assets/cards/character/together_forward.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 8 点格挡；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 8
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "frost_bind",
+    "name": "霜流锁链",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/frost_bind.png",
+    "cost": 2,
+    "target": "one",
+    "description": "造成 6 点基础伤害；束缚目标 1 次行动",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 6
+      },
+      {
+        "kind": "bind",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "silent_seal",
+    "name": "静默指令",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/silent_seal.png",
+    "cost": 1,
+    "target": "one",
+    "description": "束缚目标 1 次行动",
+    "effects": [
+      {
+        "kind": "bind",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "bubble_prison",
+    "name": "幻泡囚笼",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/bubble_prison.png",
+    "cost": 2,
+    "target": "one",
+    "description": "束缚目标 1 次行动；获得 5 点格挡",
+    "effects": [
+      {
+        "kind": "bind",
+        "value": 1
+      },
+      {
+        "kind": "block",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "id": "force_interrupt",
+    "name": "强制中断",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/force_interrupt.png",
+    "cost": 2,
+    "target": "one",
+    "description": "造成 8 点基础伤害；束缚目标 1 次行动",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 8
+      },
+      {
+        "kind": "bind",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "time_slow",
+    "name": "时序缓滞",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/time_slow.png",
+    "cost": 2,
+    "target": "one",
+    "description": "束缚目标 1 次行动；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "bind",
+        "value": 1
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "current_tangle",
+    "name": "缠流牵引",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/current_tangle.png",
+    "cost": 2,
+    "target": "one",
+    "description": "造成 6 点基础伤害；束缚目标 1 次行动",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 6
+      },
+      {
+        "kind": "bind",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "evasive_step",
+    "name": "残影闪避",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/evasive_step.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 7 点格挡；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 7
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "umbrella_parry",
+    "name": "伞下格挡",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/umbrella_parry.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 12 点格挡",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 12
+      }
+    ]
+  },
+  {
+    "id": "wave_jump",
+    "name": "踏浪跃进",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/wave_jump.png",
+    "cost": 1,
+    "target": "one",
+    "description": "造成 8 点基础伤害；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "damage",
+        "value": 8
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "deep_stealth",
+    "name": "深海隐匿",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/deep_stealth.png",
+    "cost": 2,
+    "target": "self",
+    "description": "获得 16 点格挡",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 16
+      }
+    ]
+  },
+  {
+    "id": "current_counter",
+    "name": "逆流反击",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/current_counter.png",
+    "cost": 2,
+    "target": "one",
+    "description": "获得 8 点格挡；造成 8 点基础伤害",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 8
+      },
+      {
+        "kind": "damage",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "id": "rewind_step",
+    "name": "回溯步伐",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/rewind_step.png",
+    "cost": 1,
+    "target": "self",
+    "description": "从弃牌堆取回 1 张牌",
+    "effects": [
+      {
+        "kind": "retrieve",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "whale_scout",
+    "name": "鲸瞳侦察",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/whale_scout.png",
+    "cost": 1,
+    "target": "self",
+    "description": "抽 2 张牌",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "team_command",
+    "name": "阵线指挥",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/team_command.png",
+    "cost": 1,
+    "target": "self",
+    "description": "下一次伤害 +7；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "amplify",
+        "value": 7
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "data_sort",
+    "name": "数据编排",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/data_sort.png",
+    "cost": 2,
+    "target": "self",
+    "description": "抽 3 张牌",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "secure_backup",
+    "name": "安全备份",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/secure_backup.png",
+    "cost": 2,
+    "target": "self",
+    "description": "获得 8 点格挡；恢复 5 点生命",
+    "effects": [
+      {
+        "kind": "block",
+        "value": 8
+      },
+      {
+        "kind": "heal",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "id": "token_bargain",
+    "name": "Token议价",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/token_bargain.png",
+    "cost": 1,
+    "target": "self",
+    "description": "获得 1 点能量；抽 1 张牌",
+    "effects": [
+      {
+        "kind": "energy",
+        "value": 1
+      },
+      {
+        "kind": "draw",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "id": "efficient_compute",
+    "name": "高效运算",
+    "group": "tactics",
+    "image": "res://assets/cards/tactics/efficient_compute.png",
+    "cost": 2,
+    "target": "self",
+    "description": "抽 2 张牌；获得 1 点能量",
+    "effects": [
+      {
+        "kind": "draw",
+        "value": 2
+      },
+      {
+        "kind": "energy",
+        "value": 1
+      }
+    ]
+  }
+]

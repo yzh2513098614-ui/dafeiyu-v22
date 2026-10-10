@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/themed_props/hospital_monitor_trolley.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(0.75000, 1.54500, 0.65000)
+[node name="hospital_monitor_trolley" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 0.77750, 0.00000)
+shape = SubResource("Collision")

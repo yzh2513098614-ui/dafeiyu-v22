@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/library_173/container_runtime.gd" id="e0"]
+
+[node name="lib_wall_data_safe" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_wall_data_safe", "name": "壁挂数据保险箱", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+script = ExtResource("e0")
+container_id = "wall_data_safe"
+opening_seconds = 0.9

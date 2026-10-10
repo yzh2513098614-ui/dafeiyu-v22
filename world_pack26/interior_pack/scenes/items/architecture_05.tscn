@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/assets/models/architecture_05.glb" id="1"]
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/item_3d.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="Back"]
+size = Vector3(1.1,2.2,0.12)
+
+[sub_resource type="BoxShape3D" id="Return"]
+size = Vector3(0.12,2.2,1.0)
+
+[node name="architecture_05" type="Node3D"]
+script = ExtResource("2")
+asset_id = "architecture_05"
+passage = false
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Back" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,1.1,-0.5)
+shape = SubResource("Back")
+
+[node name="Return" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.49000000000000005,1.1,0.06)
+shape = SubResource("Return")

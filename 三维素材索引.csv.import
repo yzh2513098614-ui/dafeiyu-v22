@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cs3ktkua7mvxy"
+
+[deps]
+
+files=["res://三维素材索引.名称.translation", "res://三维素材索引.类别.translation", "res://三维素材索引.三维场景.translation", "res://三维素材索引.原PNG.translation"]
+
+source_file="res://三维素材索引.csv"
+dest_files=["res://三维素材索引.名称.translation", "res://三维素材索引.类别.translation", "res://三维素材索引.三维场景.translation", "res://三维素材索引.原PNG.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

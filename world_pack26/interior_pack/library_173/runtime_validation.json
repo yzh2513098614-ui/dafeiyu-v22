@@ -1,0 +1,8 @@
+{
+	"designs": 30,
+	"engine": "4.4.1-stable (official)",
+	"failures": [],
+	"mesh_pose_checks": 4213,
+	"passed": true,
+	"scope": "Headless import, mesh transforms, open/close and tween interruption; no GPU render test"
+}

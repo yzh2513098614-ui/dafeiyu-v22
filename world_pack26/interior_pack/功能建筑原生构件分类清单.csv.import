@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c8ucfkpdkiguu"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/功能建筑原生构件分类清单.中文名称.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.分类标记.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.使用地图.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.结构细节.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.场景路径.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.模型形式.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.来源.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.数量含义.translation"]
+
+source_file="res://world_pack26/interior_pack/功能建筑原生构件分类清单.csv"
+dest_files=["res://world_pack26/interior_pack/功能建筑原生构件分类清单.中文名称.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.分类标记.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.使用地图.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.结构细节.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.场景路径.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.模型形式.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.来源.translation", "res://world_pack26/interior_pack/功能建筑原生构件分类清单.数量含义.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

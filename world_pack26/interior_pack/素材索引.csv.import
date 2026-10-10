@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c8ftlwy7ixdya"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/素材索引.名称.translation", "res://world_pack26/interior_pack/素材索引.类别.translation", "res://world_pack26/interior_pack/素材索引.宽米.translation", "res://world_pack26/interior_pack/素材索引.高米.translation", "res://world_pack26/interior_pack/素材索引.深米.translation", "res://world_pack26/interior_pack/素材索引.三角形数.translation", "res://world_pack26/interior_pack/素材索引.网格部件.translation", "res://world_pack26/interior_pack/素材索引.活动部件.translation", "res://world_pack26/interior_pack/素材索引.GLB.translation", "res://world_pack26/interior_pack/素材索引.Godot场景.translation"]
+
+source_file="res://world_pack26/interior_pack/素材索引.csv"
+dest_files=["res://world_pack26/interior_pack/素材索引.名称.translation", "res://world_pack26/interior_pack/素材索引.类别.translation", "res://world_pack26/interior_pack/素材索引.宽米.translation", "res://world_pack26/interior_pack/素材索引.高米.translation", "res://world_pack26/interior_pack/素材索引.深米.translation", "res://world_pack26/interior_pack/素材索引.三角形数.translation", "res://world_pack26/interior_pack/素材索引.网格部件.translation", "res://world_pack26/interior_pack/素材索引.活动部件.translation", "res://world_pack26/interior_pack/素材索引.GLB.translation", "res://world_pack26/interior_pack/素材索引.Godot场景.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/architecture_10.tscn" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e1"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(0.42,0.06,0.42)
+
+[node name="LitColumn" type="Node3D"]
+
+
+[node name="Column" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.25,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")

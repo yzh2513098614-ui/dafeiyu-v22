@@ -1,0 +1,1049 @@
+[
+  {
+    "id": "field_supply_crate",
+    "label": "野外战术补给箱",
+    "kind": "lid",
+    "size": [
+      1.12,
+      0.74,
+      0.86
+    ],
+    "color": "olive",
+    "accent": "yellow",
+    "style": "ribbed",
+    "use": "通用补给",
+    "capacity": [
+      4,
+      4
+    ],
+    "closed_path": "models/containers/field_supply_crate.glb",
+    "opened_path": "models/containers/field_supply_crate_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.745,
+        0.40499999999999997
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "long_equipment_case",
+    "label": "长型装备箱",
+    "kind": "lid",
+    "size": [
+      1.72,
+      0.39,
+      0.59
+    ],
+    "color": "graphite",
+    "accent": "blue",
+    "style": "long",
+    "use": "长形装备与工具",
+    "capacity": [
+      8,
+      2
+    ],
+    "closed_path": "models/containers/long_equipment_case.glb",
+    "opened_path": "models/containers/long_equipment_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.395,
+        0.26999999999999996
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "reinforced_flight_case",
+    "label": "金属包边航空箱",
+    "kind": "lid",
+    "size": [
+      1.18,
+      0.82,
+      0.77
+    ],
+    "color": "graphite",
+    "accent": "metal",
+    "style": "flight",
+    "use": "精密仪器与高值物资",
+    "capacity": [
+      5,
+      4
+    ],
+    "closed_path": "models/containers/reinforced_flight_case.glb",
+    "opened_path": "models/containers/reinforced_flight_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.825,
+        0.36
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "field_medical_chest",
+    "label": "野战医疗补给箱",
+    "kind": "lid",
+    "size": [
+      0.93,
+      0.56,
+      0.72
+    ],
+    "color": "cream",
+    "accent": "red",
+    "style": "medical",
+    "use": "药品与医疗耗材",
+    "capacity": [
+      4,
+      3
+    ],
+    "closed_path": "models/containers/field_medical_chest.glb",
+    "opened_path": "models/containers/field_medical_chest_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.5650000000000001,
+        0.33499999999999996
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "marine_waterproof_case",
+    "label": "海事防水补给箱",
+    "kind": "lid",
+    "size": [
+      1.26,
+      0.58,
+      0.84
+    ],
+    "color": "navy",
+    "accent": "cyan",
+    "style": "waterproof",
+    "use": "海事补给与防水设备",
+    "capacity": [
+      5,
+      3
+    ],
+    "closed_path": "models/containers/marine_waterproof_case.glb",
+    "opened_path": "models/containers/marine_waterproof_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.585,
+        0.39499999999999996
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "encrypted_electronics_case",
+    "label": "加密电子设备箱",
+    "kind": "lid",
+    "size": [
+      0.98,
+      0.46,
+      0.72
+    ],
+    "color": "graphite",
+    "accent": "cyan",
+    "style": "electronics",
+    "use": "数据模块与电子零件",
+    "capacity": [
+      4,
+      3
+    ],
+    "closed_path": "models/containers/encrypted_electronics_case.glb",
+    "opened_path": "models/containers/encrypted_electronics_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.465,
+        0.33499999999999996
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "industrial_tool_chest",
+    "label": "工业维修工具箱",
+    "kind": "lid",
+    "size": [
+      1.18,
+      0.59,
+      0.69
+    ],
+    "color": "yellow",
+    "accent": "dark",
+    "style": "tool",
+    "use": "工具与维修材料",
+    "capacity": [
+      5,
+      3
+    ],
+    "closed_path": "models/containers/industrial_tool_chest.glb",
+    "opened_path": "models/containers/industrial_tool_chest_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.595,
+        0.31999999999999995
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "office_armored_safe",
+    "label": "办公室重型保险柜",
+    "kind": "door",
+    "size": [
+      0.9,
+      1.2,
+      0.79
+    ],
+    "color": "gunmetal",
+    "accent": "metal",
+    "style": "mechanical",
+    "use": "代币、纸币与贵重物品",
+    "capacity": [
+      4,
+      5
+    ],
+    "closed_path": "models/containers/office_armored_safe.glb",
+    "opened_path": "models/containers/office_armored_safe_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.405,
+        0,
+        -0.43000000000000005
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0,
+      "bolt_retract": 0.075,
+      "unlock_fraction": 0.12
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "wall_data_safe",
+    "label": "壁挂数据保险箱",
+    "kind": "door",
+    "size": [
+      0.84,
+      0.68,
+      0.31
+    ],
+    "color": "navy",
+    "accent": "cyan",
+    "style": "digital",
+    "use": "存储卡与机密档案",
+    "capacity": [
+      4,
+      2
+    ],
+    "closed_path": "models/containers/wall_data_safe.glb",
+    "opened_path": "models/containers/wall_data_safe_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.375,
+        0,
+        -0.19
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "secure_equipment_locker",
+    "label": "立式装备储物柜",
+    "kind": "door",
+    "size": [
+      0.76,
+      1.8,
+      0.7
+    ],
+    "color": "gunmetal",
+    "accent": "yellow",
+    "style": "locker",
+    "use": "装备与备用补给",
+    "capacity": [
+      3,
+      7
+    ],
+    "closed_path": "models/containers/secure_equipment_locker.glb",
+    "opened_path": "models/containers/secure_equipment_locker_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.335,
+        0,
+        -0.385
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "searchable_file_cabinet",
+    "label": "可搜查抽屉档案柜",
+    "kind": "drawer",
+    "size": [
+      0.72,
+      1.02,
+      0.68
+    ],
+    "color": "light",
+    "accent": "navy",
+    "style": "drawer",
+    "use": "文件与小型零件",
+    "capacity": [
+      4,
+      3
+    ],
+    "closed_path": "models/containers/searchable_file_cabinet.glb",
+    "opened_path": "models/containers/searchable_file_cabinet_opened.glb",
+    "mechanism": {
+      "kind": "drawer",
+      "translation": [
+        0,
+        0,
+        -0.4964
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "cold_chain_medical_cabinet",
+    "label": "医疗冷链保存柜",
+    "kind": "door",
+    "size": [
+      0.87,
+      1.24,
+      0.72
+    ],
+    "color": "cream",
+    "accent": "cyan",
+    "style": "cold",
+    "use": "药品与样本盒",
+    "capacity": [
+      4,
+      5
+    ],
+    "closed_path": "models/containers/cold_chain_medical_cabinet.glb",
+    "opened_path": "models/containers/cold_chain_medical_cabinet_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.39,
+        0,
+        -0.395
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创简化结构；容量为游戏设计建议，不是三角洲官方数据"
+  },
+  {
+    "id": "restaurant_tall_fridge",
+    "label": "餐厅双门冷藏柜",
+    "kind": "double_door",
+    "size": [
+      1.28,
+      1.94,
+      0.85
+    ],
+    "color": "metal",
+    "accent": "cyan",
+    "style": "fridge",
+    "zone": "restaurant",
+    "use": "食材与冷藏补给",
+    "capacity": [
+      6,
+      7
+    ],
+    "closed_path": "models/containers/restaurant_tall_fridge.glb",
+    "opened_path": "models/containers/restaurant_tall_fridge_opened.glb",
+    "mechanism": {
+      "kind": "double_door",
+      "groups": [
+        {
+          "prefix": "moving_left_",
+          "pivot": [
+            -0.604,
+            0,
+            -0.51
+          ],
+          "axis": "y",
+          "angle_degrees": 102.0
+        },
+        {
+          "prefix": "moving_right_",
+          "pivot": [
+            0.604,
+            0,
+            -0.51
+          ],
+          "axis": "y",
+          "angle_degrees": -102.0
+        }
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "pantry_ingredient_bin",
+    "label": "后厨配料储藏箱",
+    "kind": "lid",
+    "size": [
+      0.76,
+      0.74,
+      0.69
+    ],
+    "color": "cream",
+    "accent": "olive",
+    "style": "ingredient",
+    "zone": "restaurant",
+    "use": "米面与配料包装",
+    "capacity": [
+      3,
+      4
+    ],
+    "closed_path": "models/containers/pantry_ingredient_bin.glb",
+    "opened_path": "models/containers/pantry_ingredient_bin_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.745,
+        0.31699999999999995
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "undercounter_service_drawer",
+    "label": "后厨宽型备品抽屉",
+    "kind": "drawer",
+    "size": [
+      1.15,
+      0.64,
+      0.76
+    ],
+    "color": "metal",
+    "accent": "navy",
+    "style": "kitchen_drawer",
+    "zone": "restaurant",
+    "use": "餐具、备品与小工具",
+    "capacity": [
+      6,
+      3
+    ],
+    "closed_path": "models/containers/undercounter_service_drawer.glb",
+    "opened_path": "models/containers/undercounter_service_drawer_opened.glb",
+    "mechanism": {
+      "kind": "drawer",
+      "translation": [
+        0,
+        0,
+        -0.5472
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "insulated_seafood_chest",
+    "label": "海鲜保温冷藏箱",
+    "kind": "lid",
+    "size": [
+      1.36,
+      0.63,
+      0.82
+    ],
+    "color": "blue",
+    "accent": "cream",
+    "style": "seafood",
+    "zone": "restaurant",
+    "use": "冰袋与海鲜补给",
+    "capacity": [
+      5,
+      4
+    ],
+    "closed_path": "models/containers/insulated_seafood_chest.glb",
+    "opened_path": "models/containers/insulated_seafood_chest_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.635,
+        0.38199999999999995
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "restaurant_cash_drop_safe",
+    "label": "餐厅投币存款保险柜",
+    "kind": "door",
+    "size": [
+      0.68,
+      0.91,
+      0.62
+    ],
+    "color": "navy",
+    "accent": "gold",
+    "style": "cash_safe",
+    "zone": "restaurant",
+    "use": "代币与营业款",
+    "capacity": [
+      3,
+      4
+    ],
+    "closed_path": "models/containers/restaurant_cash_drop_safe.glb",
+    "opened_path": "models/containers/restaurant_cash_drop_safe_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.30400000000000005,
+        0,
+        -0.395
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "bottle_storage_cabinet",
+    "label": "餐厅双门饮品储藏柜",
+    "kind": "double_door",
+    "size": [
+      1.09,
+      1.61,
+      0.69
+    ],
+    "color": "navy",
+    "accent": "gold",
+    "style": "bottle",
+    "zone": "restaurant",
+    "use": "瓶装饮品与贵重礼盒",
+    "capacity": [
+      5,
+      6
+    ],
+    "closed_path": "models/containers/bottle_storage_cabinet.glb",
+    "opened_path": "models/containers/bottle_storage_cabinet_opened.glb",
+    "mechanism": {
+      "kind": "double_door",
+      "groups": [
+        {
+          "prefix": "moving_left_",
+          "pivot": [
+            -0.509,
+            0,
+            -0.43
+          ],
+          "axis": "y",
+          "angle_degrees": 102.0
+        },
+        {
+          "prefix": "moving_right_",
+          "pivot": [
+            0.509,
+            0,
+            -0.43
+          ],
+          "axis": "y",
+          "angle_degrees": -102.0
+        }
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "harbor_cargo_cage",
+    "label": "港口网格货物笼",
+    "kind": "door",
+    "size": [
+      1.52,
+      1.7,
+      1.05
+    ],
+    "color": "gunmetal",
+    "accent": "yellow",
+    "style": "cage",
+    "zone": "harbor",
+    "use": "大件补给与货运包裹",
+    "capacity": [
+      7,
+      6
+    ],
+    "closed_path": "models/containers/harbor_cargo_cage.glb",
+    "opened_path": "models/containers/harbor_cargo_cage_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.724,
+        0,
+        -0.61
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "port_manifest_drawer",
+    "label": "港务单据检索柜",
+    "kind": "drawer",
+    "size": [
+      1.04,
+      0.84,
+      0.7
+    ],
+    "color": "light",
+    "accent": "blue",
+    "style": "manifest",
+    "zone": "harbor",
+    "use": "货运单据与通行凭证",
+    "capacity": [
+      5,
+      3
+    ],
+    "closed_path": "models/containers/port_manifest_drawer.glb",
+    "opened_path": "models/containers/port_manifest_drawer_opened.glb",
+    "mechanism": {
+      "kind": "drawer",
+      "translation": [
+        0,
+        0,
+        -0.504
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "maritime_signal_locker",
+    "label": "海事信号装备柜",
+    "kind": "door",
+    "size": [
+      0.73,
+      1.65,
+      0.64
+    ],
+    "color": "cream",
+    "accent": "orange",
+    "style": "signal",
+    "zone": "harbor",
+    "use": "信号器与应急通讯件",
+    "capacity": [
+      3,
+      6
+    ],
+    "closed_path": "models/containers/maritime_signal_locker.glb",
+    "opened_path": "models/containers/maritime_signal_locker_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.329,
+        0,
+        -0.405
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "lifesaving_deck_box",
+    "label": "救生甲板储物箱",
+    "kind": "lid",
+    "size": [
+      1.54,
+      0.66,
+      0.81
+    ],
+    "color": "cream",
+    "accent": "orange",
+    "style": "deck",
+    "zone": "harbor",
+    "use": "救生装备与绳索",
+    "capacity": [
+      6,
+      3
+    ],
+    "closed_path": "models/containers/lifesaving_deck_box.glb",
+    "opened_path": "models/containers/lifesaving_deck_box_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.665,
+        0.377
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "diver_equipment_case",
+    "label": "潜水装备加固箱",
+    "kind": "lid",
+    "size": [
+      1.38,
+      0.56,
+      0.88
+    ],
+    "color": "graphite",
+    "accent": "green",
+    "style": "diver",
+    "zone": "harbor",
+    "use": "潜水器材与海底采集物",
+    "capacity": [
+      6,
+      4
+    ],
+    "closed_path": "models/containers/diver_equipment_case.glb",
+    "opened_path": "models/containers/diver_equipment_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.5650000000000001,
+        0.412
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "rolling_logistics_case",
+    "label": "带轮物流运输箱",
+    "kind": "lid",
+    "size": [
+      0.92,
+      1.04,
+      0.77
+    ],
+    "color": "olive",
+    "accent": "yellow",
+    "style": "rolling",
+    "zone": "harbor",
+    "use": "移动补给与运输货物",
+    "capacity": [
+      4,
+      6
+    ],
+    "closed_path": "models/containers/rolling_logistics_case.glb",
+    "opened_path": "models/containers/rolling_logistics_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        1.045,
+        0.357
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "server_service_cabinet",
+    "label": "设备间服务器检修柜",
+    "kind": "door",
+    "size": [
+      0.86,
+      1.72,
+      0.85
+    ],
+    "color": "graphite",
+    "accent": "cyan",
+    "style": "server",
+    "zone": "equipment",
+    "use": "电子模块与数据设备",
+    "capacity": [
+      4,
+      7
+    ],
+    "closed_path": "models/containers/server_service_cabinet.glb",
+    "opened_path": "models/containers/server_service_cabinet_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.394,
+        0,
+        -0.51
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "battery_module_crate",
+    "label": "电源模块运输箱",
+    "kind": "lid",
+    "size": [
+      1.04,
+      0.64,
+      0.74
+    ],
+    "color": "yellow",
+    "accent": "dark",
+    "style": "battery",
+    "zone": "equipment",
+    "use": "电池模块与备用电源",
+    "capacity": [
+      5,
+      3
+    ],
+    "closed_path": "models/containers/battery_module_crate.glb",
+    "opened_path": "models/containers/battery_module_crate_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.645,
+        0.34199999999999997
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "sample_transport_case",
+    "label": "实验样本运输箱",
+    "kind": "lid",
+    "size": [
+      0.84,
+      0.43,
+      0.65
+    ],
+    "color": "cream",
+    "accent": "cyan",
+    "style": "sample",
+    "zone": "medical",
+    "use": "样本管与检测耗材",
+    "capacity": [
+      4,
+      3
+    ],
+    "closed_path": "models/containers/sample_transport_case.glb",
+    "opened_path": "models/containers/sample_transport_case_opened.glb",
+    "mechanism": {
+      "kind": "lid",
+      "pivot": [
+        0,
+        0.435,
+        0.297
+      ],
+      "axis": "x",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "laboratory_specimen_freezer",
+    "label": "实验样本低温柜",
+    "kind": "door",
+    "size": [
+      0.97,
+      1.81,
+      0.81
+    ],
+    "color": "white",
+    "accent": "blue",
+    "style": "freezer",
+    "zone": "medical",
+    "use": "样本盒与冷链补给",
+    "capacity": [
+      4,
+      7
+    ],
+    "closed_path": "models/containers/laboratory_specimen_freezer.glb",
+    "opened_path": "models/containers/laboratory_specimen_freezer_opened.glb",
+    "mechanism": {
+      "kind": "door",
+      "pivot": [
+        -0.449,
+        0,
+        -0.49000000000000005
+      ],
+      "axis": "y",
+      "angle_degrees": 105.0
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "wall_emergency_supply_cabinet",
+    "label": "双门应急救护柜",
+    "kind": "double_door",
+    "size": [
+      1.04,
+      1.06,
+      0.36
+    ],
+    "color": "cream",
+    "accent": "red",
+    "style": "emergency",
+    "zone": "medical",
+    "use": "救护用品与应急药箱",
+    "capacity": [
+      5,
+      4
+    ],
+    "closed_path": "models/containers/wall_emergency_supply_cabinet.glb",
+    "opened_path": "models/containers/wall_emergency_supply_cabinet_opened.glb",
+    "mechanism": {
+      "kind": "double_door",
+      "groups": [
+        {
+          "prefix": "moving_left_",
+          "pivot": [
+            -0.48400000000000004,
+            0,
+            -0.265
+          ],
+          "axis": "y",
+          "angle_degrees": 102.0
+        },
+        {
+          "prefix": "moving_right_",
+          "pivot": [
+            0.48400000000000004,
+            0,
+            -0.265
+          ],
+          "axis": "y",
+          "angle_degrees": -102.0
+        }
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  },
+  {
+    "id": "currency_transport_case",
+    "label": "Token纸币抽屉运输箱",
+    "kind": "drawer",
+    "size": [
+      1.02,
+      0.39,
+      0.68
+    ],
+    "color": "graphite",
+    "accent": "gold",
+    "style": "currency",
+    "zone": "equipment",
+    "use": "纸币、代币与存储卡",
+    "capacity": [
+      5,
+      2
+    ],
+    "closed_path": "models/containers/currency_transport_case.glb",
+    "opened_path": "models/containers/currency_transport_case_opened.glb",
+    "mechanism": {
+      "kind": "drawer",
+      "translation": [
+        0,
+        0,
+        -0.48960000000000004
+      ]
+    },
+    "opening_seconds": 2.4,
+    "moving_prefix": "moving_",
+    "note": "原创场景专用容器；容量为游戏设计建议"
+  }
+]

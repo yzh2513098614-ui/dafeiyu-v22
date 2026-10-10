@@ -1,0 +1,932 @@
+[
+  {
+    "id": "fern_floor_pot",
+    "label": "蕨叶落地盆栽",
+    "path": "models/decorations/greenery/fern_floor_pot.glb",
+    "scene_path": "models/decorations/greenery/fern_floor_pot.tscn",
+    "preview": "previews/fern_floor_pot.png",
+    "code": "GR-01",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "broadleaf_square_planter",
+    "label": "阔叶方形花盆",
+    "path": "models/decorations/greenery/broadleaf_square_planter.glb",
+    "scene_path": "models/decorations/greenery/broadleaf_square_planter.tscn",
+    "preview": "previews/broadleaf_square_planter.png",
+    "code": "GR-02",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "round_shrub_planter",
+    "label": "圆冠灌木花盆",
+    "path": "models/decorations/greenery/round_shrub_planter.glb",
+    "scene_path": "models/decorations/greenery/round_shrub_planter.tscn",
+    "preview": "previews/round_shrub_planter.png",
+    "code": "GR-03",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "succulent_display_tray",
+    "label": "多肉盆栽托盘",
+    "path": "models/decorations/greenery/succulent_display_tray.glb",
+    "scene_path": "models/decorations/greenery/succulent_display_tray.tscn",
+    "preview": "previews/succulent_display_tray.png",
+    "code": "GR-04",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "three_flower_vase",
+    "label": "三枝花装饰瓶",
+    "path": "models/decorations/greenery/three_flower_vase.glb",
+    "scene_path": "models/decorations/greenery/three_flower_vase.tscn",
+    "preview": "previews/three_flower_vase.png",
+    "code": "GR-05",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "tiered_plant_stand",
+    "label": "三层错落花架",
+    "path": "models/decorations/greenery/tiered_plant_stand.glb",
+    "scene_path": "models/decorations/greenery/tiered_plant_stand.tscn",
+    "preview": "previews/tiered_plant_stand.png",
+    "code": "GR-06",
+    "category_code": "GR",
+    "category_label": "绿植花艺",
+    "folder": "greenery",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "学校",
+      "餐厅",
+      "商场"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "condiment_bottle_set",
+    "label": "调味瓶组合",
+    "path": "models/decorations/dining/condiment_bottle_set.glb",
+    "scene_path": "models/decorations/dining/condiment_bottle_set.tscn",
+    "preview": "previews/condiment_bottle_set.png",
+    "code": "KT-01",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "ceramic_tea_set",
+    "label": "茶杯茶壶组合",
+    "path": "models/decorations/dining/ceramic_tea_set.glb",
+    "scene_path": "models/decorations/dining/ceramic_tea_set.tscn",
+    "preview": "previews/ceramic_tea_set.png",
+    "code": "KT-02",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "ceramic_plate_stack",
+    "label": "陶瓷餐盘叠放",
+    "path": "models/decorations/dining/ceramic_plate_stack.glb",
+    "scene_path": "models/decorations/dining/ceramic_plate_stack.tscn",
+    "preview": "previews/ceramic_plate_stack.png",
+    "code": "KT-03",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "cutlery_holder",
+    "label": "餐具收纳筒",
+    "path": "models/decorations/dining/cutlery_holder.glb",
+    "scene_path": "models/decorations/dining/cutlery_holder.tscn",
+    "preview": "previews/cutlery_holder.png",
+    "code": "KT-04",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "bread_display_basket",
+    "label": "面包陈列篮",
+    "path": "models/decorations/dining/bread_display_basket.glb",
+    "scene_path": "models/decorations/dining/bread_display_basket.tscn",
+    "preview": "previews/bread_display_basket.png",
+    "code": "KT-05",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "countertop_menu_stand",
+    "label": "桌面菜单立牌",
+    "path": "models/decorations/dining/countertop_menu_stand.glb",
+    "scene_path": "models/decorations/dining/countertop_menu_stand.tscn",
+    "preview": "previews/countertop_menu_stand.png",
+    "code": "KT-06",
+    "category_code": "KT",
+    "category_label": "餐饮桌面",
+    "folder": "dining",
+    "placement": "桌面",
+    "scene_tags": [
+      "餐厅",
+      "后厨",
+      "咖啡店",
+      "住宅"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "angled_desk_lamp",
+    "label": "折角桌灯",
+    "path": "models/decorations/office/angled_desk_lamp.glb",
+    "scene_path": "models/decorations/office/angled_desk_lamp.tscn",
+    "preview": "previews/angled_desk_lamp.png",
+    "code": "OF-01",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "桌面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "minimal_wall_clock",
+    "label": "简约壁钟",
+    "path": "models/decorations/office/minimal_wall_clock.glb",
+    "scene_path": "models/decorations/office/minimal_wall_clock.tscn",
+    "preview": "previews/minimal_wall_clock.png",
+    "code": "OF-02",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "墙面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "binder_bookend_set",
+    "label": "文件夹与书挡",
+    "path": "models/decorations/office/binder_bookend_set.glb",
+    "scene_path": "models/decorations/office/binder_bookend_set.tscn",
+    "preview": "previews/binder_bookend_set.png",
+    "code": "OF-03",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "桌面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "three_tier_mail_sorter",
+    "label": "三层文件托架",
+    "path": "models/decorations/office/three_tier_mail_sorter.glb",
+    "scene_path": "models/decorations/office/three_tier_mail_sorter.tscn",
+    "preview": "previews/three_tier_mail_sorter.png",
+    "code": "OF-04",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "桌面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "clipped_notice_panel",
+    "label": "夹纸公告板",
+    "path": "models/decorations/office/clipped_notice_panel.glb",
+    "scene_path": "models/decorations/office/clipped_notice_panel.tscn",
+    "preview": "previews/clipped_notice_panel.png",
+    "code": "OF-05",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "墙面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "wire_waste_basket",
+    "label": "镂空废纸篓",
+    "path": "models/decorations/office/wire_waste_basket.glb",
+    "scene_path": "models/decorations/office/wire_waste_basket.tscn",
+    "preview": "previews/wire_waste_basket.png",
+    "code": "OF-06",
+    "category_code": "OF",
+    "category_label": "办公陈设",
+    "folder": "office",
+    "placement": "地面",
+    "scene_tags": [
+      "办公室",
+      "学校",
+      "港务室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "first_aid_wall_sign",
+    "label": "急救墙面标识",
+    "path": "models/decorations/medical/first_aid_wall_sign.glb",
+    "scene_path": "models/decorations/medical/first_aid_wall_sign.tscn",
+    "preview": "previews/first_aid_wall_sign.png",
+    "code": "MD-01",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "墙面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "disinfectant_pump_stand",
+    "label": "消毒液立式支架",
+    "path": "models/decorations/medical/disinfectant_pump_stand.glb",
+    "scene_path": "models/decorations/medical/disinfectant_pump_stand.tscn",
+    "preview": "previews/disinfectant_pump_stand.png",
+    "code": "MD-02",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "地面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "sample_tube_display_rack",
+    "label": "样本管展示架",
+    "path": "models/decorations/medical/sample_tube_display_rack.glb",
+    "scene_path": "models/decorations/medical/sample_tube_display_rack.tscn",
+    "preview": "previews/sample_tube_display_rack.png",
+    "code": "MD-03",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "桌面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "medicine_bottle_display",
+    "label": "药瓶陈列组",
+    "path": "models/decorations/medical/medicine_bottle_display.glb",
+    "scene_path": "models/decorations/medical/medicine_bottle_display.tscn",
+    "preview": "previews/medicine_bottle_display.png",
+    "code": "MD-04",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "桌面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "sharps_disposal_decor",
+    "label": "锐器盒装饰模型",
+    "path": "models/decorations/medical/sharps_disposal_decor.glb",
+    "scene_path": "models/decorations/medical/sharps_disposal_decor.tscn",
+    "preview": "previews/sharps_disposal_decor.png",
+    "code": "MD-05",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "桌面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "folded_medical_linen",
+    "label": "折叠护理布巾",
+    "path": "models/decorations/medical/folded_medical_linen.glb",
+    "scene_path": "models/decorations/medical/folded_medical_linen.tscn",
+    "preview": "previews/folded_medical_linen.png",
+    "code": "MD-06",
+    "category_code": "MD",
+    "category_label": "医疗装饰",
+    "folder": "medical",
+    "placement": "桌面",
+    "scene_tags": [
+      "医院",
+      "诊所",
+      "实验室"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "retail_wire_basket",
+    "label": "商店购物篮",
+    "path": "models/decorations/retail/retail_wire_basket.glb",
+    "scene_path": "models/decorations/retail/retail_wire_basket.tscn",
+    "preview": "previews/retail_wire_basket.png",
+    "code": "SH-01",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "桌面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "retail_poster_pedestal",
+    "label": "商店海报立架",
+    "path": "models/decorations/retail/retail_poster_pedestal.glb",
+    "scene_path": "models/decorations/retail/retail_poster_pedestal.tscn",
+    "preview": "previews/retail_poster_pedestal.png",
+    "code": "SH-02",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "地面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "shopping_bag_pair",
+    "label": "购物纸袋组合",
+    "path": "models/decorations/retail/shopping_bag_pair.glb",
+    "scene_path": "models/decorations/retail/shopping_bag_pair.tscn",
+    "preview": "previews/shopping_bag_pair.png",
+    "code": "SH-03",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "桌面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "small_price_display",
+    "label": "小型商品价签架",
+    "path": "models/decorations/retail/small_price_display.glb",
+    "scene_path": "models/decorations/retail/small_price_display.tscn",
+    "preview": "previews/small_price_display.png",
+    "code": "SH-04",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "桌面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "gift_box_stack",
+    "label": "缎带礼盒组合",
+    "path": "models/decorations/retail/gift_box_stack.glb",
+    "scene_path": "models/decorations/retail/gift_box_stack.tscn",
+    "preview": "previews/gift_box_stack.png",
+    "code": "SH-05",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "桌面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "tiered_display_pedestal",
+    "label": "阶梯商品展示台",
+    "path": "models/decorations/retail/tiered_display_pedestal.glb",
+    "scene_path": "models/decorations/retail/tiered_display_pedestal.tscn",
+    "preview": "previews/tiered_display_pedestal.png",
+    "code": "SH-06",
+    "category_code": "SH",
+    "category_label": "商店展示",
+    "folder": "retail",
+    "placement": "桌面",
+    "scene_tags": [
+      "商场",
+      "便利店",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "mooring_rope_coil",
+    "label": "系泊绳圈",
+    "path": "models/decorations/coastal/mooring_rope_coil.glb",
+    "scene_path": "models/decorations/coastal/mooring_rope_coil.tscn",
+    "preview": "previews/mooring_rope_coil.png",
+    "code": "HB-01",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "地面",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "hanging_marine_fender",
+    "label": "悬挂式船舷护舷",
+    "path": "models/decorations/coastal/hanging_marine_fender.glb",
+    "scene_path": "models/decorations/coastal/hanging_marine_fender.tscn",
+    "preview": "previews/hanging_marine_fender.png",
+    "code": "HB-02",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "悬挂",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "drying_net_rack",
+    "label": "海事晾网架",
+    "path": "models/decorations/coastal/drying_net_rack.glb",
+    "scene_path": "models/decorations/coastal/drying_net_rack.tscn",
+    "preview": "previews/drying_net_rack.png",
+    "code": "HB-03",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "地面",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "coastal_warning_cone",
+    "label": "海边警示锥",
+    "path": "models/decorations/coastal/coastal_warning_cone.glb",
+    "scene_path": "models/decorations/coastal/coastal_warning_cone.tscn",
+    "preview": "previews/coastal_warning_cone.png",
+    "code": "HB-04",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "地面",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "shore_portable_lantern",
+    "label": "海边便携提灯",
+    "path": "models/decorations/coastal/shore_portable_lantern.glb",
+    "scene_path": "models/decorations/coastal/shore_portable_lantern.tscn",
+    "preview": "previews/shore_portable_lantern.png",
+    "code": "HB-05",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "桌面",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "dock_arrow_sign",
+    "label": "码头方向指示牌",
+    "path": "models/decorations/coastal/dock_arrow_sign.glb",
+    "scene_path": "models/decorations/coastal/dock_arrow_sign.tscn",
+    "preview": "previews/dock_arrow_sign.png",
+    "code": "HB-06",
+    "category_code": "HB",
+    "category_label": "港口海滩",
+    "folder": "coastal",
+    "placement": "地面",
+    "scene_tags": [
+      "港口",
+      "海滩",
+      "仓库"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "coiled_cable_reel",
+    "label": "绕线电缆盘",
+    "path": "models/decorations/utility/coiled_cable_reel.glb",
+    "scene_path": "models/decorations/utility/coiled_cable_reel.tscn",
+    "preview": "previews/coiled_cable_reel.png",
+    "code": "UT-01",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "地面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "wall_ventilation_grille",
+    "label": "墙面通风格栅",
+    "path": "models/decorations/utility/wall_ventilation_grille.glb",
+    "scene_path": "models/decorations/utility/wall_ventilation_grille.tscn",
+    "preview": "previews/wall_ventilation_grille.png",
+    "code": "UT-02",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "墙面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "wall_power_junction",
+    "label": "墙面接线箱",
+    "path": "models/decorations/utility/wall_power_junction.glb",
+    "scene_path": "models/decorations/utility/wall_power_junction.tscn",
+    "preview": "previews/wall_power_junction.png",
+    "code": "UT-03",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "墙面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "compact_cooling_unit",
+    "label": "小型室外冷却机",
+    "path": "models/decorations/utility/compact_cooling_unit.glb",
+    "scene_path": "models/decorations/utility/compact_cooling_unit.tscn",
+    "preview": "previews/compact_cooling_unit.png",
+    "code": "UT-04",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "地面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "主体近似碰撞",
+    "static": true
+  },
+  {
+    "id": "mini_solar_panel",
+    "label": "小型太阳能板",
+    "path": "models/decorations/utility/mini_solar_panel.glb",
+    "scene_path": "models/decorations/utility/mini_solar_panel.tscn",
+    "preview": "previews/mini_solar_panel.png",
+    "code": "UT-05",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "地面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "floor_warning_beacon",
+    "label": "立式警示灯",
+    "path": "models/decorations/utility/floor_warning_beacon.glb",
+    "scene_path": "models/decorations/utility/floor_warning_beacon.tscn",
+    "preview": "previews/floor_warning_beacon.png",
+    "code": "UT-06",
+    "category_code": "UT",
+    "category_label": "设备装饰",
+    "folder": "utility",
+    "placement": "地面",
+    "scene_tags": [
+      "设备间",
+      "仓库",
+      "办公楼"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "portable_beach_radio",
+    "label": "便携沙滩收音机",
+    "path": "models/decorations/leisure/portable_beach_radio.glb",
+    "scene_path": "models/decorations/leisure/portable_beach_radio.tscn",
+    "preview": "previews/portable_beach_radio.png",
+    "code": "LS-01",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "folded_beach_towels",
+    "label": "条纹沙滩巾叠放",
+    "path": "models/decorations/leisure/folded_beach_towels.glb",
+    "scene_path": "models/decorations/leisure/folded_beach_towels.tscn",
+    "preview": "previews/folded_beach_towels.png",
+    "code": "LS-02",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "sand_bucket_and_spade",
+    "label": "沙滩水桶与小铲",
+    "path": "models/decorations/leisure/sand_bucket_and_spade.glb",
+    "scene_path": "models/decorations/leisure/sand_bucket_and_spade.tscn",
+    "preview": "previews/sand_bucket_and_spade.png",
+    "code": "LS-03",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "tabletop_board_game",
+    "label": "桌面棋盘摆件",
+    "path": "models/decorations/leisure/tabletop_board_game.glb",
+    "scene_path": "models/decorations/leisure/tabletop_board_game.tscn",
+    "preview": "previews/tabletop_board_game.png",
+    "code": "LS-04",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "token_souvenir_display",
+    "label": "Token纪念币摆件",
+    "path": "models/decorations/leisure/token_souvenir_display.glb",
+    "scene_path": "models/decorations/leisure/token_souvenir_display.tscn",
+    "preview": "previews/token_souvenir_display.png",
+    "code": "LS-05",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "桌面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  },
+  {
+    "id": "swim_ring_display_stand",
+    "label": "游泳圈陈列架",
+    "path": "models/decorations/leisure/swim_ring_display_stand.glb",
+    "scene_path": "models/decorations/leisure/swim_ring_display_stand.tscn",
+    "preview": "previews/swim_ring_display_stand.png",
+    "code": "LS-06",
+    "category_code": "LS",
+    "category_label": "休闲摆件",
+    "folder": "leisure",
+    "placement": "地面",
+    "scene_tags": [
+      "住宅",
+      "海滩",
+      "休息室",
+      "礼品店"
+    ],
+    "collision_mode": "无碰撞装饰",
+    "static": true
+  }
+]

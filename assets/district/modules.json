@@ -1,0 +1,299 @@
+{
+  "awning": {
+    "footprint": [
+      288,
+      82
+    ],
+    "name": "蓝白遮阳篷",
+    "size": [
+      330,
+      127
+    ]
+  },
+  "bathtub": {
+    "footprint": [
+      198,
+      86
+    ],
+    "name": "独立浴缸",
+    "size": [
+      238,
+      137
+    ]
+  },
+  "bench": {
+    "footprint": [
+      150,
+      50
+    ],
+    "name": "街边长椅",
+    "size": [
+      173,
+      149
+    ]
+  },
+  "bicycle": {
+    "footprint": [
+      124,
+      34
+    ],
+    "name": "蓝色自行车",
+    "size": [
+      152,
+      113
+    ]
+  },
+  "bike_rack": {
+    "footprint": [
+      184,
+      46
+    ],
+    "name": "自行车停放架",
+    "size": [
+      200,
+      110
+    ]
+  },
+  "bollard": {
+    "footprint": [
+      20,
+      18
+    ],
+    "name": "道路护柱",
+    "size": [
+      22,
+      75
+    ]
+  },
+  "bus_stop": {
+    "footprint": [
+      260,
+      72
+    ],
+    "name": "鲸落港候车亭",
+    "size": [
+      311,
+      303
+    ]
+  },
+  "clothesline": {
+    "footprint": [
+      182,
+      28
+    ],
+    "name": "阳台晾衣架",
+    "size": [
+      206,
+      236
+    ]
+  },
+  "dinghy": {
+    "footprint": [
+      114,
+      146
+    ],
+    "name": "蓝湾小船",
+    "size": [
+      176,
+      123
+    ]
+  },
+  "elevator": {
+    "footprint": [
+      186,
+      28
+    ],
+    "name": "公寓电梯",
+    "size": [
+      196,
+      294
+    ]
+  },
+  "flower_stand": {
+    "footprint": [
+      130,
+      86
+    ],
+    "name": "花店阶梯花架",
+    "size": [
+      173,
+      174
+    ]
+  },
+  "hydrant": {
+    "footprint": [
+      40,
+      28
+    ],
+    "name": "消防水栓",
+    "size": [
+      46,
+      78
+    ]
+  },
+  "kiosk": {
+    "footprint": [
+      168,
+      90
+    ],
+    "name": "街角报刊亭",
+    "size": [
+      200,
+      208
+    ]
+  },
+  "lifebuoy": {
+    "footprint": [
+      22,
+      20
+    ],
+    "name": "港湾救生圈",
+    "size": [
+      52,
+      117
+    ]
+  },
+  "mailboxes": {
+    "footprint": [
+      174,
+      30
+    ],
+    "name": "住户信箱",
+    "size": [
+      179,
+      181
+    ]
+  },
+  "noticeboard": {
+    "footprint": [
+      164,
+      28
+    ],
+    "name": "社区公告栏",
+    "size": [
+      160,
+      226
+    ]
+  },
+  "outdoor_table": {
+    "footprint": [
+      226,
+      62
+    ],
+    "name": "街边双人桌",
+    "size": [
+      220,
+      137
+    ]
+  },
+  "parcel_locker": {
+    "footprint": [
+      164,
+      56
+    ],
+    "name": "蓝白包裹柜",
+    "size": [
+      180,
+      237
+    ]
+  },
+  "planter": {
+    "footprint": [
+      120,
+      46
+    ],
+    "name": "蓝白花箱",
+    "size": [
+      148,
+      103
+    ]
+  },
+  "recycling": {
+    "footprint": [
+      126,
+      44
+    ],
+    "name": "分类回收箱",
+    "size": [
+      146,
+      115
+    ]
+  },
+  "shower": {
+    "footprint": [
+      116,
+      96
+    ],
+    "name": "玻璃淋浴间",
+    "size": [
+      170,
+      273
+    ]
+  },
+  "stairs": {
+    "footprint": [
+      160,
+      140
+    ],
+    "name": "楼层阶梯",
+    "size": [
+      267,
+      300
+    ]
+  },
+  "streetlamp": {
+    "footprint": [
+      22,
+      20
+    ],
+    "name": "港湾路灯",
+    "size": [
+      92,
+      276
+    ]
+  },
+  "towel_rack": {
+    "footprint": [
+      76,
+      26
+    ],
+    "name": "浴室毛巾架",
+    "size": [
+      74,
+      133
+    ]
+  },
+  "tree": {
+    "footprint": [
+      54,
+      34
+    ],
+    "name": "街道小树",
+    "size": [
+      197,
+      301
+    ]
+  },
+  "vanity": {
+    "footprint": [
+      118,
+      54
+    ],
+    "name": "洗手台与镜子",
+    "size": [
+      146,
+      233
+    ]
+  },
+  "washer": {
+    "footprint": [
+      88,
+      68
+    ],
+    "name": "蓝白滚筒洗衣机",
+    "size": [
+      127,
+      142
+    ]
+  }
+}

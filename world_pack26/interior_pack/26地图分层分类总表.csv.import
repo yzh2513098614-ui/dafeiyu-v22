@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bdgpixftw8yxo"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/26地图分层分类总表.地图名称.translation", "res://world_pack26/interior_pack/26地图分层分类总表.区域ID.translation", "res://world_pack26/interior_pack/26地图分层分类总表.区域名称.translation", "res://world_pack26/interior_pack/26地图分层分类总表.楼层.translation", "res://world_pack26/interior_pack/26地图分层分类总表.标高米.translation", "res://world_pack26/interior_pack/26地图分层分类总表.功能ID.translation", "res://world_pack26/interior_pack/26地图分层分类总表.功能分类.translation", "res://world_pack26/interior_pack/26地图分层分类总表.分类标记.translation", "res://world_pack26/interior_pack/26地图分层分类总表.空间类型.translation", "res://world_pack26/interior_pack/26地图分层分类总表.平面边界米.translation", "res://world_pack26/interior_pack/26地图分层分类总表.可搜查容器.translation", "res://world_pack26/interior_pack/26地图分层分类总表.物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.通行逻辑.translation", "res://world_pack26/interior_pack/26地图分层分类总表.编辑场景.translation", "res://world_pack26/interior_pack/26地图分层分类总表.改造轮次.translation", "res://world_pack26/interior_pack/26地图分层分类总表.本轮新增模型实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.当前物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.本轮布置功能.translation"]
+
+source_file="res://world_pack26/interior_pack/26地图分层分类总表.csv"
+dest_files=["res://world_pack26/interior_pack/26地图分层分类总表.地图名称.translation", "res://world_pack26/interior_pack/26地图分层分类总表.区域ID.translation", "res://world_pack26/interior_pack/26地图分层分类总表.区域名称.translation", "res://world_pack26/interior_pack/26地图分层分类总表.楼层.translation", "res://world_pack26/interior_pack/26地图分层分类总表.标高米.translation", "res://world_pack26/interior_pack/26地图分层分类总表.功能ID.translation", "res://world_pack26/interior_pack/26地图分层分类总表.功能分类.translation", "res://world_pack26/interior_pack/26地图分层分类总表.分类标记.translation", "res://world_pack26/interior_pack/26地图分层分类总表.空间类型.translation", "res://world_pack26/interior_pack/26地图分层分类总表.平面边界米.translation", "res://world_pack26/interior_pack/26地图分层分类总表.可搜查容器.translation", "res://world_pack26/interior_pack/26地图分层分类总表.物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.通行逻辑.translation", "res://world_pack26/interior_pack/26地图分层分类总表.编辑场景.translation", "res://world_pack26/interior_pack/26地图分层分类总表.改造轮次.translation", "res://world_pack26/interior_pack/26地图分层分类总表.本轮新增模型实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.当前物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图分层分类总表.本轮布置功能.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

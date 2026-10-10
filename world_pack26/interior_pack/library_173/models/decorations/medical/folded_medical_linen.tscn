@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/medical/folded_medical_linen.glb" id="1"]
+
+[node name="folded_medical_linen" type="Node3D"]
+metadata/asset_id = "folded_medical_linen"
+metadata/asset_label = "折叠护理布巾"
+metadata/code = "MD-06"
+metadata/category_code = "MD"
+metadata/category_label = "医疗装饰"
+metadata/folder = "medical"
+metadata/placement = "桌面"
+metadata/scene_tags = ["医院", "诊所", "实验室"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

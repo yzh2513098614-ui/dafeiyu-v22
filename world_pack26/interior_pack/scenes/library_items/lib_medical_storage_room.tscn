@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/scenes/medical_storage_room.glb" id="e0"]
+
+[sub_resource type="BoxShape3D" id="r0"]
+size = Vector3(6.4,0.16,5.2)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(6.4,2.7,0.14)
+
+[sub_resource type="BoxShape3D" id="r2"]
+size = Vector3(0.13,0.57,5.2)
+
+[sub_resource type="BoxShape3D" id="r3"]
+size = Vector3(0.13,0.57,5.2)
+
+[sub_resource type="BoxShape3D" id="r4"]
+size = Vector3(0.97,1.81,0.81)
+
+[sub_resource type="BoxShape3D" id="r5"]
+size = Vector3(1.04,1.06,0.36)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(0.87,1.24,0.72)
+
+[sub_resource type="BoxShape3D" id="r7"]
+size = Vector3(0.84,0.43,0.65)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(1.1,1.0575,0.68)
+
+[sub_resource type="BoxShape3D" id="r9"]
+size = Vector3(0.93,0.56,0.72)
+
+[node name="lib_medical_storage_room" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_medical_storage_room", "name": "冷链救护室·搜查容器布局", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Body0" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body0"]
+position = Vector3(0.0,0.08,0.0)
+shape = SubResource("r0")
+
+[node name="Body1" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body1"]
+position = Vector3(0.0,1.51,2.6)
+shape = SubResource("r1")
+
+[node name="Body2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body2"]
+position = Vector3(-3.2,0.445,0.0)
+shape = SubResource("r2")
+
+[node name="Body3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body3"]
+position = Vector3(3.2,0.445,0.0)
+shape = SubResource("r3")
+
+[node name="Body4" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body4"]
+position = Vector3(-2.18,1.065,1.9)
+shape = SubResource("r4")
+
+[node name="Body5" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body5"]
+position = Vector3(-0.61,1.37,2.42)
+shape = SubResource("r5")
+
+[node name="Body6" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body6"]
+position = Vector3(1.46,0.78,1.93)
+shape = SubResource("r6")
+
+[node name="Body7" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body7"]
+position = Vector3(-1.8,0.375,-0.9)
+shape = SubResource("r7")
+
+[node name="Body8" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body8"]
+position = Vector3(0.05,0.70875,-1.0)
+shape = SubResource("r8")
+
+[node name="Body9" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body9"]
+position = Vector3(2.01,0.44,-0.85)
+shape = SubResource("r9")

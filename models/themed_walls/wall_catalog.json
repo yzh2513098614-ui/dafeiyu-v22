@@ -1,0 +1,302 @@
+[
+  {
+    "kind": "restaurant_dining",
+    "name": "原墙细拼缝",
+    "style": "panel",
+    "parts": 5,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "restaurant_patisserie",
+    "name": "浅暖灰半墙瓷砖",
+    "style": "tile",
+    "parts": 29,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "restaurant_bar",
+    "name": "灰木竖条护墙",
+    "style": "slat",
+    "parts": 27,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "restaurant_kitchen",
+    "name": "厨房小方砖",
+    "style": "tile",
+    "parts": 59,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "restaurant_pantry",
+    "name": "储藏横向金属板",
+    "style": "horizontal",
+    "parts": 11,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "restaurant_lounge",
+    "name": "卡座窄框嵌板",
+    "style": "frame",
+    "parts": 29,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_lobby",
+    "name": "门厅大灰白板",
+    "style": "panel",
+    "parts": 7,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_classroom",
+    "name": "教室浅青灰护墙",
+    "style": "wainscot",
+    "parts": 11,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_staff",
+    "name": "备课室双横拼板",
+    "style": "horizontal",
+    "parts": 7,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_library",
+    "name": "图书室细灰木条",
+    "style": "slat",
+    "parts": 39,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_science",
+    "name": "科学室窄瓷砖",
+    "style": "tile",
+    "parts": 37,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_art",
+    "name": "美术室错缝砖",
+    "style": "brick",
+    "parts": 49,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_math",
+    "name": "数学室三层拼板",
+    "style": "horizontal",
+    "parts": 9,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_language",
+    "name": "语言室方形嵌板",
+    "style": "frame",
+    "parts": 37,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_media",
+    "name": "媒体室吸音分格",
+    "style": "acoustic",
+    "parts": 23,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_observatory",
+    "name": "天文室深灰护墙",
+    "style": "wainscot",
+    "parts": 13,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_craft",
+    "name": "工艺室细条双横框",
+    "style": "slat_rail",
+    "parts": 35,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "school_store",
+    "name": "教具室竖拼板",
+    "style": "panel",
+    "parts": 13,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_lobby",
+    "name": "医院门厅浅石材",
+    "style": "frame",
+    "parts": 21,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_triage",
+    "name": "分诊室浅青护墙",
+    "style": "wainscot",
+    "parts": 15,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_consult",
+    "name": "门诊中幅瓷砖",
+    "style": "tile",
+    "parts": 25,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_pharmacy",
+    "name": "药房错缝墙砖",
+    "style": "brick",
+    "parts": 57,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_imaging",
+    "name": "影像室灰蓝金属板",
+    "style": "panel_rail",
+    "parts": 13,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_waiting",
+    "name": "候诊室低框护墙",
+    "style": "frame",
+    "parts": 45,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_ward",
+    "name": "病房防撞护墙",
+    "style": "bumper",
+    "parts": 13,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_treatment",
+    "name": "治疗室小砖双横线",
+    "style": "tile_rail",
+    "parts": 41,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_nurse",
+    "name": "护士站横拼护墙",
+    "style": "horizontal",
+    "parts": 13,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_recovery",
+    "name": "恢复室浅灰木条",
+    "style": "slat",
+    "parts": 35,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_lab",
+    "name": "检验室大方砖",
+    "style": "tile",
+    "parts": 21,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  },
+  {
+    "kind": "hospital_quiet",
+    "name": "安静区细框嵌板",
+    "style": "frame_rail",
+    "parts": 33,
+    "width": 2.7,
+    "body_height": 1.1,
+    "body_depth": 0.2,
+    "cap_depth": 0.25
+  }
+]

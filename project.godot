@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="大肥鱼 · 数值战斗怪物 v22"
+run/main_scene="res://ui/start_menu.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1448
+window/size/viewport_height=1086
+window/size/window_width_override=1000
+window/size/window_height_override=750
+window/stretch/mode="canvas_items"
+; 设计画布是 1448x1086（4:3）。保持默认的 keep 时，在 16:9 全屏上会被等比缩到
+; 1440x1080 居中，左右各留约 240px 黑边。expand 让画布宽度随窗口伸展：
+; 1920x1080 下逻辑画布变成约 1931x1086，黑边消失，高度不变。
+; 代价是所有靠右固定定位的 UI 必须改成锚定右边缘（见 ui/ui_fit.gd）。
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+anti_aliasing/quality/msaa_3d=2
+
+lights_and_shadows/directional_shadow/size=4096
+lights_and_shadows/directional_shadow/16_bits=false
+lights_and_shadows/positional_shadow/atlas_size=2048
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=2
+lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=2
+lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=3
+lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=3
+
+[autoload]
+
+HarborPrefs="*res://ui/harbor_prefs.gd"
+MusicDirector="*res://music/music_director.gd"
+
+SfxDirector="*res://sound/sfx_director.gd"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/retail/small_price_display.glb" id="1"]
+
+[node name="small_price_display" type="Node3D"]
+metadata/asset_id = "small_price_display"
+metadata/asset_label = "小型商品价签架"
+metadata/code = "SH-04"
+metadata/category_code = "SH"
+metadata/category_label = "商店展示"
+metadata/folder = "retail"
+metadata/placement = "桌面"
+metadata/scene_tags = ["商场", "便利店", "礼品店"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

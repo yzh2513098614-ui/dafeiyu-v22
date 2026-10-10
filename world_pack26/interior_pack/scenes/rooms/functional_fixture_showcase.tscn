@@ -1,0 +1,231 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/response_van.tscn" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/ivory.tres" id="e1"]
+
+[ext_resource type="FontFile" path="res://world_pack26/interior_pack/assets/NotoSansSC.ttf" id="e2"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/hex_exhibition_island.tscn" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/tier_seat_strip.tscn" id="e4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/commercial_extract_hood.tscn" id="e5"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/server_cable_ladder.tscn" id="e6"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/curved_studio_backdrop.tscn" id="e7"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(10.0,0.14,7.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(10.0,0.14,7.0)
+
+[sub_resource type="FontVariation" id="r2"]
+base_font = ExtResource("e2")
+variation_opentype = {2003265652:650.0}
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(14.0,0.14,7.0)
+
+[sub_resource type="BoxShape3D" id="r4"]
+size = Vector3(14.0,0.14,7.0)
+
+[sub_resource type="Environment" id="r5"]
+background_mode = 1
+background_color = Color(0.847,0.914,0.961,1)
+ambient_light_source = 3
+ambient_light_color = Color(0.847,0.918,1,1)
+ambient_light_energy = 0.40
+
+[node name="FunctionalFixtureShowcase" type="Node3D"]
+
+
+[node name="response_van" parent="." instance=ExtResource("e0")]
+position = Vector3(-12.0,0.04,-8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth" type="MeshInstance3D" parent="."]
+position = Vector3(-12.0,-0.03,-8.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody"]
+position = Vector3(-12.0,-0.03,-8.0)
+shape = SubResource("r1")
+
+[node name="Sign5" type="Label3D" parent="."]
+position = Vector3(-12.0,0.1,-4.9)
+text = "应急车辆"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="hex_exhibition_island" parent="." instance=ExtResource("e3")]
+position = Vector3(0.0,0.04,-8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,-0.03,-8.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody_2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody_2"]
+position = Vector3(0.0,-0.03,-8.0)
+shape = SubResource("r1")
+
+[node name="Sign10" type="Label3D" parent="."]
+position = Vector3(0.0,0.1,-4.9)
+text = "六边形展台"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="tier_seat_strip" parent="." instance=ExtResource("e4")]
+position = Vector3(12.0,0.04,-8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth_3" type="MeshInstance3D" parent="."]
+position = Vector3(12.0,-0.03,-8.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody_3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody_3"]
+position = Vector3(12.0,-0.03,-8.0)
+shape = SubResource("r1")
+
+[node name="Sign15" type="Label3D" parent="."]
+position = Vector3(12.0,0.1,-4.9)
+text = "阶梯观众座席"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="commercial_extract_hood" parent="." instance=ExtResource("e5")]
+position = Vector3(-12.0,0.04,8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth_4" type="MeshInstance3D" parent="."]
+position = Vector3(-12.0,-0.03,8.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody_4" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody_4"]
+position = Vector3(-12.0,-0.03,8.0)
+shape = SubResource("r1")
+
+[node name="Sign20" type="Label3D" parent="."]
+position = Vector3(-12.0,0.1,11.1)
+text = "厨房排烟罩"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="server_cable_ladder" parent="." instance=ExtResource("e6")]
+position = Vector3(0.0,0.04,8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth_5" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,-0.03,8.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody_5" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody_5"]
+position = Vector3(0.0,-0.03,8.0)
+shape = SubResource("r1")
+
+[node name="Sign25" type="Label3D" parent="."]
+position = Vector3(0.0,0.1,11.1)
+text = "机房架空桥架"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="curved_studio_backdrop" parent="." instance=ExtResource("e7")]
+position = Vector3(12.0,0.04,8.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="FixturePlinth_6" type="MeshInstance3D" parent="."]
+position = Vector3(12.0,-0.03,5.8)
+mesh = SubResource("r3")
+material_override = ExtResource("e1")
+
+[node name="FixturePlinthBody_6" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="FixturePlinthBody_6"]
+position = Vector3(12.0,-0.03,5.8)
+shape = SubResource("r4")
+
+[node name="Sign30" type="Label3D" parent="."]
+position = Vector3(12.0,0.1,8.9)
+text = "弧形演播布景"
+font = SubResource("r2")
+font_size = 35
+pixel_size = 0.024
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("r5")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55,-28,0)
+light_energy = 0.65
+shadow_enabled = true
+
+[node name="Fill" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-35,135,0)
+light_color = Color(0.80,0.91,1,1)
+light_energy = 0.12
+
+[node name="Camera" type="Camera3D" parent="."]
+position = Vector3(28,34,43)
+rotation_degrees = Vector3(-32.42859,33.07068,0.0)
+projection = 1
+size = 47.0
+current = true

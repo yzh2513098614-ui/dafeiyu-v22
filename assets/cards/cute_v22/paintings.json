@@ -1,0 +1,170 @@
+{
+  "never_surrender": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 0
+  },
+  "whale_impact": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 1
+  },
+  "deep_blue_shield": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 2
+  },
+  "tidal_healing": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 3
+  },
+  "token_torrent": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 4
+  },
+  "echo_summon": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 5
+  },
+  "precise_search": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 6
+  },
+  "deep_thinking": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 7
+  },
+  "memory_recall": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 8
+  },
+  "compute_overdrive": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 9
+  },
+  "ocean_echo": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 10
+  },
+  "zero_restart": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 11
+  },
+  "tidal_slash": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 12
+  },
+  "blue_lightning": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 13
+  },
+  "water_spear": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 14
+  },
+  "wave_advance": {
+    "atlas": "res://assets/cards/cute_v22/paintings_01.png",
+    "cell": 15
+  },
+  "whale_combo": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 0
+  },
+  "ocean_release": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 1
+  },
+  "whale_guard": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 2
+  },
+  "pearl_healing": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 3
+  },
+  "inspired_thought": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 4
+  },
+  "token_reward": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 5
+  },
+  "quiet_rest": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 6
+  },
+  "together_forward": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 7
+  },
+  "frost_bind": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 8
+  },
+  "silent_seal": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 9
+  },
+  "bubble_prison": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 10
+  },
+  "force_interrupt": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 11
+  },
+  "time_slow": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 12
+  },
+  "current_tangle": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 13
+  },
+  "evasive_step": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 14
+  },
+  "umbrella_parry": {
+    "atlas": "res://assets/cards/cute_v22/paintings_02.png",
+    "cell": 15
+  },
+  "wave_jump": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 0
+  },
+  "deep_stealth": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 1
+  },
+  "current_counter": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 2
+  },
+  "rewind_step": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 3
+  },
+  "whale_scout": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 4
+  },
+  "team_command": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 5
+  },
+  "data_sort": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 6
+  },
+  "secure_backup": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 7
+  },
+  "token_bargain": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 8
+  },
+  "efficient_compute": {
+    "atlas": "res://assets/cards/cute_v22/paintings_03.png",
+    "cell": 9
+  }
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://busmnh72jmaa8"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/错层地下地图分层分类标记.地图名称.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.区域ID.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.区域名称.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.楼层.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.标高米.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.功能ID.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.功能分类.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.空间类型.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.分类标记.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.可搜查容器.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.物品实例数量.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.编辑层.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.通行逻辑.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.素材来源.translation"]
+
+source_file="res://world_pack26/interior_pack/错层地下地图分层分类标记.csv"
+dest_files=["res://world_pack26/interior_pack/错层地下地图分层分类标记.地图名称.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.区域ID.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.区域名称.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.楼层.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.标高米.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.功能ID.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.功能分类.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.空间类型.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.分类标记.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.可搜查容器.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.物品实例数量.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.编辑层.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.通行逻辑.translation", "res://world_pack26/interior_pack/错层地下地图分层分类标记.素材来源.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

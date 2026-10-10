@@ -1,0 +1,2492 @@
+{
+  "checks": [
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "plaster_ivory",
+      "meshes": 3,
+      "name": "浅灰平涂墙板",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "oak_slats",
+      "meshes": 9,
+      "name": "橡木格栅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "walnut_slats",
+      "meshes": 9,
+      "name": "胡桃格栅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "slate_panels",
+      "meshes": 5,
+      "name": "石板墙",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "concrete_panels",
+      "meshes": 3,
+      "name": "混凝土墙",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "navy_padded",
+      "meshes": 3,
+      "name": "深蓝软包",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "plaster_mint",
+      "meshes": 3,
+      "name": "薄荷墙",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "cream_tile",
+      "meshes": 3,
+      "name": "奶油瓷砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "brushed_metal",
+      "meshes": 5,
+      "name": "拉丝金属",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "beige_wainscot",
+      "meshes": 5,
+      "name": "冷灰科技墙板",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "white_marble",
+      "meshes": 3,
+      "name": "白色大理石",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33399999141693,
+        2.77999997138977,
+        0.28600001335144
+      ],
+      "id": "pale_wainscot",
+      "meshes": 5,
+      "name": "浅灰科技墙板",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.109999999403954,
+        0.340000003576279
+      ],
+      "id": "cap_charcoal",
+      "meshes": 1,
+      "name": "深灰压顶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.109999999403954,
+        0.340000003576279
+      ],
+      "id": "cap_oak",
+      "meshes": 1,
+      "name": "橡木压顶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.100000001490116,
+        0.0799999982118607
+      ],
+      "id": "base_charcoal",
+      "meshes": 1,
+      "name": "深灰踢脚线",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.100000001490116,
+        0.0799999982118607
+      ],
+      "id": "base_oak",
+      "meshes": 1,
+      "name": "橡木踢脚线",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.025000000372529,
+        0.0350000038743019
+      ],
+      "id": "rail_cyan",
+      "meshes": 1,
+      "name": "蓝色灯带",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33340001106262,
+        0.025000000372529,
+        0.0350000038743019
+      ],
+      "id": "rail_amber",
+      "meshes": 1,
+      "name": "暖色灯带",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.180000007152557,
+        2.77999997138977,
+        0.180000007152557
+      ],
+      "id": "post_charcoal",
+      "meshes": 1,
+      "name": "深灰立柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.180000007152557,
+        2.77999997138977,
+        0.180000007152557
+      ],
+      "id": "post_oak",
+      "meshes": 1,
+      "name": "橡木立柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.180000007152557,
+        2.77999997138977,
+        0.180000007152557
+      ],
+      "id": "post_cream",
+      "meshes": 1,
+      "name": "奶油立柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.259999990463257,
+        2.77999997138977,
+        0.259999990463257
+      ],
+      "id": "corner_charcoal",
+      "meshes": 1,
+      "name": "深灰转角柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.259999990463257,
+        2.77999997138977,
+        0.259999990463257
+      ],
+      "id": "corner_oak",
+      "meshes": 1,
+      "name": "橡木转角柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.180000007152557,
+        2.77999997138977,
+        0.19200000166893
+      ],
+      "id": "post_cyan",
+      "meshes": 2,
+      "name": "蓝灯立柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.04999995231628,
+        1.36000001430511,
+        2.75
+      ],
+      "id": "bed_navy",
+      "meshes": 19,
+      "name": "蓝白现代床",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.04999995231628,
+        1.36000001430511,
+        2.75
+      ],
+      "id": "bed_sage",
+      "meshes": 19,
+      "name": "冰蓝现代床",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.5,
+        0.944999992847443,
+        1.04499995708466
+      ],
+      "id": "desk_oak",
+      "meshes": 11,
+      "name": "浅色现代书桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.5,
+        0.944999992847443,
+        1.04499995708466
+      ],
+      "id": "desk_white",
+      "meshes": 11,
+      "name": "白色书桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.39999997615814,
+        2.40000009536743,
+        0.610000014305115
+      ],
+      "id": "bookcase",
+      "meshes": 56,
+      "name": "书架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.50499999523163,
+        2.28999996185303,
+        0.847499966621399
+      ],
+      "id": "wardrobe",
+      "meshes": 12,
+      "name": "衣柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.63000011444092,
+        1.23500001430511,
+        1.13999998569489
+      ],
+      "id": "loveseat_navy",
+      "meshes": 15,
+      "name": "双人沙发",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.63000011444092,
+        1.23500001430511,
+        1.13999998569489
+      ],
+      "id": "sofa_cream",
+      "meshes": 15,
+      "name": "奶白双人沙发",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        1.23500001430511,
+        1.13999998569489
+      ],
+      "id": "armchair_navy",
+      "meshes": 12,
+      "name": "蓝色扶手椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        1.23500001430511,
+        1.13999998569489
+      ],
+      "id": "armchair_sage",
+      "meshes": 12,
+      "name": "冰蓝单人沙发",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.10000002384186,
+        0.620000064373016,
+        1.10000002384186
+      ],
+      "id": "side_table",
+      "meshes": 3,
+      "name": "圆形现代边几",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.07999992370605,
+        0.526500046253204,
+        1.04900002479553
+      ],
+      "id": "coffee_table",
+      "meshes": 8,
+      "name": "玻璃茶几",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.6800000667572,
+        0.820000052452087,
+        1.67999994754791
+      ],
+      "id": "dining_round",
+      "meshes": 3,
+      "name": "圆餐桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.52999997138977,
+        0.855000019073486,
+        1.14999997615814
+      ],
+      "id": "dining_white",
+      "meshes": 5,
+      "name": "白餐桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.720000028610229,
+        1.1949999332428,
+        0.740000009536743
+      ],
+      "id": "chair_oak",
+      "meshes": 6,
+      "name": "木椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.720000028610229,
+        1.1949999332428,
+        0.740000009536743
+      ],
+      "id": "chair_white",
+      "meshes": 6,
+      "name": "白椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.849999964237213,
+        1.15249991416931,
+        0.740000009536743
+      ],
+      "id": "office_chair",
+      "meshes": 11,
+      "name": "办公椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.07500004768372,
+        0.700000047683716,
+        0.825999975204468
+      ],
+      "id": "nightstand",
+      "meshes": 10,
+      "name": "床头柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.07500004768372,
+        1.03999996185303,
+        0.825999975204468
+      ],
+      "id": "dresser",
+      "meshes": 12,
+      "name": "斗柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.60500001907349,
+        1.37999999523163,
+        0.748999953269959
+      ],
+      "id": "cubby",
+      "meshes": 22,
+      "name": "格子柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.70499992370605,
+        0.670000016689301,
+        0.705999970436096
+      ],
+      "id": "tv_cabinet",
+      "meshes": 10,
+      "name": "电视柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.01499998569489,
+        1.1599999666214,
+        0.546000003814697
+      ],
+      "id": "shoe_cabinet",
+      "meshes": 10,
+      "name": "鞋柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.91999995708466,
+        0.504999995231628,
+        0.709999978542328
+      ],
+      "id": "entry_bench",
+      "meshes": 5,
+      "name": "入口长凳",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.670000016689301,
+        1.67499995231628,
+        0.5
+      ],
+      "id": "coat_rack",
+      "meshes": 4,
+      "name": "衣帽架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.70000004768372,
+        1.69249999523163,
+        0.280000001192093
+      ],
+      "id": "window_oak",
+      "meshes": 53,
+      "name": "城市全景窗 · A",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.70000004768372,
+        1.69249999523163,
+        0.280000001192093
+      ],
+      "id": "window_city",
+      "meshes": 53,
+      "name": "城市全景窗 · B",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.70000004768372,
+        1.69249999523163,
+        0.280000001192093
+      ],
+      "id": "window_frost",
+      "meshes": 53,
+      "name": "磨砂窗",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.70000004768372,
+        1.69249999523163,
+        0.280000001192093
+      ],
+      "id": "window_arch",
+      "meshes": 53,
+      "name": "拱形窗",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35500001907349,
+        2.52999997138977,
+        0.197499990463257
+      ],
+      "id": "door_walnut",
+      "meshes": 6,
+      "name": "现代深色门",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35500001907349,
+        2.52999997138977,
+        0.197499990463257
+      ],
+      "id": "door_ivory",
+      "meshes": 6,
+      "name": "现代浅灰门",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35500001907349,
+        2.52999997138977,
+        0.197499990463257
+      ],
+      "id": "door_glass",
+      "meshes": 6,
+      "name": "蓝灰玻璃门",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35500001907349,
+        2.52999997138977,
+        0.197499990463257
+      ],
+      "id": "door_sliding",
+      "meshes": 6,
+      "name": "双滑门",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.65000009536743,
+        1.71749997138977,
+        0.0820000097155571
+      ],
+      "id": "curtains_ivory",
+      "meshes": 9,
+      "name": "白窗帘",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.65000009536743,
+        1.71749997138977,
+        0.0820000097155571
+      ],
+      "id": "curtains_navy",
+      "meshes": 9,
+      "name": "蓝窗帘",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.79999995231628,
+        1.13999998569489,
+        0.105000004172325
+      ],
+      "id": "blind",
+      "meshes": 14,
+      "name": "百叶帘",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.79999995231628,
+        1.13999998569489,
+        0.105000004172325
+      ],
+      "id": "shutters",
+      "meshes": 14,
+      "name": "木百叶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.25,
+        0.46000000834465,
+        0.101000003516674
+      ],
+      "id": "terminal",
+      "meshes": 5,
+      "name": "终端",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.25,
+        0.46000000834465,
+        0.101000003516674
+      ],
+      "id": "intercom",
+      "meshes": 5,
+      "name": "门禁",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.419999986886978,
+        0.419999986886978,
+        0.0599999986588955
+      ],
+      "id": "vent",
+      "meshes": 8,
+      "name": "通风口",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.0,
+        0.319999992847443,
+        0.237499997019768
+      ],
+      "id": "air_conditioner",
+      "meshes": 7,
+      "name": "空调",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860042572021484,
+        1.00061392784119,
+        0.860042691230774
+      ],
+      "id": "plant_broadleaf",
+      "meshes": 27,
+      "name": "阔叶盆栽",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860042572021484,
+        1.00061392784119,
+        0.860042691230774
+      ],
+      "id": "plant_fiddle",
+      "meshes": 27,
+      "name": "琴叶榕",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860042572021484,
+        1.00061392784119,
+        0.860042691230774
+      ],
+      "id": "plant_snake",
+      "meshes": 27,
+      "name": "虎尾兰",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.351835608482361,
+        0.748363256454468,
+        0.351835608482361
+      ],
+      "id": "plant_hanging",
+      "meshes": 50,
+      "name": "吊绿萝",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.351835608482361,
+        0.409342050552368,
+        0.351835608482361
+      ],
+      "id": "bonsai",
+      "meshes": 27,
+      "name": "盆景",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.351835608482361,
+        0.409342050552368,
+        0.351835608482361
+      ],
+      "id": "succulents",
+      "meshes": 27,
+      "name": "多肉",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.351835608482361,
+        0.410625010728836,
+        0.351835608482361
+      ],
+      "id": "flowers",
+      "meshes": 75,
+      "name": "花瓶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.351835608482361,
+        0.409342050552368,
+        0.351835608482361
+      ],
+      "id": "fern",
+      "meshes": 27,
+      "name": "蕨类",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.489999979734421,
+        0.319999992847443,
+        0.260999977588654
+      ],
+      "id": "books",
+      "meshes": 12,
+      "name": "叠书",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.441410720348358,
+        0.0635784566402435,
+        0.28999999165535
+      ],
+      "id": "open_book",
+      "meshes": 6,
+      "name": "打开的书",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.252999991178513,
+        0.238999992609024,
+        0.264158099889755
+      ],
+      "id": "whale_mug",
+      "meshes": 15,
+      "name": "鲸鱼杯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.670000016689301,
+        0.23649999499321,
+        0.439999997615814
+      ],
+      "id": "tea_tray",
+      "meshes": 7,
+      "name": "茶盘",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860000014305115,
+        0.757499992847443,
+        0.579999983310699
+      ],
+      "id": "laptop",
+      "meshes": 7,
+      "name": "笔记本电脑",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860000014305115,
+        0.762499988079071,
+        0.259999990463257
+      ],
+      "id": "monitor",
+      "meshes": 8,
+      "name": "显示器",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.620000004768372,
+        0.0480000004172325,
+        0.239999994635582
+      ],
+      "id": "keyboard",
+      "meshes": 28,
+      "name": "键鼠",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.550000011920929,
+        0.165000006556511,
+        0.360000014305115
+      ],
+      "id": "folded_blanket",
+      "meshes": 3,
+      "name": "叠毯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.423467338085175,
+        0.6875,
+        0.423467338085175
+      ],
+      "id": "lamp_table",
+      "meshes": 3,
+      "name": "磨砂球形台灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.423467338085175,
+        1.74749982357025,
+        0.423467338085175
+      ],
+      "id": "lamp_floor",
+      "meshes": 3,
+      "name": "磨砂球形落地灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.140000000596046,
+        0.639999985694885,
+        0.109999999403954
+      ],
+      "id": "lamp_wall",
+      "meshes": 2,
+      "name": "壁灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.75,
+        0.0649999976158142,
+        0.0450000017881393
+      ],
+      "id": "light_cyan",
+      "meshes": 1,
+      "name": "蓝光灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860000014305115,
+        0.680000007152557,
+        0.379999995231628
+      ],
+      "id": "painting_mountain",
+      "meshes": 5,
+      "name": "山景画",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.860000014305115,
+        0.680000007152557,
+        0.355370342731476
+      ],
+      "id": "painting_whale",
+      "meshes": 14,
+      "name": "鲸鱼画",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.540000081062317,
+        0.540000081062317,
+        0.0815000087022781
+      ],
+      "id": "clock",
+      "meshes": 4,
+      "name": "时钟",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.600000023841858,
+        0.920000016689301,
+        0.0605000033974648
+      ],
+      "id": "mirror",
+      "meshes": 2,
+      "name": "镜子",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.579999983310699,
+        0.467500030994415,
+        0.519999980926514
+      ],
+      "id": "basket",
+      "meshes": 3,
+      "name": "便携收纳盒",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.01999998092651,
+        0.995999991893768,
+        0.738726854324341
+      ],
+      "id": "storage_box",
+      "meshes": 21,
+      "name": "收纳箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.437265396118164,
+        0.132499992847443,
+        0.346201926469803
+      ],
+      "id": "slippers",
+      "meshes": 4,
+      "name": "拖鞋",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.472707688808441,
+        0.170000001788139,
+        0.472707688808441
+      ],
+      "id": "cushion",
+      "meshes": 1,
+      "name": "抱枕",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.760146915912628,
+        0.32480001449585,
+        0.515286982059479
+      ],
+      "id": "whale_plush",
+      "meshes": 12,
+      "name": "鲸鱼玩偶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.5,
+        0.480000019073486,
+        0.5
+      ],
+      "id": "waste_bin",
+      "meshes": 2,
+      "name": "垃圾桶",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.560000061988831,
+        0.680000007152557,
+        0.560000061988831
+      ],
+      "id": "lantern",
+      "meshes": 10,
+      "name": "提灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.16999995708466,
+        0.529999971389771,
+        0.300000011920929
+      ],
+      "id": "shelf_books",
+      "meshes": 9,
+      "name": "书本壁架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.23000001907349,
+        2.27999997138977,
+        0.985000014305115
+      ],
+      "id": "fridge",
+      "meshes": 6,
+      "name": "冰箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        1.30999994277954,
+        1.03400003910065
+      ],
+      "id": "sink_counter",
+      "meshes": 10,
+      "name": "水槽台",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        0.993000030517578,
+        1.03400003910065
+      ],
+      "id": "stove_counter",
+      "meshes": 11,
+      "name": "灶台",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        0.955000042915344,
+        1.03400003910065
+      ],
+      "id": "counter_blank",
+      "meshes": 6,
+      "name": "空台面",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        0.955000042915344,
+        1.03400003910065
+      ],
+      "id": "oven_counter",
+      "meshes": 7,
+      "name": "烤箱柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        0.955000042915344,
+        1.03400003910065
+      ],
+      "id": "corner_counter",
+      "meshes": 6,
+      "name": "转角台",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.35000002384186,
+        0.955000042915344,
+        1.03400003910065
+      ],
+      "id": "bar_cabinet",
+      "meshes": 6,
+      "name": "吧台柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.17000007629395,
+        1.76499998569489,
+        1.03400003910065
+      ],
+      "id": "bakery_case",
+      "meshes": 10,
+      "name": "展示柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.529999971389771,
+        0.349999994039536,
+        0.399999976158142
+      ],
+      "id": "espresso",
+      "meshes": 6,
+      "name": "咖啡机",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.649999976158142,
+        0.379999995231628,
+        0.462500005960464
+      ],
+      "id": "microwave",
+      "meshes": 5,
+      "name": "微波炉",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.48000001907349,
+        0.879999995231628,
+        0.506999969482422
+      ],
+      "id": "upper_cabinet",
+      "meshes": 3,
+      "name": "吊柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.75,
+        0.322499990463257,
+        0.280000001192093
+      ],
+      "id": "plate_rack",
+      "meshes": 13,
+      "name": "盘架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.720000028610229,
+        1.4724999666214,
+        0.740000009536743
+      ],
+      "id": "bar_stool",
+      "meshes": 4,
+      "name": "吧凳",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.25,
+        0.790000021457672,
+        0.600000023841858
+      ],
+      "id": "tea_trolley",
+      "meshes": 6,
+      "name": "茶水车",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.819999992847443,
+        1.56148135662079,
+        0.663099586963654
+      ],
+      "id": "menu_easel",
+      "meshes": 11,
+      "name": "菜单架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.23000001907349,
+        2.27999997138977,
+        1.00499999523163
+      ],
+      "id": "vending_machine",
+      "meshes": 14,
+      "name": "售货机",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_oak",
+      "meshes": 1,
+      "name": "米灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_pale_oak",
+      "meshes": 1,
+      "name": "暖白地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_walnut",
+      "meshes": 1,
+      "name": "深灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_herringbone",
+      "meshes": 1,
+      "name": "中灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_ivory_tile",
+      "meshes": 1,
+      "name": "浅灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_slate_tile",
+      "meshes": 1,
+      "name": "石板灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_concrete",
+      "meshes": 1,
+      "name": "混凝土灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_marble",
+      "meshes": 1,
+      "name": "云白地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_terrazzo",
+      "meshes": 1,
+      "name": "青灰地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_navy_carpet",
+      "meshes": 1,
+      "name": "海军蓝软质地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_tatami",
+      "meshes": 1,
+      "name": "浅绿地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.666666686534882,
+        0.0350000001490116,
+        0.666666686534882
+      ],
+      "id": "floor_metal_grid",
+      "meshes": 1,
+      "name": "金属格栅地砖",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        3.0,
+        0.349438339471817,
+        1.01062154769897
+      ],
+      "id": "district_awning",
+      "meshes": 20,
+      "name": "蓝白遮阳篷",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.05999994277954,
+        0.837499976158142,
+        0.939999997615814
+      ],
+      "id": "district_bathtub",
+      "meshes": 12,
+      "name": "独立浴缸",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.54999995231628,
+        1.02250003814697,
+        0.537499964237213
+      ],
+      "id": "district_bench",
+      "meshes": 11,
+      "name": "街边长椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.61999988555908,
+        1.0,
+        0.400000005960464
+      ],
+      "id": "district_bicycle",
+      "meshes": 16,
+      "name": "蓝色自行车",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.89999997615814,
+        0.606499969959259,
+        0.449999988079071
+      ],
+      "id": "district_bike_rack",
+      "meshes": 10,
+      "name": "自行车停放架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.170000016689301,
+        0.649999976158142,
+        0.170000016689301
+      ],
+      "id": "district_bollard",
+      "meshes": 2,
+      "name": "道路护柱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.79999995231628,
+        2.40999984741211,
+        1.04999995231628
+      ],
+      "id": "district_bus_stop",
+      "meshes": 7,
+      "name": "鲸落港候车亭",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.20000004768372,
+        1.97699999809265,
+        0.0684999972581863
+      ],
+      "id": "district_clothesline",
+      "meshes": 17,
+      "name": "阳台晾衣架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.39486384391785,
+        0.595876216888428,
+        2.56049990653992
+      ],
+      "id": "district_dinghy",
+      "meshes": 8,
+      "name": "蓝湾小船",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.09500002861023,
+        2.54999995231628,
+        0.247500002384186
+      ],
+      "id": "district_elevator",
+      "meshes": 5,
+      "name": "公寓电梯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.29999995231628,
+        1.3199999332428,
+        0.945664525032043
+      ],
+      "id": "district_flower_stand",
+      "meshes": 105,
+      "name": "花店阶梯花架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.400000005960464,
+        0.645000040531158,
+        0.320000022649765
+      ],
+      "id": "district_hydrant",
+      "meshes": 3,
+      "name": "消防水栓",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.6599999666214,
+        1.55000007152557,
+        1.0550000667572
+      ],
+      "id": "district_kiosk",
+      "meshes": 20,
+      "name": "街角报刊亭",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.5,
+        1.12000000476837,
+        0.138042271137238
+      ],
+      "id": "district_lifebuoy",
+      "meshes": 6,
+      "name": "港湾救生圈",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.79999995231628,
+        1.39999997615814,
+        0.327499985694885
+      ],
+      "id": "district_mailboxes",
+      "meshes": 28,
+      "name": "住户信箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.70000004768372,
+        1.95000004768372,
+        0.141999989748001
+      ],
+      "id": "district_noticeboard",
+      "meshes": 8,
+      "name": "社区公告栏",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.25999999046326,
+        0.899999976158142,
+        1.0
+      ],
+      "id": "district_outdoor_table",
+      "meshes": 16,
+      "name": "街边双人桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.64999997615814,
+        1.89999997615814,
+        0.636500000953674
+      ],
+      "id": "district_parcel_locker",
+      "meshes": 26,
+      "name": "蓝白包裹柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.30887937545776,
+        0.820948123931885,
+        0.540000021457672
+      ],
+      "id": "district_planter",
+      "meshes": 45,
+      "name": "蓝白花箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.28999996185303,
+        0.757499992847443,
+        0.461499989032745
+      ],
+      "id": "district_recycling",
+      "meshes": 9,
+      "name": "分类回收箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.17999994754791,
+        2.16750001907349,
+        1.12000000476837
+      ],
+      "id": "district_shower",
+      "meshes": 9,
+      "name": "玻璃淋浴间",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.78400003910065,
+        2.07904100418091,
+        1.95999979972839
+      ],
+      "id": "district_stairs",
+      "meshes": 17,
+      "name": "楼层阶梯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.85999995470047,
+        2.67500019073486,
+        0.330000013113022
+      ],
+      "id": "district_streetlamp",
+      "meshes": 5,
+      "name": "港湾路灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.75,
+        1.14999997615814,
+        0.0724999979138374
+      ],
+      "id": "district_towel_rack",
+      "meshes": 6,
+      "name": "浴室毛巾架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.81942796707153,
+        2.77499985694885,
+        1.37873077392578
+      ],
+      "id": "district_tree",
+      "meshes": 5,
+      "name": "街道小树",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.20000004768372,
+        1.95999991893768,
+        0.627500057220459
+      ],
+      "id": "district_vanity",
+      "meshes": 9,
+      "name": "洗手台与镜子",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.889999985694885,
+        1.01999998092651,
+        0.844999969005585
+      ],
+      "id": "district_washer",
+      "meshes": 6,
+      "name": "蓝白滚筒洗衣机",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.31135582923889,
+        0.99999988079071,
+        0.881624639034271
+      ],
+      "id": "v18_whale_planter",
+      "meshes": 54,
+      "name": "蓝鲸陶瓷花盆",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.4981951713562,
+        2.0,
+        1.00232934951782
+      ],
+      "id": "v18_pastry_cart",
+      "meshes": 77,
+      "name": "海风烘焙车",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.924783110618591,
+        1.14999997615814,
+        0.887225747108459
+      ],
+      "id": "v18_hydrangea",
+      "meshes": 29,
+      "name": "蓝白绣球盆栽",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.893591463565826,
+        1.70000016689301,
+        0.56940484046936
+      ],
+      "id": "v18_record_cabinet",
+      "meshes": 49,
+      "name": "深蓝唱片柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.01850438117981,
+        1.09999990463257,
+        0.854791045188904
+      ],
+      "id": "v18_reading_chair",
+      "meshes": 18,
+      "name": "海盐阅读椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.840227723121643,
+        1.59999990463257,
+        0.679456830024719
+      ],
+      "id": "v18_easel",
+      "meshes": 11,
+      "name": "白帆画架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.2066262960434,
+        1.30000007152557,
+        0.568985223770142
+      ],
+      "id": "v18_tea_cart",
+      "meshes": 62,
+      "name": "暖茶推车",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.11432409286499,
+        1.79999995231628,
+        0.607327818870544
+      ],
+      "id": "v18_greenhouse_shelf",
+      "meshes": 343,
+      "name": "玻璃育苗架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.921686768531799,
+        0.900000035762787,
+        0.66752427816391
+      ],
+      "id": "v18_parcels",
+      "meshes": 21,
+      "name": "鲸邮包裹箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.668571412563324,
+        0.649999976158142,
+        0.433333307504654
+      ],
+      "id": "v18_sewing_basket",
+      "meshes": 20,
+      "name": "手作收纳篮",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.21448588371277,
+        1.14999985694885,
+        0.698598027229309
+      ],
+      "id": "v18_aquarium",
+      "meshes": 51,
+      "name": "小小水族箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.680952310562134,
+        0.649999976158142,
+        0.515136003494263
+      ],
+      "id": "v18_picnic_hamper",
+      "meshes": 24,
+      "name": "海风野餐篮",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        5.04465341567993,
+        4.60000038146973,
+        4.58333349227905
+      ],
+      "id": "v18_buildings_bakery",
+      "meshes": 128,
+      "name": "晨光烘焙店",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.68535709381104,
+        6.80000019073486,
+        4.25689363479614
+      ],
+      "id": "v18_buildings_cafe",
+      "meshes": 172,
+      "name": "潮汐转角咖啡馆",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        5.26398658752441,
+        4.80000066757202,
+        4.78260898590088
+      ],
+      "id": "v18_buildings_florist",
+      "meshes": 668,
+      "name": "青柠玻璃花房",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.9803409576416,
+        10.0,
+        4.42727756500244
+      ],
+      "id": "v18_buildings_apartment",
+      "meshes": 175,
+      "name": "云湾三层公寓",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.68535709381104,
+        6.80000019073486,
+        4.25689363479614
+      ],
+      "id": "v18_buildings_bookstore",
+      "meshes": 256,
+      "name": "漂流书店",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.73751306533813,
+        6.19999933242798,
+        4.12414598464966
+      ],
+      "id": "v18_buildings_gallery",
+      "meshes": 132,
+      "name": "白帆错层艺廊",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.556291520595551,
+        3.0,
+        0.556291520595551
+      ],
+      "id": "v18_street_lantern",
+      "meshes": 10,
+      "name": "海风旗帜路灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.51589238643646,
+        1.0,
+        0.525672316551209
+      ],
+      "id": "v18_street_bench",
+      "meshes": 11,
+      "name": "蓝鲸木长椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.86006140708923,
+        2.50000023841858,
+        1.07252299785614
+      ],
+      "id": "v18_street_bus_shelter",
+      "meshes": 15,
+      "name": "蓝湾候车亭",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.555939853191376,
+        1.25,
+        0.582385897636414
+      ],
+      "id": "v18_street_postbox",
+      "meshes": 16,
+      "name": "鲸邮信箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.86299991607666,
+        1.14999997615814,
+        0.46575003862381
+      ],
+      "id": "v18_street_bicycle",
+      "meshes": 19,
+      "name": "花篮自行车",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.35294127464294,
+        2.5,
+        2.35294127464294
+      ],
+      "id": "v18_street_parasol_table",
+      "meshes": 40,
+      "name": "条纹伞咖啡桌椅",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.59435081481934,
+        1.0,
+        0.687373518943787
+      ],
+      "id": "v18_street_flower_trough",
+      "meshes": 68,
+      "name": "绣球长花槽",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.65035974979401,
+        1.85000002384186,
+        0.319424480199814
+      ],
+      "id": "v18_street_info_board",
+      "meshes": 9,
+      "name": "白帆导览牌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.70297026634216,
+        1.0,
+        0.609240889549255
+      ],
+      "id": "v18_street_recycling_bins",
+      "meshes": 9,
+      "name": "蓝白分类箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.79104828834534,
+        1.70000004768372,
+        1.67671251296997
+      ],
+      "id": "v18_street_whale_fountain",
+      "meshes": 21,
+      "name": "蓝鲸小喷泉",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.17771089076996,
+        1.15000009536743,
+        0.85294771194458
+      ],
+      "id": "v18_street_harbor_crates",
+      "meshes": 21,
+      "name": "系绳港口木箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.56315791606903,
+        1.80000007152557,
+        0.666798233985901
+      ],
+      "id": "v18_street_parcel_locker",
+      "meshes": 38,
+      "name": "蓝湾包裹柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.03193831443787,
+        1.34999990463257,
+        2.72577095031738
+      ],
+      "id": "v18_interior_whale_bed",
+      "meshes": 32,
+      "name": "蓝湾鲸鱼床",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.12955474853516,
+        1.0,
+        0.923076868057251
+      ],
+      "id": "v18_interior_cream_sofa",
+      "meshes": 15,
+      "name": "奶白云朵沙发",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.996674478054047,
+        1.99999952316284,
+        0.434265345335007
+      ],
+      "id": "v18_interior_ivory_bookcase",
+      "meshes": 83,
+      "name": "海蓝满书书架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.55905508995056,
+        1.29999995231628,
+        1.0696849822998
+      ],
+      "id": "v18_interior_writing_desk",
+      "meshes": 28,
+      "name": "窗边写字桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.34005045890808,
+        2.0,
+        0.936964750289917
+      ],
+      "id": "v18_interior_navy_wardrobe",
+      "meshes": 30,
+      "name": "深蓝圆顶衣柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.54580163955688,
+        1.50000011920929,
+        1.18396961688995
+      ],
+      "id": "v18_interior_sink_cabinet",
+      "meshes": 13,
+      "name": "蓝白水槽柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.96025252342224,
+        0.999999940395355,
+        0.988608121871948
+      ],
+      "id": "v18_interior_tea_table",
+      "meshes": 41,
+      "name": "午后圆茶桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.479999989271164,
+        1.80000007152557,
+        0.479999989271164
+      ],
+      "id": "v18_interior_floor_lamp",
+      "meshes": 4,
+      "name": "海风褶裙落地灯",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.88580191135406,
+        1.0,
+        0.869564235210419
+      ],
+      "id": "v18_interior_clawfoot_bath",
+      "meshes": 10,
+      "name": "海盐浴缸",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.05862939357758,
+        1.39999997615814,
+        0.656264126300812
+      ],
+      "id": "v18_interior_ivory_drawers",
+      "meshes": 49,
+      "name": "奶白花瓶斗柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.917105317115784,
+        1.70000004768372,
+        0.734429836273193
+      ],
+      "id": "v18_interior_blue_fridge",
+      "meshes": 6,
+      "name": "小鲸鱼冰箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.74064314365387,
+        1.10000014305115,
+        0.398414939641953
+      ],
+      "id": "v18_interior_shoe_cabinet",
+      "meshes": 37,
+      "name": "蓝湾玄关鞋柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.42868161201477,
+        2.39999985694885,
+        1.20439279079437
+      ],
+      "id": "v18_special_telescope",
+      "meshes": 14,
+      "name": "潮汐天文望远镜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.32717406749725,
+        1.65000009536743,
+        0.755502760410309
+      ],
+      "id": "v18_special_radio_console",
+      "meshes": 71,
+      "name": "海洋无线电工作台",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.907634973526001,
+        2.09999990463257,
+        0.738734245300293
+      ],
+      "id": "v18_special_weather_station",
+      "meshes": 97,
+      "name": "蓝湾气象仪",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.27513229846954,
+        2.0,
+        0.775132298469543
+      ],
+      "id": "v18_special_specimen_tank",
+      "meshes": 62,
+      "name": "海洋生态标本柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.33645498752594,
+        1.35000014305115,
+        0.760786056518555
+      ],
+      "id": "v18_special_star_desk",
+      "meshes": 64,
+      "name": "星图测算工作桌",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.21050643920898,
+        1.79999995231628,
+        0.731125473976135
+      ],
+      "id": "v18_special_chart_cabinet",
+      "meshes": 78,
+      "name": "航海图纸档案柜",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.24688625335693,
+        1.49999988079071,
+        1.0393238067627
+      ],
+      "id": "v18_special_upright_piano",
+      "meshes": 140,
+      "name": "奶白蓝鲸立式钢琴",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        2.37303376197815,
+        1.65000009536743,
+        1.67187631130219
+      ],
+      "id": "v18_special_drum_kit",
+      "meshes": 90,
+      "name": "蓝鲸排练鼓组",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.561812281608582,
+        1.39999997615814,
+        0.407766968011856
+      ],
+      "id": "v18_special_guitar_stand",
+      "meshes": 32,
+      "name": "海蓝吉他与琴架",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        1.38595330715179,
+        1.39999997615814,
+        0.788963198661804
+      ],
+      "id": "v18_special_mixing_console",
+      "meshes": 91,
+      "name": "蓝湾混音工作台",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.829032719135284,
+        1.80000007152557,
+        0.524561107158661
+      ],
+      "id": "v18_special_speaker_stack",
+      "meshes": 59,
+      "name": "深蓝演出音箱",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        0.750746726989746,
+        1.80000007152557,
+        0.767824828624725
+      ],
+      "id": "v18_special_microphone",
+      "meshes": 17,
+      "name": "海风录音话筒",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.20100498199463,
+        11.0,
+        3.98875784873962
+      ],
+      "id": "v18_special_buildings_observatory",
+      "meshes": 173,
+      "name": "三层潮汐观测站",
+      "ok": true
+    },
+    {
+      "billboards": 0,
+      "bounds": [
+        4.62027215957642,
+        8.0,
+        4.02208423614502
+      ],
+      "id": "v18_special_buildings_music",
+      "meshes": 132,
+      "name": "两层蓝鲸音乐馆",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "meshes": 5744,
+  "modules": 207,
+  "scene_billboards": 0
+}

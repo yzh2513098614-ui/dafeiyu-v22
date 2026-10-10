@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/interior/decor_04.glb" id="1"]
+[ext_resource type="Script" path="" id="2"]
+
+[node name="decor_04" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]

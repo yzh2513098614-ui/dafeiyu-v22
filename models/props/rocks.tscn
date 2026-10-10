@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models/props/rocks.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(1.5104360580444336, 0.7049999833106995, 1.036210298538208)
+
+[node name="rocks" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.020217984914779663, 0.32750001549720764, -0.10125359892845154)
+shape = SubResource("Shape0")
+

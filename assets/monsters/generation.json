@@ -1,0 +1,14 @@
+{
+  "generator": "built-in image_gen",
+  "transparent_background": true,
+  "assets": [
+    "sea_slime.png",
+    "shore_crab.png",
+    "tide_guardian.png"
+  ],
+  "prompts": {
+    "slime": "Asset type: single transparent monster sprite for a cozy 2.5D isometric pixel-art RPG. One cute pale blue sea slime with small navy eyes, translucent rounded jelly body, tiny cream seafoam crest, a few light blue bubbles inside. Full body, three-quarter front view, viewed slightly from above at 30 degrees, facing viewer-right. Handcrafted pixel art with clearly visible orderly square pixels, compact sprite detail at roughly 160 pixels character height enlarged cleanly, restrained navy outline, flat shaded blue-grey pastel palette, no photorealistic smoothness, no model or bones. Centered single monster occupying 65 percent canvas with generous transparent margin. Soft light from upper left. No floor, no environment, no text, no labels, no shadow outside body. Actual transparent background. Suitable alongside blue-haired pixel maid and pale blue-grey isometric harbor rooms.",
+    "crab": "Asset type: single transparent monster sprite for cozy 2.5D isometric pixel-art RPG. One cute small coral-sand shore crab with two clearly shaped pincers, four small legs visible, pale cream underside, navy bead eyes, a turquoise shell decoration. Full body, three-quarter front view slightly overhead 30 degrees, facing viewer-left. Handcrafted pixel art with visible orderly square pixels and compact sprite detail roughly 160 pixels high enlarged cleanly, restrained navy outline, simple readable anatomy, flat shading, muted coral peach and blue-grey cream palette, light upper left. Single centered crab 65 percent canvas. No environment, no floor, no text, no labels, no shadows outside body. Actual transparent background. Style should suit blue-haired pixel maid in a pale blue-grey isometric harbor.",
+    "guardian": "Asset type: single transparent elite monster sprite for cozy 2.5D isometric pixel-art RPG. One adorable stout deep-blue ocean jelly guardian, rounded squat jelly body, two pale glowing aqua eyes, small crown of three cream coral points, starfish medallion inside translucent body, tiny jelly flippers. Full body three-quarter front view slightly overhead 30 degrees facing viewer-right. Handcrafted pixel art with orderly square pixels and compact detail roughly 180 pixels height enlarged cleanly, restrained navy outline, flat three-tone shading, muted ocean navy teal lavender cream palette, soft upper-left light. Full centered single monster occupying 65 percent canvas with transparent margins. No text, no labels, no floor, no environment, no shadow outside body, no photorealistic texture. Actual transparent background. Match a blue-haired pixel maid and pale blue-grey cozy isometric harbor game."
+  }
+}

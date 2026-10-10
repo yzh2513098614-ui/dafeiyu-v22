@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/greenery/three_flower_vase.glb" id="1"]
+
+[node name="three_flower_vase" type="Node3D"]
+metadata/asset_id = "three_flower_vase"
+metadata/asset_label = "三枝花装饰瓶"
+metadata/code = "GR-05"
+metadata/category_code = "GR"
+metadata/category_label = "绿植花艺"
+metadata/folder = "greenery"
+metadata/placement = "桌面"
+metadata/scene_tags = ["住宅", "学校", "餐厅", "商场"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

@@ -1,0 +1,374 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/ivory.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(1.61,2.6,0.14)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(1.61,2.6,0.14)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(1.62,0.08,0.22)
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(0.08,2.7,0.12)
+
+[node name="CurvedStudioBackdrop" type="Node3D"]
+
+
+[node name="ArcPanel0" type="Node3D" parent="."]
+position = Vector3(-5.79555,0.0,-4.44709)
+rotation_degrees = Vector3(0.0,-75.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel0"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel0"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel0/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel0"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel0"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel0"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel1" type="Node3D" parent="."]
+position = Vector3(-5.19615,0.0,-3.0)
+rotation_degrees = Vector3(0.0,-60.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel1"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel1"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel1/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel1"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel1"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel1"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel2" type="Node3D" parent="."]
+position = Vector3(-4.24264,0.0,-1.75736)
+rotation_degrees = Vector3(0.0,-45.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel2"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel2"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel2/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel2"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel2"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel2"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel3" type="Node3D" parent="."]
+position = Vector3(-3.0,0.0,-0.80385)
+rotation_degrees = Vector3(0.0,-30.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel3"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel3"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel3/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel3"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel3"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel3"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel4" type="Node3D" parent="."]
+position = Vector3(-1.55291,0.0,-0.20445)
+rotation_degrees = Vector3(0.0,-15.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel4"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel4"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel4/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel4"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel4"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel4"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel5" type="Node3D" parent="."]
+position = Vector3(0.0,0.0,0.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel5"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel5"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel5/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel5"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel5"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel5"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel6" type="Node3D" parent="."]
+position = Vector3(1.55291,0.0,-0.20445)
+rotation_degrees = Vector3(0.0,15.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel6"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel6"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel6/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel6"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel6"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel6"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel7" type="Node3D" parent="."]
+position = Vector3(3.0,0.0,-0.80385)
+rotation_degrees = Vector3(0.0,30.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel7"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel7"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel7/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel7"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel7"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel7"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel8" type="Node3D" parent="."]
+position = Vector3(4.24264,0.0,-1.75736)
+rotation_degrees = Vector3(0.0,45.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel8"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel8"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel8/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel8"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel8"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel8"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel9" type="Node3D" parent="."]
+position = Vector3(5.19615,0.0,-3.0)
+rotation_degrees = Vector3(0.0,60.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel9"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel9"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel9/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel9"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel9"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel9"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")
+
+[node name="ArcPanel10" type="Node3D" parent="."]
+position = Vector3(5.79555,0.0,-4.44709)
+rotation_degrees = Vector3(0.0,75.0,0.0)
+
+[node name="Cyclorama" type="MeshInstance3D" parent="ArcPanel10"]
+position = Vector3(0.0,1.3,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CycloramaBody" type="StaticBody3D" parent="ArcPanel10"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ArcPanel10/CycloramaBody"]
+position = Vector3(0.0,1.3,0.0)
+shape = SubResource("r1")
+
+[node name="ArcTopEdge" type="MeshInstance3D" parent="ArcPanel10"]
+position = Vector3(0.0,2.62,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="Upright" type="MeshInstance3D" parent="ArcPanel10"]
+position = Vector3(-0.79,1.35,-0.12)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="GroundSill" type="MeshInstance3D" parent="ArcPanel10"]
+position = Vector3(0.0,0.04,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e2")

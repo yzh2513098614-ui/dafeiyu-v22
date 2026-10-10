@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bbacjibbt5da1"
+
+[deps]
+
+files=["res://docs/素材清点_20261010.相对路径.translation", "res://docs/素材清点_20261010.扩展名.translation", "res://docs/素材清点_20261010.字节.translation", "res://docs/素材清点_20261010.MB.translation", "res://docs/素材清点_20261010.修改时间.translation"]
+
+source_file="res://docs/素材清点_20261010.csv"
+dest_files=["res://docs/素材清点_20261010.相对路径.translation", "res://docs/素材清点_20261010.扩展名.translation", "res://docs/素材清点_20261010.字节.translation", "res://docs/素材清点_20261010.MB.translation", "res://docs/素材清点_20261010.修改时间.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

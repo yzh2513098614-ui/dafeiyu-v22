@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[sub_resource type="Shader" id="Shader_6eq10"]
+code = "shader_type spatial;
+ varying vec3 wp;
+ uniform vec3 tile_color=vec3(.72,.75,.78);
+ uniform float tile_size=1.1;
+ uniform float roughness_value=.58;
+ void vertex(){wp=(MODEL_MATRIX*vec4(VERTEX,1.)).xyz;}
+ void fragment(){
+  vec2 t=wp.xz/tile_size; vec2 edge=abs(fract(t)-.5);
+  float grout=smoothstep(.488,.497,max(edge.x,edge.y));
+  vec2 cell=floor(t); float h=fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453);
+  ALBEDO=mix(tile_color*(.985+h*.03),tile_color*.79,grout*.52);
+  ROUGHNESS=roughness_value; SPECULAR=.12;
+ }
+ "
+
+[resource]
+resource_name = "Modern floor / oak"
+render_priority = 0
+shader = SubResource("Shader_6eq10")
+shader_parameter/tile_color = null
+shader_parameter/tile_size = 1.1
+shader_parameter/roughness_value = 0.72

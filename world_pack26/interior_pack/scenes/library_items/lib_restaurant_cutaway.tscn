@@ -1,0 +1,209 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/buildings/restaurant_cutaway.glb" id="e0"]
+
+[sub_resource type="BoxShape3D" id="r0"]
+size = Vector3(6.0,0.16,5.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(6.0,2.65,0.16)
+
+[sub_resource type="BoxShape3D" id="r2"]
+size = Vector3(0.16,2.65,5.0)
+
+[sub_resource type="BoxShape3D" id="r3"]
+size = Vector3(0.16,0.75,5.0)
+
+[sub_resource type="BoxShape3D" id="r4"]
+size = Vector3(2.2,0.75,0.16)
+
+[sub_resource type="BoxShape3D" id="r5"]
+size = Vector3(2.2,0.75,0.16)
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(1.2,0.97,1.2)
+
+[sub_resource type="BoxShape3D" id="r7"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r9"]
+size = Vector3(1.2,0.97,1.2)
+
+[sub_resource type="BoxShape3D" id="r10"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r11"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r12"]
+size = Vector3(1.2,0.97,1.2)
+
+[sub_resource type="BoxShape3D" id="r13"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r14"]
+size = Vector3(0.46,0.975,0.47)
+
+[sub_resource type="BoxShape3D" id="r15"]
+size = Vector3(2.8,1.13,0.83)
+
+[sub_resource type="BoxShape3D" id="r16"]
+size = Vector3(0.60532,1.08,0.58)
+
+[sub_resource type="BoxShape3D" id="r17"]
+size = Vector3(0.69,1.17714,0.36162)
+
+[node name="lib_restaurant_cutaway" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_restaurant_cutaway", "name": "餐厅室内·可行走剖面", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Body0" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body0"]
+position = Vector3(0.0,0.08,0.0)
+shape = SubResource("r0")
+
+[node name="Body1" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body1"]
+position = Vector3(0.0,1.485,2.5)
+shape = SubResource("r1")
+
+[node name="Body2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body2"]
+position = Vector3(-3.0,1.485,0.0)
+shape = SubResource("r2")
+
+[node name="Body3" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body3"]
+position = Vector3(3.0,0.535,0.0)
+shape = SubResource("r3")
+
+[node name="Body4" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body4"]
+position = Vector3(-1.9,0.535,-2.5)
+shape = SubResource("r4")
+
+[node name="Body5" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body5"]
+position = Vector3(1.9,0.535,-2.5)
+shape = SubResource("r5")
+
+[node name="Body6" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body6"]
+position = Vector3(-1.9,0.645,-0.8)
+shape = SubResource("r6")
+
+[node name="Body7" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body7"]
+position = Vector3(-1.9,0.6475,-1.59)
+shape = SubResource("r7")
+
+[node name="Body8" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body8"]
+position = Vector3(-1.9,0.6475,-0.01)
+shape = SubResource("r8")
+
+[node name="Body9" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body9"]
+position = Vector3(0.0,0.645,-0.8)
+shape = SubResource("r9")
+
+[node name="Body10" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body10"]
+position = Vector3(0.0,0.6475,-1.59)
+shape = SubResource("r10")
+
+[node name="Body11" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body11"]
+position = Vector3(0.0,0.6475,-0.01)
+shape = SubResource("r11")
+
+[node name="Body12" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body12"]
+position = Vector3(1.9,0.645,-0.8)
+shape = SubResource("r12")
+
+[node name="Body13" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body13"]
+position = Vector3(1.9,0.6475,-1.59)
+shape = SubResource("r13")
+
+[node name="Body14" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body14"]
+position = Vector3(1.9,0.6475,-0.01)
+shape = SubResource("r14")
+
+[node name="Body15" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body15"]
+position = Vector3(0.0,0.725,1.6)
+shape = SubResource("r15")
+
+[node name="Body16" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body16"]
+position = Vector3(-2.55,0.7,-1.9)
+shape = SubResource("r16")
+
+[node name="Body17" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Body17"]
+position = Vector3(2.25,0.75643,-1.77919)
+shape = SubResource("r17")

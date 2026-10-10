@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/library_props/library_street_lamp.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(0.67000, 3.29000, 0.67000)
+[node name="library_street_lamp" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00000, 1.63000, 0.00000)
+shape = SubResource("Collision")

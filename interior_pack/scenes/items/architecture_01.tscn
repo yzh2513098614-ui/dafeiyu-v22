@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://interior_pack/assets/models/architecture_01.glb" id="1"]
+[ext_resource type="Script" path="res://interior_pack/scripts/item_3d.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="LeftPost"]
+size = Vector3(0.15,2.25,0.389)
+
+[sub_resource type="BoxShape3D" id="RightPost"]
+size = Vector3(0.15,2.25,0.389)
+
+[sub_resource type="BoxShape3D" id="Lintel"]
+size = Vector3(1.8499999999999999,0.14,0.389)
+
+[sub_resource type="BoxShape3D" id="DoorBlock"]
+size = Vector3(1.8499999999999999,2.09,0.07)
+
+[node name="architecture_01" type="Node3D"]
+script = ExtResource("2")
+asset_id = "architecture_01"
+passage = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="LeftPost" type="CollisionShape3D" parent="Body"]
+position = Vector3(-1.0,1.125,0.0)
+shape = SubResource("LeftPost")
+
+[node name="RightPost" type="CollisionShape3D" parent="Body"]
+position = Vector3(1.0,1.125,0.0)
+shape = SubResource("RightPost")
+
+[node name="Lintel" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.0,2.18,0.0)
+shape = SubResource("Lintel")
+
+[node name="DoorBlocker" type="StaticBody3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="DoorBlocker"]
+position = Vector3(0,1.045,0)
+shape = SubResource("DoorBlock")

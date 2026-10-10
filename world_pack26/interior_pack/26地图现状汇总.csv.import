@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://jlbwgstguy1k"
+
+[deps]
+
+files=["res://world_pack26/interior_pack/26地图现状汇总.地图名称.translation", "res://world_pack26/interior_pack/26地图现状汇总.空间组织.translation", "res://world_pack26/interior_pack/26地图现状汇总.楼层标高米.translation", "res://world_pack26/interior_pack/26地图现状汇总.区域数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.连接数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.楼梯数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.搜查容器数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.实际使用原模型ID数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.原物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.场景路径.translation", "res://world_pack26/interior_pack/26地图现状汇总.分类标记.translation", "res://world_pack26/interior_pack/26地图现状汇总.改造轮次.translation", "res://world_pack26/interior_pack/26地图现状汇总.本轮新增模型实例数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.本轮装饰实例数量.translation"]
+
+source_file="res://world_pack26/interior_pack/26地图现状汇总.csv"
+dest_files=["res://world_pack26/interior_pack/26地图现状汇总.地图名称.translation", "res://world_pack26/interior_pack/26地图现状汇总.空间组织.translation", "res://world_pack26/interior_pack/26地图现状汇总.楼层标高米.translation", "res://world_pack26/interior_pack/26地图现状汇总.区域数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.连接数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.楼梯数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.搜查容器数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.实际使用原模型ID数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.原物品直接实例数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.场景路径.translation", "res://world_pack26/interior_pack/26地图现状汇总.分类标记.translation", "res://world_pack26/interior_pack/26地图现状汇总.改造轮次.translation", "res://world_pack26/interior_pack/26地图现状汇总.本轮新增模型实例数量.translation", "res://world_pack26/interior_pack/26地图现状汇总.本轮装饰实例数量.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

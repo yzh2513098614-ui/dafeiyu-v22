@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/medical/medicine_bottle_display.glb" id="1"]
+
+[node name="medicine_bottle_display" type="Node3D"]
+metadata/asset_id = "medicine_bottle_display"
+metadata/asset_label = "药瓶陈列组"
+metadata/code = "MD-04"
+metadata/category_code = "MD"
+metadata/category_label = "医疗装饰"
+metadata/folder = "medical"
+metadata/placement = "桌面"
+metadata/scene_tags = ["医院", "诊所", "实验室"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

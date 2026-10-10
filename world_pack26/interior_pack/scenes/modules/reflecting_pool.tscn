@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e0"]
+
+[ext_resource type="Shader" path="res://world_pack26/interior_pack/shaders/harbor_water.gdshader" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(6.5,0.28,2.8)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(6.5,0.28,2.8)
+
+[sub_resource type="PlaneMesh" id="r2"]
+size = Vector2(6.22,2.52)
+subdivide_width = 30
+subdivide_depth = 14
+
+[sub_resource type="ShaderMaterial" id="r3"]
+shader = ExtResource("e1")
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.16,0.18,2.8)
+
+[sub_resource type="BoxMesh" id="r5"]
+size = Vector3(6.5,0.18,0.18)
+
+[node name="ReflectingPool" type="Node3D"]
+
+
+[node name="Basin" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.14,0.0)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="BasinBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="BasinBody"]
+position = Vector3(0.0,0.14,0.0)
+shape = SubResource("r1")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+position = Vector3(0,0.345,0)
+mesh = SubResource("r2")
+material_override = SubResource("r3")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+position = Vector3(-3.17,0.34,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Rim_2" type="MeshInstance3D" parent="."]
+position = Vector3(3.17,0.34,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Rim_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.34,-1.31)
+mesh = SubResource("r5")
+material_override = ExtResource("e2")
+
+[node name="Rim_4" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,0.34,1.31)
+mesh = SubResource("r5")
+material_override = ExtResource("e2")

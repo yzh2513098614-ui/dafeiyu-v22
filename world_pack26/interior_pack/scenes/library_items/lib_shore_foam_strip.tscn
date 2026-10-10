@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/tidal/shore_foam_strip.glb" id="e0"]
+
+[node name="lib_shore_foam_strip" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_shore_foam_strip", "name": "弯曲岸线泡沫网格", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)

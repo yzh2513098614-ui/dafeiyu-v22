@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/medical/first_aid_wall_sign.glb" id="e0"]
+
+[node name="lib_first_aid_wall_sign" type="Node3D"]
+
+metadata/asset_definition = {"id": "lib_first_aid_wall_sign", "name": "急救墙面标识", "source_library_file_id": "libfile_e409069b032881918253bd8946830835", "source_version": 4}
+
+[node name="Model" parent="." instance=ExtResource("e0")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)

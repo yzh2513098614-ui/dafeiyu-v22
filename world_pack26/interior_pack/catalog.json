@@ -1,0 +1,3802 @@
+[
+  {
+    "id": "safes_01",
+    "name": "电子小保险盒",
+    "category": "safes",
+    "size": [
+      0.62,
+      0.6,
+      0.47
+    ],
+    "triangles": 1376,
+    "mesh_parts": 25,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_01.tscn"
+  },
+  {
+    "id": "safes_02",
+    "name": "酒店迷你保险柜",
+    "category": "safes",
+    "size": [
+      0.72,
+      0.44,
+      0.46
+    ],
+    "triangles": 1376,
+    "mesh_parts": 25,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_02.tscn"
+  },
+  {
+    "id": "safes_03",
+    "name": "文件抽屉保险盒",
+    "category": "safes",
+    "size": [
+      0.85,
+      0.38,
+      0.5
+    ],
+    "triangles": 1012,
+    "mesh_parts": 23,
+    "moving": [
+      {
+        "node": "SecureDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_03.tscn"
+  },
+  {
+    "id": "safes_04",
+    "name": "嵌墙密码保险柜",
+    "category": "safes",
+    "size": [
+      0.62,
+      0.7,
+      0.23
+    ],
+    "triangles": 1420,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_04.tscn"
+  },
+  {
+    "id": "safes_05",
+    "name": "加固高保险柜",
+    "category": "safes",
+    "size": [
+      0.78,
+      1.45,
+      0.6
+    ],
+    "triangles": 1508,
+    "mesh_parts": 28,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_05.tscn"
+  },
+  {
+    "id": "safes_06",
+    "name": "双门保险柜",
+    "category": "safes",
+    "size": [
+      1.3,
+      1.1,
+      0.58
+    ],
+    "triangles": 1144,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "VaultHinge0",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "VaultHinge1",
+        "axis": "y",
+        "angle": 105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_06.tscn"
+  },
+  {
+    "id": "safes_07",
+    "name": "投递式保险柜",
+    "category": "safes",
+    "size": [
+      0.65,
+      1.02,
+      0.49
+    ],
+    "triangles": 1420,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_07.tscn"
+  },
+  {
+    "id": "safes_08",
+    "name": "Token存币保险箱",
+    "category": "safes",
+    "size": [
+      0.52,
+      0.64,
+      0.43
+    ],
+    "triangles": 1500,
+    "mesh_parts": 27,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_08.tscn"
+  },
+  {
+    "id": "safes_09",
+    "name": "医疗密码保管柜",
+    "category": "safes",
+    "size": [
+      0.68,
+      1.05,
+      0.46
+    ],
+    "triangles": 1464,
+    "mesh_parts": 27,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_09.tscn"
+  },
+  {
+    "id": "safes_10",
+    "name": "嵌入式长保险盒",
+    "category": "safes",
+    "size": [
+      0.92,
+      0.48,
+      0.25
+    ],
+    "triangles": 1420,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_10.tscn"
+  },
+  {
+    "id": "safes_11",
+    "name": "低矮安全抽屉柜",
+    "category": "safes",
+    "size": [
+      0.92,
+      0.32,
+      0.54
+    ],
+    "triangles": 1012,
+    "mesh_parts": 23,
+    "moving": [
+      {
+        "node": "SecureDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_11.tscn"
+  },
+  {
+    "id": "safes_12",
+    "name": "翻盖贵重物品盒",
+    "category": "safes",
+    "size": [
+      0.65,
+      0.3,
+      0.43
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [
+      {
+        "node": "LidHinge",
+        "axis": "x",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/safes_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/safes_12.tscn"
+  },
+  {
+    "id": "storage_01",
+    "name": "三抽收纳柜",
+    "category": "storage",
+    "size": [
+      0.85,
+      0.95,
+      0.48
+    ],
+    "triangles": 704,
+    "mesh_parts": 16,
+    "moving": [
+      {
+        "node": "Drawer0",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "Drawer1",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "Drawer2",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_01.tscn"
+  },
+  {
+    "id": "storage_02",
+    "name": "分格开放书架",
+    "category": "storage",
+    "size": [
+      1.1,
+      1.75,
+      0.37
+    ],
+    "triangles": 1364,
+    "mesh_parts": 31,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_02.tscn"
+  },
+  {
+    "id": "storage_03",
+    "name": "鞋柜坐凳",
+    "category": "storage",
+    "size": [
+      1.3,
+      0.69,
+      0.46
+    ],
+    "triangles": 440,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_03.tscn"
+  },
+  {
+    "id": "storage_04",
+    "name": "双滑门衣柜",
+    "category": "storage",
+    "size": [
+      1.55,
+      1.95,
+      0.56
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [
+      {
+        "node": "SlidingDoor0",
+        "axis": "x",
+        "distance": -0.6200000000000001
+      },
+      {
+        "node": "SlidingDoor1",
+        "axis": "x",
+        "distance": 0.6200000000000001
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_04.tscn"
+  },
+  {
+    "id": "storage_05",
+    "name": "六格更衣柜",
+    "category": "storage",
+    "size": [
+      1.05,
+      1.8,
+      0.45
+    ],
+    "triangles": 1364,
+    "mesh_parts": 31,
+    "moving": [
+      {
+        "node": "LockerHinge00",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge01",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge02",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge10",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge11",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge12",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_05.tscn"
+  },
+  {
+    "id": "storage_06",
+    "name": "L型转角柜",
+    "category": "storage",
+    "size": [
+      1.2,
+      0.86,
+      1.0
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_06.tscn"
+  },
+  {
+    "id": "storage_07",
+    "name": "带轮抽屉柜",
+    "category": "storage",
+    "size": [
+      0.54,
+      0.76,
+      0.48
+    ],
+    "triangles": 1024,
+    "mesh_parts": 20,
+    "moving": [
+      {
+        "node": "Drawer0",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "Drawer1",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "Drawer2",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_07.tscn"
+  },
+  {
+    "id": "storage_08",
+    "name": "玻璃陈列柜",
+    "category": "storage",
+    "size": [
+      0.92,
+      1.58,
+      0.44
+    ],
+    "triangles": 1684,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_08.tscn"
+  },
+  {
+    "id": "storage_09",
+    "name": "入户挂钩坐柜",
+    "category": "storage",
+    "size": [
+      1.15,
+      1.5,
+      0.44
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_09.tscn"
+  },
+  {
+    "id": "storage_10",
+    "name": "上下双门收纳柜",
+    "category": "storage",
+    "size": [
+      0.72,
+      1.28,
+      0.45
+    ],
+    "triangles": 572,
+    "mesh_parts": 13,
+    "moving": [
+      {
+        "node": "LowerHinge",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "UpperHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_10.tscn"
+  },
+  {
+    "id": "storage_11",
+    "name": "壁挂储物柜",
+    "category": "storage",
+    "size": [
+      1.0,
+      0.62,
+      0.34
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_11.tscn"
+  },
+  {
+    "id": "storage_12",
+    "name": "叠放整理箱",
+    "category": "storage",
+    "size": [
+      0.71,
+      0.9,
+      0.48
+    ],
+    "triangles": 1488,
+    "mesh_parts": 15,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/storage_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/storage_12.tscn"
+  },
+  {
+    "id": "living_01",
+    "name": "三座现代沙发",
+    "category": "living",
+    "size": [
+      2.2,
+      1.0,
+      0.84
+    ],
+    "triangles": 616,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_01.tscn"
+  },
+  {
+    "id": "living_02",
+    "name": "旋转圆座扶手椅",
+    "category": "living",
+    "size": [
+      0.9,
+      1.0,
+      0.85
+    ],
+    "triangles": 1164,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_02.tscn"
+  },
+  {
+    "id": "living_03",
+    "name": "柔软豆袋座椅",
+    "category": "living",
+    "size": [
+      0.96,
+      0.72,
+      0.88
+    ],
+    "triangles": 640,
+    "mesh_parts": 2,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_03.tscn"
+  },
+  {
+    "id": "living_04",
+    "name": "模块化软凳",
+    "category": "living",
+    "size": [
+      0.72,
+      0.51,
+      0.72
+    ],
+    "triangles": 132,
+    "mesh_parts": 3,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_04.tscn"
+  },
+  {
+    "id": "living_05",
+    "name": "窄边玄关台",
+    "category": "living",
+    "size": [
+      1.6,
+      0.78,
+      0.4
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_05.tscn"
+  },
+  {
+    "id": "living_06",
+    "name": "电视与媒体柜",
+    "category": "living",
+    "size": [
+      1.45,
+      1.47,
+      0.42
+    ],
+    "triangles": 660,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "MediaDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/living_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_06.tscn"
+  },
+  {
+    "id": "living_07",
+    "name": "升降工作桌",
+    "category": "living",
+    "size": [
+      1.45,
+      1.04,
+      0.65
+    ],
+    "triangles": 308,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_07.tscn"
+  },
+  {
+    "id": "living_08",
+    "name": "五星脚办公椅",
+    "category": "living",
+    "size": [
+      0.8,
+      1.18,
+      0.8
+    ],
+    "triangles": 2164,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_08.tscn"
+  },
+  {
+    "id": "living_09",
+    "name": "圆形金属边几",
+    "category": "living",
+    "size": [
+      0.75,
+      0.55,
+      0.75
+    ],
+    "triangles": 240,
+    "mesh_parts": 3,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_09.tscn"
+  },
+  {
+    "id": "living_10",
+    "name": "椭圆低茶几",
+    "category": "living",
+    "size": [
+      1.3,
+      0.45,
+      0.72
+    ],
+    "triangles": 540,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_10.tscn"
+  },
+  {
+    "id": "living_11",
+    "name": "蓝白平台床",
+    "category": "living",
+    "size": [
+      1.5,
+      0.94,
+      2.1
+    ],
+    "triangles": 308,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/living_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_11.tscn"
+  },
+  {
+    "id": "living_12",
+    "name": "开放格床边柜",
+    "category": "living",
+    "size": [
+      0.55,
+      0.6,
+      0.42
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [
+      {
+        "node": "NightDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/living_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/living_12.tscn"
+  },
+  {
+    "id": "restaurant_01",
+    "name": "四灶烤箱一体机",
+    "category": "restaurant",
+    "size": [
+      0.95,
+      0.91,
+      0.64
+    ],
+    "triangles": 2580,
+    "mesh_parts": 22,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_01.tscn"
+  },
+  {
+    "id": "restaurant_02",
+    "name": "双头咖啡机",
+    "category": "restaurant",
+    "size": [
+      0.74,
+      0.69,
+      0.5
+    ],
+    "triangles": 868,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_02.tscn"
+  },
+  {
+    "id": "restaurant_03",
+    "name": "双层嵌入烤箱",
+    "category": "restaurant",
+    "size": [
+      0.78,
+      1.7,
+      0.63
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_03.tscn"
+  },
+  {
+    "id": "restaurant_04",
+    "name": "自助点餐终端",
+    "category": "restaurant",
+    "size": [
+      0.49,
+      1.38,
+      0.43
+    ],
+    "triangles": 1532,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_04.tscn"
+  },
+  {
+    "id": "restaurant_05",
+    "name": "灯带餐厅吧台",
+    "category": "restaurant",
+    "size": [
+      1.85,
+      1.02,
+      0.72
+    ],
+    "triangles": 748,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_05.tscn"
+  },
+  {
+    "id": "restaurant_06",
+    "name": "双门冷藏柜",
+    "category": "restaurant",
+    "size": [
+      0.78,
+      1.85,
+      0.65
+    ],
+    "triangles": 936,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "FridgeLower",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "FridgeUpper",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_06.tscn"
+  },
+  {
+    "id": "restaurant_07",
+    "name": "玻璃糕点展示柜",
+    "category": "restaurant",
+    "size": [
+      1.48,
+      1.32,
+      0.67
+    ],
+    "triangles": 3728,
+    "mesh_parts": 28,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_07.tscn"
+  },
+  {
+    "id": "restaurant_08",
+    "name": "现代四脚餐桌",
+    "category": "restaurant",
+    "size": [
+      1.38,
+      1.1,
+      0.78
+    ],
+    "triangles": 620,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_08.tscn"
+  },
+  {
+    "id": "restaurant_09",
+    "name": "水槽操作柜",
+    "category": "restaurant",
+    "size": [
+      1.05,
+      0.89,
+      0.63
+    ],
+    "triangles": 660,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_09.tscn"
+  },
+  {
+    "id": "restaurant_10",
+    "name": "嵌入洗碗机",
+    "category": "restaurant",
+    "size": [
+      0.64,
+      0.88,
+      0.59
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [
+      {
+        "node": "DishwasherHinge",
+        "axis": "y",
+        "angle": -85
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_10.tscn"
+  },
+  {
+    "id": "restaurant_11",
+    "name": "高背餐厅卡座",
+    "category": "restaurant",
+    "size": [
+      1.5,
+      1.45,
+      0.82
+    ],
+    "triangles": 616,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_11.tscn"
+  },
+  {
+    "id": "restaurant_12",
+    "name": "台面微波炉",
+    "category": "restaurant",
+    "size": [
+      0.65,
+      0.39,
+      0.45
+    ],
+    "triangles": 660,
+    "mesh_parts": 15,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/restaurant_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/restaurant_12.tscn"
+  },
+  {
+    "id": "utility_01",
+    "name": "前开门洗衣机",
+    "category": "utility",
+    "size": [
+      0.64,
+      0.91,
+      0.62
+    ],
+    "triangles": 632,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_01.tscn"
+  },
+  {
+    "id": "utility_02",
+    "name": "洗烘叠放机",
+    "category": "utility",
+    "size": [
+      0.68,
+      1.84,
+      0.67
+    ],
+    "triangles": 1220,
+    "mesh_parts": 9,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_02.tscn"
+  },
+  {
+    "id": "utility_03",
+    "name": "镜面洗手台",
+    "category": "utility",
+    "size": [
+      1.02,
+      1.65,
+      0.52
+    ],
+    "triangles": 804,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_03.tscn"
+  },
+  {
+    "id": "utility_04",
+    "name": "简洁坐便器",
+    "category": "utility",
+    "size": [
+      0.65,
+      0.85,
+      0.76
+    ],
+    "triangles": 1048,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_04.tscn"
+  },
+  {
+    "id": "utility_05",
+    "name": "独立长浴缸",
+    "category": "utility",
+    "size": [
+      1.75,
+      0.59,
+      0.79
+    ],
+    "triangles": 220,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_05.tscn"
+  },
+  {
+    "id": "utility_06",
+    "name": "圆柱空气净化器",
+    "category": "utility",
+    "size": [
+      0.52,
+      0.92,
+      0.52
+    ],
+    "triangles": 724,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_06.tscn"
+  },
+  {
+    "id": "utility_07",
+    "name": "冷热饮水机",
+    "category": "utility",
+    "size": [
+      0.48,
+      1.4,
+      0.43
+    ],
+    "triangles": 300,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_07.tscn"
+  },
+  {
+    "id": "utility_08",
+    "name": "壁挂空调",
+    "category": "utility",
+    "size": [
+      1.05,
+      0.32,
+      0.22
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_08.tscn"
+  },
+  {
+    "id": "utility_09",
+    "name": "深潜站服务器柜",
+    "category": "utility",
+    "size": [
+      0.7,
+      1.82,
+      0.67
+    ],
+    "triangles": 1496,
+    "mesh_parts": 34,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_09.tscn"
+  },
+  {
+    "id": "utility_10",
+    "name": "脚踏分类垃圾桶",
+    "category": "utility",
+    "size": [
+      0.43,
+      0.68,
+      0.4
+    ],
+    "triangles": 496,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_10.tscn"
+  },
+  {
+    "id": "utility_11",
+    "name": "扫地机器人与充电座",
+    "category": "utility",
+    "size": [
+      0.52,
+      0.23,
+      0.55
+    ],
+    "triangles": 248,
+    "mesh_parts": 4,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_11.tscn"
+  },
+  {
+    "id": "utility_12",
+    "name": "室内充电终端",
+    "category": "utility",
+    "size": [
+      0.47,
+      1.25,
+      0.32
+    ],
+    "triangles": 820,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/utility_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/utility_12.tscn"
+  },
+  {
+    "id": "decor_01",
+    "name": "落地绿植",
+    "category": "decor",
+    "size": [
+      0.6,
+      1.2,
+      0.6
+    ],
+    "triangles": 2708,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_01.tscn"
+  },
+  {
+    "id": "decor_02",
+    "name": "长条组合花槽",
+    "category": "decor",
+    "size": [
+      1.5,
+      0.83,
+      0.45
+    ],
+    "triangles": 8212,
+    "mesh_parts": 50,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_02.tscn"
+  },
+  {
+    "id": "decor_03",
+    "name": "磨砂球落地灯",
+    "category": "decor",
+    "size": [
+      0.48,
+      1.58,
+      0.48
+    ],
+    "triangles": 480,
+    "mesh_parts": 3,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_03.tscn"
+  },
+  {
+    "id": "decor_04",
+    "name": "锥罩阅读台灯",
+    "category": "decor",
+    "size": [
+      0.4,
+      0.52,
+      0.4
+    ],
+    "triangles": 576,
+    "mesh_parts": 4,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_04.tscn"
+  },
+  {
+    "id": "decor_05",
+    "name": "暖光壁灯",
+    "category": "decor",
+    "size": [
+      0.18,
+      0.6,
+      0.14
+    ],
+    "triangles": 132,
+    "mesh_parts": 3,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_05.tscn"
+  },
+  {
+    "id": "decor_06",
+    "name": "蓝鲸装饰画",
+    "category": "decor",
+    "size": [
+      0.72,
+      0.57,
+      0.08
+    ],
+    "triangles": 1092,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_06.tscn"
+  },
+  {
+    "id": "decor_07",
+    "name": "无数字圆时钟",
+    "category": "decor",
+    "size": [
+      0.5,
+      0.5,
+      0.08
+    ],
+    "triangles": 776,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_07.tscn"
+  },
+  {
+    "id": "decor_08",
+    "name": "书本绿植浮墙架",
+    "category": "decor",
+    "size": [
+      1.15,
+      0.48,
+      0.3
+    ],
+    "triangles": 3016,
+    "mesh_parts": 23,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_08.tscn"
+  },
+  {
+    "id": "decor_09",
+    "name": "书本与鲸鱼杯",
+    "category": "decor",
+    "size": [
+      0.48,
+      0.31,
+      0.3
+    ],
+    "triangles": 1092,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_09.tscn"
+  },
+  {
+    "id": "decor_10",
+    "name": "大肥鱼鲸鱼摆件",
+    "category": "decor",
+    "size": [
+      0.74,
+      0.43,
+      0.37
+    ],
+    "triangles": 1920,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_10.tscn"
+  },
+  {
+    "id": "decor_11",
+    "name": "科技隔断屏风",
+    "category": "decor",
+    "size": [
+      1.2,
+      1.7,
+      0.4
+    ],
+    "triangles": 220,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_11.tscn"
+  },
+  {
+    "id": "decor_12",
+    "name": "透明信息立牌",
+    "category": "decor",
+    "size": [
+      0.57,
+      0.68,
+      0.2
+    ],
+    "triangles": 628,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/decor_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/decor_12.tscn"
+  },
+  {
+    "id": "retail_01",
+    "name": "传送带收银台",
+    "category": "retail",
+    "size": [
+      2.1,
+      1.3,
+      1.028
+    ],
+    "triangles": 1180,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "DrawerSlide",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_01.tscn"
+  },
+  {
+    "id": "retail_02",
+    "name": "单门玻璃饮料冰柜",
+    "category": "retail",
+    "size": [
+      0.8,
+      1.85,
+      0.938
+    ],
+    "triangles": 4012,
+    "mesh_parts": 65,
+    "moving": [
+      {
+        "node": "CoolingDoor",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_02.tscn"
+  },
+  {
+    "id": "retail_03",
+    "name": "双面商品陈列架",
+    "category": "retail",
+    "size": [
+      1.8,
+      1.75,
+      0.85
+    ],
+    "triangles": 10232,
+    "mesh_parts": 154,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_03.tscn"
+  },
+  {
+    "id": "retail_04",
+    "name": "金属购物推车",
+    "category": "retail",
+    "size": [
+      0.7,
+      1.08,
+      1.05
+    ],
+    "triangles": 2048,
+    "mesh_parts": 40,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_04.tscn"
+  },
+  {
+    "id": "retail_05",
+    "name": "服装与衣架展示架",
+    "category": "retail",
+    "size": [
+      1.644,
+      1.8,
+      0.58
+    ],
+    "triangles": 3596,
+    "mesh_parts": 26,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_05.tscn"
+  },
+  {
+    "id": "retail_06",
+    "name": "圆形商品展示台",
+    "category": "retail",
+    "size": [
+      0.85,
+      0.9,
+      0.85
+    ],
+    "triangles": 604,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_06.tscn"
+  },
+  {
+    "id": "retail_07",
+    "name": "三格果蔬货台",
+    "category": "retail",
+    "size": [
+      1.5,
+      1.03,
+      0.782
+    ],
+    "triangles": 9080,
+    "mesh_parts": 37,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_07.tscn"
+  },
+  {
+    "id": "retail_08",
+    "name": "化妆品阶梯展架",
+    "category": "retail",
+    "size": [
+      0.95,
+      0.6515,
+      0.6
+    ],
+    "triangles": 3804,
+    "mesh_parts": 57,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_08.tscn"
+  },
+  {
+    "id": "retail_09",
+    "name": "服务台与呼叫铃",
+    "category": "retail",
+    "size": [
+      1.38,
+      1.345,
+      0.66
+    ],
+    "triangles": 1052,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_09.tscn"
+  },
+  {
+    "id": "retail_10",
+    "name": "自助售货机",
+    "category": "retail",
+    "size": [
+      0.9,
+      1.85,
+      0.882
+    ],
+    "triangles": 4276,
+    "mesh_parts": 71,
+    "moving": [
+      {
+        "node": "ServiceDoor",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_10.tscn"
+  },
+  {
+    "id": "retail_11",
+    "name": "四格快递取件柜",
+    "category": "retail",
+    "size": [
+      1.1,
+      1.7,
+      0.668
+    ],
+    "triangles": 2292,
+    "mesh_parts": 27,
+    "moving": [
+      {
+        "node": "LockerHinge0",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge2",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LockerHinge3",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_11.tscn"
+  },
+  {
+    "id": "retail_12",
+    "name": "翼闸检票通道",
+    "category": "retail",
+    "size": [
+      1.296,
+      1.05,
+      1.132
+    ],
+    "triangles": 704,
+    "mesh_parts": 16,
+    "moving": [
+      {
+        "node": "Wing-1",
+        "axis": "y",
+        "angle": -90
+      },
+      {
+        "node": "Wing1",
+        "axis": "y",
+        "angle": 90
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/retail_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/retail_12.tscn"
+  },
+  {
+    "id": "lab_01",
+    "name": "通风实验操作台",
+    "category": "lab",
+    "size": [
+      1.7,
+      1.9,
+      0.832
+    ],
+    "triangles": 1432,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "HoodSash",
+        "axis": "y",
+        "distance": 0.4
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_01.tscn"
+  },
+  {
+    "id": "lab_02",
+    "name": "翻盖离心机",
+    "category": "lab",
+    "size": [
+      0.64,
+      0.45,
+      0.752
+    ],
+    "triangles": 1152,
+    "mesh_parts": 18,
+    "moving": [
+      {
+        "node": "LidHinge",
+        "axis": "x",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_02.tscn"
+  },
+  {
+    "id": "lab_03",
+    "name": "双目光学显微镜",
+    "category": "lab",
+    "size": [
+      0.4,
+      0.64,
+      0.42
+    ],
+    "triangles": 620,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_03.tscn"
+  },
+  {
+    "id": "lab_04",
+    "name": "玻璃罩分析天平",
+    "category": "lab",
+    "size": [
+      0.56,
+      0.5605,
+      0.582
+    ],
+    "triangles": 784,
+    "mesh_parts": 17,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_04.tscn"
+  },
+  {
+    "id": "lab_05",
+    "name": "试剂瓶与试管架",
+    "category": "lab",
+    "size": [
+      0.62,
+      0.35,
+      0.4
+    ],
+    "triangles": 3584,
+    "mesh_parts": 52,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_05.tscn"
+  },
+  {
+    "id": "lab_06",
+    "name": "试剂冷藏柜",
+    "category": "lab",
+    "size": [
+      0.8,
+      1.85,
+      0.848
+    ],
+    "triangles": 660,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_06.tscn"
+  },
+  {
+    "id": "lab_07",
+    "name": "生物反应罐",
+    "category": "lab",
+    "size": [
+      0.654,
+      1.55,
+      0.682
+    ],
+    "triangles": 1716,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_07.tscn"
+  },
+  {
+    "id": "lab_08",
+    "name": "恒温培养箱",
+    "category": "lab",
+    "size": [
+      0.75,
+      0.9,
+      0.788
+    ],
+    "triangles": 836,
+    "mesh_parts": 19,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_08.tscn"
+  },
+  {
+    "id": "lab_09",
+    "name": "PCR热循环仪",
+    "category": "lab",
+    "size": [
+      0.58,
+      0.46,
+      0.712
+    ],
+    "triangles": 2272,
+    "mesh_parts": 32,
+    "moving": [
+      {
+        "node": "LidHinge",
+        "axis": "x",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_09.tscn"
+  },
+  {
+    "id": "lab_10",
+    "name": "实验控制双屏台",
+    "category": "lab",
+    "size": [
+      1.6,
+      1.45,
+      0.72
+    ],
+    "triangles": 864,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_10.tscn"
+  },
+  {
+    "id": "lab_11",
+    "name": "移液器工作站",
+    "category": "lab",
+    "size": [
+      0.55,
+      0.65,
+      0.4
+    ],
+    "triangles": 1332,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_11.tscn"
+  },
+  {
+    "id": "lab_12",
+    "name": "实验器材推车",
+    "category": "lab",
+    "size": [
+      0.75,
+      1.0215,
+      0.58
+    ],
+    "triangles": 1764,
+    "mesh_parts": 27,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lab_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lab_12.tscn"
+  },
+  {
+    "id": "medical_01",
+    "name": "检查诊疗床",
+    "category": "medical",
+    "size": [
+      0.859,
+      0.92,
+      1.9
+    ],
+    "triangles": 520,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_01.tscn"
+  },
+  {
+    "id": "medical_02",
+    "name": "超声诊断推车",
+    "category": "medical",
+    "size": [
+      0.855,
+      1.44,
+      0.7
+    ],
+    "triangles": 2100,
+    "mesh_parts": 31,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_02.tscn"
+  },
+  {
+    "id": "medical_03",
+    "name": "输液架与输液袋",
+    "category": "medical",
+    "size": [
+      0.5074,
+      1.85,
+      0.5564
+    ],
+    "triangles": 2044,
+    "mesh_parts": 22,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_03.tscn"
+  },
+  {
+    "id": "medical_04",
+    "name": "心电监护推车",
+    "category": "medical",
+    "size": [
+      0.6,
+      1.48,
+      0.62
+    ],
+    "triangles": 1672,
+    "mesh_parts": 29,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_04.tscn"
+  },
+  {
+    "id": "medical_05",
+    "name": "急救转运担架",
+    "category": "medical",
+    "size": [
+      0.859,
+      0.96,
+      1.92
+    ],
+    "triangles": 1116,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_05.tscn"
+  },
+  {
+    "id": "medical_06",
+    "name": "五灯手术照明架",
+    "category": "medical",
+    "size": [
+      0.7,
+      1.95,
+      1.34
+    ],
+    "triangles": 684,
+    "mesh_parts": 9,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_06.tscn"
+  },
+  {
+    "id": "medical_07",
+    "name": "医疗抽屉车",
+    "category": "medical",
+    "size": [
+      0.6,
+      0.94,
+      0.706
+    ],
+    "triangles": 1476,
+    "mesh_parts": 27,
+    "moving": [
+      {
+        "node": "MedicalDrawer0",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "MedicalDrawer1",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "MedicalDrawer2",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_07.tscn"
+  },
+  {
+    "id": "medical_08",
+    "name": "壁挂急救药箱",
+    "category": "medical",
+    "size": [
+      0.65,
+      0.6,
+      0.388
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_08.tscn"
+  },
+  {
+    "id": "medical_09",
+    "name": "便携除颤仪",
+    "category": "medical",
+    "size": [
+      0.5,
+      0.37,
+      0.526
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_09.tscn"
+  },
+  {
+    "id": "medical_10",
+    "name": "器械托盘架",
+    "category": "medical",
+    "size": [
+      0.655,
+      1.05,
+      0.51
+    ],
+    "triangles": 2140,
+    "mesh_parts": 20,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_10.tscn"
+  },
+  {
+    "id": "medical_11",
+    "name": "手动轮椅",
+    "category": "medical",
+    "size": [
+      0.73,
+      1.08,
+      0.99
+    ],
+    "triangles": 3272,
+    "mesh_parts": 41,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_11.tscn"
+  },
+  {
+    "id": "medical_12",
+    "name": "三折医疗屏风",
+    "category": "medical",
+    "size": [
+      1.9,
+      1.6525,
+      0.4
+    ],
+    "triangles": 792,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/medical_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/medical_12.tscn"
+  },
+  {
+    "id": "logistics_01",
+    "name": "三层重型仓储架",
+    "category": "logistics",
+    "size": [
+      1.9,
+      1.95,
+      0.7
+    ],
+    "triangles": 1100,
+    "mesh_parts": 25,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_01.tscn"
+  },
+  {
+    "id": "logistics_02",
+    "name": "木质货物托盘",
+    "category": "logistics",
+    "size": [
+      1.15,
+      0.16,
+      0.95
+    ],
+    "triangles": 836,
+    "mesh_parts": 19,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_02.tscn"
+  },
+  {
+    "id": "logistics_03",
+    "name": "液压搬运叉车",
+    "category": "logistics",
+    "size": [
+      0.59,
+      1.1425,
+      1.54
+    ],
+    "triangles": 460,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_03.tscn"
+  },
+  {
+    "id": "logistics_04",
+    "name": "双层运货手推车",
+    "category": "logistics",
+    "size": [
+      0.85,
+      0.976,
+      1.18
+    ],
+    "triangles": 1152,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_04.tscn"
+  },
+  {
+    "id": "logistics_05",
+    "name": "翻盖加固运输箱",
+    "category": "logistics",
+    "size": [
+      0.85,
+      0.664,
+      0.755
+    ],
+    "triangles": 980,
+    "mesh_parts": 16,
+    "moving": [
+      {
+        "node": "LidHinge",
+        "axis": "x",
+        "angle": -100
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_05.tscn"
+  },
+  {
+    "id": "logistics_06",
+    "name": "落地灭火器",
+    "category": "logistics",
+    "size": [
+      0.358,
+      0.8,
+      0.22
+    ],
+    "triangles": 1032,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_06.tscn"
+  },
+  {
+    "id": "logistics_07",
+    "name": "壁挂工具整理板",
+    "category": "logistics",
+    "size": [
+      1.3,
+      0.9,
+      0.27
+    ],
+    "triangles": 7452,
+    "mesh_parts": 84,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_07.tscn"
+  },
+  {
+    "id": "logistics_08",
+    "name": "带台钳维修工作台",
+    "category": "logistics",
+    "size": [
+      1.5,
+      1.1,
+      0.72
+    ],
+    "triangles": 520,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_08.tscn"
+  },
+  {
+    "id": "logistics_09",
+    "name": "两轮搬运手推车",
+    "category": "logistics",
+    "size": [
+      0.55,
+      1.25,
+      0.63
+    ],
+    "triangles": 512,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_09.tscn"
+  },
+  {
+    "id": "logistics_10",
+    "name": "智能物流转运柜",
+    "category": "logistics",
+    "size": [
+      1.15,
+      1.7,
+      0.838
+    ],
+    "triangles": 924,
+    "mesh_parts": 21,
+    "moving": [
+      {
+        "node": "TransferDoor0",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "TransferDoor1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "TransferDoor2",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_10.tscn"
+  },
+  {
+    "id": "logistics_11",
+    "name": "机房备用电源柜",
+    "category": "logistics",
+    "size": [
+      0.72,
+      1.15,
+      0.87
+    ],
+    "triangles": 968,
+    "mesh_parts": 22,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_11.tscn"
+  },
+  {
+    "id": "logistics_12",
+    "name": "防护网工业风扇",
+    "category": "logistics",
+    "size": [
+      0.676,
+      1.4,
+      0.5
+    ],
+    "triangles": 1416,
+    "mesh_parts": 22,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/logistics_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/logistics_12.tscn"
+  },
+  {
+    "id": "lounge_01",
+    "name": "软垫现代餐椅",
+    "category": "lounge",
+    "size": [
+      0.49,
+      0.88,
+      0.525
+    ],
+    "triangles": 396,
+    "mesh_parts": 9,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_01.tscn"
+  },
+  {
+    "id": "lounge_02",
+    "name": "三席公共等候椅",
+    "category": "lounge",
+    "size": [
+      1.67,
+      0.9,
+      0.515
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_02.tscn"
+  },
+  {
+    "id": "lounge_03",
+    "name": "L形模块转角沙发",
+    "category": "lounge",
+    "size": [
+      1.6,
+      0.86,
+      1.6
+    ],
+    "triangles": 308,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_03.tscn"
+  },
+  {
+    "id": "lounge_04",
+    "name": "圆形会议桌",
+    "category": "lounge",
+    "size": [
+      1.35,
+      0.7705,
+      1.35
+    ],
+    "triangles": 240,
+    "mesh_parts": 3,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_04.tscn"
+  },
+  {
+    "id": "lounge_05",
+    "name": "演讲台与话筒",
+    "category": "lounge",
+    "size": [
+      0.7,
+      1.265,
+      0.62
+    ],
+    "triangles": 896,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_05.tscn"
+  },
+  {
+    "id": "lounge_06",
+    "name": "电子钢琴与琴凳",
+    "category": "lounge",
+    "size": [
+      1.35,
+      1.0,
+      1.18
+    ],
+    "triangles": 2596,
+    "mesh_parts": 59,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_06.tscn"
+  },
+  {
+    "id": "lounge_07",
+    "name": "室内跑步机",
+    "category": "lounge",
+    "size": [
+      0.83,
+      1.3,
+      1.8
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_07.tscn"
+  },
+  {
+    "id": "lounge_08",
+    "name": "蓝布台球桌",
+    "category": "lounge",
+    "size": [
+      1.9,
+      0.898,
+      1.04
+    ],
+    "triangles": 3064,
+    "mesh_parts": 20,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_08.tscn"
+  },
+  {
+    "id": "lounge_09",
+    "name": "折叠会议桌",
+    "category": "lounge",
+    "size": [
+      1.6,
+      0.75,
+      0.75
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_09.tscn"
+  },
+  {
+    "id": "lounge_10",
+    "name": "带书写板培训椅",
+    "category": "lounge",
+    "size": [
+      0.63,
+      0.99,
+      0.57
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_10.tscn"
+  },
+  {
+    "id": "lounge_11",
+    "name": "双面图书推车",
+    "category": "lounge",
+    "size": [
+      0.9,
+      1.34,
+      0.62
+    ],
+    "triangles": 2428,
+    "mesh_parts": 47,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_11.tscn"
+  },
+  {
+    "id": "lounge_12",
+    "name": "大肥鱼观景水族箱",
+    "category": "lounge",
+    "size": [
+      1.251,
+      1.35,
+      0.552
+    ],
+    "triangles": 4776,
+    "mesh_parts": 27,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/lounge_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/lounge_12.tscn"
+  },
+  {
+    "id": "architecture_01",
+    "name": "双扇自动玻璃门",
+    "category": "architecture",
+    "size": [
+      2.15,
+      2.25,
+      0.389
+    ],
+    "triangles": 704,
+    "mesh_parts": 16,
+    "moving": [
+      {
+        "node": "SlidingLeaf-1",
+        "axis": "x",
+        "distance": -0.8879999999999999
+      },
+      {
+        "node": "SlidingLeaf1",
+        "axis": "x",
+        "distance": 0.8879999999999999
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_01.tscn"
+  },
+  {
+    "id": "architecture_02",
+    "name": "双滑门电梯入口",
+    "category": "architecture",
+    "size": [
+      1.85,
+      2.25,
+      0.502
+    ],
+    "triangles": 924,
+    "mesh_parts": 21,
+    "moving": [
+      {
+        "node": "SlidingLeaf-1",
+        "axis": "x",
+        "distance": -0.744
+      },
+      {
+        "node": "SlidingLeaf1",
+        "axis": "x",
+        "distance": 0.744
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_02.tscn"
+  },
+  {
+    "id": "architecture_03",
+    "name": "十级模块楼梯",
+    "category": "architecture",
+    "size": [
+      1.2,
+      2.6,
+      2.1259
+    ],
+    "triangles": 1480,
+    "mesh_parts": 32,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_03.tscn"
+  },
+  {
+    "id": "architecture_04",
+    "name": "透明玻璃护栏",
+    "category": "architecture",
+    "size": [
+      1.7,
+      1.1,
+      0.1
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_04.tscn"
+  },
+  {
+    "id": "architecture_05",
+    "name": "L形墙壁转角",
+    "category": "architecture",
+    "size": [
+      1.1,
+      2.2,
+      1.12
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_05.tscn"
+  },
+  {
+    "id": "architecture_06",
+    "name": "灯带装饰墙单元",
+    "category": "architecture",
+    "size": [
+      1.15,
+      2.2,
+      0.18
+    ],
+    "triangles": 308,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_06.tscn"
+  },
+  {
+    "id": "architecture_07",
+    "name": "厚框观景窗",
+    "category": "architecture",
+    "size": [
+      1.68,
+      1.35,
+      0.26
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_07.tscn"
+  },
+  {
+    "id": "architecture_08",
+    "name": "吊顶通风模块",
+    "category": "architecture",
+    "size": [
+      1.0,
+      0.15,
+      1.0
+    ],
+    "triangles": 616,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_08.tscn"
+  },
+  {
+    "id": "architecture_09",
+    "name": "翻盖架空地板",
+    "category": "architecture",
+    "size": [
+      1.0,
+      0.194,
+      1.0
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [
+      {
+        "node": "LidHinge",
+        "axis": "x",
+        "angle": -110
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_09.tscn"
+  },
+  {
+    "id": "architecture_10",
+    "name": "灯带结构立柱",
+    "category": "architecture",
+    "size": [
+      0.385,
+      2.2,
+      0.385
+    ],
+    "triangles": 220,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_10.tscn"
+  },
+  {
+    "id": "architecture_11",
+    "name": "嵌墙电气控制柜",
+    "category": "architecture",
+    "size": [
+      0.65,
+      1.05,
+      0.408
+    ],
+    "triangles": 968,
+    "mesh_parts": 22,
+    "moving": [
+      {
+        "node": "DoorHinge",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_11.tscn"
+  },
+  {
+    "id": "architecture_12",
+    "name": "四折移动隔断",
+    "category": "architecture",
+    "size": [
+      1.858,
+      1.7,
+      0.36
+    ],
+    "triangles": 1144,
+    "mesh_parts": 26,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/architecture_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/architecture_12.tscn"
+  },
+  {
+    "id": "school_01",
+    "name": "学生收纳课桌",
+    "category": "school",
+    "size": [
+      0.88,
+      0.75,
+      0.62
+    ],
+    "triangles": 716,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_01.tscn"
+  },
+  {
+    "id": "school_02",
+    "name": "教师多抽讲台",
+    "category": "school",
+    "size": [
+      1.65,
+      1.16,
+      0.878
+    ],
+    "triangles": 1012,
+    "mesh_parts": 23,
+    "moving": [
+      {
+        "node": "TeacherDrawer0",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "TeacherDrawer1",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "TeacherDrawer2",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/school_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_02.tscn"
+  },
+  {
+    "id": "school_03",
+    "name": "智能教学白板",
+    "category": "school",
+    "size": [
+      1.85,
+      1.05,
+      0.27
+    ],
+    "triangles": 672,
+    "mesh_parts": 9,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_03.tscn"
+  },
+  {
+    "id": "school_04",
+    "name": "吊装教学投影机",
+    "category": "school",
+    "size": [
+      0.48,
+      0.5505,
+      0.458
+    ],
+    "triangles": 636,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_04.tscn"
+  },
+  {
+    "id": "school_05",
+    "name": "桌架地球仪",
+    "category": "school",
+    "size": [
+      0.46,
+      0.68,
+      0.38
+    ],
+    "triangles": 1824,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_05.tscn"
+  },
+  {
+    "id": "school_06",
+    "name": "课程公告墙板",
+    "category": "school",
+    "size": [
+      1.1,
+      0.76,
+      0.128
+    ],
+    "triangles": 440,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_06.tscn"
+  },
+  {
+    "id": "school_07",
+    "name": "升降实验演示桌",
+    "category": "school",
+    "size": [
+      1.55,
+      1.02,
+      0.76
+    ],
+    "triangles": 220,
+    "mesh_parts": 5,
+    "moving": [
+      {
+        "node": "RisingWorktop",
+        "axis": "y",
+        "distance": 0.2
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/school_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_07.tscn"
+  },
+  {
+    "id": "school_08",
+    "name": "体育双门器材柜",
+    "category": "school",
+    "size": [
+      0.95,
+      1.8,
+      0.738
+    ],
+    "triangles": 572,
+    "mesh_parts": 13,
+    "moving": [
+      {
+        "node": "EquipmentDoor-1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "EquipmentDoor1",
+        "axis": "y",
+        "angle": 105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/school_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_08.tscn"
+  },
+  {
+    "id": "school_09",
+    "name": "校园饮水站",
+    "category": "school",
+    "size": [
+      0.72,
+      1.5,
+      0.83
+    ],
+    "triangles": 1416,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_09.tscn"
+  },
+  {
+    "id": "school_10",
+    "name": "实验圆座高凳",
+    "category": "school",
+    "size": [
+      0.46,
+      0.65,
+      0.46
+    ],
+    "triangles": 784,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_10.tscn"
+  },
+  {
+    "id": "school_11",
+    "name": "六格学生储物柜",
+    "category": "school",
+    "size": [
+      1.1,
+      1.6,
+      0.608
+    ],
+    "triangles": 1100,
+    "mesh_parts": 25,
+    "moving": [
+      {
+        "node": "StudentLocker0",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "StudentLocker1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "StudentLocker2",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "StudentLocker3",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "StudentLocker4",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "StudentLocker5",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/school_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_11.tscn"
+  },
+  {
+    "id": "school_12",
+    "name": "校园地图展示板",
+    "category": "school",
+    "size": [
+      1.3,
+      0.9,
+      0.134
+    ],
+    "triangles": 440,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/school_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/school_12.tscn"
+  },
+  {
+    "id": "campus_01",
+    "name": "双面低矮图书架",
+    "category": "campus",
+    "size": [
+      1.7,
+      1.3,
+      0.7
+    ],
+    "triangles": 3652,
+    "mesh_parts": 83,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_01.tscn"
+  },
+  {
+    "id": "campus_02",
+    "name": "双人阅览自习桌",
+    "category": "campus",
+    "size": [
+      1.9,
+      0.9675,
+      1.02
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_02.tscn"
+  },
+  {
+    "id": "campus_03",
+    "name": "单人隔音学习舱",
+    "category": "campus",
+    "size": [
+      1.05,
+      1.8,
+      1.05
+    ],
+    "triangles": 396,
+    "mesh_parts": 9,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_03.tscn"
+  },
+  {
+    "id": "campus_04",
+    "name": "图书检索触屏台",
+    "category": "campus",
+    "size": [
+      0.55,
+      1.31,
+      0.52
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_04.tscn"
+  },
+  {
+    "id": "campus_05",
+    "name": "自助图书借还机",
+    "category": "campus",
+    "size": [
+      0.72,
+      1.205,
+      0.716
+    ],
+    "triangles": 980,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_05.tscn"
+  },
+  {
+    "id": "campus_06",
+    "name": "翻盖图书回收箱",
+    "category": "campus",
+    "size": [
+      0.7,
+      0.976,
+      0.62
+    ],
+    "triangles": 804,
+    "mesh_parts": 12,
+    "moving": [
+      {
+        "node": "BookReturnLid",
+        "axis": "x",
+        "angle": -90
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_06.tscn"
+  },
+  {
+    "id": "campus_07",
+    "name": "图书转运平板车",
+    "category": "campus",
+    "size": [
+      0.9,
+      0.7575,
+      1.04
+    ],
+    "triangles": 1080,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_07.tscn"
+  },
+  {
+    "id": "campus_08",
+    "name": "三层期刊展示柜",
+    "category": "campus",
+    "size": [
+      1.05,
+      1.25,
+      0.45
+    ],
+    "triangles": 968,
+    "mesh_parts": 22,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_08.tscn"
+  },
+  {
+    "id": "campus_09",
+    "name": "校园储物长凳",
+    "category": "campus",
+    "size": [
+      1.55,
+      0.579,
+      0.512
+    ],
+    "triangles": 396,
+    "mesh_parts": 9,
+    "moving": [
+      {
+        "node": "BenchStorageLid",
+        "axis": "x",
+        "angle": -90
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_09.tscn"
+  },
+  {
+    "id": "campus_10",
+    "name": "体育球类器材架",
+    "category": "campus",
+    "size": [
+      1.0,
+      1.5,
+      0.5055
+    ],
+    "triangles": 4280,
+    "mesh_parts": 22,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_10.tscn"
+  },
+  {
+    "id": "campus_11",
+    "name": "荣誉玻璃展示柜",
+    "category": "campus",
+    "size": [
+      1.1,
+      1.65,
+      0.628
+    ],
+    "triangles": 2100,
+    "mesh_parts": 33,
+    "moving": [
+      {
+        "node": "TrophyDoor",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_11.tscn"
+  },
+  {
+    "id": "campus_12",
+    "name": "校园花园长凳",
+    "category": "campus",
+    "size": [
+      1.8,
+      0.855,
+      0.6
+    ],
+    "triangles": 440,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/campus_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/campus_12.tscn"
+  },
+  {
+    "id": "ward_01",
+    "name": "可抬背电动护理床",
+    "category": "ward",
+    "size": [
+      0.98,
+      1.01,
+      2.128
+    ],
+    "triangles": 1168,
+    "mesh_parts": 20,
+    "moving": [
+      {
+        "node": "BedBackrest",
+        "axis": "x",
+        "angle": 42
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_01.tscn"
+  },
+  {
+    "id": "ward_02",
+    "name": "抽屉病床边柜",
+    "category": "ward",
+    "size": [
+      0.5,
+      0.73,
+      0.648
+    ],
+    "triangles": 936,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "PatientDrawer",
+        "axis": "z",
+        "distance": 0.38
+      },
+      {
+        "node": "PatientDoor",
+        "axis": "y",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_02.tscn"
+  },
+  {
+    "id": "ward_03",
+    "name": "跨床升降餐桌",
+    "category": "ward",
+    "size": [
+      0.84,
+      1.12,
+      0.583
+    ],
+    "triangles": 816,
+    "mesh_parts": 12,
+    "moving": [
+      {
+        "node": "OverbedTray",
+        "axis": "y",
+        "distance": 0.23
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_03.tscn"
+  },
+  {
+    "id": "ward_04",
+    "name": "壁挂氧气终端",
+    "category": "ward",
+    "size": [
+      0.44,
+      0.3,
+      0.155
+    ],
+    "triangles": 364,
+    "mesh_parts": 5,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_04.tscn"
+  },
+  {
+    "id": "ward_05",
+    "name": "床头医用墙板",
+    "category": "ward",
+    "size": [
+      1.25,
+      0.37,
+      0.155
+    ],
+    "triangles": 1092,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_05.tscn"
+  },
+  {
+    "id": "ward_06",
+    "name": "折叠陪护座椅",
+    "category": "ward",
+    "size": [
+      0.66,
+      0.94,
+      0.564
+    ],
+    "triangles": 440,
+    "mesh_parts": 10,
+    "moving": [
+      {
+        "node": "FoldingSeat",
+        "axis": "x",
+        "angle": -85
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_06.tscn"
+  },
+  {
+    "id": "ward_07",
+    "name": "病房电子信息屏",
+    "category": "ward",
+    "size": [
+      0.64,
+      0.42,
+      0.172
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_07.tscn"
+  },
+  {
+    "id": "ward_08",
+    "name": "便携氧气运输车",
+    "category": "ward",
+    "size": [
+      0.52,
+      1.207,
+      0.46
+    ],
+    "triangles": 1680,
+    "mesh_parts": 16,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_08.tscn"
+  },
+  {
+    "id": "ward_09",
+    "name": "轻便洗浴座椅",
+    "category": "ward",
+    "size": [
+      0.5,
+      0.89,
+      0.49
+    ],
+    "triangles": 572,
+    "mesh_parts": 13,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_09.tscn"
+  },
+  {
+    "id": "ward_10",
+    "name": "双门医用布草柜",
+    "category": "ward",
+    "size": [
+      0.95,
+      1.8,
+      0.738
+    ],
+    "triangles": 1232,
+    "mesh_parts": 28,
+    "moving": [
+      {
+        "node": "LinenDoor-1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "LinenDoor1",
+        "axis": "y",
+        "angle": 105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_10.tscn"
+  },
+  {
+    "id": "ward_11",
+    "name": "脚控医用洗手台",
+    "category": "ward",
+    "size": [
+      0.82,
+      1.183,
+      0.97
+    ],
+    "triangles": 608,
+    "mesh_parts": 13,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_11.tscn"
+  },
+  {
+    "id": "ward_12",
+    "name": "双泵输液设备架",
+    "category": "ward",
+    "size": [
+      0.4642,
+      1.8,
+      0.5132
+    ],
+    "triangles": 1468,
+    "mesh_parts": 26,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/ward_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/ward_12.tscn"
+  },
+  {
+    "id": "clinic_01",
+    "name": "折角护士接待台",
+    "category": "clinic",
+    "size": [
+      2.2258,
+      1.24,
+      1.0375
+    ],
+    "triangles": 1024,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_01.tscn"
+  },
+  {
+    "id": "clinic_02",
+    "name": "自助挂号终端",
+    "category": "clinic",
+    "size": [
+      0.54,
+      1.47,
+      0.5
+    ],
+    "triangles": 760,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_02.tscn"
+  },
+  {
+    "id": "clinic_03",
+    "name": "诊室排队显示牌",
+    "category": "clinic",
+    "size": [
+      0.65,
+      1.9,
+      0.34
+    ],
+    "triangles": 308,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_03.tscn"
+  },
+  {
+    "id": "clinic_04",
+    "name": "药房分类药品架",
+    "category": "clinic",
+    "size": [
+      1.5,
+      1.82,
+      0.452
+    ],
+    "triangles": 3608,
+    "mesh_parts": 82,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_04.tscn"
+  },
+  {
+    "id": "clinic_05",
+    "name": "医生问诊工作台",
+    "category": "clinic",
+    "size": [
+      1.5,
+      1.225,
+      0.72
+    ],
+    "triangles": 936,
+    "mesh_parts": 15,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_05.tscn"
+  },
+  {
+    "id": "clinic_06",
+    "name": "CT检查机与扫描床",
+    "category": "clinic",
+    "size": [
+      1.92,
+      2.07,
+      2.64
+    ],
+    "triangles": 1164,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_06.tscn"
+  },
+  {
+    "id": "clinic_07",
+    "name": "MRI检查入口与扫描床",
+    "category": "clinic",
+    "size": [
+      2.0,
+      2.1,
+      2.64
+    ],
+    "triangles": 1296,
+    "mesh_parts": 14,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_07.tscn"
+  },
+  {
+    "id": "clinic_08",
+    "name": "可调牙科诊疗椅",
+    "category": "clinic",
+    "size": [
+      0.92,
+      1.5,
+      1.91
+    ],
+    "triangles": 1028,
+    "mesh_parts": 10,
+    "moving": [
+      {
+        "node": "DentalBack",
+        "axis": "x",
+        "angle": 30
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_08.tscn"
+  },
+  {
+    "id": "clinic_09",
+    "name": "牙科器械操作车",
+    "category": "clinic",
+    "size": [
+      0.65,
+      1.1,
+      0.596
+    ],
+    "triangles": 2588,
+    "mesh_parts": 25,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_09.tscn"
+  },
+  {
+    "id": "clinic_10",
+    "name": "轮椅无障碍称量台",
+    "category": "clinic",
+    "size": [
+      0.92,
+      0.9,
+      1.12
+    ],
+    "triangles": 484,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_10.tscn"
+  },
+  {
+    "id": "clinic_11",
+    "name": "圆门高压灭菌器",
+    "category": "clinic",
+    "size": [
+      0.7,
+      0.85,
+      0.868
+    ],
+    "triangles": 1036,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "SterilizerHinge",
+        "axis": "y",
+        "angle": -110
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_11.tscn"
+  },
+  {
+    "id": "clinic_12",
+    "name": "医疗分类废物柜",
+    "category": "clinic",
+    "size": [
+      0.92,
+      0.85,
+      0.69
+    ],
+    "triangles": 704,
+    "mesh_parts": 16,
+    "moving": [
+      {
+        "node": "WasteLid",
+        "axis": "x",
+        "angle": -105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/clinic_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/clinic_12.tscn"
+  },
+  {
+    "id": "mall_01",
+    "name": "服装展示人台",
+    "category": "mall",
+    "size": [
+      0.474,
+      1.65,
+      0.38
+    ],
+    "triangles": 1840,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_01.tscn"
+  },
+  {
+    "id": "mall_02",
+    "name": "鞋店墙面展示架",
+    "category": "mall",
+    "size": [
+      1.35,
+      1.65,
+      0.3
+    ],
+    "triangles": 6044,
+    "mesh_parts": 37,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_02.tscn"
+  },
+  {
+    "id": "mall_03",
+    "name": "珠宝玻璃展示柜",
+    "category": "mall",
+    "size": [
+      1.5,
+      1.138,
+      0.768
+    ],
+    "triangles": 4224,
+    "mesh_parts": 26,
+    "moving": [
+      {
+        "node": "JewelryDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_03.tscn"
+  },
+  {
+    "id": "mall_04",
+    "name": "数码产品体验台",
+    "category": "mall",
+    "size": [
+      1.4,
+      1.205,
+      0.6
+    ],
+    "triangles": 1320,
+    "mesh_parts": 30,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_04.tscn"
+  },
+  {
+    "id": "mall_05",
+    "name": "美妆镜面工作站",
+    "category": "mall",
+    "size": [
+      1.1,
+      1.7,
+      0.532
+    ],
+    "triangles": 892,
+    "mesh_parts": 17,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_05.tscn"
+  },
+  {
+    "id": "mall_06",
+    "name": "灯带店铺入口框",
+    "category": "mall",
+    "size": [
+      2.2,
+      2.5,
+      0.266
+    ],
+    "triangles": 584,
+    "mesh_parts": 7,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_06.tscn"
+  },
+  {
+    "id": "mall_07",
+    "name": "试衣间与布帘",
+    "category": "mall",
+    "size": [
+      1.385,
+      2.0,
+      1.231
+    ],
+    "triangles": 660,
+    "mesh_parts": 15,
+    "moving": [
+      {
+        "node": "CurtainSlide",
+        "axis": "x",
+        "distance": 0.324
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_07.tscn"
+  },
+  {
+    "id": "mall_08",
+    "name": "饮品岛式操作台",
+    "category": "mall",
+    "size": [
+      1.75,
+      1.1715,
+      0.958
+    ],
+    "triangles": 1912,
+    "mesh_parts": 29,
+    "moving": [
+      {
+        "node": "DrinkStockDrawer",
+        "axis": "z",
+        "distance": 0.38
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_08.tscn"
+  },
+  {
+    "id": "mall_09",
+    "name": "静态商场扶梯",
+    "category": "mall",
+    "size": [
+      1.25,
+      2.35,
+      1.8761
+    ],
+    "triangles": 4224,
+    "mesh_parts": 96,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_09.tscn"
+  },
+  {
+    "id": "mall_10",
+    "name": "眼镜陈列展示台",
+    "category": "mall",
+    "size": [
+      0.85,
+      1.45,
+      0.42
+    ],
+    "triangles": 10184,
+    "mesh_parts": 46,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_10.tscn"
+  },
+  {
+    "id": "mall_11",
+    "name": "面包货品陈列架",
+    "category": "mall",
+    "size": [
+      1.2,
+      1.45,
+      0.652
+    ],
+    "triangles": 6308,
+    "mesh_parts": 43,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_11.tscn"
+  },
+  {
+    "id": "mall_12",
+    "name": "美妆收纳双门柜",
+    "category": "mall",
+    "size": [
+      0.86,
+      1.45,
+      0.618
+    ],
+    "triangles": 4012,
+    "mesh_parts": 65,
+    "moving": [
+      {
+        "node": "CosmeticDoor-1",
+        "axis": "y",
+        "angle": -105
+      },
+      {
+        "node": "CosmeticDoor1",
+        "axis": "y",
+        "angle": 105
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/mall_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/mall_12.tscn"
+  },
+  {
+    "id": "public_01",
+    "name": "商场服务咨询台",
+    "category": "public",
+    "size": [
+      1.8,
+      1.355,
+      0.746
+    ],
+    "triangles": 936,
+    "mesh_parts": 15,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_01.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_01.tscn"
+  },
+  {
+    "id": "public_02",
+    "name": "楼层导览立式屏",
+    "category": "public",
+    "size": [
+      0.75,
+      1.85,
+      0.36
+    ],
+    "triangles": 352,
+    "mesh_parts": 8,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_02.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_02.tscn"
+  },
+  {
+    "id": "public_03",
+    "name": "吊装方向指示牌",
+    "category": "public",
+    "size": [
+      1.35,
+      0.8,
+      0.094
+    ],
+    "triangles": 264,
+    "mesh_parts": 6,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_03.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_03.tscn"
+  },
+  {
+    "id": "public_04",
+    "name": "环形组合休闲坐凳",
+    "category": "public",
+    "size": [
+      1.392,
+      0.7375,
+      1.392
+    ],
+    "triangles": 2948,
+    "mesh_parts": 19,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_04.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_04.tscn"
+  },
+  {
+    "id": "public_05",
+    "name": "三分垃圾分类站",
+    "category": "public",
+    "size": [
+      1.06,
+      0.85,
+      0.458
+    ],
+    "triangles": 1488,
+    "mesh_parts": 15,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_05.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_05.tscn"
+  },
+  {
+    "id": "public_06",
+    "name": "室内乔木花池",
+    "category": "public",
+    "size": [
+      1.2065,
+      2.67,
+      1.02
+    ],
+    "triangles": 2800,
+    "mesh_parts": 11,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_06.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_06.tscn"
+  },
+  {
+    "id": "public_07",
+    "name": "三球吊装灯组",
+    "category": "public",
+    "size": [
+      0.95,
+      1.1005,
+      0.32
+    ],
+    "triangles": 2204,
+    "mesh_parts": 10,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_07.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_07.tscn"
+  },
+  {
+    "id": "public_08",
+    "name": "浅池观景喷泉",
+    "category": "public",
+    "size": [
+      1.8,
+      0.9,
+      1.8
+    ],
+    "triangles": 2944,
+    "mesh_parts": 12,
+    "moving": [
+      {
+        "node": "WaterJets",
+        "axis": "y",
+        "distance": 0.09
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/public_08.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_08.tscn"
+  },
+  {
+    "id": "public_09",
+    "name": "透明扭蛋展示机",
+    "category": "public",
+    "size": [
+      0.6,
+      1.45,
+      0.6
+    ],
+    "triangles": 4360,
+    "mesh_parts": 23,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_09.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_09.tscn"
+  },
+  {
+    "id": "public_10",
+    "name": "数字拍照小亭",
+    "category": "public",
+    "size": [
+      1.1,
+      2.0,
+      1.086
+    ],
+    "triangles": 1104,
+    "mesh_parts": 18,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_10.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_10.tscn"
+  },
+  {
+    "id": "public_11",
+    "name": "大肥鱼儿童摇摇车",
+    "category": "public",
+    "size": [
+      0.65,
+      1.12,
+      1.3
+    ],
+    "triangles": 2212,
+    "mesh_parts": 11,
+    "moving": [
+      {
+        "node": "RideBody",
+        "axis": "x",
+        "angle": 12
+      }
+    ],
+    "model": "res://world_pack26/interior_pack/assets/models/public_11.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_11.tscn"
+  },
+  {
+    "id": "public_12",
+    "name": "集成充电休闲长凳",
+    "category": "public",
+    "size": [
+      1.8,
+      0.92,
+      0.58
+    ],
+    "triangles": 528,
+    "mesh_parts": 12,
+    "moving": [],
+    "model": "res://world_pack26/interior_pack/assets/models/public_12.glb",
+    "scene": "res://world_pack26/interior_pack/scenes/items/public_12.tscn"
+  }
+]

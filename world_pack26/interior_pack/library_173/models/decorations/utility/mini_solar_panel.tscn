@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/utility/mini_solar_panel.glb" id="1"]
+
+[node name="mini_solar_panel" type="Node3D"]
+metadata/asset_id = "mini_solar_panel"
+metadata/asset_label = "小型太阳能板"
+metadata/code = "UT-05"
+metadata/category_code = "UT"
+metadata/category_label = "设备装饰"
+metadata/folder = "utility"
+metadata/placement = "地面"
+metadata/scene_tags = ["设备间", "仓库", "办公楼"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

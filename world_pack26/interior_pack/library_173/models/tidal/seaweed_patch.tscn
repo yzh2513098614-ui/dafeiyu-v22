@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/tidal/seaweed_patch.glb" id="1"]
+
+[node name="seaweed_patch" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

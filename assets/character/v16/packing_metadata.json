@@ -1,0 +1,791 @@
+{
+  "atlas_order": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "canvas_size": [
+    512,
+    512
+  ],
+  "cycle_distance": 0.82,
+  "frame_counts": {
+    "idle": 1,
+    "walk": 6
+  },
+  "frames": [
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 0,
+      "source_rect": [
+        0.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 1,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 1,
+      "source_rect": [
+        256.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 2,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 2,
+      "source_rect": [
+        512.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 3,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 3,
+      "source_rect": [
+        768.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 4,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 4,
+      "source_rect": [
+        1024.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 5,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": 5,
+      "source_rect": [
+        1280.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 0,
+      "source_rect": [
+        0.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 1,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 1,
+      "source_rect": [
+        256.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 2,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 2,
+      "source_rect": [
+        512.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 3,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 3,
+      "source_rect": [
+        768.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 4,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 4,
+      "source_rect": [
+        1024.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 5,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": 5,
+      "source_rect": [
+        1280.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 0,
+      "source_rect": [
+        0.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 1,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 1,
+      "source_rect": [
+        256.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 2,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 2,
+      "source_rect": [
+        512.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 3,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 3,
+      "source_rect": [
+        768.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 4,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 4,
+      "source_rect": [
+        1024.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 5,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": 5,
+      "source_rect": [
+        1280.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 0,
+      "source_rect": [
+        0.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 1,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 1,
+      "source_rect": [
+        256.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 2,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 2,
+      "source_rect": [
+        512.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 3,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 3,
+      "source_rect": [
+        768.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 4,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 4,
+      "source_rect": [
+        1024.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 5,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": 5,
+      "source_rect": [
+        1280.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "walk"
+    },
+    {
+      "canvas_position": [
+        57.71875,
+        63.09375
+      ],
+      "direction": "down",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        135.0,
+        243.0
+      ],
+      "source_index": -1,
+      "source_rect": [
+        512.0,
+        0.0,
+        256.0,
+        248.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        248.0
+      ],
+      "state": "idle"
+    },
+    {
+      "canvas_position": [
+        87.09375,
+        57.21875
+      ],
+      "direction": "left",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        115.0,
+        247.0
+      ],
+      "source_index": -1,
+      "source_rect": [
+        256.0,
+        248.0,
+        256.0,
+        258.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        258.0
+      ],
+      "state": "idle"
+    },
+    {
+      "canvas_position": [
+        69.46875,
+        83.65625
+      ],
+      "direction": "up",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        127.0,
+        229.0
+      ],
+      "source_index": -1,
+      "source_rect": [
+        512.0,
+        506.0,
+        256.0,
+        236.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        236.0
+      ],
+      "state": "idle"
+    },
+    {
+      "canvas_position": [
+        44.5,
+        51.34375
+      ],
+      "direction": "right",
+      "flip_h": false,
+      "frame": 0,
+      "source": "res://art_source/用户选定_完整人物.png",
+      "source_ground": [
+        144.0,
+        251.0
+      ],
+      "source_index": -1,
+      "source_rect": [
+        256.0,
+        742.0,
+        256.0,
+        282.0
+      ],
+      "source_scale": 1.46875,
+      "source_size": [
+        256.0,
+        282.0
+      ],
+      "state": "idle"
+    }
+  ],
+  "ground": [
+    256.0,
+    420.0
+  ],
+  "method": "complete_png_normalized_user_selected",
+  "pixel_size": 0.0064,
+  "runtime_manifest_modified": false,
+  "source_manifest": "res://assets/character/v16/completeframes.json",
+  "transform": "whole image uniform scale and translation; optional whole image horizontal mirror",
+  "unique_source_poses": {
+    "down": 6,
+    "left": 6,
+    "right": 6,
+    "up": 6
+  },
+  "version": 1
+}

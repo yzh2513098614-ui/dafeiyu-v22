@@ -1,0 +1,26 @@
+{
+  "source_library_file_id": "libfile_96d56e8c94988191999fd27fe3e1d081",
+  "source_version": 6,
+  "source_filename": "大肥鱼同人SLG_14张连通地图_389GLB素材_Godot完整工程.zip",
+  "source_zip_sha256": "e8c74ede77b9f9eaaa81e5ffc694007b362810420dfa2f5e312ae35d1cc404bc",
+  "source_zip_bytes": 82472347,
+  "added_map_ids": [
+    "civic",
+    "hotel",
+    "emergency",
+    "media",
+    "expo",
+    "underground"
+  ],
+  "retained_glb_count": 389,
+  "used_asset_ids": 365,
+  "new_direct_instances": 324,
+  "new_modules": [
+    "civic_service_island",
+    "hotel_suite_cluster",
+    "triage_bay",
+    "broadcast_camera",
+    "digital_whale_podium",
+    "utility_pipe_rack"
+  ]
+}

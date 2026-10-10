@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "silver"
+albedo_color = Color(0.6862745, 0.7333333, 0.76862746, 1)
+metallic = 0.75
+roughness = 0.26

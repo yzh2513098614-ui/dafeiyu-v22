@@ -1,0 +1,163 @@
+{
+  "maps": 26,
+  "files_copied": 1541,
+  "models": 389,
+  "maps_list": [
+    {
+      "id": "school",
+      "title": "鲸蓝三层庭院学院",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/school_exploration.tscn",
+      "regions": 33
+    },
+    {
+      "id": "hospital",
+      "title": "深潜双层综合医院",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/hospital_exploration.tscn",
+      "regions": 22
+    },
+    {
+      "id": "mall",
+      "title": "Token三层挑空商业中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/mall_exploration.tscn",
+      "regions": 27
+    },
+    {
+      "id": "residence",
+      "title": "鲸蓝公寓社区",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/residence_exploration.tscn",
+      "regions": 9
+    },
+    {
+      "id": "research",
+      "title": "深潜错层研究中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/research_exploration.tscn",
+      "regions": 27
+    },
+    {
+      "id": "datacenter",
+      "title": "Token三层动力数据中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/datacenter_exploration.tscn",
+      "regions": 35
+    },
+    {
+      "id": "harbor",
+      "title": "鲸蓝立体滨水物流港",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/harbor_exploration.tscn",
+      "regions": 27
+    },
+    {
+      "id": "transit",
+      "title": "鲸蓝双层立体换乘站",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/transit_exploration.tscn",
+      "regions": 16
+    },
+    {
+      "id": "library",
+      "title": "鲸蓝双层城市图书馆",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/library_exploration.tscn",
+      "regions": 20
+    },
+    {
+      "id": "sports",
+      "title": "鲸蓝错层立体体育中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/sports_exploration.tscn",
+      "regions": 29
+    },
+    {
+      "id": "foodhall",
+      "title": "鲸蓝三层餐饮市场",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/foodhall_exploration.tscn",
+      "regions": 33
+    },
+    {
+      "id": "museum",
+      "title": "鲸蓝三层展陈博物馆",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/museum_exploration.tscn",
+      "regions": 28
+    },
+    {
+      "id": "fabrication",
+      "title": "Token立体智造工厂",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/fabrication_exploration.tscn",
+      "regions": 20
+    },
+    {
+      "id": "skypark",
+      "title": "城市空中花园",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/skypark_exploration.tscn",
+      "regions": 7
+    },
+    {
+      "id": "civic",
+      "title": "Token双层T形行政中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/civic_exploration.tscn",
+      "regions": 28
+    },
+    {
+      "id": "hotel",
+      "title": "云鲸双层中庭酒店",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/hotel_exploration.tscn",
+      "regions": 25
+    },
+    {
+      "id": "emergency",
+      "title": "深潜双层应急调度站",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/emergency_exploration.tscn",
+      "regions": 29
+    },
+    {
+      "id": "media",
+      "title": "Token三层立体传媒中心",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/media_exploration.tscn",
+      "regions": 37
+    },
+    {
+      "id": "expo",
+      "title": "Token三层大跨会展馆",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/expo_exploration.tscn",
+      "regions": 45
+    },
+    {
+      "id": "underground",
+      "title": "Token双层地下服务网络",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/underground_exploration.tscn",
+      "regions": 26
+    },
+    {
+      "id": "nightmarket",
+      "title": "鲸蓝U形滨海餐饮夜市",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/nightmarket_exploration.tscn",
+      "regions": 7
+    },
+    {
+      "id": "customs",
+      "title": "Token双层查验仓库",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/customs_exploration.tscn",
+      "regions": 15
+    },
+    {
+      "id": "campsite",
+      "title": "云鲸T形海滩度假营地",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/campsite_exploration.tscn",
+      "regions": 9
+    },
+    {
+      "id": "observatory",
+      "title": "深潜L形海洋观测站",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/observatory_exploration.tscn",
+      "regions": 7
+    },
+    {
+      "id": "shipyard",
+      "title": "鲸蓝错位船舶维修基地",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/shipyard_exploration.tscn",
+      "regions": 7
+    },
+    {
+      "id": "boardwalk",
+      "title": "大肥鱼双层挑空滨水商场",
+      "scene": "res://world_pack26/interior_pack/scenes/levels/boardwalk_exploration.tscn",
+      "regions": 13
+    }
+  ]
+}

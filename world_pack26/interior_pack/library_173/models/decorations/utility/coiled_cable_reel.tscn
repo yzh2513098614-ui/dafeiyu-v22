@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/models/decorations/utility/coiled_cable_reel.glb" id="1"]
+
+[node name="coiled_cable_reel" type="Node3D"]
+metadata/asset_id = "coiled_cable_reel"
+metadata/asset_label = "绕线电缆盘"
+metadata/code = "UT-01"
+metadata/category_code = "UT"
+metadata/category_label = "设备装饰"
+metadata/folder = "utility"
+metadata/placement = "地面"
+metadata/scene_tags = ["设备间", "仓库", "办公楼"]
+metadata/collision_mode = "无碰撞装饰"
+metadata/static = true
+
+[node name="Model" parent="." instance=ExtResource("1")]
+

@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="PackedScene" path="res://models/scenes/harbor_logistics_room.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(8.0, 0.16, 6.2)
+
+[sub_resource type="BoxShape3D" id="Shape1"]
+size = Vector3(8.0, 2.7, 0.14)
+
+[sub_resource type="BoxShape3D" id="Shape2"]
+size = Vector3(0.13, 0.57, 6.2)
+
+[sub_resource type="BoxShape3D" id="Shape3"]
+size = Vector3(0.13, 0.57, 6.2)
+
+[sub_resource type="BoxShape3D" id="Shape4"]
+size = Vector3(1.52, 1.7, 1.05)
+
+[sub_resource type="BoxShape3D" id="Shape5"]
+size = Vector3(0.73, 1.65, 0.64)
+
+[sub_resource type="BoxShape3D" id="Shape6"]
+size = Vector3(0.6100000143051147, 1.2858220338821411, 0.4000000059604645)
+
+[sub_resource type="BoxShape3D" id="Shape7"]
+size = Vector3(1.04, 0.84, 0.7)
+
+[sub_resource type="BoxShape3D" id="Shape8"]
+size = Vector3(1.54, 0.66, 0.81)
+
+[sub_resource type="BoxShape3D" id="Shape9"]
+size = Vector3(1.38, 0.56, 0.88)
+
+[sub_resource type="BoxShape3D" id="Shape10"]
+size = Vector3(0.92, 1.04, 0.77)
+
+[sub_resource type="BoxShape3D" id="Shape11"]
+size = Vector3(0.6200000047683716, 0.9830000400543213, 0.41999998688697815)
+
+[sub_resource type="BoxShape3D" id="Shape12"]
+size = Vector3(1.2000000476837158, 0.2004999965429306, 0.9674999713897705)
+
+[sub_resource type="BoxShape3D" id="Shape13"]
+size = Vector3(0.7200000286102295, 1.4452406167984009, 1.4149999618530273)
+
+[node name="harbor_logistics_room" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision0" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.08, 0)
+shape = SubResource("Shape0")
+
+[node name="Collision1" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 1.51, 3.1)
+shape = SubResource("Shape1")
+
+[node name="Collision2" type="CollisionShape3D" parent="Body"]
+position = Vector3(-4.0, 0.445, 0)
+shape = SubResource("Shape2")
+
+[node name="Collision3" type="CollisionShape3D" parent="Body"]
+position = Vector3(4.0, 0.445, 0)
+shape = SubResource("Shape3")
+
+[node name="Collision4" type="CollisionShape3D" parent="Body"]
+position = Vector3(-2.55, 1.01, 2.25)
+shape = SubResource("Shape4")
+
+[node name="Collision5" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.73, 0.985, 2.56)
+shape = SubResource("Shape5")
+
+[node name="Collision6" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.66, 0.8129110074043274, 2.48)
+shape = SubResource("Shape6")
+
+[node name="Collision7" type="CollisionShape3D" parent="Body"]
+position = Vector3(2.5, 0.58, 2.5)
+shape = SubResource("Shape7")
+
+[node name="Collision8" type="CollisionShape3D" parent="Body"]
+position = Vector3(-2.3, 0.49, -0.3)
+shape = SubResource("Shape8")
+
+[node name="Collision9" type="CollisionShape3D" parent="Body"]
+position = Vector3(-0.26, 0.44000000000000006, -1.56)
+shape = SubResource("Shape9")
+
+[node name="Collision10" type="CollisionShape3D" parent="Body"]
+position = Vector3(2.7, 0.68, 0.37)
+shape = SubResource("Shape10")
+
+[node name="Collision11" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.81, 0.6814999914169312, 0.43)
+shape = SubResource("Shape11")
+
+[node name="Collision12" type="CollisionShape3D" parent="Body"]
+position = Vector3(-2.82, 0.2852499967813492, -1.858750006556511)
+shape = SubResource("Shape12")
+
+[node name="Collision13" type="CollisionShape3D" parent="Body"]
+position = Vector3(2.0, 0.8926202988624573, -1.8174999845027924)
+shape = SubResource("Shape13")
+

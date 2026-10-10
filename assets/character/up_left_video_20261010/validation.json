@@ -1,0 +1,26 @@
+{
+  "result": "passed",
+  "source_frames_matted": 158,
+  "installed_direction": "up_left",
+  "loop_frames": 26,
+  "native_source_resolution": [
+    1024,
+    768
+  ],
+  "canvas_resolution": [
+    1024,
+    1152
+  ],
+  "visible_green_residual": 0,
+  "source_rgb_preserved_in_opaque_interiors": true,
+  "other_direction_sequences_preserved": true,
+  "registered_animation_entries_checked": 123,
+  "tests": [
+    "tools/check_up_left_video.gd",
+    "tools/check_baked_mattes.gd"
+  ],
+  "logs": [
+    "预览/左上视频替换_20261010/scene_check_final.log",
+    "预览/左上视频替换_20261010/baked_regression.log"
+  ]
+}

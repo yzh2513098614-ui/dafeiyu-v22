@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "accent_pale_oak"
+albedo_color = Color(0.81960785, 0.7921569, 0.7411765, 1)
+roughness = 0.61

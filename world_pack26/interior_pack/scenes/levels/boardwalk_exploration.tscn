@@ -1,0 +1,5016 @@
+[gd_scene load_steps=206 format=3]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/level_runtime.gd" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/white.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e2"]
+
+[ext_resource type="FontFile" path="res://world_pack26/interior_pack/assets/NotoSansSC.ttf" id="e3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/public_08.tscn" id="e4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/public_04.tscn" id="e5"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_round_shrub_planter.tscn" id="e6"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_harbor_bench.tscn" id="e7"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/public_01.tscn" id="e8"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_retail_poster_pedestal.tscn" id="e9"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/retail_02.tscn" id="e10"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/retail_11.tscn" id="e11"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_gift_box_stack.tscn" id="e12"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_07.tscn" id="e13"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_token_souvenir_display.tscn" id="e14"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/retail_03.tscn" id="e15"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_token_vault.tscn" id="e16"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_office_armored_safe.tscn" id="e17"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_searchable_file_cabinet.tscn" id="e18"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_secure_equipment_locker.tscn" id="e19"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_08.tscn" id="e20"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_token_currency_counter.tscn" id="e21"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_three_tier_mail_sorter.tscn" id="e22"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/lounge_04.tscn" id="e23"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/lounge_01.tscn" id="e24"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_ceramic_tea_set.tscn" id="e25"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/campus_01.tscn" id="e26"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_tiered_plant_stand.tscn" id="e27"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_bar_counter.tscn" id="e28"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/restaurant_02.tscn" id="e29"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_01.tscn" id="e30"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/utility_07.tscn" id="e31"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/utility_12.tscn" id="e32"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_coiled_cable_reel.tscn" id="e33"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/living_10.tscn" id="e34"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_port_plastic_pallet.tscn" id="e35"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_rolling_logistics_case.tscn" id="e36"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_compact_pallet_jack.tscn" id="e37"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_wood_crate.tscn" id="e38"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_dock_arrow_sign.tscn" id="e39"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e40"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/cyan.tres" id="e41"]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/level_gate.gd" id="e42"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/glass.tres" id="e43"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/lit_column.tscn" id="e44"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/modules/window_wall_2m.tscn" id="e45"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/library_173/tidal_coast.tscn" id="e46"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_palm.tscn" id="e47"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_wooden_pier.tscn" id="e48"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_harbor_seawall.tscn" id="e49"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/ivory.tres" id="e50"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/architecture_10.tscn" id="e51"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/architecture_04.tscn" id="e52"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/architecture_03.tscn" id="e53"]
+
+[ext_resource type="Script" path="res://world_pack26/interior_pack/scripts/stair_visual.gd" id="e54"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_fern_floor_pot.tscn" id="e55"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/items/storage_08.tscn" id="e56"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_currency_transport_case.tscn" id="e57"]
+
+[ext_resource type="NavigationMesh" path="res://world_pack26/interior_pack/navigation/boardwalk.tres" id="e58"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_restaurant_cash_drop_safe.tscn" id="detail_0"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_secure_equipment_locker.tscn" id="detail_1"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_small_price_display.tscn" id="detail_2"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_shopping_bag_pair.tscn" id="detail_3"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_broadleaf_square_planter.tscn" id="detail_4"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_retail_poster_pedestal.tscn" id="detail_5"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_retail_wire_basket.tscn" id="detail_6"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_gift_box_stack.tscn" id="detail_7"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_three_flower_vase.tscn" id="detail_8"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_token_souvenir_display.tscn" id="detail_9"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_industrial_tool_chest.tscn" id="detail_10"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_battery_module_crate.tscn" id="detail_11"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_coiled_cable_reel.tscn" id="detail_12"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_floor_warning_beacon.tscn" id="detail_13"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_port_plastic_pallet.tscn" id="detail_14"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_coastal_warning_cone.tscn" id="detail_15"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_restaurant_tall_fridge.tscn" id="detail_16"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_undercounter_service_drawer.tscn" id="detail_17"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_wire_waste_basket.tscn" id="detail_18"]
+
+[ext_resource type="PackedScene" path="res://world_pack26/interior_pack/scenes/library_items/lib_fern_floor_pot.tscn" id="detail_19"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(20.0,0.14,18.0)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(20.0,0.14,18.0)
+
+[sub_resource type="StandardMaterial3D" id="r2"]
+albedo_color = Color(0.608,0.668,0.6779999999999999,1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(0.012,0.003,18.0)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(20.0,0.003,0.012)
+
+[sub_resource type="FontVariation" id="r5"]
+base_font = ExtResource("e3")
+variation_opentype = {2003265652:650.0}
+
+[sub_resource type="BoxShape3D" id="r6"]
+size = Vector3(19.82,1.8,17.82)
+
+[sub_resource type="BoxMesh" id="r7"]
+size = Vector3(14.0,0.14,18.0)
+
+[sub_resource type="BoxShape3D" id="r8"]
+size = Vector3(14.0,0.14,18.0)
+
+[sub_resource type="StandardMaterial3D" id="r9"]
+albedo_color = Color(0.62,0.68,0.69,1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="r10"]
+size = Vector3(14.0,0.003,0.012)
+
+[sub_resource type="BoxShape3D" id="r11"]
+size = Vector3(13.82,1.8,17.82)
+
+[sub_resource type="StandardMaterial3D" id="r12"]
+albedo_color = Color(0.632,0.6920000000000001,0.702,1)
+roughness = 0.76
+
+[sub_resource type="BoxShape3D" id="r13"]
+size = Vector3(13.82,1.8,17.82)
+
+[sub_resource type="BoxMesh" id="r14"]
+size = Vector3(10.0,0.14,10.0)
+
+[sub_resource type="BoxShape3D" id="r15"]
+size = Vector3(10.0,0.14,10.0)
+
+[sub_resource type="StandardMaterial3D" id="r16"]
+albedo_color = Color(0.608,0.668,0.6779999999999999,1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="r17"]
+size = Vector3(0.012,0.003,10.0)
+
+[sub_resource type="BoxMesh" id="r18"]
+size = Vector3(10.0,0.003,0.012)
+
+[sub_resource type="BoxShape3D" id="r19"]
+size = Vector3(9.82,1.8,9.82)
+
+[sub_resource type="StandardMaterial3D" id="r20"]
+albedo_color = Color(0.62,0.68,0.69,1)
+roughness = 0.76
+
+[sub_resource type="BoxShape3D" id="r21"]
+size = Vector3(9.82,1.8,9.82)
+
+[sub_resource type="BoxMesh" id="r22"]
+size = Vector3(14.0,0.14,14.0)
+
+[sub_resource type="BoxShape3D" id="r23"]
+size = Vector3(14.0,0.14,14.0)
+
+[sub_resource type="StandardMaterial3D" id="r24"]
+albedo_color = Color(0.632,0.6920000000000001,0.702,1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="r25"]
+size = Vector3(0.012,0.003,14.0)
+
+[sub_resource type="BoxShape3D" id="r26"]
+size = Vector3(13.82,1.8,13.82)
+
+[sub_resource type="StandardMaterial3D" id="r27"]
+albedo_color = Color(0.608,0.668,0.6779999999999999,1)
+roughness = 0.76
+
+[sub_resource type="BoxShape3D" id="r28"]
+size = Vector3(13.82,1.8,13.82)
+
+[sub_resource type="BoxMesh" id="r29"]
+size = Vector3(20.0,0.14,8.0)
+
+[sub_resource type="BoxShape3D" id="r30"]
+size = Vector3(20.0,0.14,8.0)
+
+[sub_resource type="StandardMaterial3D" id="r31"]
+albedo_color = Color(0.62,0.68,0.69,1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="r32"]
+size = Vector3(0.012,0.003,8.0)
+
+[sub_resource type="BoxShape3D" id="r33"]
+size = Vector3(19.82,1.8,7.82)
+
+[sub_resource type="BoxMesh" id="r34"]
+size = Vector3(2.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r35"]
+size = Vector3(2.7,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r36"]
+size = Vector3(2.7,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r37"]
+size = Vector3(2.6,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r38"]
+size = Vector3(2.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r39"]
+size = Vector3(0.1,2.2,0.2)
+
+[sub_resource type="BoxMesh" id="r40"]
+size = Vector3(2.83,0.1,0.24)
+
+[sub_resource type="BoxMesh" id="r41"]
+size = Vector3(1.27,2.05,0.06)
+
+[sub_resource type="BoxMesh" id="r42"]
+size = Vector3(0.025,2.04,0.07)
+
+[sub_resource type="BoxShape3D" id="r43"]
+size = Vector3(2.6,2.2,0.22)
+
+[sub_resource type="BoxMesh" id="r44"]
+size = Vector3(3.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r45"]
+size = Vector3(3.7,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r46"]
+size = Vector3(3.7,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r47"]
+size = Vector3(3.6,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r48"]
+size = Vector3(3.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r49"]
+size = Vector3(0.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r50"]
+size = Vector3(0.7,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r51"]
+size = Vector3(0.7,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r52"]
+size = Vector3(0.6,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r53"]
+size = Vector3(0.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r54"]
+size = Vector3(5.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r55"]
+size = Vector3(5.7,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r56"]
+size = Vector3(5.7,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r57"]
+size = Vector3(5.6,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r58"]
+size = Vector3(5.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r59"]
+size = Vector3(8.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r60"]
+size = Vector3(8.7,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r61"]
+size = Vector3(8.7,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r62"]
+size = Vector3(8.6,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r63"]
+size = Vector3(8.7,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r64"]
+size = Vector3(10.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r65"]
+size = Vector3(10.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r66"]
+size = Vector3(10.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r67"]
+size = Vector3(9.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r68"]
+size = Vector3(10.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r69"]
+size = Vector3(8.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r70"]
+size = Vector3(8.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r71"]
+size = Vector3(8.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r72"]
+size = Vector3(7.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r73"]
+size = Vector3(8.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r74"]
+size = Vector3(48.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r75"]
+size = Vector3(48.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r76"]
+size = Vector3(48.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r77"]
+size = Vector3(47.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r78"]
+size = Vector3(48.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r79"]
+size = Vector3(14.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r80"]
+size = Vector3(14.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r81"]
+size = Vector3(14.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r82"]
+size = Vector3(13.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r83"]
+size = Vector3(14.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r84"]
+size = Vector3(34.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r85"]
+size = Vector3(34.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r86"]
+size = Vector3(34.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r87"]
+size = Vector3(33.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r88"]
+size = Vector3(34.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r89"]
+size = Vector3(36.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r90"]
+size = Vector3(36.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r91"]
+size = Vector3(36.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r92"]
+size = Vector3(35.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r93"]
+size = Vector3(36.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r94"]
+size = Vector3(28.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r95"]
+size = Vector3(28.0,0.045,0.2)
+
+[sub_resource type="BoxMesh" id="r96"]
+size = Vector3(28.0,0.1,0.19)
+
+[sub_resource type="BoxMesh" id="r97"]
+size = Vector3(27.9,0.018,0.012)
+
+[sub_resource type="BoxShape3D" id="r98"]
+size = Vector3(28.0,2.8,0.16)
+
+[sub_resource type="BoxMesh" id="r99"]
+size = Vector3(5.0,0.18,18.0)
+
+[sub_resource type="BoxShape3D" id="r100"]
+size = Vector3(5.0,0.18,18.0)
+
+[sub_resource type="BoxShape3D" id="r101"]
+size = Vector3(4.82,1.8,17.82)
+
+[sub_resource type="BoxMesh" id="r102"]
+size = Vector3(10.0,0.18,5.0)
+
+[sub_resource type="BoxShape3D" id="r103"]
+size = Vector3(10.0,0.18,5.0)
+
+[sub_resource type="BoxShape3D" id="r104"]
+size = Vector3(9.82,1.8,4.82)
+
+[sub_resource type="BoxShape3D" id="r105"]
+size = Vector3(4.82,1.8,17.82)
+
+[sub_resource type="BoxMesh" id="r106"]
+size = Vector3(13.0,0.18,3.0)
+
+[sub_resource type="BoxShape3D" id="r107"]
+size = Vector3(13.0,0.18,3.0)
+
+[sub_resource type="BoxShape3D" id="r108"]
+size = Vector3(12.82,1.8,2.82)
+
+[sub_resource type="BoxShape3D" id="r109"]
+size = Vector3(12.82,1.8,2.82)
+
+[sub_resource type="BoxShape3D" id="r110"]
+size = Vector3(20.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r111"]
+size = Vector3(10.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r112"]
+size = Vector3(13.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r113"]
+size = Vector3(7.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r114"]
+size = Vector3(8.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r115"]
+size = Vector3(3.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r116"]
+size = Vector3(12.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r117"]
+size = Vector3(5.0,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r118"]
+size = Vector3(0.5,1.15,0.1)
+
+[sub_resource type="BoxShape3D" id="r119"]
+size = Vector3(9.5,1.15,0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="r120"]
+points = PackedVector3Array(-1.5,-0.15,6,-1.5,-0.15,-6,-1.5,0,6,-1.5,3.6,-6,1.5,-0.15,6,1.5,-0.15,-6,1.5,0,6,1.5,3.6,-6)
+
+[sub_resource type="ConvexPolygonShape3D" id="r121"]
+points = PackedVector3Array(-1.55,0.1,6,-1.55,3.7,-6,-1.55,1.2000000000000002,6,-1.55,4.8,-6,-1.45,0.1,6,-1.45,3.7,-6,-1.45,1.2000000000000002,6,-1.45,4.8,-6)
+
+[sub_resource type="ConvexPolygonShape3D" id="r122"]
+points = PackedVector3Array(1.45,0.1,6,1.45,3.7,-6,1.45,1.2000000000000002,6,1.45,4.8,-6,1.55,0.1,6,1.55,3.7,-6,1.55,1.2000000000000002,6,1.55,4.8,-6)
+
+[sub_resource type="BoxMesh" id="r123"]
+size = Vector3(0.42,0.06,0.42)
+
+[sub_resource type="BoxMesh" id="r124"]
+size = Vector3(0.36,0.72,0.16)
+
+[sub_resource type="BoxMesh" id="r125"]
+size = Vector3(0.28,0.22,0.02)
+
+[node name="BoardwalkExplorationMap" type="Node3D"]
+
+script = ExtResource("e0")
+level_id = "boardwalk"
+level_title = "大肥鱼双层挑空滨水商场"
+cutaway_walls = true
+
+[node name="Architecture" type="Node3D" parent="."]
+
+
+[node name="Furnishings" type="Node3D" parent="."]
+
+
+[node name="Gates" type="Node3D" parent="."]
+
+
+[node name="Interactions" type="Node3D" parent="."]
+
+
+[node name="Signals" type="Node3D" parent="."]
+
+
+[node name="Spawns" type="Node3D" parent="."]
+
+
+[node name="Backdrop" type="Node3D" parent="."]
+
+
+[node name="Entrance" type="Marker3D" parent="Spawns"]
+position = Vector3(0.0,0.0,1.65)
+
+[node name="ReturnPoint" type="Marker3D" parent="Spawns"]
+position = Vector3(0.0,0.0,1.65)
+
+[node name="Floor0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,-0.07,1.0)
+mesh = SubResource("r0")
+material_override = SubResource("r2")
+
+[node name="Floor0Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor0Body"]
+position = Vector3(0.0,-0.07,1.0)
+shape = SubResource("r1")
+
+[node name="JointX" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-10.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-8.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-2.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_6" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_8" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_9" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_10" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(8.0,0.003,1.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointZ" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,-8.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,-6.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,-4.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,-2.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_6" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,2.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,4.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_8" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,6.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_9" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,8.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Sign32" type="Label3D" parent="."]
+position = Vector3(0.0,0.022,-7.3)
+text = "一层挑空鲸鱼中庭"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone0" type="Area3D" parent="Signals"]
+position = Vector3(0.0,0.9,1.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 0
+metadata/region_name = "一层挑空鲸鱼中庭"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone0"]
+shape = SubResource("r6")
+
+[node name="Encounter0" type="Marker3D" parent="Spawns"]
+position = Vector3(0.0,0.0,0.2)
+metadata/region_id = 0
+
+[node name="public_08_434" parent="Furnishings" instance=ExtResource("e4")]
+position = Vector3(0.0,0.0,-2.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="public_04_435" parent="Furnishings" instance=ExtResource("e5")]
+position = Vector3(0.0,0.0,-0.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_round_shrub_planter_436" parent="Furnishings" instance=ExtResource("e6")]
+position = Vector3(-3.0,0.0,-2.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_round_shrub_planter_437" parent="Furnishings" instance=ExtResource("e6")]
+position = Vector3(3.0,0.0,-2.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_harbor_bench_438" parent="Furnishings" instance=ExtResource("e7")]
+position = Vector3(-6.5,0.0,5.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_harbor_bench_439" parent="Furnishings" instance=ExtResource("e7")]
+position = Vector3(6.5,0.0,5.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="public_01_440" parent="Furnishings" instance=ExtResource("e8")]
+position = Vector3(-7.0,0.0,3.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_retail_poster_pedestal_441" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(7.0,0.0,3.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,-0.07,-9.0)
+mesh = SubResource("r7")
+material_override = SubResource("r9")
+
+[node name="Floor1Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor1Body"]
+position = Vector3(-17.0,-0.07,-9.0)
+shape = SubResource("r8")
+
+[node name="JointX_11" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-24.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_12" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-22.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_13" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-20.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_14" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-18.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_15" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-16.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_16" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-14.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_17" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-12.0,0.003,-9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointZ_10" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-18.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_11" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-16.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_12" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-14.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_13" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-12.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_14" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-10.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_15" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-8.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_16" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-6.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_17" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-4.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_18" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,-2.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="Sign63" type="Label3D" parent="."]
+position = Vector3(-17.0,0.022,-17.3)
+text = "一层西北纪念品商店"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone1" type="Area3D" parent="Signals"]
+position = Vector3(-17.0,0.9,-9.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 1
+metadata/region_name = "一层西北纪念品商店"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone1"]
+shape = SubResource("r11")
+
+[node name="Encounter1" type="Marker3D" parent="Spawns"]
+position = Vector3(-17.0,0.0,-9.8)
+metadata/region_id = 1
+
+[node name="retail_02_442" parent="Furnishings" instance=ExtResource("e10")]
+position = Vector3(-22.1,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="retail_11_443" parent="Furnishings" instance=ExtResource("e11")]
+position = Vector3(-11.9,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_retail_poster_pedestal_444" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-22.1,0.0,-1.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_gift_box_stack_445" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-11.9,0.0,-1.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="living_07_446" parent="Furnishings" instance=ExtResource("e13")]
+position = Vector3(-19.6,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_token_souvenir_display_447" parent="Furnishings" instance=ExtResource("e14")]
+position = Vector3(-19.6,0.84,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,-0.07,9.0)
+mesh = SubResource("r7")
+material_override = SubResource("r12")
+
+[node name="Floor2Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor2Body"]
+position = Vector3(-17.0,-0.07,9.0)
+shape = SubResource("r8")
+
+[node name="JointX_18" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-24.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_19" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-22.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_20" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-20.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_21" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-18.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_22" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-16.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_23" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-14.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointX_24" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-12.0,0.003,9.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="JointZ_19" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,0.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_20" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,2.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_21" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,4.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_22" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,6.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_23" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,8.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_24" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,10.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_25" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,12.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_26" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,14.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_27" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-17.0,0.003,16.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="Sign92" type="Label3D" parent="."]
+position = Vector3(-17.0,0.022,0.7)
+text = "一层西侧零售与楼梯厅"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone2" type="Area3D" parent="Signals"]
+position = Vector3(-17.0,0.9,9.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 2
+metadata/region_name = "一层西侧零售与楼梯厅"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone2"]
+shape = SubResource("r13")
+
+[node name="Encounter2" type="Marker3D" parent="Spawns"]
+position = Vector3(-17.0,0.0,8.2)
+metadata/region_id = 2
+
+[node name="retail_03_448" parent="Furnishings" instance=ExtResource("e15")]
+position = Vector3(-17.5,0.0,4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="retail_02_449" parent="Furnishings" instance=ExtResource("e10")]
+position = Vector3(-11.9,0.0,4.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="retail_03_450" parent="Furnishings" instance=ExtResource("e15")]
+position = Vector3(-17.5,0.0,15.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="retail_02_451" parent="Furnishings" instance=ExtResource("e10")]
+position = Vector3(-11.9,0.0,15.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_gift_box_stack_452" parent="Furnishings" instance=ExtResource("e12")]
+position = Vector3(-11.9,0.0,9.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_retail_poster_pedestal_453" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(-14.0,0.0,9.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,-0.07,-13.0)
+mesh = SubResource("r14")
+material_override = SubResource("r16")
+
+[node name="Floor3Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor3Body"]
+position = Vector3(-5.0,-0.07,-13.0)
+shape = SubResource("r15")
+
+[node name="JointX_25" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-10.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_26" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-8.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_27" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_28" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_29" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-2.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointZ_28" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,0.003,-18.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_29" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,0.003,-16.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_30" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,0.003,-14.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_31" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,0.003,-12.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_32" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.0,0.003,-10.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="Sign115" type="Label3D" parent="."]
+position = Vector3(-5.0,0.022,-17.3)
+text = "一层贵重物品保管库"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone3" type="Area3D" parent="Signals"]
+position = Vector3(-5.0,0.9,-13.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 3
+metadata/region_name = "一层贵重物品保管库"
+metadata/risk_tier = 3
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone3"]
+shape = SubResource("r19")
+
+[node name="Encounter3" type="Marker3D" parent="Spawns"]
+position = Vector3(-5.0,0.0,-13.8)
+metadata/region_id = 3
+
+[node name="lib_token_vault_454" parent="Furnishings" instance=ExtResource("e16")]
+position = Vector3(-8.1,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_office_armored_safe_455" parent="Furnishings" instance=ExtResource("e17")]
+position = Vector3(-1.9,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_searchable_file_cabinet_456" parent="Furnishings" instance=ExtResource("e18")]
+position = Vector3(-8.1,0.0,-9.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_secure_equipment_locker_457" parent="Furnishings" instance=ExtResource("e19")]
+position = Vector3(-1.9,0.0,-9.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="living_07_458" parent="Furnishings" instance=ExtResource("e13")]
+position = Vector3(-5.6,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="living_08_459" parent="Furnishings" instance=ExtResource("e20")]
+position = Vector3(-5.6,0.0,-15.1)
+rotation = Vector3(0.0,3.14159,0.0)
+
+[node name="lib_token_currency_counter_460" parent="Furnishings" instance=ExtResource("e21")]
+position = Vector3(-6.04,0.84,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_three_tier_mail_sorter_461" parent="Furnishings" instance=ExtResource("e22")]
+position = Vector3(-5.29,0.84,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,-0.07,-13.0)
+mesh = SubResource("r14")
+material_override = SubResource("r20")
+
+[node name="Floor4Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor4Body"]
+position = Vector3(5.0,-0.07,-13.0)
+shape = SubResource("r15")
+
+[node name="JointX_30" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_31" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_32" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_33" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointX_34" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(8.0,0.003,-13.0)
+mesh = SubResource("r17")
+material_override = ExtResource("e2")
+
+[node name="JointZ_33" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,0.003,-18.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_34" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,0.003,-16.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_35" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,0.003,-14.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_36" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,0.003,-12.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="JointZ_37" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.0,0.003,-10.0)
+mesh = SubResource("r18")
+material_override = ExtResource("e2")
+
+[node name="Sign140" type="Label3D" parent="."]
+position = Vector3(5.0,0.022,-17.3)
+text = "一层北侧共享阅读室"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone4" type="Area3D" parent="Signals"]
+position = Vector3(5.0,0.9,-13.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 4
+metadata/region_name = "一层北侧共享阅读室"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone4"]
+shape = SubResource("r21")
+
+[node name="Encounter4" type="Marker3D" parent="Spawns"]
+position = Vector3(5.0,0.0,-13.8)
+metadata/region_id = 4
+
+[node name="lounge_04_462" parent="Furnishings" instance=ExtResource("e23")]
+position = Vector3(2.9,0.0,-15.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_463" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(1.95,0.0,-15.6)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="lounge_01_464" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(3.85,0.0,-15.6)
+rotation = Vector3(0.0,-1.5708,0.0)
+
+[node name="lib_ceramic_tea_set_465" parent="Furnishings" instance=ExtResource("e25")]
+position = Vector3(2.9,0.8,-15.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_04_466" parent="Furnishings" instance=ExtResource("e23")]
+position = Vector3(7.1,0.0,-10.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_467" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(6.15,0.0,-10.3)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="lounge_01_468" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(8.05,0.0,-10.3)
+rotation = Vector3(0.0,-1.5708,0.0)
+
+[node name="lib_ceramic_tea_set_469" parent="Furnishings" instance=ExtResource("e25")]
+position = Vector3(7.1,0.8,-10.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="campus_01_470" parent="Furnishings" instance=ExtResource("e26")]
+position = Vector3(8.1,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_tiered_plant_stand_471" parent="Furnishings" instance=ExtResource("e27")]
+position = Vector3(1.9,0.0,-9.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,-0.07,-11.0)
+mesh = SubResource("r22")
+material_override = SubResource("r24")
+
+[node name="Floor5Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor5Body"]
+position = Vector3(17.0,-0.07,-11.0)
+shape = SubResource("r23")
+
+[node name="JointX_35" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(10.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_36" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(12.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_37" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(14.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_38" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(16.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_39" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(18.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_40" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(20.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_41" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(22.0,0.003,-11.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointZ_38" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-18.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_39" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-16.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_40" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-14.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_41" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-12.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_42" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-10.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_43" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-8.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_44" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-6.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="Sign171" type="Label3D" parent="."]
+position = Vector3(17.0,0.022,-17.3)
+text = "一层东侧咖啡楼梯厅"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone5" type="Area3D" parent="Signals"]
+position = Vector3(17.0,0.9,-11.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 5
+metadata/region_name = "一层东侧咖啡楼梯厅"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone5"]
+shape = SubResource("r26")
+
+[node name="Encounter5" type="Marker3D" parent="Spawns"]
+position = Vector3(17.0,0.0,-11.8)
+metadata/region_id = 5
+
+[node name="lib_bar_counter_472" parent="Furnishings" instance=ExtResource("e28")]
+position = Vector3(11.9,0.0,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="restaurant_02_473" parent="Furnishings" instance=ExtResource("e29")]
+position = Vector3(11.9,1.16,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_04_474" parent="Furnishings" instance=ExtResource("e23")]
+position = Vector3(12.2,0.0,-6.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lounge_01_475" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(11.25,0.0,-6.9)
+rotation = Vector3(0.0,1.5708,0.0)
+
+[node name="lounge_01_476" parent="Furnishings" instance=ExtResource("e24")]
+position = Vector3(13.15,0.0,-6.9)
+rotation = Vector3(0.0,-1.5708,0.0)
+
+[node name="lib_ceramic_tea_set_477" parent="Furnishings" instance=ExtResource("e25")]
+position = Vector3(12.2,0.8,-6.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_tiered_plant_stand_478" parent="Furnishings" instance=ExtResource("e27")]
+position = Vector3(22.1,0.0,-5.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor6" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,-0.07,3.0)
+mesh = SubResource("r22")
+material_override = SubResource("r27")
+
+[node name="Floor6Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor6Body"]
+position = Vector3(17.0,-0.07,3.0)
+shape = SubResource("r23")
+
+[node name="JointX_42" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(10.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_43" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(12.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_44" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(14.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_45" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(16.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_46" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(18.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_47" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(20.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointX_48" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(22.0,0.003,3.0)
+mesh = SubResource("r25")
+material_override = ExtResource("e2")
+
+[node name="JointZ_45" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-4.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_46" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,-2.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_47" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,0.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_48" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,2.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_49" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,4.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_50" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,6.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="JointZ_51" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(17.0,0.003,8.0)
+mesh = SubResource("r10")
+material_override = ExtResource("e2")
+
+[node name="Sign199" type="Label3D" parent="."]
+position = Vector3(17.0,0.022,-3.3)
+text = "一层社区服务与配电间"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone6" type="Area3D" parent="Signals"]
+position = Vector3(17.0,0.9,3.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 6
+metadata/region_name = "一层社区服务与配电间"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone6"]
+shape = SubResource("r28")
+
+[node name="Encounter6" type="Marker3D" parent="Spawns"]
+position = Vector3(17.0,0.0,2.2)
+metadata/region_id = 6
+
+[node name="living_01_479" parent="Furnishings" instance=ExtResource("e30")]
+position = Vector3(13.1,0.0,-2.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="utility_07_480" parent="Furnishings" instance=ExtResource("e31")]
+position = Vector3(22.1,0.0,-2.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="utility_12_481" parent="Furnishings" instance=ExtResource("e32")]
+position = Vector3(13.1,0.0,8.1)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_coiled_cable_reel_482" parent="Furnishings" instance=ExtResource("e33")]
+position = Vector3(22.1,0.0,8.1)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="living_10_483" parent="Furnishings" instance=ExtResource("e34")]
+position = Vector3(13.1,0.0,-0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_ceramic_tea_set_484" parent="Furnishings" instance=ExtResource("e25")]
+position = Vector3(13.1,0.52,-0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,-0.07,14.0)
+mesh = SubResource("r29")
+material_override = SubResource("r31")
+
+[node name="Floor7Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor7Body"]
+position = Vector3(0.0,-0.07,14.0)
+shape = SubResource("r30")
+
+[node name="JointX_49" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-10.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_50" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-8.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_51" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_52" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_53" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-2.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_54" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_55" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_56" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_57" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointX_58" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(8.0,0.003,14.0)
+mesh = SubResource("r32")
+material_override = ExtResource("e2")
+
+[node name="JointZ_52" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,10.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_53" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,12.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_54" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,14.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="JointZ_55" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,0.003,16.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e2")
+
+[node name="Sign226" type="Label3D" parent="."]
+position = Vector3(0.0,0.022,10.7)
+text = "一层南侧换乘出口"
+font = SubResource("r5")
+font_size = 38
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.008
+
+[node name="Zone7" type="Area3D" parent="Signals"]
+position = Vector3(0.0,0.9,14.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 7
+metadata/region_name = "一层南侧换乘出口"
+metadata/risk_tier = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone7"]
+shape = SubResource("r33")
+
+[node name="Encounter7" type="Marker3D" parent="Spawns"]
+position = Vector3(0.0,0.0,13.2)
+metadata/region_id = 7
+
+[node name="lib_port_plastic_pallet_485" parent="Furnishings" instance=ExtResource("e35")]
+position = Vector3(-8.1,0.0,12.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_rolling_logistics_case_486" parent="Furnishings" instance=ExtResource("e36")]
+position = Vector3(8.1,0.0,12.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_compact_pallet_jack_487" parent="Furnishings" instance=ExtResource("e37")]
+position = Vector3(-8.1,0.0,16.1)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_wood_crate_488" parent="Furnishings" instance=ExtResource("e38")]
+position = Vector3(8.1,0.0,16.1)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_dock_arrow_sign_489" parent="Furnishings" instance=ExtResource("e39")]
+position = Vector3(5.7,0.0,12.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Boundary0_1-1" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,-6.65)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_1-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_1-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r34")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_1-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r35")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_1-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r36")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_1-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r37")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_1-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_1-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r38")
+
+[node name="Boundary0_11" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,-1.35)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_11"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_11/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r34")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_11/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r35")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_11/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r36")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_11/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r37")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_11"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_11/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r38")
+
+[node name="boardwalk_gate_0_1" type="Node3D" parent="Gates"]
+position = Vector3(-10.0,0.0,-4.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_1"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 0
+metadata/room_b = 1
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_1"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_1"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_1/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_1"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_1/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_1"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_2-1" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,1.85)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_2-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_2-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_2-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_2-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_2-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_2-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_2-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="Boundary0_21" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,8.15)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_21"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_21/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_21/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_21/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_21/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_21"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_21/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="boardwalk_gate_0_2" type="Node3D" parent="Gates"]
+position = Vector3(-10.0,0.0,5.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_2"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 0
+metadata/room_b = 2
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_2"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_2"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_2/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_2"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_2/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_2"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_3-1" type="Node3D" parent="Architecture"]
+position = Vector3(-8.15,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_3-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_3-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_3-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_3-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_3-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_3-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_3-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="Boundary0_31" type="Node3D" parent="Architecture"]
+position = Vector3(-1.85,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_31"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_31/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_31/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_31/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_31/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_31"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_31/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="boardwalk_gate_0_3" type="Node3D" parent="Gates"]
+position = Vector3(-5.0,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_3"
+required_key = "boardwalk_blue"
+required_switch = ""
+initial_open = false
+metadata/room_a = 0
+metadata/room_b = 3
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_3"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_3"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_3/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_3"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_3/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_3"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_4-1" type="Node3D" parent="Architecture"]
+position = Vector3(1.85,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_4-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_4-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_4-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_4-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_4-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_4-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_4-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="Boundary0_41" type="Node3D" parent="Architecture"]
+position = Vector3(8.15,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_41"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_41/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_41/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_41/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_41/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_41"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_41/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="boardwalk_gate_0_4" type="Node3D" parent="Gates"]
+position = Vector3(5.0,0.0,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_4"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 0
+metadata/room_b = 4
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_4"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_4"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_4/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_4"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_4/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_4"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_5-1" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,-7.65)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_5-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_5-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r49")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_5-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r50")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_5-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r51")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_5-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r52")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_5-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_5-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r53")
+
+[node name="Boundary0_51" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,-4.35)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_51"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_51/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r49")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_51/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r50")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_51/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r51")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_51/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r52")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_51"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_51/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r53")
+
+[node name="boardwalk_gate_0_5" type="Node3D" parent="Gates"]
+position = Vector3(10.0,0.0,-6.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_5"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 0
+metadata/room_b = 5
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_5"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_5"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_5/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_5"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_5/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_5"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_6-1" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,-1.15)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_6-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_6-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_6-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_6-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_6-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_6-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_6-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="Boundary0_61" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,7.15)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_61"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_61/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_61/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_61/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_61/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_61"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_61/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="boardwalk_gate_0_6" type="Node3D" parent="Gates"]
+position = Vector3(10.0,0.0,3.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_6"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 0
+metadata/room_b = 6
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_6"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_6"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_6/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_6"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_6/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_6"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary0_7-1" type="Node3D" parent="Architecture"]
+position = Vector3(-5.65,0.0,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_7-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_7-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r59")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_7-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r60")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_7-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r61")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_7-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r62")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_7-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_7-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r63")
+
+[node name="Boundary0_71" type="Node3D" parent="Architecture"]
+position = Vector3(5.65,0.0,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary0_71"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary0_71/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r59")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary0_71/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r60")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary0_71/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r61")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary0_71/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r62")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary0_71"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary0_71/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r63")
+
+[node name="boardwalk_gate_0_7" type="Node3D" parent="Gates"]
+position = Vector3(0.0,0.0,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_0_7"
+required_key = "boardwalk_red"
+required_switch = ""
+initial_open = false
+metadata/room_a = 0
+metadata/room_b = 7
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_0_7"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_0_7"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_0_7/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_0_7"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_0_7/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_0_7"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary1_2-1" type="Node3D" parent="Architecture"]
+position = Vector3(-21.15,0.0,0.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary1_2-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary1_2-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary1_2-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary1_2-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary1_2-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary1_2-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary1_2-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="Boundary1_21" type="Node3D" parent="Architecture"]
+position = Vector3(-12.85,0.0,0.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary1_21"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary1_21/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary1_21/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary1_21/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary1_21/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary1_21"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary1_21/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="boardwalk_gate_1_2" type="Node3D" parent="Gates"]
+position = Vector3(-17.0,0.0,0.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_1_2"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 1
+metadata/room_b = 2
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_1_2"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_1_2"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_1_2/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_1_2"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_1_2/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_1_2"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary1_3" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,-13.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary1_3"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary1_3/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r64")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary1_3/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r65")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary1_3/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r66")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary1_3/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r67")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary1_3"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary1_3/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r68")
+
+[node name="Boundary2_7" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,0.0,14.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary2_7"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary2_7/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r69")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary2_7/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r70")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary2_7/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r71")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary2_7/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r72")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary2_7"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary2_7/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r73")
+
+[node name="Boundary3_4" type="Node3D" parent="Architecture"]
+position = Vector3(0.0,0.0,-13.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary3_4"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary3_4/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r64")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary3_4/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r65")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary3_4/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r66")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary3_4/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r67")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary3_4"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary3_4/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r68")
+
+[node name="Boundary4_5-1" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,-16.15)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary4_5-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary4_5-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary4_5-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary4_5-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary4_5-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary4_5-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary4_5-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="Boundary4_51" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,-9.85)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary4_51"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary4_51/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r44")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary4_51/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r45")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary4_51/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r46")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary4_51/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r47")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary4_51"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary4_51/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r48")
+
+[node name="boardwalk_gate_4_5" type="Node3D" parent="Gates"]
+position = Vector3(10.0,0.0,-13.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_4_5"
+required_key = ""
+required_switch = "boardwalk_power"
+initial_open = false
+metadata/room_a = 4
+metadata/room_b = 5
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_4_5"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_4_5"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_4_5/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_4_5"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_4_5/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_4_5"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Boundary5_6-1" type="Node3D" parent="Architecture"]
+position = Vector3(12.85,0.0,-4.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary5_6-1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary5_6-1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary5_6-1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary5_6-1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary5_6-1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary5_6-1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary5_6-1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="Boundary5_61" type="Node3D" parent="Architecture"]
+position = Vector3(21.15,0.0,-4.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Boundary5_61"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Boundary5_61/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r54")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Boundary5_61/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r55")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Boundary5_61/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r56")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Boundary5_61/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r57")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Boundary5_61"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Boundary5_61/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r58")
+
+[node name="boardwalk_gate_5_6" type="Node3D" parent="Gates"]
+position = Vector3(17.0,0.0,-4.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+script = ExtResource("e42")
+gate_id = "boardwalk_gate_5_6"
+required_key = ""
+required_switch = ""
+initial_open = true
+metadata/room_a = 5
+metadata/room_b = 6
+
+[node name="Post" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6"]
+position = Vector3(-1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Post_2" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6"]
+position = Vector3(1.36,1.1,0.0)
+mesh = SubResource("r39")
+material_override = ExtResource("e40")
+
+[node name="Header" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6"]
+position = Vector3(0.0,2.2,0.0)
+mesh = SubResource("r40")
+material_override = ExtResource("e2")
+
+[node name="LeftPanel" type="Node3D" parent="Gates/boardwalk_gate_5_6"]
+position = Vector3(-0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6/LeftPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6/LeftPanel"]
+position = Vector3(0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="RightPanel" type="Node3D" parent="Gates/boardwalk_gate_5_6"]
+position = Vector3(0.65,0.0,0.0)
+
+[node name="Glass" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6/RightPanel"]
+position = Vector3(0.0,1.06,0.0)
+mesh = SubResource("r41")
+material_override = ExtResource("e43")
+
+[node name="Stripe" type="MeshInstance3D" parent="Gates/boardwalk_gate_5_6/RightPanel"]
+position = Vector3(-0.55,1.06,0.0)
+mesh = SubResource("r42")
+material_override = ExtResource("e41")
+
+[node name="Blocker" type="StaticBody3D" parent="Gates/boardwalk_gate_5_6"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Gates/boardwalk_gate_5_6/Blocker"]
+position = Vector3(0,1.1,0)
+shape = SubResource("r43")
+
+[node name="NavigationLink" type="NavigationLink3D" parent="Gates/boardwalk_gate_5_6"]
+enabled = false
+start_position = Vector3(0,0,-1)
+end_position = Vector3(0,0,1)
+bidirectional = true
+
+[node name="Exterior0" type="Node3D" parent="Architecture"]
+position = Vector3(0.0,0.0,-18.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior0"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior0/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r74")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior0/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r75")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior0/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r76")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior0/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r77")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior0"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior0/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r78")
+
+[node name="Exterior1" type="Node3D" parent="Architecture"]
+position = Vector3(17.0,0.0,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior1"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior1/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r79")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior1/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r80")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior1/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r81")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior1/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r82")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior1/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r83")
+
+[node name="Exterior2" type="Node3D" parent="Architecture"]
+position = Vector3(-7.0,0.0,18.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior2"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior2/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r84")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior2/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r85")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior2/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r86")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior2/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r87")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior2"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior2/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r88")
+
+[node name="Exterior3" type="Node3D" parent="Architecture"]
+position = Vector3(-24.0,0.0,0.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior3"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior3/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r89")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior3/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r90")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior3/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r91")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior3/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r92")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior3"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior3/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r93")
+
+[node name="Exterior4" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,0.0,14.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior4"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior4/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r69")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior4/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r70")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior4/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r71")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior4/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r72")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior4"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior4/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r73")
+
+[node name="Exterior5" type="Node3D" parent="Architecture"]
+position = Vector3(24.0,0.0,-4.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="Visual" type="Node3D" parent="Architecture/Exterior5"]
+metadata/cutaway_wall = true
+
+[node name="Panel" type="MeshInstance3D" parent="Architecture/Exterior5/Visual"]
+position = Vector3(0.0,1.4,0.0)
+mesh = SubResource("r94")
+material_override = ExtResource("e1")
+
+[node name="TopEdge" type="MeshInstance3D" parent="Architecture/Exterior5/Visual"]
+position = Vector3(0.0,2.8,0.0)
+mesh = SubResource("r95")
+material_override = ExtResource("e40")
+
+[node name="Base" type="MeshInstance3D" parent="Architecture/Exterior5/Visual"]
+position = Vector3(0.0,0.05,0.0)
+mesh = SubResource("r96")
+material_override = ExtResource("e40")
+
+[node name="LED" type="MeshInstance3D" parent="Architecture/Exterior5/Visual"]
+position = Vector3(0.0,0.24,0.095)
+mesh = SubResource("r97")
+material_override = ExtResource("e41")
+
+[node name="Body" type="StaticBody3D" parent="Architecture/Exterior5"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Exterior5/Body"]
+position = Vector3(0.0,1.4,0.0)
+shape = SubResource("r98")
+
+[node name="LightColumn" parent="Architecture" instance=ExtResource("e44")]
+position = Vector3(-22.2,0.0,-17.68)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="LightColumn_2" parent="Architecture" instance=ExtResource("e44")]
+position = Vector3(22.2,0.0,-17.68)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-21.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_2" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-17.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_3" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-13.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_4" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-9.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_5" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-5.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_6" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(-1.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_7" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(3.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_8" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(7.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_9" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(11.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_10" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(15.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Window_11" parent="Architecture" instance=ExtResource("e45")]
+position = Vector3(19.0,0.0,-17.84)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryTidalCoast" parent="Backdrop" instance=ExtResource("e46")]
+position = Vector3(-16.0,-0.07,25.9)
+rotation = Vector3(0.0,0.0,0.0)
+cycle_seconds = 120.0
+metadata/source = "173模型资料库原潮汐场景"
+
+[node name="CoastalPalm" parent="Backdrop" instance=ExtResource("e47")]
+position = Vector3(-21.0,0.0,19.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="CoastalPalm_2" parent="Backdrop" instance=ExtResource("e47")]
+position = Vector3(21.0,0.0,19.8)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryPier" parent="Backdrop" instance=ExtResource("e48")]
+position = Vector3(17.0,-0.45,20.6)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-22.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_2" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-18.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_3" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-14.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_4" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-10.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_5" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-6.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_6" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(-2.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_7" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(2.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_8" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(6.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_9" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(10.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_10" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(14.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_11" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(18.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Seawall_12" parent="Backdrop" instance=ExtResource("e49")]
+position = Vector3(22.0,-0.12,18.55)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="Floor8" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-7.5,3.51,1.0)
+mesh = SubResource("r99")
+material_override = ExtResource("e50")
+
+[node name="Floor8Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor8Body"]
+position = Vector3(-7.5,3.51,1.0)
+shape = SubResource("r100")
+
+[node name="Sign629" type="Label3D" parent="."]
+position = Vector3(-7.5,3.625,1.0)
+text = "二层西侧观景回廊"
+font = SubResource("r5")
+font_size = 30
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.006
+
+[node name="Zone8" type="Area3D" parent="Signals"]
+position = Vector3(-7.5,4.5,1.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 8
+metadata/region_name = "二层西侧观景回廊"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone8"]
+shape = SubResource("r101")
+
+[node name="Floor9" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0.0,3.51,-5.5)
+mesh = SubResource("r102")
+material_override = ExtResource("e50")
+
+[node name="Floor9Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor9Body"]
+position = Vector3(0.0,3.51,-5.5)
+shape = SubResource("r103")
+
+[node name="Sign635" type="Label3D" parent="."]
+position = Vector3(0.0,3.625,-5.5)
+text = "二层北侧展示连廊"
+font = SubResource("r5")
+font_size = 30
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.006
+
+[node name="Zone9" type="Area3D" parent="Signals"]
+position = Vector3(0.0,4.5,-5.5)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 9
+metadata/region_name = "二层北侧展示连廊"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone9"]
+shape = SubResource("r104")
+
+[node name="Floor10" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(7.5,3.51,1.0)
+mesh = SubResource("r99")
+material_override = ExtResource("e50")
+
+[node name="Floor10Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor10Body"]
+position = Vector3(7.5,3.51,1.0)
+shape = SubResource("r100")
+
+[node name="Sign641" type="Label3D" parent="."]
+position = Vector3(7.5,3.625,1.0)
+text = "二层东侧咖啡回廊"
+font = SubResource("r5")
+font_size = 30
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.006
+
+[node name="Zone10" type="Area3D" parent="Signals"]
+position = Vector3(7.5,4.5,1.0)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 10
+metadata/region_name = "二层东侧咖啡回廊"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone10"]
+shape = SubResource("r105")
+
+[node name="Floor11" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-16.5,3.51,0.5)
+mesh = SubResource("r106")
+material_override = ExtResource("e50")
+
+[node name="Floor11Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor11Body"]
+position = Vector3(-16.5,3.51,0.5)
+shape = SubResource("r107")
+
+[node name="Sign647" type="Label3D" parent="."]
+position = Vector3(-16.5,3.625,0.5)
+text = "二层西楼梯休息平台"
+font = SubResource("r5")
+font_size = 30
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.006
+
+[node name="Zone11" type="Area3D" parent="Signals"]
+position = Vector3(-16.5,4.5,0.5)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 11
+metadata/region_name = "二层西楼梯休息平台"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone11"]
+shape = SubResource("r108")
+
+[node name="Floor12" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(16.5,3.51,-3.5)
+mesh = SubResource("r106")
+material_override = ExtResource("e50")
+
+[node name="Floor12Body" type="StaticBody3D" parent="Architecture"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/Floor12Body"]
+position = Vector3(16.5,3.51,-3.5)
+shape = SubResource("r107")
+
+[node name="Sign653" type="Label3D" parent="."]
+position = Vector3(16.5,3.625,-3.5)
+text = "二层东楼梯观景平台"
+font = SubResource("r5")
+font_size = 30
+pixel_size = 0.006
+modulate = Color(0.16,0.27,0.40,1)
+outline_modulate = Color(0.95,0.98,1,1)
+outline_size = 2
+rotation_degrees = Vector3(-90,0,0)
+pixel_size = 0.006
+
+[node name="Zone12" type="Area3D" parent="Signals"]
+position = Vector3(16.5,4.5,-3.5)
+collision_layer = 0
+collision_mask = 4
+metadata/region_id = 12
+metadata/region_name = "二层东楼梯观景平台"
+metadata/risk_tier = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Signals/Zone12"]
+shape = SubResource("r109")
+
+[node name="LibrarySupportColumn" parent="Architecture" instance=ExtResource("e51")]
+position = Vector3(-8.0,0.0,-6.5)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(1,1.6,1)
+
+[node name="LibrarySupportColumn_2" parent="Architecture" instance=ExtResource("e51")]
+position = Vector3(8.0,0.0,-6.5)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(1,1.6,1)
+
+[node name="LibrarySupportColumn_3" parent="Architecture" instance=ExtResource("e51")]
+position = Vector3(-8.0,0.0,8.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(1,1.6,1)
+
+[node name="LibrarySupportColumn_4" parent="Architecture" instance=ExtResource("e51")]
+position = Vector3(8.0,0.0,8.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(1,1.6,1)
+
+[node name="UpperGuardrail0" type="Node3D" parent="Architecture"]
+position = Vector3(0.0,3.6,-8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-9.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-7.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-5.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-4.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-2.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(-0.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(0.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(2.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_9" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(4.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_10" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(5.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_11" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(7.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_12" parent="Architecture/UpperGuardrail0" instance=ExtResource("e52")]
+position = Vector3(9.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail0"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail0/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r110")
+
+[node name="UpperGuardrail1" type="Node3D" parent="Architecture"]
+position = Vector3(0.0,3.6,-3.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(-4.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(-2.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(-0.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(0.83333,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(2.5,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail1" instance=ExtResource("e52")]
+position = Vector3(4.16667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail1"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail1/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r111")
+
+[node name="UpperGuardrail2" type="Node3D" parent="Architecture"]
+position = Vector3(-5.0,3.6,3.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(-5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(-4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(-2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(-0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail2" instance=ExtResource("e52")]
+position = Vector3(5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail2"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail2/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r112")
+
+[node name="UpperGuardrail3" type="Node3D" parent="Architecture"]
+position = Vector3(5.0,3.6,3.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(-5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(-4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(-2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(-0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail3" instance=ExtResource("e52")]
+position = Vector3(5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail3"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail3/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r112")
+
+[node name="UpperGuardrail4" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,3.6,-4.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail4" instance=ExtResource("e52")]
+position = Vector3(-2.8,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.82353,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail4" instance=ExtResource("e52")]
+position = Vector3(-1.4,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.82353,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail4" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.82353,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail4" instance=ExtResource("e52")]
+position = Vector3(1.4,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.82353,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail4" instance=ExtResource("e52")]
+position = Vector3(2.8,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.82353,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail4"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail4/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r113")
+
+[node name="UpperGuardrail5" type="Node3D" parent="Architecture"]
+position = Vector3(-10.0,3.6,6.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail5" instance=ExtResource("e52")]
+position = Vector3(-3.2,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.94118,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail5" instance=ExtResource("e52")]
+position = Vector3(-1.6,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.94118,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail5" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.94118,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail5" instance=ExtResource("e52")]
+position = Vector3(1.6,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.94118,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail5" instance=ExtResource("e52")]
+position = Vector3(3.2,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.94118,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail5"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail5/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r114")
+
+[node name="UpperGuardrail6" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,3.6,-6.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail6" instance=ExtResource("e52")]
+position = Vector3(-0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail6" instance=ExtResource("e52")]
+position = Vector3(0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail6"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail6/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r115")
+
+[node name="UpperGuardrail7" type="Node3D" parent="Architecture"]
+position = Vector3(10.0,3.6,4.0)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(-5.25,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(-3.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(-2.25,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(-0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(2.25,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(3.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail7" instance=ExtResource("e52")]
+position = Vector3(5.25,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail7"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail7/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r116")
+
+[node name="UpperGuardrail8" type="Node3D" parent="Architecture"]
+position = Vector3(-7.5,3.6,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail8" instance=ExtResource("e52")]
+position = Vector3(-1.66667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail8" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail8" instance=ExtResource("e52")]
+position = Vector3(1.66667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail8"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail8/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r117")
+
+[node name="UpperGuardrail9" type="Node3D" parent="Architecture"]
+position = Vector3(7.5,3.6,10.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail9" instance=ExtResource("e52")]
+position = Vector3(-1.66667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail9" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail9" instance=ExtResource("e52")]
+position = Vector3(1.66667,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.98039,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail9"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail9/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r117")
+
+[node name="UpperGuardrail10" type="Node3D" parent="Architecture"]
+position = Vector3(-16.5,3.6,-1.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(-5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(-4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(-2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(-0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail10" instance=ExtResource("e52")]
+position = Vector3(5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail10"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail10/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r112")
+
+[node name="UpperGuardrail11" type="Node3D" parent="Architecture"]
+position = Vector3(-22.75,3.6,2.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail11" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.29412,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail11"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail11/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r118")
+
+[node name="UpperGuardrail12" type="Node3D" parent="Architecture"]
+position = Vector3(-14.75,3.6,2.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(-3.95833,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(-2.375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(-0.79167,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(0.79167,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(2.375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail12" instance=ExtResource("e52")]
+position = Vector3(3.95833,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail12"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail12/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r119")
+
+[node name="UpperGuardrail13" type="Node3D" parent="Architecture"]
+position = Vector3(-23.0,3.6,0.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail13" instance=ExtResource("e52")]
+position = Vector3(-0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail13" instance=ExtResource("e52")]
+position = Vector3(0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail13"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail13/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r115")
+
+[node name="UpperGuardrail14" type="Node3D" parent="Architecture"]
+position = Vector3(14.75,3.6,-5.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(-3.95833,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(-2.375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(-0.79167,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(0.79167,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(2.375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail14" instance=ExtResource("e52")]
+position = Vector3(3.95833,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.93137,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail14"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail14/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r119")
+
+[node name="UpperGuardrail15" type="Node3D" parent="Architecture"]
+position = Vector3(22.75,3.6,-5.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail15" instance=ExtResource("e52")]
+position = Vector3(0.0,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.29412,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail15"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail15/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r118")
+
+[node name="UpperGuardrail16" type="Node3D" parent="Architecture"]
+position = Vector3(16.5,3.6,-2.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(-5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(-4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_3" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(-2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_4" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(-0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_5" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(0.8125,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_6" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(2.4375,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_7" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(4.0625,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="LibraryGlassRail_8" parent="Architecture/UpperGuardrail16" instance=ExtResource("e52")]
+position = Vector3(5.6875,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.95588,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail16"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail16/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r112")
+
+[node name="UpperGuardrail17" type="Node3D" parent="Architecture"]
+position = Vector3(23.0,3.6,-3.5)
+rotation_degrees = Vector3(0.0,90.0,0.0)
+
+[node name="LibraryGlassRail" parent="Architecture/UpperGuardrail17" instance=ExtResource("e52")]
+position = Vector3(-0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="LibraryGlassRail_2" parent="Architecture/UpperGuardrail17" instance=ExtResource("e52")]
+position = Vector3(0.75,0.0,0.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(0.88235,1.0,1.0)
+
+[node name="ContinuousSafetyBody" type="StaticBody3D" parent="Architecture/UpperGuardrail17"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/UpperGuardrail17/ContinuousSafetyBody"]
+position = Vector3(0,0.575,0)
+shape = SubResource("r115")
+
+[node name="WestStair" type="Node3D" parent="Architecture"]
+position = Vector3(-21.0,0.0,8.0)
+rotation_degrees = Vector3(0.0,0.0,0.0)
+
+[node name="LibraryStair0" parent="Architecture/WestStair" instance=ExtResource("e53")]
+position = Vector3(0.0,0.0,3.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(2.5,1.09091,2.82233)
+script = ExtResource("e54")
+
+[node name="LibraryStair1" parent="Architecture/WestStair" instance=ExtResource("e53")]
+position = Vector3(0.0,1.8,-3.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(2.5,1.09091,2.82233)
+script = ExtResource("e54")
+
+[node name="WalkableSlope" type="StaticBody3D" parent="Architecture/WestStair"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/WestStair/WalkableSlope"]
+shape = SubResource("r120")
+
+[node name="SideGuard-1" type="CollisionShape3D" parent="Architecture/WestStair/WalkableSlope"]
+shape = SubResource("r121")
+
+[node name="SideGuard1" type="CollisionShape3D" parent="Architecture/WestStair/WalkableSlope"]
+shape = SubResource("r122")
+
+[node name="EastStair" type="Node3D" parent="Architecture"]
+position = Vector3(21.0,0.0,-11.0)
+rotation_degrees = Vector3(0.0,180.0,0.0)
+
+[node name="LibraryStair0" parent="Architecture/EastStair" instance=ExtResource("e53")]
+position = Vector3(0.0,0.0,3.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(2.5,1.09091,2.82233)
+script = ExtResource("e54")
+
+[node name="LibraryStair1" parent="Architecture/EastStair" instance=ExtResource("e53")]
+position = Vector3(0.0,1.8,-3.0)
+rotation = Vector3(0.0,0.0,0.0)
+scale = Vector3(2.5,1.09091,2.82233)
+script = ExtResource("e54")
+
+[node name="WalkableSlope" type="StaticBody3D" parent="Architecture/EastStair"]
+collision_layer = 1
+collision_mask = 4
+
+[node name="Shape" type="CollisionShape3D" parent="Architecture/EastStair/WalkableSlope"]
+shape = SubResource("r120")
+
+[node name="SideGuard-1" type="CollisionShape3D" parent="Architecture/EastStair/WalkableSlope"]
+shape = SubResource("r121")
+
+[node name="SideGuard1" type="CollisionShape3D" parent="Architecture/EastStair/WalkableSlope"]
+shape = SubResource("r122")
+
+[node name="lib_harbor_bench_490" parent="Furnishings" instance=ExtResource("e7")]
+position = Vector3(-8.0,3.6,6.2)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_fern_floor_pot_491" parent="Furnishings" instance=ExtResource("e55")]
+position = Vector3(-6.7,3.6,8.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="storage_08_492" parent="Furnishings" instance=ExtResource("e56")]
+position = Vector3(-2.0,3.6,-6.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_token_souvenir_display_493" parent="Furnishings" instance=ExtResource("e14")]
+position = Vector3(2.0,3.6,-6.0)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_harbor_bench_494" parent="Furnishings" instance=ExtResource("e7")]
+position = Vector3(8.0,3.6,6.2)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_round_shrub_planter_495" parent="Furnishings" instance=ExtResource("e6")]
+position = Vector3(6.7,3.6,8.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="lib_retail_poster_pedestal_496" parent="Furnishings" instance=ExtResource("e9")]
+position = Vector3(13.0,3.6,-3.5)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="UpperLookout" type="Marker3D" parent="Spawns"]
+position = Vector3(-5.65,3.6,3.0)
+
+[node name="AtriumFloorView" type="Marker3D" parent="Spawns"]
+position = Vector3(0,0.12,1.0)
+
+[node name="lib_currency_transport_case_497" parent="Furnishings" instance=ExtResource("e57")]
+position = Vector3(2.1,0.0,2.7)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="boardwalk_chest_0" type="Marker3D" parent="Interactions"]
+position = Vector3(2.1,0.0,1.65)
+metadata/kind = "chest"
+metadata/interaction_id = "boardwalk_chest_0"
+metadata/title = "搜索 · 一层挑空鲸鱼中庭"
+metadata/room = 0
+metadata/model_path = NodePath("../../Furnishings/lib_currency_transport_case_497")
+metadata/loot_json = "[\"Token代币\", \"导览资料\", \"鲸鱼便签\"]"
+
+
+metadata/furnishing_theme = "public"
+[node name="boardwalk_chest_0_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(2.1,0.03,1.65)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="lib_currency_transport_case_498" parent="Furnishings" instance=ExtResource("e57")]
+position = Vector3(-2.9,0.0,-11.3)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="boardwalk_chest_3" type="Marker3D" parent="Interactions"]
+position = Vector3(-2.9,0.0,-12.35)
+metadata/kind = "chest"
+metadata/interaction_id = "boardwalk_chest_3"
+metadata/title = "搜索 · 一层贵重物品保管库"
+metadata/room = 3
+metadata/model_path = NodePath("../../Furnishings/lib_currency_transport_case_498")
+metadata/loot_json = "[\"Token代币\", \"商品票券\", \"礼品包\"]"
+
+
+metadata/furnishing_theme = "retail"
+[node name="boardwalk_chest_3_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-2.9,0.03,-12.35)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="lib_currency_transport_case_499" parent="Furnishings" instance=ExtResource("e57")]
+position = Vector3(2.1,0.0,15.7)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="boardwalk_chest_7" type="Marker3D" parent="Interactions"]
+position = Vector3(2.1,0.0,14.65)
+metadata/kind = "chest"
+metadata/interaction_id = "boardwalk_chest_7"
+metadata/title = "搜索 · 一层南侧换乘出口"
+metadata/room = 7
+metadata/model_path = NodePath("../../Furnishings/lib_currency_transport_case_499")
+metadata/loot_json = "[\"Token代币\", \"物流单证\", \"加固零件\"]"
+
+
+metadata/furnishing_theme = "warehouse"
+[node name="boardwalk_chest_7_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(2.1,0.03,14.65)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="lib_currency_transport_case_500" parent="Furnishings" instance=ExtResource("e57")]
+position = Vector3(-13.5,3.6,0.9)
+rotation = Vector3(0.0,0.0,0.0)
+
+[node name="boardwalk_chest_11" type="Marker3D" parent="Interactions"]
+position = Vector3(-13.5,3.6,-0.15)
+metadata/kind = "chest"
+metadata/interaction_id = "boardwalk_chest_11"
+metadata/title = "搜索 · 二层西楼梯休息平台"
+metadata/room = 11
+metadata/model_path = NodePath("../../Furnishings/lib_currency_transport_case_500")
+metadata/loot_json = "[\"Token代币\", \"导览资料\", \"鲸鱼便签\"]"
+
+
+metadata/furnishing_theme = "public"
+[node name="boardwalk_chest_11_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-13.5,3.63,-0.15)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_key_0" type="Marker3D" parent="Interactions"]
+position = Vector3(-2.0,0.0,0.3)
+metadata/kind = "key"
+metadata/interaction_id = "boardwalk_key_0"
+metadata/title = "蓝色通行卡 · 开启封存支线"
+metadata/room = 0
+metadata/key_id = "boardwalk_blue"
+
+[node name="boardwalk_key_0_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-2.0,0.03,0.3)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_key_0_Stand" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-2.0,0.36,0.3)
+mesh = SubResource("r124")
+material_override = ExtResource("e40")
+
+[node name="boardwalk_key_0_Screen" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-2.0,0.59,0.39)
+mesh = SubResource("r125")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_key_3" type="Marker3D" parent="Interactions"]
+position = Vector3(-6.65,0.0,-13.7)
+metadata/kind = "key"
+metadata/interaction_id = "boardwalk_key_3"
+metadata/title = "红色通行卡 · 开启转运出口"
+metadata/room = 3
+metadata/key_id = "boardwalk_red"
+
+[node name="boardwalk_key_3_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-6.65,0.03,-13.7)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_key_3_Stand" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-6.65,0.36,-13.7)
+mesh = SubResource("r124")
+material_override = ExtResource("e40")
+
+[node name="boardwalk_key_3_Screen" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-6.65,0.59,-13.61)
+mesh = SubResource("r125")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_switch_5" type="Marker3D" parent="Interactions"]
+position = Vector3(15.4,0.0,-11.7)
+metadata/kind = "switch"
+metadata/interaction_id = "boardwalk_switch_5"
+metadata/title = "配电终端 · 解锁近路"
+metadata/room = 5
+metadata/switch_id = "boardwalk_power"
+
+[node name="boardwalk_switch_5_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(15.4,0.03,-11.7)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_switch_5_Stand" type="MeshInstance3D" parent="Signals"]
+position = Vector3(15.4,0.36,-11.7)
+mesh = SubResource("r124")
+material_override = ExtResource("e40")
+
+[node name="boardwalk_switch_5_Screen" type="MeshInstance3D" parent="Signals"]
+position = Vector3(15.4,0.59,-11.61)
+mesh = SubResource("r125")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_checkpoint_0" type="Marker3D" parent="Interactions"]
+position = Vector3(-0.6,0.0,2.0)
+metadata/kind = "checkpoint"
+metadata/interaction_id = "boardwalk_checkpoint_0"
+metadata/title = "大肥鱼补给点 / R返回"
+metadata/room = 0
+
+
+[node name="boardwalk_checkpoint_0_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-0.6,0.03,2.0)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_portal_7" type="Marker3D" parent="Interactions"]
+position = Vector3(-1.7,0.0,14.0)
+metadata/kind = "portal"
+metadata/interaction_id = "boardwalk_portal_7"
+metadata/title = "前往 鲸蓝学院"
+metadata/room = 7
+metadata/destination = "school"
+
+[node name="boardwalk_portal_7_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-1.7,0.03,14.0)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_portal_0_back" type="Marker3D" parent="Interactions"]
+position = Vector3(-3.8,0.0,1.2)
+metadata/kind = "portal"
+metadata/interaction_id = "boardwalk_portal_0_back"
+metadata/title = "返回 鲸蓝错位船舶维修基地"
+metadata/room = 0
+metadata/destination = "shipyard"
+
+[node name="boardwalk_portal_0_back_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(-3.8,0.03,1.2)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="boardwalk_extract_7" type="Marker3D" parent="Interactions"]
+position = Vector3(0.3,0.0,13.2)
+metadata/kind = "extract"
+metadata/interaction_id = "boardwalk_extract_7"
+metadata/title = "撤离入库 · 停留5秒"
+metadata/room = 7
+
+
+[node name="boardwalk_extract_7_Beacon" type="MeshInstance3D" parent="Signals"]
+position = Vector3(0.3,0.03,13.2)
+mesh = SubResource("r123")
+material_override = ExtResource("e41")
+
+[node name="Navigation" type="NavigationRegion3D" parent="."]
+navigation_mesh = ExtResource("e58")
+
+
+[node name="Detail_R1" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 1
+metadata/category = "零售展示与备货"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1275" parent="Furnishings/Detail_R1" instance=ExtResource("detail_0")]
+position = Vector3(-21.2,0.0,-17.208)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_restaurant_cash_drop_safe"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1275_search" type="Marker3D" parent="Interactions"]
+position = Vector3(-21.2,0.0,-15.887)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1275_search"
+metadata/title = "餐厅投币存款保险柜 · 一层西北纪念品商店"
+metadata/room = 1
+metadata/model_path = NodePath("../../Furnishings/Detail_R1/Detail_boardwalk_1275")
+metadata/loot_json = "[\"Token代币\", \"商品票券\", \"礼品包\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "retail"
+
+[node name="Detail_boardwalk_1276" parent="Furnishings/Detail_R1" instance=ExtResource("detail_1")]
+position = Vector3(-21.2,0.0,-0.85)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_secure_equipment_locker"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1276_search" type="Marker3D" parent="Interactions"]
+position = Vector3(-21.2,0.0,-2.23)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1276_search"
+metadata/title = "立式装备储物柜 · 一层西北纪念品商店"
+metadata/room = 1
+metadata/model_path = NodePath("../../Furnishings/Detail_R1/Detail_boardwalk_1276")
+metadata/loot_json = "[\"Token代币\", \"商品票券\", \"礼品包\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "retail"
+
+[node name="Detail_boardwalk_1277" parent="Furnishings/Detail_R1" instance=ExtResource("detail_2")]
+position = Vector3(-19.963,1.051,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_small_price_display"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1278" parent="Furnishings/Detail_R1" instance=ExtResource("detail_3")]
+position = Vector3(-19.237,1.051,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_shopping_bag_pair"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1279" parent="Furnishings/Detail_R1" instance=ExtResource("detail_4")]
+position = Vector3(-23.291,0.0,-14.4)
+rotation = Vector3(0.0,-1.5708,0.0)
+metadata/asset_id = "lib_broadleaf_square_planter"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1280" parent="Furnishings/Detail_R1" instance=ExtResource("detail_5")]
+position = Vector3(-10.53,0.0,-14.4)
+rotation = Vector3(0.0,1.5708,0.0)
+metadata/asset_id = "lib_retail_poster_pedestal"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1281_search" type="Marker3D" parent="Interactions"]
+position = Vector3(-1.9,0.0,-17.1)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1281_search"
+metadata/title = "办公室重型保险柜 · 一层贵重物品保管库"
+metadata/room = 3
+metadata/model_path = NodePath("../../Furnishings/lib_office_armored_safe_455")
+metadata/loot_json = "[\"Token代币\", \"商品票券\", \"礼品包\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "retail"
+
+[node name="Detail_R3" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 3
+metadata/category = "零售展示与备货"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1282" parent="Furnishings/Detail_R3" instance=ExtResource("detail_6")]
+position = Vector3(-5.962,1.051,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_retail_wire_basket"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1283" parent="Furnishings/Detail_R3" instance=ExtResource("detail_7")]
+position = Vector3(-5.238,1.051,-16.0)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_gift_box_stack"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1284" parent="Furnishings/Detail_R3" instance=ExtResource("detail_4")]
+position = Vector3(-8.0,0.0,-17.291)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_broadleaf_square_planter"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1285" parent="Furnishings/Detail_R3" instance=ExtResource("detail_5")]
+position = Vector3(-8.0,0.0,-8.53)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_retail_poster_pedestal"
+metadata/floor_height = 0.0
+metadata/category = "零售展示与备货"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_R4" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 4
+metadata/category = "公共导览与休憩"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1286" parent="Furnishings/Detail_R4" instance=ExtResource("detail_8")]
+position = Vector3(2.563,0.779,-15.6)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_three_flower_vase"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1287" parent="Furnishings/Detail_R4" instance=ExtResource("detail_9")]
+position = Vector3(3.238,0.779,-15.6)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_token_souvenir_display"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1288" parent="Furnishings/Detail_R4" instance=ExtResource("detail_8")]
+position = Vector3(6.762,0.779,-10.3)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_three_flower_vase"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1289" parent="Furnishings/Detail_R4" instance=ExtResource("detail_9")]
+position = Vector3(7.438,0.779,-10.3)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_token_souvenir_display"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_R5" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 5
+metadata/category = "公共导览与休憩"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1290" parent="Furnishings/Detail_R5" instance=ExtResource("detail_9")]
+position = Vector3(11.862,0.779,-6.9)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_token_souvenir_display"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_boardwalk_1291" parent="Furnishings/Detail_R5" instance=ExtResource("detail_8")]
+position = Vector3(12.538,0.779,-6.9)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_three_flower_vase"
+metadata/floor_height = 0.0
+metadata/category = "公共导览与休憩"
+metadata/placement = "桌面与工作台"
+
+[node name="Detail_R6" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 6
+metadata/category = "维修设备与工具"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1292" parent="Furnishings/Detail_R6" instance=ExtResource("detail_10")]
+position = Vector3(23.183,0.0,-1.2)
+rotation = Vector3(0.0,1.5708,0.0)
+metadata/asset_id = "lib_industrial_tool_chest"
+metadata/floor_height = 0.0
+metadata/category = "维修设备与工具"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1292_search" type="Marker3D" parent="Interactions"]
+position = Vector3(21.836,0.0,-1.2)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1292_search"
+metadata/title = "工业维修工具箱 · 一层社区服务与配电间"
+metadata/room = 6
+metadata/model_path = NodePath("../../Furnishings/Detail_R6/Detail_boardwalk_1292")
+metadata/loot_json = "[\"Token代币\", \"维护组件\", \"电缆接头\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "utility"
+
+[node name="Detail_boardwalk_1293" parent="Furnishings/Detail_R6" instance=ExtResource("detail_11")]
+position = Vector3(21.2,0.0,9.161)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_battery_module_crate"
+metadata/floor_height = 0.0
+metadata/category = "维修设备与工具"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1293_search" type="Marker3D" parent="Interactions"]
+position = Vector3(21.2,0.0,7.792)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1293_search"
+metadata/title = "电源模块运输箱 · 一层社区服务与配电间"
+metadata/room = 6
+metadata/model_path = NodePath("../../Furnishings/Detail_R6/Detail_boardwalk_1293")
+metadata/loot_json = "[\"Token代币\", \"维护组件\", \"电缆接头\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "utility"
+
+[node name="Detail_boardwalk_1294" parent="Furnishings/Detail_R6" instance=ExtResource("detail_12")]
+position = Vector3(12.8,0.0,-3.43)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_coiled_cable_reel"
+metadata/floor_height = 0.0
+metadata/category = "维修设备与工具"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1295" parent="Furnishings/Detail_R6" instance=ExtResource("detail_13")]
+position = Vector3(12.8,0.0,9.49)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_floor_warning_beacon"
+metadata/floor_height = 0.0
+metadata/category = "维修设备与工具"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1296_search" type="Marker3D" parent="Interactions"]
+position = Vector3(8.1,0.0,10.9)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1296_search"
+metadata/title = "带轮物流运输箱 · 一层南侧换乘出口"
+metadata/room = 7
+metadata/model_path = NodePath("../../Furnishings/lib_rolling_logistics_case_486")
+metadata/loot_json = "[\"Token代币\", \"物流单证\", \"加固零件\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "warehouse"
+
+[node name="Detail_R7" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,0.0,0.0)
+metadata/floor_height = 0.0
+metadata/room = 7
+metadata/category = "仓储货物与周转"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1297" parent="Furnishings/Detail_R7" instance=ExtResource("detail_14")]
+position = Vector3(-6.0,0.0,10.864)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_port_plastic_pallet"
+metadata/floor_height = 0.0
+metadata/category = "仓储货物与周转"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1298" parent="Furnishings/Detail_R7" instance=ExtResource("detail_15")]
+position = Vector3(-6.0,0.0,17.47)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_coastal_warning_cone"
+metadata/floor_height = 0.0
+metadata/category = "仓储货物与周转"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_R10" type="Node3D" parent="Furnishings"]
+position = Vector3(0.0,3.6,0.0)
+metadata/floor_height = 3.6
+metadata/room = 10
+metadata/category = "餐饮后厨与餐桌"
+metadata/furnishing_revision = 1
+
+[node name="Detail_boardwalk_1299" parent="Furnishings/Detail_R10" instance=ExtResource("detail_16")]
+position = Vector3(6.0,0.0,-7.093)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_restaurant_tall_fridge"
+metadata/floor_height = 3.6
+metadata/category = "餐饮后厨与餐桌"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1299_search" type="Marker3D" parent="Interactions"]
+position = Vector3(6.0,3.6,-5.656)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1299_search"
+metadata/title = "餐厅双门冷藏柜 · 二层东侧咖啡回廊"
+metadata/room = 10
+metadata/model_path = NodePath("../../Furnishings/Detail_R10/Detail_boardwalk_1299")
+metadata/loot_json = "[\"Token代币\", \"密封配料\", \"餐厅票券\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "food"
+
+[node name="Detail_boardwalk_1300" parent="Furnishings/Detail_R10" instance=ExtResource("detail_17")]
+position = Vector3(9.149,0.0,-4.4)
+rotation = Vector3(0.0,1.5708,0.0)
+metadata/asset_id = "lib_undercounter_service_drawer"
+metadata/floor_height = 3.6
+metadata/category = "餐饮后厨与餐桌"
+metadata/placement = "侧墙储物位"
+opening_seconds = 1.15
+
+[node name="Detail_boardwalk_1300_search" type="Marker3D" parent="Interactions"]
+position = Vector3(7.769,3.6,-4.4)
+metadata/kind = "chest"
+metadata/interaction_id = "Detail_boardwalk_1300_search"
+metadata/title = "后厨宽型备品抽屉 · 二层东侧咖啡回廊"
+metadata/room = 10
+metadata/model_path = NodePath("../../Furnishings/Detail_R10/Detail_boardwalk_1300")
+metadata/loot_json = "[\"Token代币\", \"密封配料\", \"餐厅票券\"]"
+metadata/furnishing_revision = 1
+metadata/theme = "food"
+
+[node name="Detail_boardwalk_1301" parent="Furnishings/Detail_R10" instance=ExtResource("detail_18")]
+position = Vector3(6.0,0.0,9.48)
+rotation = Vector3(0.0,0.0,0.0)
+metadata/asset_id = "lib_wire_waste_basket"
+metadata/floor_height = 3.6
+metadata/category = "餐饮后厨与餐桌"
+metadata/placement = "靠墙地面"
+
+[node name="Detail_boardwalk_1302" parent="Furnishings/Detail_R10" instance=ExtResource("detail_19")]
+position = Vector3(9.0,0.0,-7.191)
+rotation = Vector3(0.0,3.14159,0.0)
+metadata/asset_id = "lib_fern_floor_pot"
+metadata/floor_height = 3.6
+metadata/category = "餐饮后厨与餐桌"
+metadata/placement = "靠墙地面"

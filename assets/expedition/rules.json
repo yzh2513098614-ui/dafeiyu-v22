@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "rules": {"grid_side": 8, "cell_size": 1.5, "integrity": 48, "compute": 3, "slots": 3, "draw": 5, "hand_limit": 7, "capacity": 20, "insured_capacity": 2},
+  "deck": ["token_burst","token_burst","token_burst","gradient_descent","gradient_descent","firewall","firewall","sandbox","async_jump","async_jump","data_probe","attention_map","rag_query","prompt_injection","rate_limit","kv_cache","checkpoint","rollback","garbage_collection","graceful_shutdown"],
+  "cards": [
+    {"id":"token_burst","name":"Token爆发","english":"Token Burst","type":"attack","cost":1,"slots":1,"target":"enemy","range":5,"effects":[{"kind":"damage","value":12}],"resource_cost":{"token":1},"cacheable":true,"interruptible":true,"fx":"beam","rarity":"common","art":"base/whale_impact"},
+    {"id":"gradient_descent","name":"梯度下降","english":"Gradient Descent","type":"attack","cost":1,"slots":1,"target":"enemy","range":4,"effects":[{"kind":"gradient","value":8}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"beam","rarity":"common","art":"character/tidal_slash"},
+    {"id":"firewall","name":"防火墙","english":"Firewall","type":"defense","cost":1,"slots":1,"target":"self","range":0,"effects":[{"kind":"shield","value":13}],"resource_cost":{},"cacheable":true,"interruptible":false,"fx":"shield","rarity":"common","art":"base/deep_blue_shield"},
+    {"id":"sandbox","name":"沙箱隔离","english":"Sandbox","type":"defense","cost":1,"slots":1,"target":"self","range":0,"effects":[{"kind":"sandbox","value":1},{"kind":"shield","value":5}],"resource_cost":{},"cacheable":true,"interruptible":false,"fx":"shield","rarity":"common","art":"character/whale_guard"},
+    {"id":"async_jump","name":"异步跳转","english":"Async Jump","type":"movement","cost":1,"slots":1,"target":"cell","range":2,"effects":[{"kind":"move","value":2}],"resource_cost":{},"cacheable":false,"interruptible":true,"fx":"jump","rarity":"common","art":"tactics/wave_jump"},
+    {"id":"data_probe","name":"数据探针","english":"Data Probe","type":"recon","cost":0,"slots":1,"target":"enemy","range":8,"effects":[{"kind":"scan","value":3}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"scan","rarity":"common","art":"tactics/whale_scout"},
+    {"id":"attention_map","name":"注意力图","english":"Attention Map","type":"recon","cost":1,"slots":1,"target":"self","range":8,"effects":[{"kind":"scan","value":3},{"kind":"shield","value":4}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"scan","rarity":"common","art":"base/precise_search"},
+    {"id":"rag_query","name":"检索增强","english":"RAG Query","type":"recon","cost":1,"slots":1,"target":"enemy","range":8,"effects":[{"kind":"weakness","value":3},{"kind":"scan","value":3}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"scan","rarity":"uncommon","art":"base/deep_thinking"},
+    {"id":"prompt_injection","name":"提示注入","english":"Prompt Injection","type":"control","cost":1,"slots":1,"target":"enemy","range":4,"effects":[{"kind":"jam","value":1}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"jam","rarity":"uncommon","art":"tactics/force_interrupt"},
+    {"id":"rate_limit","name":"速率限制","english":"Rate Limit","type":"control","cost":2,"slots":1,"target":"enemy","range":5,"effects":[{"kind":"jam","value":2}],"resource_cost":{},"cacheable":true,"interruptible":true,"fx":"jam","rarity":"uncommon","art":"tactics/time_slow"},
+    {"id":"kv_cache","name":"键值缓存","english":"KV Cache","type":"function","cost":1,"slots":1,"target":"self","range":8,"effects":[{"kind":"cache","value":1}],"resource_cost":{},"cacheable":false,"interruptible":true,"fx":"cache","rarity":"uncommon","art":"base/memory_recall"},
+    {"id":"checkpoint","name":"检查点","english":"Checkpoint","type":"function","cost":0,"slots":1,"target":"self","range":0,"effects":[{"kind":"checkpoint","value":1}],"resource_cost":{},"cacheable":false,"interruptible":true,"fx":"cache","rarity":"uncommon","art":"tactics/secure_backup"},
+    {"id":"rollback","name":"回滚","english":"Rollback","type":"function","cost":1,"slots":1,"target":"self","range":0,"effects":[{"kind":"rollback","value":10}],"resource_cost":{},"cacheable":false,"interruptible":true,"fx":"cache","rarity":"uncommon","art":"tactics/rewind_step"},
+    {"id":"garbage_collection","name":"垃圾回收","english":"Garbage Collection","type":"function","cost":0,"slots":1,"target":"self","range":0,"effects":[{"kind":"cleanse","value":2}],"resource_cost":{},"cacheable":false,"interruptible":false,"fx":"cleanse","rarity":"common","art":"tactics/data_sort"},
+    {"id":"graceful_shutdown","name":"安全关停","english":"Graceful Shutdown","type":"movement","cost":1,"slots":1,"target":"self","range":0,"effects":[{"kind":"shield","value":6},{"kind":"escape","value":1}],"resource_cost":{},"cacheable":false,"interruptible":false,"fx":"escape","rarity":"common","art":"tactics/deep_stealth"},
+    {"id":"context_overflow","name":"上下文溢出","english":"Context Overflow","type":"attack","cost":2,"slots":1,"target":"enemy","range":5,"effects":[{"kind":"damage","value":25},{"kind":"self_corrupt","value":1}],"resource_cost":{"token":2},"cacheable":false,"interruptible":true,"fx":"beam","rarity":"rare","source":"blueprint","art":"base/compute_overdrive"},
+    {"id":"medical_patch","name":"完整性修补","english":"Integrity Patch","type":"function","cost":1,"slots":1,"target":"self","range":0,"effects":[{"kind":"heal","value":14}],"resource_cost":{"medical":1},"cacheable":false,"interruptible":true,"fx":"heal","rarity":"common","source":"consumable","art":"character/pearl_healing"},
+    {"id":"hallucination","name":"污染指令","english":"Corrupted Instruction","type":"anomaly","cost":0,"slots":1,"target":"self","range":0,"effects":[{"kind":"self_damage","value":3}],"resource_cost":{},"cacheable":false,"interruptible":true,"fx":"jam","rarity":"anomaly","source":"anomaly","art":"base/ocean_echo"}
+  ],
+  "modules": {
+    "barrier":{"name":"隔离护盾模块","cards":["firewall","sandbox"],"cost":{"parts":3,"chip":1},"art":"base/deep_blue_shield","description":"牌组额外加入防火墙、沙箱隔离。"},
+    "recon":{"name":"检索侦察模块","cards":["data_probe","rag_query"],"cost":{"fragments":4,"storage":1},"art":"tactics/whale_scout","description":"牌组额外加入数据探针、检索增强。"},
+    "mobility":{"name":"轻量撤退模块","cards":["async_jump","graceful_shutdown"],"cost":{"parts":2,"storage":2},"art":"tactics/wave_jump","description":"牌组额外加入异步跳转、安全关停。"}
+  },
+  "resources": {
+    "token":{"name":"Token","value":3,"size":0,"icon":"star"},
+    "storage":{"name":"存储模块","value":22,"size":1,"icon":"chest"},
+    "weights":{"name":"模型权重","value":90,"size":3,"icon":"heart"},
+    "chip":{"name":"计算芯片","value":35,"size":1,"icon":"star"},
+    "fragments":{"name":"数据碎片","value":12,"size":1,"icon":"chest"},
+    "key":{"name":"权限密钥","value":45,"size":1,"icon":"star"},
+    "parts":{"name":"装备零件","value":18,"size":1,"icon":"chest"},
+    "medical":{"name":"修补组件","value":20,"size":1,"icon":"heart"},
+    "blueprint":{"name":"稀有指令蓝图","value":120,"size":1,"icon":"leaf"},
+    "sample":{"name":"原始研究样本","value":150,"size":2,"icon":"leaf"}
+  },
+  "enemies": {
+    "hallucination":{"name":"幻觉体","hp":24,"art":"res://assets/monsters/sea_slime.png","hint":"实验室里有重叠脚步声，显示屏反复闪烁。"},
+    "guardian":{"name":"守护进程","hp":36,"art":"res://assets/monsters/tide_guardian.png","hint":"服务器区传出机械转动声，门边亮着警戒灯。"},
+    "berserker":{"name":"内存溢出狂战体","hp":32,"art":"res://assets/monsters/shore_crab.png","hint":"机房风扇急速升温，有东西在撞击管道。"},
+    "injector":{"name":"提示注入者","hp":28,"art":"res://assets/monsters/gpt6_map.png","hint":"终端不断出现来源不明的指令，线路发出杂音。"}
+  },
+  "loot_tables": {
+    "cabinet":{"parts":[1,3],"fragments":[1,2],"medical":[0,1]},
+    "server":{"storage":[1,3],"chip":[1,2],"weights":[0,1]},
+    "sample":{"sample":[1,1],"blueprint":[0,1]},
+    "terminal":{"key":[1,1],"token":[3,6]},
+    "safe":{"weights":[1,2],"blueprint":[1,1]}
+  }
+}

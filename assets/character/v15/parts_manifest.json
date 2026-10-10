@@ -1,0 +1,307 @@
+{
+  "version": 3,
+  "method": "redrawn_painted_short_leg_weighted_rig",
+  "body_sheet": "res://art_source/动作重绘/body_parts_v15_source.png",
+  "leg_sheet": "res://art_source/动作重绘/leg_parts_v15_source.png",
+  "canvas_size": [
+    512,
+    512
+  ],
+  "ground": [
+    256,
+    420
+  ],
+  "pixel_size": 0.0064,
+  "hip_height": 0.64,
+  "hem_height": 0.21,
+  "body_height": 2.0,
+  "stride_halfspan": 0.3,
+  "stance_ratio": 0.6,
+  "shoe_height": 0.15,
+  "hip_spacing": 0.23,
+  "lift_height": 0.1,
+  "upper_length": 0.4,
+  "lower_length": 0.4,
+  "body_bob": 0.011,
+  "camera_pitch_degrees": 33.0,
+  "walk_frames": 16,
+  "frame_counts": {
+    "walk": 16,
+    "idle": 1,
+    "interact": 1
+  },
+  "cycle_distance": 1.0,
+  "atlas_order": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "directions": {
+    "down": {
+      "body": {
+        "rect": [
+          49,
+          30,
+          530,
+          564
+        ],
+        "anchor_x": 304,
+        "anchor_y": 558,
+        "anchor_global": [
+          353,
+          588
+        ]
+      },
+      "legs": [
+        {
+          "rect": [
+            206,
+            88,
+            182,
+            310
+          ],
+          "hip": [
+            80,
+            18
+          ],
+          "knee": [
+            82,
+            117
+          ],
+          "ankle": [
+            90,
+            194
+          ],
+          "sole_y": 307,
+          "alpha_threshold": 0.3,
+          "identity": "A"
+        },
+        {
+          "rect": [
+            648,
+            88,
+            173,
+            308
+          ],
+          "hip": [
+            90,
+            18
+          ],
+          "knee": [
+            98,
+            121
+          ],
+          "ankle": [
+            93,
+            196
+          ],
+          "sole_y": 305,
+          "alpha_threshold": 0.3,
+          "identity": "B"
+        }
+      ]
+    },
+    "left": {
+      "body": {
+        "rect": [
+          690,
+          39,
+          528,
+          565
+        ],
+        "anchor_x": 180,
+        "anchor_y": 557,
+        "anchor_global": [
+          870,
+          596
+        ]
+      },
+      "legs": [
+        {
+          "rect": [
+            176,
+            473,
+            223,
+            283
+          ],
+          "hip": [
+            140,
+            20
+          ],
+          "knee": [
+            149,
+            117
+          ],
+          "ankle": [
+            145,
+            197
+          ],
+          "sole_y": 280,
+          "alpha_threshold": 0.3,
+          "identity": "A"
+        },
+        {
+          "rect": [
+            618,
+            491,
+            228,
+            265
+          ],
+          "hip": [
+            140,
+            20
+          ],
+          "knee": [
+            150,
+            121
+          ],
+          "ankle": [
+            151,
+            183
+          ],
+          "sole_y": 262,
+          "alpha_threshold": 0.3,
+          "identity": "B"
+        }
+      ]
+    },
+    "up": {
+      "body": {
+        "rect": [
+          54,
+          627,
+          520,
+          566
+        ],
+        "anchor_x": 296,
+        "anchor_y": 561,
+        "anchor_global": [
+          350,
+          1188
+        ]
+      },
+      "legs": [
+        {
+          "rect": [
+            211,
+            840,
+            158,
+            285
+          ],
+          "hip": [
+            75,
+            16
+          ],
+          "knee": [
+            76,
+            104
+          ],
+          "ankle": [
+            79,
+            192
+          ],
+          "sole_y": 282,
+          "alpha_threshold": 0.3,
+          "identity": "A"
+        },
+        {
+          "rect": [
+            659,
+            837,
+            158,
+            289
+          ],
+          "hip": [
+            76,
+            19
+          ],
+          "knee": [
+            81,
+            107
+          ],
+          "ankle": [
+            84,
+            193
+          ],
+          "sole_y": 286,
+          "alpha_threshold": 0.3,
+          "identity": "B"
+        }
+      ]
+    },
+    "right": {
+      "body": {
+        "rect": [
+          614,
+          648,
+          508,
+          552
+        ],
+        "anchor_x": 380,
+        "anchor_y": 542,
+        "anchor_global": [
+          994,
+          1190
+        ]
+      },
+      "legs": [
+        {
+          "rect": [
+            200,
+            1187,
+            231,
+            279
+          ],
+          "hip": [
+            104,
+            21
+          ],
+          "knee": [
+            74,
+            113
+          ],
+          "ankle": [
+            72,
+            193
+          ],
+          "sole_y": 276,
+          "alpha_threshold": 0.3,
+          "identity": "A"
+        },
+        {
+          "rect": [
+            635,
+            1195,
+            231,
+            271
+          ],
+          "hip": [
+            110,
+            20
+          ],
+          "knee": [
+            91,
+            110
+          ],
+          "ankle": [
+            79,
+            187
+          ],
+          "sole_y": 268,
+          "alpha_threshold": 0.3,
+          "identity": "B"
+        }
+      ]
+    }
+  },
+  "landmark_note": "Source PNGs unchanged. Read-only 8-connected alpha bounds at >76 plus 2px padding. Body pivots are local skirt hem under the torso, excluding the tail. Legs identify fixed A/B painted limbs and anatomical ankle, not the shoe toe. Sprite canvas root never moves.",
+  "body_source_size": [
+    1254,
+    1254
+  ],
+  "leg_source_size": [
+    1024,
+    1536
+  ]
+}

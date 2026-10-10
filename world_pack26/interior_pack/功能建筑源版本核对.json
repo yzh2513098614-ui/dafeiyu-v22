@@ -1,0 +1,41 @@
+{
+  "source_sha256": "6021820b1c5050a1f94b866d700f7d01da5d0a45b1cd3543fd8df8d67df61211",
+  "source_library_version": 11,
+  "modified_ids": [
+    "datacenter",
+    "emergency",
+    "expo",
+    "foodhall",
+    "media",
+    "sports"
+  ],
+  "preserved_scene_hashes": {
+    "school": "4a8d341c0ec27bced0c4291f5bfa3c01cec8969a6bad59bf5e9ee7a7c9019d47",
+    "hospital": "9b24b2911670084e5f6e55f5edf51a47b31a7303b3e539022e2bc0da92dfe1e2",
+    "mall": "93fc6f1a61544fc2febc3c8d464ae8966f5b709a3d705c17a04ff71245c79a62",
+    "residence": "be83d0f74d3c41eea69af5b6072fb1735c35d51e3896f9585af17e62b63df318",
+    "research": "631f04e8208462feec0a1f27c4af4d615c35b6ce2f7eb9ad3d7e143a74d33e98",
+    "harbor": "8b1e009139db3c6391a12c89cf767b530de613e019fb43cbce320ef870655c29",
+    "transit": "c31eed467d0ec28bd9eb7916c772b48c38845edc9015dd7e5e87441a561fae23",
+    "library": "16af1460a1221617e03ebf34145ae6babbd7764aac3b710aa0356b1a8af6f2fb",
+    "museum": "1b2bfc591f60281e32b945bfabc6d7e95ecbd99d6016703170e41c7c78591879",
+    "fabrication": "e484c81371bf80df9a583f1f06d77e89d5a085ad0c0515cb7464e225a229290a",
+    "skypark": "e00c624195aaf37ae96c925b4218dc3e0dee1a17e430576119e8d27a49819af3",
+    "civic": "f906c8b1cc47e990278f740b6b3f20ce2e538737b29152cf1fac774ab58a2fb5",
+    "hotel": "f7077401ecd8c4b1a6186737bb751de5aad4ca1c16b859125e3dcd20982bda5f",
+    "underground": "c9578faf984ef952cc36b3a250de0879b96e998bdb8f443b52cdf268da91fd69",
+    "nightmarket": "aaf21bd01e310f3ebfb1726ad41e849b5b9e845eeab3edb06999152aa24741d5",
+    "customs": "90be354faccac64fe75462957331eca955e14f6a51d7d2f2fd891f024b7c3c09",
+    "campsite": "2a1581cdcda22ceab416e76ee6ac4a01100c797a673f4f83ab0396c963fec273",
+    "observatory": "9b8aa904ac73916d7a4a7f883fdd25d2cbf78151f2b6480451ee5e9f38902c29",
+    "shipyard": "5b6798fb10a7caca16f5735d69a6dc1725294b557d8179ba9f0a398993b5ffab",
+    "boardwalk": "4eefbaeddedf13832445934c28084dbb19a5391d2dc516c45144197b688c5162"
+  },
+  "source_statistics": {
+    "maps": 26,
+    "regions": 422,
+    "connections": 585,
+    "stairs": 38,
+    "searchable_containers": 118
+  }
+}

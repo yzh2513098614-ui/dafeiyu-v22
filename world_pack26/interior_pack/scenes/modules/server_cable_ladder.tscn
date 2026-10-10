@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/silver.tres" id="e0"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/metal.tres" id="e1"]
+
+[ext_resource type="Material" path="res://world_pack26/interior_pack/assets/materials/blue.tres" id="e2"]
+
+[sub_resource type="BoxMesh" id="r0"]
+size = Vector3(4.0,0.14,0.065)
+
+[sub_resource type="BoxShape3D" id="r1"]
+size = Vector3(4.0,0.14,0.065)
+
+[sub_resource type="BoxMesh" id="r2"]
+size = Vector3(0.08,0.075,1.15)
+
+[sub_resource type="BoxMesh" id="r3"]
+size = Vector3(3.8,0.08,0.055)
+
+[sub_resource type="BoxMesh" id="r4"]
+size = Vector3(0.055,0.4,0.055)
+
+[node name="ServerCableLadder" type="Node3D"]
+
+
+[node name="CableTraySide" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.55,-0.55)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CableTraySideBody" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="CableTraySideBody"]
+position = Vector3(0.0,2.55,-0.55)
+shape = SubResource("r1")
+
+[node name="CableTraySide_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.55,0.55)
+mesh = SubResource("r0")
+material_override = ExtResource("e0")
+
+[node name="CableTraySideBody_2" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Shape" type="CollisionShape3D" parent="CableTraySideBody_2"]
+position = Vector3(0.0,2.55,0.55)
+shape = SubResource("r1")
+
+[node name="LadderCrossbar" type="MeshInstance3D" parent="."]
+position = Vector3(-1.8,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.2,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_3" type="MeshInstance3D" parent="."]
+position = Vector3(-0.6,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_4" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_5" type="MeshInstance3D" parent="."]
+position = Vector3(0.6,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_6" type="MeshInstance3D" parent="."]
+position = Vector3(1.2,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="LadderCrossbar_7" type="MeshInstance3D" parent="."]
+position = Vector3(1.8,2.49,0.0)
+mesh = SubResource("r2")
+material_override = ExtResource("e1")
+
+[node name="CableBundle" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.59,-0.24)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="CableBundle_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.59,0.0)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="CableBundle_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.0,2.59,0.24)
+mesh = SubResource("r3")
+material_override = ExtResource("e2")
+
+[node name="OverheadHanger" type="MeshInstance3D" parent="."]
+position = Vector3(-1.6,2.83,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")
+
+[node name="OverheadHanger_2" type="MeshInstance3D" parent="."]
+position = Vector3(1.6,2.83,0.0)
+mesh = SubResource("r4")
+material_override = ExtResource("e1")

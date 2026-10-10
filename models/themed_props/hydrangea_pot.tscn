@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://models/themed_props/hydrangea_pot.glb" id="1"]
+[sub_resource type="BoxShape3D" id="Collision"]
+size = Vector3(0.70213, 1.07375, 0.63247)
+[node name="hydrangea_pot" type="Node3D"]
+[node name="Model" parent="." instance=ExtResource("1")]
+[node name="Body" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0.00144, 0.53187, -0.00124)
+shape = SubResource("Collision")
