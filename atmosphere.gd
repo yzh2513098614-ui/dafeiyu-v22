@@ -2,6 +2,9 @@ extends Node3D
 ## Actual world-space lights and particles; optional so gameplay stays readable.
 const RenderStyle=preload("res://district/render_style.gd")
 const RestaurantFinish=preload("res://district/restaurant_finish.gd")
+const StoryQuay=preload("res://district/story_quay.gd")
+const HarborTerraces=preload("res://district/harbor_terraces.gd")
+const TidalCafe=preload("res://district/tidal_cafe.gd")
 var game: Node3D
 var dusk := false
 var effects := true
@@ -85,7 +88,7 @@ func _refresh_local_shadows() -> void:
  # on/off by player distance also changes sRGB light accumulation in Compatibility.
  var enabled: bool=bool(HarborPrefs.values.get("shadows",true))
  for lamp in lamps:
-  if lamp.has_meta("restaurant_window"):lamp.shadow_enabled=false;continue
+  if lamp.has_meta("restaurant_window") or lamp.has_meta("cafe_lamp") or lamp.has_meta("harbor_lamp"):lamp.shadow_enabled=false;continue
   lamp.shadow_enabled=enabled
   if lamp is OmniLight3D:lamp.omni_shadow_mode=OmniLight3D.SHADOW_CUBE
   lamp.shadow_bias=.025;lamp.shadow_normal_bias=.20;lamp.shadow_blur=.85
@@ -140,7 +143,9 @@ func _apply_lighting() -> void:
   if hour>=LIGHT_KEYS[i][0] and hour<LIGHT_KEYS[i+1][0]:a=LIGHT_KEYS[i];b=LIGHT_KEYS[i+1];break
  var t: float=smoothstep(0.0,1.0,(hour-float(a[0]))/(float(b[0])-float(a[0])))
  var night: float=lerpf(a[7],b[7],t)
- var outside: bool=str(game.get("location_id")) in OUTDOOR_PLACES
+ var outside: bool=str(game.get("location_id")) in OUTDOOR_PLACES or str(game.get("location_id")) in ["story_quay","story_harbor"]
+ sun.shadow_bias=.12;sun.shadow_normal_bias=1.8;sun.shadow_blur=.85
+ contact_shading.visible=effects
  dusk=hour>=17.0 or hour<7.0
  sun.light_energy=lerpf(a[1],b[1],t)*(1.0 if outside else .94);sun.light_color=Color(a[3]).lerp(Color(b[3]),t)
  # Indoor cutaways use a high, gentle key: sunset must not project every
@@ -166,6 +171,9 @@ func _apply_lighting() -> void:
  for lamp in lamps:
   lamp.light_energy=lamp_energy*float(lamp.get_meta("fixture_weight"))
  RestaurantFinish.apply_lighting(self,night,effects)
+ StoryQuay.apply_lighting(self,night)
+ HarborTerraces.apply_lighting(self,night)
+ TidalCafe.apply_lighting(self,night)
  var tint:=Color(a[6]).lerp(Color(b[6]),t)
  for prop in image_props:
   if is_instance_valid(prop):prop.modulate=tint

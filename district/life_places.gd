@@ -1,6 +1,8 @@
 extends RefCounted
 ## Distinct walkable courtyards. Props leave the winding access paths free.
 static func build(g,id: String) -> Dictionary:
+ if id=="tidal_cafe":return preload("res://district/tidal_cafe.gd").build(g)
+ if id=="story_quay":return preload("res://district/story_quay.gd").build(g)
  if id=="gallery":
   var data: Dictionary=g.locations[id].duplicate(true)
   var floor=preload("res://district/whole_floor.gd")

@@ -124,6 +124,8 @@ func _activate(target: Dictionary,alternate: bool) -> void:
   "chest":game.loot.open_chest()
   "object":
    var node: Node3D=target.node
+   if node.has_method("map_action"):
+    node.call("interact");return
    var was_open: bool=bool(node.get("opened"))
    if node.has_method("toggle_open"):node.call("toggle_open")
    else:node.call("interact")
@@ -143,7 +145,9 @@ func _process(_delta: float) -> void:
   if appear and appear.is_valid():appear.kill()
   card.modulate.a=.0;appear=card.create_tween();appear.tween_property(card,"modulate:a",1.0,.14)
  _render(target)
- var point: Vector3=target.point+Vector3(0,1.25,0)
+ var anchor_height: float=1.25
+ if target.kind=="object":anchor_height=float(target.node.get_meta("interaction_height",1.25))
+ var point: Vector3=target.point+Vector3(0,anchor_height,0)
  if game.camera.is_position_behind(point):card.hide();return
  var screen: Vector2=game.camera.unproject_position(point)
  var area: Vector2=game.get_viewport().get_visible_rect().size
@@ -163,7 +167,7 @@ func _render(target: Dictionary) -> void:
    var portal: Dictionary=target.portal
    title_label.text=str(portal.label)
    var door=portal.get("door") as Door
-   primary.text="E "+("进入" if str(portal.route)=="entrance" else "通行")
+   primary.text="E "+(("返回街区" if str(portal.target)=="city" else "进入") if str(portal.route)=="entrance" else "通行")
    if str(portal.route)=="stairs":primary.text="E 下楼" if str(portal.label).contains("下") else "E 上楼"
    elif str(portal.route)=="elevator":primary.text="E 乘电梯"
    if is_instance_valid(door):
@@ -174,6 +178,12 @@ func _render(target: Dictionary) -> void:
   "chest":
    title_label.text=str(target.node.display_name);primary.text="E 打开并查看物品"
   "object":
+   if target.node.has_method("map_action"):
+    title_label.text=str(target.node.get_meta("interaction_title","附近设施"))
+    primary.text="E "+str(target.node.call("map_action"))
+    if target.node.has_method("map_detail"):detail_label.text=str(target.node.call("map_detail"))
+    primary.disabled=bool(target.node.get_meta("map_busy",false))
+    return
    title_label.text=Containers.describe(target.node)
    primary.text="E 合上" if bool(target.node.get("opened")) else "E 打开"
    if target.node.has_meta("asset_definition") and bool(target.node.get("passage")):
