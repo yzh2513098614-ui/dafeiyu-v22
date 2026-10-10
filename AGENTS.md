@@ -81,6 +81,18 @@ Godot 2.5D 卡牌搜打撤原型。本文件是**唯一入口**，供 Codex / Cl
 
 ## 版本控制
 
-**本工程不是 git 仓库**（根目录有 `.gitignore` 但无 `.git`）。因此没有 diff / blame / 回滚，历史改动只有 `备份\` 里 21 个按日期命名的手工快照，以及 `.battle_art_before_redesign_20261004\`、`.battle_ui_backup_20261004\`。
+**本工程自 2026-10-10 起是 git 仓库**，远程为私有仓库 `git@github.com:yzh2513098614-ui/dafeiyu-v22.git`（走 SSH，无需令牌/密码）。首次提交 `ca20909` 入库 9276 文件 / 0.69 GB。
 
-**做有风险的改动前先手工复制到 `备份\<日期>_<改动前>`**，命名沿用现有风格。
+- **入库范围（方案 C）**：`assets\` `models\` `world_pack26\` `interior_pack\` 与全部代码 / 数据 / 文档。
+- **刻意排除**：`.godot\`（621 MB 缓存）、`tools\video_runtime\`（213 MB 工具链）、`.mcp\`、`预览\`（794 MB 过程截图）、`art_source\`（523 MB 原始源料）、`备份\`、`.battle_*` 快照、`*.log`。详见根目录 `.gitignore`。
+- `*.import` 与 `*.uid` **在库内**，不要把它们加进 `.gitignore`——Godot 4 靠它们保存导入设置与稳定引用。
+
+**做有风险的改动前，手工复制到 `备份\<日期>_<改动前>` 仍是既有习惯，保留它。** 但备份目录不入库，所以**改完请自行 `git commit`**——git 不会自动提交，agent 会话结束也不会。
+
+提交前确认没有别的会话正在写同一批文件（本机常同时跑 Codex / DSH 会话）。
+
+```powershell
+git add -A
+git commit -m "说明这次改了什么"
+git push
+```
