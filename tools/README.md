@@ -39,6 +39,7 @@
 | 战斗 UI 校验 | `test_battle_ui.gd` | 输出到 `user://battle_ui_validation_20261004/` |
 | 属性 / 成长 / **存档校验边界** | `test_life_state.gd` | 逐字段类型范围、装备槽合法性、`combat.defeated` 白名单 |
 | 人物数值与道具 UI | `test_life_ui.gd` | 输出 `预览/人物数值与道具_v19/` |
+| 宝箱双栏与随身背包 | `preview_chest_bag.gd` | 需 `--test-session-ui --test-dialogue`；真实输入、容量边界、保存回滚与五种窗口比例，输出 `预览/宝箱背包_20261011/` |
 | 暂停与旅程 UI | `test_session_ui.gd` | 输出 `预览/暂停与旅程_v19/` |
 | 对话 | `test_dialogue.gd` | |
 | 八方向人物（运行时） | `test_character_8dir.gd` | 不加载 UI / 背包 / 对话 / 玩家存档 |

@@ -2,6 +2,8 @@ extends Node
 ## Inventory and container stocks are one transaction, saved after every change.
 const WhaleSkin = preload("res://ui/whale_skin.gd")
 const UiFit = preload("res://ui/ui_fit.gd")
+const InventorySkin=preload("res://ui/harbor_inventory_skin.gd")
+const ChestView=preload("res://ui/chest_view.gd")
 const CHEST = preload("res://scenes/meme_chest.tscn")
 const LifeState=preload("res://character/life_state.gd")
 const INITIAL_STOCK := {
@@ -37,6 +39,7 @@ var modal: Panel
 var rows: Dictionary = {}
 var take_button: Button
 var all_button: Button
+var take_all_button: Button
 var quantity: SpinBox
 var selected_button: Button
 var status := ""
@@ -44,6 +47,9 @@ var save_path := "user://whale_inventory_v5.json"
 var bag_category := "all"
 var bag_query := ""
 var bag_sort := 0
+var bag_page:=0
+var chest_page:=0
+var chest_bag_page:=0
 var bag_favorites: Dictionary = {}
 var character_data: Dictionary = {}
 const BagView=preload("res://ui/bag_view.gd")
@@ -74,6 +80,55 @@ func toggle_favorite(id: String) -> void:
  if bag_favorites.has(id):bag_favorites.erase(id)
  else:bag_favorites[id]=true
  if not save_state():bag_favorites=before;status="收藏保存失败，请稍后重试。"
+ else:status="已收藏："+str(definitions[id].name) if bag_favorites.has(id) else "已取消收藏："+str(definitions[id].name)
+
+func is_equipped(id: String) -> bool:
+ return id!="" and game.character_controller!=null and game.character_controller.model.state.equipment.values().has(id)
+
+func can_receive(id: String) -> int:
+ if mode!="loot" or not is_instance_valid(current_chest) or not definitions.has(id):return 0
+ var existing:=int(inventory.get(id,0))
+ if existing==0 and occupied_slots()>=64:return 0
+ return maxi(0,mini(int(stocks.get(current_chest.container_id,{}).get(id,0)),9999-existing))
+
+func _receipt_plan() -> Dictionary:
+ var plan: Dictionary={}
+ if mode!="loot" or not _in_range(current_chest):return plan
+ var stock: Dictionary=stocks.get(current_chest.container_id,{})
+ var ids:=stock.keys();ids.sort()
+ # Fill existing stacks first; they do not need a new inventory slot.
+ ids.sort_custom(func(a,b):return int(inventory.get(a,0))>0 and int(inventory.get(b,0))<=0)
+ var slots:=occupied_slots()
+ for id in ids:
+  if not definitions.has(id):continue
+  var existing:=int(inventory.get(id,0))
+  if existing==0 and slots>=64:continue
+  var count:=maxi(0,mini(int(stock[id]),9999-existing))
+  if count<=0:continue
+  plan[id]=count
+  if existing==0:slots+=1
+ return plan
+
+func receivable_total() -> int:
+ var total:=0
+ for count in _receipt_plan().values():total+=int(count)
+ return total
+
+func transfer_all() -> bool:
+ var plan:=_receipt_plan()
+ if plan.is_empty():
+  status="背包已装满，剩余物品会留在宝箱。" if mode=="loot" and is_instance_valid(current_chest) and stock_total(current_chest.container_id)>0 else "宝箱已经空啦。"
+  if mode=="loot":_render()
+  return false
+ var old_inventory:=inventory.duplicate(true);var old_stocks:=stocks.duplicate(true)
+ var count:=0
+ for id in plan:
+  stocks[current_chest.container_id][id]-=int(plan[id]);inventory[id]=int(inventory.get(id,0))+int(plan[id]);count+=int(plan[id])
+ if not save_state():
+  inventory=old_inventory;stocks=old_stocks;status="保存失败，本次全部收取已撤回。";_render();return false
+ var remaining:=stock_total(current_chest.container_id)
+ status="收好 %d 件 · 还有 %d 件留在宝箱"%[count,remaining] if remaining>0 else "全部收好啦！共 %d 件。"%count
+ game.get_node("/root/SfxDirector").play("pickup",-3.0);_bag_count();_render();return true
 
 
 func _ready() -> void:
@@ -167,9 +222,9 @@ func _in_range(chest: Node3D) -> bool:
 
 func open_chest() -> void:
  if mode!="" or not _in_range(nearby):return
- current_chest=nearby;mode="loot";chosen="";status="选择物品，查看说明，再取入背包。"
+ current_chest=nearby;mode="loot";chosen="";chest_page=0;chest_bag_page=0;status="选择右侧物品，收进左侧背包。"
  current_chest.set_open(true);_face_chest();prompt.hide();_render()
- SfxDirector.play("chest_open",-2.0)
+ game.get_node("/root/SfxDirector").play("chest_open",-2.0)
 
 func open_note() -> void:
  if mode!="" or not _in_range(nearby):return
@@ -213,14 +268,14 @@ func transfer(id: String,count: int) -> bool:
  if mode!="loot" or not _in_range(current_chest) or not definitions.has(id) or count<=0:return false
  var stock: Dictionary=stocks[current_chest.container_id]
  var have:=int(stock.get(id,0))
- if count>have or int(inventory.get(id,0))+count>9999:return false
+ if count>have or int(inventory.get(id,0))+count>9999:status="数量超过可收取范围，剩余物品会留在宝箱。";_render();return false
  if int(inventory.get(id,0))==0 and occupied_slots()>=64:status="背包 64 格已装满，先享用一些补给。";_render();return false
  var old_inventory: Dictionary=inventory.duplicate(true)
  stock[id]=have-count;inventory[id]=int(inventory.get(id,0))+count
  if not save_state():
   stock[id]=have;inventory=old_inventory;status="保存失败，物品尚未转移。";_render();return false
  status="已放入背包："+str(definitions[id].name)+" × "+str(count)
- SfxDirector.play("pickup",-3.0)
+ game.get_node("/root/SfxDirector").play("pickup",-3.0)
  _bag_count();_render();return true
 
 func use_selected() -> bool:
@@ -238,7 +293,7 @@ func use_selected() -> bool:
   status=(str(data.use)+"\n" if rule.get("action","")=="consume" else "")+str(rule.get("summary",data.use))
   if rule.get("action","")=="equip":status=("已装备：" if model.state.equipment[rule.slot]==chosen else "已卸下：")+str(data.name)+" · "+str(rule.summary)
   # 装备走金属声，补给走治愈声 —— 「用掉一个东西」和「装上/卸下一个东西」手感要分开
-  SfxDirector.play("equip" if rule.get("action","")=="equip" else "heal",-3.0)
+  game.get_node("/root/SfxDirector").play("equip" if rule.get("action","")=="equip" else "heal",-3.0)
   game.character_controller.refresh();_bag_count();_render();return true
  if str(data.kind).begins_with("补给"):
   inventory[chosen]=count-1
@@ -301,16 +356,24 @@ func _label(parent: Node,text: String,pos: Vector2,size: Vector2,font_size: int=
 
 func _icon(parent: Node,id: String,pos: Vector2,size: Vector2) -> void:
  var icon:=TextureRect.new();icon.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
- icon.texture=load(str(definitions[id].get("icon_path","res://assets/item_icons/"+id+".svg")));icon.position=pos;icon.size=size;icon.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;icon.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(icon)
+ icon.texture=load(str(definitions[id].get("icon_path","res://assets/item_icons/"+id+".svg")));icon.position=pos;icon.size=size;icon.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;icon.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(icon)
 
 func _render() -> void:
  if is_instance_valid(modal):modal.hide();modal.queue_free()
- rows.clear();take_button=null;all_button=null;selected_button=null;quantity_plus=null;quantity_minus=null
+ rows.clear();take_button=null;all_button=null;take_all_button=null;selected_button=null;quantity_plus=null;quantity_minus=null
  modal_shade.show()
  if mode=="inventory":
-  modal=WhaleSkin.panel(canvas,Vector2(94,118),Vector2(1260,840))
-  UiFit.pin_center(modal,1260,118,840)
+  modal=InventorySkin.panel(canvas,Vector2(64,103),Vector2(1320,880),"shell")
+  modal.mouse_filter=Control.MOUSE_FILTER_STOP
+  UiFit.pin_center(modal,1320,103,880)
+  modal.anchor_top=.5;modal.anchor_bottom=.5;modal.offset_top=-440;modal.offset_bottom=440
   var bag:=BagView.new();modal.add_child(bag);bag.configure(self);return
+ if mode=="loot":
+  modal=InventorySkin.panel(canvas,Vector2(64,103),Vector2(1320,880),"shell")
+  modal.mouse_filter=Control.MOUSE_FILTER_STOP
+  UiFit.pin_center(modal,1320,103,880)
+  modal.anchor_top=.5;modal.anchor_bottom=.5;modal.offset_top=-440;modal.offset_bottom=440
+  var chest:=ChestView.new();modal.add_child(chest);chest.configure(self);return
  modal=WhaleSkin.panel(canvas,Vector2(160,132),Vector2(1128,792))
  UiFit.pin_center(modal,1128,132,792)
  WhaleSkin.mascot(modal,Vector2(25,13),Vector2(77,79))
@@ -324,53 +387,3 @@ func _render() -> void:
   WhaleSkin.icon(modal,"star",Vector2(53,709),Vector2(35,35))
   _label(modal,"鲸落港 · 大肥鱼 × DeepSeek 深潜站",Vector2(110,708),Vector2(943,39),21,WhaleSkin.MUTED)
   return
- var loot:=mode=="loot"
- _label(modal,current_chest.display_name if loot else "大肥鱼的收纳背包",Vector2(119,25),Vector2(819,43),28)
- _label(modal,"箱里还有 "+str(stock_total(current_chest.container_id))+" 件小宝贝 · 选好再收进背包" if loot else "已经收好 "+str(inventory_total())+" 件 · 收藏、便签与小补给",Vector2(121,76),Vector2(864,29),19,WhaleSkin.MUTED)
- WhaleSkin.panel(modal,Vector2(24,123),Vector2(379,551),"sky")
- WhaleSkin.panel(modal,Vector2(417,123),Vector2(687,551),"paper")
- var source: Dictionary=stocks[current_chest.container_id] if loot else inventory
- var ids: Array=[]
- for id in source:
-  if int(source[id])>0:ids.append(id)
- if not ids.has(chosen):chosen=str(ids[0]) if ids.size()>0 else ""
- var scroll:=ScrollContainer.new();scroll.position=Vector2(37,139);scroll.size=Vector2(353,518);scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;modal.add_child(scroll)
- var list:=VBoxContainer.new();list.size_flags_horizontal=Control.SIZE_EXPAND_FILL;list.add_theme_constant_override("separation",12);scroll.add_child(list)
- for id in ids:
-  var row:=Button.new();row.custom_minimum_size=Vector2(333,94);row.focus_mode=Control.FOCUS_ALL;WhaleSkin.card_button(row,id==chosen)
-  row.pressed.connect(func():chosen=id;status="";_render());list.add_child(row);rows[id]=row
-  _icon(row,id,Vector2(11,12),Vector2(60,66))
-  _label(row,str(definitions[id].name),Vector2(83,12),Vector2(239,30),20)
-  _label(row,str(definitions[id].kind)+"   × "+str(source[id]),Vector2(83,50),Vector2(239,30),17,WhaleSkin.MUTED)
- if chosen=="":
-  _label(modal,"这里暂时空空的",Vector2(58,165),Vector2(302,70),22,WhaleSkin.MUTED)
-  WhaleSkin.mascot(modal,Vector2(642,221),Vector2(223,204))
-  var empty:=_label(modal,"箱子已经空啦！\n小宝贝都在你的背包里。" if loot else "背包还在等第一件小宝贝。\n靠近补给箱，按 E 收好它。",Vector2(477,460),Vector2(565,141),25)
-  empty.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
- else:
-  var data: Dictionary=definitions[chosen]
-  WhaleSkin.panel(modal,Vector2(438,144),Vector2(139,118),"sky")
-  _icon(modal,chosen,Vector2(450,150),Vector2(116,104))
-  _label(modal,data.name,Vector2(600,158),Vector2(477,42),27)
-  _label(modal,data.kind,Vector2(603,213),Vector2(471,30),20,WhaleSkin.MUTED)
-  var description:=_label(modal,data.description,Vector2(443,288),Vector2(635,153),23)
-  description.set_meta("item_description",true)
-  WhaleSkin.panel(modal,Vector2(439,451),Vector2(644,71),"quote")
-  WhaleSkin.icon(modal,"star",Vector2(453,472),Vector2(28,28))
-  _label(modal,"「"+str(data.quote)+"」",Vector2(493,468),Vector2(574,48),20,WhaleSkin.MUTED)
-  if loot:
-   _label(modal,"想收好几个？",Vector2(442,540),Vector2(173,32),20)
-   quantity_minus=game._button("−",Vector2(621,534),Vector2(49,46),modal,func():quantity.value=maxf(1,quantity.value-1))
-   quantity=SpinBox.new();quantity.position=Vector2(683,534);quantity.size=Vector2(133,46);quantity.min_value=1;quantity.max_value=int(source[chosen]);quantity.value=1;modal.add_child(quantity);quantity.get_line_edit().alignment=HORIZONTAL_ALIGNMENT_CENTER
-   quantity_plus=game._button("+",Vector2(829,534),Vector2(49,46),modal,func():quantity.value=minf(quantity.max_value,quantity.value+1))
-   var id:=chosen
-   take_button=game._button("收进背包",Vector2(442,600),Vector2(316,55),modal,func():transfer(id,int(quantity.value)))
-   all_button=game._button("把这一种全收好",Vector2(777,600),Vector2(305,55),modal,func():transfer(id,int(stocks[current_chest.container_id].get(id,0))))
-  else:
-   var action: String="享用 1 个" if str(data.kind).begins_with("补给") else ("读读这段故事" if str(data.kind).begins_with("线索") else "看看小收藏")
-   selected_button=game._button(action,Vector2(442,600),Vector2(316,55),modal,func():use_selected())
-   _label(modal,"补给用掉一份；故事与收藏会一直保留。",Vector2(444,543),Vector2(634,42),19,WhaleSkin.MUTED)
- WhaleSkin.panel(modal,Vector2(25,699),Vector2(1078,69),"status")
- WhaleSkin.icon(modal,"heart",Vector2(41,717),Vector2(29,29))
- var feedback:=ScrollContainer.new();feedback.position=Vector2(83,706);feedback.size=Vector2(995,54);feedback.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;modal.add_child(feedback)
- var feedback_text:=_label(feedback,status,Vector2.ZERO,Vector2(972,50),20,Color("416c75"));feedback_text.custom_minimum_size.x=971;feedback_text.size_flags_horizontal=Control.SIZE_EXPAND_FILL
