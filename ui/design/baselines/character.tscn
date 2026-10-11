@@ -1,0 +1,1648 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/attack.png" id="1_gtudk"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_rbxvm"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/backpack.png" id="2_rbxvm"]
+[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/calendar.png" id="3_756nu"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/chat.png" id="4_wxpaq"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/deck.png" id="5_uaq31"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/energy.png" id="6_sckm8"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="7_kbfbi"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/heal.png" id="8_n42x2"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mail.png" id="9_op8ey"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mana.png" id="10_3jjk0"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/map.png" id="11_erjt0"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/music.png" id="12_42atq"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/settings.png" id="13_qeurl"]
+[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/shell.png" id="14_1ypty"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shield.png" id="15_dnthi"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shop.png" id="16_f4lwa"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/tasks.png" id="17_6hjia"]
+[ext_resource type="Texture2D" path="res://assets/ui/arrow_down.svg" id="18_uue7l"]
+[ext_resource type="Texture2D" path="res://assets/ui/arrow_up.svg" id="19_va3w7"]
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="20_yqsg3"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="21_8ud7m"]
+[ext_resource type="Texture2D" path="res://assets/ui/whale_mascot.png" id="22_5eycq"]
+[ext_resource type="Texture2D" path="res://ui/design/preview_assets/06efb43cc3dcdb75d614488112943dd64abda51fc7b2551bd16c9c54c1661596.png" id="23_p6pip"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4wt1"]
+resource_name = "disabled"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7176471, 0.7490196, 0.83137256, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.52156866, 0.5372549, 0.6509804, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtvkg"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34901962, 0.42352942, 0.87058824, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijxb0"]
+resource_name = "hover"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8352941, 0.89411765, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onvqv"]
+resource_name = "pressed"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.5568628, 0.654902, 0.92156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82fhj"]
+resource_name = "button"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7137255, 0.79607844, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fojgk"]
+resource_name = "bag"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7058824, 0.93333334, 0.92156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veh14"]
+resource_name = "card"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ou0l"]
+resource_name = "chest"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8509804, 0.84313726, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qvlc"]
+resource_name = "dark"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25490198, 0.2901961, 0.48235294, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2umt7"]
+resource_name = "detail"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8980392, 0.9137255, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccyxc"]
+resource_name = "dialogue"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1tc6"]
+resource_name = "empty"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6666667, 0.79607844, 0.84705883, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5411765, 0.67058825, 0.7411765, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h3t2"]
+resource_name = "focus"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34901962, 0.42352942, 0.87058824, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04d3w"]
+resource_name = "gauge_track"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7647059, 0.8, 0.9019608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmr5f"]
+resource_name = "hand_tray"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6666667, 0.69803923, 0.87058824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2nwe"]
+resource_name = "mint"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65f1m"]
+resource_name = "nameplate"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25490198, 0.2901961, 0.48235294, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cts45"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0274i"]
+resource_name = "paper"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1q32"]
+resource_name = "pink"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.5254902, 0.69803923, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_as4cv"]
+resource_name = "plate"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8352941, 0.8862745, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chbt5"]
+resource_name = "primary"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.5254902, 0.69803923, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcgba"]
+resource_name = "primary_hover"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.6784314, 0.8156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jvaq"]
+resource_name = "primary_pressed"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.39215687, 0.60784316, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxmn3"]
+resource_name = "quote"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s758a"]
+resource_name = "screen"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25490198, 0.2901961, 0.48235294, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7js5j"]
+resource_name = "selected"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gwng"]
+resource_name = "shell"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6666667, 0.69803923, 0.87058824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cluo"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmrgu"]
+resource_name = "status"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8117647, 0.87058824, 0.95686275, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wggio"]
+resource_name = "tag"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.34901962, 0.42352942, 0.87058824, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvyh4"]
+resource_name = "white"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw66d"]
+resource_name = "status"
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.5254902, 0.69803923, 1)
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h13tw"]
+resource_name = "status"
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8117647, 0.87058824, 0.95686275, 1)
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc0gn"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34901962, 0.42352942, 0.87058824, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ickuv"]
+resource_name = "status"
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.5254902, 0.69803923, 1)
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jorss"]
+resource_name = "status"
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8117647, 0.87058824, 0.95686275, 1)
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="FontVariation" id="FontVariation_nbn26"]
+base_font = ExtResource("20_yqsg3")
+variation_opentype = {
+2003265652: 650.0
+}
+
+[sub_resource type="Theme" id="Theme_ircof"]
+default_font = SubResource("FontVariation_nbn26")
+default_font_size = 22
+Button/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Button/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+Button/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Button/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Button/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_s4wt1")
+Button/styles/focus = SubResource("StyleBoxFlat_dtvkg")
+Button/styles/hover = SubResource("StyleBoxFlat_ijxb0")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_onvqv")
+Button/styles/normal = SubResource("StyleBoxFlat_82fhj")
+Button/styles/pressed = SubResource("StyleBoxFlat_onvqv")
+GameIcons/icons/attack = ExtResource("1_gtudk")
+GameIcons/icons/backpack = ExtResource("2_rbxvm")
+GameIcons/icons/calendar = ExtResource("3_756nu")
+GameIcons/icons/chat = ExtResource("4_wxpaq")
+GameIcons/icons/deck = ExtResource("5_uaq31")
+GameIcons/icons/energy = ExtResource("6_sckm8")
+GameIcons/icons/gift = ExtResource("7_kbfbi")
+GameIcons/icons/heal = ExtResource("8_n42x2")
+GameIcons/icons/mail = ExtResource("9_op8ey")
+GameIcons/icons/mana = ExtResource("10_3jjk0")
+GameIcons/icons/map = ExtResource("11_erjt0")
+GameIcons/icons/music = ExtResource("12_42atq")
+GameIcons/icons/settings = ExtResource("13_qeurl")
+GameIcons/icons/shell = ExtResource("14_1ypty")
+GameIcons/icons/shield = ExtResource("15_dnthi")
+GameIcons/icons/shop = ExtResource("16_f4lwa")
+GameIcons/icons/tasks = ExtResource("17_6hjia")
+GameUI/styles/bag = SubResource("StyleBoxFlat_fojgk")
+GameUI/styles/button = SubResource("StyleBoxFlat_82fhj")
+GameUI/styles/card = SubResource("StyleBoxFlat_veh14")
+GameUI/styles/chest = SubResource("StyleBoxFlat_3ou0l")
+GameUI/styles/dark = SubResource("StyleBoxFlat_5qvlc")
+GameUI/styles/detail = SubResource("StyleBoxFlat_2umt7")
+GameUI/styles/dialogue = SubResource("StyleBoxFlat_ccyxc")
+GameUI/styles/disabled = SubResource("StyleBoxFlat_s4wt1")
+GameUI/styles/empty = SubResource("StyleBoxFlat_i1tc6")
+GameUI/styles/focus = SubResource("StyleBoxFlat_4h3t2")
+GameUI/styles/gauge_track = SubResource("StyleBoxFlat_04d3w")
+GameUI/styles/hand_tray = SubResource("StyleBoxFlat_cmr5f")
+GameUI/styles/hover = SubResource("StyleBoxFlat_ijxb0")
+GameUI/styles/mint = SubResource("StyleBoxFlat_d2nwe")
+GameUI/styles/nameplate = SubResource("StyleBoxFlat_65f1m")
+GameUI/styles/panel = SubResource("StyleBoxFlat_cts45")
+GameUI/styles/paper = SubResource("StyleBoxFlat_0274i")
+GameUI/styles/pink = SubResource("StyleBoxFlat_m1q32")
+GameUI/styles/plate = SubResource("StyleBoxFlat_as4cv")
+GameUI/styles/pressed = SubResource("StyleBoxFlat_onvqv")
+GameUI/styles/primary = SubResource("StyleBoxFlat_chbt5")
+GameUI/styles/primary_hover = SubResource("StyleBoxFlat_pcgba")
+GameUI/styles/primary_pressed = SubResource("StyleBoxFlat_4jvaq")
+GameUI/styles/quote = SubResource("StyleBoxFlat_oxmn3")
+GameUI/styles/screen = SubResource("StyleBoxFlat_s758a")
+GameUI/styles/selected = SubResource("StyleBoxFlat_7js5j")
+GameUI/styles/shell = SubResource("StyleBoxFlat_1gwng")
+GameUI/styles/sky = SubResource("StyleBoxFlat_2cluo")
+GameUI/styles/status = SubResource("StyleBoxFlat_tmrgu")
+GameUI/styles/tag = SubResource("StyleBoxFlat_wggio")
+GameUI/styles/white = SubResource("StyleBoxFlat_pvyh4")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_hw66d")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_hw66d")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_hw66d")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_h13tw")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_h13tw")
+Label/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Label/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+Label/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Label/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Label/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/caret_color = Color(0.34901962, 0.42352942, 0.87058824, 1)
+LineEdit/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+LineEdit/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/font_placeholder_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+LineEdit/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/font_selected_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+LineEdit/colors/selection_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_7js5j")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_0274i")
+OptionButton/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+OptionButton/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+OptionButton/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+OptionButton/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+OptionButton/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_s4wt1")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_oc0gn")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_ijxb0")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_onvqv")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_82fhj")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_onvqv")
+Panel/styles/panel = SubResource("StyleBoxFlat_cts45")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cts45")
+RichTextLabel/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+RichTextLabel/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+RichTextLabel/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+RichTextLabel/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+RichTextLabel/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+SpinBox/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+SpinBox/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+SpinBox/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+SpinBox/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+SpinBox/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+SpinBox/icons/down = ExtResource("18_uue7l")
+SpinBox/icons/up = ExtResource("19_va3w7")
+VBoxContainer/constants/separation = 12
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ickuv")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ickuv")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ickuv")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_jorss")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_jorss")
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_character" type="Control" unique_id=408591804]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "character"
+metadata/design_title = "人物状态与装备"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=1330237207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ircof")
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_ColorRect" type="ColorRect" parent="00_Control" unique_id=1335203989]
+layout_mode = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+color = Color(0.08, 0.13, 0.24, 0.55)
+metadata/design_id = "0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Panel" type="Panel" parent="00_Control" unique_id=563277519]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -522.0
+offset_top = 137.0
+offset_right = 522.0
+offset_bottom = 947.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cts45")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1474709237]
+texture_filter = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 1022.0
+offset_bottom = 114.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_65f1m")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/01_Panel/00_Panel" unique_id=1000941844]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 88.0
+offset_bottom = 81.0
+mouse_filter = 2
+texture = ExtResource("22_5eycq")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/0/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_大肥鱼 · 人物状态" type="Label" parent="00_Control/01_Panel/00_Panel" unique_id=1342401980]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 12.0
+offset_right = 833.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0.972549, 0.90588236, 1)
+theme_override_font_sizes/font_size = 30
+text = "大肥鱼 · 人物状态"
+autowrap_mode = 3
+metadata/design_id = "1/0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_Lv_1  港口蓝鲸信使  ·  状" type="Label" parent="00_Control/01_Panel/00_Panel" unique_id=1802475809]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 56.0
+offset_right = 825.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.85882354, 0.8980392, 0.92941177, 1)
+theme_override_font_sizes/font_size = 18
+text = "Lv.1  港口蓝鲸信使  ·  状态良好 · 慢慢探索吧"
+autowrap_mode = 3
+metadata/design_id = "1/0/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Button_Esc 关闭" type="Button" parent="00_Control/01_Panel/00_Panel" unique_id=257845873]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 22.0
+offset_right = 982.0
+offset_bottom = 72.0
+text = "Esc 关闭"
+metadata/design_id = "1/0/3"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="00_Control/01_Panel" unique_id=2076545534]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 129.0
+offset_right = 354.0
+offset_bottom = 593.0
+mouse_filter = 2
+texture = ExtResource("23_p6pip")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1674475423]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 143.0
+offset_right = 683.0
+offset_bottom = 228.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_veh14")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/2"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_生命" type="Label" parent="00_Control/01_Panel/02_Panel" unique_id=782738698]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 289.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "生命"
+autowrap_mode = 3
+metadata/design_id = "1/2/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_ColorRect" type="ColorRect" parent="00_Control/01_Panel/02_Panel" unique_id=2068982589]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 43.0
+offset_right = 293.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.8666667, 0.8980392, 0.92941177, 1)
+metadata/design_id = "1/2/1"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_ColorRect" type="ColorRect" parent="00_Control/01_Panel/02_Panel/01_ColorRect" unique_id=352618432]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 281.0
+offset_bottom = 27.0
+mouse_filter = 2
+color = Color(0.8039216, 0.5294118, 0.5803922, 1)
+metadata/design_id = "1/2/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_生命   100 _ 100" type="Label" parent="00_Control/01_Panel/02_Panel/01_ColorRect" unique_id=1440463409]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 273.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.1254902, 0.19607843, 0.30588236, 1)
+theme_override_font_sizes/font_size = 18
+text = "生命   100 / 100"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "1/2/1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=2124555488]
+texture_filter = 2
+layout_mode = 0
+offset_left = 698.0
+offset_top = 143.0
+offset_right = 1001.0
+offset_bottom = 228.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_veh14")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/3"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_体力" type="Label" parent="00_Control/01_Panel/03_Panel" unique_id=227566651]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 289.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "体力"
+autowrap_mode = 3
+metadata/design_id = "1/3/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_ColorRect" type="ColorRect" parent="00_Control/01_Panel/03_Panel" unique_id=444732683]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 43.0
+offset_right = 293.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.8666667, 0.8980392, 0.92941177, 1)
+metadata/design_id = "1/3/1"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_ColorRect" type="ColorRect" parent="00_Control/01_Panel/03_Panel/01_ColorRect" unique_id=301880568]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 281.0
+offset_bottom = 27.0
+mouse_filter = 2
+color = Color(0.5764706, 0.7647059, 0.7764706, 1)
+metadata/design_id = "1/3/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_体力   100 _ 100" type="Label" parent="00_Control/01_Panel/03_Panel/01_ColorRect" unique_id=1440674244]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 273.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.1254902, 0.19607843, 0.30588236, 1)
+theme_override_font_sizes/font_size = 18
+text = "体力   100 / 100"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "1/3/1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=423725172]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 241.0
+offset_right = 683.0
+offset_bottom = 326.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_veh14")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/4"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_饱食" type="Label" parent="00_Control/01_Panel/04_Panel" unique_id=1234315860]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 289.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "饱食"
+autowrap_mode = 3
+metadata/design_id = "1/4/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_ColorRect" type="ColorRect" parent="00_Control/01_Panel/04_Panel" unique_id=209897988]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 43.0
+offset_right = 293.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.8666667, 0.8980392, 0.92941177, 1)
+metadata/design_id = "1/4/1"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_ColorRect" type="ColorRect" parent="00_Control/01_Panel/04_Panel/01_ColorRect" unique_id=1982990194]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 280.96512
+offset_bottom = 27.0
+mouse_filter = 2
+color = Color(0.85490197, 0.7647059, 0.5529412, 1)
+metadata/design_id = "1/4/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_饱食   100 _ 100" type="Label" parent="00_Control/01_Panel/04_Panel/01_ColorRect" unique_id=1462396111]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 273.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.1254902, 0.19607843, 0.30588236, 1)
+theme_override_font_sizes/font_size = 18
+text = "饱食   100 / 100"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "1/4/1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1272694065]
+texture_filter = 2
+layout_mode = 0
+offset_left = 698.0
+offset_top = 241.0
+offset_right = 1001.0
+offset_bottom = 326.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_veh14")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/5"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_心情" type="Label" parent="00_Control/01_Panel/05_Panel" unique_id=1348863455]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 289.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "心情"
+autowrap_mode = 3
+metadata/design_id = "1/5/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_ColorRect" type="ColorRect" parent="00_Control/01_Panel/05_Panel" unique_id=1610280260]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 43.0
+offset_right = 293.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.8666667, 0.8980392, 0.92941177, 1)
+metadata/design_id = "1/5/1"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_ColorRect" type="ColorRect" parent="00_Control/01_Panel/05_Panel/01_ColorRect" unique_id=2042580501]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 281.0
+offset_bottom = 27.0
+mouse_filter = 2
+color = Color(0.7254902, 0.6862745, 0.8392157, 1)
+metadata/design_id = "1/5/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_心情   100 _ 100" type="Label" parent="00_Control/01_Panel/05_Panel/01_ColorRect" unique_id=1442969540]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 273.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.1254902, 0.19607843, 0.30588236, 1)
+theme_override_font_sizes/font_size = 18
+text = "心情   100 / 100"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "1/5/1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Label_基础属性 _ 随身加成" type="Label" parent="00_Control/01_Panel" unique_id=1100720430]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 346.0
+offset_right = 1002.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 24
+text = "基础属性 / 随身加成"
+autowrap_mode = 3
+metadata/design_id = "1/6"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=2043520049]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 393.0
+offset_right = 578.0
+offset_bottom = 455.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/7"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_力量  4" type="Label" parent="00_Control/01_Panel/07_Panel" unique_id=1642130238]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "力量  4"
+autowrap_mode = 3
+metadata/design_id = "1/7/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=798801238]
+texture_filter = 2
+layout_mode = 0
+offset_left = 593.0
+offset_top = 393.0
+offset_right = 791.0
+offset_bottom = 455.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/8"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_耐力  5" type="Label" parent="00_Control/01_Panel/08_Panel" unique_id=906202778]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "耐力  5"
+autowrap_mode = 3
+metadata/design_id = "1/8/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=989857442]
+texture_filter = 2
+layout_mode = 0
+offset_left = 806.0
+offset_top = 393.0
+offset_right = 1004.0
+offset_bottom = 455.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/9"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_学识  5" type="Label" parent="00_Control/01_Panel/09_Panel" unique_id=31345081]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "学识  5"
+autowrap_mode = 3
+metadata/design_id = "1/9/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1214948089]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 466.0
+offset_right = 578.0
+offset_bottom = 528.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/10"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_亲和  6" type="Label" parent="00_Control/01_Panel/10_Panel" unique_id=973645569]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "亲和  6"
+autowrap_mode = 3
+metadata/design_id = "1/10/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="11_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=316058653]
+texture_filter = 2
+layout_mode = 0
+offset_left = 593.0
+offset_top = 466.0
+offset_right = 791.0
+offset_bottom = 528.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/11"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_灵巧  4" type="Label" parent="00_Control/01_Panel/11_Panel" unique_id=1519837260]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "灵巧  4"
+autowrap_mode = 3
+metadata/design_id = "1/11/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="12_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1280853879]
+texture_filter = 2
+layout_mode = 0
+offset_left = 806.0
+offset_top = 466.0
+offset_right = 1004.0
+offset_bottom = 528.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/12"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_幸运  3" type="Label" parent="00_Control/01_Panel/12_Panel" unique_id=1099761326]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 187.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "幸运  3"
+autowrap_mode = 3
+metadata/design_id = "1/12/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="13_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=1352716028]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 551.0
+offset_right = 1001.0
+offset_bottom = 632.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_veh14")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/13"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_漫步速度 ×1_00  ·  休息恢" type="Label" parent="00_Control/01_Panel/13_Panel" unique_id=338192588]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 610.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "漫步速度 ×1.00  ·  休息恢复体力 +35"
+autowrap_mode = 3
+metadata/design_id = "1/13/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_攻击 12 · 防御 7  ·  潮" type="Label" parent="00_Control/01_Panel/13_Panel" unique_id=808405722]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 44.0
+offset_right = 610.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "攻击 12 · 防御 7  ·  潮汐试炼：靠近怪物后选择战斗"
+autowrap_mode = 3
+metadata/design_id = "1/13/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="14_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=655114823]
+texture_filter = 2
+layout_mode = 0
+offset_left = 29.0
+offset_top = 602.0
+offset_right = 352.0
+offset_bottom = 760.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/14"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_随身装备" type="Label" parent="00_Control/01_Panel/14_Panel" unique_id=709747174]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 306.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "随身装备"
+autowrap_mode = 3
+metadata/design_id = "1/14/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_工具：未装备" type="Button" parent="00_Control/01_Panel/14_Panel" unique_id=1847364663]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 47.0
+offset_right = 312.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 17
+disabled = true
+text = "工具：未装备"
+metadata/design_id = "1/14/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_随身物：未装备" type="Button" parent="00_Control/01_Panel/14_Panel" unique_id=1620408758]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 94.0
+offset_right = 312.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 17
+disabled = true
+text = "随身物：未装备"
+metadata/design_id = "1/14/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="15_Panel" type="Panel" parent="00_Control/01_Panel" unique_id=235155951]
+texture_filter = 2
+layout_mode = 0
+offset_left = 380.0
+offset_top = 649.0
+offset_right = 1001.0
+offset_bottom = 695.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cluo")
+script = ExtResource("21_8ud7m")
+metadata/design_id = "1/15"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_阅历  13 _ 60  ·  新地" type="Label" parent="00_Control/01_Panel/15_Panel" unique_id=1819596471]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 610.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "阅历  13 / 60  ·  新地点只奖励一次"
+autowrap_mode = 3
+metadata/design_id = "1/15/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="16_Button_休息一下" type="Button" parent="00_Control/01_Panel" unique_id=1267170653]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 711.0
+offset_right = 672.0
+offset_bottom = 763.0
+text = "休息一下"
+metadata/design_id = "1/16"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="17_Button_去背包补给 _ 装备" type="Button" parent="00_Control/01_Panel" unique_id=1956418325]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 711.0
+offset_right = 1001.0
+offset_bottom = 763.0
+text = "去背包补给 / 装备"
+metadata/design_id = "1/17"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="18_Label_发现了新的地方，阅历增加。" type="Label" parent="00_Control/01_Panel" unique_id=789742856]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 772.0
+offset_right = 1007.0
+offset_bottom = 800.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 17
+text = "发现了新的地方，阅历增加。"
+autowrap_mode = 3
+metadata/design_id = "1/18"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

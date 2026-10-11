@@ -1,0 +1,833 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_181qu"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_xuea0"]
+[ext_resource type="Texture2D" path="res://assets/cards/tactics/wave_jump.png" id="2_xuea0"]
+[ext_resource type="Texture2D" path="res://assets/cards/base/memory_recall.png" id="3_hsakn"]
+[ext_resource type="Texture2D" path="res://assets/cards/tactics/secure_backup.png" id="4_db6ob"]
+[ext_resource type="Texture2D" path="res://assets/cards/tactics/rewind_step.png" id="5_qjqbd"]
+[ext_resource type="Texture2D" path="res://assets/cards/character/pearl_healing.png" id="6_2ghx8"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyox8"]
+resource_name = "paper"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drdlt"]
+resource_name = "card"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dui6"]
+resource_name = "selected"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_expedition_battle" type="Control" unique_id=1695914505]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "expedition_battle"
+metadata/design_title = "研究远征 · 三指令交战"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=576268469]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -724.0
+offset_right = 724.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control" unique_id=299960432]
+texture_filter = 2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 1424.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyox8")
+script = ExtResource("1_181qu")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_同步指令交战   _   窗口 1 " type="Label" parent="00_Control/00_Panel" unique_id=1373298858]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 1375.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 27
+text = "同步指令交战   /   窗口 1   /   1 个敌人   /   当前目标 1 · 幻觉体"
+autowrap_mode = 3
+metadata/design_id = "0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_完整性 48_48 · 护盾 0  " type="Label" parent="00_Control/00_Panel" unique_id=1922404274]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 68.0
+offset_right = 1376.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 22
+text = "完整性 48/48 · 护盾 0    算力 3/3    指令 0/3    Trace 3"
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Panel" type="Panel" parent="00_Control" unique_id=493663115]
+texture_filter = 2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 158.0
+offset_right = 321.0
+offset_bottom = 615.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyox8")
+script = ExtResource("1_181qu")
+metadata/design_id = "1"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_选择敌人 _ 查看意图" type="Label" parent="00_Control/01_Panel" unique_id=57817890]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 279.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "选择敌人 / 查看意图"
+autowrap_mode = 3
+metadata/design_id = "1/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_1 · 幻觉体_24_24  护盾0" type="Button" parent="00_Control/01_Panel" unique_id=141061878]
+modulate = Color(0.9137255, 0.83137256, 0.62352943, 1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 282.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 18
+text = "1 · 幻觉体
+24/24  护盾0"
+metadata/design_id = "1/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_当前目标的三条指令" type="Label" parent="00_Control/01_Panel" unique_id=3283695]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 258.0
+offset_right = 279.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "当前目标的三条指令"
+autowrap_mode = 3
+metadata/design_id = "1/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_1  虚假信号" type="Label" parent="00_Control/01_Panel" unique_id=1193216602]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 295.0
+offset_right = 279.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "1  虚假信号"
+autowrap_mode = 3
+metadata/design_id = "1/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_2  未识别 · 数据探针" type="Label" parent="00_Control/01_Panel" unique_id=652872714]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 328.0
+offset_right = 279.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "2  未识别 · 数据探针"
+autowrap_mode = 3
+metadata/design_id = "1/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Label_3  未识别 · 数据探针" type="Label" parent="00_Control/01_Panel" unique_id=1767319224]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 361.0
+offset_right = 279.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "3  未识别 · 数据探针"
+autowrap_mode = 3
+metadata/design_id = "1/5"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Label_移动 → 防御_控制 → 伤害_掩体" type="Label" parent="00_Control/01_Panel" unique_id=856504709]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 400.0
+offset_right = 281.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "移动 → 防御/控制 → 伤害
+掩体减伤3 · 绿色格可脱离"
+autowrap_mode = 3
+metadata/design_id = "1/6"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Panel" type="Panel" parent="00_Control" unique_id=754041373]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1097.0
+offset_top = 158.0
+offset_right = 1424.0
+offset_bottom = 613.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyox8")
+script = ExtResource("1_181qu")
+metadata/design_id = "2"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_我的三条指令" type="Label" parent="00_Control/02_Panel" unique_id=1521780051]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 310.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 26
+text = "我的三条指令"
+autowrap_mode = 3
+metadata/design_id = "2/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_1  空槽 · 执行时待机" type="Label" parent="00_Control/02_Panel" unique_id=923803259]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 72.0
+offset_right = 309.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "1  空槽 · 执行时待机"
+autowrap_mode = 3
+metadata/design_id = "2/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_2  空槽 · 执行时待机" type="Label" parent="00_Control/02_Panel" unique_id=728464472]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 126.0
+offset_right = 309.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "2  空槽 · 执行时待机"
+autowrap_mode = 3
+metadata/design_id = "2/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_3  空槽 · 执行时待机" type="Label" parent="00_Control/02_Panel" unique_id=468570738]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 180.0
+offset_right = 309.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "3  空槽 · 执行时待机"
+autowrap_mode = 3
+metadata/design_id = "2/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_撤回最后一条" type="Button" parent="00_Control/02_Panel" unique_id=599064404]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 242.0
+offset_right = 311.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 20
+text = "撤回最后一条"
+metadata/design_id = "2/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_执行同步指令  ▶" type="Button" parent="00_Control/02_Panel" unique_id=178285551]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 299.0
+offset_right = 311.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 20
+text = "执行同步指令  ▶"
+metadata/design_id = "2/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_正常演出" type="Button" parent="00_Control/02_Panel" unique_id=1243729271]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 374.0
+offset_right = 311.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 20
+text = "正常演出"
+metadata/design_id = "2/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Panel" type="Panel" parent="00_Control" unique_id=966027994]
+texture_filter = 2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 637.0
+offset_right = 1424.0
+offset_bottom = 733.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyox8")
+script = ExtResource("1_181qu")
+metadata/design_id = "3"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Button_基础移动" type="Button" parent="00_Control/03_Panel" unique_id=1571922506]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 211.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "基础移动"
+metadata/design_id = "3/0"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_基础脱离" type="Button" parent="00_Control/03_Panel" unique_id=1252300068]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 14.0
+offset_right = 422.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "基础脱离"
+metadata/design_id = "3/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_待机" type="Button" parent="00_Control/03_Panel" unique_id=1145551732]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 14.0
+offset_right = 592.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "待机"
+metadata/design_id = "3/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_选牌排列指令；绿色边框格是合法退路。" type="Label" parent="00_Control/03_Panel" unique_id=528340174]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 14.0
+offset_right = 1375.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "选牌排列指令；绿色边框格是合法退路。"
+autowrap_mode = 3
+metadata/design_id = "3/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_" type="Button" parent="00_Control" unique_id=356158017]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 751.0
+offset_right = 210.0
+offset_bottom = 1042.0
+tooltip_text = "Async Jump
+移动 2 格"
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_drdlt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dui6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8dui6")
+metadata/design_id = "4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/04_Button_" unique_id=1777354532]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 169.0
+mouse_filter = 2
+texture = ExtResource("2_xuea0")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "4/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_算力 1 · 槽 1" type="Label" parent="00_Control/04_Button_" unique_id=781896428]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "算力 1 · 槽 1"
+autowrap_mode = 3
+metadata/design_id = "4/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_异步跳转" type="Label" parent="00_Control/04_Button_" unique_id=1880341654]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 177.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "异步跳转"
+autowrap_mode = 3
+metadata/design_id = "4/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_移动 2 格" type="Label" parent="00_Control/04_Button_" unique_id=153966300]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 177.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "移动 2 格"
+autowrap_mode = 3
+metadata/design_id = "4/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_" type="Button" parent="00_Control" unique_id=1207954686]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 751.0
+offset_right = 409.0
+offset_bottom = 1042.0
+tooltip_text = "KV Cache
+复用上个有效指令"
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_drdlt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dui6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8dui6")
+metadata/design_id = "5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/05_Button_" unique_id=1293200436]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 169.0
+mouse_filter = 2
+texture = ExtResource("3_hsakn")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "5/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_算力 1 · 槽 1" type="Label" parent="00_Control/05_Button_" unique_id=2048911588]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "算力 1 · 槽 1"
+autowrap_mode = 3
+metadata/design_id = "5/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_键值缓存" type="Label" parent="00_Control/05_Button_" unique_id=209553456]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 177.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "键值缓存"
+autowrap_mode = 3
+metadata/design_id = "5/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_复用上个有效指令" type="Label" parent="00_Control/05_Button_" unique_id=99251465]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 177.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "复用上个有效指令"
+autowrap_mode = 3
+metadata/design_id = "5/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_" type="Button" parent="00_Control" unique_id=1633532866]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 751.0
+offset_right = 608.0
+offset_bottom = 1042.0
+tooltip_text = "Checkpoint
+记录状态"
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_drdlt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dui6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8dui6")
+metadata/design_id = "6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/06_Button_" unique_id=2044950793]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 169.0
+mouse_filter = 2
+texture = ExtResource("4_db6ob")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "6/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_算力 0 · 槽 1" type="Label" parent="00_Control/06_Button_" unique_id=814119557]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "算力 0 · 槽 1"
+autowrap_mode = 3
+metadata/design_id = "6/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_检查点" type="Label" parent="00_Control/06_Button_" unique_id=502811185]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 177.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "检查点"
+autowrap_mode = 3
+metadata/design_id = "6/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_记录状态" type="Label" parent="00_Control/06_Button_" unique_id=64180500]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 177.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "记录状态"
+autowrap_mode = 3
+metadata/design_id = "6/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Button_" type="Button" parent="00_Control" unique_id=1203193087]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 751.0
+offset_right = 807.0
+offset_bottom = 1042.0
+tooltip_text = "Rollback
+最多修补 10，恢复站位"
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_drdlt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dui6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8dui6")
+metadata/design_id = "7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/07_Button_" unique_id=812762041]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 169.0
+mouse_filter = 2
+texture = ExtResource("5_qjqbd")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "7/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_算力 1 · 槽 1" type="Label" parent="00_Control/07_Button_" unique_id=809697153]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "算力 1 · 槽 1"
+autowrap_mode = 3
+metadata/design_id = "7/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_回滚" type="Label" parent="00_Control/07_Button_" unique_id=1466493781]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 177.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "回滚"
+autowrap_mode = 3
+metadata/design_id = "7/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_最多修补 10，恢复站位" type="Label" parent="00_Control/07_Button_" unique_id=499708239]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 177.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "最多修补 10，恢复站位"
+autowrap_mode = 3
+metadata/design_id = "7/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Button_" type="Button" parent="00_Control" unique_id=895602988]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 751.0
+offset_right = 1006.0
+offset_bottom = 1042.0
+tooltip_text = "Integrity Patch
+修补 14 / 消耗 修补组件 ×1"
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_drdlt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dui6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8dui6")
+metadata/design_id = "8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/08_Button_" unique_id=2038208577]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 176.0
+offset_bottom = 169.0
+mouse_filter = 2
+texture = ExtResource("6_2ghx8")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "8/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_算力 1 · 槽 1" type="Label" parent="00_Control/08_Button_" unique_id=702473527]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+text = "算力 1 · 槽 1"
+autowrap_mode = 3
+metadata/design_id = "8/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_完整性修补" type="Label" parent="00_Control/08_Button_" unique_id=1904201215]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 177.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "完整性修补"
+autowrap_mode = 3
+metadata/design_id = "8/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_修补 14 _ 消耗 修补组件 ×1" type="Label" parent="00_Control/08_Button_" unique_id=2100139176]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 177.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "修补 14 / 消耗 修补组件 ×1"
+autowrap_mode = 3
+metadata/design_id = "8/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

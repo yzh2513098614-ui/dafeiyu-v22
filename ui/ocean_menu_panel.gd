@@ -1,3 +1,4 @@
+@tool
 extends Panel
 ## Sample-style rims rendered without children, so page rebuilds keep the frame.
 const S=preload("res://ui/ocean_sample_skin.gd")
@@ -7,7 +8,9 @@ func _ready() -> void:
 func _draw() -> void:
  if size.x<40 or size.y<40:return
  var kind:=str(get_meta("ocean_kind","panel"))
- var outer: StyleBoxFlat=get_theme_stylebox("panel")
+ var raw:=get_theme_stylebox("panel")
+ if not raw is StyleBoxFlat:return
+ var outer:StyleBoxFlat=raw
  var inset:=7.0
  var rim_color:=Color("dce5ff") if kind=="shell" else outer.bg_color.lightened(.35)
  var rim:=S.box(Color.TRANSPARENT,maxi(8,outer.corner_radius_top_left-7),rim_color,3)

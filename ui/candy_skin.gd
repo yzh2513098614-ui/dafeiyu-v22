@@ -9,8 +9,14 @@ const GOLD:=Color("ffe071")
 const PAPER:=Color("eaf1ff")
 const DARK:=Color("414a7b")
 static var boxes: Dictionary={}
+static var design_theme: Theme
+static func editable_theme()->Theme:
+ if design_theme==null and ResourceLoader.exists("res://ui/design/game_ui_theme.tres"):design_theme=load("res://ui/design/game_ui_theme.tres")
+ return design_theme
 
 static func frame(kind: String="panel") -> StyleBoxFlat:
+ var editable:=editable_theme()
+ if editable!=null and editable.has_stylebox(kind,"GameUI"):return editable.get_stylebox(kind,"GameUI")
  if boxes.has(kind):return boxes[kind]
  var fills: Dictionary={"shell":"aab2de","panel":"dce5ff","dialogue":"dce5ff","paper":"eaf1ff","detail":"e5e9ff","sky":"ccf4f1","bag":"b4eeeb","chest":"d9d7ff","mint":"4ad9c5","pink":"ff86b2","quote":"ccf4f1","status":"cfdef4","button":"b6cbff","white":"eaf1ff","hover":"d5e4ff","pressed":"8ea7eb","primary":"ff86b2","primary_hover":"ffadd0","primary_pressed":"dc649b","disabled":"b7bfd4","selected":"4ad9c5","card":"eaf1ff","empty":"aacbd8","nameplate":"414a7b","screen":"414a7b","dark":"414a7b","plate":"d5e2ff","hand_tray":"aab2de","focus":"00000000","gauge_track":"c3cce6","tag":"596cde"}
  var b:=StyleBoxFlat.new();b.bg_color=Color(fills.get(kind,"dce5ff"));b.border_color=INK;b.set_border_width_all(3);b.set_corner_radius_all(14);b.anti_aliasing=true

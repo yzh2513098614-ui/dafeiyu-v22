@@ -1,0 +1,173 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_5tpuo"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_o7jm6"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk7tl"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_expedition_settlement" type="Control" unique_id=381219866]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "expedition_settlement"
+metadata/design_title = "研究远征 · 撤离结算"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=894467903]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -724.0
+offset_right = 724.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control" unique_id=323560050]
+texture_filter = 2
+layout_mode = 0
+offset_left = 254.0
+offset_top = 185.0
+offset_right = 1194.0
+offset_bottom = 975.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wk7tl")
+script = ExtResource("1_o7jm6")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_撤离成功 · 已返回安全区" type="Label" parent="00_Control/00_Panel" unique_id=2037594155]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 914.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 30
+text = "撤离成功 · 已返回安全区"
+autowrap_mode = 3
+metadata/design_id = "0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_物资已存入独立港口仓库。" type="Label" parent="00_Control/00_Panel" unique_id=1794683923]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 684.0
+offset_right = 913.0
+offset_bottom = 730.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "物资已存入独立港口仓库。"
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_本次远征已结算   ·   带回价值" type="Label" parent="00_Control/00_Panel" unique_id=1449765112]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 910.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 24
+text = "本次远征已结算   ·   带回价值 0
+探索 0.0 分钟   ·   最终痕迹 3
+永久蓝图保留 0 张"
+autowrap_mode = 3
+metadata/design_id = "0/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_带回物资：_" type="Label" parent="00_Control/00_Panel" unique_id=377905227]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 241.0
+offset_right = 910.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "带回物资：
+"
+autowrap_mode = 3
+metadata/design_id = "0/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_行动记录：_接到委托：找到原始研究样" type="Label" parent="00_Control/00_Panel" unique_id=1396093099]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 385.0
+offset_right = 910.0
+offset_bottom = 627.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "行动记录：
+接到委托：找到原始研究样本并带回。
+展开交战 · 痕迹 +3"
+autowrap_mode = 3
+metadata/design_id = "0/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_返回港口" type="Button" parent="00_Control/00_Panel" unique_id=1290896401]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 722.0
+offset_right = 455.0
+offset_bottom = 765.0
+theme_override_font_sizes/font_size = 20
+text = "返回港口"
+metadata/design_id = "0/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_保存并刷新结算" type="Button" parent="00_Control/00_Panel" unique_id=195480027]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 722.0
+offset_right = 910.0
+offset_bottom = 765.0
+theme_override_font_sizes/font_size = 20
+text = "保存并刷新结算"
+metadata/design_id = "0/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

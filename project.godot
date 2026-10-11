@@ -48,3 +48,8 @@ HarborPrefs="*res://ui/harbor_prefs.gd"
 MusicDirector="*res://music/music_director.gd"
 
 SfxDirector="*res://sound/sfx_director.gd"
+UiDesign="*res://ui/design/design_runtime.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ui_designer/plugin.cfg")

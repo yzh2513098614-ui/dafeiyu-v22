@@ -1,0 +1,1548 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_6313y"]
+[ext_resource type="Texture2D" path="res://assets/ui/book.svg" id="1_trlsq"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="2_6313y"]
+[ext_resource type="Texture2D" path="res://assets/district/places/obs_2.png" id="3_88j31"]
+[ext_resource type="Texture2D" path="res://assets/district/places/music_2.png" id="4_y38l7"]
+[ext_resource type="Texture2D" path="res://assets/district/places/apt_2.png" id="5_knwfq"]
+[ext_resource type="Texture2D" path="res://assets/district/places/community_2.png" id="6_2dnwc"]
+[ext_resource type="Texture2D" path="res://assets/district/places/inn_2.png" id="7_8pma3"]
+[ext_resource type="Texture2D" path="res://assets/district/places/restaurant_2.png" id="8_7qwgm"]
+[ext_resource type="Texture2D" path="res://assets/district/places/school_2.png" id="9_aidbm"]
+[ext_resource type="Texture2D" path="res://assets/district/places/hospital_2.png" id="10_2gfnb"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rox1"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emwpq"]
+resource_name = "card"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nivp6"]
+resource_name = "selected"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r78q"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_world_map" type="Control" unique_id=1707825274]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "world_map"
+metadata/design_title = "地图导览"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="05_Panel" type="Panel" parent="." unique_id=511301182]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -639.0
+offset_top = 135.0
+offset_right = 639.0
+offset_bottom = 940.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0rox1")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Control" type="Control" parent="05_Panel" unique_id=731339073]
+anchors_preset = 0
+offset_right = 1278.0
+offset_bottom = 805.0
+metadata/design_id = "0"
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control" unique_id=823750711]
+texture_filter = 4
+layout_mode = 0
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 73.0
+offset_bottom = 69.0
+mouse_filter = 2
+texture = ExtResource("1_trlsq")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_鲸落港 · 生活导览" type="Label" parent="05_Panel/00_Control" unique_id=514433276]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 24.0
+offset_right = 858.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 32
+text = "鲸落港 · 生活导览"
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_现在在 云湾公寓 · 2F 整层  " type="Label" parent="05_Panel/00_Control" unique_id=667399934]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 78.0
+offset_right = 1072.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 20
+text = "现在在 云湾公寓 · 2F 整层  ·  选个地方慢慢走过去"
+autowrap_mode = 3
+metadata/design_id = "0/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Button_关闭 ×" type="Button" parent="05_Panel/00_Control" unique_id=1812384682]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 28.0
+offset_right = 1244.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "关闭 ×"
+metadata/design_id = "0/3"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Panel" type="Panel" parent="05_Panel/00_Control" unique_id=1490533000]
+texture_filter = 2
+layout_mode = 0
+offset_left = 20.0
+offset_top = 129.0
+offset_right = 246.0
+offset_bottom = 721.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6r78q")
+script = ExtResource("2_6313y")
+metadata/design_id = "0/4"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_连续大街区" type="Button" parent="05_Panel/00_Control" unique_id=213142149]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 141.0
+offset_right = 236.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "连续大街区"
+alignment = 0
+metadata/design_id = "0/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_东港与仓储带" type="Button" parent="05_Panel/00_Control" unique_id=438309734]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 189.0
+offset_right = 236.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "东港与仓储带"
+alignment = 0
+metadata/design_id = "0/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Button_立体新区 · 26地图" type="Button" parent="05_Panel/00_Control" unique_id=1441413849]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 237.0
+offset_right = 236.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "立体新区 · 26地图"
+alignment = 0
+metadata/design_id = "0/7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Button_1F  各建筑一层" type="Button" parent="05_Panel/00_Control" unique_id=1836061113]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 285.0
+offset_right = 236.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "1F  各建筑一层"
+alignment = 0
+metadata/design_id = "0/8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Button_2F  各建筑二层" type="Button" parent="05_Panel/00_Control" unique_id=1186031016]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 333.0
+offset_right = 236.0
+offset_bottom = 375.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "2F  各建筑二层"
+alignment = 0
+metadata/design_id = "0/9"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Button_3F  各建筑三层" type="Button" parent="05_Panel/00_Control" unique_id=2141235959]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 381.0
+offset_right = 236.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "3F  各建筑三层"
+alignment = 0
+metadata/design_id = "0/10"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="11_Button_B1  地下与暗室" type="Button" parent="05_Panel/00_Control" unique_id=1944072331]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 429.0
+offset_right = 236.0
+offset_bottom = 471.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "B1  地下与暗室"
+alignment = 0
+metadata/design_id = "0/11"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="12_Button_相邻的地方" type="Button" parent="05_Panel/00_Control" unique_id=907675922]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 477.0
+offset_right = 236.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "相邻的地方"
+alignment = 0
+metadata/design_id = "0/12"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="13_Button_我的收藏" type="Button" parent="05_Panel/00_Control" unique_id=357147630]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 525.0
+offset_right = 236.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "我的收藏"
+alignment = 0
+metadata/design_id = "0/13"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="14_Label_已经发现_2 _ 70 个地点" type="Label" parent="05_Panel/00_Control" unique_id=499098911]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 580.0
+offset_right = 225.0
+offset_bottom = 654.0
+theme_override_colors/font_color = Color(0.32941177, 0.48235294, 0.5294118, 1)
+theme_override_font_sizes/font_size = 20
+text = "已经发现
+2 / 70 个地点"
+autowrap_mode = 3
+metadata/design_id = "0/14"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="15_Label_收藏常去的地方_也可以在右侧搜索门牌" type="Label" parent="05_Panel/00_Control" unique_id=491757070]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 662.0
+offset_right = 230.0
+offset_bottom = 711.0
+theme_override_colors/font_color = Color(0.49019608, 0.5764706, 0.59607846, 1)
+theme_override_font_sizes/font_size = 15
+text = "收藏常去的地方
+也可以在右侧搜索门牌"
+autowrap_mode = 3
+metadata/design_id = "0/15"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="16_LineEdit" type="LineEdit" parent="05_Panel/00_Control" unique_id=908476299]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 128.0
+offset_right = 1244.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 20
+placeholder_text = "搜索建筑、楼层或房间用途，例如：公寓 / 2F / 厨房"
+clear_button_enabled = true
+metadata/design_id = "0/16"
+metadata/design_native_class = "LineEdit"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="17_Label_各建筑 · 2F 整层  ·  8 " type="Label" parent="05_Panel/00_Control" unique_id=536246024]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 187.0
+offset_right = 1220.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0.4509804, 0.54509807, 0.5686275, 1)
+theme_override_font_sizes/font_size = 16
+text = "各建筑 · 2F 整层  ·  8 个地点"
+autowrap_mode = 3
+metadata/design_id = "0/17"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="18_ScrollContainer" type="ScrollContainer" parent="05_Panel/00_Control" unique_id=907782422]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 222.0
+offset_right = 1244.0
+offset_bottom = 712.0
+follow_focus = true
+horizontal_scroll_mode = 0
+metadata/design_id = "0/18"
+metadata/design_native_class = "ScrollContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_GridContainer" type="GridContainer" parent="05_Panel/00_Control/18_ScrollContainer" unique_id=262420921]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 3
+metadata/design_id = "0/18/0"
+metadata/design_native_class = "GridContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=1673287332]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=1101765804]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("3_88j31")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/0/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=174529095]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/0/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_潮汐观测站 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=99092852]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "潮汐观测站 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/0/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_大望远镜 _ 星图研究 _ 无线电 " type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=1204934524]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "大望远镜 / 星图研究 / 无线电 / 影像 / 气象 / 夜班休息"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "大望远镜 / 星图研究 / 无线电 / 影像 / 气象 / 夜班休息"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/0/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=546760051]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/0/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=1982226818]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/0/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/00_Panel" unique_id=629806307]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/0/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=559880693]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/1"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=1143401900]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("4_y38l7")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/1/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=445810427]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/1/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_蓝鲸音乐馆 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=1432137506]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "蓝鲸音乐馆 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/1/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_合奏 _ 唱片试听 _ 乐器收藏 _" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=45962972]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "合奏 / 唱片试听 / 乐器收藏 / 琴房 / 旋律创作 / 静听"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "合奏 / 唱片试听 / 乐器收藏 / 琴房 / 旋律创作 / 静听"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/1/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=913624000]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/1/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=782185097]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/1/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/01_Panel" unique_id=1157258908]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/1/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=1694907320]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nivp6")
+metadata/design_id = "0/18/0/2"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=578824380]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("5_knwfq")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/2/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=556669561]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/2/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_云湾公寓 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=700176342]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "云湾公寓 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/2/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_大肥鱼 · 大主卧 _ 家里的大客厅" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=2051740053]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "大肥鱼 · 大主卧 / 家里的大客厅 / 个人工作间 / 日常厨房 / 蓝白小卫浴 / 朋友的客房"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "大肥鱼 · 大主卧 / 家里的大客厅 / 个人工作间 / 日常厨房 / 蓝白小卫浴 / 朋友的客房"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/2/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_就在这里" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=1674049010]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "就在这里"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/2/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_就在这里" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=347559928]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+disabled = true
+text = "就在这里"
+metadata/design_id = "0/18/0/2/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/02_Panel" unique_id=805550053]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+disabled = true
+text = "直达"
+metadata/design_id = "0/18/0/2/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=619968842]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/3"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=816820283]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("6_2dnwc")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/3/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=886716910]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/3/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_潮汐社区馆 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=567475844]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "潮汐社区馆 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/3/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_创作间 _ 会议室 _ 展示室 _ " type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=1102031569]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "创作间 / 会议室 / 展示室 / 办公室 / 资料室 / 茶室"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "创作间 / 会议室 / 展示室 / 办公室 / 资料室 / 茶室"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/3/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=871021100]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/3/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=1900764855]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/3/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/03_Panel" unique_id=89342065]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/3/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=965476189]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/4"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=881445357]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("7_8pma3")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/4/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=1587619124]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/4/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_海风旅舍 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=1009553234]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "海风旅舍 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/4/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_201 _ 202 _ 203 _ " type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=1967889578]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "201 / 202 / 203 / 204 / 公共客厅 / 洗衣房"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "201 / 202 / 203 / 204 / 公共客厅 / 洗衣房"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/4/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=874033931]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/4/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=1462319215]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/4/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/04_Panel" unique_id=1542031919]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/4/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=857160622]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/5"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=1336921362]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("8_7qwgm")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/5/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=976556331]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/5/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_海蓝餐厅 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=1902829081]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "海蓝餐厅 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/5/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_宴会厅 _ 大小包间 _ 茶水间 _" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=1288684994]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "宴会厅 / 大小包间 / 茶水间 / 接待 / 海风露台"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "宴会厅 / 大小包间 / 茶水间 / 接待 / 海风露台"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/5/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=1414245659]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/5/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=592982254]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/5/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/05_Panel" unique_id=1148107922]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/5/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=1698690537]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/6"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=1645567618]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("9_aidbm")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/6/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=547312867]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/6/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_海湾学校 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=627380077]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "海湾学校 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/6/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_数学 _ 语言 _ 媒体 _ 天文实" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=2058612553]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "数学 / 语言 / 媒体 / 天文实验 / 工艺 / 教具室"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "数学 / 语言 / 媒体 / 天文实验 / 工艺 / 教具室"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/6/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=1215007258]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/6/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=584092631]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/6/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/06_Panel" unique_id=2132293328]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/6/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Panel" type="Panel" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer" unique_id=213623463]
+custom_minimum_size = Vector2(302, 338)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emwpq")
+metadata/design_id = "0/18/0/7"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=1898936436]
+texture_filter = 2
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("10_2gfnb")
+expand_mode = 1
+stretch_mode = 6
+metadata/design_id = "0/18/0/7/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_☆" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=1980415570]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 16.0
+offset_right = 286.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "☆"
+metadata/design_id = "0/18/0/7/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_海湾医院 · 2F 整层" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=2066673563]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 145.0
+offset_right = 291.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.18431373, 0.3019608, 0.3647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "海湾医院 · 2F 整层"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/7/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_病房 _ 治疗 _ 护士站 _ 恢复" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=657693515]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 288.0
+offset_bottom = 230.0
+tooltip_text = "病房 / 治疗 / 护士站 / 恢复 / 检验 / 家属休息"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "病房 / 治疗 / 护士站 / 恢复 / 检验 / 家属休息"
+autowrap_mode = 3
+text_overrun_behavior = 3
+max_lines_visible = 2
+metadata/design_id = "0/18/0/7/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_经过 3 处出入口" type="Label" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=86751439]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 249.0
+offset_right = 290.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "经过 3 处出入口"
+autowrap_mode = 3
+metadata/design_id = "0/18/0/7/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_带我走过去" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=379457975]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 290.0
+offset_right = 190.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "带我走过去"
+metadata/design_id = "0/18/0/7/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_直达" type="Button" parent="05_Panel/00_Control/18_ScrollContainer/00_GridContainer/07_Panel" unique_id=1351603529]
+texture_filter = 1
+layout_mode = 0
+offset_left = 201.0
+offset_top = 290.0
+offset_right = 289.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_emwpq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nivp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nivp6")
+text = "直达"
+metadata/design_id = "0/18/0/7/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="19_Label_带我走过去：标记下一处出口  ·  " type="Label" parent="05_Panel/00_Control" unique_id=1875481404]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 751.0
+offset_right = 1232.0
+offset_bottom = 782.0
+theme_override_colors/font_color = Color(0.4392157, 0.5294118, 0.5568628, 1)
+theme_override_font_sizes/font_size = 18
+text = "带我走过去：标记下一处出口  ·  直达：快速切换  ·  E 进出  ·  M 关闭导览"
+autowrap_mode = 3
+metadata/design_id = "0/19"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

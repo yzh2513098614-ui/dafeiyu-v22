@@ -1,0 +1,140 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_8ytbf"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="2_6yaan"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77jxh"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_pack26_extracted" type="Control" unique_id=1455604629]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "pack26_extracted"
+metadata/design_title = "立体新区 · 撤离结果"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="02_Panel" type="Panel" parent="." unique_id=206855416]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 154.0
+offset_right = 500.0
+offset_bottom = 926.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_77jxh")
+script = ExtResource("2_6yaan")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_撤离成功" type="Label" parent="02_Panel" unique_id=1164571479]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 21.0
+offset_right = 971.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 30
+text = "撤离成功"
+autowrap_mode = 3
+metadata/design_id = "0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_撤离成功 · 2 件物资已进入港口仓" type="Label" parent="02_Panel" unique_id=1897046329]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 649.0
+offset_right = 971.0
+offset_bottom = 704.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "撤离成功 · 2 件物资已进入港口仓库，可用于制作装备。"
+autowrap_mode = 3
+metadata/design_id = "1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_关闭" type="Button" parent="02_Panel" unique_id=360062458]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 715.0
+offset_right = 971.0
+offset_bottom = 754.0
+theme_override_font_sizes/font_size = 20
+text = "关闭"
+metadata/design_id = "2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_撤离成功 · 2 件物资已进入港口仓" type="Label" parent="02_Panel" unique_id=1779667018]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 101.0
+offset_right = 971.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 28
+text = "撤离成功 · 2 件物资已进入港口仓库，可用于制作装备。"
+autowrap_mode = 3
+metadata/design_id = "3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_回港查看仓库与工坊" type="Button" parent="02_Panel" unique_id=2008858131]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 265.0
+offset_right = 971.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 20
+text = "回港查看仓库与工坊"
+metadata/design_id = "4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_继续探索这张地图" type="Button" parent="02_Panel" unique_id=1443139728]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 351.0
+offset_right = 971.0
+offset_bottom = 406.0
+theme_override_font_sizes/font_size = 20
+text = "继续探索这张地图"
+metadata/design_id = "5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

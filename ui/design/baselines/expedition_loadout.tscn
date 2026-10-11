@@ -1,0 +1,511 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_a037m"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_k8nwb"]
+[ext_resource type="Texture2D" path="res://assets/cards/base/deep_blue_shield.png" id="2_k8nwb"]
+[ext_resource type="Texture2D" path="res://assets/cards/tactics/whale_scout.png" id="3_10ijo"]
+[ext_resource type="Texture2D" path="res://assets/cards/tactics/wave_jump.png" id="4_0ikvx"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37cc1"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61ecg"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_expedition_loadout" type="Control" unique_id=1998223982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "expedition_loadout"
+metadata/design_title = "研究远征 · 制作配装"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=78894733]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -724.0
+offset_right = 724.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control" unique_id=1639613702]
+texture_filter = 2
+layout_mode = 0
+offset_left = 169.0
+offset_top = 185.0
+offset_right = 1279.0
+offset_bottom = 1000.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_37cc1")
+script = ExtResource("1_a037m")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_装备工坊 · 使用仓库材料制作" type="Label" parent="00_Control/00_Panel" unique_id=251107589]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 1084.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 30
+text = "装备工坊 · 使用仓库材料制作"
+autowrap_mode = 3
+metadata/design_id = "0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_只有安全带回的物资进入仓库，永久蓝图" type="Label" parent="00_Control/00_Panel" unique_id=1416093278]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 709.0
+offset_right = 1083.0
+offset_bottom = 755.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "只有安全带回的物资进入仓库，永久蓝图不会因失败丢失。"
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_关闭" type="Button" parent="00_Control/00_Panel" unique_id=1504184389]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 761.0
+offset_right = 1083.0
+offset_bottom = 799.0
+theme_override_font_sizes/font_size = 20
+text = "关闭"
+metadata/design_id = "0/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_每次携带一个模块，额外获得两张技能牌" type="Label" parent="00_Control/00_Panel" unique_id=1152372418]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 83.0
+offset_right = 1080.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "每次携带一个模块，额外获得两张技能牌。成功撤离会带回装备；失败会失去未保护的装备。"
+autowrap_mode = 3
+metadata/design_id = "0/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_下次出发：基础核心（无额外装备）" type="Label" parent="00_Control/00_Panel" unique_id=2020848139]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 155.0
+offset_right = 1080.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 24
+text = "下次出发：基础核心（无额外装备）"
+autowrap_mode = 3
+metadata/design_id = "0/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Panel" type="Panel" parent="00_Control/00_Panel" unique_id=1703666554]
+texture_filter = 2
+layout_mode = 0
+offset_left = 30.0
+offset_top = 215.0
+offset_right = 366.0
+offset_bottom = 581.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_61ecg")
+script = ExtResource("1_a037m")
+metadata/design_id = "0/5"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/00_Panel/05_Panel" unique_id=1178595098]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 316.0
+offset_bottom = 126.0
+mouse_filter = 2
+texture = ExtResource("2_k8nwb")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0/5/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_隔离护盾模块" type="Label" parent="00_Control/00_Panel/05_Panel" unique_id=1719935542]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 135.0
+offset_right = 320.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "隔离护盾模块"
+autowrap_mode = 3
+metadata/design_id = "0/5/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_牌组额外加入防火墙、沙箱隔离。" type="Label" parent="00_Control/00_Panel/05_Panel" unique_id=1262273349]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 178.0
+offset_right = 320.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "牌组额外加入防火墙、沙箱隔离。"
+autowrap_mode = 3
+metadata/design_id = "0/5/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_装备零件 0_3 _ 计算芯片 0_" type="Label" parent="00_Control/00_Panel/05_Panel" unique_id=568046790]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 240.0
+offset_right = 320.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "装备零件 0/3 / 计算芯片 0/1
+库存 0 件"
+autowrap_mode = 3
+metadata/design_id = "0/5/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_制作" type="Button" parent="00_Control/00_Panel/05_Panel" unique_id=312955138]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 318.0
+offset_right = 161.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "制作"
+metadata/design_id = "0/5/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_选用" type="Button" parent="00_Control/00_Panel/05_Panel" unique_id=962228672]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 318.0
+offset_right = 320.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "选用"
+metadata/design_id = "0/5/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Panel" type="Panel" parent="00_Control/00_Panel" unique_id=759062462]
+texture_filter = 2
+layout_mode = 0
+offset_left = 387.0
+offset_top = 215.0
+offset_right = 723.0
+offset_bottom = 581.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_61ecg")
+script = ExtResource("1_a037m")
+metadata/design_id = "0/6"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/00_Panel/06_Panel" unique_id=1920999985]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 316.0
+offset_bottom = 126.0
+mouse_filter = 2
+texture = ExtResource("3_10ijo")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0/6/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_检索侦察模块" type="Label" parent="00_Control/00_Panel/06_Panel" unique_id=1546292188]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 135.0
+offset_right = 320.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "检索侦察模块"
+autowrap_mode = 3
+metadata/design_id = "0/6/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_牌组额外加入数据探针、检索增强。" type="Label" parent="00_Control/00_Panel/06_Panel" unique_id=528424985]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 178.0
+offset_right = 320.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "牌组额外加入数据探针、检索增强。"
+autowrap_mode = 3
+metadata/design_id = "0/6/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_数据碎片 0_4 _ 存储模块 0_" type="Label" parent="00_Control/00_Panel/06_Panel" unique_id=1980582695]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 240.0
+offset_right = 320.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "数据碎片 0/4 / 存储模块 0/1
+库存 0 件"
+autowrap_mode = 3
+metadata/design_id = "0/6/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_制作" type="Button" parent="00_Control/00_Panel/06_Panel" unique_id=1220290395]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 318.0
+offset_right = 161.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "制作"
+metadata/design_id = "0/6/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_选用" type="Button" parent="00_Control/00_Panel/06_Panel" unique_id=2143350735]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 318.0
+offset_right = 320.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "选用"
+metadata/design_id = "0/6/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Panel" type="Panel" parent="00_Control/00_Panel" unique_id=900243617]
+texture_filter = 2
+layout_mode = 0
+offset_left = 744.0
+offset_top = 215.0
+offset_right = 1080.0
+offset_bottom = 581.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_61ecg")
+script = ExtResource("1_a037m")
+metadata/design_id = "0/7"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="00_Control/00_Panel/07_Panel" unique_id=1131005729]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 316.0
+offset_bottom = 126.0
+mouse_filter = 2
+texture = ExtResource("4_0ikvx")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0/7/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_轻量撤退模块" type="Label" parent="00_Control/00_Panel/07_Panel" unique_id=1673187120]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 135.0
+offset_right = 320.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "轻量撤退模块"
+autowrap_mode = 3
+metadata/design_id = "0/7/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_牌组额外加入异步跳转、安全关停。" type="Label" parent="00_Control/00_Panel/07_Panel" unique_id=471278805]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 178.0
+offset_right = 320.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "牌组额外加入异步跳转、安全关停。"
+autowrap_mode = 3
+metadata/design_id = "0/7/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_装备零件 0_2 _ 存储模块 0_" type="Label" parent="00_Control/00_Panel/07_Panel" unique_id=1838342382]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 240.0
+offset_right = 320.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+text = "装备零件 0/2 / 存储模块 0/2
+库存 0 件"
+autowrap_mode = 3
+metadata/design_id = "0/7/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_制作" type="Button" parent="00_Control/00_Panel/07_Panel" unique_id=581753592]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 318.0
+offset_right = 161.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "制作"
+metadata/design_id = "0/7/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_选用" type="Button" parent="00_Control/00_Panel/07_Panel" unique_id=1948967010]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 318.0
+offset_right = 320.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "选用"
+metadata/design_id = "0/7/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Button_使用基础核心" type="Button" parent="00_Control/00_Panel" unique_id=451508477]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 611.0
+offset_right = 358.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 20
+text = "使用基础核心"
+metadata/design_id = "0/8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Button_查看仓库材料" type="Button" parent="00_Control/00_Panel" unique_id=66003053]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 611.0
+offset_right = 719.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 20
+text = "查看仓库材料"
+metadata/design_id = "0/9"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Button_返回出发说明" type="Button" parent="00_Control/00_Panel" unique_id=282936339]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 611.0
+offset_right = 1080.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 20
+text = "返回出发说明"
+metadata/design_id = "0/10"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

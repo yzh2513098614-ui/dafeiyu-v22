@@ -1,0 +1,162 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_dw13s"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="2_ddt4c"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu3xm"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_pack26_bag" type="Control" unique_id=515737567]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "pack26_bag"
+metadata/design_title = "立体新区 · 背包"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="02_Panel" type="Panel" parent="." unique_id=2041832530]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 154.0
+offset_right = 500.0
+offset_bottom = 926.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu3xm")
+script = ExtResource("2_ddt4c")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_新区背包 · 待撤离物资" type="Label" parent="02_Panel" unique_id=1767695010]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 21.0
+offset_right = 971.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 30
+text = "新区背包 · 待撤离物资"
+autowrap_mode = 3
+metadata/design_id = "0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_" type="Label" parent="02_Panel" unique_id=870375532]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 649.0
+offset_right = 971.0
+offset_bottom = 704.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+autowrap_mode = 3
+metadata/design_id = "1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_关闭" type="Button" parent="02_Panel" unique_id=1782700394]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 715.0
+offset_right = 971.0
+offset_bottom = 754.0
+theme_override_font_sizes/font_size = 20
+text = "关闭"
+metadata/design_id = "2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_ScrollContainer" type="ScrollContainer" parent="02_Panel" unique_id=254660150]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 90.0
+offset_right = 971.0
+offset_bottom = 564.0
+horizontal_scroll_mode = 0
+metadata/design_id = "3"
+metadata/design_native_class = "ScrollContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_VBoxContainer" type="VBoxContainer" parent="02_Panel/03_ScrollContainer" unique_id=2073380651]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+metadata/design_id = "3/0"
+metadata/design_native_class = "VBoxContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_HBoxContainer" type="HBoxContainer" parent="02_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=1753671780]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+metadata/design_id = "3/0/0"
+metadata/design_native_class = "HBoxContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_Token ×2 · 每件0格" type="Label" parent="02_Panel/03_ScrollContainer/00_VBoxContainer/00_HBoxContainer" unique_id=447802820]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 23
+text = "Token ×2 · 每件0格"
+metadata/design_id = "3/0/0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_丢弃一件" type="Button" parent="02_Panel/03_ScrollContainer/00_VBoxContainer/00_HBoxContainer" unique_id=2049747865]
+custom_minimum_size = Vector2(182, 36)
+layout_mode = 2
+text = "丢弃一件"
+metadata/design_id = "3/0/0/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_容量 0_20 · 到地图中的绿色撤" type="Label" parent="02_Panel" unique_id=1130358795]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 577.0
+offset_right = 971.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "容量 0/20 · 到地图中的绿色撤离点，停留5秒。
+带回的材料可用于研究中心的装备工坊。"
+autowrap_mode = 3
+metadata/design_id = "4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

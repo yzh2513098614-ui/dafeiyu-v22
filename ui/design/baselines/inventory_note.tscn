@@ -1,0 +1,219 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_6m7lw"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_n3mr3"]
+[ext_resource type="Texture2D" path="res://assets/ui/whale_mascot.png" id="2_n3mr3"]
+[ext_resource type="Texture2D" path="res://assets/ui/book.svg" id="3_1uqmg"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="4_fr641"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pemw"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y8l7"]
+resource_name = "paper"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_inventory_note" type="Control" unique_id=1716288189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "inventory_note"
+metadata/design_title = "漂流便签"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="03_Panel" type="Panel" parent="." unique_id=1437106426]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -564.0
+offset_top = 132.0
+offset_right = 564.0
+offset_bottom = 924.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pemw")
+script = ExtResource("1_6m7lw")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="03_Panel" unique_id=2075855602]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 102.0
+offset_bottom = 92.0
+mouse_filter = 2
+texture = ExtResource("2_n3mr3")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_Esc 关闭" type="Button" parent="03_Panel" unique_id=1548414468]
+texture_filter = 1
+layout_mode = 0
+offset_left = 965.0
+offset_top = 24.0
+offset_right = 1101.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 20
+text = "Esc 关闭"
+metadata/design_id = "1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_大肥鱼的漂流便签" type="Label" parent="03_Panel" unique_id=1409458200]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 25.0
+offset_right = 938.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 29
+text = "大肥鱼的漂流便签"
+autowrap_mode = 3
+metadata/design_id = "2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_捡到一段小故事，慢慢读。" type="Label" parent="03_Panel" unique_id=1317873553]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 76.0
+offset_right = 937.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 20
+text = "捡到一段小故事，慢慢读。"
+autowrap_mode = 3
+metadata/design_id = "3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Panel" type="Panel" parent="03_Panel" unique_id=843601487]
+texture_filter = 2
+layout_mode = 0
+offset_left = 25.0
+offset_top = 126.0
+offset_right = 1103.0
+offset_bottom = 670.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2y8l7")
+script = ExtResource("1_6m7lw")
+metadata/design_id = "4"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_TextureRect" type="TextureRect" parent="03_Panel" unique_id=1113465458]
+texture_filter = 4
+layout_mode = 0
+offset_left = 58.0
+offset_top = 153.0
+offset_right = 99.0
+offset_bottom = 195.0
+mouse_filter = 2
+texture = ExtResource("3_1uqmg")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "5"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Label_今天也可以收好一点小惊喜。____物" type="Label" parent="03_Panel" unique_id=2007927275]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 157.0
+offset_right = 1042.0
+offset_bottom = 604.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "今天也可以收好一点小惊喜。
+
+物品数量有限，取走后会自动保存。补给可以使用，便签和收藏会留下。
+
+花房、集市与艺廊还有不同的物品，打开 M 导览去看看吧。"
+autowrap_mode = 3
+metadata/design_id = "6"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_TextureRect" type="TextureRect" parent="03_Panel" unique_id=1985326026]
+texture_filter = 4
+layout_mode = 0
+offset_left = 53.0
+offset_top = 709.0
+offset_right = 88.0
+offset_bottom = 744.0
+mouse_filter = 2
+texture = ExtResource("4_fr641")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "7"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Label_鲸落港 · 大肥鱼 × DeepSe" type="Label" parent="03_Panel" unique_id=1501083305]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 708.0
+offset_right = 1053.0
+offset_bottom = 747.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 21
+text = "鲸落港 · 大肥鱼 × DeepSeek 深潜站"
+autowrap_mode = 3
+metadata/design_id = "8"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

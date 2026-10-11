@@ -1,0 +1,310 @@
+[
+ {
+  "controls": 30,
+  "error": 0.0,
+  "id": "title_title",
+  "scene": "res://ui/design/pages/title_title.tscn",
+  "title": "标题菜单"
+ },
+ {
+  "controls": 64,
+  "error": 0.0,
+  "id": "title_journey",
+  "scene": "res://ui/design/pages/title_journey.tscn",
+  "title": "出发选择"
+ },
+ {
+  "controls": 88,
+  "error": 0.0,
+  "id": "title_harbor",
+  "scene": "res://ui/design/pages/title_harbor.tscn",
+  "title": "东港出发选择"
+ },
+ {
+  "controls": 48,
+  "error": 0.0,
+  "id": "title_pack26",
+  "scene": "res://ui/design/pages/title_pack26.tscn",
+  "title": "新区出发选择"
+ },
+ {
+  "controls": 88,
+  "error": 0.0,
+  "id": "title_music",
+  "scene": "res://ui/design/pages/title_music.tscn",
+  "title": "音乐鉴赏"
+ },
+ {
+  "controls": 59,
+  "error": 0.0,
+  "id": "title_settings",
+  "scene": "res://ui/design/pages/title_settings.tscn",
+  "title": "标题画面设置"
+ },
+ {
+  "controls": 18,
+  "error": 0.0,
+  "id": "world_hud",
+  "scene": "res://ui/design/pages/world_hud.tscn",
+  "title": "世界工具栏"
+ },
+ {
+  "controls": 38,
+  "error": 0.0,
+  "id": "world_navigation",
+  "scene": "res://ui/design/pages/world_navigation.tscn",
+  "title": "地点与导览入口"
+ },
+ {
+  "controls": 8,
+  "error": 0.0,
+  "id": "world_loot_prompt",
+  "scene": "res://ui/design/pages/world_loot_prompt.tscn",
+  "title": "背包入口与宝箱提示"
+ },
+ {
+  "controls": 6,
+  "error": 0.0,
+  "id": "world_interaction",
+  "scene": "res://ui/design/pages/world_interaction.tscn",
+  "title": "附近互动提示"
+ },
+ {
+  "controls": 89,
+  "error": 0.0,
+  "id": "inventory_bag",
+  "scene": "res://ui/design/pages/inventory_bag.tscn",
+  "title": "随身背包"
+ },
+ {
+  "controls": 120,
+  "error": 0.0,
+  "id": "inventory_chest",
+  "scene": "res://ui/design/pages/inventory_chest.tscn",
+  "title": "发现宝箱"
+ },
+ {
+  "controls": 10,
+  "error": 0.0,
+  "id": "inventory_note",
+  "scene": "res://ui/design/pages/inventory_note.tscn",
+  "title": "漂流便签"
+ },
+ {
+  "controls": 217,
+  "error": 0.0,
+  "id": "settings_display",
+  "scene": "res://ui/design/pages/settings_display.tscn",
+  "title": "画面设置"
+ },
+ {
+  "controls": 217,
+  "error": 0.0,
+  "id": "settings_audio",
+  "scene": "res://ui/design/pages/settings_audio.tscn",
+  "title": "声音设置"
+ },
+ {
+  "controls": 217,
+  "error": 0.0,
+  "id": "settings_audition",
+  "scene": "res://ui/design/pages/settings_audition.tscn",
+  "title": "音效试听"
+ },
+ {
+  "controls": 19,
+  "error": 0.0,
+  "id": "pause_main",
+  "scene": "res://ui/design/pages/pause_main.tscn",
+  "title": "暂停菜单"
+ },
+ {
+  "controls": 27,
+  "error": 0.0,
+  "id": "pause_help",
+  "scene": "res://ui/design/pages/pause_help.tscn",
+  "title": "操作说明"
+ },
+ {
+  "controls": 54,
+  "error": 0.0,
+  "id": "character",
+  "scene": "res://ui/design/pages/character.tscn",
+  "title": "人物状态与装备"
+ },
+ {
+  "controls": 87,
+  "error": 0.0,
+  "id": "world_map",
+  "scene": "res://ui/design/pages/world_map.tscn",
+  "title": "地图导览"
+ },
+ {
+  "controls": 90,
+  "error": 0.0,
+  "id": "world_decor",
+  "scene": "res://ui/design/pages/world_decor.tscn",
+  "title": "布置目录"
+ },
+ {
+  "controls": 6,
+  "error": 0.0,
+  "id": "world_dialog",
+  "scene": "res://ui/design/pages/world_dialog.tscn",
+  "title": "通用互动对话"
+ },
+ {
+  "controls": 22,
+  "error": 0.0,
+  "id": "dialogue",
+  "scene": "res://ui/design/pages/dialogue.tscn",
+  "title": "对话正文"
+ },
+ {
+  "controls": 26,
+  "error": 0.0,
+  "id": "dialogue_choices",
+  "scene": "res://ui/design/pages/dialogue_choices.tscn",
+  "title": "对话回复"
+ },
+ {
+  "controls": 29,
+  "error": 0.0,
+  "id": "dialogue_backlog",
+  "scene": "res://ui/design/pages/dialogue_backlog.tscn",
+  "title": "对话回看"
+ },
+ {
+  "controls": 12,
+  "error": 0.0,
+  "id": "expedition_briefing",
+  "scene": "res://ui/design/pages/expedition_briefing.tscn",
+  "title": "研究远征 · 出发说明"
+ },
+ {
+  "controls": 7,
+  "error": 0.0,
+  "id": "expedition_warehouse",
+  "scene": "res://ui/design/pages/expedition_warehouse.tscn",
+  "title": "研究远征 · 仓库"
+ },
+ {
+  "controls": 31,
+  "error": 0.0,
+  "id": "expedition_loadout",
+  "scene": "res://ui/design/pages/expedition_loadout.tscn",
+  "title": "研究远征 · 制作配装"
+ },
+ {
+  "controls": 16,
+  "error": 0.0,
+  "id": "expedition_explore",
+  "scene": "res://ui/design/pages/expedition_explore.tscn",
+  "title": "研究远征 · 探索"
+ },
+ {
+  "controls": 9,
+  "error": 0.0,
+  "id": "expedition_encounter",
+  "scene": "res://ui/design/pages/expedition_encounter.tscn",
+  "title": "研究远征 · 异常信号"
+ },
+ {
+  "controls": 7,
+  "error": 0.0,
+  "id": "expedition_extraction",
+  "scene": "res://ui/design/pages/expedition_extraction.tscn",
+  "title": "研究远征 · 撤离选择"
+ },
+ {
+  "controls": 9,
+  "error": 0.0,
+  "id": "expedition_loot",
+  "scene": "res://ui/design/pages/expedition_loot.tscn",
+  "title": "研究远征 · 搜索物资"
+ },
+ {
+  "controls": 13,
+  "error": 0.0,
+  "id": "expedition_bag",
+  "scene": "res://ui/design/pages/expedition_bag.tscn",
+  "title": "研究远征 · 背包"
+ },
+ {
+  "controls": 9,
+  "error": 0.0,
+  "id": "expedition_pause",
+  "scene": "res://ui/design/pages/expedition_pause.tscn",
+  "title": "研究远征 · 暂停"
+ },
+ {
+  "controls": 50,
+  "error": 0.0,
+  "id": "expedition_battle",
+  "scene": "res://ui/design/pages/expedition_battle.tscn",
+  "title": "研究远征 · 三指令交战"
+ },
+ {
+  "controls": 9,
+  "error": 0.0,
+  "id": "expedition_settlement",
+  "scene": "res://ui/design/pages/expedition_settlement.tscn",
+  "title": "研究远征 · 撤离结算"
+ },
+ {
+  "controls": 8,
+  "error": 0.0,
+  "id": "pack26_hud",
+  "scene": "res://ui/design/pages/pack26_hud.tscn",
+  "title": "立体新区 · 工具栏"
+ },
+ {
+  "controls": 10,
+  "error": 0.0,
+  "id": "pack26_bag",
+  "scene": "res://ui/design/pages/pack26_bag.tscn",
+  "title": "立体新区 · 背包"
+ },
+ {
+  "controls": 8,
+  "error": 0.0,
+  "id": "pack26_loot",
+  "scene": "res://ui/design/pages/pack26_loot.tscn",
+  "title": "立体新区 · 搜索补给"
+ },
+ {
+  "controls": 7,
+  "error": 0.0,
+  "id": "pack26_extracted",
+  "scene": "res://ui/design/pages/pack26_extracted.tscn",
+  "title": "立体新区 · 撤离结果"
+ },
+ {
+  "controls": 214,
+  "error": 0.0,
+  "id": "battle",
+  "scene": "res://ui/design/pages/battle.tscn",
+  "title": "卡牌战斗"
+ },
+ {
+  "controls": 215,
+  "error": 0.0,
+  "id": "battle_item",
+  "scene": "res://ui/design/pages/battle_item.tscn",
+  "title": "战斗补给"
+ },
+ {
+  "controls": 220,
+  "error": 0.0,
+  "id": "battle_skill",
+  "scene": "res://ui/design/pages/battle_skill.tscn",
+  "title": "战斗技能"
+ },
+ {
+  "controls": 220,
+  "error": 0.0,
+  "id": "battle_result",
+  "scene": "res://ui/design/pages/battle_result.tscn",
+  "title": "战斗结算"
+ }
+]

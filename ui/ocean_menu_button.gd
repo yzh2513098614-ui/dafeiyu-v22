@@ -1,3 +1,4 @@
+@tool
 extends Button
 ## The sample's top highlight; drawn decoration never intercepts input.
 func _ready() -> void:

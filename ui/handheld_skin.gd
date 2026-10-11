@@ -36,6 +36,8 @@ static func theme(font: Font) -> Theme:
   t.set_stylebox("scroll",type,track);t.set_stylebox("scroll_focus",type,track)
   for state in ["grabber","grabber_highlight","grabber_pressed"]:t.set_stylebox(state,type,thumb)
  t.set_constant("separation","VBoxContainer",12)
+ var editable:=S.editable_theme()
+ if editable!=null:t.merge_with(editable)
  return t
 
 static func panel(parent: Node,pos: Vector2,dimensions: Vector2,kind: String="panel") -> Panel:

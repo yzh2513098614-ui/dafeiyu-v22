@@ -1,3 +1,4 @@
+@tool
 extends Control
 ## Background transplanted from ocean-ui-code-demo; scales with the viewport.
 func _ready() -> void:

@@ -20,4 +20,9 @@ const PATHS: Dictionary={
 const ALIASES: Dictionary={"block_counter":"shield","defend":"shield","multihit":"mana"}
 
 static func path_for(key: String) -> String:
- return str(PATHS.get(str(ALIASES.get(key,key)),""))
+ var canonical:=str(ALIASES.get(key,key))
+ var editable=preload("res://ui/candy_skin.gd").editable_theme()
+ if editable!=null and editable.has_icon(canonical,"GameIcons"):
+  var icon:Texture2D=editable.get_icon(canonical,"GameIcons")
+  if icon!=null:return icon.resource_path
+ return str(PATHS.get(canonical,""))

@@ -1,3 +1,4 @@
+@tool
 extends Panel
 ## Native decorative rims; no extra children or input interception.
 func _ready() -> void:resized.connect(queue_redraw)

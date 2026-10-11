@@ -1,0 +1,186 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_ntvpb"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="2_hcnpy"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lukgh"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv26e"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_expedition_loot" type="Control" unique_id=441190682]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "expedition_loot"
+metadata/design_title = "研究远征 · 搜索物资"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=564117782]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -724.0
+offset_right = 724.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control" unique_id=1930581927]
+texture_filter = 2
+layout_mode = 0
+offset_left = 294.0
+offset_top = 185.0
+offset_right = 1154.0
+offset_bottom = 855.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lukgh")
+script = ExtResource("2_hcnpy")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_数据柜" type="Label" parent="00_Control/00_Panel" unique_id=1649124447]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 834.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 30
+text = "数据柜"
+autowrap_mode = 3
+metadata/design_id = "0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_" type="Label" parent="00_Control/00_Panel" unique_id=1595024289]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 564.0
+offset_right = 833.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 19
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_关闭" type="Button" parent="00_Control/00_Panel" unique_id=113463352]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 616.0
+offset_right = 833.0
+offset_bottom = 654.0
+theme_override_font_sizes/font_size = 20
+text = "关闭"
+metadata/design_id = "0/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Panel" type="Panel" parent="00_Control/00_Panel" unique_id=1441662989]
+texture_filter = 2
+layout_mode = 0
+offset_left = 25.0
+offset_top = 90.0
+offset_right = 835.0
+offset_bottom = 156.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rv26e")
+script = ExtResource("2_hcnpy")
+metadata/design_id = "0/3"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_Token ×3  ·  每件占 0" type="Label" parent="00_Control/00_Panel/03_Panel" unique_id=1105624154]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 620.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 22
+text = "Token ×3  ·  每件占 0 格 / 价值 3"
+autowrap_mode = 3
+metadata/design_id = "0/3/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_收取一件" type="Button" parent="00_Control/00_Panel/03_Panel" unique_id=996549623]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 12.0
+offset_right = 794.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 20
+text = "收取一件"
+metadata/design_id = "0/3/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_背包 1_20  ·  要带出去才会" type="Label" parent="00_Control/00_Panel" unique_id=1592731024]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 477.0
+offset_right = 827.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "背包 1/20  ·  要带出去才会进入仓库"
+autowrap_mode = 3
+metadata/design_id = "0/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

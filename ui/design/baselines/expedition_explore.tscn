@@ -1,0 +1,282 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_s02ir"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_y7fgb"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trvlj"]
+resource_name = "paper"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfx0k"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_expedition_explore" type="Control" unique_id=893978474]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "expedition_explore"
+metadata/design_title = "研究远征 · 探索"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="00_Control" type="Control" parent="." unique_id=1854116594]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -724.0
+offset_right = 724.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/design_id = "."
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="00_Control" unique_id=333760469]
+texture_filter = 2
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1420.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_trvlj")
+script = ExtResource("1_s02ir")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_离线研究中心   _   取回原始研" type="Label" parent="00_Control/00_Panel" unique_id=1797553311]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 972.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "离线研究中心   /   取回原始研究样本"
+autowrap_mode = 3
+metadata/design_id = "0/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_完整性 48_48   ·   Tr" type="Label" parent="00_Control/00_Panel" unique_id=879409990]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 67.0
+offset_right = 1370.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 21
+text = "完整性 48/48   ·   Trace 0 · 安全   ·   背包 1/20   ·   Token 12   ·   已探索 0.0 分钟"
+autowrap_mode = 3
+metadata/design_id = "0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Panel" type="Panel" parent="00_Control" unique_id=804454478]
+texture_filter = 2
+layout_mode = 0
+offset_left = 28.0
+offset_top = 912.0
+offset_right = 1420.0
+offset_bottom = 1061.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_trvlj")
+script = ExtResource("1_s02ir")
+metadata/design_id = "1"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_只有安全带回的物资进入仓库，永久蓝图" type="Label" parent="00_Control/01_Panel" unique_id=1579287743]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 1372.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+text = "只有安全带回的物资进入仓库，永久蓝图不会因失败丢失。"
+autowrap_mode = 3
+metadata/design_id = "1/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Button_E 互动" type="Button" parent="00_Control/01_Panel" unique_id=1928495027]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 69.0
+offset_right = 234.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "E 互动"
+metadata/design_id = "1/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_R 扫描 · Token 1" type="Button" parent="00_Control/01_Panel" unique_id=26737608]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 69.0
+offset_right = 461.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "R 扫描 · Token 1"
+metadata/design_id = "1/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Button_T 倾听" type="Button" parent="00_Control/01_Panel" unique_id=1317938142]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 69.0
+offset_right = 688.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "T 倾听"
+metadata/design_id = "1/3"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_H 修补" type="Button" parent="00_Control/01_Panel" unique_id=47102954]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 69.0
+offset_right = 915.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "H 修补"
+metadata/design_id = "1/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_I 远征背包" type="Button" parent="00_Control/01_Panel" unique_id=2141340224]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 69.0
+offset_right = 1142.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "I 远征背包"
+metadata/design_id = "1/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_Esc 暂停" type="Button" parent="00_Control/01_Panel" unique_id=469208454]
+layout_mode = 0
+offset_left = 1155.0
+offset_top = 69.0
+offset_right = 1369.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 20
+text = "Esc 暂停"
+metadata/design_id = "1/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Panel" type="Panel" parent="00_Control" unique_id=712220067]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 169.0
+offset_right = 1416.0
+offset_bottom = 341.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hfx0k")
+script = ExtResource("1_s02ir")
+metadata/design_id = "2"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_本局目标" type="Label" parent="00_Control/02_Panel" unique_id=202065708]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 276.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 22
+text = "本局目标"
+autowrap_mode = 3
+metadata/design_id = "2/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_去东侧样本冷藏区_带回原始研究样本_" type="Label" parent="00_Control/02_Panel" unique_id=1841919115]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 55.0
+offset_right = 276.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+text = "去东侧样本冷藏区
+带回原始研究样本
+权限钥匙在档案终端"
+autowrap_mode = 3
+metadata/design_id = "2/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Button_Z 总览 _ 跟随" type="Button" parent="00_Control/02_Panel" unique_id=1219375299]
+layout_mode = 0
+offset_top = 191.0
+offset_right = 296.0
+offset_bottom = 234.0
+theme_override_font_sizes/font_size = 20
+text = "Z 总览 / 跟随"
+metadata/design_id = "2/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

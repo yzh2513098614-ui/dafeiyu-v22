@@ -1,0 +1,153 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_iagjn"]
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_inj3b"]
+[ext_resource type="Texture2D" path="res://assets/character/jimeng_v24/down/walk_03.png" id="2_inj3b"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="3_ljo6m"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybkb6"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvawi"]
+resource_name = "sky"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8, 0.95686275, 0.94509804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_world_dialog" type="Control" unique_id=359538246]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "world_dialog"
+metadata/design_title = "通用互动对话"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="11_Panel" type="Panel" parent="." unique_id=1472718658]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -644.0
+offset_top = 769.0
+offset_right = 644.0
+offset_bottom = 951.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ybkb6")
+script = ExtResource("1_iagjn")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="11_Panel" unique_id=881968688]
+texture_filter = 2
+layout_mode = 0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 181.0
+offset_bottom = 165.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jvawi")
+script = ExtResource("1_iagjn")
+metadata/design_id = "0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="11_Panel/00_Panel" unique_id=727184180]
+texture_filter = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 144.0
+mouse_filter = 2
+texture = ExtResource("2_inj3b")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_蓝鲸小助手" type="Label" parent="11_Panel" unique_id=1635174763]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 16.0
+offset_right = 814.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 25
+text = "蓝鲸小助手"
+autowrap_mode = 3
+metadata/design_id = "1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_TextureRect" type="TextureRect" parent="11_Panel" unique_id=799966574]
+texture_filter = 4
+layout_mode = 0
+offset_left = 1214.0
+offset_top = 18.0
+offset_right = 1246.0
+offset_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource("3_ljo6m")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "2"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_" type="Label" parent="11_Panel" unique_id=446873087]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 57.0
+offset_right = 1240.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 23
+autowrap_mode = 3
+metadata/design_id = "3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

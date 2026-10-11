@@ -1,0 +1,1553 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_m3smp"]
+[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="1_nrtm3"]
+[ext_resource type="Texture2D" path="res://assets/ui/whale_mascot.png" id="2_m3smp"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/bed_navy.png" id="3_xqo65"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/bed_sage.png" id="4_5lpen"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/desk_oak.png" id="5_x7tr2"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/desk_white.png" id="6_1moao"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/bookcase.png" id="7_hna1g"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/wardrobe.png" id="8_jx3x0"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/loveseat_navy.png" id="9_rj7t0"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/sofa_cream.png" id="10_ejg6e"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/armchair_navy.png" id="11_cyvpu"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/armchair_sage.png" id="12_ss4go"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/side_table.png" id="13_4h8qr"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/coffee_table.png" id="14_pd1da"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/dining_round.png" id="15_h8qwv"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/dining_white.png" id="16_ase4p"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/chair_oak.png" id="17_4y20j"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/chair_white.png" id="18_5crfg"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/office_chair.png" id="19_gmkqi"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/nightstand.png" id="20_sjvx1"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/dresser.png" id="21_0s6l1"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/cubby.png" id="22_a2q4f"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/tv_cabinet.png" id="23_qg8cp"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/shoe_cabinet.png" id="24_g1hrg"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/entry_bench.png" id="25_2rm8r"]
+[ext_resource type="Texture2D" path="res://assets/solid3d/previews/coat_rack.png" id="26_7hwgy"]
+[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/shell.png" id="27_u11gl"]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y07j1"]
+resource_name = "panel"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8627451, 0.8980392, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b72al"]
+resource_name = "card"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.91764706, 0.94509804, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgof3"]
+resource_name = "selected"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
+
+[node name="UI_world_decor" type="Control" unique_id=1408883859]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_DesignPreview")
+metadata/design_page = "world_decor"
+metadata/design_title = "布置目录"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="10_Panel" type="Panel" parent="." unique_id=1555550368]
+texture_filter = 2
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -644.0
+offset_top = 125.0
+offset_right = 644.0
+offset_bottom = 957.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y07j1")
+script = ExtResource("1_nrtm3")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel" unique_id=1041371121]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.0
+offset_top = 8.0
+offset_right = 86.0
+offset_bottom = 77.0
+mouse_filter = 2
+texture = ExtResource("2_m3smp")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_鲸鱼的家居箱" type="Label" parent="10_Panel" unique_id=1163170302]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 18.0
+offset_right = 648.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 28
+text = "鲸鱼的家居箱"
+autowrap_mode = 3
+metadata/design_id = "1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_48 件家具与装饰 · 挑选后放进房" type="Label" parent="10_Panel" unique_id=969322938]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 57.0
+offset_right = 651.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 18
+text = "48 件家具与装饰 · 挑选后放进房间"
+autowrap_mode = 3
+metadata/design_id = "2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_1 _ 2 页" type="Label" parent="10_Panel" unique_id=1354346126]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 30.0
+offset_right = 848.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 20
+text = "1 / 2 页"
+autowrap_mode = 3
+metadata/design_id = "3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Button_上一页" type="Button" parent="10_Panel" unique_id=892416766]
+texture_filter = 1
+layout_mode = 0
+offset_left = 850.0
+offset_top = 20.0
+offset_right = 970.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "上一页"
+metadata/design_id = "4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Button_下一页" type="Button" parent="10_Panel" unique_id=1158277479]
+texture_filter = 1
+layout_mode = 0
+offset_left = 984.0
+offset_top = 20.0
+offset_right = 1104.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "下一页"
+metadata/design_id = "5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Button_关闭" type="Button" parent="10_Panel" unique_id=1835216175]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1118.0
+offset_top = 20.0
+offset_right = 1258.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "关闭"
+metadata/design_id = "6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Button_全部" type="Button" parent="10_Panel" unique_id=1579876936]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 98.0
+offset_right = 171.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "全部"
+metadata/design_id = "7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Button_墙体" type="Button" parent="10_Panel" unique_id=546153524]
+texture_filter = 1
+layout_mode = 0
+offset_left = 180.0
+offset_top = 98.0
+offset_right = 326.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "墙体"
+metadata/design_id = "8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Button_家具" type="Button" parent="10_Panel" unique_id=678028289]
+texture_filter = 1
+layout_mode = 0
+offset_left = 335.0
+offset_top = 98.0
+offset_right = 481.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+button_pressed = true
+text = "家具"
+metadata/design_id = "9"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Button_门窗" type="Button" parent="10_Panel" unique_id=880512066]
+texture_filter = 1
+layout_mode = 0
+offset_left = 490.0
+offset_top = 98.0
+offset_right = 636.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "门窗"
+metadata/design_id = "10"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="11_Button_装饰" type="Button" parent="10_Panel" unique_id=756045510]
+texture_filter = 1
+layout_mode = 0
+offset_left = 645.0
+offset_top = 98.0
+offset_right = 791.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "装饰"
+metadata/design_id = "11"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="12_Button_厨房" type="Button" parent="10_Panel" unique_id=1321830532]
+texture_filter = 1
+layout_mode = 0
+offset_left = 800.0
+offset_top = 98.0
+offset_right = 946.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "厨房"
+metadata/design_id = "12"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="13_Button_地面" type="Button" parent="10_Panel" unique_id=154107447]
+texture_filter = 1
+layout_mode = 0
+offset_left = 955.0
+offset_top = 98.0
+offset_right = 1101.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "地面"
+metadata/design_id = "13"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="14_Button_街区" type="Button" parent="10_Panel" unique_id=1880956448]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 98.0
+offset_right = 1256.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "街区"
+metadata/design_id = "14"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="15_Button_" type="Button" parent="10_Panel" unique_id=1586474204]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 163.0
+offset_right = 221.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "15"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/15_Button_" unique_id=2138219837]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("3_xqo65")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "15/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_蓝白现代床" type="Label" parent="10_Panel/15_Button_" unique_id=147096121]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "蓝白现代床"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "15/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="16_Button_" type="Button" parent="10_Panel" unique_id=1143179542]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 163.0
+offset_right = 429.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "16"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/16_Button_" unique_id=1675472777]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("4_5lpen")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "16/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_冰蓝现代床" type="Label" parent="10_Panel/16_Button_" unique_id=508593101]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "冰蓝现代床"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "16/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="17_Button_" type="Button" parent="10_Panel" unique_id=1879107314]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 163.0
+offset_right = 637.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "17"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/17_Button_" unique_id=1065638971]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("5_x7tr2")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "17/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_浅色现代书桌" type="Label" parent="10_Panel/17_Button_" unique_id=209862704]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "浅色现代书桌"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "17/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="18_Button_" type="Button" parent="10_Panel" unique_id=1556453294]
+texture_filter = 1
+layout_mode = 0
+offset_left = 649.0
+offset_top = 163.0
+offset_right = 845.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "18"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/18_Button_" unique_id=344871312]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("6_1moao")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "18/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_白色书桌" type="Label" parent="10_Panel/18_Button_" unique_id=988372711]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "白色书桌"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "18/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="19_Button_" type="Button" parent="10_Panel" unique_id=2027745852]
+texture_filter = 1
+layout_mode = 0
+offset_left = 857.0
+offset_top = 163.0
+offset_right = 1053.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "19"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/19_Button_" unique_id=978151241]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("7_hna1g")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "19/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_书架" type="Label" parent="10_Panel/19_Button_" unique_id=479281323]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "书架"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "19/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="20_Button_" type="Button" parent="10_Panel" unique_id=41577439]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 163.0
+offset_right = 1261.0
+offset_bottom = 311.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "20"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/20_Button_" unique_id=1080794149]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("8_jx3x0")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "20/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_衣柜" type="Label" parent="10_Panel/20_Button_" unique_id=2002942901]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "衣柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "20/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="21_Button_" type="Button" parent="10_Panel" unique_id=1785279830]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 320.0
+offset_right = 221.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "21"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/21_Button_" unique_id=625311426]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("9_rj7t0")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "21/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_双人沙发" type="Label" parent="10_Panel/21_Button_" unique_id=1831127371]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "双人沙发"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "21/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="22_Button_" type="Button" parent="10_Panel" unique_id=462497308]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 320.0
+offset_right = 429.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "22"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/22_Button_" unique_id=2124636077]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("10_ejg6e")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "22/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_奶白双人沙发" type="Label" parent="10_Panel/22_Button_" unique_id=875330494]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "奶白双人沙发"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "22/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="23_Button_" type="Button" parent="10_Panel" unique_id=1626514038]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 320.0
+offset_right = 637.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "23"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/23_Button_" unique_id=1379535512]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("11_cyvpu")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "23/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_蓝色扶手椅" type="Label" parent="10_Panel/23_Button_" unique_id=125038947]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "蓝色扶手椅"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "23/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="24_Button_" type="Button" parent="10_Panel" unique_id=1948240754]
+texture_filter = 1
+layout_mode = 0
+offset_left = 649.0
+offset_top = 320.0
+offset_right = 845.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "24"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/24_Button_" unique_id=1762556678]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("12_ss4go")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "24/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_冰蓝单人沙发" type="Label" parent="10_Panel/24_Button_" unique_id=619345892]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "冰蓝单人沙发"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "24/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="25_Button_" type="Button" parent="10_Panel" unique_id=1991098774]
+texture_filter = 1
+layout_mode = 0
+offset_left = 857.0
+offset_top = 320.0
+offset_right = 1053.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "25"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/25_Button_" unique_id=1955891597]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("13_4h8qr")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "25/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_圆形现代边几" type="Label" parent="10_Panel/25_Button_" unique_id=1448481073]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "圆形现代边几"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "25/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="26_Button_" type="Button" parent="10_Panel" unique_id=1739952728]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 320.0
+offset_right = 1261.0
+offset_bottom = 468.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "26"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/26_Button_" unique_id=1302490652]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("14_pd1da")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "26/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_玻璃茶几" type="Label" parent="10_Panel/26_Button_" unique_id=684442888]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "玻璃茶几"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "26/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="27_Button_" type="Button" parent="10_Panel" unique_id=354773009]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 477.0
+offset_right = 221.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "27"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/27_Button_" unique_id=1084403415]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("15_h8qwv")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "27/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_圆餐桌" type="Label" parent="10_Panel/27_Button_" unique_id=1830414633]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "圆餐桌"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "27/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="28_Button_" type="Button" parent="10_Panel" unique_id=1828400221]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 477.0
+offset_right = 429.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "28"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/28_Button_" unique_id=873526283]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("16_ase4p")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "28/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_白餐桌" type="Label" parent="10_Panel/28_Button_" unique_id=832980084]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "白餐桌"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "28/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="29_Button_" type="Button" parent="10_Panel" unique_id=144056056]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 477.0
+offset_right = 637.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "29"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/29_Button_" unique_id=1932352440]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("17_4y20j")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "29/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_木椅" type="Label" parent="10_Panel/29_Button_" unique_id=44836118]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "木椅"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "29/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="30_Button_" type="Button" parent="10_Panel" unique_id=869152441]
+texture_filter = 1
+layout_mode = 0
+offset_left = 649.0
+offset_top = 477.0
+offset_right = 845.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "30"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/30_Button_" unique_id=1410380894]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("18_5crfg")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "30/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_白椅" type="Label" parent="10_Panel/30_Button_" unique_id=1097137278]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "白椅"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "30/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="31_Button_" type="Button" parent="10_Panel" unique_id=378940605]
+texture_filter = 1
+layout_mode = 0
+offset_left = 857.0
+offset_top = 477.0
+offset_right = 1053.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "31"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/31_Button_" unique_id=149793884]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("19_gmkqi")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "31/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_办公椅" type="Label" parent="10_Panel/31_Button_" unique_id=1458877753]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "办公椅"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "31/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="32_Button_" type="Button" parent="10_Panel" unique_id=857567927]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 477.0
+offset_right = 1261.0
+offset_bottom = 625.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "32"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/32_Button_" unique_id=1999597041]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("20_sjvx1")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "32/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_床头柜" type="Label" parent="10_Panel/32_Button_" unique_id=2027637505]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "床头柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "32/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="33_Button_" type="Button" parent="10_Panel" unique_id=165425136]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 634.0
+offset_right = 221.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "33"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/33_Button_" unique_id=551453158]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("21_0s6l1")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "33/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_斗柜" type="Label" parent="10_Panel/33_Button_" unique_id=1763438019]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "斗柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "33/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="34_Button_" type="Button" parent="10_Panel" unique_id=1636601017]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 634.0
+offset_right = 429.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "34"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/34_Button_" unique_id=2119772425]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("22_a2q4f")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "34/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_格子柜" type="Label" parent="10_Panel/34_Button_" unique_id=356163894]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "格子柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "34/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="35_Button_" type="Button" parent="10_Panel" unique_id=1116792234]
+texture_filter = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 634.0
+offset_right = 637.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "35"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/35_Button_" unique_id=973662163]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("23_qg8cp")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "35/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_电视柜" type="Label" parent="10_Panel/35_Button_" unique_id=867679817]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "电视柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "35/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="36_Button_" type="Button" parent="10_Panel" unique_id=45423713]
+texture_filter = 1
+layout_mode = 0
+offset_left = 649.0
+offset_top = 634.0
+offset_right = 845.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "36"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/36_Button_" unique_id=1221251522]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("24_g1hrg")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "36/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_鞋柜" type="Label" parent="10_Panel/36_Button_" unique_id=2066291788]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "鞋柜"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "36/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="37_Button_" type="Button" parent="10_Panel" unique_id=1775884345]
+texture_filter = 1
+layout_mode = 0
+offset_left = 857.0
+offset_top = 634.0
+offset_right = 1053.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "37"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/37_Button_" unique_id=790255792]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("25_2rm8r")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "37/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_入口长凳" type="Label" parent="10_Panel/37_Button_" unique_id=1095866006]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "入口长凳"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "37/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="38_Button_" type="Button" parent="10_Panel" unique_id=61177304]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 634.0
+offset_right = 1261.0
+offset_bottom = 782.0
+theme_override_colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b72al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kgof3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kgof3")
+metadata/design_id = "38"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_TextureRect" type="TextureRect" parent="10_Panel/38_Button_" unique_id=1589398010]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 178.0
+offset_bottom = 110.0
+mouse_filter = 2
+texture = ExtResource("26_7hwgy")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "38/0"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_衣帽架" type="Label" parent="10_Panel/38_Button_" unique_id=636620629]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 190.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_font_sizes/font_size = 17
+text = "衣帽架"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "38/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="39_Label_B 结束装饰 · R 旋转 · 右键" type="Label" parent="10_Panel" unique_id=905199229]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 798.0
+offset_right = 1108.0
+offset_bottom = 823.0
+theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_font_sizes/font_size = 17
+text = "B 结束装饰 · R 旋转 · 右键移除 · F5 保存你的房间"
+autowrap_mode = 3
+metadata/design_id = "39"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="40_TextureRect" type="TextureRect" parent="10_Panel" unique_id=1709095588]
+texture_filter = 4
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 794.0
+offset_right = 1247.0
+offset_bottom = 821.0
+mouse_filter = 2
+texture = ExtResource("27_u11gl")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "40"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
