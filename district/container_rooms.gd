@@ -67,6 +67,7 @@ static func _aabb_of(node: Node3D) -> AABB:
 	return box
 
 static func build(g, id: String) -> Dictionary:
+	_container_seq = 0
 	var out: Dictionary = {}
 	match id:
 		"depot":
@@ -1172,7 +1173,9 @@ static func _wire_loot(g) -> void:
 		if unique == "":
 			continue
 		var type_id := str(node.get_meta("container_type", ""))
-		g.loot.stocks[unique] = (STOCK.get(type_id, STOCK_DEFAULT) as Dictionary).duplicate()
+		# A saved empty dictionary is also an initialized container: never refill it.
+		if not g.loot.stocks.has(unique):
+			g.loot.stocks[unique] = (STOCK.get(type_id, STOCK_DEFAULT) as Dictionary).duplicate()
 		g.loot.chests.append(node)
 
 # ---------------------------------------------------------------- 交互
@@ -1218,6 +1221,11 @@ static func try_toggle(g) -> bool:
 	var node = nearest(g)
 	if node == null:
 		return false
+	if g.loot.chests.has(node):
+		if not g.loot._in_range(node):return false
+		g.loot.nearby=node
+		g.loot.open_chest()
+		return g.loot.mode=="loot"
 	var was_open := bool(node.get("opened"))
 	if node.has_method("toggle_open"):
 		node.toggle_open()

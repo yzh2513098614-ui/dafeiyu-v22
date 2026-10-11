@@ -50,6 +50,7 @@ var bag_sort := 0
 var bag_page:=0
 var chest_page:=0
 var chest_bag_page:=0
+var chest_bag_chosen:=""
 var bag_favorites: Dictionary = {}
 var character_data: Dictionary = {}
 const BagView=preload("res://ui/bag_view.gd")
@@ -90,6 +91,32 @@ func can_receive(id: String) -> int:
  var existing:=int(inventory.get(id,0))
  if existing==0 and occupied_slots()>=64:return 0
  return maxi(0,mini(int(stocks.get(current_chest.container_id,{}).get(id,0)),9999-existing))
+
+func can_store(id: String) -> int:
+ if mode!="loot" or not _in_range(current_chest) or not definitions.has(id):return 0
+ var stock: Dictionary=stocks.get(current_chest.container_id,{})
+ var existing:=int(stock.get(id,0));var slots:=0
+ for value in stock.values():
+  if int(value)>0:slots+=1
+ if existing==0 and slots>=64:return 0
+ # Equipment remains owned by the player; extra copies can still be stored.
+ var available:=int(inventory.get(id,0))-(1 if is_equipped(id) else 0)
+ return maxi(0,mini(available,9999-existing))
+
+func deposit(id: String,count: int) -> bool:
+ if mode!="loot" or not _in_range(current_chest) or not definitions.has(id) or count<=0:return false
+ if count>can_store(id):
+  status="容器已满或数量不足；正在装备的最后一件需要先卸下。";_render();return false
+ var old_inventory:=inventory.duplicate(true);var old_stocks:=stocks.duplicate(true)
+ var container_id: String=current_chest.container_id
+ if not stocks.has(container_id):stocks[container_id]={}
+ stocks[container_id][id]=int(stocks[container_id].get(id,0))+count
+ inventory[id]=int(inventory[id])-count
+ if not save_state():
+  inventory=old_inventory;stocks=old_stocks;status="保存失败，本次存入已撤回。";_render();return false
+ status="已存入容器："+str(definitions[id].name)+" × "+str(count)
+ game.get_node("/root/SfxDirector").play("pickup",-3.0)
+ _bag_count();_render();return true
 
 func _receipt_plan() -> Dictionary:
  var plan: Dictionary={}
@@ -187,11 +214,11 @@ func room_changed(index: int) -> void:
 func _physics_process(_delta: float) -> void:
  nearby=null
  if not game.editing and not game.panel.visible and not game.settings_panel.visible and not game.dialog_open and mode=="":
-  var best:=1.6
+  var best:=2.4
   for chest in chests:
    if not is_instance_valid(chest):continue
    var d: float=game.player.global_position.distance_to(chest.global_position+Vector3(0,0,.22))
-   if d<best and _reachable(chest):nearby=chest;best=d
+   if d<best and _in_range(chest):nearby=chest;best=d
  prompt.visible=nearby!=null
  if nearby:
   prompt_text.text=nearby.display_name+" · "+str(stock_total(nearby.container_id))+"件"
@@ -200,29 +227,23 @@ func _physics_process(_delta: float) -> void:
 
 func _reachable(chest: Node3D) -> bool:
  var origin: Vector3=game.player.global_position+Vector3(0,.50,0)
- var target: Vector3=chest.global_position+Vector3(0,.50,-.38)
+ var target: Vector3=chest.to_global(Vector3(0,.50,0))
  var query:=PhysicsRayQueryParameters3D.create(origin,target,1,[game.player.get_rid()])
  var hit:=game.get_world_3d().direct_space_state.intersect_ray(query)
  if hit.is_empty():return true
  var collider: Object=hit.collider
- # 旧箱子：body 是 chest 的后代，is_ancestor_of 一发命中。
- if chest.is_ancestor_of(collider):return true
- # 新容器的树：ContainerBody 实测**不在** chest→inner 的子树里
- # （container_runtime._add_body_collision 的 add_child 时序把它挂到了内层外），
- # 所以 is_ancestor_of 和「沿父链走到 chest」两条路都返回 false。
- # 改用**距离**判定：命中点离箱子原点不到 1 米，只可能是它自己的碰撞体 ——
- # 0.38 米的探测射线里撞不到别人的东西。
- if collider is Node3D:
-  var offset: Vector3=(collider as Node3D).global_position-chest.global_position
-  return Vector2(offset.x,offset.z).length()<1.0
- return false
+ # Both adapters own their collision bodies. A nearby wall is never the chest.
+ return collider==chest or chest.is_ancestor_of(collider)
 
 func _in_range(chest: Node3D) -> bool:
- return is_instance_valid(chest) and game.player.global_position.distance_to(chest.global_position+Vector3(0,0,.22))<1.6 and _reachable(chest)
+ if not is_instance_valid(chest) or not chests.has(chest) or not chest.is_visible_in_tree():return false
+ # Larger model containers need clearance for the player's silhouette before opening.
+ var radius:=2.4 if chest.has_meta("container_type") else 1.6
+ return game.player.global_position.distance_to(chest.global_position+Vector3(0,0,.22))<radius and _reachable(chest)
 
 func open_chest() -> void:
  if mode!="" or not _in_range(nearby):return
- current_chest=nearby;mode="loot";chosen="";chest_page=0;chest_bag_page=0;status="选择右侧物品，收进左侧背包。"
+ current_chest=nearby;mode="loot";chosen="";chest_bag_chosen="";chest_page=0;chest_bag_page=0;status="右侧取出，左侧存入；每次转移自动保存。"
  current_chest.set_open(true);_face_chest();prompt.hide();_render()
  game.get_node("/root/SfxDirector").play("chest_open",-2.0)
 
@@ -243,7 +264,7 @@ func open_bag() -> void:
 
 func close() -> void:
  if is_instance_valid(current_chest):current_chest.set_open(false)
- current_chest=null;mode="";chosen=""
+ current_chest=null;mode="";chosen="";chest_bag_chosen=""
  if prompt:prompt.hide()
  if modal_shade:modal_shade.hide()
  if is_instance_valid(modal):modal.hide();modal.queue_free()
@@ -266,7 +287,7 @@ func _bag_count() -> void:
 
 func transfer(id: String,count: int) -> bool:
  if mode!="loot" or not _in_range(current_chest) or not definitions.has(id) or count<=0:return false
- var stock: Dictionary=stocks[current_chest.container_id]
+ var stock: Dictionary=stocks.get(current_chest.container_id,{})
  var have:=int(stock.get(id,0))
  if count>have or int(inventory.get(id,0))+count>9999:status="数量超过可收取范围，剩余物品会留在宝箱。";_render();return false
  if int(inventory.get(id,0))==0 and occupied_slots()>=64:status="背包 64 格已装满，先享用一些补给。";_render();return false
@@ -306,7 +327,7 @@ func save_state() -> bool:
  var file:=FileAccess.open(temp,FileAccess.WRITE)
  if file==null:return false
  var profile: Dictionary=game.character_controller.model.snapshot() if game.character_controller else character_data
- var data: Dictionary={"version":2,"inventory":inventory,"stocks":stocks,"favorites":bag_favorites}
+ var data: Dictionary={"version":3,"inventory":inventory,"stocks":stocks,"favorites":bag_favorites}
  if not profile.is_empty():data.character=profile
  file.store_string(JSON.stringify(data));file.flush();file.close()
  return DirAccess.rename_absolute(ProjectSettings.globalize_path(temp),ProjectSettings.globalize_path(save_path))==OK
@@ -314,27 +335,21 @@ func save_state() -> bool:
 func load_state() -> bool:
  if not FileAccess.file_exists(save_path):return false
  var data=JSON.parse_string(FileAccess.get_file_as_string(save_path))
- if not data is Dictionary or not _valid_count(data.get("version",0)) or not int(data.get("version",0)) in [1,2] or not data.get("inventory") is Dictionary or not data.get("stocks") is Dictionary:return false
+ if not data is Dictionary or not _valid_count(data.get("version",0)) or not int(data.get("version",0)) in [1,2,3] or not data.get("inventory") is Dictionary or not data.get("stocks") is Dictionary:return false
  var loaded: Dictionary={};var loaded_stocks: Dictionary=INITIAL_STOCK.duplicate(true)
  for id in data.inventory:
   if not definitions.has(id) or not _valid_count(data.inventory[id]):return false
   loaded[id]=int(data.inventory[id])
- for container in INITIAL_STOCK:
-  if not data.stocks.get(container) is Dictionary:continue
-  for id in INITIAL_STOCK[container]:
-   var value=data.stocks[container].get(id,INITIAL_STOCK[container][id])
-   if not _valid_count(value) or int(value)>int(INITIAL_STOCK[container][id]):return false
-   loaded_stocks[container][id]=int(value)
- # 保留 INITIAL_STOCK 之外的那些容器 —— 新地点里的箱子（见 district/container_rooms.gd）
- # 是运行时按「房间__类型__序号」生成的，不在上面那张固定表里。
- # 不合并的话它们每次读档都会恢复成满的，等于可以来回刷。
+ # v3 stores arbitrary known items, including newly deposited kinds and empty boxes.
+ # Earlier saves remain readable with their original fixed-stock upper bounds.
  for container in data.stocks:
-  if loaded_stocks.has(container) or not data.stocks[container] is Dictionary:continue
-  var restored: Dictionary={}
+  if not data.stocks[container] is Dictionary:return false
+  var restored: Dictionary=INITIAL_STOCK.get(container,{}).duplicate(true) if int(data.version)<3 else {}
   for id in data.stocks[container]:
-   if not definitions.has(id) or not _valid_count(data.stocks[container][id]):continue
+   if not definitions.has(id) or not _valid_count(data.stocks[container][id]):return false
+   if int(data.version)<3 and INITIAL_STOCK.get(container,{}).has(id) and int(data.stocks[container][id])>int(INITIAL_STOCK[container][id]):return false
    restored[id]=int(data.stocks[container][id])
-  if not restored.is_empty():loaded_stocks[container]=restored
+  loaded_stocks[container]=restored
  var profile: Dictionary={}
  if data.has("character"):
   var candidate:=LifeState.new()

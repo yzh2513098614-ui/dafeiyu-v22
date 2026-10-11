@@ -386,6 +386,7 @@ static func _plaza(g,b) -> void:
 ##
 ## 每条是 [容器类型, x, z, 朝向]。朝向按「门朝街」给：西列 90°、东列 -90°。
 static func _containers(g) -> void:
+ ContainerRooms._container_seq=0
  var WB := 53.3   # 西列：建筑面 x=52.5，外沿 0.8 米
  var EB := 56.7   # 东列：建筑面 x=57.5，外沿 0.8 米
  var rows: Array = [

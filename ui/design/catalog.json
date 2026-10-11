@@ -77,11 +77,11 @@
   "title": "随身背包"
  },
  {
-  "controls": 120,
+  "controls": 95,
   "error": 0.0,
   "id": "inventory_chest",
   "scene": "res://ui/design/pages/inventory_chest.tscn",
-  "title": "发现宝箱"
+  "title": "背包 · 容器存取"
  },
  {
   "controls": 10,

@@ -94,7 +94,10 @@ func _pick() -> Dictionary:
   if chest and game.loot.nearby!=node:continue
   var point: Vector3=node.global_position
   var d: float=_distance(point)
-  if d>=best or not _visible_target(point,node):continue
+  if d>=best:continue
+  if chest:
+   if not game.loot._in_range(node):continue
+  elif not _visible_target(point,node):continue
   chosen={"kind":"chest" if chest else "object","node":node,"point":point,"id":str(node.get_instance_id())};best=d
  return chosen
 
@@ -121,7 +124,9 @@ func _activate(target: Dictionary,alternate: bool) -> void:
      return
    clear();game.request_travel(str(portal.target),str(portal.route))
   "door":target.node.toggle_open()
-  "chest":game.loot.open_chest()
+  "chest":
+   game.loot.nearby=target.node
+   game.loot.open_chest()
   "object":
    var node: Node3D=target.node
    if node.has_method("map_action"):

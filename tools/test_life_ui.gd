@@ -39,7 +39,7 @@ func run() -> void:
  var cc=game.character_controller;var model=cc.model;var loot=game.loot
  check(loot.inventory.sea_biscuit==6 and loot.inventory.prompt_pen==1,"old inventory migration retains quantities and grants starter once")
  var migrated=JSON.parse_string(FileAccess.get_file_as_string(loot.save_path))
- check(migrated.version==2 and migrated.character.version==1,"migration writes combined inventory and character")
+ check(migrated.version==3 and migrated.character.version==1,"migration writes combined inventory, container storage and character")
  for id in loot.definitions:loot.inventory[id]=2
  model.state.vitals={"health":70.0,"stamina":40.0,"hunger":60.0,"mood":50.0};cc.refresh()
  await shot("01_角色状态HUD.png")

@@ -648,7 +648,8 @@ func _life_supply(place: String) -> void:
  # 不要再放一只通用补给箱：这个函数头一句就是 chests.clear()，
  # 而它在 _travel 里的调用点在 ContainerRooms.build 之后，正好把登记好的全抹掉。
  # （和 loot_controller.room_changed 是同一个坑，那里也加了同样的守卫。）
- if locations.has(place) and str(locations[place].get("type",""))=="depot":return
+ if locations.has(place) and str(locations[place].get("type","")) in ["depot","city"]:
+  loot.nearby=null;return
  loot.nearby=null;loot.chests.clear()
  var id: String="bedroom_supply"
  if place in ["city","market"]:id="market_supply"

@@ -52,6 +52,7 @@
 | 远征场景 | `test_expedition_scene.gd` | |
 | **跨数据表审计** | `audit_data_tables.gd` | `assets/*.json` 之间的引用一致性 |
 | 大地图容器摆放审计 | `audit_map_containers.gd` | |
+| 大地图容器双向存取 | `test_map_storage.gd` | 需 `--test-session-ui --test-dialogue`；38 个容器真实 E/Esc、鼠标存取、容量、装备、失败回滚、切图与旧存档；加 `--verify-containers` 在新进程复验读档。输出 `预览/大地图容器_20261012/` |
 | 26 地图与模型依赖可加载性 | `load_pack26.gd` | 只验可加载，不验画面 |
 
 ## 三、人物素材与渲染检查（`check_*`）
