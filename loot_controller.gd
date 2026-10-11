@@ -4,6 +4,7 @@ const WhaleSkin = preload("res://ui/whale_skin.gd")
 const UiFit = preload("res://ui/ui_fit.gd")
 const InventorySkin=preload("res://ui/harbor_inventory_skin.gd")
 const ChestView=preload("res://ui/chest_view.gd")
+const Compact=preload("res://ui/map_action_button.gd")
 const CHEST = preload("res://scenes/meme_chest.tscn")
 const LifeState=preload("res://character/life_state.gd")
 const INITIAL_STOCK := {
@@ -32,8 +33,7 @@ var canvas: Control
 var modal_shade: ColorRect
 var quantity_minus: Button
 var quantity_plus: Button
-var prompt: Panel
-var prompt_text: Label
+var prompt: Button
 var bag_button: Button
 var modal: Panel
 var rows: Dictionary = {}
@@ -188,12 +188,8 @@ func _ready() -> void:
  UiFit.fill(modal_shade)
  bag_button=game._button("I 背包 · 0",Vector2(1010,979),Vector2(190,55),canvas,func():open_bag())
  UiFit.pin_design(bag_button,1010,979,190,55)
- prompt=WhaleSkin.panel(canvas,Vector2.ZERO,Vector2(416,150))
- WhaleSkin.icon(prompt,"chest",Vector2(15,12),Vector2(40,40))
- prompt_text=_label(prompt,"",Vector2(65,13),Vector2(331,39),20)
- game._button("E 打开箱子",Vector2(17,63),Vector2(187,49),prompt,func():open_chest())
- game._button("漂流便签",Vector2(217,63),Vector2(181,49),prompt,func():open_note())
- _label(prompt,"靠近发现小惊喜，取走后自动保存。",Vector2(19,120),Vector2(379,25),16,WhaleSkin.MUTED)
+ prompt=Compact.create(game,canvas,"E 存取物品",func():open_chest(),func():open_note())
+ prompt.name="NearbyContainerButton";Compact.fit_text(prompt)
  prompt.hide();_bag_count()
 
 func blocked() -> bool:
@@ -219,11 +215,10 @@ func _physics_process(_delta: float) -> void:
    if not is_instance_valid(chest):continue
    var d: float=game.player.global_position.distance_to(chest.global_position+Vector3(0,0,.22))
    if d<best and _in_range(chest):nearby=chest;best=d
- prompt.visible=nearby!=null
+ prompt.visible=nearby!=null and game.get("map_interactions")==null
  if nearby:
-  prompt_text.text=nearby.display_name+" · "+str(stock_total(nearby.container_id))+"件"
-  var point: Vector2=game.camera.unproject_position(nearby.global_position+Vector3(0,1.48,-.35))
-  prompt.position=Vector2(clampf(point.x-208,30,1002),clampf(point.y-158,128,755))
+  prompt.tooltip_text=nearby.display_name+" · "+str(stock_total(nearby.container_id))+"件 · 右键阅读便签"
+  Compact.place(prompt,game.camera,nearby.global_position+Vector3(0,1.48,-.35))
 
 func _reachable(chest: Node3D) -> bool:
  var origin: Vector3=game.player.global_position+Vector3(0,.50,0)

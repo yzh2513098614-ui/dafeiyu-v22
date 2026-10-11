@@ -11,7 +11,7 @@ var map_panel: Panel
 var map_shade: ColorRect
 var district_canvas: Control
 var breadcrumb: Label
-var destination_hint: Label
+var destination_hint: Button
 var map_tab:="outside"
 var visited: Dictionary={}
 var room_edits: Dictionary={}
@@ -294,8 +294,10 @@ func _physics_process(delta: float) -> void:
   if d<best:nearest_portal=portal;best=d
  var free_ui: bool=not panel.visible and not dialog_open and not settings_panel.visible and not loot.blocked() and not editing
  if destination_hint:
-  destination_hint.visible=free_ui and not nearest_portal.is_empty()
-  if not nearest_portal.is_empty():destination_hint.text="E  "+str(nearest_portal.label)
+  destination_hint.visible=free_ui and not nearest_portal.is_empty() and get("map_interactions")==null
+  if not nearest_portal.is_empty():
+   destination_hint.text="E 通行";destination_hint.tooltip_text=str(nearest_portal.label)
+   preload("res://ui/map_action_button.gd").place(destination_hint,camera,nearest_portal.pos+Vector3(0,1.25,0))
  if breadcrumb:breadcrumb.visible=free_ui and not has_method("_refresh_zone")
  if arrival_note:arrival_note.visible=free_ui and not has_method("_refresh_zone")
  _route_frame(free_ui)
@@ -333,8 +335,9 @@ func _district_ui() -> void:
  var crumb_style:=_flat(Color(.09,.17,.23,.88),8);crumb_style.content_margin_left=12;crumb_style.content_margin_right=12;breadcrumb.add_theme_stylebox_override("normal",crumb_style);breadcrumb.size.x=850
  arrival_note=WhaleSkin.label(district_canvas,"",Vector2(89,175),Vector2(1020,33),18,Color("bfced4"))
  arrival_note.add_theme_stylebox_override("normal",crumb_style);arrival_note.size.x=850
- destination_hint=WhaleSkin.label(district_canvas,"",Vector2(444,826),Vector2(560,58),23,Color("fff8e7"));destination_hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;destination_hint.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;destination_hint.add_theme_stylebox_override("normal",preload("res://dialogue/pixel_skin.gd").frame("nameplate"));destination_hint.hide()
- UiFit.pin_center(destination_hint,560,826,58)
+ destination_hint=preload("res://ui/map_action_button.gd").create(self,district_canvas,"E 通行",func():
+  if not nearest_portal.is_empty() and not transitioning and not loot.blocked():_interact())
+ destination_hint.name="NearbyPortalButton";destination_hint.hide()
  map_shade=ColorRect.new();map_shade.color=Color(.04,.10,.16,.65);map_shade.size=Vector2(1448,1086);district_canvas.add_child(map_shade);map_shade.hide()
  UiFit.fill(map_shade)
  map_panel=Panel.new();map_panel.position=Vector2(85,135);map_panel.size=Vector2(1278,805);map_panel.add_theme_stylebox_override("panel",WhaleSkin.frame());district_canvas.add_child(map_panel);map_panel.hide()

@@ -1,16 +1,14 @@
 extends Node
-## One proximity card and one action resolver for mouse buttons and the E key.
+## One compact proximity button and one resolver for mouse clicks and the E key.
 const Style=preload("res://ui/whale_skin.gd")
 const Fit=preload("res://ui/ui_fit.gd")
 const Containers=preload("res://district/container_rooms.gd")
 const Door=preload("res://district/interactive_door.gd")
+const Compact=preload("res://ui/map_action_button.gd")
 var game
 var root: Control
-var card: Panel
-var title_label: Label
-var detail_label: Label
+var card: Button
 var primary: Button
-var secondary: Button
 var selected: Dictionary={}
 var appear: Tween
 
@@ -19,14 +17,8 @@ func configure(owner_game) -> void:
  var layer:=CanvasLayer.new();layer.name="MapInteractionLayer";layer.layer=58;add_child(layer)
  root=Control.new();root.name="MapInteractionCanvas";root.mouse_filter=Control.MOUSE_FILTER_IGNORE
  root.theme=Style.theme(game._game_font());layer.add_child(root);Fit.fill(root)
- card=Style.panel(root,Vector2.ZERO,Vector2(368,150),"paper");card.name="NearbyInteractionCard"
- title_label=Style.label(card,"",Vector2(16,10),Vector2(336,40),20)
- title_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
- detail_label=Style.label(card,"",Vector2(16,52),Vector2(336,30),16,Style.MUTED)
- primary=game._button("E 开门",Vector2(15,92),Vector2(338,46),card,func():_clicked(false))
- primary.name="PrimaryInteraction";primary.focus_mode=Control.FOCUS_NONE
- secondary=game._button("关门",Vector2(246,92),Vector2(107,46),card,func():_clicked(true))
- secondary.name="SecondaryInteraction";secondary.focus_mode=Control.FOCUS_NONE
+ primary=Compact.create(game,root,"E 开门",func():_clicked(false),func():_clicked(true))
+ primary.name="PrimaryInteraction";card=primary
  card.hide()
 
 func clear() -> void:
@@ -154,46 +146,41 @@ func _process(_delta: float) -> void:
  if target.kind=="object":anchor_height=float(target.node.get_meta("interaction_height",1.25))
  var point: Vector3=target.point+Vector3(0,anchor_height,0)
  if game.camera.is_position_behind(point):card.hide();return
- var screen: Vector2=game.camera.unproject_position(point)
- var area: Vector2=game.get_viewport().get_visible_rect().size
- card.position=Vector2(clampf(screen.x-card.size.x*.5,24,maxf(24,area.x-card.size.x-24)),clampf(screen.y-card.size.y-22,128,maxf(128,area.y-card.size.y-150)))
+ Compact.place(card,game.camera,point)
 
 func _render(target: Dictionary) -> void:
- primary.disabled=false;secondary.hide();primary.size.x=338
- detail_label.text="点击按钮或按 E · 离开后自动收起"
+ primary.disabled=false;primary.tooltip_text=""
  match target.kind:
   "door":
    var door=target.node as Door
-   title_label.text=door.display_name
+   primary.tooltip_text=door.display_name
    primary.text="E 关门" if door.opened else "E 开门"
-   if door.animating:detail_label.text="门扇正在转动 · 可再次按 E 改变方向"
-   if door.obstructed:detail_label.text="门扇前有人 · 移开后继续开合"
+   if door.obstructed:primary.tooltip_text+=" · 移开后继续开合"
   "portal":
    var portal: Dictionary=target.portal
-   title_label.text=str(portal.label)
+   primary.tooltip_text=str(portal.label)
    var door=portal.get("door") as Door
    primary.text="E "+(("返回街区" if str(portal.target)=="city" else "进入") if str(portal.route)=="entrance" else "通行")
    if str(portal.route)=="stairs":primary.text="E 下楼" if str(portal.label).contains("下") else "E 上楼"
    elif str(portal.route)=="elevator":primary.text="E 乘电梯"
    if is_instance_valid(door):
     if not door.is_passable():primary.text="E 开门";primary.disabled=door.opened
-    secondary.show();primary.size.x=221;secondary.text="关门" if door.opened else "开门"
-    if door.animating:detail_label.text="正在开门…" if door.opened else "正在关门…"
-    if door.obstructed:detail_label.text="请离开门扇转动范围"
+    primary.tooltip_text+=" · 右键"+("关门" if door.opened else "开门")
+    if door.obstructed:primary.tooltip_text+=" · 请离开门扇转动范围"
   "chest":
-   title_label.text=str(target.node.display_name);primary.text="E 打开并查看物品"
+   primary.tooltip_text=str(target.node.display_name);primary.text="E 存取物品"
   "object":
    if target.node.has_method("map_action"):
-    title_label.text=str(target.node.get_meta("interaction_title","附近设施"))
+    primary.tooltip_text=str(target.node.get_meta("interaction_title","附近设施"))
     primary.text="E "+str(target.node.call("map_action"))
-    if target.node.has_method("map_detail"):detail_label.text=str(target.node.call("map_detail"))
     primary.disabled=bool(target.node.get_meta("map_busy",false))
-    return
-   title_label.text=Containers.describe(target.node)
-   primary.text="E 合上" if bool(target.node.get("opened")) else "E 打开"
-   if target.node.has_meta("asset_definition") and bool(target.node.get("passage")):
-    primary.text="E 关门" if bool(target.node.get("opened")) else "E 开门"
+   else:
+    primary.tooltip_text=Containers.describe(target.node)
+    primary.text="E 合上" if bool(target.node.get("opened")) else "E 打开"
+    if target.node.has_meta("asset_definition") and bool(target.node.get("passage")):
+     primary.text="E 关门" if bool(target.node.get("opened")) else "E 开门"
   "marker":
    var marker: Node3D=target.node
-   title_label.text=str(marker.get_meta("title","附近设施"))
-   primary.text="E "+str({"key":"拾取钥匙","switch":"操作开关","chest":"打开并搜索","checkpoint":"记录补给点","portal":"进入","extract":"撤离"}.get(str(marker.get_meta("kind")),"交互"))
+   primary.tooltip_text=str(marker.get_meta("title","附近设施"))
+   primary.text="E "+str({"key":"拾取钥匙","switch":"操作开关","chest":"搜索物品","checkpoint":"记录补给点","portal":"进入","extract":"撤离"}.get(str(marker.get_meta("kind")),"交互"))
+ Compact.fit_text(primary)

@@ -56,18 +56,18 @@
   "title": "地点与导览入口"
  },
  {
-  "controls": 8,
+  "controls": 3,
   "error": 0.0,
   "id": "world_loot_prompt",
   "scene": "res://ui/design/pages/world_loot_prompt.tscn",
-  "title": "背包入口与宝箱提示"
+  "title": "背包入口与容器小按钮"
  },
  {
-  "controls": 6,
+  "controls": 2,
   "error": 0.0,
   "id": "world_interaction",
   "scene": "res://ui/design/pages/world_interaction.tscn",
-  "title": "附近互动提示"
+  "title": "附近互动 · 小按钮"
  },
  {
   "controls": 89,
