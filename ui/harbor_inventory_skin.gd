@@ -26,7 +26,10 @@ static func button(parent: Node,text: String,pos: Vector2,dimensions: Vector2,ac
  for state in {"normal":"primary" if primary else "button","hover":"primary_hover" if primary else "hover","pressed":"primary_pressed" if primary else "pressed","disabled":"disabled"}:
   b.add_theme_stylebox_override(state,frame({"normal":"primary" if primary else "button","hover":"primary_hover" if primary else "hover","pressed":"primary_pressed" if primary else "pressed","disabled":"disabled"}[state]))
  for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:b.add_theme_color_override(state,INK)
- b.set_script(preload("res://ui/ocean_menu_button.gd"));b.pressed.connect(action);parent.add_child(b);return b
+ b.set_script(preload("res://ui/ocean_menu_button.gd"));b.pressed.connect(action);parent.add_child(b)
+ if text in ["收进背包","I  查看背包"]:Base.button_icon(b,"backpack",24)
+ elif text=="全部收取":Base.button_icon(b,"gift",24)
+ return b
 
 static func card_button(b: Button,selected: bool=false) -> void:
  b.add_theme_stylebox_override("normal",frame("selected" if selected else "card"));b.add_theme_stylebox_override("hover",frame("selected"));b.add_theme_stylebox_override("pressed",frame("selected"))

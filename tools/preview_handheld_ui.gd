@@ -44,7 +44,8 @@ func run() -> void:
  check(menu.theme.get_stylebox("normal","Button").bg_color==preload("res://ui/candy_skin.gd").frame("button").bg_color,"menu consumes shared candy buttons")
  for key in ["map","backpack","tasks","chat","shop","music","deck","settings","mail","gift","calendar","shell"]:
   var texture=preload("res://ui/handheld_skin.gd").icon_texture(key)
-  check(texture!=null and texture.get_width()==512,"original ocean icon "+key)
+  var source: Texture2D=load(preload("res://ui/handheld_skin.gd").icon_path(key))
+  check(texture!=null and source!=null and texture.get_width()==source.get_width(),"shared function icon "+key)
   if texture:check(texture.get_image().has_mipmaps(),"mipmap icon "+key)
  await click(menu.menu_buttons.journey)
  check(menu.page=="journey","pointer opens departure menu")

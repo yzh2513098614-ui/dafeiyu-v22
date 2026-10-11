@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "date": "2026-10-11",
+  "origin": "user-provided downloads; original pixels retained",
+  "style": "glossy candy cartoon, deep navy outline, transparent background",
+  "assets": [
+    {
+      "key": "map",
+      "label": "地图",
+      "usage": "出发去漫步、开始漫步、立体新区、世界导览",
+      "file": "assets/ui/downloaded_20261011/map.png",
+      "source_file": "251cb186-08f8-4498-af3e-a028b824345d.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "611B70868A0A2B7C2BCD61E3C0B732780C02DA0A1AAE80CCD003566B993F019B",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "backpack",
+      "label": "背包",
+      "usage": "世界背包按钮、背包标题、宝箱内查看背包与收进背包",
+      "file": "assets/ui/downloaded_20261011/backpack.png",
+      "source_file": "2d1f915a-3ba5-449c-92b3-75b884ee3f1f.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "558DD2D01B2B5BED50CFB30BF7297FB7F2EF9A90A2923C9FFE38545EB37CD9A4",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "tasks",
+      "label": "任务清单",
+      "usage": "暂停菜单的操作说明",
+      "file": "assets/ui/downloaded_20261011/tasks.png",
+      "source_file": "1b2dc6db-cb2b-4f87-8f6f-521cb29d370c.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "4E6E2555FE3B6092923AF773799EFCC81B21D514D9732163F6B8E4E7DC53038F",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "chat",
+      "label": "聊天",
+      "usage": "世界中与大肥鱼聊天",
+      "file": "assets/ui/downloaded_20261011/chat.png",
+      "source_file": "492c1150-6c25-4a18-9a5e-32242bcb22c2.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "3B808B656747F320505C9C21F326AB1C8E9EFBD10B0A90F2B262839714A84E02",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "shop",
+      "label": "商店",
+      "usage": "东港仓储带入口、世界布置入口",
+      "file": "assets/ui/downloaded_20261011/shop.png",
+      "source_file": "bf8d1052-4cf2-42c2-9a60-e6171b0e9043.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "8C54A3F1ABB13487EF39C07EFAAF5E11C91CDBDF1BBC1D3991022FC5FD5B32ED",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "music",
+      "label": "音乐",
+      "usage": "音乐鉴赏与音乐地点",
+      "file": "assets/ui/downloaded_20261011/music.png",
+      "source_file": "a246ac43-1e06-42c5-837a-910495c13193.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "F5B5E5CA5D2A807EEBFA9B8B5CDC80FEFC234B01FBDBDEB2410A113680E93AD9",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "deck",
+      "label": "卡牌",
+      "usage": "离线研究入口",
+      "file": "assets/ui/downloaded_20261011/deck.png",
+      "source_file": "0ae1fa2b-de90-421a-82c9-a9b243f3b7b1.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "D6512020DB1AE98B207C2F17B7C7B0BD0A82D3866AB3E933E2EE537E64EFF6BE",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "settings",
+      "label": "设置",
+      "usage": "画面设置、世界菜单、暂停设置",
+      "file": "assets/ui/downloaded_20261011/settings.png",
+      "source_file": "0ac58f29-1be6-4d3f-b0c9-57bcba68085c.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "A5208DDEFAC021AE1FCC2B9A2B09C3362E67D5B2EF242267CA31D0E5B23DF0F3",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "mail",
+      "label": "信封",
+      "usage": "暂停菜单保存旅程，沿用已有信封功能槽",
+      "file": "assets/ui/downloaded_20261011/mail.png",
+      "source_file": "c13eb9ef-8def-46e3-9edb-a57ff4820e10.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "99298AEEF19D4839E9C6CF2EF265B1C616A4EC00D37CEB686E6924D29639808B",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "gift",
+      "label": "礼物",
+      "usage": "宝箱全部收取按钮、小惊喜提示",
+      "file": "assets/ui/downloaded_20261011/gift.png",
+      "source_file": "6a8704ae-b13c-467b-bd9c-771275de0467.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "6176318FC2F0C5A905F27159E7DFF1B08D5A8A9287FD36FBB77A38C12FAA0ED0",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "mana",
+      "label": "水滴",
+      "usage": "潮汐连携按钮与连携资源栏",
+      "file": "assets/ui/downloaded_20261011/mana.png",
+      "source_file": "7812594c-b494-489c-825a-35e8115e335d.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "1F185B2D8EC5741D94B8D3EE9A9F13824827C9F6BCE8FB325CDD20C3E5937637",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "attack",
+      "label": "剑",
+      "usage": "攻击按钮、攻击技能",
+      "file": "assets/ui/downloaded_20261011/attack.png",
+      "source_file": "afdb0132-0111-42c8-9d0e-4f545e4bb058.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "79FBEF80704A9CC69A27A944F47749B7DC46F15FE0C5B27136C067E31650F505",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "shield",
+      "label": "盾",
+      "usage": "防御与护盾技能、格挡计数",
+      "file": "assets/ui/downloaded_20261011/shield.png",
+      "source_file": "eb49a78c-f4be-4374-9779-06b12609ef85.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "C023A571001E6899DC55E8EFE459EBACC41F3EC7DF579C2C4E897F7CE62C0C98",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "energy",
+      "label": "闪电",
+      "usage": "手牌能量与体力资源栏",
+      "file": "assets/ui/downloaded_20261011/energy.png",
+      "source_file": "81775a8f-00a1-4caf-884a-4f93783b1462.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "29A1DAED2FAB6AE7434C70C22549C9A65F561ADFE7DF88CE505E172EC32962EC",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    },
+    {
+      "key": "heal",
+      "label": "医疗箱",
+      "usage": "战斗补给按钮与补给列表",
+      "file": "assets/ui/downloaded_20261011/heal.png",
+      "source_file": "4e8f3782-e36e-46eb-b342-fb7bcac1ed07.png",
+      "source_folder": "Windows Downloads",
+      "sha256": "D790094B0E06D61F4BE6171D30487F2C1C0335131FF964A2D1CCBD4FFC5725A6",
+      "width": 1254,
+      "height": 1254,
+      "rgba": true
+    }
+  ],
+  "duplicates": [
+    {
+      "source_file": "6a8704ae-b13c-467b-bd9c-771275de0467 (1).png",
+      "same_as": "gift.png"
+    }
+  ]
+}

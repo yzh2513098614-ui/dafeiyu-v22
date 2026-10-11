@@ -26,6 +26,7 @@ extends Node
 signal battle_finished(result: String)
 
 const WhaleStyle = preload("res://battle/battle_skin.gd")
+const DownloadedIcons = preload("res://ui/downloaded_icons.gd")
 const PaintedMascot = preload("res://battle/painted_mascot_assets.gd")
 const AttackFx = preload("res://battle/attack_fx.gd")
 const PixelFrames = preload("res://dialogue/pixel_skin.gd")
@@ -193,6 +194,8 @@ const ICON_HUD_DIR := "res://assets/ui/pack/hud/"
 func _pack_icon(name: String) -> String:
 	if name == "":
 		return ""
+	var downloaded_path:=DownloadedIcons.path_for(name)
+	if downloaded_path!="":return downloaded_path
 	var refined_path: String="res://assets/battle/ui_refined_v22/"+name+".svg"
 	if ResourceLoader.exists(refined_path):return refined_path
 	var cute_path: String="res://assets/battle/ui/"+name+".svg"
@@ -500,7 +503,7 @@ func _enemy_slot(index: int) -> Dictionary:
 		var si := TextureRect.new()
 		si.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		si.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		si.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		si.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		si.texture = load(_pack_icon(spec))
 		si.size = Vector2(32, 32)
 		si.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -563,7 +566,7 @@ func _cmd_button(parent: Node, text: String, action: Callable, icon_name: String
 	b.text = text
 	b.custom_minimum_size = Vector2(0, 56)
 	b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	b.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	b.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	b.add_theme_font_size_override("font_size", 22)
 	# 图标交给 Button 自带的 icon 槽，不用自己拼 HBoxContainer。
 	# expand_icon + icon_max_width 把 32px 素材压到 24px；按钮行高按
@@ -662,7 +665,7 @@ func _build_skill() -> void:
 
 func _build_card_hand() -> void:
 	card_panel = WhaleStyle.panel(root, Vector2(24, 748), Vector2(1400, 162), "hand_tray")
-	card_panel.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	card_panel.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	var energy_badge := WhaleStyle.panel(card_panel, Vector2(12, 10), Vector2(176, 58), "plate")
 	energy_badge.name = "CardEnergyBadge"
 	WhaleStyle.PaintedUi.apply(energy_badge,"energy")
@@ -769,7 +772,7 @@ func _build_dock() -> void:
 		var icon := TextureRect.new()
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		icon.texture = load(_pack_icon(key))
 		icon.position = Vector2(i * 40, 0)
 		icon.size = Vector2(32, 32)
@@ -807,7 +810,7 @@ func _build_block_badge(parent:Node,show_caption:bool=true)->Dictionary:
 	icon.texture=load(_pack_icon("block_counter"))
 	icon.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 	icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
+	icon.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	icon.position=Vector2(2,0);icon.size=Vector2(40,40)
 	icon.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	panel.add_child(icon)
@@ -849,7 +852,7 @@ func _gauge(parent: Node, title: String, fill: Color, icon_name: String = "") ->
 	var icon := TextureRect.new()
 	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if icon_name != "":
 		var icon_path: String = _pack_icon(icon_name)
@@ -1809,7 +1812,7 @@ func _populate_items() -> void:
 		row.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		row.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		row.custom_minimum_size = Vector2(0, 50)
-		row.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		row.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		row.add_theme_font_size_override("font_size", 17)
 		WhaleStyle.card_button(row, true)
 		row.add_theme_font_size_override("font_size",21)
@@ -1848,7 +1851,7 @@ func _populate_skills() -> void:
 		row.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		row.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		row.custom_minimum_size = Vector2(0, 50)
-		row.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		row.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		row.add_theme_font_size_override("font_size", 17)
 		WhaleStyle.card_button(row, bool(entry.ready))
 		row.add_theme_font_size_override("font_size",21)

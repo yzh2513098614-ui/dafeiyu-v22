@@ -1,6 +1,7 @@
 extends RefCounted
 ## World and dialogue adapter for the shared original candy game UI.
 const S=preload("res://ui/candy_skin.gd")
+const DownloadedIcons=preload("res://ui/downloaded_icons.gd")
 const INK:=S.INK
 const MUTED:=S.MUTED
 const BLUE:=S.BLUE
@@ -42,9 +43,13 @@ static func panel(parent: Node,pos: Vector2,dimensions: Vector2,kind: String="pa
  p.set_script(preload("res://ui/handheld_panel.gd"));p.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
  parent.add_child(p);return p
 
+static func icon_path(key: String) -> String:
+ var downloaded:=DownloadedIcons.path_for(key)
+ return downloaded if downloaded!="" else "res://assets/ui/ocean_handheld/icons/"+key+".png"
+
 static func icon_texture(key: String) -> Texture2D:
  if textures.has(key):return textures[key]
- var path:="res://assets/ui/ocean_handheld/icons/"+key+".png"
+ var path:=icon_path(key)
  if not ResourceLoader.exists(path):return null
  var source: Texture2D=load(path)
  if source==null:return null
