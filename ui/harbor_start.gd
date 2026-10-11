@@ -1,6 +1,6 @@
 extends Control
-## Main menu made from existing harbor art, full-resolution portraits and scene previews.
-const HarborStyle=preload("res://dialogue/pixel_skin.gd")
+## Ocean prototype shell/background integrated with the existing menu and pixel portrait.
+const HarborStyle=preload("res://ui/harbor_menu_skin.gd")
 const WhaleStyle=preload("res://ui/whale_skin.gd")
 const UiFit=preload("res://ui/ui_fit.gd")
 const PLACES: Array=[
@@ -42,6 +42,9 @@ const HARBOR_PLACES: Array=[
  ["tidal_high","潮间带 · 涨潮","海堤 · 栈桥 · 灯塔"],
  ["tidal_low","潮间带 · 落潮","礁石与贝壳露出来"]]
 var content: Panel
+var device_shell: Panel
+var portrait_frame: Panel
+var greeting: Panel
 var page:="title"
 var cards: Dictionary={}
 var setting_cards: Dictionary={}
@@ -64,29 +67,34 @@ func _ready() -> void:
  var font:=FontVariation.new();font.base_font=load("res://assets/NotoSansSC.ttf")
  font.variation_opentype={TextServerManager.get_primary_interface().name_to_tag("wght"):650.0}
  theme=HarborStyle.theme(font)
- var bg:=TextureRect.new();bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;bg.texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/start/harbor_background.png"))
- bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);bg.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;bg.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(bg)
- var wash:=ColorRect.new();wash.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);wash.color=Color(.93,.96,.95,.09);wash.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(wash)
- var brand:=HarborStyle.panel(self,Vector2(61,49),Vector2(739,174),"nameplate")
- WhaleStyle.mascot(brand,Vector2(22,27),Vector2(129,117))
- HarborStyle.label(brand,"大肥鱼",Vector2(171,19),Vector2(423,88),64,Color("fffaf0"))
- HarborStyle.label(brand,"鲸落港物语",Vector2(177,108),Vector2(330,40),28,Color("d7e4ef"))
- var seal:=HarborStyle.panel(brand,Vector2(538,109),Vector2(167,40))
- var seal_text:=HarborStyle.label(seal,"探索 · 日常",Vector2(12,6),Vector2(143,27),17);seal_text.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
- portrait=TextureRect.new();portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/dialogue/listen_original.png"));portrait.position=Vector2(850,74);portrait.size=Vector2(556,966);portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(portrait)
- # 画布宽度会随窗口比例变宽，立绘与问候框必须钉在右边缘（原设计右边距 42 / 58）
- UiFit.pin_right(portrait,556,42,74,966)
- content=HarborStyle.panel(self,Vector2(61,249),Vector2(739,773));_render()
- var greeting:=HarborStyle.panel(self,Vector2(852,919),Vector2(538,103))
- UiFit.pin_right(greeting,538,58,919,103)
- HarborStyle.label(greeting,"大肥鱼  /  港口的蓝鲸信使",Vector2(22,15),Vector2(490,29),19,HarborStyle.MUTED)
- HarborStyle.label(greeting,"“今天也慢慢来。”",Vector2(21,50),Vector2(493,39),29)
- var hint:=HarborStyle.label(self,"WASD 漫步   ·   E 互动   ·   Q 对话   ·   I 背包",Vector2(82,1041),Vector2(1259,29),17,HarborStyle.INK)
- UiFit.pin_wide(hint,82,107,1041,29)
+ var bg:=Control.new();bg.name="OceanBackdrop";bg.set_script(preload("res://ui/ocean_menu_backdrop.gd"));add_child(bg);UiFit.fill(bg)
+ var heading:=HarborStyle.label(self,"大肥鱼 · 鲸落港物语",Vector2(73,31),Vector2(1000,73),49)
+ UiFit.pin_design(heading,73,31,1000,73)
+ var subtitle:=HarborStyle.label(self,"听海风，把日子过成一段小小的旅程。",Vector2(77,110),Vector2(1000,35),23)
+ UiFit.pin_design(subtitle,77,110,1000,35)
+ var badge:=HarborStyle.panel(self,Vector2(1118,48),Vector2(232,53),"paper");UiFit.pin_design(badge,1118,48,232,53)
+ var badge_label:=HarborStyle.label(badge,"探索 · 港湾日常",Vector2(12,9),Vector2(208,35),20);badge_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+ device_shell=HarborStyle.panel(self,Vector2(48,206),Vector2(1352,828),"shell");device_shell.name="DeviceShell";UiFit.pin_center(device_shell,1352,206,828)
+ var nameplate:=HarborStyle.panel(self,Vector2(452,178),Vector2(545,80),"nameplate");UiFit.pin_center(nameplate,545,178,80)
+ var name_label:=HarborStyle.label(nameplate,"潮 汐 手 帐",Vector2(28,13),Vector2(489,53),36,HarborStyle.CREAM);name_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+ content=HarborStyle.panel(self,Vector2(78,279),Vector2(680,735));content.name="MenuScreen"
+ portrait_frame=HarborStyle.panel(self,Vector2(798,279),Vector2(574,735),"portrait");portrait_frame.name="PortraitScreen"
+ portrait=TextureRect.new();portrait.name="PixelPortrait";portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.texture=load("res://assets/start/portraits/whale_wave_pixel.png");portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(portrait)
+ greeting=HarborStyle.panel(self,Vector2(821,927),Vector2(528,67),"screen")
+ HarborStyle.label(greeting,"大肥鱼  /  港口的蓝鲸信使",Vector2(18,10),Vector2(491,22),17,Color("d6d3e0"))
+ HarborStyle.label(greeting,"“海风正好，一起出发吧！”",Vector2(18,33),Vector2(491,28),22,HarborStyle.CREAM)
+ _render()
+ var hint:=HarborStyle.label(self,"WASD 漫步   ·   E 互动   ·   Q 对话   ·   I 背包",Vector2(82,1041),Vector2(1259,29),17)
+ UiFit.pin_design(hint,82,1041,1259,29)
 
 func _button(parent: Node,label: String,pos: Vector2,size: Vector2,action: Callable,selected: bool=false) -> Button:
- var b:=Button.new();b.text=label;b.position=pos;b.size=size;b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.pressed.connect(action);parent.add_child(b)
+ var b:=Button.new();b.text=label;b.position=pos;b.size=size;b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.pressed.connect(action);HarborStyle.decorate(b);parent.add_child(b)
  b.add_theme_stylebox_override("normal",HarborStyle.frame("selected" if selected else "button"));b.add_theme_font_size_override("font_size",22)
+ if not selected:
+  var order:=0
+  for sibling in parent.get_children():
+   if sibling is Button:order+=1
+  HarborStyle.alternate(b,order%2==0)
  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=HarborStyle.BLUE;focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
  b.add_theme_stylebox_override("focus",focus)
  var icon_key:=""
@@ -99,7 +107,7 @@ func _button(parent: Node,label: String,pos: Vector2,size: Vector2,action: Calla
  return b
 
 func _primary(b: Button) -> void:
- HarborStyle.SkyStyle.primary(b);b.add_theme_font_size_override("font_size",28)
+ HarborStyle.primary(b);b.add_theme_font_size_override("font_size",28)
 
 func _render() -> void:
  for child in content.get_children():
@@ -111,7 +119,11 @@ func _render() -> void:
  if page=="music":
   if not music().in_gallery():music().enter_gallery()
  elif music().in_gallery():music().exit_gallery()
- content.position=Vector2(61,249);content.size=Vector2(739,773)
+ content.scale=Vector2(.94,.94)
+ UiFit.pin_design(content,78,279,739,773)
+ UiFit.pin_design(portrait_frame,798,279,574,735)
+ UiFit.pin_design(portrait,830,282,510,640)
+ UiFit.pin_design(greeting,821,927,528,67)
  if page=="title":_title();return
  tabs["back"]=_button(content,"‹ 返回标题",Vector2(542,25),Vector2(170,48),func():_show_page("title"))
  HarborStyle.label(content,{"music":"音乐鉴赏","harbor":"东港仓储带","journey":"出发选择","pack26":"立体新区 · 26地图","settings":"画面设置"}[page],Vector2(30,25),Vector2(460,48),29)
@@ -141,21 +153,39 @@ func _show_page(id: String) -> void:
  page=id;_render()
 
 func _title() -> void:
- content.position=Vector2(61,309);content.size=Vector2(629,713)
+ content.scale=Vector2.ONE
+ UiFit.pin_design(content,78,279,695,735)
+ UiFit.pin_design(portrait_frame,798,279,574,735)
+ UiFit.pin_design(portrait,830,282,510,640)
+ UiFit.pin_design(greeting,821,927,528,67)
  HarborStyle.label(content,"把日子，过成一段小小的旅程。",Vector2(32,30),Vector2(562,42),25)
  HarborStyle.label(content,"海风、街巷，还有等你说话的人。",Vector2(33,85),Vector2(558,40),20,HarborStyle.MUTED)
- menu_buttons["journey"]=_button(content,"出发去漫步   ▸",Vector2(30,147),Vector2(569,58),func():_show_page("journey"));_primary(menu_buttons.journey)
- menu_buttons["pack26"]=_button(content,"26地图立体新区 · 多层探索   ▸",Vector2(30,215),Vector2(569,50),func():_show_page("pack26"))
- menu_buttons["research"]=_button(content,"离线研究中心 · 卡牌搜打撤   ▸",Vector2(30,273),Vector2(569,50),func():prefs().starting_place="research";_start(false))
- menu_buttons["research"].tooltip_text="三指令同步交战 · 搜索物资 · 双出口撤离"
+ menu_buttons["journey"]=_title_entry("journey","出发去漫步",Vector2(30,153),func():_show_page("journey"),false);_primary(menu_buttons.journey);menu_buttons.journey.add_theme_font_size_override("font_size",24)
+ menu_buttons["music"]=_title_entry("music","音乐鉴赏",Vector2(371,153),func():_show_page("music"),true)
  var journey:=_saved_journey()
- resume_button=_button(content,"继续上次旅程",Vector2(30,331),Vector2(569,50),func():_start(true));resume_button.disabled=journey.is_empty();menu_buttons["resume"]=resume_button
- menu_buttons["harbor"]=_button(content,"去东港仓储带   ▸",Vector2(30,389),Vector2(569,50),func():_show_page("harbor"));menu_buttons["harbor"].tooltip_text="海岸仓储带 · 13 个新地点"
- menu_buttons["settings"]=_button(content,"画面设置",Vector2(30,447),Vector2(569,50),func():_show_page("settings"))
- menu_buttons["music"]=_button(content,"音乐鉴赏",Vector2(30,505),Vector2(569,50),func():_show_page("music"))
- menu_buttons["quit"]=_button(content,"离开鲸落港",Vector2(30,563),Vector2(569,50),func():get_tree().quit())
- HarborStyle.label(content,"上次漫步："+_journey_place(journey) if not resume_button.disabled else "第一次来？从「出发去漫步」开始。",Vector2(35,624),Vector2(551,30),19,HarborStyle.MUTED)
- HarborStyle.label(content,"鼠标选择  ·  方向键 / Tab 切换  ·  Enter 确认",Vector2(35,662),Vector2(552,30),18,HarborStyle.MUTED)
+ resume_button=_title_entry("resume","继续上次旅程",Vector2(30,251),func():_start(true),true);resume_button.disabled=journey.is_empty();menu_buttons["resume"]=resume_button
+ menu_buttons["settings"]=_title_entry("settings","画面设置",Vector2(371,251),func():_show_page("settings"),false)
+ menu_buttons["pack26"]=_title_entry("pack26","立体新区 · 26地图",Vector2(30,349),func():_show_page("pack26"),false)
+ menu_buttons["pack26"].tooltip_text="26地图立体新区 · 多层探索"
+ menu_buttons["research"]=_title_entry("research","离线研究 · 搜打撤",Vector2(371,349),func():prefs().starting_place="research";_start(false),true)
+ menu_buttons["research"].tooltip_text="离线研究中心 · 卡牌搜打撤 · 三指令同步交战 · 双出口撤离"
+ menu_buttons["harbor"]=_title_entry("harbor","东港仓储带",Vector2(30,447),func():_show_page("harbor"),true);menu_buttons["harbor"].tooltip_text="海岸仓储带 · 13 个新地点"
+ menu_buttons["quit"]=_title_entry("quit","离开鲸落港",Vector2(371,447),func():get_tree().quit(),false)
+ var saved:=HarborStyle.label(content,"上次漫步："+_journey_place(journey) if not resume_button.disabled else "第一次来？从「出发去漫步」开始。",Vector2(35,557),Vector2(551,30),19,HarborStyle.MUTED)
+ saved.max_lines_visible=1;saved.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+ HarborStyle.label(content,"鼠标选择 · 方向键 / Tab 切换 · Enter 确认",Vector2(35,605),Vector2(552,30),17,HarborStyle.MUTED)
+
+ var dock:=HarborStyle.panel(content,Vector2(27,653),Vector2(626,55),"screen")
+ var dock_label:=HarborStyle.label(dock,"DAFEIYU  /  OCEAN DAYS",Vector2(17,13),Vector2(590,30),20,HarborStyle.CREAM);dock_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+
+func _title_entry(id: String,text: String,pos: Vector2,action: Callable,white: bool) -> Button:
+ var button:=_button(content,text,pos,Vector2(274,74),action)
+ button.name="Menu_"+id;button.mouse_default_cursor_shape=Control.CURSOR_POINTING_HAND
+ HarborStyle.alternate(button,white)
+ var icons: Dictionary={"journey":"map","music":"music","resume":"calendar","settings":"settings","pack26":"map","research":"deck","harbor":"shop"}
+ if icons.has(id):WhaleStyle.button_icon(button,icons[id],30)
+ if id in ["pack26","research"]:button.add_theme_font_size_override("font_size",19)
+ return button
 
 ## 东港仓储带出发点页。
 ## 用 3 列 × 226×62 的紧凑卡 —— 13 个地点排成 5 行（198~548），
@@ -320,7 +350,10 @@ func _refresh_music() -> void:
   # 不要用 MOOD_ORDER.find(曲目 id)：那个数组装的是场合名，永远返回 -1，
   # 而未试听时 preview_index() 也是 -1，两者相等会把全部卡片判定成「正在播放」。
   var playing: bool=selected!="" and selected==id
-  card.add_theme_stylebox_override("normal",HarborStyle.frame("nameplate" if playing else "dialogue"))
+  for state in ["normal","hover","pressed"]:
+   var box:=HarborStyle.frame("nameplate" if playing else ("dialogue" if state=="normal" else state)).duplicate()
+   if playing and state=="hover":box.bg_color=Color("53566f")
+   card.add_theme_stylebox_override(state,box)
   for key in ["font_color","font_hover_color","font_pressed_color"]:
    card.add_theme_color_override(key,Color("fff8e7") if playing else HarborStyle.INK)
   var now: Label=entry.now
