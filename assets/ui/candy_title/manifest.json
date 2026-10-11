@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-12",
+  "scope": "reference-led title UI integration",
+  "skill": "candy-sticker-game-ui",
+  "assets": [
+    {
+      "path": "assets/ui/candy_title/backdrop.png",
+      "sha256": "2c917c2503fba41af08fb331bffa73b4250069759a90db255cdf58e74d6fd7e1",
+      "bytes": 2084292,
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a12bed-cffb-7b12-af47-6b14ac07c1dd\\exec-8fcb545a-bd64-4bb2-babb-8a9b65bd0a72.png",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "assets/ui/candy_title/gallery/whale_wave_source.png",
+      "sha256": "4199db971479b6a9ef3267196ccc8332775b7e5486f657899780e69cac3cfcae",
+      "bytes": 1337667,
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "source": "assets/start/portraits/whale_wave_source.png",
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "assets/ui/candy_title/icons/book.svg",
+      "sha256": "dc84b856439461964623b450a525df11e698bf5d71a177246fbb4faa9d6af18a",
+      "bytes": 468,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/chat.svg",
+      "sha256": "5cb356d18be2338c52765a31c37ae53f6b5aa683b1033300a66b3bef67e2170d",
+      "bytes": 569,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/exit.svg",
+      "sha256": "0264617e4c92d59a9903f5e09a9d4e2fbb3edd59356d1c5cebb8bf6dc2125128",
+      "bytes": 549,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/folder.svg",
+      "sha256": "c095855b9e0770a24e6b318b7bedc4d2528e2ebba0bc02a6bb6e30a74dc942d0",
+      "bytes": 410,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/help.svg",
+      "sha256": "a700015e453989180564263fba6cb73241b67a97adfe673a045f6895853e2cfd",
+      "bytes": 452,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/image.svg",
+      "sha256": "73ff1959fb4f293a80b7f5c621c3c1fb0f6a8a625e6d396e48f0b3852fa74ad2",
+      "bytes": 442,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/play.svg",
+      "sha256": "9fa9043dd67449bf465c8658e41060e81309f2e518ddea0d61e5ad9fa55aff08",
+      "bytes": 326,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/save.svg",
+      "sha256": "f9a4d0056fcf2730555b394fff867443ba86ca2fd94548d60f48dabea2e4d116",
+      "bytes": 444,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/icons/settings.svg",
+      "sha256": "afe763fce7276b15d5723a8d5ce14096df41ceaab3fea211f99f4a399c09ec4f",
+      "bytes": 452,
+      "source": "tools/build_candy_title_icons.py",
+      "canvas_size": [
+        72,
+        72
+      ]
+    },
+    {
+      "path": "assets/ui/candy_title/logo.png",
+      "sha256": "f8e88e99449a3bdd643d6c4e08d9cb6875b6a01e3b5650066dffb39514224ffe",
+      "bytes": 1283435,
+      "size": [
+        1446,
+        1087
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a12bed-cffb-7b12-af47-6b14ac07c1dd\\exec-eb2fceab-c487-4c80-893f-7ff202e7dc2f.png",
+      "original_bytes_preserved": true
+    }
+  ]
+}
