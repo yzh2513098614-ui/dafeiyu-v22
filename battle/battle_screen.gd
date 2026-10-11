@@ -12,7 +12,7 @@ extends Node
 ##   · 状态坞  底部横贯整屏：头像 + 等级 + 状态图标 + 生命 / 体力 / AP 三条槽
 ##
 ## 素材全部复用现有资源：
-##   · 边框  battle_skin.gd 的奶油色圆角卡片。
+##   · 边框  candy_skin.gd 的统一糖果色原生面板。
 ##   · 图标  assets/battle/ui/*.svg，战斗专用柔和卡通图标。
 ##   · 立绘  assets/monsters/*.png（与 combat_balance.json 的 texture 字段一致）
 ##   · 头像  assets/ui/whale_mascot.png
@@ -52,12 +52,12 @@ const CMD_GAP := 16.0               ## 敌人活动区与指令窗之间必须�
 const LOG_W := 980.0
 const LOG_TOP := 684.0
 const LOG_H := 94.0
-const CARD_INFO_TOP:=530.0
-const CARD_INFO_HEIGHT:=56.0
-const CARD_HAND_TOP:=610.0
-const CARD_HAND_HEIGHT:=288.0
-const CARD_DOCK_TOP:=920.0
-const CARD_DOCK_HEIGHT:=142.0
+const CARD_INFO_TOP:=512.0
+const CARD_INFO_HEIGHT:=50.0
+const CARD_HAND_TOP:=582.0
+const CARD_HAND_HEIGHT:=316.0
+const CARD_DOCK_TOP:=922.0
+const CARD_DOCK_HEIGHT:=140.0
 
 ## 背景配色：直接取潮汐试炼场的地板色，让战斗画面和玩家站的地方是同一个场地
 const SKY_TOP := Color("8fb8dd")
@@ -88,16 +88,16 @@ const DAIS_TOP := Color("c3d3cb")
 const DAIS_RIM_TARGET := Color("d9b05e")
 const VIGNETTE := Color("2b3d55")
 
-const HP_FILL := Color("e99caf")
+const HP_FILL := Color("ff86b2")
 ## 掉血残影：实心条掉下去之后，那一段「曾经有血」的浅色会慢慢收拢。
 ## 用偏白的暖粉而不是另一种红 —— 它要读成「刚才这里还有血」，不是「还有一层血」。
-const HP_TRAIL := Color("f4cdd2")
+const HP_TRAIL := Color("fbc5df")
 ## 残影收拢速度（像素/秒）。不用 lerp：lerp 越接近越慢，尾巴会拖很久；
 ## 固定速度收得干脆，而且不同长度的条收拢时间都短到不影响节奏。
 const TRAIL_SPEED := 220.0
-const SP_FILL := Color("a8d8c5")
-const AP_FILL := Color("bbc4ec")
-const AP_READY := Color("e6c989")
+const SP_FILL := Color("4ad9c5")
+const AP_FILL := Color("91adff")
+const AP_READY := Color("ffe071")
 
 var engine                                  ## battle_engine.gd 实例
 var context: Dictionary = {}
@@ -310,27 +310,19 @@ func _build() -> void:
 	call_deferred("_layout")
 
 func _build_title() -> void:
-	title_plate = Panel.new()
-	title_plate.add_theme_stylebox_override("panel", WhaleStyle.frame("plate"))
-	WhaleStyle.PaintedUi.apply(title_plate,"title")
-	title_plate.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	title_plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.add_child(title_plate)
-	UiFit.pin_left(title_plate, 620, 24, 24, 64)
-	title_label = WhaleStyle.label(title_plate, str(context.get("title", "遭遇战")), Vector2(22, 13), Vector2(380, 38), 27, WhaleStyle.INK)
-	title_label.add_theme_color_override("font_color",Color("fffaf0"))
-	title_label.add_theme_color_override("font_shadow_color",Color.TRANSPARENT)
-	round_label = WhaleStyle.label(title_plate, "", Vector2(408, 17), Vector2(190, 32), 21, WhaleStyle.GOLD)
-	round_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	round_label.add_theme_color_override("font_color",Color("fff1cc"))
-	phase_plate=WhaleStyle.panel(root,Vector2.ZERO,Vector2(340,48),"plate")
-	UiFit.pin_center(phase_plate,340,116,48)
-	phase_label=WhaleStyle.label(phase_plate,"",Vector2(12,6),Vector2(316,34),21,WhaleStyle.GOLD)
+	title_plate=WhaleStyle.panel(root,Vector2.ZERO,Vector2(1400,72),"dark")
+	title_plate.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	UiFit.pin_wide(title_plate,24,24,24,72)
+	title_label=WhaleStyle.label(title_plate,str(context.get("title","遭遇战")),Vector2(22,17),Vector2(352,38),27,Color("eaf1ff"))
+	title_label.max_lines_visible=1;title_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+	round_label=WhaleStyle.label(title_plate,"",Vector2(384,20),Vector2(144,32),21,WhaleStyle.GOLD)
+	round_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
+	phase_plate=WhaleStyle.panel(root,Vector2.ZERO,Vector2(340,48),"mint")
+	UiFit.pin_center(phase_plate,340,36,48)
+	phase_label=WhaleStyle.label(phase_plate,"",Vector2(12,7),Vector2(316,34),20,WhaleStyle.INK)
 	phase_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	_build_speed()
 
-## 演出倍速按钮。放在标题牌右侧，不占指令窗的位置。
-## 反复刷同一场时 0.30 秒一个事件太慢；播放中按确认键还能直接跳过（事件照样全结算）。
 func _build_speed() -> void:
 	if root == null:
 		return
@@ -340,7 +332,7 @@ func _build_speed() -> void:
 	WhaleStyle.card_button(speed_button, false)
 	speed_button.pressed.connect(_cycle_speed)
 	root.add_child(speed_button)
-	UiFit.pin_right(speed_button, 156, 24, 30, 48)
+	UiFit.pin_right(speed_button, 150, 40, 38, 44)
 	_refresh_speed_button()
 
 func _cycle_speed() -> void:
@@ -455,8 +447,8 @@ func _enemy_slot(index: int) -> Dictionary:
 	name_plate.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	name_plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	holder.add_child(name_plate)
-	var name_label := WhaleStyle.label(name_plate, "", Vector2(14, 4), Vector2(150, 26), 19, WhaleStyle.INK)
-	var hp_text := WhaleStyle.label(name_plate, "", Vector2(140, 5), Vector2(150, 24), 16, WhaleStyle.MUTED)
+	var name_label := WhaleStyle.label(name_plate, "", Vector2(14, 4), Vector2(150, 26), 19, Color("eaf1ff"))
+	var hp_text := WhaleStyle.label(name_plate, "", Vector2(140, 5), Vector2(150, 24), 16, Color("ccf4f1"))
 	hp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 
 	var bar_back := Panel.new()
@@ -803,8 +795,8 @@ func _build_block_badge(parent:Node,show_caption:bool=true)->Dictionary:
 	panel.size=Vector2(174,40) if show_caption else Vector2(90,40)
 	panel.mouse_filter=Control.MOUSE_FILTER_PASS
 	var style:=StyleBoxFlat.new()
-	style.bg_color=Color("e8f2f4")
-	style.border_color=Color("8aa5af")
+	style.bg_color=Color("ccf4f1")
+	style.border_color=Color("383655")
 	style.set_border_width_all(1)
 	style.set_corner_radius_all(8)
 	style.shadow_color=Color(.16,.27,.33,.13)
@@ -819,10 +811,10 @@ func _build_block_badge(parent:Node,show_caption:bool=true)->Dictionary:
 	icon.position=Vector2(2,0);icon.size=Vector2(40,40)
 	icon.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	panel.add_child(icon)
-	var caption:=WhaleStyle.label(panel,"格挡",Vector2(50,6),Vector2(50,28),20,Color("3c5969"))
+	var caption:=WhaleStyle.label(panel,"格挡",Vector2(50,6),Vector2(50,28),20,Color("383655"))
 	caption.visible=show_caption
 	caption.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
-	var value:=WhaleStyle.label(panel,"0",Vector2(112,2),Vector2(48,36),28 if show_caption else 25,Color("2f536d"))
+	var value:=WhaleStyle.label(panel,"0",Vector2(112,2),Vector2(48,36),28 if show_caption else 25,Color("414a7b"))
 	value.add_theme_font_override("font",WhaleStyle.numeric_font())
 	value.autowrap_mode=TextServer.AUTOWRAP_OFF
 	value.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
@@ -842,16 +834,18 @@ func _set_block_badge(badge:Dictionary,amount:float,always_visible:bool=false)->
 	badge.value.position.x=112 if badge.caption.visible else 44
 	badge.panel.size.x=badge.value.position.x+value_width+14
 	badge.panel.tooltip_text="格挡：%d 点。受到伤害时先消耗格挡，再扣除生命；与按回合持续的护盾效果独立。" % ceili(maxf(0,amount))
-	badge.style.bg_color=Color("e8f2f4") if active else Color("eeefe9")
-	badge.style.border_color=Color("8aa5af") if active else Color("b3bdb7")
+	badge.style.bg_color=Color("ccf4f1") if active else Color("d7dff1")
+	badge.style.border_color=Color("383655") if active else Color("969eba")
 	badge.icon.modulate=Color.WHITE if active else Color(.78,.85,.87,.65)
-	badge.caption.add_theme_color_override("font_color",Color("3c5969") if active else Color("647780"))
-	badge.value.add_theme_color_override("font_color",Color("2f536d") if active else Color("6d7d83"))
+	badge.caption.add_theme_color_override("font_color",Color("383655") if active else Color("696d90"))
+	badge.value.add_theme_color_override("font_color",Color("414a7b") if active else Color("696d90"))
 
 func _gauge(parent: Node, title: String, fill: Color, icon_name: String = "") -> Dictionary:
 	var group := Control.new()
 	group.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(group)
+	var tile:=WhaleStyle.panel(group,Vector2(-12,12),Vector2(300,110),"paper")
+	tile.name="StatusTile";tile.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	var icon := TextureRect.new()
 	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -979,6 +973,7 @@ func _build_result() -> void:
 	result_rewards.alignment = BoxContainer.ALIGNMENT_CENTER
 	result_box.add_child(result_rewards)
 	result_go = _cmd_button(result_box, "继续", _on_continue)
+	WhaleStyle.primary(result_go)
 	result_go.position = Vector2(140, 506)
 	result_go.size = Vector2(360, 50)
 	result_shade.hide()
@@ -1025,7 +1020,7 @@ func _layout_enemies() -> void:
 		i += 1
 
 func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
-	var ground_y: float = 410.0 if engine.card_mode else GROUND_Y
+	var ground_y: float = 395.0 if engine.card_mode else GROUND_Y
 	var height_limit: float = 250.0 if engine.card_mode else ENEMY_CELL_H
 	var art_data: Dictionary = slot.get("art_data", {})
 	var used: Rect2i = art_data.get("used", Rect2i())
@@ -1139,6 +1134,8 @@ func _layout_dock() -> void:
 		var group: Control = g.group
 		group.position = Vector2(x0 + float(i) * (gw + gap), 0.0)
 		group.size = Vector2(gw, DOCK_H)
+		var tile:Panel=group.get_node("StatusTile")
+		tile.size=Vector2(gw+24,110)
 		var back: Panel = g.back
 		back.position = Vector2(0.0, 72.0)
 		back.size = Vector2(gw, 30.0)
@@ -1195,67 +1192,48 @@ func _layout_command() -> void:
 		detail_text.position=Vector2(16,58);detail_text.size=Vector2(cmd_w-64,146)
 
 func _layout_card_hand() -> void:
-	if card_panel == null: return
-	card_panel.position = Vector2(DOCK_MARGIN, CARD_HAND_TOP)
-	card_panel.size = Vector2(root.size.x - DOCK_MARGIN * 2.0, CARD_HAND_HEIGHT)
-	var w := card_panel.size.x
-	card_scroll.position=Vector2(164,16)
-	card_scroll.size = Vector2(maxf(250.0, w - 408.0), 260)
+	if card_panel == null:return
+	card_panel.position=Vector2(DOCK_MARGIN,CARD_HAND_TOP)
+	card_panel.size=Vector2(root.size.x-DOCK_MARGIN*2,CARD_HAND_HEIGHT)
+	var w:=card_panel.size.x
+	card_scroll.position=Vector2(20,76);card_scroll.size=Vector2(w-40,228)
 	var energy_badge:Panel=card_panel.get_node("CardEnergyBadge")
-	energy_badge.position=Vector2(20,24);energy_badge.size=Vector2(120,110)
+	energy_badge.position=Vector2(20,14);energy_badge.size=Vector2(162,44)
 	var energy_icon:TextureRect=energy_badge.get_node("CardEnergyIcon")
-	energy_icon.position=Vector2(23,72);energy_icon.size=Vector2(18,18)
-	energy_badge.get_node("CardEnergyCaption").position.y=70
-	card_energy_label.position=Vector2(24,34);card_energy_label.size=Vector2(112,44)
-	card_energy_label.add_theme_font_size_override("font_size",29)
-	card_counts.position=Vector2(20,164);card_counts.size=Vector2(120,72)
-	card_counts.add_theme_font_size_override("font_size",20)
-	card_counts.add_theme_color_override("font_color",WhaleStyle.INK)
-	card_counts.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-	card_end_button.position=Vector2(w-214,28);card_end_button.size=Vector2(190,68)
-	card_item_button.position=Vector2(w-214,126);card_item_button.custom_minimum_size=Vector2(90,46);card_item_button.size=Vector2(90,46)
-	card_link_button.position=Vector2(w-114,126);card_link_button.custom_minimum_size=Vector2(90,46);card_link_button.size=Vector2(90,46)
+	energy_icon.position=Vector2(10,11);energy_icon.size=Vector2(22,22)
+	var caption:Label=energy_badge.get_node("CardEnergyCaption")
+	caption.position=Vector2(38,7);caption.size=Vector2(38,30);caption.add_theme_font_size_override("font_size",17)
+	caption.add_theme_color_override("font_color",Color("eaf1ff"))
+	card_energy_label.position=Vector2(102,20);card_energy_label.size=Vector2(72,32)
+	card_energy_label.add_theme_font_size_override("font_size",23);card_energy_label.add_theme_color_override("font_color",Color("ffe071"))
+	card_counts.position=Vector2(204,18);card_counts.size=Vector2(350,36)
+	card_counts.add_theme_font_size_override("font_size",18);card_counts.add_theme_color_override("font_color",WhaleStyle.INK)
+	card_counts.autowrap_mode=TextServer.AUTOWRAP_OFF
+	card_end_button.position=Vector2(w-204,14);card_end_button.custom_minimum_size=Vector2(184,44);card_end_button.size=Vector2(184,44)
+	card_item_button.position=Vector2(w-464,14);card_item_button.custom_minimum_size=Vector2(116,44);card_item_button.size=Vector2(116,44)
+	card_link_button.position=Vector2(w-334,14);card_link_button.custom_minimum_size=Vector2(116,44);card_link_button.size=Vector2(116,44)
 	card_panel.get_node("CardPlayHint").hide()
 	var target_button:Button=card_panel.get_node("CardTargetButton")
-	target_button.position=Vector2(w-214,210);target_button.custom_minimum_size=Vector2(190,50);target_button.size=Vector2(190,50)
-	card_preview.position.x = root.size.x - 294.0
-	# One feedback row; target details and recent log stay available on hover.
+	target_button.position=Vector2(w-608,14);target_button.custom_minimum_size=Vector2(130,44);target_button.size=Vector2(130,44)
+	target_button.add_theme_font_size_override("font_size",18)
+	card_preview.position=Vector2(root.size.x-294,94)
 	var info_w:float=clampf(root.size.x*.40,560,660)
-	UiFit.pin_left(log_box, root.size.x-info_w-DOCK_MARGIN*2-24, DOCK_MARGIN, CARD_INFO_TOP, CARD_INFO_HEIGHT)
-	UiFit.pin_right(tactics_box, info_w, DOCK_MARGIN, CARD_INFO_TOP, CARD_INFO_HEIGHT)
+	UiFit.pin_left(log_box,root.size.x-info_w-DOCK_MARGIN*2-24,DOCK_MARGIN,CARD_INFO_TOP,CARD_INFO_HEIGHT)
+	UiFit.pin_right(tactics_box,info_w,DOCK_MARGIN,CARD_INFO_TOP,CARD_INFO_HEIGHT)
 	var log_header:Panel=log_box.get_node("LogCaption")
-	log_header.position=Vector2(18,13);log_header.size=Vector2(76,30)
+	log_header.position=Vector2(12,10);log_header.size=Vector2(76,30)
 	var log_caption:Label=log_header.get_node("CaptionText")
-	log_caption.size=Vector2(76,24)
-	log_text.position=Vector2(114,13);log_text.size=Vector2(log_box.size.x-140,30)
-	log_text.add_theme_font_size_override("normal_font_size",21)
-	log_text.autowrap_mode=TextServer.AUTOWRAP_OFF
-	log_text.mouse_filter=Control.MOUSE_FILTER_STOP
+	log_caption.position=Vector2(0,1);log_caption.size=Vector2(76,26);log_caption.add_theme_color_override("font_color",Color("eaf1ff"))
+	log_text.position=Vector2(102,10);log_text.size=Vector2(log_box.size.x-124,30)
+	log_text.add_theme_font_size_override("normal_font_size",19);log_text.autowrap_mode=TextServer.AUTOWRAP_OFF;log_text.mouse_filter=Control.MOUSE_FILTER_STOP
 	var target_caption:Label=tactics_box.get_node("TargetCaption")
-	target_caption.text="目标";target_caption.position=Vector2(22,15);target_caption.size=Vector2(48,26)
-	tactics_name.position=Vector2(84,13);tactics_name.size=Vector2(132,30)
+	target_caption.text="目标";target_caption.position=Vector2(18,10);target_caption.size=Vector2(48,30)
+	tactics_name.position=Vector2(80,10);tactics_name.size=Vector2(132,30);tactics_name.add_theme_color_override("font_color",WhaleStyle.BLUE)
 	tactics_name.max_lines_visible=1;tactics_name.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	tactics_text.position=Vector2(238,15);tactics_text.size=Vector2(info_w-260,28)
-	tactics_text.add_theme_font_size_override("font_size",19)
-	tactics_text.autowrap_mode=TextServer.AUTOWRAP_OFF
-	tactics_text.mouse_filter=Control.MOUSE_FILTER_STOP
-	tactics_text.max_lines_visible = 1
-	tactics_text.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	tactics_text.position=Vector2(230,10);tactics_text.size=Vector2(info_w-250,30);tactics_text.add_theme_font_size_override("font_size",18)
+	tactics_text.autowrap_mode=TextServer.AUTOWRAP_OFF;tactics_text.mouse_filter=Control.MOUSE_FILTER_STOP
+	tactics_text.max_lines_visible=1;tactics_text.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 
-# ---------------------------------------------------------------- 背景
-
-
-## 程序化像素背景：天空 + 太阳 + 远岛剪影 + 分层海浪 + 岸线泡沫 + 透视地砖 + 暗角。
-##
-## 分辨率保持 192x144 再拉伸，靠 NEAREST 得到方块感，和项目里的像素边框同源。
-##
-## 旧版只有「三段纯色渐变 + 几朵云 + 均匀网格」，最大的问题不是不好看，是**没有纵深**：
-## 海是一条平色带、地面是方格纸、画面上半部分整片空着。所以这一版加的全是纵深线索：
-##   · 太阳与地平线暖光 —— 给天空一个亮度中心，眼睛才有落点
-##   · 远近三层云（越远越小越淡）+ 远岛与栈桥剪影 —— 大气透视
-##   · 海浪的周期与振幅随行号增大 —— 近处的浪更宽更高
-##   · 地砖网格做透视收敛（竖线朝灭点、横线间距越近越大）
-##   · 岸线泡沫与湿沙 + 四角暗角 —— 把视线收进画面中间
 func _backdrop_texture() -> Texture2D:
 	if ResourceLoader.exists(BACKGROUND_PATH):
 		return load(BACKGROUND_PATH)
@@ -1466,7 +1444,7 @@ func _refresh_all() -> void:
 func _refresh_cards() -> void:
 	if card_panel == null or card_row == null: return
 	card_energy_label.text = "%d / %d" % [int(engine.card_energy), int(engine.card_energy_max)]
-	card_counts.text = "牌堆  %d\n弃牌  %d" % [engine.draw_pile.size(), engine.discard_pile.size()]
+	card_counts.text = "手牌  ·  牌堆 %d   /   弃牌 %d" % [engine.draw_pile.size(), engine.discard_pile.size()]
 	card_end_button.disabled=mode!="command"
 	card_item_button.disabled=mode!="command" or (context.get("items",[]) as Array).is_empty()
 	card_panel.get_node("CardTargetButton").disabled=mode!="command"
@@ -1478,7 +1456,7 @@ func _refresh_cards() -> void:
 	for entry in engine.card_hand_view():
 		var index := int(entry.index)
 		var button = load("res://battle/card_face.gd").new()
-		button.configure(entry, Vector2(172, 252))
+		button.configure(entry, Vector2(172, 216))
 		button.focus_mode = Control.FOCUS_ALL
 		button.disabled = not bool(entry.ready) or mode != "command"
 		button.mouse_entered.connect(func():_preview_card(entry))
@@ -2592,16 +2570,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		_back_to_command()
 		get_viewport().set_input_as_handled()
-
-
-
-
-
-
-
-
-
-
-
-
-

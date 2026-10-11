@@ -1,7 +1,9 @@
 extends SceneTree
 var failures:=0
+var checks:=0
 func _initialize()->void: call_deferred("run")
 func check(ok:bool,note:String)->void:
+ checks+=1
  if not ok: failures+=1;push_error(note)
 func run()->void:
  root.size=Vector2i(1448,1086)
@@ -57,24 +59,17 @@ func run()->void:
  check(screen.dash.name.position.y+screen.dash.name.size.y+8<=screen.dash.block_badge.panel.position.y,"block badge stays below the character name")
  check(screen.dash.block_badge.panel.position.y+screen.dash.block_badge.panel.size.y+6<=screen.dash.status_icons.position.y,"block badge stays clear of timed statuses")
  check(screen.dash.block_badge.panel.position.y+screen.dash.block_badge.panel.size.y+12<=screen.dash.dock.size.y,"block badge stays clear of the outer frame")
- for control in [screen.card_panel,screen.dash.dock,screen.log_box,screen.tactics_box,screen.card_end_button,screen.card_link_button,screen.dash.portrait_frame]:
-  check(control.has_node("PaintedUiSurface"),"battle controls consume generated UI materials")
- var end_surface:TextureRect=screen.card_end_button.get_node("PaintedUiSurface")
- screen.card_end_button.disabled=true
- for n in 2: await process_frame
- check(float(end_surface.material.get_shader_parameter("state_gray"))>.5,"generated button material visibly distinguishes disabled state")
- screen.card_end_button.disabled=false
- for n in 2: await process_frame
- check(float(end_surface.material.get_shader_parameter("state_gray"))==0,"generated button restores enabled material")
- var paint_surface:TextureRect=screen.dash.gauges[0].fill.get_node("PaintedUiSurface")
+ for control in [screen.card_panel,screen.dash.dock,screen.log_box,screen.tactics_box,screen.dash.portrait_frame]:
+  check(control.get_theme_stylebox("panel") is StyleBoxFlat,"battle uses native candy panels")
+ check(screen.card_end_button.get_theme_stylebox("normal").bg_color==preload("res://ui/candy_skin.gd").PINK,"end turn uses shared primary color")
+ check(screen.card_end_button.get_theme_stylebox("disabled").bg_color!=screen.card_end_button.get_theme_stylebox("normal").bg_color,"disabled button has a distinct native fill")
  var gauge_style:StyleBoxFlat=screen.dash.gauges[0].style
  var prior_color:Color=gauge_style.bg_color
- gauge_style.bg_color=Color("fff0c0")
- for n in 2: await process_frame
- check(paint_surface.material.get_shader_parameter("surface_tint").is_equal_approx(gauge_style.bg_color),"generated gauge follows live fill color")
+ gauge_style.bg_color=Color("4ad9c5")
+ check(screen.dash.gauges[0].fill.get_theme_stylebox("panel")==gauge_style,"native gauge follows the live fill driver")
  gauge_style.bg_color=prior_color
  check(screen.tactics_name.position.x+screen.tactics_name.size.x+12 <= screen.tactics_text.position.x,"target name and intent do not collide")
- check(screen.card_energy_label.position.y+screen.card_energy_label.size.y+8 <= screen.card_panel.get_node("CardEnergyBadge").position.y+screen.card_panel.get_node("CardEnergyBadge").get_node("CardEnergyCaption").position.y,"energy number and caption have separate rows")
+ check(screen.card_energy_label.position.x>=screen.card_panel.get_node("CardEnergyBadge").position.x+screen.card_panel.get_node("CardEnergyBadge").get_node("CardEnergyCaption").position.x+screen.card_panel.get_node("CardEnergyBadge").get_node("CardEnergyCaption").size.x+4,"energy caption and number have separate columns")
  for gauge in screen.dash.gauges:
   check(gauge.title.position.x+gauge.title.size.x+12 <= gauge.value.position.x,"status title has space before numbers")
   check(gauge.value.position.y+gauge.value.size.y+8 <= gauge.back.position.y,"status numbers stay clear of bar")
@@ -102,7 +97,5 @@ func run()->void:
  screen._finish_playback()
  check(engine.hand.size()==5,"next turn deals five cards")
  screen.close();screen.queue_free()
- print("CUTE CARD LAYOUT FAILURES ",failures)
+ print("CUTE CARD LAYOUT: ",checks," checks; FAILURES ",failures)
  quit(0 if failures==0 else 1)
-
-

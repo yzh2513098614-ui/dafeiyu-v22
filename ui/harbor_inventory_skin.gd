@@ -1,26 +1,16 @@
 extends RefCounted
 ## Original candy-color inventory controls. No reference art is used.
-const INK:=Color("383655")
-const MUTED:=Color("777293")
-const BLUE:=Color("6469df")
-const MINT:=Color("7adcc4")
-const PINK:=Color("f48bb7")
-const GOLD:=Color("ffe071")
+const S=preload("res://ui/candy_skin.gd")
+const INK:=S.INK
+const MUTED:=S.MUTED
+const BLUE:=S.BLUE
+const MINT:=S.MINT
+const PINK:=S.PINK
+const GOLD:=S.GOLD
 const Base=preload("res://ui/handheld_skin.gd")
-static var boxes: Dictionary={}
 
 static func frame(kind: String="shell") -> StyleBoxFlat:
- if boxes.has(kind):return boxes[kind]
- var fills: Dictionary={"shell":"b9b7d1","panel":"d9ddf8","bag":"b6e7e4","chest":"d8ccf3","detail":"e8e4f7","card":"edf0fc","empty":"a5c7d2","selected":"7adcc4","button":"c1cff4","hover":"d7e3ff","pressed":"9faee2","primary":"f48bb7","primary_hover":"ffadd0","primary_pressed":"d96b9d","disabled":"b7b6c7","status":"d2e9ec","dark":"45465f"}
- var s:=StyleBoxFlat.new();s.bg_color=Color(fills.get(kind,"d9ddf8"));s.border_color=INK
- s.set_border_width_all(3);s.set_corner_radius_all(13);s.anti_aliasing=true
- s.content_margin_left=10;s.content_margin_right=10;s.content_margin_top=4;s.content_margin_bottom=4
- if kind=="shell":s.set_border_width_all(5);s.set_corner_radius_all(34);s.shadow_size=12;s.shadow_offset=Vector2(0,8)
- elif kind in ["bag","chest","detail","panel"]:s.set_border_width_all(4);s.set_corner_radius_all(22);s.shadow_size=4;s.shadow_offset=Vector2(0,4)
- elif kind in ["button","primary","hover","primary_hover"]:s.shadow_size=2;s.shadow_offset=Vector2(0,4)
- elif kind=="empty":s.set_border_width_all(2);s.border_color=Color("87a4b5")
- elif kind=="selected":s.set_border_width_all(4)
- s.shadow_color=Color(.14,.12,.25,.22);boxes[kind]=s;return s
+ return S.frame(kind)
 
 static func panel(parent: Node,pos: Vector2,dimensions: Vector2,kind: String="panel") -> Panel:
  var p:=Panel.new();p.position=pos;p.size=dimensions;p.add_theme_stylebox_override("panel",frame(kind));parent.add_child(p)

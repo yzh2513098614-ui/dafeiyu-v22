@@ -41,7 +41,7 @@ func run() -> void:
  var menu=load("res://ui/start_menu.tscn").instantiate();root.add_child(menu);current_scene=menu
  await shot("01_标题菜单")
  check(menu.theme.get_stylebox("normal","Button") is StyleBoxFlat,"menu uses native button skin")
- check(menu.theme.get_stylebox("normal","Button").bg_color==Color("f48bb7"),"handheld pink button skin enabled")
+ check(menu.theme.get_stylebox("normal","Button").bg_color==preload("res://ui/candy_skin.gd").frame("button").bg_color,"menu consumes shared candy buttons")
  for key in ["map","backpack","tasks","chat","shop","music","deck","settings","mail","gift","calendar","shell"]:
   var texture=preload("res://ui/handheld_skin.gd").icon_texture(key)
   check(texture!=null and texture.get_width()==512,"original ocean icon "+key)

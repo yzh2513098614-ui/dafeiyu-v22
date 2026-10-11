@@ -1,33 +1,18 @@
 extends RefCounted
-## Ocean handheld skin, adapted from the independent code-rendered prototype.
-const INK:=Color("403853")
-const MUTED:=Color("756e88")
-const BLUE:=Color("6469df")
-const PINK:=Color("f48bb7")
-const MINT:=Color("7adcc4")
-const GOLD:=Color("ffe071")
-const CREAM:=Color("fff7dd")
-const DARK:=Color("45465f")
-static var styles: Dictionary={}
+## World and dialogue adapter for the shared original candy game UI.
+const S=preload("res://ui/candy_skin.gd")
+const INK:=S.INK
+const MUTED:=S.MUTED
+const BLUE:=S.BLUE
+const PINK:=S.PINK
+const MINT:=S.MINT
+const GOLD:=S.GOLD
+const CREAM:=S.PAPER
+const DARK:=S.DARK
 static var textures: Dictionary={}
 
 static func frame(kind: String="panel") -> StyleBoxFlat:
- if styles.has(kind):return styles[kind]
- var fills={"panel":"d7d8d8","dialogue":"d7d8d8","paper":"fff7dd","sky":"e0f3e9","quote":"7adcc4","status":"ece7ed","button":"f48bb7","hover":"f8a5c8","pressed":"d777a5","disabled":"c9c8cf","selected":"7adcc4","card":"fff7dd","nameplate":"45465f","speaker":"f48bb7","screen":"45465f","primary":"f48bb7"}
- var s:=StyleBoxFlat.new();s.bg_color=Color(fills.get(kind,"d7d8d8"));s.border_color=INK
- s.set_border_width_all(3);s.set_corner_radius_all(14);s.anti_aliasing=true
- s.content_margin_left=12;s.content_margin_right=12;s.content_margin_top=4;s.content_margin_bottom=4
- if kind in ["panel","dialogue"]:
-  s.set_border_width_all(6);s.set_corner_radius_all(28);s.shadow_size=7;s.shadow_offset=Vector2(0,6)
- elif kind in ["nameplate","screen"]:
-  s.set_border_width_all(5);s.border_color=MINT;s.set_corner_radius_all(20);s.shadow_size=5;s.shadow_offset=Vector2(0,4)
- elif kind in ["quote","speaker"]:
-  s.set_border_width_all(4);s.set_corner_radius_all(18);s.shadow_size=4;s.shadow_offset=Vector2(0,4)
- elif kind in ["button","hover","pressed","primary"]:
-  s.set_border_width_all(3);s.shadow_size=2;s.shadow_offset=Vector2(0,4 if kind!="pressed" else 1)
- elif kind=="status":s.set_border_width_all(2);s.set_corner_radius_all(12)
- s.shadow_color=Color(.20,.16,.28,.24)
- styles[kind]=s;return s
+ return S.frame(kind)
 
 static func theme(font: Font) -> Theme:
  var t:=Theme.new();t.default_font=font;t.default_font_size=22
@@ -73,6 +58,4 @@ static func button_icon(button: Button,key: String,side: int=26) -> void:
  button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 static func primary(button: Button) -> void:
- for state in ["normal","hover","pressed"]:button.add_theme_stylebox_override(state,frame("primary" if state=="normal" else state))
- for key in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:button.add_theme_color_override(key,CREAM)
- button.add_theme_color_override("font_outline_color",INK);button.add_theme_constant_override("outline_size",4)
+ S.button(button,true)

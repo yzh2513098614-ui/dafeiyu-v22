@@ -9,7 +9,7 @@
 
 ```powershell
 # 1) 无头逻辑验证 —— 不需要渲染，CI 友好
-& "$env:USERPROFILE\Godot\Godot_v4.7.2-stable_win64.exe" --headless --path . --script res://tools/test_battle.gd
+& "$env:USERPROFILE\Godot\Godot_v4.7.2-stable_win64.exe" --headless --path . --script res://tools/test_battle_rules_cli.gd -- --test-session-ui --test-dialogue
 
 # 2) 需要渲染的截图 / 预览 —— 不能加 --headless
 & "$env:USERPROFILE\Godot\Godot_v4.7.2-stable_win64.exe" --path . --script res://tools/capture_menu.gd
@@ -29,7 +29,9 @@
 
 | 验什么 | 脚本 | 备注 |
 |---|---|---|
-| **战斗引擎规则不变量** | `test_battle.gd` | 500 局 + 6 项定向断言（AP 连携 / 护盾减半 / 束缚跳回合 / 无效指令不消耗回合 / 体力回复封顶 / 存档 id 白名单） |
+| **战斗引擎规则不变量** | `test_battle_rules_cli.gd` → `test_battle.gd` | CLI 入口调用既有 RefCounted 测试；500 局 + 6 项定向断言（AP 连携 / 护盾减半 / 束缚跳回合 / 无效指令不消耗回合 / 体力回复封顶 / 存档 id 白名单） |
+| 糖果色战斗实机 UI | `preview_candy_battle.gd` | 需 `--test-session-ui --test-dialogue`；真实鼠标输入、手牌、补给、胜利、三目标、4:3 与 16:9，输出 `预览/糖果UI全局改造_20261011/` |
+| 已接入界面统一换肤 | `preview_candy_global.gd` | 需 `--test-session-ui --test-dialogue`；标题、出发、HUD、背包、设置、对话和暂停实机截图及输入回归 |
 | **战斗数值体检** | `measure_battle_balance.gd` | 胜率、平均回合、等级探针；配合 `现状不足分析_v22.md` 的语气 |
 | 卡牌排版与字体字形覆盖 | `test_cute_card_layout.gd` | 42 张卡的名称与说明字形 |
 | 战斗表现（命中同步 / 连续攻击 / 同名目标 / 格挡 / 五位数布局） | `test_battle_presentation.gd` | 退出时可能有既有 ObjectDB 清理警告 |
