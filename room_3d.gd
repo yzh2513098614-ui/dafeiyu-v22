@@ -1059,7 +1059,8 @@ func _advance_character_gait(travel: Vector3,delta: float) -> void:
  var planar_distance:=Vector2(travel.x,travel.z).length()
  var walking:=planar_distance/maxf(delta,.00001)>.06
  if walking:
-  gait_phase=fposmod(gait_phase+planar_distance/gait_cycle_distance,1.0)
+  var cycle_distance: float=float(character_manifest.get("cycle_distance_by_direction",{}).get(facing,gait_cycle_distance))
+  gait_phase=fposmod(gait_phase+planar_distance/cycle_distance,1.0)
  _set_character_pose(walking)
 
 func _reset_character_gait() -> void:

@@ -17,6 +17,10 @@
     1152.0
   ],
   "cycle_distance": 1.1,
+  "cycle_distance_by_direction": {
+    "left": 1.5,
+    "right": 1.5
+  },
   "frame_counts": {
     "idle": 1.0,
     "interact": 1.0,

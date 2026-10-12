@@ -144,8 +144,7 @@ func physics(delta: float) -> void:
 	if not game.transitioning and not game.dialog_open and not game.panel.visible and not game.settings_panel.visible and not game.loot.blocked() and not game.map_panel.visible and not blocked():
 		direction+=Vector2(float(Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT)),float(Input.is_physical_key_pressed(KEY_S) or Input.is_physical_key_pressed(KEY_DOWN))-float(Input.is_physical_key_pressed(KEY_W) or Input.is_physical_key_pressed(KEY_UP)))
 	else:direction=Vector2.ZERO
-	var pace: float=game.character_controller.model.speed_multiplier(Input.is_physical_key_pressed(KEY_SHIFT)) if game.character_controller else 1.0
-	var planar: Vector3=game._screen_direction_to_world(direction)*game.SPEED*pace
+	var planar: Vector3=game.character_controller.movement_velocity(direction,delta) if game.character_controller else game._screen_direction_to_world(direction)*game.SPEED
 	game.player.velocity.x=planar.x;game.player.velocity.z=planar.z
 	game.player.velocity.y=0.0 if game.player.is_on_floor() else game.player.velocity.y-18.0*delta
 	game._move_character(delta,true)

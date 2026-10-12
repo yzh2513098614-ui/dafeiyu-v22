@@ -27,6 +27,10 @@ var hud_time:=0.0
 var save_time:=0.0
 var dirty:=false
 var message:="初次探索新的房间，会积累阅历。"
+var dash_remaining:=0.0
+var dash_cooldown:=0.0
+var dash_direction:=Vector3.ZERO
+var dash_step_distance:=0.0
 var portrait_texture: Texture2D
 
 func configure(owner_game) -> void:
@@ -103,9 +107,35 @@ func free_world() -> bool:
  var battle: Variant = game.get("combat_controller")
  return not active and not game.pause_menu.active and not game.dialog_open and not game.loot.blocked() and not game.settings_panel.visible and not game.map_panel.visible and not game.panel.visible and not game.editing and not game.transitioning and not (battle != null and battle.in_battle())
 
+func cancel_dash() -> void:
+ dash_remaining=0.0;dash_step_distance=0.0
+
+func start_dash() -> bool:
+ if not free_world() or dash_remaining>0 or dash_cooldown>0:return false
+ var cost: float=model.balance.rules.dash_stamina_cost
+ if not model.can_sprint() or model.value("stamina")<cost:refresh();return false
+ var direction: Vector2=game.movement+Vector2(float(Input.is_physical_key_pressed(KEY_D) or Input.is_physical_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_physical_key_pressed(KEY_LEFT)),float(Input.is_physical_key_pressed(KEY_S) or Input.is_physical_key_pressed(KEY_DOWN))-float(Input.is_physical_key_pressed(KEY_W) or Input.is_physical_key_pressed(KEY_UP)))
+ if direction.length_squared()<.0001:
+  var facing_vectors: Dictionary={"up":Vector2.UP,"down":Vector2.DOWN,"left":Vector2.LEFT,"right":Vector2.RIGHT,"up_left":Vector2(-1,-1),"up_right":Vector2(1,-1),"down_left":Vector2(-1,1),"down_right":Vector2(1,1)}
+  direction=facing_vectors.get(game.facing,Vector2.DOWN)
+ dash_direction=game._screen_direction_to_world(direction)
+ dash_remaining=float(model.balance.rules.dash_duration);dash_cooldown=float(model.balance.rules.dash_cooldown)
+ model.state.vitals.stamina=model.value("stamina")-cost;dirty=true;refresh();return true
+
+func movement_velocity(direction: Vector2,delta: float) -> Vector3:
+ dash_step_distance=0.0
+ if not free_world():cancel_dash();return Vector3.ZERO
+ if dash_remaining>0:
+  var step: float=minf(delta,dash_remaining)
+  dash_remaining=maxf(0.0,dash_remaining-step)
+  dash_step_distance=float(model.balance.rules.dash_distance)*step/float(model.balance.rules.dash_duration)
+  return dash_direction*dash_step_distance/delta
+ return game._screen_direction_to_world(direction)*game.SPEED*model.speed_multiplier()
+
 func _process(delta: float) -> void:
  if not game:return
- if not free_world():hud.hide();return
+ dash_cooldown=maxf(0.0,dash_cooldown-delta)
+ if not free_world():cancel_dash();hud.hide();return
  hud.show()
  hud_time+=delta;save_time+=delta
  if hud_time>=.15:hud_time=0;refresh()
@@ -118,7 +148,9 @@ func advance(delta: float,before: Vector3) -> void:
  var distance: float=game.player.position.distance_to(before)
  # Tick once per physics step. Rendering frames must not grant idle recovery.
  if distance>2.0:distance=0.0
- model.tick(delta,distance,Input.is_physical_key_pressed(KEY_SHIFT));dirty=true
+ if dash_step_distance>0 and (game.player.position-before).dot(dash_direction)<dash_step_distance*.8:cancel_dash()
+ dash_step_distance=0.0
+ model.tick(delta,distance,false);dirty=true
  if game.zone_id!="" and model.discover(game.location_id+":"+game.zone_id):message="发现了新的地方，阅历增加。"
 
 func refresh() -> void:
@@ -131,8 +163,10 @@ func refresh() -> void:
  level_label.text="大肥鱼  ·  Lv.%d"%int(model.state.level)
  for vital in ["health","stamina","hunger","mood"]:_update_meter("hud_"+vital,vital)
  hud_needs.text="饱食 %d / 100     心情 %d / 100"%[ceili(model.value("hunger")),ceili(model.value("mood"))]
- var sprinting: bool=Input.is_physical_key_pressed(KEY_SHIFT) and model.can_sprint() and Vector2(game.player.velocity.x,game.player.velocity.z).length()>.05
- hud_status.text="冲刺中 ×%.1f · 消耗体力"%float(model.balance.rules.sprint_multiplier) if sprinting else model.status_text()+(" · Shift 冲刺" if model.can_sprint() else "")
+ if dash_remaining>0:hud_status.text="突进中 · 向前冲出一段距离"
+ elif dash_cooldown>0:hud_status.text="突进冷却 %.1f 秒"%dash_cooldown
+ elif not model.can_sprint() or model.value("stamina")<float(model.balance.rules.dash_stamina_cost):hud_status.text="体力不足 · 停下恢复后突进"
+ else:hud_status.text=model.status_text()+" · Shift 突进"
  hud_status.add_theme_color_override("font_color",Color("974154") if model.value("hunger")<=20 else Color("596887"))
  if active:_render()
 
@@ -198,6 +232,8 @@ func unequip(slot: String) -> bool:
 
 func _input(event: InputEvent) -> void:
  if not game:return
+ if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_SHIFT and free_world():
+  start_dash();get_viewport().set_input_as_handled();return
  if active:
   if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode in [KEY_ESCAPE,KEY_C]:
    close();get_viewport().set_input_as_handled()

@@ -108,6 +108,19 @@ func run() -> void:
  var shader_texture: Texture2D=actor.character_material.get_shader_parameter("character_atlas")
  check(shader_texture==(displayed_texture.atlas if displayed_texture is AtlasTexture else displayed_texture),"depth material uses the actual full-frame texture")
  check(actor.frames.get_animation_speed("walk_down")==float(actor.character_manifest.get("walk_fps",8)),"walk frame rate metadata is honored")
+ for direction in actual_order:
+  actor.facing=direction;actor.gait_phase=0.0
+  actor._advance_character_gait(Vector3(.3,0,0),.125)
+  var cycle: float=1.5 if direction in ["left","right"] else actor.gait_cycle_distance
+  check(absf(actor.gait_phase-.3/cycle)<.00001,"distance-driven cadence for "+str(direction))
+  if direction in ["left","right"]:
+   var held: float=actor.gait_phase
+   actor._advance_character_gait(Vector3.ZERO,1.0/60.0)
+   check(actor.gait_phase==held and actor.avatar.animation=="idle_"+str(direction),"slower side walk stops immediately for "+str(direction))
+ actor.facing="left";actor.gait_phase=.37
+ actor._advance_character_gait(Vector3.ZERO,1.0/60.0)
+ actor.facing="right";actor._advance_character_gait(Vector3(.15,0,0),1.0/60.0)
+ check(absf(actor.gait_phase-.47)<.00001,"turning between side directions preserves gait phase")
  actor.player.free();actor.avatar=null;actor.player=null;actor.camera.free();actor.camera=null;actor.free()
  print("CHARACTER CHECKS ",checks," PASSED ",checks-failures," FAILED ",failures)
  quit(0 if failures==0 else 1)
