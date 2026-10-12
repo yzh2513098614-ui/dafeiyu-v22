@@ -39,34 +39,53 @@ func configure(owner_game) -> void:
   if not game.loot.save_state():message="初始补给尚未保存，请使用菜单保存。";dirty=true
  game.loot._bag_count();last_position=game.player.position
  portrait_texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/dialogue/listen_original.png"))
- hud=WhaleStyle.panel(game.district_canvas,Vector2(48,198),Vector2(450,180))
+ hud=WhaleStyle.panel(game.district_canvas,Vector2(48,198),Vector2(450,246))
  level_label=WhaleStyle.label(hud,"",Vector2(14,9),Vector2(263,32),22)
  var status_button:=_button(hud,"C 状态",Vector2(294,8),Vector2(140,36),open);status_button.add_theme_font_size_override("font_size",18)
- _meter(hud,"hud_health","生命",Vector2(14,48),Vector2(421,31),Color("bd6878"))
- _meter(hud,"hud_stamina","体力",Vector2(14,85),Vector2(421,31),Color("609ba4"))
- hud_needs=WhaleStyle.label(hud,"",Vector2(15,124),Vector2(420,23),17,WhaleStyle.MUTED)
- hud_status=WhaleStyle.label(hud,"",Vector2(15,150),Vector2(420,24),17,WhaleStyle.MUTED)
+ _meter(hud,"hud_health","生命",Vector2(16,50),Vector2(418,48),Color("ef829c"))
+ _meter(hud,"hud_stamina","体力",Vector2(16,104),Vector2(418,48),Color("51c6bb"))
+ _meter(hud,"hud_hunger","饱食",Vector2(16,158),Vector2(201,44),Color("e7b85a"))
+ _meter(hud,"hud_mood","心情",Vector2(233,158),Vector2(201,44),Color("ac93e5"))
+ hud_needs=WhaleStyle.label(hud,"",Vector2.ZERO,Vector2.ZERO,17);hud_needs.hide()
+ hud_status=WhaleStyle.label(hud,"",Vector2(16,212),Vector2(418,26),17,Color("4d557a"))
  layer=CanvasLayer.new();layer.layer=45;add_child(layer)
  root=Control.new();root.size=Vector2(1448,1086);root.mouse_filter=Control.MOUSE_FILTER_STOP;root.theme=WhaleStyle.theme(game._game_font());layer.add_child(root)
  UiFit.fill(root)
  var shade:=ColorRect.new();shade.size=root.size;shade.color=Color(.08,.13,.24,.55);root.add_child(shade)
  panel=WhaleStyle.panel(root,Vector2(202,137),Vector2(1044,810));root.hide();refresh()
  UiFit.pin_center(panel,1044,137,810)
+ call_deferred("_layout_world_hud")
+
+func _layout_world_hud() -> void:
+ var next_y:=hud.position.y+hud.size.y+16
+ var combat: Variant=game.get("combat_controller")
+ if combat!=null and combat.entry_button!=null:
+  combat.entry_button.position.y=next_y;next_y+=combat.entry_button.size.y+16
+ var expedition: Variant=game.get("expedition_controller")
+ if expedition!=null and expedition.entry!=null:expedition.entry.position.y=next_y
 
 func _button(parent: Node,text: String,pos: Vector2,dimensions: Vector2,action: Callable) -> Button:
  var button:=Button.new();button.text=text;button.position=pos;button.size=dimensions;button.pressed.connect(action);parent.add_child(button);return button
 
 func _meter(parent: Node,id: String,title: String,pos: Vector2,dimensions: Vector2,color: Color) -> void:
- var track:=ColorRect.new();track.position=pos;track.size=dimensions;track.color=Color("dde5ed");track.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(track)
- var fill:=ColorRect.new();fill.position=Vector2(2,2);fill.size=dimensions-Vector2(4,4);fill.color=color;fill.mouse_filter=Control.MOUSE_FILTER_IGNORE;track.add_child(fill)
- var text:=WhaleStyle.label(track,"",Vector2(10,1),dimensions-Vector2(20,2),18,Color("20324e"));text.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
- meters[id]={"fill":fill,"text":text,"size":dimensions,"title":title}
+ var container:=Control.new();container.position=pos;container.size=dimensions;container.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(container)
+ var caption:=WhaleStyle.label(container,title,Vector2.ZERO,Vector2(dimensions.x*.4,25),18,Color("394364"))
+ caption.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ var text:=WhaleStyle.label(container,"",Vector2(dimensions.x*.4,0),Vector2(dimensions.x*.6,25),18,Color("394364"))
+ text.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;text.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ var track:=ProgressBar.new();track.position=Vector2(0,29);track.size=Vector2(dimensions.x,dimensions.y-29);track.show_percentage=false;track.mouse_filter=Control.MOUSE_FILTER_IGNORE;track.step=0.01;container.add_child(track)
+ var background:=StyleBoxFlat.new();background.bg_color=Color("c6cce5");background.border_color=Color("8992b6");background.set_border_width_all(1);background.set_corner_radius_all(8)
+ var fill:=StyleBoxFlat.new();fill.bg_color=color;fill.border_color=color.darkened(.16);fill.set_border_width_all(1);fill.set_corner_radius_all(8)
+ track.add_theme_stylebox_override("background",background);track.add_theme_stylebox_override("fill",fill)
+ meters[id]={"fill":track,"text":text,"title":title}
 
 func _update_meter(id: String,vital: String) -> void:
  if not meters.has(id):return
  var meter: Dictionary=meters[id]
- meter.fill.size.x=maxf(0,(meter.size.x-4)*model.value(vital)/model.maximum(vital))
- meter.text.text="%s   %d / %d"%[meter.title,ceili(model.value(vital)),int(model.maximum(vital))]
+ meter.fill.max_value=model.maximum(vital);meter.fill.value=model.value(vital)
+ var low: bool=model.value(vital)/model.maximum(vital)<=.2
+ meter.text.text="%d / %d%s"%[ceili(model.value(vital)),int(model.maximum(vital)),"  !" if low else ""]
+ meter.text.add_theme_color_override("font_color",Color("974154") if low else Color("394364"))
 
 func free_world() -> bool:
  var pack: Variant=game.get("pack26_controller")
@@ -103,7 +122,7 @@ func refresh() -> void:
   if seen_level>0:SfxDirector.play("level_up",-1.0)
   seen_level=int(model.state.level)
  level_label.text="大肥鱼  ·  Lv.%d"%int(model.state.level)
- _update_meter("hud_health","health");_update_meter("hud_stamina","stamina")
+ for vital in ["health","stamina","hunger","mood"]:_update_meter("hud_"+vital,vital)
  hud_needs.text="饱食 %d / 100     心情 %d / 100"%[ceili(model.value("hunger")),ceili(model.value("mood"))]
  hud_status.text=model.status_text()
  if active:_render()
@@ -127,13 +146,12 @@ func _render() -> void:
  WhaleStyle.label(heading,"Lv.%d  港口蓝鲸信使  ·  %s"%[int(model.state.level),model.status_text()],Vector2(105,56),Vector2(720,27),18,Color("dbe5ed"))
  _button(heading,"Esc 关闭",Vector2(837,22),Vector2(145,50),close)
  var portrait:=TextureRect.new();portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.texture=portrait_texture;portrait.position=Vector2(32,129);portrait.size=Vector2(322,464);portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;panel.add_child(portrait)
- var vitality: Array=[["health","生命",Color("cd8794")],["stamina","体力",Color("93c3c6")],["hunger","饱食",Color("dac38d")],["mood","心情",Color("b9afd6")]]
+ var vitality: Array=[["health","生命",Color("ef829c")],["stamina","体力",Color("51c6bb")],["hunger","饱食",Color("e7b85a")],["mood","心情",Color("ac93e5")]]
  for i in vitality.size():
   var entry: Array=vitality[i]
   var pos:=Vector2(380+(i%2)*318,143+(i/2)*98)
   var card:=WhaleStyle.panel(panel,pos,Vector2(303,85),"card")
-  WhaleStyle.label(card,entry[1],Vector2(11,8),Vector2(278,28),21)
-  _meter(card,entry[0],entry[1],Vector2(10,43),Vector2(283,29),entry[2]);_update_meter(entry[0],entry[0])
+  _meter(card,entry[0],entry[1],Vector2(12,12),Vector2(279,58),entry[2]);_update_meter(entry[0],entry[0])
  WhaleStyle.label(panel,"基础属性 / 随身加成",Vector2(382,346),Vector2(620,34),24)
  var attributes: Array=model.balance.initial.keys()
  for i in attributes.size():
