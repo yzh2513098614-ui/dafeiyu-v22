@@ -24,8 +24,10 @@ for direction in manifest['atlas_order']:
                 return t*t*(3-2*t)
             head, body, ground = warp['head_end'], warp['body_end'], manifest['ground'][1]/alpha.shape[0]
             width += smooth(head, .585, y)*(1-smooth(.86, .925, y))*(warp['body_width']+warp['skirt_width']*np.exp(-((y-.745)/.085)**2))
-            y += warp['body_extension']*(smooth(head, body, y)-1)+warp['leg_extension']*(smooth(body, ground, y)-1)
+            width += (1-smooth(head-.04, .585, y))*warp.get('head_width', 0)
+            y += warp.get('head_height', 0)*np.minimum(y-head, 0)+warp['body_extension']*(smooth(head, body, y)-1)+warp['leg_extension']*(smooth(body, ground, y)-1)
         height = .056 + (manifest['ground'][1] - y*alpha.shape[0])*density
+        bands[-1][1] = max(bands[-1][1], round(float(height.max())+.025, 4))
         radius = np.abs(xx-manifest['ground'][0])*density*width
         for i, (low, high) in enumerate(bands):
             mask = (height >= low-.025) & (height <= high+.025)
@@ -34,5 +36,5 @@ for direction in manifest['atlas_order']:
 profile = {'source_frames': count, 'alpha_threshold': 64, 'margin': .025,
            'bands': [{'bottom': low, 'top': high, 'radius': round(r+.025, 4)} for (low, high), r in zip(bands, radii) if r > 0]}
 out = ROOT / 'assets/character/collision_profile.json'
-out.write_text(json.dumps(profile, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+out.write_text(json.dumps(profile, ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
 print(json.dumps(profile))

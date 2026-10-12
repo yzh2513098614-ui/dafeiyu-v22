@@ -19,6 +19,12 @@ vec4 character_sample(vec2 uv) {
  return texture(character_atlas,proportion_source_uv(uv),texture_lod_bias);
 }
 void vertex() {
+ // Extend only the top of the card so the enlarged head/antenna cannot clip.
+ // Destination UVs and geometry expand together; the foot row stays fixed.
+ if (proportion_warp_enabled) {
+  VERTEX.y += (1.0-UV.y)*proportion_top_padding*proportion_canvas_height;
+  UV.y = UV.y*(1.0+proportion_top_padding)-proportion_top_padding;
+ }
  vec3 right = normalize(vec3(INV_VIEW_MATRIX[0].x, 0.0, INV_VIEW_MATRIX[0].z));
  vec3 forward = normalize(cross(right, vec3(0.0, 1.0, 0.0)));
  card_right=right;

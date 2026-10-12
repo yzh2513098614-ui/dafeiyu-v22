@@ -21,17 +21,17 @@
     {
       "bottom": 1.35,
       "top": 1.7,
-      "radius": 0.696
+      "radius": 0.7467
     },
     {
       "bottom": 1.7,
       "top": 2.05,
-      "radius": 0.5376
+      "radius": 0.7311
     },
     {
       "bottom": 2.05,
-      "top": 2.45,
-      "radius": 0.3638
+      "top": 2.5218,
+      "radius": 0.4715
     }
   ]
 }
