@@ -377,8 +377,10 @@ func prefs() -> Node:
 
 func _start(resume: bool) -> void:
  if resume and _saved_journey().is_empty():return
+ var loading=preload("res://ui/loading_transition.gd").instance(get_tree())
+ if loading.busy:return
  var pref:=prefs();pref.continue_game=resume;pref.save()
- get_tree().change_scene_to_file("res://district/continuous_world.tscn")
+ loading.change_scene("res://district/continuous_world.tscn","token之国的大肥鱼")
 
 func _saved_journey() -> Dictionary:
  var pref:=prefs()

@@ -111,7 +111,7 @@ func save_session() -> bool:
 func return_to_title() -> void:
  if not save_session():return
  HarborPrefs.continue_game=false
- get_tree().change_scene_to_file("res://ui/start_menu.tscn")
+ preload("res://ui/loading_transition.gd").instance(get_tree()).change_scene("res://ui/start_menu.tscn","标题界面")
 
 func quit_game() -> void:
  if save_session():get_tree().quit()

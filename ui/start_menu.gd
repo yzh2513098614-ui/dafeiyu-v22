@@ -66,6 +66,8 @@ func _settings() -> void:
  feedback=WhaleStyle.label(content,"一天默认 12 分钟，可在游戏设置中调整。",Vector2(29,686),Vector2(542,43),18,WhaleStyle.MUTED)
 
 func _start(resume: bool) -> void:
+ var loading=preload("res://ui/loading_transition.gd").instance(get_tree())
+ if loading.busy:return
  HarborPrefs.continue_game=resume
  HarborPrefs.save()
- get_tree().change_scene_to_file("res://district/continuous_world.tscn")
+ loading.change_scene("res://district/continuous_world.tscn","token之国的大肥鱼")

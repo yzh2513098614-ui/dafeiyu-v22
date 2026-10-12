@@ -183,12 +183,13 @@ func _interact() -> void:
   if ContainerRooms.try_toggle(self):return
  super._interact()
 
-func _travel(target: String,route: String="") -> void:
+func _travel(target: String,route: String="",staged: bool=false) -> void:
  if expedition_controller and expedition_controller.is_active() and target!="research":return
  if combat_controller and combat_controller.in_battle():return
  target={"home_201":"city","street":"city","cafe":"community_1"}.get(target,target)
  if changing or not locations.has(target):return
  changing=true
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.12,"保存房间布置与当前位置")
  if map_interactions:map_interactions.clear()
  if harbor_controller and harbor_controller.is_active():harbor_controller.leave()
  if pack26_controller and pack26_controller.is_active():pack26_controller.leave()
@@ -200,6 +201,7 @@ func _travel(target: String,route: String="") -> void:
  if loot:loot.close()
  if map_panel:map_panel.hide();map_shade.hide()
  _clear_world();floor_mesh.hide()
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.28,"整理场景空间")
  # Shell survives travel; scene-specific contour metadata must not leak into
  # the city or a different floor's placement and save restoration.
  for key in ["floor_layout","layout_revision","floor_contour","floor_contours","room_connections","partition_family","guide_anchor","outdoor_obstacles","walk_clear","supply_anchor","story_look","cafe_look","cafe_windows","harbor_water"]:
@@ -215,6 +217,7 @@ func _travel(target: String,route: String="") -> void:
    pack26_controller=MapPack26.new();add_child(pack26_controller);pack26_controller.configure(self)
   built=pack26_controller.build(data.map_id)
  else:built=ResearchSite.build(self) if data.type=="expedition" else (TrialGround.build(self) if data.type=="trial" else (LifePlaces.build(self,target) if data.type in ["courtyard","salon"] or target=="gallery" else (ContainerRooms.build(self,target) if data.type=="depot" else (CityMap.build(self) if data.type=="city" else WholeFloor.build(self,data)))))
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.64,"布置房间、家具与灯光")
  space_bounds=built.get("bounds",Vector2(44,30));room_zones=built.get("zones",[])
  shell.set_meta("supply_anchor",built.get("supply",Vector3(2,0,1.25)))
  if data.type!="pack26":_restore_room_edits()
@@ -287,6 +290,7 @@ func _travel(target: String,route: String="") -> void:
    var floor_stair_up: Vector3=built.get("stairs_anchor",Vector3(20,0,0))
    _exit(floor_stair_up,prefix+"_"+str(level+1),"上楼 · "+str(level+1)+"F","stairs")
    _stairs_mark(floor_stair_up+Vector3(0,0,-1.5),true)
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.82,"准备入口、楼梯与人物落点")
  player.position=built.get("spawn",Vector3.ZERO)
  # 「回来时从哪道门出现」只对**开放地图**有意义：从公寓出来应该站在公寓门口，
  # 而不是街区正中央。所以这一段现在只在 target=="city" 时生效。
@@ -380,6 +384,7 @@ func _update_view_button() -> void:
  if view_button:view_button.text="Z 跟随人物" if overview_mode else "Z 整图总览"
 
 func _physics_process(delta: float) -> void:
+ if transitioning:return
  if expedition_controller and expedition_controller.blocked():
   player.velocity=Vector3.ZERO;_set_character_pose(false);return
  if combat_controller and combat_controller.in_battle():
@@ -447,6 +452,8 @@ func _refresh_zone() -> void:
   if current!="":visited[location_id+":"+current]=true
 
 func _unhandled_input(event: InputEvent) -> void:
+ if transitioning:
+  get_viewport().set_input_as_handled();return
  if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_E:
   if map_interactions and map_interactions.try_interact():get_viewport().set_input_as_handled();return
  if harbor_controller and harbor_controller.handle_input(event):get_viewport().set_input_as_handled();return

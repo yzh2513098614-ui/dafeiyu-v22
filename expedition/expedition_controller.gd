@@ -78,7 +78,7 @@ func start_run(resume: bool) -> void:
 		if bool(state.run.get("active",false)):state.finish(false)
 		state.new_run(int(Time.get_unix_time_from_system()))
 	running=true;mode="";game.ui.hide()
-	if game.location_id!="research":game._travel("research")
+	if game.location_id!="research":await game.request_travel("research")
 	game.overview_mode=false;game.view_size=27.0;game.camera.size=27
 	_rebuild_nodes()
 	if is_instance_valid(game.dialogue_controller.companion):game.dialogue_controller.companion.hide()
@@ -573,7 +573,7 @@ func pause() -> void:
 	paused_mode=mode;mode="pause";_open_panel("远征暂停",Vector2(780,430))
 	_label(modal,"本局可保存继续，战利品仍需撤离才能获得。",Vector2(30,94),Vector2(720,77),24)
 	_button(modal,"继续远征",Vector2(30,187),Vector2(350,51),_resume_pause)
-	_button(modal,"保存并回到标题",Vector2(400,187),Vector2(350,51),func():if checkpoint_save():get_tree().change_scene_to_file("res://ui/start_menu.tscn"))
+	_button(modal,"保存并回到标题",Vector2(400,187),Vector2(350,51),func():if checkpoint_save():preload("res://ui/loading_transition.gd").instance(get_tree()).change_scene("res://ui/start_menu.tscn","标题界面"))
 	_button(modal,"放弃远征，回收保险物资",Vector2(30,254),Vector2(720,47),func():finish_run(false))
 
 func _resume_pause() -> void:
@@ -582,7 +582,7 @@ func _resume_pause() -> void:
 
 func _return_harbor() -> void:
 	mode="";running=false;root.hide();game.ui.show()
-	if game.location_id=="research":game._travel("city")
+	if game.location_id=="research":game.request_travel("city")
 
 func handle_input(event: InputEvent) -> bool:
 	if not running and mode=="":return false

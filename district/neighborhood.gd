@@ -24,7 +24,6 @@ var route_marker: MeshInstance3D
 var route_card: Panel
 var route_title: Label
 var route_detail: Label
-var transition_cover: ColorRect
 var transitioning:=false
 
 func _ready() -> void:
@@ -67,9 +66,10 @@ func _layout(index: int) -> void:
  if not district_ready:super._layout(index);return
  request_travel(["home_201","street","cafe"][clampi(index,0,2)])
 
-func _travel(target: String,route: String="") -> void:
+func _travel(target: String,route: String="",staged: bool=false) -> void:
  if changing or not locations.has(target):return
  changing=true
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.16,"记住当前位置")
  if district_ready and locations.has(location_id) and not items.is_empty():_remember_room()
  var previous:=location_id;location_id=target;visited[target]=true
  nearest_portal={};portals.clear();closest=null
@@ -99,6 +99,7 @@ func _travel(target: String,route: String="") -> void:
    "roof":_garden(true)
    _:Expansion.build_outdoor(self,location_id)
   if atmosphere:atmosphere.rebuild()
+ if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.78,"准备人物与镜头")
  camera.size=18.6 if data.type in ["street","east_street"] else (13.6 if data.type=="waterfront" else 11.7)
  camera_angle=28;_camera()
  player.position=Vector3(4.2,0,2.4) if data.type=="room" else Vector3(1.3,0,1.5)
@@ -407,9 +408,6 @@ func _navigation_ui() -> void:
  var cancel:=_button("×",Vector2(313,11),Vector2(36,34),route_card,func():set_route(""));cancel.add_theme_stylebox_override("normal",_flat(Color("e1ebea"),8))
  route_marker=MeshInstance3D.new();var ring:=TorusMesh.new();ring.inner_radius=.28;ring.outer_radius=.36;ring.rings=32;ring.ring_segments=8;route_marker.mesh=ring
  var material:=StandardMaterial3D.new();material.albedo_color=Color("86d5d3");material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED;route_marker.material_override=material;route_marker.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF;add_child(route_marker);route_marker.hide()
- var layer:=CanvasLayer.new();layer.layer=40;add_child(layer)
- transition_cover=ColorRect.new();transition_cover.size=Vector2(1448,1086);transition_cover.color=Color("192f40");transition_cover.mouse_filter=Control.MOUSE_FILTER_STOP;layer.add_child(transition_cover);transition_cover.hide()
- UiFit.fill(transition_cover)
 
 func find_route(start: String,destination: String) -> Array:
  if not locations.has(start) or not locations.has(destination):return []
@@ -452,15 +450,15 @@ func _route_frame(free_ui: bool) -> void:
 
 func request_travel(target: String,route: String="") -> void:
  if transitioning or not locations.has(target):return
+ if combat_controller and combat_controller.in_battle():return
+ var expedition=get("expedition_controller")
+ if expedition and expedition.is_active() and target!="research":return
+ var loading=preload("res://ui/loading_transition.gd").instance(get_tree())
+ if not loading.begin(str(locations[target].name)):return
  transitioning=true;player.velocity=Vector3.ZERO;avatar.play("idle_"+facing)
  SfxDirector.play("door",-4.0)
- if not transition_cover:
-  _travel(target,route);transitioning=false;return
- transition_cover.modulate.a=0;transition_cover.show()
- var fade_out:=create_tween();fade_out.tween_property(transition_cover,"modulate:a",1.0,.12)
- await fade_out.finished
- _travel(target,route)
- await get_tree().process_frame
- var fade_in:=create_tween();fade_in.tween_property(transition_cover,"modulate:a",0.0,.18)
- await fade_in.finished
- transition_cover.hide();transitioning=false
+ await loading.reveal()
+ await _travel(target,route,true)
+ await loading.checkpoint(.95,"准备场景交互")
+ await loading.finish()
+ transitioning=false
