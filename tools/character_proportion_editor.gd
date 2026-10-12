@@ -17,14 +17,14 @@ const CollisionBuilder = preload("res://tools/editor_collision_profile.gd")
 @export var keep_original_height: bool = true
 @export_range(0.0,0.30,0.005) var head_height: float = 0.18
 @export_range(-0.01,0.06,0.001) var body_extension: float = 0.022
-## Used when Keep Original Height is disabled.
+## 仅在关闭 Keep Original Height 时使用。开启时实际值 = max(0, 0.4 * Head Height + Body Extension - 0.03)。
 @export_range(0.0,0.09,0.001) var crown_compression: float = 0.064
 @export_group("预览")
 @export var animate_walk: bool = false
 @export_range(0,11,1) var frame_index: int = 3
 @export_tool_button("读取游戏参数", "Reload") var reload_action = load_game_parameters
 @export_tool_button("保存到游戏（含碰撞轮廓）", "Save") var save_action = save_to_game
-@export_multiline var status: String = "选择根节点调参数；中间为实时效果，左右为参照。保存到游戏后重新运行游戏。"
+@export_multiline var status: String = "拖动参数后自动同步游戏比例；满意后点保存更新碰撞轮廓。查看相机效果需选 PreviewCamera 并勾选视口的预览。"
 
 var manifest: Dictionary
 var last_profile: Dictionary = {}
@@ -40,7 +40,7 @@ func _manifest_path() -> String:
 func _ready() -> void:
  source_text=FileAccess.get_file_as_string(_manifest_path())
  manifest=JSON.parse_string(source_text)
- $PreviewCamera.look_at(Vector3(0,1.2,0))
+ _align_preview_camera()
  _refresh()
  if not Engine.is_editor_hint():load_game_parameters()
  if Engine.is_editor_hint():print("CHARACTER PROPORTION EDITOR READY: Inspector controls active")
@@ -54,6 +54,7 @@ func profile() -> Dictionary:
 
 func _process(delta: float) -> void:
  if manifest.is_empty():return
+ _align_preview_camera()
  if not Engine.is_editor_hint():
   sync_clock+=delta
   if sync_clock>=.5:
@@ -63,7 +64,35 @@ func _process(delta: float) -> void:
   clock+=delta
   frame_index=int(clock*8.0)%12
  var config:=profile()
+ if Engine.is_editor_hint():sync_editor_changes(config,delta)
  if config!=last_profile or frame_index!=last_frame:_refresh()
+
+func _align_preview_camera() -> void:
+ # Match the world's elevation; yaw stays zero to keep the three comparisons aligned.
+ var target:=Vector3(0,1.2,0)
+ var world_axis:=Vector3(sin(deg_to_rad(28.0))*76.0,50.08,cos(deg_to_rad(28.0))*76.0-.04)
+ var position:=target+Vector3(0,world_axis.y,Vector2(world_axis.x,world_axis.z).length()).normalized()*10.0
+ if $PreviewCamera.position!=position:
+  $PreviewCamera.position=position
+  $PreviewCamera.look_at(target)
+  if Engine.is_editor_hint():print("CHARACTER PREVIEW CAMERA UPDATED: game elevation ~33.4 degrees")
+
+func sync_editor_changes(config: Dictionary,delta: float) -> void:
+ # Metadata survives editor script hot reload, including already open scene instances.
+ if not has_meta("proportion_last_edit"):
+  set_meta("proportion_last_edit",config.duplicate(true))
+  return
+ if config!=get_meta("proportion_last_edit"):
+  set_meta("proportion_last_edit",config.duplicate(true))
+  set_meta("proportion_pending_edit",true)
+  set_meta("proportion_edit_delay",.3)
+ if not get_meta("proportion_pending_edit",false) or saving:return
+ var delay:=float(get_meta("proportion_edit_delay",.3))-delta
+ set_meta("proportion_edit_delay",delay)
+ if delay>0.0:return
+ _write_profile(_manifest_path())
+ set_meta("proportion_pending_edit",false)
+ status="比例已自动写入游戏，约 0.5 秒内同步；满意后点保存更新碰撞轮廓。头顶实际压缩量：%.3f" % float(config.crown_compression)
 
 func _refresh() -> void:
  if manifest.is_empty() or not is_node_ready():return
@@ -109,6 +138,13 @@ func save_to_game() -> void:
 func save_parameters(manifest_path: String,collision_path: String) -> void:
  if saving:return
  saving=true;status="正在保存参数并更新碰撞轮廓…"
+ var current:=_write_profile(manifest_path)
+ var collision: Dictionary=await CollisionBuilder.build(current,get_tree())
+ var file:=FileAccess.open(collision_path,FileAccess.WRITE);file.store_string(JSON.stringify(collision,"  ",false)+"\n");file.close()
+ manifest=current;saving=false;status="已保存。正在运行的游戏和 F6 预览会自动同步参数；碰撞轮廓已更新。"
+ print(status)
+
+func _write_profile(manifest_path: String) -> Dictionary:
  var text:=FileAccess.get_file_as_string(manifest_path)
  var current: Dictionary=JSON.parse_string(text)
  var config: Dictionary=current.proportion_warp_by_direction.down
@@ -120,7 +156,6 @@ func save_parameters(manifest_path: String,collision_path: String) -> void:
  var file:=FileAccess.open(manifest_path,FileAccess.WRITE)
  file.store_string(text.substr(0,match_result.get_start(1))+block+text.substr(match_result.get_end(1)));file.close()
  current.proportion_warp_by_direction.down=config
- var collision: Dictionary=await CollisionBuilder.build(current,get_tree())
- file=FileAccess.open(collision_path,FileAccess.WRITE);file.store_string(JSON.stringify(collision,"  ",false)+"\n");file.close()
- manifest=current;saving=false;status="已保存。正在运行的游戏和 F6 预览会自动同步参数；碰撞轮廓已更新。"
- print(status)
+ source_text=FileAccess.get_file_as_string(manifest_path)
+ manifest=current
+ return current

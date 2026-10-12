@@ -45,7 +45,13 @@ func run() -> void:
  editor.set_meta("proportion_collision_path",OUT+"collision_test.json")
  editor.head_width=.30;viewport.add_child(editor)
  check(is_equal_approx(editor.head_width,old_width),"F6 startup reads saved game profile instead of stale scene values")
+ check(is_equal_approx(-editor.get_node("PreviewCamera").global_basis.z.normalized().y,-game.camera.global_basis.z.normalized().y),"preview camera matches production elevation")
+ editor.sync_editor_changes(editor.profile(),0.0)
  editor.head_width=old_width+.12
+ editor.sync_editor_changes(editor.profile(),.4)
+ await create_timer(.8).timeout
+ check(is_equal_approx(float(game.character_material.get_shader_parameter("proportion_head_width")),old_width+.12),"Inspector edit auto-syncs to running production character before save button")
+ check(FileAccess.get_file_as_string(OUT+"collision_test.json")==original_collision,"automatic visual tuning keeps collision rebuild on explicit save")
  await editor.save_to_game()
  await create_timer(.8).timeout
  check(is_equal_approx(float(game.character_material.get_shader_parameter("proportion_head_width")),old_width+.12),"editor save updates already running production character")
