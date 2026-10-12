@@ -429,13 +429,15 @@
       "head_end": 0.5,
       "head_height": 0.18,
       "head_width": 0.18,
+      "crown_compression": 0.064,
+      "head_drop": 0.035,
       "top_padding": 0.04,
       "body_end": 0.82,
-      "body_extension": 0.03,
+      "body_extension": 0.022,
       "leg_extension": 0.008,
       "body_width": 0.18,
       "skirt_width": 0.06,
-      "method": "continuous full-picture UV remap, head enlarged 18 percent in width and height with smooth shoulder transition, locally wider upper body, padded upper canvas and fixed original foot row; original RGBA images unchanged"
+      "method": "continuous full-picture UV remap, unchanged head width and total height, compressed crown with head extended downwards and shorter body, smooth shoulder transition and fixed original foot row; original RGBA images unchanged"
     }
   },
   "palette_match_by_direction": {

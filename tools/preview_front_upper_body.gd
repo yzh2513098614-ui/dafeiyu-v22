@@ -1,6 +1,6 @@
 extends SceneTree
 ## Production renderer, isolated saves, fixed camera and silent audio.
-const OUT := "res://预览/正面头身比例_20261012/"
+const OUT := "res://预览/正面头部下拉_20261012/"
 var game
 var failures := 0
 var checks := 0
@@ -32,7 +32,7 @@ func run() -> void:
  var before_only := "--before-only" in OS.get_cmdline_user_args()
  if before_only:
   var front: Dictionary=game.character_manifest.proportion_warp_by_direction.down
-  front.head_height=0.0;front.head_width=0.0;front.top_padding=0.0;front.body_width=0.12
+  front.head_height=0.0;front.head_width=0.0;front.crown_compression=0.0;front.head_drop=0.0;front.top_padding=0.0;front.body_width=0.12;front.body_extension=.03
  for i in 12:await process_frame
  game.dialogue_controller.close();game.atmosphere.set_process(false);game.atmosphere.set_effects(false);game.atmosphere.set_time(12)
  for child in game.get_children():

@@ -25,7 +25,7 @@ for direction in manifest['atlas_order']:
             head, body, ground = warp['head_end'], warp['body_end'], manifest['ground'][1]/alpha.shape[0]
             width += smooth(head, .585, y)*(1-smooth(.86, .925, y))*(warp['body_width']+warp['skirt_width']*np.exp(-((y-.745)/.085)**2))
             width += (1-smooth(head-.04, .585, y))*warp.get('head_width', 0)
-            y += warp.get('head_height', 0)*np.minimum(y-head, 0)+warp['body_extension']*(smooth(head, body, y)-1)+warp['leg_extension']*(smooth(body, ground, y)-1)
+            y += warp.get('head_height', 0)*np.minimum(y-head, 0)+warp.get('crown_compression', 0)*(1-smooth(.12, .38, y))+warp.get('head_drop', 0)*smooth(.20, .53, y)*(1-smooth(.53, body, y))+warp['body_extension']*(smooth(head, body, y)-1)+warp['leg_extension']*(smooth(body, ground, y)-1)
         height = .056 + (manifest['ground'][1] - y*alpha.shape[0])*density
         bands[-1][1] = max(bands[-1][1], round(float(height.max())+.025, 4))
         radius = np.abs(xx-manifest['ground'][0])*density*width

@@ -69,7 +69,9 @@
 | `check_safe_matte.gd` | 斜左下无损去白 | `预览/斜左下无损去白_20261004/` |
 | `check_diagonal_palette.gd` | 斜后方向校色 | `预览/斜后方向校色_20261010/` |
 | `check_front_proportions.gd` | 正面比例校正 | `预览/正面比例校正_20261010/` |
-| `preview_front_upper_body.gd` | 正面头部与上半身局部放大，25 项运行检查 | `预览/正面头身比例_20261012/`；`--test-merge --capture-ui --capture-dialogue --test-life-ui` |
+| `preview_front_upper_body.gd` | 正面头部下拉与身体压短，25 项运行检查 | `预览/正面头部下拉_20261012/`；`--test-merge --capture-ui --capture-dialogue --test-life-ui` |
+| `character_proportion_editor.tscn` | Godot 编辑器内实时调人物比例，保存到游戏 | 操作见 `00_人物比例编辑器_v22.md` |
+| `check_proportion_editor.gd` | 验证实时调参、逐帧预览、保存与原生碰撞更新 | `预览/人物编辑器调参_20261012/` |
 | `check_up_right_mirror.gd` | 右上镜像替换 | `预览/右上镜像替换_20261010/` |
 | `check_up_left_video.gd` | 左上视频帧接入 | 隔离设置与存档 |
 | `check_character_scene_light.gd` | 环境受光（GPU） | `预览/人物环境受光_v22_20261004/` |
