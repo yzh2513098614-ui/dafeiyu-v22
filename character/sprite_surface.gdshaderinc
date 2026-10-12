@@ -8,6 +8,11 @@ uniform vec2 head_split=vec2(.47,.60);
 uniform vec2 hair_split=vec2(.56,.67);
 uniform vec2 tail_split=vec2(.62,.71);
 uniform float surface_strength : hint_range(0.0,1.0)=.70;
+// Per-frame linear lighting data: RGB normal, alpha inward edge vignette.
+uniform sampler2D edge_surface_map : filter_linear_mipmap, repeat_disable;
+uniform bool edge_surface_enabled=false;
+uniform float edge_surface_strength : hint_range(0.0,2.0)=0.0;
+uniform float edge_vignette_strength : hint_range(0.0,0.5)=0.0;
 varying vec3 card_right;
 varying vec3 card_forward;
 varying float hair_satin;
@@ -28,6 +33,10 @@ vec3 character_surface_normal(vec2 uv,vec3 pigment,vec2 alpha_slope) {
  // The drawing owns eyes, nose and lace detail. Only a soft surface light is added.
  slope*=mix(1.0,.45,skin);
  slope+=vec2(-alpha_slope.x,alpha_slope.y)*.09;
+ if (edge_surface_enabled) {
+  vec3 edge_normal=texture(edge_surface_map,uv).rgb*2.0-1.0;
+  slope+=edge_normal.xy/max(edge_normal.z,.25)*edge_surface_strength;
+ }
  return normalize(vec3(slope*surface_strength,1.0));
 }
 

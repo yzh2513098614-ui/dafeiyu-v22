@@ -1,0 +1,210 @@
+[
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_00.png",
+    "sha256": "736495c3a0ea59450e2b7cc5ea8a6148ff95f680310f47adfd083b0acbbcae31"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_00.png",
+    "sha256": "0a8f22fbc023a1edb43cee29efa02de13d09a17014c821660f778b4ec7fa254c"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_01.png",
+    "sha256": "1a82712217c05ac58797dfcec9a52f242f2da4d2c444f74087bd6127fd495e4a"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_01.png",
+    "sha256": "b0b777c401f752cfa9a5c51ad54399565dda8242c256cb038705b166149308c6"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_02.png",
+    "sha256": "a9bf7e95db564fc7e9c5a9ede7c23caa33f6a7f73a1c62325585b9cc8624d3ae"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_02.png",
+    "sha256": "0c5d5333cc89e3acab823b5ddf45d9107fd11b72b90f58e4e772cd0ff0532d68"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_03.png",
+    "sha256": "c6ce1007ea94c654eaec94eecb8b057e612dbb70d4969e19276e8b0f03163388"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_03.png",
+    "sha256": "ae691def1238a6cd7294e921a8cc1c100cb43ee7d8a099aafb182d7f6b584a34"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_04.png",
+    "sha256": "a5e233ba6c766febfd24f8f0069376642726a6fabe7b19482840d4139b90d099"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_04.png",
+    "sha256": "6b01b06ead643378a3e028833f8ab5cf5ae57f684f545a28d749d33b64f246e4"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_05.png",
+    "sha256": "1e5f4e5a1769ddd061bd089b40c3702e655a942e9ed2dd9c8f77259b2b291816"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_05.png",
+    "sha256": "8296a2a001cd101afe67291bfa61fdd282709b8c82fb158ec725c7e06c1d45ab"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_06.png",
+    "sha256": "236c5a6af865f19c2c7fad9eccfb2763670b256835e8dc6697eed75236afb1d5"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_06.png",
+    "sha256": "402dae895f9ec5a50fe6fc38ecb7e19a7329776b2bde8542a9c2a6b08bd6c020"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_07.png",
+    "sha256": "c088319229aec894b1f071e96080cb53022a7f7986e6e3b6151d0a8b5cc410c0"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_07.png",
+    "sha256": "10ea1da3529283f9480e9cc1163d08447506dced77a6ee24097e1a5db0f678f9"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_08.png",
+    "sha256": "2bcc2041f0f185f712df523fe34f5caf6c5d1f40446e2cafcc6f32070ca30590"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_08.png",
+    "sha256": "54335d54c5e08bdbef511cc52398245681bb03cc132a3d742e9c3cc01d915849"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_09.png",
+    "sha256": "1d29ee4b529319baf80c6ec7c66b51a27e7af440c1f82c0581e7551eba53e760"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_09.png",
+    "sha256": "d8b6d81cf6b131188c503a71e31a1e9da80e261e4302f11f2de66bf228b1e555"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_10.png",
+    "sha256": "1f799fe5e0463c13259b15eb3ef9bcf9a91e44d1d9bc00454e4a1e13ee907d0b"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_10.png",
+    "sha256": "74bda7c74c785baa52b8d59ceca39614e37f480b0d14fef98c4cc193884086b0"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_11.png",
+    "sha256": "3973c6786fa25fff598fa119d78f1b9719d70ad300b3c48936df9232543be933"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_11.png",
+    "sha256": "a36f8036f95f7265f0c46707e5e747213e7f3547e494a8aeaaf0efe8e8ef2621"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_12.png",
+    "sha256": "d588abcb1568ed381ded848511a931d20b4db60a877cfde6478bf503600a3b78"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_12.png",
+    "sha256": "38d174d993c44931865665603bb3d445e7670dc4eebf075823700401dc383455"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_13.png",
+    "sha256": "db97f8e1f8fd97dd65211d5eb0808a1e3b50ee0e29853c5a12d019b0cfa68f76"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_13.png",
+    "sha256": "c366ac995ef72fa3bc86f841e3f86685ab6f9adad780cc94875be61fc77a1c96"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_14.png",
+    "sha256": "f30996bd895dcb4d2eb13fd06caaca631ad1509154b7ff3ac08364bda427fb14"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_14.png",
+    "sha256": "a161eb92944effc217e9347fc7a984d13f4d6f5f48a17d0d071f996b73e9982b"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_15.png",
+    "sha256": "d7eeadc892f2a795a5ce2de6aca00af8e052e13be382b6f2477b4477a3e7cab5"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_15.png",
+    "sha256": "62d29b34b223d4c23ac05e30fc155d7c672d1e93510883491eb672efbaffa1df"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_16.png",
+    "sha256": "e47f1dff26b3d8a260c3756fbab89ae4df08a9c2da95692f197c0e7be8695f68"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_16.png",
+    "sha256": "9fa01e6e380b57aece6dc0126bc373e308c29ab1cf07e9c39ce299f6dd0f0ca7"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_17.png",
+    "sha256": "8a0bd9a89c2439eec0c5b56a141f44c5cf27f68d1825edefe47a57828256eb7a"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_17.png",
+    "sha256": "07cebebdbdbd3dd389da645f4bd14277d7874091a36070341e815aaf53357fda"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_18.png",
+    "sha256": "7b563787050abb5b0dfbba21802e02c087a9c1a6dbc0ffb89070e58d564a8469"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_18.png",
+    "sha256": "50892c7062b15048318d3b80e07207dd487ea85aec43e641216d3eff677a53f3"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_19.png",
+    "sha256": "97cc207e59f7728a62ad110374c588a791fb76e84a7656d6c001d52102b762d8"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_19.png",
+    "sha256": "1c8ff5824d4dfef2e5c05e3d01ae3f36fd79644157cc9cccc02d9b24c1a05481"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_20.png",
+    "sha256": "f8df40349dd721c0547888ba83ce05e7f0eefdcd4b8bc11b3740c6669f512799"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_20.png",
+    "sha256": "257ea73f07ace2b6e29fe0fe25e93167174595c6fa41c071685302966d407ded"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_21.png",
+    "sha256": "0bbcf6cb6c3c78e84acf84e828be5d67137e64f56289319d9616e89927933ec2"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_21.png",
+    "sha256": "364fc5d2f8a7796ad051b704956ebd04cdbc18e8d7a817e8769c8ca4459aca42"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_22.png",
+    "sha256": "fbbeca9f843e3e5e939fe61f046f619ff7e67a51a79f6135e61593f4a3c4b406"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_22.png",
+    "sha256": "a4df6f6e68322f82baff7a495e08977c70353988cf9617163b33b8ae8e844b52"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_23.png",
+    "sha256": "21f05d6d7511065ea00bf4797d6ac865c2a43a9d8bec129cce2df53cccd38baa"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_23.png",
+    "sha256": "f92c24eb42fa9c8111f51669cef494c2cfcc79344e7267762b2a6d22789efee9"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_24.png",
+    "sha256": "9aee7d46b733abc5663745bef1f932574456f06d376e46ae0c7fa02f1ddc147e"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_24.png",
+    "sha256": "72dde6d496450a66bb5206c2d31ac4312cd080074c874f78e2caf619e88f6cf6"
+  },
+  {
+    "path": "res://assets/character/up_left_video_20261010/walk_25.png",
+    "sha256": "800d79c40d6b4ae56853d8a045b72db32ead51cbd2312460ad94e943dd8c536d"
+  },
+  {
+    "path": "res://assets/character/up_right_mirror_20261010/walk_25.png",
+    "sha256": "7fa1f4d118f12fac2a92410d25881e5fd56189ece57b39a7ca25b09a194e5ffd"
+  }
+]

@@ -315,7 +315,37 @@
       "tail_split": [
         0.8,
         0.85
-      ]
+      ],
+      "edge_surface_maps": [
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_00.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_01.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_02.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_03.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_04.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_05.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_06.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_07.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_08.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_09.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_10.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_11.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_12.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_13.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_14.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_15.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_16.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_17.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_18.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_19.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_20.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_21.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_22.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_23.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_24.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_left_25.png"
+      ],
+      "edge_surface_strength": 1.0,
+      "edge_vignette_strength": 0.24
     },
     "up_right": {
       "head": [
@@ -353,7 +383,37 @@
       "tail_split": [
         0.8,
         0.85
-      ]
+      ],
+      "edge_surface_maps": [
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_00.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_01.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_02.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_03.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_04.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_05.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_06.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_07.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_08.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_09.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_10.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_11.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_12.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_13.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_14.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_15.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_16.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_17.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_18.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_19.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_20.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_21.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_22.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_23.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_24.png",
+        "res://assets/character/diagonal_edge_surface_20261012/up_right_25.png"
+      ],
+      "edge_surface_strength": 1.0,
+      "edge_vignette_strength": 0.24
     }
   },
   "mirrored_directions": {

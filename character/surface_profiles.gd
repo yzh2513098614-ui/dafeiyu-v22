@@ -12,7 +12,9 @@ const PROFILES: Dictionary={
 	"down_right": [Vector4(.53,.32,.225,.19),Vector4(.54,.63,.22,.17),Vector4(.24,.76,.16,.14),Vector4(.595,.43,.11,.08)]
 }
 
-static func apply(material: ShaderMaterial,direction: String,override_profile: Dictionary={}) -> void:
+static var edge_maps: Dictionary={}
+
+static func apply(material: ShaderMaterial,direction: String,override_profile: Dictionary={},frame_index: int=0,walking: bool=false) -> void:
 	var profile: Array=PROFILES[direction]
 	material.set_shader_parameter("head_profile",profile[0])
 	material.set_shader_parameter("body_profile",profile[1])
@@ -28,3 +30,12 @@ static func apply(material: ShaderMaterial,direction: String,override_profile: D
 		var default_split: Array={"head_split":[.47,.60],"hair_split":[.56,.67],"tail_split":[.62,.71]}[key]
 		var split: Array=override_profile.get(key,default_split)
 		material.set_shader_parameter(key,Vector2(split[0],split[1]))
+	var maps: Array=override_profile.get("edge_surface_maps",[])
+	material.set_shader_parameter("edge_surface_enabled",not maps.is_empty())
+	material.set_shader_parameter("edge_surface_strength",override_profile.get("edge_surface_strength",0.0))
+	material.set_shader_parameter("edge_vignette_strength",override_profile.get("edge_vignette_strength",0.0))
+	if not maps.is_empty():
+		# Idle/interact use source walk_09, while walk uses every full video frame.
+		var path: String=maps[frame_index if walking else 9]
+		if not edge_maps.has(path):edge_maps[path]=load(path)
+		material.set_shader_parameter("edge_surface_map",edge_maps[path])

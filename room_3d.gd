@@ -1095,7 +1095,7 @@ func _update_character_material() -> void:
   character_material.set_shader_parameter("original_shift", float(repair.shift))
  # Scene lights and shadows drive brightness; do not multiply a dusk preset.
  character_material.set_shader_parameter("character_tint",Vector3.ONE)
- CharacterSurface.apply(character_material,facing,character_manifest.get("surface_profiles_by_direction",{}).get(facing,{}))
+ CharacterSurface.apply(character_material,facing,character_manifest.get("surface_profiles_by_direction",{}).get(facing,{}),avatar.frame,avatar.animation.begins_with("walk_"))
  CharacterProportions.apply(character_material,facing,character_manifest)
  CharacterPalette.apply(character_material,facing,character_manifest)
  # The drawing owns the small hip bob. The world root and billboard offset

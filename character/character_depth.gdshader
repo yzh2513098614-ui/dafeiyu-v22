@@ -71,6 +71,10 @@ void fragment() {
   paint = edge_ink_paint(paint,source_uv/texel,border_alpha);
  }
  paint.rgb = matched_character_pigment(source_uv,paint.rgb);
+ // Darken inside the authored silhouette; coverage and the foot pivot stay native.
+ if (edge_surface_enabled) {
+  paint.rgb *= 1.0-texture(edge_surface_map,source_uv).a*edge_vignette_strength;
+ }
  // A soft blue-grey outer rim separates the drawing from the floor. Only
  // cleaned, solid alpha creates it; pale discarded matte cannot come back.
  vec2 contour_step = max(texel,contour_pixel) * soft_contour_width;
