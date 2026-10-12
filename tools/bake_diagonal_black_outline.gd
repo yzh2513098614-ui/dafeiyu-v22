@@ -2,8 +2,10 @@ extends SceneTree
 ## Deterministic native-frame ink pass. Alpha, pose and registration stay exact.
 const OUTPUT="res://assets/character/diagonal_black_outline_20261013/"
 const SOURCES={"up_left":"res://assets/character/up_left_video_20261010/","up_right":"res://assets/character/up_right_mirror_20261010/"}
-const CORE:=5.0
-const WIDTH:=7.0
+const CORE:=1.25
+const WIDTH:=3.25
+const INK_RGB:=[16,24,52]
+const INK_STRENGTH:=0.90
 const DIAGONAL:=1.41421356
 var records: Array=[]
 
@@ -24,12 +26,11 @@ func ink_frame(source: Image) -> Image:
    var p:=y*w+x
    distance[p]=minf(distance[p],minf(minf(distance[p+1]+1.0,distance[p+w]+1.0),minf(distance[p+w-1]+DIAGONAL,distance[p+w+1]+DIAGONAL)))
  var changed:=0;var alpha_changed:=0;var interior_changed:=0
- var ink_values=[6,7,10]
  for p in w*h:
   if original[p*4+3]==0 or distance[p]>=WIDTH:continue
-  var strength:=1.0-smoothstep(CORE,WIDTH,distance[p])
+  var strength:=(1.0-smoothstep(CORE,WIDTH,distance[p]))*INK_STRENGTH
   for channel in 3:
-   pixels[p*4+channel]=roundi(lerpf(original[p*4+channel],ink_values[channel],strength))
+   pixels[p*4+channel]=roundi(lerpf(original[p*4+channel],INK_RGB[channel],strength))
   changed+=1
  for p in w*h:
   if pixels[p*4+3]!=original[p*4+3]:alpha_changed+=1
@@ -39,8 +40,11 @@ func ink_frame(source: Image) -> Image:
  return Image.create_from_data(w,h,false,Image.FORMAT_RGBA8,pixels)
 
 func write_import(path: String,source_path: String) -> void:
- var config:=ConfigFile.new();config.load(source_path+".import")
- config.erase_section_key("remap","uid")
+ var config:=ConfigFile.new()
+ if FileAccess.file_exists(path+".import"):
+  config.load(path+".import")
+ else:
+  config.load(source_path+".import");config.erase_section_key("remap","uid")
  var cached: String="res://.godot/imported/"+path.get_file()+"-"+path.md5_text()+".ctex"
  config.set_value("remap","path",cached)
  config.set_value("deps","source_file",path);config.set_value("deps","dest_files",PackedStringArray([cached]))
@@ -68,6 +72,6 @@ func bake() -> void:
  text=text.replace('"contour_strength": 0.58','"contour_strength": 0.12').replace('"contour_width": 1.8','"contour_width": 0.8')
  var file:=FileAccess.open("res://assets/character/manifest.json",FileAccess.WRITE);file.store_string(text);file.close()
  file=FileAccess.open(OUTPUT+"bake_report.json",FileAccess.WRITE)
- file.store_string(JSON.stringify({"method":"native alpha inward ink, 5 pixel core plus 2 pixel transition, original alpha and interior RGB preserved, exact horizontal mirror","ink_rgb":[6,7,10],"frames":records},"  ")+"\n");file.close()
+ file.store_string(JSON.stringify({"method":"native alpha inward navy ink sampled from other directions; original alpha and interior RGB preserved; exact horizontal mirror","ink_rgb":INK_RGB,"core_pixels":CORE,"width_pixels":WIDTH,"ink_strength":INK_STRENGTH,"frames":records},"  ")+"\n");file.close()
  print("BLACK INK BAKE: 52 complete frames; 26 alpha/interior checks and exact mirror checks passed")
  quit()

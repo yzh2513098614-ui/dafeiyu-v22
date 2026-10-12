@@ -1,8 +1,9 @@
 {
+  "core_pixels": 1.25,
   "frames": [
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22596,
+      "changed_boundary_pixels": 14620,
       "frame": 0,
       "interior_changed": 0,
       "source_left_sha256": "736495c3a0ea59450e2b7cc5ea8a6148ff95f680310f47adfd083b0acbbcae31",
@@ -10,7 +11,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22166,
+      "changed_boundary_pixels": 14143,
       "frame": 1,
       "interior_changed": 0,
       "source_left_sha256": "1a82712217c05ac58797dfcec9a52f242f2da4d2c444f74087bd6127fd495e4a",
@@ -18,7 +19,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22428,
+      "changed_boundary_pixels": 14464,
       "frame": 2,
       "interior_changed": 0,
       "source_left_sha256": "a9bf7e95db564fc7e9c5a9ede7c23caa33f6a7f73a1c62325585b9cc8624d3ae",
@@ -26,7 +27,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22273,
+      "changed_boundary_pixels": 14298,
       "frame": 3,
       "interior_changed": 0,
       "source_left_sha256": "c6ce1007ea94c654eaec94eecb8b057e612dbb70d4969e19276e8b0f03163388",
@@ -34,7 +35,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21937,
+      "changed_boundary_pixels": 14116,
       "frame": 4,
       "interior_changed": 0,
       "source_left_sha256": "a5e233ba6c766febfd24f8f0069376642726a6fabe7b19482840d4139b90d099",
@@ -42,7 +43,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 20661,
+      "changed_boundary_pixels": 13243,
       "frame": 5,
       "interior_changed": 0,
       "source_left_sha256": "1e5f4e5a1769ddd061bd089b40c3702e655a942e9ed2dd9c8f77259b2b291816",
@@ -50,7 +51,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 20515,
+      "changed_boundary_pixels": 13074,
       "frame": 6,
       "interior_changed": 0,
       "source_left_sha256": "236c5a6af865f19c2c7fad9eccfb2763670b256835e8dc6697eed75236afb1d5",
@@ -58,7 +59,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 20564,
+      "changed_boundary_pixels": 13025,
       "frame": 7,
       "interior_changed": 0,
       "source_left_sha256": "c088319229aec894b1f071e96080cb53022a7f7986e6e3b6151d0a8b5cc410c0",
@@ -66,7 +67,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21684,
+      "changed_boundary_pixels": 13721,
       "frame": 8,
       "interior_changed": 0,
       "source_left_sha256": "2bcc2041f0f185f712df523fe34f5caf6c5d1f40446e2cafcc6f32070ca30590",
@@ -74,7 +75,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22253,
+      "changed_boundary_pixels": 14082,
       "frame": 9,
       "interior_changed": 0,
       "source_left_sha256": "1d29ee4b529319baf80c6ec7c66b51a27e7af440c1f82c0581e7551eba53e760",
@@ -82,7 +83,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22096,
+      "changed_boundary_pixels": 14096,
       "frame": 10,
       "interior_changed": 0,
       "source_left_sha256": "1f799fe5e0463c13259b15eb3ef9bcf9a91e44d1d9bc00454e4a1e13ee907d0b",
@@ -90,7 +91,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21971,
+      "changed_boundary_pixels": 13937,
       "frame": 11,
       "interior_changed": 0,
       "source_left_sha256": "3973c6786fa25fff598fa119d78f1b9719d70ad300b3c48936df9232543be933",
@@ -98,7 +99,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21713,
+      "changed_boundary_pixels": 13910,
       "frame": 12,
       "interior_changed": 0,
       "source_left_sha256": "d588abcb1568ed381ded848511a931d20b4db60a877cfde6478bf503600a3b78",
@@ -106,7 +107,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21798,
+      "changed_boundary_pixels": 13908,
       "frame": 13,
       "interior_changed": 0,
       "source_left_sha256": "db97f8e1f8fd97dd65211d5eb0808a1e3b50ee0e29853c5a12d019b0cfa68f76",
@@ -114,7 +115,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22086,
+      "changed_boundary_pixels": 14074,
       "frame": 14,
       "interior_changed": 0,
       "source_left_sha256": "f30996bd895dcb4d2eb13fd06caaca631ad1509154b7ff3ac08364bda427fb14",
@@ -122,7 +123,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22360,
+      "changed_boundary_pixels": 14274,
       "frame": 15,
       "interior_changed": 0,
       "source_left_sha256": "d7eeadc892f2a795a5ce2de6aca00af8e052e13be382b6f2477b4477a3e7cab5",
@@ -130,7 +131,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22953,
+      "changed_boundary_pixels": 14867,
       "frame": 16,
       "interior_changed": 0,
       "source_left_sha256": "e47f1dff26b3d8a260c3756fbab89ae4df08a9c2da95692f197c0e7be8695f68",
@@ -138,7 +139,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22767,
+      "changed_boundary_pixels": 14498,
       "frame": 17,
       "interior_changed": 0,
       "source_left_sha256": "8a0bd9a89c2439eec0c5b56a141f44c5cf27f68d1825edefe47a57828256eb7a",
@@ -146,7 +147,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22591,
+      "changed_boundary_pixels": 14439,
       "frame": 18,
       "interior_changed": 0,
       "source_left_sha256": "7b563787050abb5b0dfbba21802e02c087a9c1a6dbc0ffb89070e58d564a8469",
@@ -154,7 +155,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22485,
+      "changed_boundary_pixels": 14384,
       "frame": 19,
       "interior_changed": 0,
       "source_left_sha256": "97cc207e59f7728a62ad110374c588a791fb76e84a7656d6c001d52102b762d8",
@@ -162,7 +163,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22597,
+      "changed_boundary_pixels": 14517,
       "frame": 20,
       "interior_changed": 0,
       "source_left_sha256": "f8df40349dd721c0547888ba83ce05e7f0eefdcd4b8bc11b3740c6669f512799",
@@ -170,7 +171,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21350,
+      "changed_boundary_pixels": 13479,
       "frame": 21,
       "interior_changed": 0,
       "source_left_sha256": "0bbcf6cb6c3c78e84acf84e828be5d67137e64f56289319d9616e89927933ec2",
@@ -178,7 +179,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21174,
+      "changed_boundary_pixels": 13621,
       "frame": 22,
       "interior_changed": 0,
       "source_left_sha256": "fbbeca9f843e3e5e939fe61f046f619ff7e67a51a79f6135e61593f4a3c4b406",
@@ -186,7 +187,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 21666,
+      "changed_boundary_pixels": 13817,
       "frame": 23,
       "interior_changed": 0,
       "source_left_sha256": "21f05d6d7511065ea00bf4797d6ac865c2a43a9d8bec129cce2df53cccd38baa",
@@ -194,7 +195,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22629,
+      "changed_boundary_pixels": 14685,
       "frame": 24,
       "interior_changed": 0,
       "source_left_sha256": "9aee7d46b733abc5663745bef1f932574456f06d376e46ae0c7fa02f1ddc147e",
@@ -202,7 +203,7 @@
     },
     {
       "alpha_changed": 0,
-      "changed_boundary_pixels": 22280,
+      "changed_boundary_pixels": 14289,
       "frame": 25,
       "interior_changed": 0,
       "source_left_sha256": "800d79c40d6b4ae56853d8a045b72db32ead51cbd2312460ad94e943dd8c536d",
@@ -210,9 +211,11 @@
     }
   ],
   "ink_rgb": [
-    6,
-    7,
-    10
+    16,
+    24,
+    52
   ],
-  "method": "native alpha inward ink, 5 pixel core plus 2 pixel transition, original alpha and interior RGB preserved, exact horizontal mirror"
+  "ink_strength": 0.9,
+  "method": "native alpha inward navy ink sampled from other directions; original alpha and interior RGB preserved; exact horizontal mirror",
+  "width_pixels": 3.25
 }

@@ -1,7 +1,7 @@
 extends SceneTree
 ## Before/after actual GPU rendering, plus all 52 walking frames.
-const OUTPUT="res://预览/diagonal_black_outline_20261013/"
-const SOURCES={"up_left":"res://assets/character/up_left_video_20261010/","up_right":"res://assets/character/up_right_mirror_20261010/"}
+const OUTPUT="res://预览/diagonal_outline_refine_20261013/"
+const BEFORE="res://备份/20261013_细线调色前/diagonal_black_outline_20261013/"
 var game
 var checks:=0
 func _initialize() -> void:
@@ -34,19 +34,22 @@ func run() -> void:
   if child is CanvasLayer:child.hide()
  for label in game.world.find_children("*","Label3D",true,false):label.hide()
  game.view_center=game.player.position;game.view_size=6;game.camera.size=6;game._camera()
- var comparison:=Image.create(440,480,false,Image.FORMAT_RGB8)
+ var comparison:=Image.create(660,480,false,Image.FORMAT_RGB8)
  var sheet:=Image.create(1100,480,false,Image.FORMAT_RGB8)
  for direction in ["up_left","up_right"]:
   game.facing=direction;game.gait_phase=9.25/26.0;game._set_character_pose(true)
-  game.character_material.set_shader_parameter("character_atlas",load(SOURCES[direction]+"walk_09.png"))
-  game.character_material.set_shader_parameter("soft_contour_strength",.58)
-  game.character_material.set_shader_parameter("soft_contour_width",1.8)
+  var old_image:=Image.load_from_file(BEFORE+direction+"/walk_09.png");old_image.generate_mipmaps()
+  game.character_material.set_shader_parameter("character_atlas",ImageTexture.create_from_image(old_image))
   var before: Image=await capture(direction+"_before")
   game._set_character_pose(true)
   assert(is_equal_approx(float(game.character_material.get_shader_parameter("soft_contour_strength")),.12));checks+=1
   var after: Image=await capture(direction+"_after")
   comparison.blit_rect(before,Rect2i(0,0,220,240),Vector2i(0,0 if direction=="up_left" else 240))
   comparison.blit_rect(after,Rect2i(0,0,220,240),Vector2i(220,0 if direction=="up_left" else 240))
+  game.facing="left" if direction=="up_left" else "right";game._set_character_pose(false)
+  var reference: Image=await capture(direction+"_reference")
+  comparison.blit_rect(reference,Rect2i(0,0,220,240),Vector2i(440,0 if direction=="up_left" else 240))
+  game.facing=direction;game._set_character_pose(true)
   var position: Vector3=game.avatar.position
   for i in 26:
    game.gait_phase=(float(i)+.25)/26.0;game._set_character_pose(true)
