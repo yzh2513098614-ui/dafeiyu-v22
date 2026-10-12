@@ -261,8 +261,7 @@ func _physics_process(delta: float) -> void:
  if dialog_open or panel.visible or settings_panel.visible or editing or loot.blocked():direction=Vector2.ZERO
  # Keyboard directions are screen-space directions. Invert the camera's ground
  # projection so diagonal input and the eight-way sprite sectors use the same axes.
- var pace: float=character_controller.model.speed_multiplier(Input.is_physical_key_pressed(KEY_SHIFT)) if character_controller else 1.0
- player.velocity=_screen_direction_to_world(direction)*SPEED*pace
+ player.velocity=character_controller.movement_velocity(direction,delta) if character_controller else _screen_direction_to_world(direction)*SPEED
  # 闪避位移随即时战一起移除（战斗已改为回合制，移动不再受战斗输入影响）
  var before:=player.position
  _move_character(delta,false)
@@ -294,6 +293,7 @@ func _physics_process(delta: float) -> void:
 func _queue_collision_recovery(new_world: bool=false) -> void:
  collision_recovery_pending=true
  if new_world:
+  if character_controller:character_controller.cancel_dash()
   collision_spawn=player.global_position;collision_has_safe=false
 
 func _collision_point_allowed(point: Vector3,grounded: bool) -> bool:
