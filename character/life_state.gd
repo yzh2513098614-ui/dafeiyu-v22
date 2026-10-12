@@ -25,15 +25,16 @@ func maximum(id: String) -> float:
 func xp_needed() -> int:return int(balance.rules.xp_first_level)+(int(state.level)-1)*int(balance.rules.xp_step)
 func attack() -> int:return 4+attribute("strength")*2
 func defense() -> int:return attribute("endurance")+int(attribute("strength")/2)
+func can_sprint() -> bool:return value("stamina")>=float(balance.rules.low_stamina_threshold)
 func speed_multiplier(sprint: bool=false) -> float:
  var result:=1.0+(attribute("agility")-4)*.015
- if value("stamina")<float(balance.rules.low_stamina_threshold):result*=float(balance.rules.low_stamina_multiplier)
+ if not can_sprint():result*=float(balance.rules.low_stamina_multiplier)
  elif sprint:result*=float(balance.rules.sprint_multiplier)
  return result
 func status_text() -> String:
  if value("health")<=0:return "需要照顾 · 补给或休息可以恢复"
  if value("hunger")<20:return "肚子有点空 · 找些吃的吧"
- if value("stamina")<15:return "稍有疲惫 · 停下或休息"
+ if not can_sprint():return "稍有疲惫 · 停下恢复后冲刺"
  if state.buffs.has("calm"):return "暖茶陪伴 · %d 秒"%ceili(float(state.buffs.calm))
  return "状态良好 · 慢慢探索吧"
 func _clamp_vitals() -> void:
@@ -45,7 +46,7 @@ func tick(delta: float,distance: float,sprint: bool) -> void:
   if state.buffs[id]<=0:state.buffs.erase(id)
  state.vitals.hunger=value("hunger")-float(balance.rules.hunger_per_second)*delta
  if distance>.0001:
-  state.vitals.stamina=value("stamina")-distance*float(balance.rules.walk_cost_per_meter)-(float(balance.rules.sprint_cost_per_second)*delta if sprint and value("stamina")>=15 else 0.0)
+  state.vitals.stamina=value("stamina")-distance*float(balance.rules.walk_cost_per_meter)-(float(balance.rules.sprint_cost_per_second)*delta if sprint and can_sprint() else 0.0)
  else:
   var recovery:=float(balance.rules.idle_recovery_per_second)+(1.0 if state.buffs.has("calm") else 0.0)
   state.vitals.stamina=value("stamina")+recovery*delta*(.5 if value("hunger")<20 else 1.0)

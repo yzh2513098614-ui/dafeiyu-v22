@@ -37,7 +37,7 @@ func run() -> void:
  check(is_equal_approx(model.value("stamina"),49.72),"walking has distance-based stamina cost")
  model.state.vitals.stamina=50;model.tick(1,1,true)
  check(is_equal_approx(model.value("stamina"),47.92),"sprint adds time-based cost")
- check(is_equal_approx(model.speed_multiplier(true),1.5),"sprint increases movement speed")
+ check(is_equal_approx(model.speed_multiplier(true),2.0),"sprint increases movement speed")
  model.state.vitals.stamina=0;model.tick(1000,1000,true)
  check(model.value("stamina")==0 and model.value("hunger")>=0,"long sessions clamp lower resource bounds")
  check(is_equal_approx(model.speed_multiplier(true),.8),"low stamina stops sprint acceleration")

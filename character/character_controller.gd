@@ -131,7 +131,8 @@ func refresh() -> void:
  level_label.text="大肥鱼  ·  Lv.%d"%int(model.state.level)
  for vital in ["health","stamina","hunger","mood"]:_update_meter("hud_"+vital,vital)
  hud_needs.text="饱食 %d / 100     心情 %d / 100"%[ceili(model.value("hunger")),ceili(model.value("mood"))]
- hud_status.text=model.status_text()
+ var sprinting: bool=Input.is_physical_key_pressed(KEY_SHIFT) and model.can_sprint() and Vector2(game.player.velocity.x,game.player.velocity.z).length()>.05
+ hud_status.text="冲刺中 ×%.1f · 消耗体力"%float(model.balance.rules.sprint_multiplier) if sprinting else model.status_text()+(" · Shift 冲刺" if model.can_sprint() else "")
  hud_status.add_theme_color_override("font_color",Color("974154") if model.value("hunger")<=20 else Color("596887"))
  if active:_render()
 

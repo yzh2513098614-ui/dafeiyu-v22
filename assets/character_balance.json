@@ -20,7 +20,7 @@
     "sprint_cost_per_second": 1.8,
     "idle_recovery_per_second": 2.0,
     "hunger_per_second": 0.025,
-    "sprint_multiplier": 1.5,
+    "sprint_multiplier": 2.0,
     "low_stamina_threshold": 15,
     "low_stamina_multiplier": 0.8,
     "max_level": 30,

@@ -80,7 +80,7 @@ func _button(id: String,text: String,pos: Vector2,dimensions: Vector2,action: Ca
 
 func _help() -> void:
  var entries: Array=[
-  ["漫步与互动","WASD / 方向键 · 移动   Shift · 快走\nE · 进出建筑、楼层或互动"],
+  ["漫步与互动","WASD / 方向键 · 移动   按住 Shift · 冲刺（消耗体力）\nE · 进出建筑、楼层或互动"],
   ["镜头与导览","滚轮 · 放大缩小   Z · 总览 / 跟随\nM · 找地方、标记路线"],
   ["和大肥鱼说话","Q · 聊聊   Enter / Space · 下一句\n1—3 · 选回应   H · 回看   A · 自动"],
   ["收好小惊喜","C · 人物状态 / 休息   I · 背包\nE · 补给箱   背包内可使用 / 装备"],
