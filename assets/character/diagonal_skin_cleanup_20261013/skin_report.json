@@ -1,0 +1,196 @@
+{
+  "base_rgb": [
+    248,
+    226,
+    218
+  ],
+  "frames": [
+    {
+      "alpha_changed": 0,
+      "frame": 0,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2948,
+      "source_sha256": "938108fc3684a17fdf2e17fe12b11acf5f315b5a61d64fda844e5bf62af58697"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 1,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2648,
+      "source_sha256": "d86395033326c5d4c14b5469b6a5b03cd4b6d5a0dfde5c1c7aeeb045e859714b"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 2,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2908,
+      "source_sha256": "f01678570b918bc27cb81608f9c3e56e3a573244757bdc79c801450e87e7b7e3"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 3,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3222,
+      "source_sha256": "0b55f4d68c07a82727bb81216a286765b1b12aec6060fbc31fc1d88a42631ca7"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 4,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3386,
+      "source_sha256": "c1c3519f36b3114d485fe7be5252433806dd8ca3170ecf678ed404e0febbf23e"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 5,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3427,
+      "source_sha256": "bfac14f8585ed912ce7d7aef204fb5891df92ce72641744698295f354b293da5"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 6,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3186,
+      "source_sha256": "03f7175fdeb7a233d10b7c1d326d40ba7ba25ed5c6bc7a01050ba3e2566187e7"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 7,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3470,
+      "source_sha256": "b2de84cc485c7ccb3ebc7d0cad09afc8b508a30419ac0ebfd0ceb6bfaebceab6"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 8,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3315,
+      "source_sha256": "cbd6282ff2d4e4788008c03269d33f9d073f8e08d9dd0e76b3e3a6b90359abff"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 9,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3036,
+      "source_sha256": "348c8bd49be4e051cdf74e754048a2e63e330cf1872845b964a6a9b3570cb2fc"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 10,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2720,
+      "source_sha256": "afd4c44bd8344f5ed037b40c7b0279e2cb10702545f8fd2ef4175627490a7df9"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 11,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2979,
+      "source_sha256": "66aeeaaabe2ddff21071ad77cea165edbe045522ab89d6af42de613a2f23e0ca"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 12,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2767,
+      "source_sha256": "786094c8f2ee3cc78f4edcf0fe33e00f0c691dd8abc6991b47deac2d0c174485"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 13,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2760,
+      "source_sha256": "5661bc4f701df03efe3e6f3ffbade19c99144303ddb8f21b5a627c8dc8c60a41"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 14,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2830,
+      "source_sha256": "dd5bc2300c88d47b4a627a9ed1882190b6565ea5cc83b47d14498f2fcce1594f"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 15,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 2773,
+      "source_sha256": "1310c222a89eb6cde2a4996d6de5455d8e3697beafb3a842394ec4553317bd07"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 16,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3229,
+      "source_sha256": "913ff3072f85d299c90af41e188afce32169ed88cd9219e82f9aec2fef0a9422"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 17,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3633,
+      "source_sha256": "00084fc343503bdda22c1a0409b62dd47fafa98197272f70dc6e94ed6d29784b"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 18,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3810,
+      "source_sha256": "0e6d328ad608693aace6c7bf2fad742359d07d5ba54a163572853cb41dee3323"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 19,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3703,
+      "source_sha256": "95f6e13d5aba0be22a76cd05bea0cc2354aff578990a32eb16aca1231c19c981"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 20,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3694,
+      "source_sha256": "57ad0fae0972edf8bacb612d683c39e9cde2acd5634e307583278029af6b1e93"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 21,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3792,
+      "source_sha256": "6cc0b51fe6a214524517729c905be7630306260079b6cfe10ab99a850c0a3506"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 22,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3564,
+      "source_sha256": "22b3c214303c5da87c0b157ab31895f2dda96defa73aac2b82a65a54c04b7930"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 23,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3390,
+      "source_sha256": "5fb774c488f23aa9080023d209f9306bff75fa51a3d4ff86f881f7b2f264f9f2"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 24,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3281,
+      "source_sha256": "41be9430984f3ed078232a5350d590dfa25eadb4016d68620fec2b9058874c4a"
+    },
+    {
+      "alpha_changed": 0,
+      "frame": 25,
+      "outside_skin_changed": 0,
+      "painted_skin_pixels": 3192,
+      "source_sha256": "3124b943012eb6df9252b14e12496346aa7be4109837e35fafbe4750ce133d97"
+    }
+  ],
+  "shade_rgb": [
+    245,
+    220,
+    212
+  ]
+}
