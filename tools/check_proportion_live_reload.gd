@@ -13,6 +13,21 @@ func capture(name: String) -> Image:
  var image:=root.get_texture().get_image()
  image.save_png(ProjectSettings.globalize_path(OUT+name+".png"))
  return image
+
+func proportion_y(y: float,config: Dictionary) -> float:
+ var smooth=preload("res://tools/editor_collision_profile.gd")
+ return y+float(config.head_height)*minf(y-float(config.head_end),0.0)+float(config.crown_compression)*(1.0-smooth.smooth(.12,.38,y))+float(config.head_drop)*smooth.smooth(.20,.53,y)*(1.0-smooth.smooth(.53,float(config.body_end),y))+float(config.body_extension)*(smooth.smooth(float(config.head_end),float(config.body_end),y)-1.0)+float(config.leg_extension)*(smooth.smooth(float(config.body_end),.9375,y)-1.0)
+
+func eye_screen_box(game) -> Rect2i:
+ var config: Dictionary=game.character_manifest.proportion_warp_by_direction.down
+ var density: float=game.avatar.pixel_size
+ var card: Vector2=Vector2(game.character_manifest.frame_size[0],game.character_manifest.frame_size[1])*density
+ var right: Vector3=game.camera.global_basis.x
+ var a: Vector2=game.camera.unproject_position(game.avatar.global_position+right*(-.14*card.x*(1.0+float(config.head_width)))+Vector3.UP*((.5-proportion_y(.37,config))*card.y))
+ var b: Vector2=game.camera.unproject_position(game.avatar.global_position+right*(.14*card.x*(1.0+float(config.head_width)))+Vector3.UP*((.5-proportion_y(.48,config))*card.y))
+ var scale:=root.get_final_transform()
+ a=scale*a;b=scale*b
+ return Rect2i(Vector2i(a.floor()),Vector2i((b-a).ceil())).grow(6)
 func run() -> void:
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT))
  AudioServer.set_bus_mute(0,true);root.size=Vector2i(1000,750)
@@ -47,6 +62,31 @@ func run() -> void:
  check(is_equal_approx(editor.head_width,old_width),"F6 startup reads saved game profile instead of stale scene values")
  check(is_equal_approx(-editor.get_node("PreviewCamera").global_basis.z.normalized().y,-game.camera.global_basis.z.normalized().y),"preview camera matches production elevation")
  editor.sync_editor_changes(editor.profile(),0.0)
+ var eye_upper:=.010 if not is_equal_approx(editor.eye_upper_drop,.010) else 0.0
+ var eye_lower:=.002 if not is_equal_approx(editor.eye_lower_drop,.002) else 0.0
+ game.camera.size=3;game._camera()
+ var eye_before: Image=await capture("eye_before")
+ editor.eye_upper_drop=eye_upper;editor.eye_lower_drop=eye_lower
+ editor.sync_editor_changes(editor.profile(),.4)
+ await create_timer(.8).timeout
+ check(is_equal_approx(float(game.character_material.get_shader_parameter("proportion_eye_upper_drop")),eye_upper) and is_equal_approx(float(game.character_material.get_shader_parameter("proportion_eye_lower_drop")),eye_lower),"both downward eye edge controls auto-sync to actual game shader")
+ check(is_equal_approx(editor.eye_upper_drop,eye_upper) and is_equal_approx(editor.eye_lower_drop,eye_lower) and is_equal_approx(float(editor.get_node("Adjusted").material_override.get_shader_parameter("proportion_eye_lower_drop")),eye_lower),"F6 preview loads and renders both eye edge controls")
+ check(is_equal_approx(float(editor.get_node("Original").material_override.get_shader_parameter("proportion_eye_upper_drop")),0.0) and is_equal_approx(float(editor.get_node("Original").material_override.get_shader_parameter("proportion_eye_lower_drop")),0.0),"original reference retains original eye height")
+ var eye_after: Image=await capture("eye_after")
+ var eye_box:=eye_screen_box(game)
+ var inside:=0;var outside:=0
+ var changed_box:=Rect2i()
+ for y in eye_before.get_height():
+  for x in eye_before.get_width():
+   var a:=eye_before.get_pixel(x,y);var b:=eye_after.get_pixel(x,y)
+   if absf(a.r-b.r)+absf(a.g-b.g)+absf(a.b-b.b)+absf(a.a-b.a)>.06:
+    changed_box=Rect2i(Vector2i(x,y),Vector2i.ONE) if inside+outside==0 else changed_box.merge(Rect2i(Vector2i(x,y),Vector2i.ONE))
+    if eye_box.has_point(Vector2i(x,y)):inside+=1
+    else:outside+=1
+ print("EYE PIXELS: inside=",inside," outside=",outside," expected=",eye_box," changed=",changed_box)
+ check(inside>0 and outside==0,"GPU eye adjustment changes only face region, leaving crown, body and feet intact")
+ check(game.avatar.position==avatar_position and is_equal_approx(float(game.character_material.get_shader_parameter("proportion_head_width")),old_width),"eye control preserves foot anchor and head width")
+ game.camera.size=6;game._camera()
  editor.head_width=old_width+.12
  editor.sync_editor_changes(editor.profile(),.4)
  await create_timer(.8).timeout

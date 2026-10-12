@@ -72,7 +72,7 @@
 | `preview_front_upper_body.gd` | 正面头部下拉与身体压短，25 项运行检查 | `预览/正面头部下拉_20261012/`；`--test-merge --capture-ui --capture-dialogue --test-life-ui` |
 | `character_proportion_editor.tscn` | Godot 编辑器内实时调人物比例，保存到游戏 | 操作见 `00_人物比例编辑器_v22.md` |
 | `check_proportion_editor.gd` | 验证实时调参、逐帧预览、保存与原生碰撞更新 | `预览/人物编辑器调参_20261012/` |
-| `check_proportion_live_reload.gd` | 编辑器保存后，实际运行游戏与 F6 预览自动同步 | `预览/游戏比例实时同步_20261012/`；`--test-merge --capture-ui --capture-dialogue --test-life-ui` |
+| `check_proportion_live_reload.gd` | 调参自动同步实际游戏/F6，含眼睛上下缘下移和面部局部 GPU 变化检查 | `预览/游戏比例实时同步_20261012/`；`--test-merge --capture-ui --capture-dialogue --test-life-ui` |
 | `check_up_right_mirror.gd` | 右上镜像替换 | `预览/右上镜像替换_20261010/` |
 | `check_up_left_video.gd` | 左上视频帧接入 | 隔离设置与存档 |
 | `check_character_scene_light.gd` | 环境受光（GPU） | `预览/人物环境受光_v22_20261004/` |

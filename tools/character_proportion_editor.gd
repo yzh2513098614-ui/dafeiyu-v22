@@ -19,6 +19,15 @@ const CollisionBuilder = preload("res://tools/editor_collision_profile.gd")
 @export_range(-0.01,0.06,0.001) var body_extension: float = 0.022
 ## 仅在关闭 Keep Original Height 时使用。开启时实际值 = max(0, 0.4 * Head Height + Body Extension - 0.03)。
 @export_range(0.0,0.09,0.001) var crown_compression: float = 0.064
+@export_group("眼睛高度：上缘下压，下缘微移")
+## 眼睛上缘向下移动，眼睛变矮；0 为原样，建议先试 0.006～0.010。只影响正面。
+@export_range(0.0,0.020,0.001) var eye_upper_drop: float:
+ set(value):set_meta("proportion_eye_upper_drop",value)
+ get:return float(get_meta("proportion_eye_upper_drop",0.0))
+## 眼睛下缘也向下移动，幅度建议小一些：0.001～0.003。数值越大，下缘越低。
+@export_range(0.0,0.006,0.0005) var eye_lower_drop: float:
+ set(value):set_meta("proportion_eye_lower_drop",value)
+ get:return float(get_meta("proportion_eye_lower_drop",0.0))
 @export_group("预览")
 @export var animate_walk: bool = false
 @export_range(0,11,1) var frame_index: int = 3
@@ -49,6 +58,7 @@ func profile() -> Dictionary:
  var config: Dictionary=manifest.proportion_warp_by_direction.down.duplicate()
  config.head_drop=head_drop;config.head_width=head_width;config.body_width=body_width
  config.head_height=head_height;config.body_extension=body_extension
+ config.eye_upper_drop=eye_upper_drop;config.eye_lower_drop=eye_lower_drop
  config.crown_compression=maxf(0.0,.4*head_height+body_extension-.03) if keep_original_height else crown_compression
  return config
 
@@ -101,6 +111,7 @@ func _refresh() -> void:
  preview_manifest.proportion_warp_by_direction.down=last_profile
  var original: Dictionary=last_profile.duplicate()
  original.head_height=0.0;original.head_width=0.0;original.crown_compression=0.0;original.head_drop=0.0;original.body_extension=.03;original.body_width=.12;original.top_padding=0.0
+ original.eye_upper_drop=0.0;original.eye_lower_drop=0.0
  var original_manifest: Dictionary=manifest.duplicate(true)
  original_manifest.proportion_warp_by_direction.down=original
  _pose($Original,"down",original_manifest)
@@ -128,6 +139,7 @@ func load_game_parameters() -> void:
  var config: Dictionary=manifest.proportion_warp_by_direction.down
  head_drop=config.get("head_drop",0.0);head_width=config.get("head_width",0.0);body_width=config.body_width
  head_height=config.get("head_height",0.0);body_extension=config.body_extension;crown_compression=config.get("crown_compression",0.0)
+ eye_upper_drop=config.get("eye_upper_drop",0.0);eye_lower_drop=config.get("eye_lower_drop",0.0)
  keep_original_height=is_equal_approx(crown_compression,maxf(0.0,.4*head_height+body_extension-.03))
  _refresh();status="已读取游戏里的当前比例。"
  notify_property_list_changed()
