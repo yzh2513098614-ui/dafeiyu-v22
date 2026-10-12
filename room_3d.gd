@@ -873,10 +873,12 @@ func _ui() -> void:
  var canvas:=Control.new();canvas.theme=WhaleSkin.theme(_game_font());canvas.size=Vector2(1448,1086);canvas.mouse_filter=Control.MOUSE_FILTER_IGNORE;canvas.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;ui.add_child(canvas)
  UiFit.fill(canvas)
  var brand:=WhaleSkin.panel(canvas,Vector2(48,32),Vector2(450,98))
- brand.add_theme_stylebox_override("panel",preload("res://dialogue/pixel_skin.gd").frame("nameplate"))
- WhaleSkin.mascot(brand,Vector2(9,5),Vector2(100,88))
- WhaleSkin.label(brand,"鲸落港 · 大肥鱼",Vector2(113,12),Vector2(317,38),28,Color("fff8e7"))
- title=WhaleSkin.label(brand,"",Vector2(114,52),Vector2(306,30),20,Color("dae5ef"))
+ brand.name="WorldBrand"
+ brand.add_theme_stylebox_override("panel",preload("res://ui/world_hud_skin.gd").frame(true))
+ WhaleSkin.mascot(brand,Vector2(12,8),Vector2(88,82))
+ WhaleSkin.label(brand,"鲸落港 · 大肥鱼",Vector2(112,13),Vector2(316,34),26,Color("f3f5ff"))
+ title=WhaleSkin.label(brand,"",Vector2(113,53),Vector2(316,29),18,Color("c9d6f4"))
+ preload("res://ui/world_hud_skin.gd").single_line(title)
  for i in 3:
   var room:=_button(["1 小卧室","2 工作站","3 咖啡角"][i],Vector2(660+i*171,35),Vector2(159,59),canvas,func():_layout(i))
   room.toggle_mode=true;nav_buttons.append(room);room.hide()

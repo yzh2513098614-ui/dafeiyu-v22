@@ -332,10 +332,13 @@ func _district_ui() -> void:
  UiFit.fill(district_canvas)
  var b_map:=_button("M 导览",Vector2(529,979),Vector2(168,55),district_canvas,func():_show_map(true))
  UiFit.pin_design(b_map,529,979,168,55)
- breadcrumb=WhaleSkin.label(district_canvas,"",Vector2(88,132),Vector2(1130,36),19,Color("edf2ed"))
- var crumb_style:=_flat(Color(.09,.17,.23,.88),8);crumb_style.content_margin_left=12;crumb_style.content_margin_right=12;breadcrumb.add_theme_stylebox_override("normal",crumb_style);breadcrumb.size.x=850
- arrival_note=WhaleSkin.label(district_canvas,"",Vector2(89,175),Vector2(1020,33),18,Color("bfced4"))
- arrival_note.add_theme_stylebox_override("normal",crumb_style);arrival_note.size.x=850
+ breadcrumb=WhaleSkin.label(district_canvas,"",Vector2(48,140),Vector2(450,38),18,Color("edf2ed"))
+ var crumb_style:=_flat(Color(.09,.17,.23,.88),12);crumb_style.content_margin_left=12;crumb_style.content_margin_right=12;breadcrumb.add_theme_stylebox_override("normal",crumb_style)
+ preload("res://ui/world_hud_skin.gd").single_line(breadcrumb)
+ arrival_note=WhaleSkin.label(district_canvas,"",Vector2(48,186),Vector2(450,34),17,Color("bfced4"))
+ arrival_note.add_theme_stylebox_override("normal",crumb_style)
+ preload("res://ui/world_hud_skin.gd").single_line(arrival_note)
+ if has_method("_refresh_zone"):breadcrumb.hide();arrival_note.hide()
  destination_hint=preload("res://ui/map_action_button.gd").create(self,district_canvas,"E 通行",func():
   if not nearest_portal.is_empty() and not transitioning and not loot.blocked():_interact())
  destination_hint.name="NearbyPortalButton";destination_hint.hide()

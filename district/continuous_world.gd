@@ -35,8 +35,10 @@ func _ready() -> void:
  nav_buttons[0].text="1 公寓";nav_buttons[1].text="2 街区";nav_buttons[2].text="3 社区馆"
  view_button=_button("Z 跟随人物",Vector2(1098,45),Vector2(302,55),district_canvas,func():_toggle_view())
  UiFit.pin_right(view_button,302,48,45,55)
- zone_label=WhaleSkin.label(district_canvas,"",Vector2(48,143),Vector2(450,43),20,WhaleSkin.INK)
- zone_label.add_theme_stylebox_override("normal",WhaleSkin.frame("status"));zone_label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ zone_label=WhaleSkin.label(district_canvas,"",Vector2(48,142),Vector2(450,40),19,WhaleSkin.INK)
+ var location_style:=preload("res://ui/world_hud_skin.gd").frame();location_style.bg_color=Color("d2def6");location_style.set_corner_radius_all(12);location_style.content_margin_left=14;location_style.content_margin_right=14
+ zone_label.add_theme_stylebox_override("normal",location_style)
+ preload("res://ui/world_hud_skin.gd").single_line(zone_label)
  clock_panel=WhaleSkin.panel(district_canvas,Vector2(1098,312),Vector2(302,38),"paper")
  UiFit.pin_right(clock_panel,302,48,312,38)
  clock_label=WhaleSkin.label(clock_panel,"",Vector2(10,5),Vector2(282,28),18)
@@ -341,7 +343,9 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  _queue_collision_recovery(true)
  overview_mode=not HarborPrefs.values.follow;view_size=overview_size if overview_mode else (9.8 if target in ["story_quay","story_harbor"] else (11.6 if target=="tidal_cafe" else (24.0 if data.type=="city" else 22.0)));view_center=Vector3.ZERO if overview_mode else Vector3(player.position.x,0,player.position.z)
  camera_angle=-42 if target in ["story_quay","tidal_cafe","story_harbor"] else 28;camera.size=view_size;_camera()
- title.text=str(data.name)
+ title.text=str(data.name);title.tooltip_text=str(data.name)
+ # Special maps return before neighborhood.physics, so suppress legacy strips at travel time.
+ breadcrumb.hide();arrival_note.hide()
  for i in nav_buttons.size():nav_buttons[i].set_pressed_no_signal(target==["apt_2","city","community_1"][i])
  if breadcrumb:breadcrumb.text="鲸落港  /  "+str(data.name)
  if arrival_note:arrival_note.text="同一场景连续行走 · "+("门口点击或按 E 开门、进入建筑" if data.type=="city" else str(room_zones.size())+" 个房间同屏 · 靠近门或设施点击 / 按 E 交互")

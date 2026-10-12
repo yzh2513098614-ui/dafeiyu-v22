@@ -39,15 +39,19 @@ func configure(owner_game) -> void:
   if not game.loot.save_state():message="初始补给尚未保存，请使用菜单保存。";dirty=true
  game.loot._bag_count();last_position=game.player.position
  portrait_texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/dialogue/listen_original.png"))
- hud=WhaleStyle.panel(game.district_canvas,Vector2(48,198),Vector2(450,246))
+ hud=WhaleStyle.panel(game.district_canvas,Vector2(48,196),Vector2(450,230))
+ hud.name="WorldVitals";hud.add_theme_stylebox_override("panel",preload("res://ui/world_hud_skin.gd").frame())
  level_label=WhaleStyle.label(hud,"",Vector2(14,9),Vector2(263,32),22)
- var status_button:=_button(hud,"C 状态",Vector2(294,8),Vector2(140,36),open);status_button.add_theme_font_size_override("font_size",18)
- _meter(hud,"hud_health","生命",Vector2(16,50),Vector2(418,48),Color("ef829c"))
- _meter(hud,"hud_stamina","体力",Vector2(16,104),Vector2(418,48),Color("51c6bb"))
- _meter(hud,"hud_hunger","饱食",Vector2(16,158),Vector2(201,44),Color("e7b85a"))
- _meter(hud,"hud_mood","心情",Vector2(233,158),Vector2(201,44),Color("ac93e5"))
+ var status_button:=_button(hud,"C · 状态",Vector2(302,10),Vector2(132,34),open);status_button.add_theme_font_size_override("font_size",17)
+ var button_style:=preload("res://ui/world_hud_skin.gd").frame();button_style.bg_color=Color("ccd8f6");button_style.set_corner_radius_all(11);button_style.shadow_size=0
+ status_button.add_theme_stylebox_override("normal",button_style)
+ _meter(hud,"hud_health","生命",Vector2(16,50),Vector2(418,43),Color("ee829d"))
+ _meter(hud,"hud_stamina","体力",Vector2(16,99),Vector2(418,43),Color("51beb7"))
+ _meter(hud,"hud_hunger","饱食",Vector2(16,148),Vector2(201,40),Color("dfb961"))
+ _meter(hud,"hud_mood","心情",Vector2(233,148),Vector2(201,40),Color("a58bda"))
  hud_needs=WhaleStyle.label(hud,"",Vector2.ZERO,Vector2.ZERO,17);hud_needs.hide()
- hud_status=WhaleStyle.label(hud,"",Vector2(16,212),Vector2(418,26),17,Color("4d557a"))
+ hud_status=WhaleStyle.label(hud,"",Vector2(16,199),Vector2(418,25),17,Color("596887"))
+ preload("res://ui/world_hud_skin.gd").single_line(hud_status)
  layer=CanvasLayer.new();layer.layer=45;add_child(layer)
  root=Control.new();root.size=Vector2(1448,1086);root.mouse_filter=Control.MOUSE_FILTER_STOP;root.theme=WhaleStyle.theme(game._game_font());layer.add_child(root)
  UiFit.fill(root)
@@ -74,9 +78,12 @@ func _meter(parent: Node,id: String,title: String,pos: Vector2,dimensions: Vecto
  var text:=WhaleStyle.label(container,"",Vector2(dimensions.x*.4,0),Vector2(dimensions.x*.6,25),18,Color("394364"))
  text.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;text.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
  var track:=ProgressBar.new();track.position=Vector2(0,29);track.size=Vector2(dimensions.x,dimensions.y-29);track.show_percentage=false;track.mouse_filter=Control.MOUSE_FILTER_IGNORE;track.step=0.01;container.add_child(track)
- var background:=StyleBoxFlat.new();background.bg_color=Color("c6cce5");background.border_color=Color("8992b6");background.set_border_width_all(1);background.set_corner_radius_all(8)
+ # The hidden percentage font still contributes to ProgressBar's minimum height.
+ track.add_theme_font_size_override("font_size",1)
+ var background:=StyleBoxFlat.new();background.bg_color=Color("d1d9ee");background.border_color=Color("a6b2d0");background.set_border_width_all(1);background.set_corner_radius_all(7)
  var fill:=StyleBoxFlat.new();fill.bg_color=color;fill.border_color=color.darkened(.16);fill.set_border_width_all(1);fill.set_corner_radius_all(8)
  track.add_theme_stylebox_override("background",background);track.add_theme_stylebox_override("fill",fill)
+ track.size=Vector2(dimensions.x,dimensions.y-29)
  meters[id]={"fill":track,"text":text,"title":title}
 
 func _update_meter(id: String,vital: String) -> void:
@@ -125,6 +132,7 @@ func refresh() -> void:
  for vital in ["health","stamina","hunger","mood"]:_update_meter("hud_"+vital,vital)
  hud_needs.text="饱食 %d / 100     心情 %d / 100"%[ceili(model.value("hunger")),ceili(model.value("mood"))]
  hud_status.text=model.status_text()
+ hud_status.add_theme_color_override("font_color",Color("974154") if model.value("hunger")<=20 else Color("596887"))
  if active:_render()
 
 func open() -> void:
