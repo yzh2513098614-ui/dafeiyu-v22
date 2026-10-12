@@ -1,0 +1,63 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/stone_table_2600.res" id="1_jsdpa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bs6dy"]
+height = 0.8
+radius = 0.17
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_geh1i"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1lhn6"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q6lb0"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b328k"]
+height = 0.56
+radius = 0.25
+
+[node name="stone_table" type="Node3D" unique_id=1792322176]
+metadata/asset_id = "stone_table"
+metadata/category = "street_furniture"
+metadata/display_name = "石桌与座凳"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="stone_table" type="MeshInstance3D" parent="." unique_id=487461523]
+mesh = ExtResource("1_jsdpa")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1491792835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="@CollisionShape3D@438" type="CollisionShape3D" parent="Collision_0" unique_id=1285356268]
+shape = SubResource("CylinderShape3D_bs6dy")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=1806706353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.28, 0)
+
+[node name="@CollisionShape3D@439" type="CollisionShape3D" parent="Collision_1" unique_id=204893559]
+shape = SubResource("CylinderShape3D_geh1i")
+
+[node name="Collision_2" type="StaticBody3D" parent="." unique_id=1357953922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.28, 0)
+
+[node name="@CollisionShape3D@440" type="CollisionShape3D" parent="Collision_2" unique_id=861679429]
+shape = SubResource("CylinderShape3D_1lhn6")
+
+[node name="Collision_3" type="StaticBody3D" parent="." unique_id=1302010613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, -0.95)
+
+[node name="@CollisionShape3D@441" type="CollisionShape3D" parent="Collision_3" unique_id=1473405857]
+shape = SubResource("CylinderShape3D_q6lb0")
+
+[node name="Collision_4" type="StaticBody3D" parent="." unique_id=62853671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0.95)
+
+[node name="@CollisionShape3D@442" type="CollisionShape3D" parent="Collision_4" unique_id=303273747]
+shape = SubResource("CylinderShape3D_b328k")

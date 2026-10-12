@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/sorting_bins_2586.res" id="1_6ksq0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gd0yl"]
+size = Vector3(0.48, 1.04, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4rmi"]
+size = Vector3(0.48, 1.04, 0.5)
+
+[node name="sorting_bins" type="Node3D" unique_id=1822542668]
+metadata/asset_id = "sorting_bins"
+metadata/category = "containers"
+metadata/display_name = "分类垃圾桶"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="sorting_bins" type="MeshInstance3D" parent="." unique_id=66228498]
+mesh = ExtResource("1_6ksq0")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1074074182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0.52, 0)
+
+[node name="@CollisionShape3D@430" type="CollisionShape3D" parent="Collision_0" unique_id=213292229]
+shape = SubResource("BoxShape3D_gd0yl")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=1123886966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.52, 0)
+
+[node name="@CollisionShape3D@431" type="CollisionShape3D" parent="Collision_1" unique_id=542902637]
+shape = SubResource("BoxShape3D_f4rmi")

@@ -1,0 +1,143 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1892.res" id="1_46kft"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1893.res" id="2_u5nlg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1894.res" id="3_lxgfq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1895.res" id="4_1e81d"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1896.res" id="5_4ujbe"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1897.res" id="6_ohlul"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1898.res" id="7_ffg42"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1899.res" id="8_7dh6w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1900.res" id="9_6t0m7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1901.res" id="10_sddgs"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1902.res" id="11_33dl6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1903.res" id="12_lbldb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1904.res" id="13_v7ffg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1905.res" id="14_7yon6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1906.res" id="15_crkv8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1907.res" id="16_v845q"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1908.res" id="17_5450p"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1909.res" id="18_iu6ba"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1910.res" id="19_588vr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1911.res" id="20_hgrim"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1912.res" id="21_cw1nc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1913.res" id="22_wfjk0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1914.res" id="23_e0nay"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1915.res" id="24_3qsap"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1916.res" id="25_8sbhw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1917.res" id="26_38c5d"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1918.res" id="27_seu7r"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1919.res" id="28_6vdjn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N4_1920.res" id="29_atn63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nblyv"]
+size = Vector3(54.4586, 20.4, 23.885351)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1mmj"]
+size = Vector3(54.4586, 20.4, 23.885351)
+
+[node name="C_N4" type="Node3D" unique_id=214745785]
+metadata/asset_id = "C_N4"
+metadata/category = "buildings"
+metadata/display_name = "C区 北4栋"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="DormWing_-1_Structure" type="MeshInstance3D" parent="." unique_id=1369851869]
+mesh = ExtResource("1_46kft")
+
+[node name="DormWing_-1_Plinth" type="MeshInstance3D" parent="." unique_id=1502355287]
+mesh = ExtResource("2_u5nlg")
+
+[node name="DormWing_-1_Cornice" type="MeshInstance3D" parent="." unique_id=957643299]
+mesh = ExtResource("3_lxgfq")
+
+[node name="DormWing_-1_Roof" type="MeshInstance3D" parent="." unique_id=923879387]
+mesh = ExtResource("4_1e81d")
+
+[node name="DormWing_-1_Light_Fascia" type="MeshInstance3D" parent="." unique_id=1382271566]
+mesh = ExtResource("5_4ujbe")
+
+[node name="DormWing_-1_WindowGlass" type="MeshInstance3D" parent="." unique_id=269123828]
+mesh = ExtResource("6_ohlul")
+
+[node name="DormWing_-1_WindowFrames" type="MeshInstance3D" parent="." unique_id=1549376035]
+mesh = ExtResource("7_ffg42")
+
+[node name="DormWing_-1_FloorBands" type="MeshInstance3D" parent="." unique_id=1599326541]
+mesh = ExtResource("8_7dh6w")
+
+[node name="DormWing_-1_Pilasters" type="MeshInstance3D" parent="." unique_id=488992142]
+mesh = ExtResource("9_6t0m7")
+
+[node name="DormWing_-1_SideWindows" type="MeshInstance3D" parent="." unique_id=82186211]
+mesh = ExtResource("10_sddgs")
+
+[node name="DormWing_-1_EntryGlass" type="MeshInstance3D" parent="." unique_id=837365834]
+mesh = ExtResource("11_33dl6")
+
+[node name="DormWing_-1_EntryColumns" type="MeshInstance3D" parent="." unique_id=1831064058]
+mesh = ExtResource("12_lbldb")
+
+[node name="DormWing_-1_EntryLintel" type="MeshInstance3D" parent="." unique_id=2024561488]
+mesh = ExtResource("13_v7ffg")
+
+[node name="DormWing_-1_EntrySteps" type="MeshInstance3D" parent="." unique_id=634634651]
+mesh = ExtResource("14_7yon6")
+
+[node name="DormWing_1_Structure" type="MeshInstance3D" parent="." unique_id=868610435]
+mesh = ExtResource("15_crkv8")
+
+[node name="DormWing_1_Plinth" type="MeshInstance3D" parent="." unique_id=783549163]
+mesh = ExtResource("16_v845q")
+
+[node name="DormWing_1_Cornice" type="MeshInstance3D" parent="." unique_id=1293979150]
+mesh = ExtResource("17_5450p")
+
+[node name="DormWing_1_Roof" type="MeshInstance3D" parent="." unique_id=105953435]
+mesh = ExtResource("18_iu6ba")
+
+[node name="DormWing_1_Light_Fascia" type="MeshInstance3D" parent="." unique_id=408205609]
+mesh = ExtResource("19_588vr")
+
+[node name="DormWing_1_WindowGlass" type="MeshInstance3D" parent="." unique_id=334995324]
+mesh = ExtResource("20_hgrim")
+
+[node name="DormWing_1_WindowFrames" type="MeshInstance3D" parent="." unique_id=1655177414]
+mesh = ExtResource("21_cw1nc")
+
+[node name="DormWing_1_FloorBands" type="MeshInstance3D" parent="." unique_id=88125292]
+mesh = ExtResource("22_wfjk0")
+
+[node name="DormWing_1_Pilasters" type="MeshInstance3D" parent="." unique_id=1647572345]
+mesh = ExtResource("23_e0nay")
+
+[node name="DormWing_1_SideWindows" type="MeshInstance3D" parent="." unique_id=387703242]
+mesh = ExtResource("24_3qsap")
+
+[node name="DormWing_1_EntryGlass" type="MeshInstance3D" parent="." unique_id=477306422]
+mesh = ExtResource("25_8sbhw")
+
+[node name="DormWing_1_EntryColumns" type="MeshInstance3D" parent="." unique_id=1889480075]
+mesh = ExtResource("26_38c5d")
+
+[node name="DormWing_1_EntryLintel" type="MeshInstance3D" parent="." unique_id=1121198026]
+mesh = ExtResource("27_seu7r")
+
+[node name="DormWing_1_EntrySteps" type="MeshInstance3D" parent="." unique_id=1011864239]
+mesh = ExtResource("28_6vdjn")
+
+[node name="ConnectingBridge" type="MeshInstance3D" parent="." unique_id=720059067]
+mesh = ExtResource("29_atn63")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1136173142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.280254, 10.2, 0)
+
+[node name="@CollisionShape3D@378" type="CollisionShape3D" parent="Collision_0" unique_id=1103467857]
+shape = SubResource("BoxShape3D_nblyv")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=1119042211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.280254, 10.2, 0)
+
+[node name="@CollisionShape3D@379" type="CollisionShape3D" parent="Collision_1" unique_id=1451255578]
+shape = SubResource("BoxShape3D_s1mmj")

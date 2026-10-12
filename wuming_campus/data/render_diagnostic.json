@@ -1,0 +1,17 @@
+{
+	"ambient": 0.319999992847443,
+	"meshes": [
+		{
+			"materials": [
+				{
+					"color": "(0.87, 0.83, 0.69, 1.0)",
+					"emission": false,
+					"energy": 1.0,
+					"name": "cream"
+				}
+			],
+			"path": "res://wuming_campus/assets/meshes/campus_ground_1458.res"
+		}
+	],
+	"sun_energy": 0.720000028610229
+}

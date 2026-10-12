@@ -1,0 +1,109 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2208.res" id="1_3if6v"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2209.res" id="2_b8w4h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2210.res" id="3_h2a16"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2211.res" id="4_hsaos"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2212.res" id="5_w6ay6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2213.res" id="6_qfj7e"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2214.res" id="7_wsr10"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2215.res" id="8_wo844"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2216.res" id="9_17260"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2217.res" id="10_55abs"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2218.res" id="11_p5a50"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2219.res" id="12_uh2fr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2220.res" id="13_gn3xw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2221.res" id="14_jo2fi"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2222.res" id="15_45p3u"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2223.res" id="16_bge00"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2224.res" id="17_73l1b"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2225.res" id="18_v8fq4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2226.res" id="19_ns3ef"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2227.res" id="20_6hrgb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2228.res" id="21_2ce0y"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2229.res" id="22_kq41x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2230.res" id="23_qhlns"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2231.res" id="24_tets3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_south_2232.res" id="25_4rgrv"]
+
+[node name="basket_B_west_south" type="Node3D" unique_id=925995243]
+metadata/asset_id = "basket_B_west_south"
+metadata/category = "sports"
+metadata/display_name = "basket_B_west_south"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=1830527594]
+mesh = ExtResource("1_3if6v")
+
+[node name="Court_1_CourtRed" type="MeshInstance3D" parent="." unique_id=1035230313]
+mesh = ExtResource("2_b8w4h")
+
+[node name="Court_1_CourtInfield" type="MeshInstance3D" parent="." unique_id=722140440]
+mesh = ExtResource("3_h2a16")
+
+[node name="Court_1_CourtLines" type="MeshInstance3D" parent="." unique_id=2050149027]
+mesh = ExtResource("4_hsaos")
+
+[node name="Court_1_HoopPost" type="MeshInstance3D" parent="." unique_id=1463792969]
+mesh = ExtResource("5_w6ay6")
+
+[node name="Court_1_Backboard" type="MeshInstance3D" parent="." unique_id=273037024]
+mesh = ExtResource("6_qfj7e")
+
+[node name="Court_1_Hoop" type="MeshInstance3D" parent="." unique_id=1535447493]
+mesh = ExtResource("7_wsr10")
+
+[node name="Court_2_CourtRed" type="MeshInstance3D" parent="." unique_id=1326932425]
+mesh = ExtResource("8_wo844")
+
+[node name="Court_2_CourtInfield" type="MeshInstance3D" parent="." unique_id=1443095861]
+mesh = ExtResource("9_17260")
+
+[node name="Court_2_CourtLines" type="MeshInstance3D" parent="." unique_id=2146620971]
+mesh = ExtResource("10_55abs")
+
+[node name="Court_2_HoopPost" type="MeshInstance3D" parent="." unique_id=1349878572]
+mesh = ExtResource("11_p5a50")
+
+[node name="Court_2_Backboard" type="MeshInstance3D" parent="." unique_id=2112300814]
+mesh = ExtResource("12_uh2fr")
+
+[node name="Court_2_Hoop" type="MeshInstance3D" parent="." unique_id=503418411]
+mesh = ExtResource("13_gn3xw")
+
+[node name="Court_3_CourtRed" type="MeshInstance3D" parent="." unique_id=326662958]
+mesh = ExtResource("14_jo2fi")
+
+[node name="Court_3_CourtInfield" type="MeshInstance3D" parent="." unique_id=565240854]
+mesh = ExtResource("15_45p3u")
+
+[node name="Court_3_CourtLines" type="MeshInstance3D" parent="." unique_id=1948009228]
+mesh = ExtResource("16_bge00")
+
+[node name="Court_3_HoopPost" type="MeshInstance3D" parent="." unique_id=652684170]
+mesh = ExtResource("17_73l1b")
+
+[node name="Court_3_Backboard" type="MeshInstance3D" parent="." unique_id=161121426]
+mesh = ExtResource("18_v8fq4")
+
+[node name="Court_3_Hoop" type="MeshInstance3D" parent="." unique_id=193431686]
+mesh = ExtResource("19_ns3ef")
+
+[node name="Court_4_CourtRed" type="MeshInstance3D" parent="." unique_id=275722444]
+mesh = ExtResource("20_6hrgb")
+
+[node name="Court_4_CourtInfield" type="MeshInstance3D" parent="." unique_id=1856623418]
+mesh = ExtResource("21_2ce0y")
+
+[node name="Court_4_CourtLines" type="MeshInstance3D" parent="." unique_id=635863767]
+mesh = ExtResource("22_kq41x")
+
+[node name="Court_4_HoopPost" type="MeshInstance3D" parent="." unique_id=560517695]
+mesh = ExtResource("23_qhlns")
+
+[node name="Court_4_Backboard" type="MeshInstance3D" parent="." unique_id=437680010]
+mesh = ExtResource("24_tets3")
+
+[node name="Court_4_Hoop" type="MeshInstance3D" parent="." unique_id=1420685746]
+mesh = ExtResource("25_4rgrv")

@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_pruned_tier_2603.res" id="1_ffcwu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_67col"]
+height = 3.9
+radius = 0.17
+
+[node name="tree_pruned_tier" type="Node3D" unique_id=1533794022]
+metadata/asset_id = "tree_pruned_tier"
+metadata/category = "vegetation"
+metadata/display_name = "分层修剪景观树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_pruned_tier" type="MeshInstance3D" parent="." unique_id=948469662]
+mesh = ExtResource("1_ffcwu")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=866192662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, 0)
+
+[node name="@CollisionShape3D@444" type="CollisionShape3D" parent="Collision_0" unique_id=2052924544]
+shape = SubResource("CylinderShape3D_67col")

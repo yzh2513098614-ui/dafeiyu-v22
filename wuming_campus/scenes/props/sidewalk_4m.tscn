@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/sidewalk_4m_2596.res" id="1_oj2j5"]
+
+[node name="sidewalk_4m" type="Node3D" unique_id=262292584]
+metadata/asset_id = "sidewalk_4m"
+metadata/category = "roads"
+metadata/display_name = "四米人行道模块"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="sidewalk_4m" type="MeshInstance3D" parent="." unique_id=1897467036]
+mesh = ExtResource("1_oj2j5")

@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/grass_clump_2580.res" id="1_jn0ar"]
+
+[node name="grass_clump" type="Node3D" unique_id=1842596758]
+metadata/asset_id = "grass_clump"
+metadata/category = "vegetation"
+metadata/display_name = "低矮草丛"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="grass_clump" type="MeshInstance3D" parent="." unique_id=2117276744]
+mesh = ExtResource("1_jn0ar")

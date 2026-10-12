@@ -1,0 +1,123 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1921.res" id="1_ssxf4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1922.res" id="2_vnmht"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1923.res" id="3_7rdgm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1924.res" id="4_mbe7m"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1925.res" id="5_3its2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1926.res" id="6_3tj7r"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1927.res" id="7_cwovs"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1928.res" id="8_ram06"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1929.res" id="9_cjxp0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1930.res" id="10_0wulg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1931.res" id="11_junny"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1932.res" id="12_bu72m"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1933.res" id="13_c4e3y"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1934.res" id="14_va8ig"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1935.res" id="15_kdf1f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1936.res" id="16_hiwas"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1937.res" id="17_r4j5j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1938.res" id="18_7n3sj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1939.res" id="19_teqvk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1940.res" id="20_2n4j5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1941.res" id="21_x4wr3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1942.res" id="22_u11ro"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1943.res" id="23_8g6qk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/C_N5_1944.res" id="24_8flr2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kne7r"]
+size = Vector3(93.94904, 20.4, 23.885351)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lngl"]
+size = Vector3(15.971337, 20.4, 15.525477)
+
+[node name="C_N5" type="Node3D" unique_id=1211442077]
+metadata/asset_id = "C_N5"
+metadata/category = "buildings"
+metadata/display_name = "C区 北5栋"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="MainBlock_Structure" type="MeshInstance3D" parent="." unique_id=714144635]
+mesh = ExtResource("1_ssxf4")
+
+[node name="MainBlock_Plinth" type="MeshInstance3D" parent="." unique_id=2104906118]
+mesh = ExtResource("2_vnmht")
+
+[node name="MainBlock_Cornice" type="MeshInstance3D" parent="." unique_id=1148749719]
+mesh = ExtResource("3_7rdgm")
+
+[node name="MainBlock_Roof" type="MeshInstance3D" parent="." unique_id=1511867001]
+mesh = ExtResource("4_mbe7m")
+
+[node name="MainBlock_Light_Fascia" type="MeshInstance3D" parent="." unique_id=1642550557]
+mesh = ExtResource("5_3its2")
+
+[node name="MainBlock_WindowGlass" type="MeshInstance3D" parent="." unique_id=432995601]
+mesh = ExtResource("6_3tj7r")
+
+[node name="MainBlock_WindowFrames" type="MeshInstance3D" parent="." unique_id=737579962]
+mesh = ExtResource("7_cwovs")
+
+[node name="MainBlock_FloorBands" type="MeshInstance3D" parent="." unique_id=1230123298]
+mesh = ExtResource("8_ram06")
+
+[node name="MainBlock_Pilasters" type="MeshInstance3D" parent="." unique_id=1116879046]
+mesh = ExtResource("9_cjxp0")
+
+[node name="MainBlock_SideWindows" type="MeshInstance3D" parent="." unique_id=1161275909]
+mesh = ExtResource("10_0wulg")
+
+[node name="MainBlock_EntryGlass" type="MeshInstance3D" parent="." unique_id=68756501]
+mesh = ExtResource("11_junny")
+
+[node name="MainBlock_EntryColumns" type="MeshInstance3D" parent="." unique_id=631023655]
+mesh = ExtResource("12_bu72m")
+
+[node name="MainBlock_EntryLintel" type="MeshInstance3D" parent="." unique_id=1644114353]
+mesh = ExtResource("13_c4e3y")
+
+[node name="MainBlock_EntrySteps" type="MeshInstance3D" parent="." unique_id=1082605304]
+mesh = ExtResource("14_va8ig")
+
+[node name="CentralStair_Structure" type="MeshInstance3D" parent="." unique_id=1700812257]
+mesh = ExtResource("15_kdf1f")
+
+[node name="CentralStair_Plinth" type="MeshInstance3D" parent="." unique_id=402345639]
+mesh = ExtResource("16_hiwas")
+
+[node name="CentralStair_Cornice" type="MeshInstance3D" parent="." unique_id=275078419]
+mesh = ExtResource("17_r4j5j")
+
+[node name="CentralStair_Roof" type="MeshInstance3D" parent="." unique_id=171112111]
+mesh = ExtResource("18_7n3sj")
+
+[node name="CentralStair_Light_Fascia" type="MeshInstance3D" parent="." unique_id=1437486502]
+mesh = ExtResource("19_teqvk")
+
+[node name="CentralStair_WindowGlass" type="MeshInstance3D" parent="." unique_id=1235647430]
+mesh = ExtResource("20_2n4j5")
+
+[node name="CentralStair_WindowFrames" type="MeshInstance3D" parent="." unique_id=784713576]
+mesh = ExtResource("21_x4wr3")
+
+[node name="CentralStair_FloorBands" type="MeshInstance3D" parent="." unique_id=1789709538]
+mesh = ExtResource("22_u11ro")
+
+[node name="CentralStair_Pilasters" type="MeshInstance3D" parent="." unique_id=1804157715]
+mesh = ExtResource("23_8g6qk")
+
+[node name="CentralStair_SideWindows" type="MeshInstance3D" parent="." unique_id=98273628]
+mesh = ExtResource("24_8flr2")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1007251561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2, 0)
+
+[node name="@CollisionShape3D@380" type="CollisionShape3D" parent="Collision_0" unique_id=1988414171]
+shape = SubResource("BoxShape3D_kne7r")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=419304693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.394904, 10.2, 12.898089)
+
+[node name="@CollisionShape3D@381" type="CollisionShape3D" parent="Collision_1" unique_id=2134109593]
+shape = SubResource("BoxShape3D_5lngl")

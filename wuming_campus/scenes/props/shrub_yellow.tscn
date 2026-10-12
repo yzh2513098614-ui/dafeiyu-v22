@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/shrub_yellow_2575.res" id="1_i2fpw"]
+
+[node name="shrub_yellow" type="Node3D" unique_id=1747154928]
+metadata/asset_id = "shrub_yellow"
+metadata/category = "vegetation"
+metadata/display_name = "浅叶灌木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="shrub_yellow" type="MeshInstance3D" parent="." unique_id=61442627]
+mesh = ExtResource("1_i2fpw")

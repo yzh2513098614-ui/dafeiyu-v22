@@ -1,0 +1,23 @@
+{
+  "source": "1000166722.jpg",
+  "user_confirmed_relationship": "Clock tower is separate from teaching building",
+  "front_zones": [
+    "brick pier",
+    "deep corridor",
+    "classroom window band",
+    "brick pier",
+    "central staircase windows",
+    "brick pier",
+    "narrow corridor",
+    "classroom windows",
+    "brick end wall"
+  ],
+  "height_levels": {
+    "stone_ground_m": 4.05,
+    "middle_storeys": 4,
+    "middle_storey_height_m": 3.65,
+    "upper_corridor_m": 3.7
+  },
+  "dimensions_status": "visible photo proportions; no measured dimensions",
+  "photo_showcase_placement": "two independent nodes with estimated spacing"
+}

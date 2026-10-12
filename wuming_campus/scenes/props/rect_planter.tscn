@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rect_planter_2588.res" id="1_miv1m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4s3k3"]
+size = Vector3(2, 0.68, 0.72)
+
+[node name="rect_planter" type="Node3D" unique_id=806873867]
+metadata/asset_id = "rect_planter"
+metadata/category = "landscape"
+metadata/display_name = "矩形花槽"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rect_planter" type="MeshInstance3D" parent="." unique_id=812228973]
+mesh = ExtResource("1_miv1m")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1428895450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 0)
+
+[node name="@CollisionShape3D@433" type="CollisionShape3D" parent="Collision_0" unique_id=1622129073]
+shape = SubResource("BoxShape3D_4s3k3")

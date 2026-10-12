@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1423.res" id="1_mtq3o"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1424.res" id="2_p684h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1425.res" id="3_eb5hd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1426.res" id="4_mepf1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1427.res" id="5_tr5v2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1428.res" id="6_740d1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1429.res" id="7_8meby"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1430.res" id="8_3u73l"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1431.res" id="9_j7ewa"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1432.res" id="10_0v4ex"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1433.res" id="11_65hla"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1434.res" id="12_1buen"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1435.res" id="13_jlnvp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1436.res" id="14_s7ixw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1437.res" id="15_vhjrf"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B10_1438.res" id="16_kg3e2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pl8w"]
+size = Vector3(81.21019, 12, 68.47134)
+
+[node name="B10" type="Node3D" unique_id=442088306]
+metadata/asset_id = "B10"
+metadata/category = "buildings"
+metadata/display_name = "B10 综合楼"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="RoofTrainingHall_Structure" type="MeshInstance3D" parent="." unique_id=743404617]
+mesh = ExtResource("1_mtq3o")
+
+[node name="RoofTrainingHall_Plinth" type="MeshInstance3D" parent="." unique_id=1844647079]
+mesh = ExtResource("2_p684h")
+
+[node name="RoofTrainingHall_Cornice" type="MeshInstance3D" parent="." unique_id=551968603]
+mesh = ExtResource("3_eb5hd")
+
+[node name="RoofTrainingHall_Roof" type="MeshInstance3D" parent="." unique_id=238182476]
+mesh = ExtResource("4_mepf1")
+
+[node name="RoofTrainingHall_WindowGlass" type="MeshInstance3D" parent="." unique_id=1302272363]
+mesh = ExtResource("5_tr5v2")
+
+[node name="RoofTrainingHall_WindowFrames" type="MeshInstance3D" parent="." unique_id=1890611032]
+mesh = ExtResource("6_740d1")
+
+[node name="RoofTrainingHall_FloorBands" type="MeshInstance3D" parent="." unique_id=301884702]
+mesh = ExtResource("7_8meby")
+
+[node name="RoofTrainingHall_Pilasters" type="MeshInstance3D" parent="." unique_id=352377058]
+mesh = ExtResource("8_3u73l")
+
+[node name="RoofTrainingHall_SideWindows" type="MeshInstance3D" parent="." unique_id=1311559443]
+mesh = ExtResource("9_j7ewa")
+
+[node name="RoofTrainingHall_EntryGlass" type="MeshInstance3D" parent="." unique_id=488458110]
+mesh = ExtResource("10_0v4ex")
+
+[node name="RoofTrainingHall_EntryColumns" type="MeshInstance3D" parent="." unique_id=1217924153]
+mesh = ExtResource("11_65hla")
+
+[node name="RoofTrainingHall_EntryLintel" type="MeshInstance3D" parent="." unique_id=608838417]
+mesh = ExtResource("12_1buen")
+
+[node name="RoofTrainingHall_EntrySteps" type="MeshInstance3D" parent="." unique_id=103800575]
+mesh = ExtResource("13_jlnvp")
+
+[node name="RoofSportsTurf" type="MeshInstance3D" parent="." unique_id=462865642]
+mesh = ExtResource("14_s7ixw")
+
+[node name="RoofCourt" type="MeshInstance3D" parent="." unique_id=1601755672]
+mesh = ExtResource("15_vhjrf")
+
+[node name="SafetyFence" type="MeshInstance3D" parent="." unique_id=1234761166]
+mesh = ExtResource("16_kg3e2")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1613436069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="@CollisionShape3D@338" type="CollisionShape3D" parent="Collision_0" unique_id=1658038722]
+shape = SubResource("BoxShape3D_3pl8w")

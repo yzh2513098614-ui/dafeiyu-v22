@@ -1,0 +1,54 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1457.res" id="1_3ar8t"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1458.res" id="2_eibw3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1459.res" id="3_1yxvd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1460.res" id="4_uct6i"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1461.res" id="5_uj427"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1462.res" id="6_o52tp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1463.res" id="7_qfx81"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1464.res" id="8_pns6w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B13_1465.res" id="9_hs6nd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3aep"]
+size = Vector3(44.585987, 11, 74.84077)
+
+[node name="B13" type="Node3D" unique_id=1697889408]
+metadata/asset_id = "B13"
+metadata/category = "buildings"
+metadata/display_name = "B13 风雨篮球馆"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="HallMass" type="MeshInstance3D" parent="." unique_id=1802797222]
+mesh = ExtResource("1_3ar8t")
+
+[node name="Parapet" type="MeshInstance3D" parent="." unique_id=271221704]
+mesh = ExtResource("2_eibw3")
+
+[node name="RoofDeck" type="MeshInstance3D" parent="." unique_id=2028069696]
+mesh = ExtResource("3_1yxvd")
+
+[node name="UpperWindows" type="MeshInstance3D" parent="." unique_id=1290630630]
+mesh = ExtResource("4_uct6i")
+
+[node name="ArcadeRecess" type="MeshInstance3D" parent="." unique_id=1128848309]
+mesh = ExtResource("5_uj427")
+
+[node name="ArcadeArch" type="MeshInstance3D" parent="." unique_id=1322831892]
+mesh = ExtResource("6_o52tp")
+
+[node name="ArcadePiers" type="MeshInstance3D" parent="." unique_id=747641325]
+mesh = ExtResource("7_qfx81")
+
+[node name="StoreyCornice" type="MeshInstance3D" parent="." unique_id=62088405]
+mesh = ExtResource("8_pns6w")
+
+[node name="RoofSeams" type="MeshInstance3D" parent="." unique_id=118425889]
+mesh = ExtResource("9_hs6nd")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=415089255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+
+[node name="@CollisionShape3D@341" type="CollisionShape3D" parent="Collision_0" unique_id=1954512839]
+shape = SubResource("BoxShape3D_n3aep")

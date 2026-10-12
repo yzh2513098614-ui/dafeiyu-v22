@@ -1,0 +1,61 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2249.res" id="1_1trhr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2250.res" id="2_2lj7h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2251.res" id="3_nd2cu"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2252.res" id="4_61xfo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2253.res" id="5_7qvws"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2254.res" id="6_oqmxx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2255.res" id="7_8kx2v"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2256.res" id="8_yrpkn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2257.res" id="9_hti73"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2258.res" id="10_lkhx7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2259.res" id="11_3mbys"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2260.res" id="12_ejrqb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_east_2261.res" id="13_5vynp"]
+
+[node name="basket_B_east" type="Node3D" unique_id=137907188]
+metadata/asset_id = "basket_B_east"
+metadata/category = "sports"
+metadata/display_name = "basket_B_east"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=501341492]
+mesh = ExtResource("1_1trhr")
+
+[node name="Court_1_CourtRed" type="MeshInstance3D" parent="." unique_id=145517222]
+mesh = ExtResource("2_2lj7h")
+
+[node name="Court_1_CourtInfield" type="MeshInstance3D" parent="." unique_id=491183296]
+mesh = ExtResource("3_nd2cu")
+
+[node name="Court_1_CourtLines" type="MeshInstance3D" parent="." unique_id=1183771617]
+mesh = ExtResource("4_61xfo")
+
+[node name="Court_1_HoopPost" type="MeshInstance3D" parent="." unique_id=945976812]
+mesh = ExtResource("5_7qvws")
+
+[node name="Court_1_Backboard" type="MeshInstance3D" parent="." unique_id=1380467900]
+mesh = ExtResource("6_oqmxx")
+
+[node name="Court_1_Hoop" type="MeshInstance3D" parent="." unique_id=271853974]
+mesh = ExtResource("7_8kx2v")
+
+[node name="Court_2_CourtRed" type="MeshInstance3D" parent="." unique_id=26548621]
+mesh = ExtResource("8_yrpkn")
+
+[node name="Court_2_CourtInfield" type="MeshInstance3D" parent="." unique_id=75949854]
+mesh = ExtResource("9_hti73")
+
+[node name="Court_2_CourtLines" type="MeshInstance3D" parent="." unique_id=578200828]
+mesh = ExtResource("10_lkhx7")
+
+[node name="Court_2_HoopPost" type="MeshInstance3D" parent="." unique_id=2127101879]
+mesh = ExtResource("11_3mbys")
+
+[node name="Court_2_Backboard" type="MeshInstance3D" parent="." unique_id=96284852]
+mesh = ExtResource("12_ejrqb")
+
+[node name="Court_2_Hoop" type="MeshInstance3D" parent="." unique_id=2105807165]
+mesh = ExtResource("13_5vynp")

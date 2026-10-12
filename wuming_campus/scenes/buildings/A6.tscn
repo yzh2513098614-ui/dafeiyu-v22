@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_997.res" id="1_molld"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_998.res" id="2_wbk7e"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_999.res" id="3_56a5t"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1000.res" id="4_5ui61"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1001.res" id="5_gxov0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1002.res" id="6_gpu63"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1003.res" id="7_fno4w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1004.res" id="8_kwid2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1005.res" id="9_pk13e"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1006.res" id="10_cexkx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1007.res" id="11_qgcx6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A6_1008.res" id="12_oplpn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gq54"]
+size = Vector3(70.93949, 12, 19.705414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yljl3"]
+size = Vector3(70.93949, 10, 35.03185)
+
+[node name="A6" type="Node3D" unique_id=245411310]
+metadata/asset_id = "A6"
+metadata/category = "buildings"
+metadata/display_name = "A6 弘医餐厅"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="DiningRear_Structure" type="MeshInstance3D" parent="." unique_id=923124829]
+mesh = ExtResource("1_molld")
+
+[node name="DiningRear_Plinth" type="MeshInstance3D" parent="." unique_id=1724403532]
+mesh = ExtResource("2_wbk7e")
+
+[node name="DiningRear_Cornice" type="MeshInstance3D" parent="." unique_id=2005606117]
+mesh = ExtResource("3_56a5t")
+
+[node name="DiningRear_Roof" type="MeshInstance3D" parent="." unique_id=440324927]
+mesh = ExtResource("4_5ui61")
+
+[node name="DiningRear_WindowGlass" type="MeshInstance3D" parent="." unique_id=1162584328]
+mesh = ExtResource("5_gxov0")
+
+[node name="DiningRear_WindowFrames" type="MeshInstance3D" parent="." unique_id=271197593]
+mesh = ExtResource("6_gpu63")
+
+[node name="DiningRear_FloorBands" type="MeshInstance3D" parent="." unique_id=1114112155]
+mesh = ExtResource("7_fno4w")
+
+[node name="DiningRear_Pilasters" type="MeshInstance3D" parent="." unique_id=1791287095]
+mesh = ExtResource("8_kwid2")
+
+[node name="DiningRear_SideWindows" type="MeshInstance3D" parent="." unique_id=628132404]
+mesh = ExtResource("9_pk13e")
+
+[node name="CurvedDiningRoof" type="MeshInstance3D" parent="." unique_id=1749980044]
+mesh = ExtResource("10_cexkx")
+
+[node name="CurvedDiningFacade" type="MeshInstance3D" parent="." unique_id=717887910]
+mesh = ExtResource("11_qgcx6")
+
+[node name="CurvedDiningGlass" type="MeshInstance3D" parent="." unique_id=1754070428]
+mesh = ExtResource("12_oplpn")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1439608926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -10.071656)
+
+[node name="@CollisionShape3D@28" type="CollisionShape3D" parent="Collision_0" unique_id=290819499]
+shape = SubResource("BoxShape3D_7gq54")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=2065770388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="@CollisionShape3D@29" type="CollisionShape3D" parent="Collision_1" unique_id=102407224]
+shape = SubResource("BoxShape3D_yljl3")

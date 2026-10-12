@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_feathered_supported_2608.res" id="1_rw7q8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gi2i"]
+height = 5.6
+radius = 0.11
+
+[node name="tree_feathered_supported" type="Node3D" unique_id=1924724204]
+metadata/asset_id = "tree_feathered_supported"
+metadata/category = "vegetation"
+metadata/display_name = "疏叶羽状冠支撑幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_feathered_supported" type="MeshInstance3D" parent="." unique_id=2147293039]
+mesh = ExtResource("1_rw7q8")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=764890776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
+
+[node name="@CollisionShape3D@446" type="CollisionShape3D" parent="Collision_0" unique_id=1758097657]
+shape = SubResource("CylinderShape3D_6gi2i")

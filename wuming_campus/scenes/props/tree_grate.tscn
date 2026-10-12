@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_grate_2599.res" id="1_tis6b"]
+
+[node name="tree_grate" type="Node3D" unique_id=1524842839]
+metadata/asset_id = "tree_grate"
+metadata/category = "landscape"
+metadata/display_name = "树池格栅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_grate" type="MeshInstance3D" parent="." unique_id=1562828732]
+mesh = ExtResource("1_tis6b")

@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/curb_4m_2595.res" id="1_lh8ea"]
+
+[node name="curb_4m" type="Node3D" unique_id=732384771]
+metadata/asset_id = "curb_4m"
+metadata/category = "roads"
+metadata/display_name = "四米路缘石"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="curb_4m" type="MeshInstance3D" parent="." unique_id=575135702]
+mesh = ExtResource("1_lh8ea")

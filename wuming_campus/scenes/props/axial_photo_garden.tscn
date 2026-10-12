@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2473.res" id="1_inrsk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2474.res" id="2_gnctp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2475.res" id="3_yshnk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2476.res" id="4_fjra8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2477.res" id="5_nmh4x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2478.res" id="6_jmm6o"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2479.res" id="7_jmbip"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2480.res" id="8_bl005"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2481.res" id="9_cwa66"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/axial_photo_garden_2482.res" id="10_pb65g"]
+
+[node name="axial_photo_garden" type="Node3D" unique_id=1670363625]
+metadata/asset_id = "axial_photo_garden"
+metadata/category = "landmarks"
+metadata/display_name = "教学区轴线草坪与弧形步道"
+metadata/units = "metre"
+metadata/evidence = "aerial_photo_inferred_landscape_outline"
+
+[node name="FormalAxisLawns" type="MeshInstance3D" parent="." unique_id=1601531764]
+mesh = ExtResource("1_inrsk")
+
+[node name="AxisLawnPaleEdging" type="MeshInstance3D" parent="." unique_id=1869135913]
+mesh = ExtResource("2_gnctp")
+
+[node name="MeanderingWhiteGardenPaths" type="MeshInstance3D" parent="." unique_id=508284021]
+mesh = ExtResource("3_yshnk")
+
+[node name="UprightCannaStems" type="MeshInstance3D" parent="." unique_id=776072659]
+mesh = ExtResource("4_fjra8")
+
+[node name="LongBroadFoldedCannaLeaves" type="MeshInstance3D" parent="." unique_id=70271034]
+mesh = ExtResource("5_nmh4x")
+
+[node name="CannaLeafCentralRibs" type="MeshInstance3D" parent="." unique_id=476430717]
+mesh = ExtResource("6_jmm6o")
+
+[node name="AsymmetricCannaFlowerPetals" type="MeshInstance3D" parent="." unique_id=1478316302]
+mesh = ExtResource("7_jmbip")
+
+[node name="PaleMainAxisWalk" type="MeshInstance3D" parent="." unique_id=1113798047]
+mesh = ExtResource("8_bl005")
+
+[node name="MainAxisDarkBorders" type="MeshInstance3D" parent="." unique_id=1814228870]
+mesh = ExtResource("9_cwa66")
+
+[node name="MainAxisSlabJoints" type="MeshInstance3D" parent="." unique_id=1075500644]
+mesh = ExtResource("10_pb65g")

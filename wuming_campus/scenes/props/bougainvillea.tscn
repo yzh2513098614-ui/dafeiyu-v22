@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bougainvillea_2576.res" id="1_6jpbb"]
+
+[node name="bougainvillea" type="Node3D" unique_id=300998207]
+metadata/asset_id = "bougainvillea"
+metadata/category = "vegetation"
+metadata/display_name = "三角梅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bougainvillea" type="MeshInstance3D" parent="." unique_id=1494907783]
+mesh = ExtResource("1_6jpbb")

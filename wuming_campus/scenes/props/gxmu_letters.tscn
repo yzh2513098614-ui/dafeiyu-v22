@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/gxmu_letters_2491.res" id="1_vxcyy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m5jku"]
+size = Vector3(12, 0.56, 1.5)
+
+[node name="gxmu_letters" type="Node3D" unique_id=447940630]
+metadata/asset_id = "gxmu_letters"
+metadata/category = "landmarks"
+metadata/display_name = "校园文字景观"
+metadata/units = "metre"
+metadata/evidence = "photo_reconstructed_location_estimated"
+
+[node name="LetterBase" type="MeshInstance3D" parent="." unique_id=1420133084]
+mesh = ExtResource("1_vxcyy")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=445597893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0)
+
+[node name="@CollisionShape3D@406" type="CollisionShape3D" parent="Collision_0" unique_id=748246370]
+shape = SubResource("BoxShape3D_m5jku")

@@ -1,0 +1,73 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2363.res" id="1_aayny"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2364.res" id="2_c84oe"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2365.res" id="3_t1vmi"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2366.res" id="4_ttcki"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2367.res" id="5_mln0f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2368.res" id="6_op1vk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2369.res" id="7_3r557"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2370.res" id="8_i268d"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2371.res" id="9_ykn4n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2372.res" id="10_04xgm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2373.res" id="11_beuvv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2374.res" id="12_1nr6w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2375.res" id="13_7nfqc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2376.res" id="14_7aujr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2377.res" id="15_18dnx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/volley_C_west_2378.res" id="16_hafyy"]
+
+[node name="volley_C_west" type="Node3D" unique_id=1276548557]
+metadata/asset_id = "volley_C_west"
+metadata/category = "sports"
+metadata/display_name = "volley_C_west"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=1615625702]
+mesh = ExtResource("1_aayny")
+
+[node name="Court_1_CourtRed" type="MeshInstance3D" parent="." unique_id=720759873]
+mesh = ExtResource("2_c84oe")
+
+[node name="Court_1_CourtInfield" type="MeshInstance3D" parent="." unique_id=1236153937]
+mesh = ExtResource("3_t1vmi")
+
+[node name="Court_1_CourtLines" type="MeshInstance3D" parent="." unique_id=2077519505]
+mesh = ExtResource("4_ttcki")
+
+[node name="Court_1_NetPosts" type="MeshInstance3D" parent="." unique_id=1735429126]
+mesh = ExtResource("5_mln0f")
+
+[node name="Court_1_NetMesh" type="MeshInstance3D" parent="." unique_id=1075872812]
+mesh = ExtResource("6_op1vk")
+
+[node name="Court_2_CourtRed" type="MeshInstance3D" parent="." unique_id=1662286473]
+mesh = ExtResource("7_3r557")
+
+[node name="Court_2_CourtInfield" type="MeshInstance3D" parent="." unique_id=1610536341]
+mesh = ExtResource("8_i268d")
+
+[node name="Court_2_CourtLines" type="MeshInstance3D" parent="." unique_id=979916367]
+mesh = ExtResource("9_ykn4n")
+
+[node name="Court_2_NetPosts" type="MeshInstance3D" parent="." unique_id=2122095128]
+mesh = ExtResource("10_04xgm")
+
+[node name="Court_2_NetMesh" type="MeshInstance3D" parent="." unique_id=935435087]
+mesh = ExtResource("11_beuvv")
+
+[node name="Court_3_CourtRed" type="MeshInstance3D" parent="." unique_id=147456545]
+mesh = ExtResource("12_1nr6w")
+
+[node name="Court_3_CourtInfield" type="MeshInstance3D" parent="." unique_id=1817218152]
+mesh = ExtResource("13_7nfqc")
+
+[node name="Court_3_CourtLines" type="MeshInstance3D" parent="." unique_id=1951240]
+mesh = ExtResource("14_7aujr")
+
+[node name="Court_3_NetPosts" type="MeshInstance3D" parent="." unique_id=1021570279]
+mesh = ExtResource("15_18dnx")
+
+[node name="Court_3_NetMesh" type="MeshInstance3D" parent="." unique_id=63371207]
+mesh = ExtResource("16_hafyy")

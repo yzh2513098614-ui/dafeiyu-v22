@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bike_rack_2590.res" id="1_o5wwe"]
+
+[node name="bike_rack" type="Node3D" unique_id=1910104972]
+metadata/asset_id = "bike_rack"
+metadata/category = "street_furniture"
+metadata/display_name = "自行车停放架"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bike_rack" type="MeshInstance3D" parent="." unique_id=2145076234]
+mesh = ExtResource("1_o5wwe")

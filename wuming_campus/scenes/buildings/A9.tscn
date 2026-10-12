@@ -1,0 +1,302 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1156.res" id="1_tclhh"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1157.res" id="2_s8etb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1158.res" id="3_8w8de"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1159.res" id="4_c56sn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1160.res" id="5_mfqvw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1161.res" id="6_ldarm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1162.res" id="7_17u5f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1163.res" id="8_gyji3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1164.res" id="9_1drbm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1165.res" id="10_gnkri"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1166.res" id="11_nbur6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1167.res" id="12_b02ar"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1168.res" id="13_snqqm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1169.res" id="14_2poyw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1170.res" id="15_mi2yi"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1171.res" id="16_gy4oo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1172.res" id="17_y173g"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1173.res" id="18_8dvbr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1174.res" id="19_ev71h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1175.res" id="20_y85tk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1176.res" id="21_ac3s1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1177.res" id="22_4wwgk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1178.res" id="23_fvcyx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1179.res" id="24_5aeeb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1180.res" id="25_qa7f5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1181.res" id="26_f5432"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1182.res" id="27_sflsd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1183.res" id="28_kiu86"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1184.res" id="29_i0fdo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1185.res" id="30_mpcoc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1186.res" id="31_vreuj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1187.res" id="32_vw0t2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1188.res" id="33_tmvox"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1189.res" id="34_fhpjo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1190.res" id="35_o0pnr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1191.res" id="36_6bf32"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1192.res" id="37_iff83"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1193.res" id="38_e5oux"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1194.res" id="39_2fn2f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1195.res" id="40_xj0fm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1196.res" id="41_a0yp0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1197.res" id="42_848kc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1198.res" id="43_7q6ip"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1199.res" id="44_0m76j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1200.res" id="45_aplis"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1201.res" id="46_ph6lr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1202.res" id="47_e8xy6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1203.res" id="48_1t7db"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1204.res" id="49_ce4kj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1205.res" id="50_xalck"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1206.res" id="51_pf3v8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1207.res" id="52_1yru3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1208.res" id="53_jfd2l"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1209.res" id="54_2ymiq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1210.res" id="55_21saj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1211.res" id="56_dq817"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1212.res" id="57_snaro"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1213.res" id="58_b33n8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1214.res" id="59_1wv3n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1215.res" id="60_5r4up"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1216.res" id="61_2lq6j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1217.res" id="62_cy25f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1218.res" id="63_lr71v"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1219.res" id="64_cxnd5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1220.res" id="65_mupcj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1221.res" id="66_hqvax"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1222.res" id="67_a3d1c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1223.res" id="68_uvcti"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1224.res" id="69_bterp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1225.res" id="70_05d6w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A9_1226.res" id="71_fktuw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7grce"]
+size = Vector3(66.87898, 18.65, 25.273886)
+
+[node name="A9" type="Node3D" unique_id=1460856403]
+metadata/asset_id = "A9"
+metadata/category = "buildings"
+metadata/display_name = "A9 博雅楼"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="TeachingFacade_SetBackBrickCore" type="MeshInstance3D" parent="." unique_id=697658097]
+mesh = ExtResource("1_tclhh")
+
+[node name="TeachingFacade_PaleStoneGroundBody" type="MeshInstance3D" parent="." unique_id=389384308]
+mesh = ExtResource("2_s8etb")
+
+[node name="TeachingFacade_DarkBaseCourse" type="MeshInstance3D" parent="." unique_id=1269761908]
+mesh = ExtResource("3_8w8de")
+
+[node name="TeachingFacade_BroadSolidBrickPiers" type="MeshInstance3D" parent="." unique_id=718115547]
+mesh = ExtResource("4_c56sn")
+
+[node name="TeachingFacade_DeepLoggiaRearShadow" type="MeshInstance3D" parent="." unique_id=1462690214]
+mesh = ExtResource("5_mfqvw")
+
+[node name="TeachingFacade_InsetLoggiaFloor" type="MeshInstance3D" parent="." unique_id=1025611065]
+mesh = ExtResource("6_ldarm")
+
+[node name="TeachingFacade_PaleLoggiaParapetPanel" type="MeshInstance3D" parent="." unique_id=1201565630]
+mesh = ExtResource("7_17u5f")
+
+[node name="TeachingFacade_PaleLoggiaJambs" type="MeshInstance3D" parent="." unique_id=350712984]
+mesh = ExtResource("8_gyji3")
+
+[node name="TeachingFacade_LoggiaUpperRail" type="MeshInstance3D" parent="." unique_id=867091705]
+mesh = ExtResource("9_1drbm")
+
+[node name="TeachingFacade_ProjectingClassroomBrickField" type="MeshInstance3D" parent="." unique_id=1684978331]
+mesh = ExtResource("10_gnkri")
+
+[node name="TeachingFacade_ClassroomZone2_RecessShadow" type="MeshInstance3D" parent="." unique_id=1972915787]
+mesh = ExtResource("11_nbur6")
+
+[node name="TeachingFacade_ClassroomZone2_GlassPane" type="MeshInstance3D" parent="." unique_id=62350667]
+mesh = ExtResource("12_b02ar")
+
+[node name="TeachingFacade_ClassroomZone2_ThinDarkMullion" type="MeshInstance3D" parent="." unique_id=659531123]
+mesh = ExtResource("13_snqqm")
+
+[node name="TeachingFacade_ClassroomZone2_DarkWindowTransom" type="MeshInstance3D" parent="." unique_id=191955459]
+mesh = ExtResource("14_2poyw")
+
+[node name="TeachingFacade_ClassroomZone2_SmallStoneSill" type="MeshInstance3D" parent="." unique_id=1817134610]
+mesh = ExtResource("15_mi2yi")
+
+[node name="TeachingFacade_CentralStair_RecessShadow" type="MeshInstance3D" parent="." unique_id=183684008]
+mesh = ExtResource("16_gy4oo")
+
+[node name="TeachingFacade_CentralStair_GlassPane" type="MeshInstance3D" parent="." unique_id=617983805]
+mesh = ExtResource("17_y173g")
+
+[node name="TeachingFacade_CentralStair_ThinDarkMullion" type="MeshInstance3D" parent="." unique_id=219258783]
+mesh = ExtResource("18_8dvbr")
+
+[node name="TeachingFacade_CentralStair_DarkWindowTransom" type="MeshInstance3D" parent="." unique_id=640015040]
+mesh = ExtResource("19_ev71h")
+
+[node name="TeachingFacade_CentralStair_SmallStoneSill" type="MeshInstance3D" parent="." unique_id=220994848]
+mesh = ExtResource("20_y85tk")
+
+[node name="TeachingFacade_StairStoneSpandrelPanels" type="MeshInstance3D" parent="." unique_id=658673379]
+mesh = ExtResource("21_ac3s1")
+
+[node name="TeachingFacade_TallCentralIvoryBlade" type="MeshInstance3D" parent="." unique_id=1559672044]
+mesh = ExtResource("22_4wwgk")
+
+[node name="TeachingFacade_CentralRaisedAtticStonePlate" type="MeshInstance3D" parent="." unique_id=1884725089]
+mesh = ExtResource("23_fvcyx")
+
+[node name="TeachingFacade_RaisedCentralParapetCoping" type="MeshInstance3D" parent="." unique_id=1909291319]
+mesh = ExtResource("24_5aeeb")
+
+[node name="TeachingFacade_RaisedPanelInsetStoneFields" type="MeshInstance3D" parent="." unique_id=296204420]
+mesh = ExtResource("25_qa7f5")
+
+[node name="TeachingFacade_ClassroomZone7_RecessShadow" type="MeshInstance3D" parent="." unique_id=1338343071]
+mesh = ExtResource("26_f5432")
+
+[node name="TeachingFacade_ClassroomZone7_GlassPane" type="MeshInstance3D" parent="." unique_id=1157213519]
+mesh = ExtResource("27_sflsd")
+
+[node name="TeachingFacade_ClassroomZone7_ThinDarkMullion" type="MeshInstance3D" parent="." unique_id=2035995778]
+mesh = ExtResource("28_kiu86")
+
+[node name="TeachingFacade_ClassroomZone7_DarkWindowTransom" type="MeshInstance3D" parent="." unique_id=1321308009]
+mesh = ExtResource("29_i0fdo")
+
+[node name="TeachingFacade_ClassroomZone7_SmallStoneSill" type="MeshInstance3D" parent="." unique_id=1521592474]
+mesh = ExtResource("30_mpcoc")
+
+[node name="TeachingFacade_MajorPaleBeltCourses" type="MeshInstance3D" parent="." unique_id=703376313]
+mesh = ExtResource("31_vreuj")
+
+[node name="TeachingFacade_AtticDeepOpenCorridor" type="MeshInstance3D" parent="." unique_id=966104056]
+mesh = ExtResource("32_vw0t2")
+
+[node name="TeachingFacade_WideIvoryAtticColumns" type="MeshInstance3D" parent="." unique_id=1522467077]
+mesh = ExtResource("33_tmvox")
+
+[node name="TeachingFacade_AtticSolidLowerParapet" type="MeshInstance3D" parent="." unique_id=2139237933]
+mesh = ExtResource("34_fhpjo")
+
+[node name="TeachingFacade_AtticRoofLintel" type="MeshInstance3D" parent="." unique_id=2107096969]
+mesh = ExtResource("35_o0pnr")
+
+[node name="TeachingFacade_AtticRail" type="MeshInstance3D" parent="." unique_id=21071127]
+mesh = ExtResource("36_6bf32")
+
+[node name="TeachingFacade_StoneGroundPier" type="MeshInstance3D" parent="." unique_id=493502739]
+mesh = ExtResource("37_iff83")
+
+[node name="TeachingFacade_GroundDoors_RecessShadow" type="MeshInstance3D" parent="." unique_id=726035613]
+mesh = ExtResource("38_e5oux")
+
+[node name="TeachingFacade_GroundDoors_GlassPane" type="MeshInstance3D" parent="." unique_id=703555056]
+mesh = ExtResource("39_2fn2f")
+
+[node name="TeachingFacade_GroundDoors_ThinDarkMullion" type="MeshInstance3D" parent="." unique_id=1284614657]
+mesh = ExtResource("40_xj0fm")
+
+[node name="TeachingFacade_GroundDoors_DarkWindowTransom" type="MeshInstance3D" parent="." unique_id=1474022639]
+mesh = ExtResource("41_a0yp0")
+
+[node name="TeachingFacade_GroundDoors_SmallStoneSill" type="MeshInstance3D" parent="." unique_id=1634133796]
+mesh = ExtResource("42_848kc")
+
+[node name="WallMountedACCases" type="MeshInstance3D" parent="." unique_id=1434937024]
+mesh = ExtResource("43_7q6ip")
+
+[node name="ACVentSlats" type="MeshInstance3D" parent="." unique_id=528345832]
+mesh = ExtResource("44_0m76j")
+
+[node name="ACMountingBracket" type="MeshInstance3D" parent="." unique_id=1197191123]
+mesh = ExtResource("45_aplis")
+
+[node name="TeachingFacade_SideRoom_RecessShadow" type="MeshInstance3D" parent="." unique_id=557726396]
+mesh = ExtResource("46_ph6lr")
+
+[node name="TeachingFacade_SideRoom_GlassPane" type="MeshInstance3D" parent="." unique_id=299690793]
+mesh = ExtResource("47_e8xy6")
+
+[node name="TeachingFacade_SideRoom_ThinDarkMullion" type="MeshInstance3D" parent="." unique_id=1334744186]
+mesh = ExtResource("48_1t7db")
+
+[node name="TeachingFacade_SideRoom_DarkWindowTransom" type="MeshInstance3D" parent="." unique_id=340849008]
+mesh = ExtResource("49_ce4kj")
+
+[node name="TeachingFacade_SideRoom_SmallStoneSill" type="MeshInstance3D" parent="." unique_id=63127513]
+mesh = ExtResource("50_xalck")
+
+[node name="TeachingFacade_UpperSideIvoryWall" type="MeshInstance3D" parent="." unique_id=441328704]
+mesh = ExtResource("51_pf3v8")
+
+[node name="TeachingFacade_SideAtticDarkOpenings" type="MeshInstance3D" parent="." unique_id=498405791]
+mesh = ExtResource("52_1yru3")
+
+[node name="TeachingFacade_AtticFloorSlab" type="MeshInstance3D" parent="." unique_id=141770467]
+mesh = ExtResource("53_jfd2l")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ContinuousTileUnderlay" type="MeshInstance3D" parent="." unique_id=1712672129]
+mesh = ExtResource("54_2ymiq")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ClippedTileField_1" type="MeshInstance3D" parent="." unique_id=105207011]
+mesh = ExtResource("55_21saj")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ThinOverlappingTileCourses" type="MeshInstance3D" parent="." unique_id=1117452366]
+mesh = ExtResource("56_dq817")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ClippedTileField_2" type="MeshInstance3D" parent="." unique_id=2109618517]
+mesh = ExtResource("57_snaro")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ClippedTileField_3" type="MeshInstance3D" parent="." unique_id=1536750575]
+mesh = ExtResource("58_b33n8")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ClippedTileField_4" type="MeshInstance3D" parent="." unique_id=993194300]
+mesh = ExtResource("59_1wv3n")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_ClosedRoofSoffit" type="MeshInstance3D" parent="." unique_id=1574226961]
+mesh = ExtResource("60_5r4up")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RoofEdgeThickness" type="MeshInstance3D" parent="." unique_id=2021520019]
+mesh = ExtResource("61_2lq6j")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_SegmentedMainRidgeCaps" type="MeshInstance3D" parent="." unique_id=1156579222]
+mesh = ExtResource("62_cy25f")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_SegmentedHipCaps" type="MeshInstance3D" parent="." unique_id=2043980682]
+mesh = ExtResource("63_lr71v")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_SteppedStoneEaves" type="MeshInstance3D" parent="." unique_id=1633544383]
+mesh = ExtResource("64_cxnd5")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RecessedEaveGutter_RolledLip" type="MeshInstance3D" parent="." unique_id=1692588474]
+mesh = ExtResource("65_mupcj")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RecessedEaveGutter_OpenChannelBottom" type="MeshInstance3D" parent="." unique_id=719264941]
+mesh = ExtResource("66_hqvax")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RecessedEaveGutter_ChannelSides" type="MeshInstance3D" parent="." unique_id=400212483]
+mesh = ExtResource("67_a3d1c")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RecessedEaveGutter_ClosedGutterEnds" type="MeshInstance3D" parent="." unique_id=131100294]
+mesh = ExtResource("68_uvcti")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RearRainwaterPipe" type="MeshInstance3D" parent="." unique_id=1994697942]
+mesh = ExtResource("69_bterp")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_GutterOutletElbow" type="MeshInstance3D" parent="." unique_id=1834478778]
+mesh = ExtResource("70_05d6w")
+
+[node name="TeachingFacade_PhotoLowPitchedRoof_RainPipeFixingClips" type="MeshInstance3D" parent="." unique_id=1342769854]
+mesh = ExtResource("71_fktuw")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=2019471682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.325, -0.5)
+
+[node name="@CollisionShape3D@97" type="CollisionShape3D" parent="Collision_0" unique_id=2052448479]
+shape = SubResource("BoxShape3D_7grce")

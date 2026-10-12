@@ -1,0 +1,74 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1395.res" id="1_royg0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1396.res" id="2_56vjn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1397.res" id="3_ylcex"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1398.res" id="4_qbypq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1399.res" id="5_3plko"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1400.res" id="6_re0yi"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1401.res" id="7_nr3kl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1402.res" id="8_2o35n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1403.res" id="9_l2nro"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1404.res" id="10_tci1t"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1405.res" id="11_yid3g"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1406.res" id="12_1y5sn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1407.res" id="13_sn7r1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B8_1408.res" id="14_gi34w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4sib5"]
+size = Vector3(68.47134, 11.7, 65.28662)
+
+[node name="B8" type="Node3D" unique_id=108002552]
+metadata/asset_id = "B8"
+metadata/category = "buildings"
+metadata/display_name = "B8 榕园餐厅"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="MainBlock_Structure" type="MeshInstance3D" parent="." unique_id=1538353179]
+mesh = ExtResource("1_royg0")
+
+[node name="MainBlock_Plinth" type="MeshInstance3D" parent="." unique_id=376816515]
+mesh = ExtResource("2_56vjn")
+
+[node name="MainBlock_Cornice" type="MeshInstance3D" parent="." unique_id=1086945230]
+mesh = ExtResource("3_ylcex")
+
+[node name="MainBlock_Roof" type="MeshInstance3D" parent="." unique_id=290650379]
+mesh = ExtResource("4_qbypq")
+
+[node name="MainBlock_WindowGlass" type="MeshInstance3D" parent="." unique_id=2099835352]
+mesh = ExtResource("5_3plko")
+
+[node name="MainBlock_WindowFrames" type="MeshInstance3D" parent="." unique_id=1969472340]
+mesh = ExtResource("6_re0yi")
+
+[node name="MainBlock_FloorBands" type="MeshInstance3D" parent="." unique_id=1975162173]
+mesh = ExtResource("7_nr3kl")
+
+[node name="MainBlock_Pilasters" type="MeshInstance3D" parent="." unique_id=2020698565]
+mesh = ExtResource("8_2o35n")
+
+[node name="MainBlock_SideWindows" type="MeshInstance3D" parent="." unique_id=1170456140]
+mesh = ExtResource("9_l2nro")
+
+[node name="MainBlock_EntryGlass" type="MeshInstance3D" parent="." unique_id=2006318452]
+mesh = ExtResource("10_tci1t")
+
+[node name="MainBlock_EntryColumns" type="MeshInstance3D" parent="." unique_id=1977080811]
+mesh = ExtResource("11_yid3g")
+
+[node name="MainBlock_EntryLintel" type="MeshInstance3D" parent="." unique_id=276382980]
+mesh = ExtResource("12_1y5sn")
+
+[node name="MainBlock_EntrySteps" type="MeshInstance3D" parent="." unique_id=111614237]
+mesh = ExtResource("13_sn7r1")
+
+[node name="GreenRoof" type="MeshInstance3D" parent="." unique_id=734208010]
+mesh = ExtResource("14_gi34w")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=2048871921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.85, 0)
+
+[node name="@CollisionShape3D@336" type="CollisionShape3D" parent="Collision_0" unique_id=97338781]
+shape = SubResource("BoxShape3D_4sib5")

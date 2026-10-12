@@ -1,0 +1,79 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1466.res" id="1_613pn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1467.res" id="2_w4htr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1468.res" id="3_f47ft"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1469.res" id="4_hapv3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1470.res" id="5_hogvy"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1471.res" id="6_aby3p"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1472.res" id="7_k14nw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1473.res" id="8_nfnxp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1474.res" id="9_0nndk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1475.res" id="10_bwo4p"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1476.res" id="11_47teb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1477.res" id="12_y00ur"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/B14_1478.res" id="13_its3a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhw25"]
+size = Vector3(23.089172, 5.2, 113.8535)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wm4x8"]
+size = Vector3(11.544586, 7.2, 34.15605)
+
+[node name="B14" type="Node3D" unique_id=1541247579]
+metadata/asset_id = "B14"
+metadata/category = "buildings"
+metadata/display_name = "B14 田径场看台"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="GrandstandBase" type="MeshInstance3D" parent="." unique_id=854199376]
+mesh = ExtResource("1_613pn")
+
+[node name="SteppedSeating" type="MeshInstance3D" parent="." unique_id=252310666]
+mesh = ExtResource("2_w4htr")
+
+[node name="Canopy" type="MeshInstance3D" parent="." unique_id=394501228]
+mesh = ExtResource("3_f47ft")
+
+[node name="CanopyColumns" type="MeshInstance3D" parent="." unique_id=1587269472]
+mesh = ExtResource("4_hapv3")
+
+[node name="PressBox_Structure" type="MeshInstance3D" parent="." unique_id=62392848]
+mesh = ExtResource("5_hogvy")
+
+[node name="PressBox_Plinth" type="MeshInstance3D" parent="." unique_id=1642238255]
+mesh = ExtResource("6_aby3p")
+
+[node name="PressBox_Cornice" type="MeshInstance3D" parent="." unique_id=1024335266]
+mesh = ExtResource("7_k14nw")
+
+[node name="PressBox_Roof" type="MeshInstance3D" parent="." unique_id=933693366]
+mesh = ExtResource("8_nfnxp")
+
+[node name="PressBox_WindowGlass" type="MeshInstance3D" parent="." unique_id=1076816273]
+mesh = ExtResource("9_0nndk")
+
+[node name="PressBox_WindowFrames" type="MeshInstance3D" parent="." unique_id=338429046]
+mesh = ExtResource("10_bwo4p")
+
+[node name="PressBox_FloorBands" type="MeshInstance3D" parent="." unique_id=1822947105]
+mesh = ExtResource("11_47teb")
+
+[node name="PressBox_Pilasters" type="MeshInstance3D" parent="." unique_id=674274005]
+mesh = ExtResource("12_y00ur")
+
+[node name="PressBox_SideWindows" type="MeshInstance3D" parent="." unique_id=263651727]
+mesh = ExtResource("13_its3a")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=82142333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+
+[node name="@CollisionShape3D@342" type="CollisionShape3D" parent="Collision_0" unique_id=797702130]
+shape = SubResource("BoxShape3D_fhw25")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=2055918714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6942675, 3.6, 0)
+
+[node name="@CollisionShape3D@343" type="CollisionShape3D" parent="Collision_1" unique_id=760562943]
+shape = SubResource("BoxShape3D_wm4x8")

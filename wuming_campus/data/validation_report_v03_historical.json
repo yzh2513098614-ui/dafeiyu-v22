@@ -1,0 +1,10 @@
+{
+	"building_collision_samples": 51,
+	"checks": 3480,
+	"engine": "4.6.2-stable (official)",
+	"failures": [],
+	"mapped_buildings": 51,
+	"road_ground_samples": 144,
+	"scope": "native resources, metre scale, building collision, road support, resting human capsule; not a cadastral accuracy certification",
+	"trees": 1085
+}

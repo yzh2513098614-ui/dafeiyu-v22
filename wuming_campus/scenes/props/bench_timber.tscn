@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bench_timber_2572.res" id="1_v25jd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5a7v"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqgu1"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[node name="bench_timber" type="Node3D" unique_id=1973896265]
+metadata/asset_id = "bench_timber"
+metadata/category = "street_furniture"
+metadata/display_name = "木条金属长椅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bench_timber" type="MeshInstance3D" parent="." unique_id=1405129420]
+mesh = ExtResource("1_v25jd")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=244894971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@424" type="CollisionShape3D" parent="Collision_0" unique_id=928680830]
+shape = SubResource("BoxShape3D_l5a7v")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=1132809025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@425" type="CollisionShape3D" parent="Collision_1" unique_id=1687877713]
+shape = SubResource("BoxShape3D_iqgu1")

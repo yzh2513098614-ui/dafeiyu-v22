@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bench_stone_2573.res" id="1_8iwq6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhldh"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a76xl"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[node name="bench_stone" type="Node3D" unique_id=151279092]
+metadata/asset_id = "bench_stone"
+metadata/category = "street_furniture"
+metadata/display_name = "石材座椅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bench_stone" type="MeshInstance3D" parent="." unique_id=1663317086]
+mesh = ExtResource("1_8iwq6")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=491411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@426" type="CollisionShape3D" parent="Collision_0" unique_id=207703291]
+shape = SubResource("BoxShape3D_qhldh")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=2137808499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@427" type="CollisionShape3D" parent="Collision_1" unique_id=904425604]
+shape = SubResource("BoxShape3D_a76xl")

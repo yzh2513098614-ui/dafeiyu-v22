@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_orange_2606.res" id="1_b08jv"]
+
+[node name="canna_orange" type="Node3D" unique_id=624616804]
+metadata/asset_id = "canna_orange"
+metadata/category = "vegetation"
+metadata/display_name = "橙红美人蕉植株"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_orange" type="MeshInstance3D" parent="." unique_id=1107600891]
+mesh = ExtResource("1_b08jv")

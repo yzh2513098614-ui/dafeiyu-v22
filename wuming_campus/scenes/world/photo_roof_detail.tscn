@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://wuming_campus/scripts/roof_detail_controller.gd" id="1_mbplm"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/buildings/photo_teaching_wing.tscn" id="2_ttfuo"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/props/clocktower.tscn" id="3_yspb0"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/buildings/A10.tscn" id="4_es30j"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/buildings/B1.tscn" id="5_8k8go"]
+
+[sub_resource type="Environment" id="Environment_n5lqk"]
+background_mode = 1
+background_color = Color(0.71, 0.78, 0.8, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.88, 0.93, 0.97, 1)
+ambient_light_energy = 0.46
+
+[node name="PhotoRoofDetails" type="Node3D" unique_id=845348929]
+script = ExtResource("1_mbplm")
+metadata/dimensions_basis = "Roof shapes follow visible photo proportions; dimensions and thicknesses are estimated"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595895583]
+environment = SubResource("Environment_n5lqk")
+
+[node name="RoofStudySun" type="DirectionalLight3D" parent="." unique_id=48379837]
+transform = Transform3D(0.7431448, 0.497261, -0.44773576, 0, 0.66913056, 0.74314487, 0.6691306, -0.5522643, 0.4972609, 0, 0, 0)
+light_color = Color(1, 0.985, 0.96, 1)
+light_energy = 0.68
+shadow_enabled = true
+shadow_bias = 0.06
+shadow_normal_bias = 0.5
+directional_shadow_max_distance = 400.0
+
+[node name="TeachingRoofStudy" type="Node3D" parent="." unique_id=402147135 instance=ExtResource("2_ttfuo")]
+metadata/asset_id = "photo_teaching_wing"
+metadata/category = "buildings"
+metadata/display_name = "照片教学楼独立模型"
+metadata/units = "metre"
+metadata/evidence = "photo_facade_zone_proportions_dimensions_estimated"
+
+[node name="IndependentClockRoofStudy" type="Node3D" parent="." unique_id=2023742680 instance=ExtResource("3_yspb0")]
+visible = false
+metadata/asset_id = "clocktower"
+metadata/category = "landmarks"
+metadata/display_name = "广场通透尖顶钟塔"
+metadata/units = "metre"
+metadata/evidence = "user_photo_geometry_and_axis_position_estimate"
+
+[node name="TowerCrownStudy" type="Node3D" parent="." unique_id=2088061983 instance=ExtResource("4_es30j")]
+visible = false
+metadata/asset_id = "A10"
+metadata/category = "buildings"
+metadata/display_name = "A10 弘医楼 B座"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="LibraryRoofStudy" type="Node3D" parent="." unique_id=1703973138 instance=ExtResource("5_8k8go")]
+visible = false
+metadata/asset_id = "B1"
+metadata/category = "buildings"
+metadata/display_name = "B1 图书馆"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="RoofCamera" type="Camera3D" parent="." unique_id=1496295114]
+current = true

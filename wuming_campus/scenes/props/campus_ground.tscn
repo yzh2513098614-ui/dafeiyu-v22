@@ -1,0 +1,665 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2610.res" id="1_ma2hn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2611.res" id="2_hciqt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2612.res" id="3_yt87q"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2613.res" id="4_tl7k2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2614.res" id="5_epbgq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2615.res" id="6_04inq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2616.res" id="7_wrbur"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2617.res" id="8_hcy5c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2618.res" id="9_cb2d7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2619.res" id="10_glax2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2620.res" id="11_ob37w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2621.res" id="12_o0sb2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2622.res" id="13_wge3j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2623.res" id="14_pslra"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2624.res" id="15_3lw8v"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2625.res" id="16_gixm3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2626.res" id="17_qn2xw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2627.res" id="18_hgp6k"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2628.res" id="19_40ac5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2629.res" id="20_a80f4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2630.res" id="21_gkled"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2631.res" id="22_sqsyr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2632.res" id="23_tfc0n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2633.res" id="24_07o4q"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2634.res" id="25_aju3h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2635.res" id="26_ny65h"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2636.res" id="27_adp8a"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2637.res" id="28_mbcw1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2638.res" id="29_wyffh"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2639.res" id="30_6j3fm"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2640.res" id="31_u3bgf"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2641.res" id="32_ku01c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2642.res" id="33_wge7u"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2643.res" id="34_nd0hl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2644.res" id="35_56n6c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2645.res" id="36_bsmwv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2646.res" id="37_l2iix"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2647.res" id="38_c36gl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2648.res" id="39_o6323"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2649.res" id="40_t5otl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2650.res" id="41_y2lpo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2651.res" id="42_yk3jv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2652.res" id="43_2ldbt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2653.res" id="44_3qmyj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2654.res" id="45_8e1cr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2655.res" id="46_2cheq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2656.res" id="47_fas0x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2657.res" id="48_iiygc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2658.res" id="49_vjvvt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2659.res" id="50_aduxe"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2660.res" id="51_h78jh"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2661.res" id="52_gxjbg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2662.res" id="53_n8d5r"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2663.res" id="54_7yw1f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2664.res" id="55_sui75"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2665.res" id="56_kgx15"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2666.res" id="57_awtgs"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2667.res" id="58_ljs0x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2668.res" id="59_gqijg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2669.res" id="60_v2gil"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2670.res" id="61_xli7y"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2671.res" id="62_c6upe"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2672.res" id="63_ojc0a"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2673.res" id="64_w7cwn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2674.res" id="65_aluw5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2675.res" id="66_jq0i2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2676.res" id="67_e1x40"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2677.res" id="68_drek7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2678.res" id="69_75w00"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2679.res" id="70_5h13a"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2680.res" id="71_1lbjp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2681.res" id="72_wttur"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2682.res" id="73_7a8n6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2683.res" id="74_8ulxk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2684.res" id="75_g53om"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2685.res" id="76_8hwbk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2686.res" id="77_d8t0k"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2687.res" id="78_i5eq3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2688.res" id="79_erfas"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2689.res" id="80_8mldw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2690.res" id="81_tpk8p"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2691.res" id="82_ntq7p"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2692.res" id="83_gm6ty"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2693.res" id="84_823t4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2694.res" id="85_0t8yq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2695.res" id="86_hagbd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2696.res" id="87_ivmpy"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2697.res" id="88_kkmrn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2698.res" id="89_q730l"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2699.res" id="90_wb1i0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2700.res" id="91_uh1mw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2701.res" id="92_5csvw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2702.res" id="93_nto7f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2703.res" id="94_pwndq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2704.res" id="95_xyp47"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2705.res" id="96_y27fw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2706.res" id="97_ehr3j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2707.res" id="98_08orx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2708.res" id="99_fwpbn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2709.res" id="100_quvqf"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2710.res" id="101_xp4vt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2711.res" id="102_1qmjr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2712.res" id="103_ht52o"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2713.res" id="104_6ws8f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2714.res" id="105_6mttl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2715.res" id="106_46tyx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2716.res" id="107_l7qwl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2717.res" id="108_xmfdk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2718.res" id="109_mfu4b"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2719.res" id="110_dftho"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2720.res" id="111_pnonl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2721.res" id="112_1ykjq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2722.res" id="113_q0crv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2723.res" id="114_okgtc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2724.res" id="115_l0bh6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2725.res" id="116_7a8bq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2726.res" id="117_gn3gj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2727.res" id="118_aju48"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2728.res" id="119_pc7bt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2729.res" id="120_lo0i3"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2730.res" id="121_u206c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2731.res" id="122_nv052"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2732.res" id="123_ucid7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2733.res" id="124_55qdd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2734.res" id="125_t0qnr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2735.res" id="126_5iaay"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2736.res" id="127_6dpec"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2737.res" id="128_7ppdr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2738.res" id="129_w12lf"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2739.res" id="130_bwx5w"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2740.res" id="131_0mj1v"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2741.res" id="132_egdyj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2742.res" id="133_yqfiv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2743.res" id="134_mxnth"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2744.res" id="135_tq5da"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2745.res" id="136_uf26n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2746.res" id="137_aqc5c"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2747.res" id="138_era6q"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2748.res" id="139_qcnk2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2749.res" id="140_rbuvc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2750.res" id="141_fh3d4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2751.res" id="142_rrll2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2752.res" id="143_w2go7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2753.res" id="144_uy5vu"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2754.res" id="145_44x3i"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2755.res" id="146_8i0ab"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2756.res" id="147_f8gle"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2757.res" id="148_21fb2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2758.res" id="149_6xol4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2759.res" id="150_flymx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2760.res" id="151_anei1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2761.res" id="152_dp71l"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2762.res" id="153_xq2lv"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2763.res" id="154_d0dir"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2764.res" id="155_4o5j2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2765.res" id="156_0jera"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2766.res" id="157_vlvxq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2767.res" id="158_4mkhk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2768.res" id="159_xvqgb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2769.res" id="160_bc3cc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2770.res" id="161_xh2qe"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2771.res" id="162_xcdxu"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2772.res" id="163_pkcn5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_ground_2773.res" id="164_ecymj"]
+
+[node name="campus_ground" type="Node3D" unique_id=117690902]
+metadata/asset_id = "campus_ground"
+metadata/category = "ground"
+metadata/display_name = "校园地面、道路、水系与桥梁"
+metadata/units = "metre"
+metadata/evidence = "official_map_tracing_ground_elevation_estimated"
+
+[node name="ContextGround" type="MeshInstance3D" parent="." unique_id=1405788666]
+mesh = ExtResource("1_ma2hn")
+
+[node name="Parcel_A" type="MeshInstance3D" parent="." unique_id=779350777]
+mesh = ExtResource("2_hciqt")
+
+[node name="Parcel_B" type="MeshInstance3D" parent="." unique_id=866406908]
+mesh = ExtResource("3_yt87q")
+
+[node name="Parcel_C" type="MeshInstance3D" parent="." unique_id=1866570805]
+mesh = ExtResource("4_tl7k2")
+
+[node name="Constructed_C" type="MeshInstance3D" parent="." unique_id=2056578338]
+mesh = ExtResource("5_epbgq")
+
+[node name="hongyi_south_Sidewalk" type="MeshInstance3D" parent="." unique_id=587302452]
+mesh = ExtResource("6_04inq")
+
+[node name="hongyi_south" type="MeshInstance3D" parent="." unique_id=191963871]
+mesh = ExtResource("7_wrbur")
+
+[node name="hongyi_south_RoadMarks" type="MeshInstance3D" parent="." unique_id=491822287]
+mesh = ExtResource("8_hcy5c")
+
+[node name="hongyi_south_Crosswalk" type="MeshInstance3D" parent="." unique_id=909565903]
+mesh = ExtResource("9_cb2d7")
+
+[node name="hongyi_north_Sidewalk" type="MeshInstance3D" parent="." unique_id=1965985196]
+mesh = ExtResource("10_glax2")
+
+[node name="hongyi_north" type="MeshInstance3D" parent="." unique_id=1701002141]
+mesh = ExtResource("11_ob37w")
+
+[node name="hongyi_north_RoadMarks" type="MeshInstance3D" parent="." unique_id=1092847487]
+mesh = ExtResource("12_o0sb2")
+
+[node name="hongyi_north_Crosswalk" type="MeshInstance3D" parent="." unique_id=1150389967]
+mesh = ExtResource("13_wge3j")
+
+[node name="hongyi_n_gate_Sidewalk" type="MeshInstance3D" parent="." unique_id=1731393545]
+mesh = ExtResource("14_pslra")
+
+[node name="hongyi_n_gate" type="MeshInstance3D" parent="." unique_id=1824946460]
+mesh = ExtResource("15_3lw8v")
+
+[node name="hongyi_n_gate_RoadMarks" type="MeshInstance3D" parent="." unique_id=340520396]
+mesh = ExtResource("16_gixm3")
+
+[node name="hongyi_n_gate_Crosswalk" type="MeshInstance3D" parent="." unique_id=462709918]
+mesh = ExtResource("17_qn2xw")
+
+[node name="zhengxin_Sidewalk" type="MeshInstance3D" parent="." unique_id=2003373984]
+mesh = ExtResource("18_hgp6k")
+
+[node name="zhengxin" type="MeshInstance3D" parent="." unique_id=1091341166]
+mesh = ExtResource("19_40ac5")
+
+[node name="zhengxin_RoadMarks" type="MeshInstance3D" parent="." unique_id=588248761]
+mesh = ExtResource("20_a80f4")
+
+[node name="zhengxin_Crosswalk" type="MeshInstance3D" parent="." unique_id=94901825]
+mesh = ExtResource("21_gkled")
+
+[node name="renai_Sidewalk" type="MeshInstance3D" parent="." unique_id=313783358]
+mesh = ExtResource("22_sqsyr")
+
+[node name="renai" type="MeshInstance3D" parent="." unique_id=1761317836]
+mesh = ExtResource("23_tfc0n")
+
+[node name="renai_RoadMarks" type="MeshInstance3D" parent="." unique_id=1238496786]
+mesh = ExtResource("24_07o4q")
+
+[node name="renai_Crosswalk" type="MeshInstance3D" parent="." unique_id=218612130]
+mesh = ExtResource("25_aju3h")
+
+[node name="fenghua_Sidewalk" type="MeshInstance3D" parent="." unique_id=1684293804]
+mesh = ExtResource("26_ny65h")
+
+[node name="fenghua" type="MeshInstance3D" parent="." unique_id=474782987]
+mesh = ExtResource("27_adp8a")
+
+[node name="fenghua_RoadMarks" type="MeshInstance3D" parent="." unique_id=1139427407]
+mesh = ExtResource("28_mbcw1")
+
+[node name="fenghua_Crosswalk" type="MeshInstance3D" parent="." unique_id=1295886758]
+mesh = ExtResource("29_wyffh")
+
+[node name="minquan_Sidewalk" type="MeshInstance3D" parent="." unique_id=294980047]
+mesh = ExtResource("30_6j3fm")
+
+[node name="minquan" type="MeshInstance3D" parent="." unique_id=1951805191]
+mesh = ExtResource("31_u3bgf")
+
+[node name="minquan_RoadMarks" type="MeshInstance3D" parent="." unique_id=1865715535]
+mesh = ExtResource("32_ku01c")
+
+[node name="minquan_Crosswalk" type="MeshInstance3D" parent="." unique_id=935408021]
+mesh = ExtResource("33_wge7u")
+
+[node name="lingtie_Sidewalk" type="MeshInstance3D" parent="." unique_id=1975143109]
+mesh = ExtResource("34_nd0hl")
+
+[node name="lingtie" type="MeshInstance3D" parent="." unique_id=1906347313]
+mesh = ExtResource("35_56n6c")
+
+[node name="lingtie_RoadMarks" type="MeshInstance3D" parent="." unique_id=216653228]
+mesh = ExtResource("36_bsmwv")
+
+[node name="lingtie_Crosswalk" type="MeshInstance3D" parent="." unique_id=1650984122]
+mesh = ExtResource("37_l2iix")
+
+[node name="yangfan_Sidewalk" type="MeshInstance3D" parent="." unique_id=1479299059]
+mesh = ExtResource("38_c36gl")
+
+[node name="yangfan" type="MeshInstance3D" parent="." unique_id=677818703]
+mesh = ExtResource("39_o6323")
+
+[node name="yangfan_RoadMarks" type="MeshInstance3D" parent="." unique_id=1957346905]
+mesh = ExtResource("40_t5otl")
+
+[node name="yangfan_Crosswalk" type="MeshInstance3D" parent="." unique_id=1016937611]
+mesh = ExtResource("41_y2lpo")
+
+[node name="chongyi_Sidewalk" type="MeshInstance3D" parent="." unique_id=993496417]
+mesh = ExtResource("42_yk3jv")
+
+[node name="chongyi" type="MeshInstance3D" parent="." unique_id=1330296254]
+mesh = ExtResource("43_2ldbt")
+
+[node name="chongyi_RoadMarks" type="MeshInstance3D" parent="." unique_id=1646954522]
+mesh = ExtResource("44_3qmyj")
+
+[node name="chongyi_Crosswalk" type="MeshInstance3D" parent="." unique_id=1695851688]
+mesh = ExtResource("45_8e1cr")
+
+[node name="a_west_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=1818026753]
+mesh = ExtResource("46_2cheq")
+
+[node name="a_west_inner" type="MeshInstance3D" parent="." unique_id=1157687474]
+mesh = ExtResource("47_fas0x")
+
+[node name="a_west_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=1042346072]
+mesh = ExtResource("48_iiygc")
+
+[node name="a_west_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=1426794429]
+mesh = ExtResource("49_vjvvt")
+
+[node name="a_east_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=822504969]
+mesh = ExtResource("50_aduxe")
+
+[node name="a_east_inner" type="MeshInstance3D" parent="." unique_id=1741287892]
+mesh = ExtResource("51_h78jh")
+
+[node name="a_east_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=934383581]
+mesh = ExtResource("52_gxjbg")
+
+[node name="a_east_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=274694796]
+mesh = ExtResource("53_n8d5r")
+
+[node name="a_north_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=1396456250]
+mesh = ExtResource("54_7yw1f")
+
+[node name="a_north_inner" type="MeshInstance3D" parent="." unique_id=594248134]
+mesh = ExtResource("55_sui75")
+
+[node name="a_north_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=946866268]
+mesh = ExtResource("56_kgx15")
+
+[node name="a_north_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=1121137558]
+mesh = ExtResource("57_awtgs")
+
+[node name="a_gate_loop_Sidewalk" type="MeshInstance3D" parent="." unique_id=1125917865]
+mesh = ExtResource("58_ljs0x")
+
+[node name="a_gate_loop" type="MeshInstance3D" parent="." unique_id=1944136973]
+mesh = ExtResource("59_gqijg")
+
+[node name="a_gate_loop_RoadMarks" type="MeshInstance3D" parent="." unique_id=2110021888]
+mesh = ExtResource("60_v2gil")
+
+[node name="a_gate_loop_Crosswalk" type="MeshInstance3D" parent="." unique_id=1132574683]
+mesh = ExtResource("61_xli7y")
+
+[node name="b_west_outer_Sidewalk" type="MeshInstance3D" parent="." unique_id=1878704128]
+mesh = ExtResource("62_c6upe")
+
+[node name="b_west_outer" type="MeshInstance3D" parent="." unique_id=304896644]
+mesh = ExtResource("63_ojc0a")
+
+[node name="b_west_outer_RoadMarks" type="MeshInstance3D" parent="." unique_id=1796101084]
+mesh = ExtResource("64_w7cwn")
+
+[node name="b_west_outer_Crosswalk" type="MeshInstance3D" parent="." unique_id=1676940910]
+mesh = ExtResource("65_aluw5")
+
+[node name="b_west_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=1536431313]
+mesh = ExtResource("66_jq0i2")
+
+[node name="b_west_inner" type="MeshInstance3D" parent="." unique_id=639162621]
+mesh = ExtResource("67_e1x40")
+
+[node name="b_west_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=634073234]
+mesh = ExtResource("68_drek7")
+
+[node name="b_west_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=1693348370]
+mesh = ExtResource("69_75w00")
+
+[node name="b_west_cross_Sidewalk" type="MeshInstance3D" parent="." unique_id=151048847]
+mesh = ExtResource("70_5h13a")
+
+[node name="b_west_cross" type="MeshInstance3D" parent="." unique_id=1160627841]
+mesh = ExtResource("71_1lbjp")
+
+[node name="b_west_cross_RoadMarks" type="MeshInstance3D" parent="." unique_id=208696354]
+mesh = ExtResource("72_wttur")
+
+[node name="b_west_cross_Crosswalk" type="MeshInstance3D" parent="." unique_id=1591541247]
+mesh = ExtResource("73_7a8n6")
+
+[node name="b_north_broad_Sidewalk" type="MeshInstance3D" parent="." unique_id=2129897940]
+mesh = ExtResource("74_8ulxk")
+
+[node name="b_north_broad" type="MeshInstance3D" parent="." unique_id=185517201]
+mesh = ExtResource("75_g53om")
+
+[node name="b_north_broad_RoadMarks" type="MeshInstance3D" parent="." unique_id=1005309095]
+mesh = ExtResource("76_8hwbk")
+
+[node name="b_north_broad_Crosswalk" type="MeshInstance3D" parent="." unique_id=1188535981]
+mesh = ExtResource("77_d8t0k")
+
+[node name="boxue_Sidewalk" type="MeshInstance3D" parent="." unique_id=1522498433]
+mesh = ExtResource("78_i5eq3")
+
+[node name="boxue" type="MeshInstance3D" parent="." unique_id=1959345298]
+mesh = ExtResource("79_erfas")
+
+[node name="boxue_RoadMarks" type="MeshInstance3D" parent="." unique_id=59380885]
+mesh = ExtResource("80_8mldw")
+
+[node name="boxue_Crosswalk" type="MeshInstance3D" parent="." unique_id=2140825538]
+mesh = ExtResource("81_tpk8p")
+
+[node name="b_east_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=2079626394]
+mesh = ExtResource("82_ntq7p")
+
+[node name="b_east_inner" type="MeshInstance3D" parent="." unique_id=570240321]
+mesh = ExtResource("83_gm6ty")
+
+[node name="b_east_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=565295926]
+mesh = ExtResource("84_823t4")
+
+[node name="b_east_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=1060082795]
+mesh = ExtResource("85_0t8yq")
+
+[node name="b_east_spur_Sidewalk" type="MeshInstance3D" parent="." unique_id=1550435858]
+mesh = ExtResource("86_hagbd")
+
+[node name="b_east_spur" type="MeshInstance3D" parent="." unique_id=1491437908]
+mesh = ExtResource("87_ivmpy")
+
+[node name="b_east_spur_RoadMarks" type="MeshInstance3D" parent="." unique_id=1553869538]
+mesh = ExtResource("88_kkmrn")
+
+[node name="b_east_spur_Crosswalk" type="MeshInstance3D" parent="." unique_id=1005352370]
+mesh = ExtResource("89_q730l")
+
+[node name="c_access_Sidewalk" type="MeshInstance3D" parent="." unique_id=732540583]
+mesh = ExtResource("90_wb1i0")
+
+[node name="c_access" type="MeshInstance3D" parent="." unique_id=1517413917]
+mesh = ExtResource("91_uh1mw")
+
+[node name="c_access_RoadMarks" type="MeshInstance3D" parent="." unique_id=1637768174]
+mesh = ExtResource("92_5csvw")
+
+[node name="c_access_Crosswalk" type="MeshInstance3D" parent="." unique_id=1681340386]
+mesh = ExtResource("93_nto7f")
+
+[node name="c_west_loop_Sidewalk" type="MeshInstance3D" parent="." unique_id=1853512805]
+mesh = ExtResource("94_pwndq")
+
+[node name="c_west_loop" type="MeshInstance3D" parent="." unique_id=783796857]
+mesh = ExtResource("95_xyp47")
+
+[node name="c_west_loop_RoadMarks" type="MeshInstance3D" parent="." unique_id=56523865]
+mesh = ExtResource("96_y27fw")
+
+[node name="c_west_loop_Crosswalk" type="MeshInstance3D" parent="." unique_id=1809245276]
+mesh = ExtResource("97_ehr3j")
+
+[node name="c_dorm_north_Sidewalk" type="MeshInstance3D" parent="." unique_id=72338856]
+mesh = ExtResource("98_08orx")
+
+[node name="c_dorm_north" type="MeshInstance3D" parent="." unique_id=1895297262]
+mesh = ExtResource("99_fwpbn")
+
+[node name="c_dorm_north_RoadMarks" type="MeshInstance3D" parent="." unique_id=517321178]
+mesh = ExtResource("100_quvqf")
+
+[node name="c_dorm_north_Crosswalk" type="MeshInstance3D" parent="." unique_id=619509794]
+mesh = ExtResource("101_xp4vt")
+
+[node name="c_dorm_south_Sidewalk" type="MeshInstance3D" parent="." unique_id=209049455]
+mesh = ExtResource("102_1qmjr")
+
+[node name="c_dorm_south" type="MeshInstance3D" parent="." unique_id=1706844091]
+mesh = ExtResource("103_ht52o")
+
+[node name="c_dorm_south_RoadMarks" type="MeshInstance3D" parent="." unique_id=1501804189]
+mesh = ExtResource("104_6ws8f")
+
+[node name="c_dorm_south_Crosswalk" type="MeshInstance3D" parent="." unique_id=1075447112]
+mesh = ExtResource("105_6mttl")
+
+[node name="c_middle_Sidewalk" type="MeshInstance3D" parent="." unique_id=1671551007]
+mesh = ExtResource("106_46tyx")
+
+[node name="c_middle" type="MeshInstance3D" parent="." unique_id=552794943]
+mesh = ExtResource("107_l7qwl")
+
+[node name="c_middle_RoadMarks" type="MeshInstance3D" parent="." unique_id=119597018]
+mesh = ExtResource("108_xmfdk")
+
+[node name="c_middle_Crosswalk" type="MeshInstance3D" parent="." unique_id=121254991]
+mesh = ExtResource("109_mfu4b")
+
+[node name="c_east_inner_Sidewalk" type="MeshInstance3D" parent="." unique_id=910393126]
+mesh = ExtResource("110_dftho")
+
+[node name="c_east_inner" type="MeshInstance3D" parent="." unique_id=981803231]
+mesh = ExtResource("111_pnonl")
+
+[node name="c_east_inner_RoadMarks" type="MeshInstance3D" parent="." unique_id=1061358469]
+mesh = ExtResource("112_1ykjq")
+
+[node name="c_east_inner_Crosswalk" type="MeshInstance3D" parent="." unique_id=1649868564]
+mesh = ExtResource("113_q0crv")
+
+[node name="c_square" type="MeshInstance3D" parent="." unique_id=817671197]
+mesh = ExtResource("114_okgtc")
+
+[node name="hongling_public_Sidewalk" type="MeshInstance3D" parent="." unique_id=1011248980]
+mesh = ExtResource("115_l0bh6")
+
+[node name="hongling_public" type="MeshInstance3D" parent="." unique_id=425236590]
+mesh = ExtResource("116_7a8bq")
+
+[node name="hongling_public_RoadMarks" type="MeshInstance3D" parent="." unique_id=1332299116]
+mesh = ExtResource("117_gn3gj")
+
+[node name="leihong_public_Sidewalk" type="MeshInstance3D" parent="." unique_id=1421000127]
+mesh = ExtResource("118_aju48")
+
+[node name="leihong_public" type="MeshInstance3D" parent="." unique_id=682078771]
+mesh = ExtResource("119_pc7bt")
+
+[node name="leihong_public_RoadMarks" type="MeshInstance3D" parent="." unique_id=1673890347]
+mesh = ExtResource("120_lo0i3")
+
+[node name="hexi_public_Sidewalk" type="MeshInstance3D" parent="." unique_id=321445265]
+mesh = ExtResource("121_u206c")
+
+[node name="hexi_public" type="MeshInstance3D" parent="." unique_id=418548213]
+mesh = ExtResource("122_nv052")
+
+[node name="hexi_public_RoadMarks" type="MeshInstance3D" parent="." unique_id=901900196]
+mesh = ExtResource("123_ucid7")
+
+[node name="wuhua_public_Sidewalk" type="MeshInstance3D" parent="." unique_id=1081360138]
+mesh = ExtResource("124_55qdd")
+
+[node name="wuhua_public" type="MeshInstance3D" parent="." unique_id=1360838160]
+mesh = ExtResource("125_t0qnr")
+
+[node name="wuhua_public_RoadMarks" type="MeshInstance3D" parent="." unique_id=1736376362]
+mesh = ExtResource("126_5iaay")
+
+[node name="c_north_public_Sidewalk" type="MeshInstance3D" parent="." unique_id=1957956474]
+mesh = ExtResource("127_6dpec")
+
+[node name="c_north_public" type="MeshInstance3D" parent="." unique_id=1101835840]
+mesh = ExtResource("128_7ppdr")
+
+[node name="c_north_public_RoadMarks" type="MeshInstance3D" parent="." unique_id=1595637197]
+mesh = ExtResource("129_w12lf")
+
+[node name="garden_path_01" type="MeshInstance3D" parent="." unique_id=322843632]
+mesh = ExtResource("130_bwx5w")
+
+[node name="garden_path_02" type="MeshInstance3D" parent="." unique_id=2039495896]
+mesh = ExtResource("131_0mj1v")
+
+[node name="garden_path_03" type="MeshInstance3D" parent="." unique_id=1521216006]
+mesh = ExtResource("132_egdyj")
+
+[node name="garden_path_04" type="MeshInstance3D" parent="." unique_id=1037158915]
+mesh = ExtResource("133_yqfiv")
+
+[node name="garden_path_05" type="MeshInstance3D" parent="." unique_id=1086776150]
+mesh = ExtResource("134_mxnth")
+
+[node name="garden_path_06" type="MeshInstance3D" parent="." unique_id=1649658246]
+mesh = ExtResource("135_tq5da")
+
+[node name="garden_path_07" type="MeshInstance3D" parent="." unique_id=967794860]
+mesh = ExtResource("136_uf26n")
+
+[node name="garden_path_08" type="MeshInstance3D" parent="." unique_id=1887171356]
+mesh = ExtResource("137_aqc5c")
+
+[node name="garden_path_09" type="MeshInstance3D" parent="." unique_id=685626327]
+mesh = ExtResource("138_era6q")
+
+[node name="garden_path_10" type="MeshInstance3D" parent="." unique_id=2097622387]
+mesh = ExtResource("139_qcnk2")
+
+[node name="garden_path_11" type="MeshInstance3D" parent="." unique_id=1971112064]
+mesh = ExtResource("140_rbuvc")
+
+[node name="garden_path_12" type="MeshInstance3D" parent="." unique_id=56719224]
+mesh = ExtResource("141_fh3d4")
+
+[node name="a_canal_Edge" type="MeshInstance3D" parent="." unique_id=337530292]
+mesh = ExtResource("142_rrll2")
+
+[node name="a_canal" type="MeshInstance3D" parent="." unique_id=723348407]
+mesh = ExtResource("143_w2go7")
+
+[node name="library_moat_nw_Edge" type="MeshInstance3D" parent="." unique_id=1645766181]
+mesh = ExtResource("144_uy5vu")
+
+[node name="library_moat_nw" type="MeshInstance3D" parent="." unique_id=914229090]
+mesh = ExtResource("145_44x3i")
+
+[node name="library_moat_se_Edge" type="MeshInstance3D" parent="." unique_id=763574867]
+mesh = ExtResource("146_8i0ab")
+
+[node name="library_moat_se" type="MeshInstance3D" parent="." unique_id=1526008331]
+mesh = ExtResource("147_f8gle")
+
+[node name="library_moat_sw_Edge" type="MeshInstance3D" parent="." unique_id=1616138591]
+mesh = ExtResource("148_21fb2")
+
+[node name="library_moat_sw" type="MeshInstance3D" parent="." unique_id=975228061]
+mesh = ExtResource("149_6xol4")
+
+[node name="east_dorm_canal_Edge" type="MeshInstance3D" parent="." unique_id=1906932982]
+mesh = ExtResource("150_flymx")
+
+[node name="east_dorm_canal" type="MeshInstance3D" parent="." unique_id=1944015667]
+mesh = ExtResource("151_anei1")
+
+[node name="a6_west_pool_Edge" type="MeshInstance3D" parent="." unique_id=25916756]
+mesh = ExtResource("152_dp71l")
+
+[node name="a6_west_pool" type="MeshInstance3D" parent="." unique_id=1267418315]
+mesh = ExtResource("153_xq2lv")
+
+[node name="a6_east_pool_Edge" type="MeshInstance3D" parent="." unique_id=1373944736]
+mesh = ExtResource("154_d0dir")
+
+[node name="a6_east_pool" type="MeshInstance3D" parent="." unique_id=40326805]
+mesh = ExtResource("155_4o5j2")
+
+[node name="SouthGatePlaza" type="MeshInstance3D" parent="." unique_id=556040138]
+mesh = ExtResource("156_0jera")
+
+[node name="A1AxialPlaza" type="MeshInstance3D" parent="." unique_id=543861089]
+mesh = ExtResource("157_vlvxq")
+
+[node name="A1AxialPlaza_Rings" type="MeshInstance3D" parent="." unique_id=132764706]
+mesh = ExtResource("158_4mkhk")
+
+[node name="GXMUPlaza" type="MeshInstance3D" parent="." unique_id=2134945089]
+mesh = ExtResource("159_xvqgb")
+
+[node name="ActivityCentrePedestrianRing" type="MeshInstance3D" parent="." unique_id=904715686]
+mesh = ExtResource("160_bc3cc")
+
+[node name="GardenBridge_0" type="MeshInstance3D" parent="." unique_id=545018781]
+mesh = ExtResource("161_xh2qe")
+
+[node name="GardenBridge_1" type="MeshInstance3D" parent="." unique_id=256939472]
+mesh = ExtResource("162_xcdxu")
+
+[node name="GardenBridge_2" type="MeshInstance3D" parent="." unique_id=688349908]
+mesh = ExtResource("163_pkcn5")
+
+[node name="GardenBridge_3" type="MeshInstance3D" parent="." unique_id=288494984]
+mesh = ExtResource("164_ecymj")

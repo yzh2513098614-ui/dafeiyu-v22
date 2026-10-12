@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/storm_drain_2598.res" id="1_nrt6v"]
+
+[node name="storm_drain" type="Node3D" unique_id=143060797]
+metadata/asset_id = "storm_drain"
+metadata/category = "roads"
+metadata/display_name = "雨水箅子"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="storm_drain" type="MeshInstance3D" parent="." unique_id=1624713008]
+mesh = ExtResource("1_nrt6v")

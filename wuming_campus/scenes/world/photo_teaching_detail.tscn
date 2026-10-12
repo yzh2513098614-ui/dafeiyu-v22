@@ -1,0 +1,185 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://wuming_campus/scripts/photo_detail_controller.gd" id="1_mkaur"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/buildings/photo_teaching_wing.tscn" id="2_0cbkf"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/props/clocktower.tscn" id="3_i8yex"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/props/canna_border_3m.tscn" id="4_6ymlq"]
+[ext_resource type="PackedScene" path="res://wuming_campus/scenes/props/tree_feathered_supported.tscn" id="5_fc0ih"]
+
+[sub_resource type="Environment" id="Environment_d2sq8"]
+background_mode = 1
+background_color = Color(0.73, 0.78, 0.77, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.86, 0.88, 0.84, 1)
+ambient_light_energy = 0.38
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kw7c"]
+albedo_color = Color(0.74, 0.74, 0.67, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70jue"]
+size = Vector3(81, 0.2, 71)
+
+[node name="TeachingAndIndependentClocktower" type="Node3D" unique_id=1044541258]
+script = ExtResource("1_mkaur")
+metadata/relationship = "Clock tower and teaching block are separate, as confirmed by the user"
+metadata/placement_basis = "photo composition estimate; not a surveyed site plan"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1312088474]
+environment = SubResource("Environment_d2sq8")
+
+[node name="DetailSun" type="DirectionalLight3D" parent="." unique_id=1936759026]
+transform = Transform3D(0.81915206, 0.38379756, -0.42625037, 0, 0.7431448, 0.6691306, 0.57357645, -0.5481197, 0.6087486, 0, 0, 0)
+light_color = Color(1, 0.96, 0.9, 1)
+light_energy = 0.68
+shadow_enabled = true
+shadow_normal_bias = 1.2
+directional_shadow_max_distance = 300.0
+
+[node name="PavedPhotoStudyGround" type="MeshInstance3D" parent="." unique_id=1777090976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 3)
+material_override = SubResource("StandardMaterial3D_2kw7c")
+mesh = SubResource("BoxMesh_70jue")
+
+[node name="IndependentTeachingBuilding" type="Node3D" parent="." unique_id=402147135 instance=ExtResource("2_0cbkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+metadata/asset_id = "photo_teaching_wing"
+metadata/category = "buildings"
+metadata/display_name = "照片教学楼独立模型"
+metadata/units = "metre"
+metadata/evidence = "photo_facade_zone_proportions_dimensions_estimated"
+
+[node name="IndependentClocktower" type="Node3D" parent="." unique_id=2023742680 instance=ExtResource("3_i8yex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 15)
+metadata/asset_id = "clocktower"
+metadata/category = "landmarks"
+metadata/display_name = "广场通透尖顶钟塔"
+metadata/units = "metre"
+metadata/evidence = "user_photo_geometry_and_axis_position_estimate"
+
+[node name="FrontGardenPlanting" type="Node3D" parent="." unique_id=1536940527]
+
+[node name="canna_border_3m" type="Node3D" parent="FrontGardenPlanting" unique_id=439446936 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@2" type="Node3D" parent="FrontGardenPlanting" unique_id=1250473522 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.85, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@3" type="Node3D" parent="FrontGardenPlanting" unique_id=1281267481 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@4" type="Node3D" parent="FrontGardenPlanting" unique_id=653665311 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@5" type="Node3D" parent="FrontGardenPlanting" unique_id=1754627153 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@6" type="Node3D" parent="FrontGardenPlanting" unique_id=1163266891 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@7" type="Node3D" parent="FrontGardenPlanting" unique_id=92564106 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@8" type="Node3D" parent="FrontGardenPlanting" unique_id=1022977205 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@9" type="Node3D" parent="FrontGardenPlanting" unique_id=1233671490 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@10" type="Node3D" parent="FrontGardenPlanting" unique_id=1810974362 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.35, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@11" type="Node3D" parent="FrontGardenPlanting" unique_id=1939970237 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@12" type="Node3D" parent="FrontGardenPlanting" unique_id=1904613026 instance=ExtResource("4_6ymlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.65, 0, 22)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_feathered_supported" type="Node3D" parent="FrontGardenPlanting" unique_id=1924724204 instance=ExtResource("5_fc0ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 7)
+metadata/asset_id = "tree_feathered_supported"
+metadata/category = "vegetation"
+metadata/display_name = "疏叶羽状冠支撑幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@13" type="Node3D" parent="FrontGardenPlanting" unique_id=1540975790 instance=ExtResource("5_fc0ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -3)
+metadata/asset_id = "tree_feathered_supported"
+metadata/category = "vegetation"
+metadata/display_name = "疏叶羽状冠支撑幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="@Node3D@14" type="Node3D" parent="FrontGardenPlanting" unique_id=1176802829 instance=ExtResource("5_fc0ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 18)
+metadata/asset_id = "tree_feathered_supported"
+metadata/category = "vegetation"
+metadata/display_name = "疏叶羽状冠支撑幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="DetailCamera" type="Camera3D" parent="." unique_id=1420785824]
+transform = Transform3D(0.8737986, -0.14141044, 0.4652731, 0, 0.9567852, 0.29079568, -0.48628795, -0.25409687, 0.8360376, 67, 56, 115)
+projection = 1
+current = true
+size = 61.0

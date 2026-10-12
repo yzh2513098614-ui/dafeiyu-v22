@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bollard_2589.res" id="1_5f46w"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_emo5r"]
+height = 1.0
+radius = 0.17
+
+[node name="bollard" type="Node3D" unique_id=163615781]
+metadata/asset_id = "bollard"
+metadata/category = "street_furniture"
+metadata/display_name = "路口防撞柱"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bollard" type="MeshInstance3D" parent="." unique_id=423719745]
+mesh = ExtResource("1_5f46w")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=203748926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="@CollisionShape3D@434" type="CollisionShape3D" parent="Collision_0" unique_id=1248790079]
+shape = SubResource("CylinderShape3D_emo5r")

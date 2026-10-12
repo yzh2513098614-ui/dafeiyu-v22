@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/pergola_2492.res" id="1_dcslf"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/pergola_2493.res" id="2_rpef8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/pergola_2494.res" id="3_wp5v8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/pergola_2495.res" id="4_p5e0e"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/pergola_2496.res" id="5_3f7ff"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hjo8"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uo1pc"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_146pv"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6ex1"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sf4x"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvm8c"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_coy8j"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cv4u3"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pljuw"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyqj4"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsyqs"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0le27"]
+size = Vector3(0.15, 3.3, 0.15)
+
+[node name="pergola" type="Node3D" unique_id=1616721649]
+metadata/asset_id = "pergola"
+metadata/category = "landmarks"
+metadata/display_name = "紫藤花廊"
+metadata/units = "metre"
+metadata/evidence = "photo_reconstructed_location_estimated"
+
+[node name="PergolaUprights" type="MeshInstance3D" parent="." unique_id=1404269147]
+mesh = ExtResource("1_dcslf")
+
+[node name="PergolaCrossbeams" type="MeshInstance3D" parent="." unique_id=629564161]
+mesh = ExtResource("2_rpef8")
+
+[node name="PergolaLongBeams" type="MeshInstance3D" parent="." unique_id=387005405]
+mesh = ExtResource("3_wp5v8")
+
+[node name="WisteriaLeaves" type="MeshInstance3D" parent="." unique_id=2060065958]
+mesh = ExtResource("4_p5e0e")
+
+[node name="HangingWisteria" type="MeshInstance3D" parent="." unique_id=84697879]
+mesh = ExtResource("5_3f7ff")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=672836496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, -10)
+
+[node name="@CollisionShape3D@407" type="CollisionShape3D" parent="Collision_0" unique_id=1200248467]
+shape = SubResource("BoxShape3D_0hjo8")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=1757936591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, -10)
+
+[node name="@CollisionShape3D@408" type="CollisionShape3D" parent="Collision_1" unique_id=1115394167]
+shape = SubResource("BoxShape3D_uo1pc")
+
+[node name="Collision_2" type="StaticBody3D" parent="." unique_id=1949468850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, -6)
+
+[node name="@CollisionShape3D@409" type="CollisionShape3D" parent="Collision_2" unique_id=806237168]
+shape = SubResource("BoxShape3D_146pv")
+
+[node name="Collision_3" type="StaticBody3D" parent="." unique_id=254422977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, -6)
+
+[node name="@CollisionShape3D@410" type="CollisionShape3D" parent="Collision_3" unique_id=1683776804]
+shape = SubResource("BoxShape3D_p6ex1")
+
+[node name="Collision_4" type="StaticBody3D" parent="." unique_id=583733719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, -2)
+
+[node name="@CollisionShape3D@411" type="CollisionShape3D" parent="Collision_4" unique_id=661149449]
+shape = SubResource("BoxShape3D_1sf4x")
+
+[node name="Collision_5" type="StaticBody3D" parent="." unique_id=1128668696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, -2)
+
+[node name="@CollisionShape3D@412" type="CollisionShape3D" parent="Collision_5" unique_id=1006098781]
+shape = SubResource("BoxShape3D_hvm8c")
+
+[node name="Collision_6" type="StaticBody3D" parent="." unique_id=2125234110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, 2)
+
+[node name="@CollisionShape3D@413" type="CollisionShape3D" parent="Collision_6" unique_id=1222033914]
+shape = SubResource("BoxShape3D_coy8j")
+
+[node name="Collision_7" type="StaticBody3D" parent="." unique_id=1526573185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, 2)
+
+[node name="@CollisionShape3D@414" type="CollisionShape3D" parent="Collision_7" unique_id=8631829]
+shape = SubResource("BoxShape3D_cv4u3")
+
+[node name="Collision_8" type="StaticBody3D" parent="." unique_id=1140550909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, 6)
+
+[node name="@CollisionShape3D@415" type="CollisionShape3D" parent="Collision_8" unique_id=648684575]
+shape = SubResource("BoxShape3D_pljuw")
+
+[node name="Collision_9" type="StaticBody3D" parent="." unique_id=969183995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, 6)
+
+[node name="@CollisionShape3D@416" type="CollisionShape3D" parent="Collision_9" unique_id=1898535250]
+shape = SubResource("BoxShape3D_pyqj4")
+
+[node name="Collision_10" type="StaticBody3D" parent="." unique_id=2007900502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.65, 10)
+
+[node name="@CollisionShape3D@417" type="CollisionShape3D" parent="Collision_10" unique_id=1330061526]
+shape = SubResource("BoxShape3D_gsyqs")
+
+[node name="Collision_11" type="StaticBody3D" parent="." unique_id=464369018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.65, 10)
+
+[node name="@CollisionShape3D@418" type="CollisionShape3D" parent="Collision_11" unique_id=1037624305]
+shape = SubResource("BoxShape3D_0le27")

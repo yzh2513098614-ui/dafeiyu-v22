@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2187.res" id="1_ue3yr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2188.res" id="2_2gh8l"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2189.res" id="3_tupyd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2190.res" id="4_s5xyy"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2191.res" id="5_vhyme"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2192.res" id="6_x300n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/track_B_2193.res" id="7_deqmq"]
+
+[node name="track_B" type="Node3D" unique_id=902421269]
+metadata/asset_id = "track_B"
+metadata/category = "sports"
+metadata/display_name = "B区田径场"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=102685069]
+mesh = ExtResource("1_ue3yr")
+
+[node name="RunningTrack" type="MeshInstance3D" parent="." unique_id=1964722007]
+mesh = ExtResource("2_2gh8l")
+
+[node name="OvalGrass" type="MeshInstance3D" parent="." unique_id=1156016320]
+mesh = ExtResource("3_tupyd")
+
+[node name="TrackLaneMarks" type="MeshInstance3D" parent="." unique_id=1681638628]
+mesh = ExtResource("4_s5xyy")
+
+[node name="FootballTurfStripes" type="MeshInstance3D" parent="." unique_id=793883622]
+mesh = ExtResource("5_vhyme")
+
+[node name="FootballPitch" type="MeshInstance3D" parent="." unique_id=648199686]
+mesh = ExtResource("6_x300n")
+
+[node name="GoalFrames" type="MeshInstance3D" parent="." unique_id=1087359121]
+mesh = ExtResource("7_deqmq")

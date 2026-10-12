@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_border_3m_2607.res" id="1_fxvgd"]
+
+[node name="canna_border_3m" type="Node3D" unique_id=439446936]
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_border_3m" type="MeshInstance3D" parent="." unique_id=843286721]
+mesh = ExtResource("1_fxvgd")

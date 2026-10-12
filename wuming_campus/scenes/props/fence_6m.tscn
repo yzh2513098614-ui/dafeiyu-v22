@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/fence_6m_2594.res" id="1_aqrdc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kfcq"]
+size = Vector3(6, 0.7, 0.32)
+
+[node name="fence_6m" type="Node3D" unique_id=1251409212]
+metadata/asset_id = "fence_6m"
+metadata/category = "boundary"
+metadata/display_name = "六米校园铁艺栏杆"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="fence_6m" type="MeshInstance3D" parent="." unique_id=1172535014]
+mesh = ExtResource("1_aqrdc")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1126405708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+
+[node name="@CollisionShape3D@437" type="CollisionShape3D" parent="Collision_0" unique_id=1408047596]
+shape = SubResource("BoxShape3D_1kfcq")

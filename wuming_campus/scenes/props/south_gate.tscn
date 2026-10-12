@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/south_gate_2379.res" id="1_sdsin"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/south_gate_2380.res" id="2_dlyq8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/south_gate_2381.res" id="3_yxsca"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/south_gate_2382.res" id="4_8iv1f"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/south_gate_2383.res" id="5_y2uit"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udxug"]
+size = Vector3(5.6, 4.2, 5.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2vdx"]
+size = Vector3(10.8, 2.7, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0t43i"]
+size = Vector3(5.6, 4.2, 5.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1leux"]
+size = Vector3(10.8, 2.7, 1.2)
+
+[node name="south_gate" type="Node3D" unique_id=1474726307]
+metadata/asset_id = "south_gate"
+metadata/category = "landmarks"
+metadata/display_name = "广西医科大学 武鸣校区·南门"
+metadata/units = "metre"
+metadata/evidence = "map_trace_photo_inferred"
+
+[node name="GateHouse" type="MeshInstance3D" parent="." unique_id=429153522]
+mesh = ExtResource("1_sdsin")
+
+[node name="GateRoof" type="MeshInstance3D" parent="." unique_id=1902881988]
+mesh = ExtResource("2_dlyq8")
+
+[node name="GateGlass" type="MeshInstance3D" parent="." unique_id=1341444964]
+mesh = ExtResource("3_yxsca")
+
+[node name="CampusSignWall" type="MeshInstance3D" parent="." unique_id=331070941]
+mesh = ExtResource("4_8iv1f")
+
+[node name="AccessBollards" type="MeshInstance3D" parent="." unique_id=1124701391]
+mesh = ExtResource("5_y2uit")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=81839992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2.1, 0)
+
+[node name="@CollisionShape3D@388" type="CollisionShape3D" parent="Collision_0" unique_id=1996113407]
+shape = SubResource("BoxShape3D_udxug")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=993856098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.35, 1)
+
+[node name="@CollisionShape3D@389" type="CollisionShape3D" parent="Collision_1" unique_id=748896734]
+shape = SubResource("BoxShape3D_t2vdx")
+
+[node name="Collision_2" type="StaticBody3D" parent="." unique_id=2052793788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.1, 0)
+
+[node name="@CollisionShape3D@390" type="CollisionShape3D" parent="Collision_2" unique_id=325903282]
+shape = SubResource("BoxShape3D_0t43i")
+
+[node name="Collision_3" type="StaticBody3D" parent="." unique_id=1712366024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.35, 1)
+
+[node name="@CollisionShape3D@391" type="CollisionShape3D" parent="Collision_3" unique_id=635267504]
+shape = SubResource("BoxShape3D_1leux")

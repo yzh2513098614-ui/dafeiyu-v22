@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_sign_2591.res" id="1_cen5l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syoxv"]
+size = Vector3(0.12, 2.8, 0.12)
+
+[node name="campus_sign" type="Node3D" unique_id=131104573]
+metadata/asset_id = "campus_sign"
+metadata/category = "signage"
+metadata/display_name = "校园导向牌"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="campus_sign" type="MeshInstance3D" parent="." unique_id=184306807]
+mesh = ExtResource("1_cen5l")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=1800574708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="@CollisionShape3D@435" type="CollisionShape3D" parent="Collision_0" unique_id=2036591944]
+shape = SubResource("BoxShape3D_syoxv")

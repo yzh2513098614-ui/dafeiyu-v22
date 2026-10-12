@@ -1,0 +1,1307 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_broadleaf_2568.res" id="1_eygcc"]
+[ext_resource type="FontFile" path="res://wuming_campus/assets/fonts/NotoSansSC.ttf" id="2_anvpd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_yellow_2569.res" id="3_ftcnd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_palm_2570.res" id="4_gjkbg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_small_2571.res" id="5_dwmug"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bench_timber_2572.res" id="6_hfhae"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bench_stone_2573.res" id="7_j0uyw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/shrub_round_2574.res" id="8_s3nsg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/shrub_yellow_2575.res" id="9_frrq4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bougainvillea_2576.res" id="10_5njii"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/flower_white_2577.res" id="11_q4i17"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/flower_purple_2578.res" id="12_lytcy"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/hedge_4m_2579.res" id="13_exgic"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/grass_clump_2580.res" id="14_mgac5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rock_1_2581.res" id="15_y3ic2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rock_2_2582.res" id="16_cihvj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rock_3_2583.res" id="17_rupjn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/street_lamp_2584.res" id="18_vqyd1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/garden_lamp_2585.res" id="19_gxb3b"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/sorting_bins_2586.res" id="20_pltul"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/round_planter_2587.res" id="21_0ue27"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rect_planter_2588.res" id="22_43q73"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bollard_2589.res" id="23_n0xut"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/bike_rack_2590.res" id="24_wn4jh"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/campus_sign_2591.res" id="25_7shmr"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/aed_case_2592.res" id="26_p8x40"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/wall_brick_6m_2593.res" id="27_nlo6i"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/fence_6m_2594.res" id="28_1tvrk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/curb_4m_2595.res" id="29_87c63"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/sidewalk_4m_2596.res" id="30_xtr8e"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/road_8m_2597.res" id="31_nqjbg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/storm_drain_2598.res" id="32_e5447"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_grate_2599.res" id="33_box2g"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/stone_table_2600.res" id="34_bgok4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/square_paving_2601.res" id="35_k8ft0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_supported_young_2602.res" id="36_l1cut"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_pruned_tier_2603.res" id="37_vj22a"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/arched_white_lamp_2604.res" id="38_5wrda"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_pink_2605.res" id="39_ar4i5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_orange_2606.res" id="40_kqynj"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_border_3m_2607.res" id="41_myskt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_feathered_supported_2608.res" id="42_5mm2s"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/paving_slab_6m_2609.res" id="43_ekhlm"]
+
+[sub_resource type="Environment" id="Environment_2xpq7"]
+background_mode = 1
+background_color = Color(0.73, 0.78, 0.77, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.85, 0.87, 0.82, 1)
+ambient_light_energy = 0.32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n6g1"]
+albedo_color = Color(0.78, 0.8, 0.74, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rsws5"]
+size = Vector3(92, 0.25, 78)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xlvpk"]
+height = 4.836
+radius = 0.24
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hb5em"]
+height = 4.34
+radius = 0.24
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_560i4"]
+height = 3.72
+radius = 0.24
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vor2v"]
+height = 2.604
+radius = 0.24
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5a7v"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqgu1"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhldh"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a76xl"]
+size = Vector3(0.16, 0.52, 0.51)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mm5qe"]
+height = 8.5
+radius = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oot0n"]
+height = 3.0
+radius = 0.07
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gd0yl"]
+size = Vector3(0.48, 1.04, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4rmi"]
+size = Vector3(0.48, 1.04, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qducs"]
+height = 0.58
+radius = 0.67
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4s3k3"]
+size = Vector3(2, 0.68, 0.72)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_emo5r"]
+height = 1.0
+radius = 0.17
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syoxv"]
+size = Vector3(0.12, 2.8, 0.12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfgoc"]
+size = Vector3(6, 2.1, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kfcq"]
+size = Vector3(6, 0.7, 0.32)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bs6dy"]
+height = 0.8
+radius = 0.17
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_geh1i"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1lhn6"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q6lb0"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b328k"]
+height = 0.56
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wy30x"]
+height = 4.6
+radius = 0.16
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_67col"]
+height = 3.9
+radius = 0.17
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s1chb"]
+height = 7.8
+radius = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gi2i"]
+height = 5.6
+radius = 0.11
+
+[node name="CampusPropsShowroom" type="Node3D" unique_id=1177465696]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=820726797]
+environment = SubResource("Environment_2xpq7")
+
+[node name="AfternoonSun" type="DirectionalLight3D" parent="." unique_id=610530785]
+transform = Transform3D(0.81915206, 0.46984634, -0.32898995, 0, 0.57357645, 0.81915206, 0.57357645, -0.6710101, 0.46984634, 0, 0, 0)
+light_color = Color(1, 0.93, 0.81, 1)
+light_energy = 0.72
+shadow_enabled = true
+shadow_normal_bias = 1.2
+directional_shadow_max_distance = 1100.0
+
+[node name="@MeshInstance3D@1507" type="MeshInstance3D" parent="." unique_id=1576934520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.18, 27)
+material_override = SubResource("StandardMaterial3D_4n6g1")
+mesh = SubResource("BoxMesh_rsws5")
+
+[node name="tree_broadleaf" type="Node3D" parent="." unique_id=124759399]
+metadata/asset_id = "tree_broadleaf"
+metadata/category = "vegetation"
+metadata/display_name = "常绿阔叶乔木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_broadleaf" type="MeshInstance3D" parent="tree_broadleaf" unique_id=1242889414]
+mesh = ExtResource("1_eygcc")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_broadleaf" unique_id=1156227588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.418, 0)
+
+[node name="@CollisionShape3D@420" type="CollisionShape3D" parent="tree_broadleaf/Collision_0" unique_id=1597648763]
+shape = SubResource("CylinderShape3D_xlvpk")
+
+[node name="NameLabel" type="Label3D" parent="tree_broadleaf" unique_id=1238720621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "常绿阔叶乔木"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_yellow" type="Node3D" parent="." unique_id=1109887204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+metadata/asset_id = "tree_yellow"
+metadata/category = "vegetation"
+metadata/display_name = "黄花风铃木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_yellow" type="MeshInstance3D" parent="tree_yellow" unique_id=1783448304]
+mesh = ExtResource("3_ftcnd")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_yellow" unique_id=1314295822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17, 0)
+
+[node name="@CollisionShape3D@421" type="CollisionShape3D" parent="tree_yellow/Collision_0" unique_id=1191645667]
+shape = SubResource("CylinderShape3D_hb5em")
+
+[node name="NameLabel" type="Label3D" parent="tree_yellow" unique_id=788392224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "黄花风铃木"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_palm" type="Node3D" parent="." unique_id=1405739668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+metadata/asset_id = "tree_palm"
+metadata/category = "vegetation"
+metadata/display_name = "棕榈"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_palm" type="MeshInstance3D" parent="tree_palm" unique_id=45488952]
+mesh = ExtResource("4_gjkbg")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_palm" unique_id=178151227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
+
+[node name="@CollisionShape3D@422" type="CollisionShape3D" parent="tree_palm/Collision_0" unique_id=1798362587]
+shape = SubResource("CylinderShape3D_560i4")
+
+[node name="NameLabel" type="Label3D" parent="tree_palm" unique_id=1842564760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "棕榈"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_small" type="Node3D" parent="." unique_id=1782787683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+metadata/asset_id = "tree_small"
+metadata/category = "vegetation"
+metadata/display_name = "庭院小乔木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_small" type="MeshInstance3D" parent="tree_small" unique_id=2078992083]
+mesh = ExtResource("5_dwmug")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_small" unique_id=752846894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.302, 0)
+
+[node name="@CollisionShape3D@423" type="CollisionShape3D" parent="tree_small/Collision_0" unique_id=752313692]
+shape = SubResource("CylinderShape3D_vor2v")
+
+[node name="NameLabel" type="Label3D" parent="tree_small" unique_id=1812924494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "庭院小乔木"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="bench_timber" type="Node3D" parent="." unique_id=1973896265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+metadata/asset_id = "bench_timber"
+metadata/category = "street_furniture"
+metadata/display_name = "木条金属长椅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bench_timber" type="MeshInstance3D" parent="bench_timber" unique_id=1405129420]
+mesh = ExtResource("6_hfhae")
+
+[node name="Collision_0" type="StaticBody3D" parent="bench_timber" unique_id=244894971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@424" type="CollisionShape3D" parent="bench_timber/Collision_0" unique_id=928680830]
+shape = SubResource("BoxShape3D_l5a7v")
+
+[node name="Collision_1" type="StaticBody3D" parent="bench_timber" unique_id=1132809025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@425" type="CollisionShape3D" parent="bench_timber/Collision_1" unique_id=1687877713]
+shape = SubResource("BoxShape3D_iqgu1")
+
+[node name="NameLabel" type="Label3D" parent="bench_timber" unique_id=1824655290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "木条金属长椅"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="bench_stone" type="Node3D" parent="." unique_id=151279092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+metadata/asset_id = "bench_stone"
+metadata/category = "street_furniture"
+metadata/display_name = "石材座椅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bench_stone" type="MeshInstance3D" parent="bench_stone" unique_id=1663317086]
+mesh = ExtResource("7_j0uyw")
+
+[node name="Collision_0" type="StaticBody3D" parent="bench_stone" unique_id=491411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@426" type="CollisionShape3D" parent="bench_stone/Collision_0" unique_id=207703291]
+shape = SubResource("BoxShape3D_qhldh")
+
+[node name="Collision_1" type="StaticBody3D" parent="bench_stone" unique_id=2137808499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68, 0.26, 0)
+
+[node name="@CollisionShape3D@427" type="CollisionShape3D" parent="bench_stone/Collision_1" unique_id=904425604]
+shape = SubResource("BoxShape3D_a76xl")
+
+[node name="NameLabel" type="Label3D" parent="bench_stone" unique_id=748955504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "石材座椅"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="shrub_round" type="Node3D" parent="." unique_id=526434294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0)
+metadata/asset_id = "shrub_round"
+metadata/category = "vegetation"
+metadata/display_name = "球形灌木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="shrub_round" type="MeshInstance3D" parent="shrub_round" unique_id=777965468]
+mesh = ExtResource("8_s3nsg")
+
+[node name="NameLabel" type="Label3D" parent="shrub_round" unique_id=687061246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "球形灌木"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="shrub_yellow" type="Node3D" parent="." unique_id=1747154928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+metadata/asset_id = "shrub_yellow"
+metadata/category = "vegetation"
+metadata/display_name = "浅叶灌木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="shrub_yellow" type="MeshInstance3D" parent="shrub_yellow" unique_id=61442627]
+mesh = ExtResource("9_frrq4")
+
+[node name="NameLabel" type="Label3D" parent="shrub_yellow" unique_id=1649829789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "浅叶灌木"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="bougainvillea" type="Node3D" parent="." unique_id=300998207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+metadata/asset_id = "bougainvillea"
+metadata/category = "vegetation"
+metadata/display_name = "三角梅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bougainvillea" type="MeshInstance3D" parent="bougainvillea" unique_id=1494907783]
+mesh = ExtResource("10_5njii")
+
+[node name="NameLabel" type="Label3D" parent="bougainvillea" unique_id=103533283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "三角梅"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="flower_white" type="Node3D" parent="." unique_id=1462940260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+metadata/asset_id = "flower_white"
+metadata/category = "vegetation"
+metadata/display_name = "白色花丛"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="flower_white" type="MeshInstance3D" parent="flower_white" unique_id=1915979760]
+mesh = ExtResource("11_q4i17")
+
+[node name="NameLabel" type="Label3D" parent="flower_white" unique_id=1124183483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "白色花丛"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="flower_purple" type="Node3D" parent="." unique_id=1078798620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
+metadata/asset_id = "flower_purple"
+metadata/category = "vegetation"
+metadata/display_name = "紫色花丛"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="flower_purple" type="MeshInstance3D" parent="flower_purple" unique_id=580028730]
+mesh = ExtResource("12_lytcy")
+
+[node name="NameLabel" type="Label3D" parent="flower_purple" unique_id=1684499367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "紫色花丛"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="hedge_4m" type="Node3D" parent="." unique_id=1485463291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 12)
+metadata/asset_id = "hedge_4m"
+metadata/category = "vegetation"
+metadata/display_name = "四米修剪绿篱"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="hedge_4m" type="MeshInstance3D" parent="hedge_4m" unique_id=1560214543]
+mesh = ExtResource("13_exgic")
+
+[node name="NameLabel" type="Label3D" parent="hedge_4m" unique_id=446111097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "四米修剪绿篱"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="grass_clump" type="Node3D" parent="." unique_id=1842596758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 12)
+metadata/asset_id = "grass_clump"
+metadata/category = "vegetation"
+metadata/display_name = "低矮草丛"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="grass_clump" type="MeshInstance3D" parent="grass_clump" unique_id=2117276744]
+mesh = ExtResource("14_mgac5")
+
+[node name="NameLabel" type="Label3D" parent="grass_clump" unique_id=1341487601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "低矮草丛"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="rock_1" type="Node3D" parent="." unique_id=1928109012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 12)
+metadata/asset_id = "rock_1"
+metadata/category = "landscape"
+metadata/display_name = "景观石 1"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rock_1" type="MeshInstance3D" parent="rock_1" unique_id=1937237060]
+mesh = ExtResource("15_y3ic2")
+
+[node name="NameLabel" type="Label3D" parent="rock_1" unique_id=903383446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "景观石 1"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="rock_2" type="Node3D" parent="." unique_id=369954302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+metadata/asset_id = "rock_2"
+metadata/category = "landscape"
+metadata/display_name = "景观石 2"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rock_2" type="MeshInstance3D" parent="rock_2" unique_id=1084033688]
+mesh = ExtResource("16_cihvj")
+
+[node name="NameLabel" type="Label3D" parent="rock_2" unique_id=1205238151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "景观石 2"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="rock_3" type="Node3D" parent="." unique_id=301408720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 24)
+metadata/asset_id = "rock_3"
+metadata/category = "landscape"
+metadata/display_name = "景观石 3"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rock_3" type="MeshInstance3D" parent="rock_3" unique_id=1091230284]
+mesh = ExtResource("17_rupjn")
+
+[node name="NameLabel" type="Label3D" parent="rock_3" unique_id=498598141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "景观石 3"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="street_lamp" type="Node3D" parent="." unique_id=1608343654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 24)
+metadata/asset_id = "street_lamp"
+metadata/category = "street_furniture"
+metadata/display_name = "校园白色路灯"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="street_lamp" type="MeshInstance3D" parent="street_lamp" unique_id=509796643]
+mesh = ExtResource("18_vqyd1")
+
+[node name="Collision_0" type="StaticBody3D" parent="street_lamp" unique_id=941680300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
+
+[node name="@CollisionShape3D@428" type="CollisionShape3D" parent="street_lamp/Collision_0" unique_id=930079407]
+shape = SubResource("CylinderShape3D_mm5qe")
+
+[node name="NameLabel" type="Label3D" parent="street_lamp" unique_id=719776790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "校园白色路灯"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="garden_lamp" type="Node3D" parent="." unique_id=618251054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 24)
+metadata/asset_id = "garden_lamp"
+metadata/category = "street_furniture"
+metadata/display_name = "庭院矮灯"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="garden_lamp" type="MeshInstance3D" parent="garden_lamp" unique_id=772357437]
+mesh = ExtResource("19_gxb3b")
+
+[node name="Collision_0" type="StaticBody3D" parent="garden_lamp" unique_id=1990528017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="@CollisionShape3D@429" type="CollisionShape3D" parent="garden_lamp/Collision_0" unique_id=1896930875]
+shape = SubResource("CylinderShape3D_oot0n")
+
+[node name="NameLabel" type="Label3D" parent="garden_lamp" unique_id=963041410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "庭院矮灯"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="sorting_bins" type="Node3D" parent="." unique_id=1822542668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 24)
+metadata/asset_id = "sorting_bins"
+metadata/category = "containers"
+metadata/display_name = "分类垃圾桶"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="sorting_bins" type="MeshInstance3D" parent="sorting_bins" unique_id=66228498]
+mesh = ExtResource("20_pltul")
+
+[node name="Collision_0" type="StaticBody3D" parent="sorting_bins" unique_id=1074074182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0.52, 0)
+
+[node name="@CollisionShape3D@430" type="CollisionShape3D" parent="sorting_bins/Collision_0" unique_id=213292229]
+shape = SubResource("BoxShape3D_gd0yl")
+
+[node name="Collision_1" type="StaticBody3D" parent="sorting_bins" unique_id=1123886966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.52, 0)
+
+[node name="@CollisionShape3D@431" type="CollisionShape3D" parent="sorting_bins/Collision_1" unique_id=542902637]
+shape = SubResource("BoxShape3D_f4rmi")
+
+[node name="NameLabel" type="Label3D" parent="sorting_bins" unique_id=757706551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "分类垃圾桶"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="round_planter" type="Node3D" parent="." unique_id=396332288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 24)
+metadata/asset_id = "round_planter"
+metadata/category = "landscape"
+metadata/display_name = "圆形花盆"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="round_planter" type="MeshInstance3D" parent="round_planter" unique_id=808368759]
+mesh = ExtResource("21_0ue27")
+
+[node name="Collision_0" type="StaticBody3D" parent="round_planter" unique_id=9907707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0)
+
+[node name="@CollisionShape3D@432" type="CollisionShape3D" parent="round_planter/Collision_0" unique_id=2049134507]
+shape = SubResource("CylinderShape3D_qducs")
+
+[node name="NameLabel" type="Label3D" parent="round_planter" unique_id=1375887482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "圆形花盆"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="rect_planter" type="Node3D" parent="." unique_id=806873867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 24)
+metadata/asset_id = "rect_planter"
+metadata/category = "landscape"
+metadata/display_name = "矩形花槽"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rect_planter" type="MeshInstance3D" parent="rect_planter" unique_id=812228973]
+mesh = ExtResource("22_43q73")
+
+[node name="Collision_0" type="StaticBody3D" parent="rect_planter" unique_id=1428895450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 0)
+
+[node name="@CollisionShape3D@433" type="CollisionShape3D" parent="rect_planter/Collision_0" unique_id=1622129073]
+shape = SubResource("BoxShape3D_4s3k3")
+
+[node name="NameLabel" type="Label3D" parent="rect_planter" unique_id=1599136216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "矩形花槽"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="bollard" type="Node3D" parent="." unique_id=163615781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+metadata/asset_id = "bollard"
+metadata/category = "street_furniture"
+metadata/display_name = "路口防撞柱"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bollard" type="MeshInstance3D" parent="bollard" unique_id=423719745]
+mesh = ExtResource("23_n0xut")
+
+[node name="Collision_0" type="StaticBody3D" parent="bollard" unique_id=203748926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="@CollisionShape3D@434" type="CollisionShape3D" parent="bollard/Collision_0" unique_id=1248790079]
+shape = SubResource("CylinderShape3D_emo5r")
+
+[node name="NameLabel" type="Label3D" parent="bollard" unique_id=295474188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "路口防撞柱"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="bike_rack" type="Node3D" parent="." unique_id=1910104972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
+metadata/asset_id = "bike_rack"
+metadata/category = "street_furniture"
+metadata/display_name = "自行车停放架"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="bike_rack" type="MeshInstance3D" parent="bike_rack" unique_id=2145076234]
+mesh = ExtResource("24_wn4jh")
+
+[node name="NameLabel" type="Label3D" parent="bike_rack" unique_id=958963323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "自行车停放架"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="campus_sign" type="Node3D" parent="." unique_id=131104573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 36)
+metadata/asset_id = "campus_sign"
+metadata/category = "signage"
+metadata/display_name = "校园导向牌"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="campus_sign" type="MeshInstance3D" parent="campus_sign" unique_id=184306807]
+mesh = ExtResource("25_7shmr")
+
+[node name="Collision_0" type="StaticBody3D" parent="campus_sign" unique_id=1800574708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="@CollisionShape3D@435" type="CollisionShape3D" parent="campus_sign/Collision_0" unique_id=2036591944]
+shape = SubResource("BoxShape3D_syoxv")
+
+[node name="NameLabel" type="Label3D" parent="campus_sign" unique_id=198450507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "校园导向牌"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="aed_case" type="Node3D" parent="." unique_id=1231071602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+metadata/asset_id = "aed_case"
+metadata/category = "facilities"
+metadata/display_name = "AED 壁挂箱"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="aed_case" type="MeshInstance3D" parent="aed_case" unique_id=1403021892]
+mesh = ExtResource("26_p8x40")
+
+[node name="NameLabel" type="Label3D" parent="aed_case" unique_id=1014450772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "AED 壁挂箱"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="wall_brick_6m" type="Node3D" parent="." unique_id=1996776059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 36)
+metadata/asset_id = "wall_brick_6m"
+metadata/category = "boundary"
+metadata/display_name = "六米红砖围墙"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="wall_brick_6m" type="MeshInstance3D" parent="wall_brick_6m" unique_id=896529818]
+mesh = ExtResource("27_nlo6i")
+
+[node name="Collision_0" type="StaticBody3D" parent="wall_brick_6m" unique_id=892765980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+
+[node name="@CollisionShape3D@436" type="CollisionShape3D" parent="wall_brick_6m/Collision_0" unique_id=350261017]
+shape = SubResource("BoxShape3D_xfgoc")
+
+[node name="NameLabel" type="Label3D" parent="wall_brick_6m" unique_id=1055920365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "六米红砖围墙"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="fence_6m" type="Node3D" parent="." unique_id=1251409212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 36)
+metadata/asset_id = "fence_6m"
+metadata/category = "boundary"
+metadata/display_name = "六米校园铁艺栏杆"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="fence_6m" type="MeshInstance3D" parent="fence_6m" unique_id=1172535014]
+mesh = ExtResource("28_1tvrk")
+
+[node name="Collision_0" type="StaticBody3D" parent="fence_6m" unique_id=1126405708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+
+[node name="@CollisionShape3D@437" type="CollisionShape3D" parent="fence_6m/Collision_0" unique_id=1408047596]
+shape = SubResource("BoxShape3D_1kfcq")
+
+[node name="NameLabel" type="Label3D" parent="fence_6m" unique_id=2134895186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "六米校园铁艺栏杆"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="curb_4m" type="Node3D" parent="." unique_id=732384771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 36)
+metadata/asset_id = "curb_4m"
+metadata/category = "roads"
+metadata/display_name = "四米路缘石"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="curb_4m" type="MeshInstance3D" parent="curb_4m" unique_id=575135702]
+mesh = ExtResource("29_87c63")
+
+[node name="NameLabel" type="Label3D" parent="curb_4m" unique_id=915551163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "四米路缘石"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="sidewalk_4m" type="Node3D" parent="." unique_id=262292584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+metadata/asset_id = "sidewalk_4m"
+metadata/category = "roads"
+metadata/display_name = "四米人行道模块"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="sidewalk_4m" type="MeshInstance3D" parent="sidewalk_4m" unique_id=1897467036]
+mesh = ExtResource("30_xtr8e")
+
+[node name="NameLabel" type="Label3D" parent="sidewalk_4m" unique_id=546162227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "四米人行道模块"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="road_8m" type="Node3D" parent="." unique_id=1689907134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 48)
+metadata/asset_id = "road_8m"
+metadata/category = "roads"
+metadata/display_name = "八米双向道路模块"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="road_8m" type="MeshInstance3D" parent="road_8m" unique_id=805824858]
+mesh = ExtResource("31_nqjbg")
+
+[node name="NameLabel" type="Label3D" parent="road_8m" unique_id=1383049798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "八米双向道路模块"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="storm_drain" type="Node3D" parent="." unique_id=143060797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 48)
+metadata/asset_id = "storm_drain"
+metadata/category = "roads"
+metadata/display_name = "雨水箅子"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="storm_drain" type="MeshInstance3D" parent="storm_drain" unique_id=1624713008]
+mesh = ExtResource("32_e5447")
+
+[node name="NameLabel" type="Label3D" parent="storm_drain" unique_id=373032358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "雨水箅子"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_grate" type="Node3D" parent="." unique_id=1524842839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 48)
+metadata/asset_id = "tree_grate"
+metadata/category = "landscape"
+metadata/display_name = "树池格栅"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_grate" type="MeshInstance3D" parent="tree_grate" unique_id=1562828732]
+mesh = ExtResource("33_box2g")
+
+[node name="NameLabel" type="Label3D" parent="tree_grate" unique_id=464119608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "树池格栅"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="stone_table" type="Node3D" parent="." unique_id=1792322176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
+metadata/asset_id = "stone_table"
+metadata/category = "street_furniture"
+metadata/display_name = "石桌与座凳"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="stone_table" type="MeshInstance3D" parent="stone_table" unique_id=487461523]
+mesh = ExtResource("34_bgok4")
+
+[node name="Collision_0" type="StaticBody3D" parent="stone_table" unique_id=1491792835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="@CollisionShape3D@438" type="CollisionShape3D" parent="stone_table/Collision_0" unique_id=1285356268]
+shape = SubResource("CylinderShape3D_bs6dy")
+
+[node name="Collision_1" type="StaticBody3D" parent="stone_table" unique_id=1806706353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.28, 0)
+
+[node name="@CollisionShape3D@439" type="CollisionShape3D" parent="stone_table/Collision_1" unique_id=204893559]
+shape = SubResource("CylinderShape3D_geh1i")
+
+[node name="Collision_2" type="StaticBody3D" parent="stone_table" unique_id=1357953922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.28, 0)
+
+[node name="@CollisionShape3D@440" type="CollisionShape3D" parent="stone_table/Collision_2" unique_id=861679429]
+shape = SubResource("CylinderShape3D_1lhn6")
+
+[node name="Collision_3" type="StaticBody3D" parent="stone_table" unique_id=1302010613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, -0.95)
+
+[node name="@CollisionShape3D@441" type="CollisionShape3D" parent="stone_table/Collision_3" unique_id=1473405857]
+shape = SubResource("CylinderShape3D_q6lb0")
+
+[node name="Collision_4" type="StaticBody3D" parent="stone_table" unique_id=62853671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0.95)
+
+[node name="@CollisionShape3D@442" type="CollisionShape3D" parent="stone_table/Collision_4" unique_id=303273747]
+shape = SubResource("CylinderShape3D_b328k")
+
+[node name="NameLabel" type="Label3D" parent="stone_table" unique_id=1477917906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "石桌与座凳"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="square_paving" type="Node3D" parent="." unique_id=1748114352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 48)
+metadata/asset_id = "square_paving"
+metadata/category = "roads"
+metadata/display_name = "广场铺装模块"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="square_paving" type="MeshInstance3D" parent="square_paving" unique_id=1666018445]
+mesh = ExtResource("35_k8ft0")
+
+[node name="NameLabel" type="Label3D" parent="square_paving" unique_id=413964329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "广场铺装模块"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_supported_young" type="Node3D" parent="." unique_id=954487782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 48)
+metadata/asset_id = "tree_supported_young"
+metadata/category = "vegetation"
+metadata/display_name = "带三角支撑的校园幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_supported_young" type="MeshInstance3D" parent="tree_supported_young" unique_id=150124836]
+mesh = ExtResource("36_l1cut")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_supported_young" unique_id=230993851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+
+[node name="@CollisionShape3D@443" type="CollisionShape3D" parent="tree_supported_young/Collision_0" unique_id=2143578930]
+shape = SubResource("CylinderShape3D_wy30x")
+
+[node name="NameLabel" type="Label3D" parent="tree_supported_young" unique_id=1683103740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "带三角支撑的校园幼树"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_pruned_tier" type="Node3D" parent="." unique_id=1533794022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60)
+metadata/asset_id = "tree_pruned_tier"
+metadata/category = "vegetation"
+metadata/display_name = "分层修剪景观树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_pruned_tier" type="MeshInstance3D" parent="tree_pruned_tier" unique_id=948469662]
+mesh = ExtResource("37_vj22a")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_pruned_tier" unique_id=866192662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, 0)
+
+[node name="@CollisionShape3D@444" type="CollisionShape3D" parent="tree_pruned_tier/Collision_0" unique_id=2052924544]
+shape = SubResource("CylinderShape3D_67col")
+
+[node name="NameLabel" type="Label3D" parent="tree_pruned_tier" unique_id=1816067406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "分层修剪景观树"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="arched_white_lamp" type="Node3D" parent="." unique_id=1394119966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 60)
+metadata/asset_id = "arched_white_lamp"
+metadata/category = "street_furniture"
+metadata/display_name = "白色弧形校园路灯"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="arched_white_lamp" type="MeshInstance3D" parent="arched_white_lamp" unique_id=244969792]
+mesh = ExtResource("38_5wrda")
+
+[node name="Collision_0" type="StaticBody3D" parent="arched_white_lamp" unique_id=1170507549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+
+[node name="@CollisionShape3D@445" type="CollisionShape3D" parent="arched_white_lamp/Collision_0" unique_id=162277678]
+shape = SubResource("CylinderShape3D_s1chb")
+
+[node name="NameLabel" type="Label3D" parent="arched_white_lamp" unique_id=2139451681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "白色弧形校园路灯"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="canna_pink" type="Node3D" parent="." unique_id=40375420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 60)
+metadata/asset_id = "canna_pink"
+metadata/category = "vegetation"
+metadata/display_name = "粉红美人蕉植株"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_pink" type="MeshInstance3D" parent="canna_pink" unique_id=1746684797]
+mesh = ExtResource("39_ar4i5")
+
+[node name="NameLabel" type="Label3D" parent="canna_pink" unique_id=729518329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "粉红美人蕉植株"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="canna_orange" type="Node3D" parent="." unique_id=624616804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 60)
+metadata/asset_id = "canna_orange"
+metadata/category = "vegetation"
+metadata/display_name = "橙红美人蕉植株"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_orange" type="MeshInstance3D" parent="canna_orange" unique_id=1107600891]
+mesh = ExtResource("40_kqynj")
+
+[node name="NameLabel" type="Label3D" parent="canna_orange" unique_id=1397207310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "橙红美人蕉植株"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="canna_border_3m" type="Node3D" parent="." unique_id=439446936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 60)
+metadata/asset_id = "canna_border_3m"
+metadata/category = "vegetation"
+metadata/display_name = "三米美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_border_3m" type="MeshInstance3D" parent="canna_border_3m" unique_id=843286721]
+mesh = ExtResource("41_myskt")
+
+[node name="NameLabel" type="Label3D" parent="canna_border_3m" unique_id=212584824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "三米美人蕉花境"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="tree_feathered_supported" type="Node3D" parent="." unique_id=1924724204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 60)
+metadata/asset_id = "tree_feathered_supported"
+metadata/category = "vegetation"
+metadata/display_name = "疏叶羽状冠支撑幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_feathered_supported" type="MeshInstance3D" parent="tree_feathered_supported" unique_id=2147293039]
+mesh = ExtResource("42_5mm2s")
+
+[node name="Collision_0" type="StaticBody3D" parent="tree_feathered_supported" unique_id=764890776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
+
+[node name="@CollisionShape3D@446" type="CollisionShape3D" parent="tree_feathered_supported/Collision_0" unique_id=1758097657]
+shape = SubResource("CylinderShape3D_6gi2i")
+
+[node name="NameLabel" type="Label3D" parent="tree_feathered_supported" unique_id=965573375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "疏叶羽状冠支撑幼树"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="paving_slab_6m" type="Node3D" parent="." unique_id=779355607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 60)
+metadata/asset_id = "paving_slab_6m"
+metadata/category = "roads"
+metadata/display_name = "六米灰色石板与深色边带"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="paving_slab_6m" type="MeshInstance3D" parent="paving_slab_6m" unique_id=941143332]
+mesh = ExtResource("43_ekhlm")
+
+[node name="NameLabel" type="Label3D" parent="paving_slab_6m" unique_id=1434512737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 4.8)
+pixel_size = 0.05
+billboard = 1
+modulate = Color(0.15, 0.2, 0.19, 1)
+outline_modulate = Color(0.95, 0.96, 0.91, 1)
+text = "六米灰色石板与深色边带"
+font = ExtResource("2_anvpd")
+font_size = 19
+outline_size = 8
+metadata/labels = true
+
+[node name="@Camera3D@1508" type="Camera3D" parent="." unique_id=2056820080]
+transform = Transform3D(0.86586505, -0.35384783, 0.35365146, 0, 0.7069105, 0.707303, -0.5002776, -0.61242896, 0.6120891, 88, 105, 117)
+projection = 1
+size = 88.0
+far = 1000.0

@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/road_8m_2597.res" id="1_akxrb"]
+
+[node name="road_8m" type="Node3D" unique_id=1689907134]
+metadata/asset_id = "road_8m"
+metadata/category = "roads"
+metadata/display_name = "八米双向道路模块"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="road_8m" type="MeshInstance3D" parent="." unique_id=805824858]
+mesh = ExtResource("1_akxrb")

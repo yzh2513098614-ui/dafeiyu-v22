@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/glass_pavilion_2488.res" id="1_3h4cl"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/glass_pavilion_2489.res" id="2_m1frb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/glass_pavilion_2490.res" id="3_qninh"]
+
+[node name="glass_pavilion" type="Node3D" unique_id=743255538]
+metadata/asset_id = "glass_pavilion"
+metadata/category = "landmarks"
+metadata/display_name = "玻璃几何构架"
+metadata/units = "metre"
+metadata/evidence = "photo_reconstructed_location_estimated"
+
+[node name="TriangularSteelFrames" type="MeshInstance3D" parent="." unique_id=15900697]
+mesh = ExtResource("1_3h4cl")
+
+[node name="LongitudinalSteelFrames" type="MeshInstance3D" parent="." unique_id=889833921]
+mesh = ExtResource("2_m1frb")
+
+[node name="GroundRails" type="MeshInstance3D" parent="." unique_id=416357888]
+mesh = ExtResource("3_qninh")

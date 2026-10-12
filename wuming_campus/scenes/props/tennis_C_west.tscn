@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2351.res" id="1_tdgka"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2352.res" id="2_w3d60"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2353.res" id="3_8cbw5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2354.res" id="4_in5ch"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2355.res" id="5_5hb5n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tennis_C_west_2356.res" id="6_lexon"]
+
+[node name="tennis_C_west" type="Node3D" unique_id=2017185130]
+metadata/asset_id = "tennis_C_west"
+metadata/category = "sports"
+metadata/display_name = "tennis_C_west"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=1768484921]
+mesh = ExtResource("1_tdgka")
+
+[node name="Court_1_CourtRed" type="MeshInstance3D" parent="." unique_id=1742704010]
+mesh = ExtResource("2_w3d60")
+
+[node name="Court_1_CourtInfield" type="MeshInstance3D" parent="." unique_id=644194429]
+mesh = ExtResource("3_8cbw5")
+
+[node name="Court_1_CourtLines" type="MeshInstance3D" parent="." unique_id=1742113884]
+mesh = ExtResource("4_in5ch")
+
+[node name="Court_1_NetPosts" type="MeshInstance3D" parent="." unique_id=1546302108]
+mesh = ExtResource("5_5hb5n")
+
+[node name="Court_1_NetMesh" type="MeshInstance3D" parent="." unique_id=272720094]
+mesh = ExtResource("6_lexon")

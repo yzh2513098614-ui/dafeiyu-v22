@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/paving_slab_6m_2609.res" id="1_ricvt"]
+
+[node name="paving_slab_6m" type="Node3D" unique_id=779355607]
+metadata/asset_id = "paving_slab_6m"
+metadata/category = "roads"
+metadata/display_name = "六米灰色石板与深色边带"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="paving_slab_6m" type="MeshInstance3D" parent="." unique_id=941143332]
+mesh = ExtResource("1_ricvt")

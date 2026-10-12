@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2201.res" id="1_y1shu"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2202.res" id="2_sb8s2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2203.res" id="3_os602"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2204.res" id="4_dngxx"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2205.res" id="5_p5q7o"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2206.res" id="6_d2osb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/basket_B_west_top_2207.res" id="7_i0fgu"]
+
+[node name="basket_B_west_top" type="Node3D" unique_id=591187959]
+metadata/asset_id = "basket_B_west_top"
+metadata/category = "sports"
+metadata/display_name = "basket_B_west_top"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PavedSurround" type="MeshInstance3D" parent="." unique_id=1525543788]
+mesh = ExtResource("1_y1shu")
+
+[node name="Court_1_CourtRed" type="MeshInstance3D" parent="." unique_id=615603940]
+mesh = ExtResource("2_sb8s2")
+
+[node name="Court_1_CourtInfield" type="MeshInstance3D" parent="." unique_id=244808122]
+mesh = ExtResource("3_os602")
+
+[node name="Court_1_CourtLines" type="MeshInstance3D" parent="." unique_id=856136936]
+mesh = ExtResource("4_dngxx")
+
+[node name="Court_1_HoopPost" type="MeshInstance3D" parent="." unique_id=960280190]
+mesh = ExtResource("5_p5q7o")
+
+[node name="Court_1_Backboard" type="MeshInstance3D" parent="." unique_id=639311351]
+mesh = ExtResource("6_d2osb")
+
+[node name="Court_1_Hoop" type="MeshInstance3D" parent="." unique_id=1766649751]
+mesh = ExtResource("7_i0fgu")

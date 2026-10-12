@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/canna_pink_2605.res" id="1_5cubm"]
+
+[node name="canna_pink" type="Node3D" unique_id=40375420]
+metadata/asset_id = "canna_pink"
+metadata/category = "vegetation"
+metadata/display_name = "粉红美人蕉植株"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="canna_pink" type="MeshInstance3D" parent="." unique_id=1746684797]
+mesh = ExtResource("1_5cubm")

@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_supported_young_2602.res" id="1_5cx3r"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wy30x"]
+height = 4.6
+radius = 0.16
+
+[node name="tree_supported_young" type="Node3D" unique_id=954487782]
+metadata/asset_id = "tree_supported_young"
+metadata/category = "vegetation"
+metadata/display_name = "带三角支撑的校园幼树"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_supported_young" type="MeshInstance3D" parent="." unique_id=150124836]
+mesh = ExtResource("1_5cx3r")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=230993851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+
+[node name="@CollisionShape3D@443" type="CollisionShape3D" parent="Collision_0" unique_id=2143578930]
+shape = SubResource("CylinderShape3D_wy30x")

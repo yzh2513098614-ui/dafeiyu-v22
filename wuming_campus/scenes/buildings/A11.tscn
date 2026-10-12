@@ -1,0 +1,285 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1287.res" id="1_d6gfh"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1288.res" id="2_3wheb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1289.res" id="3_wlwht"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1290.res" id="4_jdhe6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1291.res" id="5_5fegq"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1292.res" id="6_x6ji6"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1293.res" id="7_6ms6s"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1294.res" id="8_7doci"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1295.res" id="9_vij1g"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1296.res" id="10_gp76q"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1297.res" id="11_5ss0m"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1298.res" id="12_iurve"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1299.res" id="13_j2y8j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1300.res" id="14_q4avn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1301.res" id="15_23cri"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1302.res" id="16_25xu2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1303.res" id="17_mhfd8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1304.res" id="18_g0tqt"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1305.res" id="19_jua4j"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1306.res" id="20_dqq0k"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1307.res" id="21_uxujc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1308.res" id="22_ucsy1"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1309.res" id="23_4e4in"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1310.res" id="24_7fmbc"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1311.res" id="25_fesu5"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1312.res" id="26_p5q4i"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1313.res" id="27_83uec"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1314.res" id="28_2c0fo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1315.res" id="29_lb8a0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1316.res" id="30_h2vor"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1317.res" id="31_dch8y"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1318.res" id="32_5cjjo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1319.res" id="33_v1xse"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1320.res" id="34_tts3m"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1321.res" id="35_i8gt0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1322.res" id="36_gu3hu"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1323.res" id="37_hfuux"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1324.res" id="38_rigi7"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1325.res" id="39_qjxvo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1326.res" id="40_hh3go"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1327.res" id="41_1dwks"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1328.res" id="42_jdw4g"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1329.res" id="43_hmmg4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1330.res" id="44_k1sa8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1331.res" id="45_vi3x4"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1332.res" id="46_trqtp"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1333.res" id="47_52tc0"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1334.res" id="48_madea"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1335.res" id="49_18fif"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1336.res" id="50_st4k2"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1337.res" id="51_dw8vn"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1338.res" id="52_wsdgg"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1339.res" id="53_os7oo"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1340.res" id="54_fekcb"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1341.res" id="55_hpw2x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1342.res" id="56_aa8br"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1343.res" id="57_8jfbk"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1344.res" id="58_dk22x"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1345.res" id="59_ayjqw"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/A11_1346.res" id="60_7tu4q"]
+[ext_resource type="FontFile" path="res://wuming_campus/assets/fonts/NotoSansSC.ttf" id="61_eo1pi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rchiv"]
+size = Vector3(38.21656, 53.2, 46.178345)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7d1y6"]
+data = PackedVector3Array(36.514156, 0.3, 19.839172, 36.514156, 0.3, -19.839172, 35.1151, 1.5166667, -19.839172, 36.514156, 0.3, 19.839172, 35.1151, 1.5166667, -19.839172, 35.1151, 1.5166667, 19.839172, 35.1151, 1.5166667, 19.839172, 35.1151, 1.5166667, -19.839172, 33.77558, 2.7333333, -19.839172, 35.1151, 1.5166667, 19.839172, 33.77558, 2.7333333, -19.839172, 33.77558, 2.7333333, 19.839172, 33.77558, 2.7333333, 19.839172, 33.77558, 2.7333333, -19.839172, 32.495594, 3.95, -19.839172, 33.77558, 2.7333333, 19.839172, 32.495594, 3.95, -19.839172, 32.495594, 3.95, 19.839172, 32.495594, 3.95, 19.839172, 32.495594, 3.95, -19.839172, 31.275139, 5.1666665, -19.839172, 32.495594, 3.95, 19.839172, 31.275139, 5.1666665, -19.839172, 31.275139, 5.1666665, 19.839172, 31.275139, 5.1666665, 19.839172, 31.275139, 5.1666665, -19.839172, 30.114222, 6.383333, -19.839172, 31.275139, 5.1666665, 19.839172, 30.114222, 6.383333, -19.839172, 30.114222, 6.383333, 19.839172, 30.114222, 6.383333, 19.839172, 30.114222, 6.383333, -19.839172, 29.012836, 7.6, -19.839172, 30.114222, 6.383333, 19.839172, 29.012836, 7.6, -19.839172, 29.012836, 7.6, 19.839172, 29.012836, 7.6, 19.839172, 29.012836, 7.6, -19.839172, 27.970985, 8.816667, -19.839172, 29.012836, 7.6, 19.839172, 27.970985, 8.816667, -19.839172, 27.970985, 8.816667, 19.839172, 27.970985, 8.816667, 19.839172, 27.970985, 8.816667, -19.839172, 26.98867, 10.033334, -19.839172, 27.970985, 8.816667, 19.839172, 26.98867, 10.033334, -19.839172, 26.98867, 10.033334, 19.839172, 26.98867, 10.033334, 19.839172, 26.98867, 10.033334, -19.839172, 26.06589, 11.25, -19.839172, 26.98867, 10.033334, 19.839172, 26.06589, 11.25, -19.839172, 26.06589, 11.25, 19.839172, 26.06589, 11.25, 19.839172, 26.06589, 11.25, -19.839172, 25.20264, 12.466666, -19.839172, 26.06589, 11.25, 19.839172, 25.20264, 12.466666, -19.839172, 25.20264, 12.466666, 19.839172, 25.20264, 12.466666, 19.839172, 25.20264, 12.466666, -19.839172, 24.398928, 13.683333, -19.839172, 25.20264, 12.466666, 19.839172, 24.398928, 13.683333, -19.839172, 24.398928, 13.683333, 19.839172, 24.398928, 13.683333, 19.839172, 24.398928, 13.683333, -19.839172, 23.654749, 14.9, -19.839172, 24.398928, 13.683333, 19.839172, 23.654749, 14.9, -19.839172, 23.654749, 14.9, 19.839172, 23.654749, 14.9, 19.839172, 23.654749, 14.9, -19.839172, 22.970106, 16.116667, -19.839172, 23.654749, 14.9, 19.839172, 22.970106, 16.116667, -19.839172, 22.970106, 16.116667, 19.839172, 22.970106, 16.116667, 19.839172, 22.970106, 16.116667, -19.839172, 22.344995, 17.333334, -19.839172, 22.970106, 16.116667, 19.839172, 22.344995, 17.333334, -19.839172, 22.344995, 17.333334, 19.839172, 22.344995, 17.333334, 19.839172, 22.344995, 17.333334, -19.839172, 21.779419, 18.55, -19.839172, 22.344995, 17.333334, 19.839172, 21.779419, 18.55, -19.839172, 21.779419, 18.55, 19.839172, 21.779419, 18.55, 19.839172, 21.779419, 18.55, -19.839172, 21.273378, 19.766666, -19.839172, 21.779419, 18.55, 19.839172, 21.273378, 19.766666, -19.839172, 21.273378, 19.766666, 19.839172, 21.273378, 19.766666, 19.839172, 21.273378, 19.766666, -19.839172, 20.82687, 20.983334, -19.839172, 21.273378, 19.766666, 19.839172, 20.82687, 20.983334, -19.839172, 20.82687, 20.983334, 19.839172, 20.82687, 20.983334, 19.839172, 20.82687, 20.983334, -19.839172, 20.439898, 22.2, -19.839172, 20.82687, 20.983334, 19.839172, 20.439898, 22.2, -19.839172, 20.439898, 22.2, 19.839172, 20.439898, 22.2, 19.839172, 20.439898, 22.2, -19.839172, 20.11246, 23.416666, -19.839172, 20.439898, 22.2, 19.839172, 20.11246, 23.416666, -19.839172, 20.11246, 23.416666, 19.839172, 20.11246, 23.416666, 19.839172, 20.11246, 23.416666, -19.839172, 19.844555, 24.633333, -19.839172, 20.11246, 23.416666, 19.839172, 19.844555, 24.633333, -19.839172, 19.844555, 24.633333, 19.839172, 19.844555, 24.633333, 19.839172, 19.844555, 24.633333, -19.839172, 19.636185, 25.85, -19.839172, 19.844555, 24.633333, 19.839172, 19.636185, 25.85, -19.839172, 19.636185, 25.85, 19.839172, 19.636185, 25.85, 19.839172, 19.636185, 25.85, -19.839172, 19.487349, 27.066668, -19.839172, 19.636185, 25.85, 19.839172, 19.487349, 27.066668, -19.839172, 19.487349, 27.066668, 19.839172, 19.487349, 27.066668, 19.839172, 19.487349, 27.066668, -19.839172, 19.398046, 28.283333, -19.839172, 19.487349, 27.066668, 19.839172, 19.398046, 28.283333, -19.839172, 19.398046, 28.283333, 19.839172, 19.398046, 28.283333, 19.839172, 19.398046, 28.283333, -19.839172, 19.36828, 29.5, -19.839172, 19.398046, 28.283333, 19.839172, 19.36828, 29.5, -19.839172, 19.36828, 29.5, 19.839172, 19.36828, 29.5, 19.839172, 19.36828, 29.5, -19.839172, 19.36828, 33, -19.839172, 19.36828, 29.5, 19.839172, 19.36828, 33, -19.839172, 19.36828, 33, 19.839172, 19.36828, 33, 19.839172, 19.36828, 33, -19.839172, 19.36828, 37, -19.839172, 19.36828, 33, 19.839172, 19.36828, 37, -19.839172, 19.36828, 37, 19.839172, 19.36828, 37, 19.839172, 19.36828, 37, -19.839172, 19.36828, 41, -19.839172, 19.36828, 37, 19.839172, 19.36828, 41, -19.839172, 19.36828, 41, 19.839172, 19.36828, 41, 19.839172, 19.36828, 41, -19.839172, 19.36828, 45, -19.839172, 19.36828, 41, 19.839172, 19.36828, 45, -19.839172, 19.36828, 45, 19.839172, 19.36828, 45, 19.839172, 19.36828, 45, -19.839172, 19.36828, 49, -19.839172, 19.36828, 45, 19.839172, 19.36828, 49, -19.839172, 19.36828, 49, 19.839172, 19.36828, 49, 19.839172, 19.36828, 49, -19.839172, 19.36828, 53.2, -19.839172, 19.36828, 49, 19.839172, 19.36828, 53.2, -19.839172, 19.36828, 53.2, 19.839172)
+
+[node name="A11" type="Node3D" unique_id=702277479]
+metadata/asset_id = "A11"
+metadata/category = "buildings"
+metadata/display_name = "A11 弘医楼 A座"
+metadata/units = "metre"
+metadata/evidence = "map_derived_estimate"
+
+[node name="PaleStructuralTowerCore" type="MeshInstance3D" parent="." unique_id=1213494859]
+mesh = ExtResource("1_d6gfh")
+
+[node name="SweptBlueGreyCurtainWall" type="MeshInstance3D" parent="." unique_id=453736534]
+mesh = ExtResource("2_3wheb")
+
+[node name="SolidSweptWhiteCheeks" type="MeshInstance3D" parent="." unique_id=1981614230]
+mesh = ExtResource("3_wlwht")
+
+[node name="ContinuousWhiteVerticalFins" type="MeshInstance3D" parent="." unique_id=814145585]
+mesh = ExtResource("4_jdhe6")
+
+[node name="FineCurtainWallTransoms" type="MeshInstance3D" parent="." unique_id=1489274727]
+mesh = ExtResource("5_5fegq")
+
+[node name="StrongArchitecturalWhiteBelts" type="MeshInstance3D" parent="." unique_id=853112302]
+mesh = ExtResource("6_x6ji6")
+
+[node name="WideStoneEdgeSpines" type="MeshInstance3D" parent="." unique_id=111192340]
+mesh = ExtResource("7_6ms6s")
+
+[node name="StoneCheekHorizontalPanelJoints" type="MeshInstance3D" parent="." unique_id=1156238248]
+mesh = ExtResource("8_7doci")
+
+[node name="OpenCrownUprights" type="MeshInstance3D" parent="." unique_id=1840490279]
+mesh = ExtResource("9_vij1g")
+
+[node name="OpenCrownHeader" type="MeshInstance3D" parent="." unique_id=1958046030]
+mesh = ExtResource("10_gp76q")
+
+[node name="RecessedCrownGlazing" type="MeshInstance3D" parent="." unique_id=992466992]
+mesh = ExtResource("11_5ss0m")
+
+[node name="OpenCrownThinGlazingBars" type="MeshInstance3D" parent="." unique_id=1155730095]
+mesh = ExtResource("12_iurve")
+
+[node name="CrownTier1_CurvedMetalSkin" type="MeshInstance3D" parent="." unique_id=424516637]
+mesh = ExtResource("13_j2y8j")
+
+[node name="CrownTier1_ClosedCurvedSoffit" type="MeshInstance3D" parent="." unique_id=1464215312]
+mesh = ExtResource("14_q4avn")
+
+[node name="CrownTier1_CurvedEdgeFascia" type="MeshInstance3D" parent="." unique_id=1512101882]
+mesh = ExtResource("15_23cri")
+
+[node name="CrownTier1_QuarterCurvedCrownEndCheek" type="MeshInstance3D" parent="." unique_id=1818737113]
+mesh = ExtResource("16_25xu2")
+
+[node name="CrownTier1_CrownEndPanelJoints" type="MeshInstance3D" parent="." unique_id=2002105337]
+mesh = ExtResource("17_mhfd8")
+
+[node name="CrownTier1_VisibleCurvedEdgeGirder" type="MeshInstance3D" parent="." unique_id=430590141]
+mesh = ExtResource("18_g0tqt")
+
+[node name="CrownTier1_FoldedStandingSeams" type="MeshInstance3D" parent="." unique_id=1267103401]
+mesh = ExtResource("19_jua4j")
+
+[node name="CrownTier1_UndersideCurvedRafters" type="MeshInstance3D" parent="." unique_id=975329641]
+mesh = ExtResource("20_dqq0k")
+
+[node name="CrownTier1_FoldedLeadingAndRearEdges" type="MeshInstance3D" parent="." unique_id=1682798407]
+mesh = ExtResource("21_uxujc")
+
+[node name="CrownTier1_LowerEdgeDrainageChannel_RolledLip" type="MeshInstance3D" parent="." unique_id=1845441455]
+mesh = ExtResource("22_ucsy1")
+
+[node name="CrownTier1_LowerEdgeDrainageChannel_OpenChannelBottom" type="MeshInstance3D" parent="." unique_id=1269819136]
+mesh = ExtResource("23_4e4in")
+
+[node name="CrownTier1_LowerEdgeDrainageChannel_ChannelSides" type="MeshInstance3D" parent="." unique_id=469407823]
+mesh = ExtResource("24_7fmbc")
+
+[node name="CrownTier1_LowerEdgeDrainageChannel_ClosedGutterEnds" type="MeshInstance3D" parent="." unique_id=299389355]
+mesh = ExtResource("25_fesu5")
+
+[node name="CrownTier2_CurvedMetalSkin" type="MeshInstance3D" parent="." unique_id=222628248]
+mesh = ExtResource("26_p5q4i")
+
+[node name="CrownTier2_ClosedCurvedSoffit" type="MeshInstance3D" parent="." unique_id=1414164565]
+mesh = ExtResource("27_83uec")
+
+[node name="CrownTier2_CurvedEdgeFascia" type="MeshInstance3D" parent="." unique_id=497000620]
+mesh = ExtResource("28_2c0fo")
+
+[node name="CrownTier2_QuarterCurvedCrownEndCheek" type="MeshInstance3D" parent="." unique_id=583563183]
+mesh = ExtResource("29_lb8a0")
+
+[node name="CrownTier2_CrownEndPanelJoints" type="MeshInstance3D" parent="." unique_id=1842221356]
+mesh = ExtResource("30_h2vor")
+
+[node name="CrownTier2_VisibleCurvedEdgeGirder" type="MeshInstance3D" parent="." unique_id=1351157632]
+mesh = ExtResource("31_dch8y")
+
+[node name="CrownTier2_FoldedStandingSeams" type="MeshInstance3D" parent="." unique_id=298595381]
+mesh = ExtResource("32_5cjjo")
+
+[node name="CrownTier2_UndersideCurvedRafters" type="MeshInstance3D" parent="." unique_id=1498010852]
+mesh = ExtResource("33_v1xse")
+
+[node name="CrownTier2_FoldedLeadingAndRearEdges" type="MeshInstance3D" parent="." unique_id=1497459891]
+mesh = ExtResource("34_tts3m")
+
+[node name="CrownTier2_LowerEdgeDrainageChannel_RolledLip" type="MeshInstance3D" parent="." unique_id=8721598]
+mesh = ExtResource("35_i8gt0")
+
+[node name="CrownTier2_LowerEdgeDrainageChannel_OpenChannelBottom" type="MeshInstance3D" parent="." unique_id=498680853]
+mesh = ExtResource("36_gu3hu")
+
+[node name="CrownTier2_LowerEdgeDrainageChannel_ChannelSides" type="MeshInstance3D" parent="." unique_id=1746663106]
+mesh = ExtResource("37_hfuux")
+
+[node name="CrownTier2_LowerEdgeDrainageChannel_ClosedGutterEnds" type="MeshInstance3D" parent="." unique_id=936180289]
+mesh = ExtResource("38_rigi7")
+
+[node name="CrownTier3_CurvedMetalSkin" type="MeshInstance3D" parent="." unique_id=1090852694]
+mesh = ExtResource("39_qjxvo")
+
+[node name="CrownTier3_ClosedCurvedSoffit" type="MeshInstance3D" parent="." unique_id=1548592871]
+mesh = ExtResource("40_hh3go")
+
+[node name="CrownTier3_CurvedEdgeFascia" type="MeshInstance3D" parent="." unique_id=1687532631]
+mesh = ExtResource("41_1dwks")
+
+[node name="CrownTier3_QuarterCurvedCrownEndCheek" type="MeshInstance3D" parent="." unique_id=569340549]
+mesh = ExtResource("42_jdw4g")
+
+[node name="CrownTier3_CrownEndPanelJoints" type="MeshInstance3D" parent="." unique_id=115122221]
+mesh = ExtResource("43_hmmg4")
+
+[node name="CrownTier3_VisibleCurvedEdgeGirder" type="MeshInstance3D" parent="." unique_id=1993067211]
+mesh = ExtResource("44_k1sa8")
+
+[node name="CrownTier3_FoldedStandingSeams" type="MeshInstance3D" parent="." unique_id=378660700]
+mesh = ExtResource("45_vi3x4")
+
+[node name="CrownTier3_UndersideCurvedRafters" type="MeshInstance3D" parent="." unique_id=464999175]
+mesh = ExtResource("46_trqtp")
+
+[node name="CrownTier3_FoldedLeadingAndRearEdges" type="MeshInstance3D" parent="." unique_id=18394912]
+mesh = ExtResource("47_52tc0")
+
+[node name="CrownTier3_LowerEdgeDrainageChannel_RolledLip" type="MeshInstance3D" parent="." unique_id=582631426]
+mesh = ExtResource("48_madea")
+
+[node name="CrownTier3_LowerEdgeDrainageChannel_OpenChannelBottom" type="MeshInstance3D" parent="." unique_id=929905544]
+mesh = ExtResource("49_18fif")
+
+[node name="CrownTier3_LowerEdgeDrainageChannel_ChannelSides" type="MeshInstance3D" parent="." unique_id=42922132]
+mesh = ExtResource("50_st4k2")
+
+[node name="CrownTier3_LowerEdgeDrainageChannel_ClosedGutterEnds" type="MeshInstance3D" parent="." unique_id=316842894]
+mesh = ExtResource("51_dw8vn")
+
+[node name="RaisedChineseLetterSupportRail" type="MeshInstance3D" parent="." unique_id=593415885]
+mesh = ExtResource("52_wsdgg")
+
+[node name="InnerFaceNarrowWindowStrips" type="MeshInstance3D" parent="." unique_id=1482349403]
+mesh = ExtResource("53_os7oo")
+
+[node name="InnerFaceStoneVerticalBands" type="MeshInstance3D" parent="." unique_id=1539215804]
+mesh = ExtResource("54_fekcb")
+
+[node name="InnerFaceFineStoreyBands" type="MeshInstance3D" parent="." unique_id=614258502]
+mesh = ExtResource("55_hpw2x")
+
+[node name="EndElevationTallInsetGlass" type="MeshInstance3D" parent="." unique_id=1566670962]
+mesh = ExtResource("56_aa8br")
+
+[node name="EndElevationWindowTransoms" type="MeshInstance3D" parent="." unique_id=1921436252]
+mesh = ExtResource("57_8jfbk")
+
+[node name="PaleEndWallCladdingVerticalJoints" type="MeshInstance3D" parent="." unique_id=122332918]
+mesh = ExtResource("58_dk22x")
+
+[node name="PaleEndWallCladdingHorizontalJoints" type="MeshInstance3D" parent="." unique_id=267877030]
+mesh = ExtResource("59_ayjqw")
+
+[node name="GroundEntryGlass" type="MeshInstance3D" parent="." unique_id=1805027999]
+mesh = ExtResource("60_7tu4q")
+
+[node name="UniversityNameSign" type="Label3D" parent="." unique_id=834536299]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.16828, 56.3, -8.815835e-07)
+pixel_size = 0.055
+modulate = Color(0.68, 0.22, 0.15, 1)
+text = "广西医科大学"
+font = ExtResource("61_eo1pi")
+font_size = 60
+outline_size = 0
+
+[node name="UniversityEnglishSign" type="Label3D" parent="." unique_id=278492684]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.18828, 54.65, -8.8245775e-07)
+pixel_size = 0.023
+modulate = Color(0.68, 0.22, 0.15, 1)
+text = "GUANGXI MEDICAL UNIVERSITY"
+font = ExtResource("61_eo1pi")
+font_size = 34
+outline_size = 0
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=605917695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.6, 0)
+
+[node name="@CollisionShape3D@100" type="CollisionShape3D" parent="Collision_0" unique_id=1252011639]
+shape = SubResource("BoxShape3D_rchiv")
+
+[node name="Collision_1" type="StaticBody3D" parent="." unique_id=729313141]
+
+[node name="@CollisionShape3D@101" type="CollisionShape3D" parent="Collision_1" unique_id=113121255]
+shape = SubResource("ConcavePolygonShape3D_7d1y6")

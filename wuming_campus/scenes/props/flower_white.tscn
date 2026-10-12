@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/flower_white_2577.res" id="1_piehn"]
+
+[node name="flower_white" type="Node3D" unique_id=1462940260]
+metadata/asset_id = "flower_white"
+metadata/category = "vegetation"
+metadata/display_name = "白色花丛"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="flower_white" type="MeshInstance3D" parent="." unique_id=1915979760]
+mesh = ExtResource("1_piehn")

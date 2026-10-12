@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/shrub_round_2574.res" id="1_nh2jf"]
+
+[node name="shrub_round" type="Node3D" unique_id=526434294]
+metadata/asset_id = "shrub_round"
+metadata/category = "vegetation"
+metadata/display_name = "球形灌木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="shrub_round" type="MeshInstance3D" parent="." unique_id=777965468]
+mesh = ExtResource("1_nh2jf")

@@ -25,7 +25,7 @@ var hour:=9.0
 var day:=1
 var lamp_energy:=.12
 var shadow_refresh:=0.0
-const OUTDOOR_PLACES: Array[String]=["city","garden","market","trial","pack26_skypark","pack26_nightmarket","pack26_campsite","pack26_shipyard","pack26_boardwalk"]
+const OUTDOOR_PLACES: Array[String]=["wuming_campus","city","garden","market","trial","pack26_skypark","pack26_nightmarket","pack26_campsite","pack26_shipyard","pack26_boardwalk"]
 const FIXTURE_TINTS := {"pack26_hospital":"e6eef8","hospital_1":"e6eef8","hospital_2":"e6eef8","hospital_3":"e6eef8","pack26_foodhall":"ffe0b4","restaurant_1":"ffe0b4","restaurant_2":"ffe0b4","restaurant_3":"ffe0b4","restaurant_b1":"ffe0b4"}
 # Hour, direct light, ambient light, sunlight color, ambient color, sky, prop tint, night weight, pitch, yaw.
 const LIGHT_KEYS: Array=[

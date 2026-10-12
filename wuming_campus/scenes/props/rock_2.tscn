@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/rock_2_2582.res" id="1_su848"]
+
+[node name="rock_2" type="Node3D" unique_id=369954302]
+metadata/asset_id = "rock_2"
+metadata/category = "landscape"
+metadata/display_name = "景观石 2"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="rock_2" type="MeshInstance3D" parent="." unique_id=1084033688]
+mesh = ExtResource("1_su848")

@@ -1,0 +1,24 @@
+{
+  "iteration": "v07",
+  "relationship": "Clock tower and teaching building remain independent",
+  "dimensions": "Visible photograph proportions; pitches, sheet/tile sizes and thicknesses are estimated",
+  "teaching": {
+    "reference": "1000166722.jpg",
+    "roof": "shallow grey tiled hipped roof",
+    "ridge": "segmented ridge and hip caps",
+    "central_panel": "raised above eaves with continuous ivory fins",
+    "eaves": "closed soffit, two stone courses, open gutter and rear corner rain pipes"
+  },
+  "clock": {
+    "reference": "1000166722.jpg",
+    "roof": "truncated lower green cap; inset neck; separate steep upper spire"
+  },
+  "towers": {
+    "reference": "1000166719.jpg",
+    "roof": "three rising curved canopies; shell thickness, folded seams, edge girders and underside rafters"
+  },
+  "library": {
+    "reference": "1000166721.jpg",
+    "roof": "smooth convex annular metal shell; open court, rolled edges, radial seams and clerestory slot"
+  }
+}

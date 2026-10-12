@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/tree_small_2571.res" id="1_pt4ct"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vor2v"]
+height = 2.604
+radius = 0.24
+
+[node name="tree_small" type="Node3D" unique_id=1782787683]
+metadata/asset_id = "tree_small"
+metadata/category = "vegetation"
+metadata/display_name = "庭院小乔木"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="tree_small" type="MeshInstance3D" parent="." unique_id=2078992083]
+mesh = ExtResource("1_pt4ct")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=752846894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.302, 0)
+
+[node name="@CollisionShape3D@423" type="CollisionShape3D" parent="Collision_0" unique_id=752313692]
+shape = SubResource("CylinderShape3D_vor2v")

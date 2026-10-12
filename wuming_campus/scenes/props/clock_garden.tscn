@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2465.res" id="1_cf770"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2466.res" id="2_l4vfa"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2467.res" id="3_utbmd"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2468.res" id="4_4613b"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2469.res" id="5_3qy2n"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2470.res" id="6_oiiip"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2471.res" id="7_qjbx8"]
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/clock_garden_2472.res" id="8_mxbwr"]
+
+[node name="clock_garden" type="Node3D" unique_id=1313664934]
+metadata/asset_id = "clock_garden"
+metadata/category = "landmarks"
+metadata/display_name = "钟楼教学楼美人蕉花境"
+metadata/units = "metre"
+metadata/evidence = "photo_appearance_reconstructed_location_estimated"
+
+[node name="GreySlabGardenSurround" type="MeshInstance3D" parent="." unique_id=337732048]
+mesh = ExtResource("1_cf770")
+
+[node name="GardenSlabJointGrid" type="MeshInstance3D" parent="." unique_id=102200572]
+mesh = ExtResource("2_l4vfa")
+
+[node name="ClockGardenLivingLawn" type="MeshInstance3D" parent="." unique_id=606741060]
+mesh = ExtResource("3_utbmd")
+
+[node name="ClockGardenDarkStoneCurb" type="MeshInstance3D" parent="." unique_id=1118749702]
+mesh = ExtResource("4_4613b")
+
+[node name="UprightCannaStems" type="MeshInstance3D" parent="." unique_id=213665415]
+mesh = ExtResource("5_3qy2n")
+
+[node name="LongBroadFoldedCannaLeaves" type="MeshInstance3D" parent="." unique_id=1296587240]
+mesh = ExtResource("6_oiiip")
+
+[node name="CannaLeafCentralRibs" type="MeshInstance3D" parent="." unique_id=996412142]
+mesh = ExtResource("7_qjbx8")
+
+[node name="AsymmetricCannaFlowerPetals" type="MeshInstance3D" parent="." unique_id=114521976]
+mesh = ExtResource("8_mxbwr")

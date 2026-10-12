@@ -1,0 +1,884 @@
+[
+  {
+    "source": "official_map",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/x_dtjt/wmxqxydt/",
+    "image_url": "https://www.gxmu.edu.cn/banner/xxgk/W020231016322107069292.jpg",
+    "title": "",
+    "local_path": "photos/official_map_001.jpg",
+    "size": [
+      1920,
+      540
+    ],
+    "sha256": "bd9e80c55f5a790ad17c6aecb830d3fadef17f407e33dffcd08d3ca6e4f1c46b",
+    "bytes": 221233,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_map",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/x_dtjt/wmxqxydt/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/x_dtjt/material/wmxq.jpg",
+    "title": "",
+    "local_path": "photos/official_map_002.jpg",
+    "size": [
+      8820,
+      12598
+    ],
+    "sha256": "9a4a39747499668fd03f3b7512659774423c580245cced94b23fc9a1cf1afd21",
+    "bytes": 22138742,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/banner/epic/W020231016321686706007.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_003.jpg",
+    "size": [
+      1920,
+      540
+    ],
+    "sha256": "f99667c922c0a20ccd6b55f12e403c2635d657fa500cf81af8723576f4992b96",
+    "bytes": 133849,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016636103182670.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_004.jpg",
+    "size": [
+      2162,
+      1249
+    ],
+    "sha256": "2a5302ecd08b96710e8b69fb74140b8e715e0bf987fe64110b6d5d006921c015",
+    "bytes": 371990,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016635329847899.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_005.jpg",
+    "size": [
+      969,
+      625
+    ],
+    "sha256": "43c68ceabd70fcac97e2e896b7831bfb47a58baebae21863988801b59d0949f5",
+    "bytes": 1606942,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016634885785202.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_006.jpg",
+    "size": [
+      1080,
+      720
+    ],
+    "sha256": "6fa5e92eae5d6edf64a14abf509917209a270645902c780b2f8184771a233260",
+    "bytes": 115562,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016628702623054.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_007.jpg",
+    "size": [
+      1303,
+      805
+    ],
+    "sha256": "15e3333feaddfb3046d2e90492cfb710677a20c47c86a2e9c57a96600537d232",
+    "bytes": 175415,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016628313025803.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_008.jpg",
+    "size": [
+      1609,
+      881
+    ],
+    "sha256": "a427a05f708b031d125ce979d75d3144472468795d74b449376f37becefb436e",
+    "bytes": 177484,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016627403874156.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_009.jpg",
+    "size": [
+      1585,
+      890
+    ],
+    "sha256": "52d55a2eb8afce4b9f579d550d4a811bf99742e162a71651eec34a9cf11d9f40",
+    "bytes": 156174,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016627067716418.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_010.jpg",
+    "size": [
+      1080,
+      810
+    ],
+    "sha256": "957c981c809fdeab48bccfb3fdfcc4a21390d13279859e0ba3789ed69c78e6bc",
+    "bytes": 168811,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016626344149228.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_011.jpg",
+    "size": [
+      1386,
+      1080
+    ],
+    "sha256": "3e44e81cbe502f8de4db5e5e3f55f0e55987b617bf9bd44a442ec46ab40cf78b",
+    "bytes": 1054364,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016625638063350.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_012.jpg",
+    "size": [
+      1341,
+      882
+    ],
+    "sha256": "b56a8cb98ab06d5c5181dace550645a54a86b1efede7a3d65161928b061b2e6a",
+    "bytes": 216958,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016580506650601.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_013.jpg",
+    "size": [
+      1080,
+      720
+    ],
+    "sha256": "2e8d237feef1e359d5e1e4ee3c9d98c7b792e6b953229ebc77706fce47543278",
+    "bytes": 140303,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016580021732005.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_014.jpg",
+    "size": [
+      1486,
+      1714
+    ],
+    "sha256": "47595afbea793a32118358786aea46dd6d441125531ab94bceb6725ff9ad03c8",
+    "bytes": 555553,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016577912883092.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_015.jpg",
+    "size": [
+      2400,
+      1600
+    ],
+    "sha256": "cff02512f60bb47e2697a35ca3eed9ada8c5368f430d84301bb040179cbcd699",
+    "bytes": 1496311,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016577374063534.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_016.jpg",
+    "size": [
+      1340,
+      799
+    ],
+    "sha256": "943110ef417f04c1d358253c81a6158aac6a038c3cf413e51ad512524671e3b4",
+    "bytes": 128727,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_gallery",
+    "page_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/",
+    "image_url": "https://www.gxmu.edu.cn/x_xxgk/pic/wmxq/W020231016576220512251.jpg",
+    "title": "",
+    "local_path": "photos/official_gallery_017.jpg",
+    "size": [
+      1507,
+      862
+    ],
+    "sha256": "0b1285075ad82b1ae8ac905ce6377813347b479c884fecd411874497a02f1522",
+    "bytes": 153896,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/banner/epic/W020231018347679691506.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_018.jpg",
+    "size": [
+      1921,
+      540
+    ],
+    "sha256": "b73284ee7b1281e786de9e9a8f8d07ef4f13cb3a6766111f5fcdc61968c48040",
+    "bytes": 154554,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed.jpg",
+    "title": "广西医科大学校园地图",
+    "local_path": "photos/official_aed_019.jpg",
+    "size": [
+      4941,
+      4820
+    ],
+    "sha256": "d302c9431ec392e85e89d3862b417336c7fb4c3dd8e5e5828a91fa70ac6a7688",
+    "bytes": 2939039,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_1.jpg",
+    "title": "AED位置1",
+    "local_path": "photos/official_aed_020.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "45011dd3db7b194bea5d1aa420f40acbf881de3ec546a32431af019377ef96ab",
+    "bytes": 751317,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_2.jpg",
+    "title": "AED位置2",
+    "local_path": "photos/official_aed_021.jpg",
+    "size": [
+      1091,
+      687
+    ],
+    "sha256": "d52fcea29f01bed2d0b8b92bc533a90d588e2288418a0202820e0cf6b398d5a1",
+    "bytes": 310327,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_3.jpg",
+    "title": "AED位置3",
+    "local_path": "photos/official_aed_022.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "a20e58a71f8f99bb42887ce8a0158f8ff0bb82223bbbdeee879ecd868cfa1434",
+    "bytes": 1058712,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_4.jpg",
+    "title": "AED位置4",
+    "local_path": "photos/official_aed_023.jpg",
+    "size": [
+      1707,
+      1280
+    ],
+    "sha256": "ee66ca88804c74d198fb288e0cbe11beaf0a73b6a164ce32b1374aeb55585f38",
+    "bytes": 757705,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_5.jpg",
+    "title": "AED位置5",
+    "local_path": "photos/official_aed_024.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "39655451490467b26e6e5064a95056b6f7557cc0eb0f48bfa9af24a6b1501360",
+    "bytes": 892877,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_6.jpg",
+    "title": "AED位置6",
+    "local_path": "photos/official_aed_025.jpg",
+    "size": [
+      1279,
+      1707
+    ],
+    "sha256": "487dc0e40f57324f2d8638d351d4fb6db33cfde1cefea9b68fc66649367fe7a5",
+    "bytes": 750327,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_7.jpg",
+    "title": "AED位置7",
+    "local_path": "photos/official_aed_026.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "4aee8b9a85159b17484df004c749b34637f806a746ef3c68ce080e1859e36d51",
+    "bytes": 880265,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_8.jpg",
+    "title": "AED位置8",
+    "local_path": "photos/official_aed_027.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "510a7f02a579d59a7401dcd5d92332f7ed5c9a33bd553ab9e98668936bb08e9f",
+    "bytes": 1044854,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_9.jpg",
+    "title": "AED位置9",
+    "local_path": "photos/official_aed_028.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "5303fb679981c706bc84887ea4b0c38ff5566a7e87254d4bd638d793dc1dbc2e",
+    "bytes": 658511,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_10.jpg",
+    "title": "AED位置10",
+    "local_path": "photos/official_aed_029.jpg",
+    "size": [
+      1707,
+      1279
+    ],
+    "sha256": "ae8a744d26daa935ae09ad13f94282c2c44b73638ae9d6d8071b756f824232ef",
+    "bytes": 552099,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_11.jpg",
+    "title": "AED位置11",
+    "local_path": "photos/official_aed_030.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "b5a48a617c4cf0e74ba47feafd41f9c0add7c7abcbd745369e833833bf6da120",
+    "bytes": 251657,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_12.jpg",
+    "title": "AED位置12",
+    "local_path": "photos/official_aed_031.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "1583400fbc19b7295b6bffc297f0f6aea2716ecf3c32ccf07f088248d3cac538",
+    "bytes": 569789,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_13.jpg",
+    "title": "AED位置13",
+    "local_path": "photos/official_aed_032.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "4cedffd87c8f77cb221bdf19441294bc96f57095f1fed86d4326843d8906d618",
+    "bytes": 742095,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed",
+    "page_url": "https://www.gxmu.edu.cn/aedMap/wmxqAEDMap/",
+    "image_url": "https://www.gxmu.edu.cn/images/wmxq_aed_14.jpg",
+    "title": "AED位置14",
+    "local_path": "photos/official_aed_033.jpg",
+    "size": [
+      1280,
+      1707
+    ],
+    "sha256": "43d28f5bdd1f5d9ccb94b80e8df97f7721a34a716a4f10ea70f9c1f966e88260",
+    "bytes": 655223,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed_news",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t213447.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020250609645891419336.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_news_034.jpg",
+    "size": [
+      8102,
+      5036
+    ],
+    "sha256": "e293051cc1ae5c0b329f87ac9d740bed489d1ae7082d0aaa98954b17069ea247",
+    "bytes": 8529126,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed_news",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t213447.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020250612612796675863.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_news_035.jpg",
+    "size": [
+      4941,
+      4820
+    ],
+    "sha256": "d302c9431ec392e85e89d3862b417336c7fb4c3dd8e5e5828a91fa70ac6a7688",
+    "bytes": 2939039,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed_news",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t213447.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020250609645891628674.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_news_036.jpg",
+    "size": [
+      764,
+      806
+    ],
+    "sha256": "b73998b6d49fe2b2edd75cc22b1e305d1f4b7932820c652377b9e77646bcacf9",
+    "bytes": 437484,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed_news",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t213447.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020250609645891634705.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_news_037.jpg",
+    "size": [
+      830,
+      790
+    ],
+    "sha256": "5d16e2bc592f5990833fe673e55a3c1caa8bcfa14c9335490806fda82cf5d302",
+    "bytes": 509516,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_aed_news",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t213447.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020250609645891658045.jpg",
+    "title": "",
+    "local_path": "photos/official_aed_news_038.jpg",
+    "size": [
+      344,
+      344
+    ],
+    "sha256": "067c1f18f5c25c8e328542c39ca98a06c0d9a8828660a82dc5d52aa8bd15fb09",
+    "bytes": 69391,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685804895.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_039.jpg",
+    "size": [
+      578,
+      817
+    ],
+    "sha256": "bc105bf161a25d23fb303163081a77cd61c59bb026b2a78c9ca9d0818fe3c479",
+    "bytes": 210002,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685819388.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_040.jpg",
+    "size": [
+      1719,
+      799
+    ],
+    "sha256": "3d0d813ed8686951192616d4a984989964b1376c1f3e20d7621ca2ac1e33b3db",
+    "bytes": 521063,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685838534.png",
+    "title": "",
+    "local_path": "photos/official_campus_2024_041.png",
+    "size": [
+      1200,
+      772
+    ],
+    "sha256": "de6908b49277f006064c143ff66bb47d598fdae19750bc408aa86d4eda218a19",
+    "bytes": 1128253,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685869846.png",
+    "title": "",
+    "local_path": "photos/official_campus_2024_042.png",
+    "size": [
+      1200,
+      674
+    ],
+    "sha256": "5fcd9d62ea345d3a6b8ea3502590e645b17d1e961162fd57e80dd0975819f157",
+    "bytes": 1103423,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685900533.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_043.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "c5cb835b796d69ef41bab59629fea8aa22f287e196573fe8467a66855965834b",
+    "bytes": 298647,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685915594.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_044.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "b50dca9deb84ae8973c0c5b32815bc3dbf21e5633c9bc5e8a7bbc25b48eb4a3e",
+    "bytes": 347145,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685923918.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_045.jpg",
+    "size": [
+      1200,
+      674
+    ],
+    "sha256": "d8f2adb5f814b673bda12da96ebb28ea12d2599f229c0996a70d819f93d3daae",
+    "bytes": 204436,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685930858.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_046.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "0654b0493a986497f20d0ed4a282f1fe80714ec7c203b252ebb0c047343abfe8",
+    "bytes": 255308,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685958778.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_047.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "7937f46aa224fd4ee7078721b797a7f05b9d4cd7519bd3482fe2cb4fd98c587a",
+    "bytes": 321986,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685965138.JPG",
+    "title": "",
+    "local_path": "photos/official_campus_2024_048.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "97909ee0ed61456eee03a151be71e76a1956e05c5b6634fed3b272223917d566",
+    "bytes": 307930,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685974102.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_049.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "3b1f20052a3724445a338f714e1d1958c7964e700907c1085dba9a5ec655904f",
+    "bytes": 276387,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685981557.JPG",
+    "title": "",
+    "local_path": "photos/official_campus_2024_050.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "404146b96e3724626bef0d7a9050c8a6c612ad4485801afde5c6d599bb11eb6e",
+    "bytes": 340922,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607685994627.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_051.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "89c9151396b8a11c72d55f52a28853a23ec8c4440823927eb14df5d653106105",
+    "bytes": 289138,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607686004489.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_052.jpg",
+    "size": [
+      1200,
+      799
+    ],
+    "sha256": "b463e7f0d1ad235a48884863bd18918fc8e24dbfe0075e575b3f207ef6b0eecf",
+    "bytes": 272951,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607686026220.JPG",
+    "title": "",
+    "local_path": "photos/official_campus_2024_053.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "6dc91c8c8924fdd90068718c565588c3d66a7704db02ca822a41e1339dc6190a",
+    "bytes": 225909,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607686020710.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_054.jpg",
+    "size": [
+      1200,
+      800
+    ],
+    "sha256": "0654b0493a986497f20d0ed4a282f1fe80714ec7c203b252ebb0c047343abfe8",
+    "bytes": 255308,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/mtbd/t194884.html",
+    "image_url": "https://www.gxmu.edu.cn/news/mtbd/W020240709607686039025.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2024_055.jpg",
+    "size": [
+      1200,
+      900
+    ],
+    "sha256": "ef19ff1e4131c1b8c94a25c36f1b0722af34fbc48445ae480ce59fc9088a3323",
+    "bytes": 310535,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2025",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t233334.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020260511793797906706.png",
+    "title": "",
+    "local_path": "photos/official_campus_2025_056.png",
+    "size": [
+      700,
+      502
+    ],
+    "sha256": "795e1528344fd5549ccc4df36dc42523db03eafa6794f9790a85c9723bd2a632",
+    "bytes": 912998,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2025",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t233334.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020260511793797924270.png",
+    "title": "",
+    "local_path": "photos/official_campus_2025_057.png",
+    "size": [
+      700,
+      486
+    ],
+    "sha256": "f221488df7b2580444942e63a44ddec158234ab3eb31ecfca09e31998a83fdac",
+    "bytes": 663680,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2025",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t233334.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020260511793797945874.jpg",
+    "title": "",
+    "local_path": "photos/official_campus_2025_058.jpg",
+    "size": [
+      700,
+      457
+    ],
+    "sha256": "d98efb24fa47f73ffb16f7ba16e2f5b6c3699699bd7fe93c2adccf21605c7ca0",
+    "bytes": 749595,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2025",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t233334.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020260511793797961097.png",
+    "title": "",
+    "local_path": "photos/official_campus_2025_059.png",
+    "size": [
+      700,
+      400
+    ],
+    "sha256": "19fb4efc13b4ff33a14d9c2fcf60b83b5cf586c5a3571c9f391a31eb619aba2c",
+    "bytes": 727407,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_campus_2025",
+    "page_url": "https://www.gxmu.edu.cn/news/xxyw/t233334.html",
+    "image_url": "https://www.gxmu.edu.cn/news/xxyw/W020260511793797987647.png",
+    "title": "",
+    "local_path": "photos/official_campus_2025_060.png",
+    "size": [
+      700,
+      467
+    ],
+    "sha256": "8b038908f1c4d8b9cbc171507c8ed9e86fc3a687cdfe4d84714895143fe5ab50",
+    "bytes": 828639,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_construction_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/zhxw/t195746.html",
+    "image_url": "https://www.gxmu.edu.cn/news/zhxw/W020240802606490446111.jpg",
+    "title": "",
+    "local_path": "photos/official_construction_2024_061.jpg",
+    "size": [
+      1280,
+      800
+    ],
+    "sha256": "af089f4c2e7831d277348740c6ccf275fdcd2d85972bb2fc73c9bc4c6cce354e",
+    "bytes": 633437,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_construction_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/zhxw/t195746.html",
+    "image_url": "https://www.gxmu.edu.cn/news/zhxw/W020240802606490460020.jpg",
+    "title": "",
+    "local_path": "photos/official_construction_2024_062.jpg",
+    "size": [
+      1280,
+      800
+    ],
+    "sha256": "8422d46f70c9a490ae8672e687e98dcb1912303ef5d40befc51a99dc29fdc029",
+    "bytes": 855143,
+    "download_status": "ok"
+  },
+  {
+    "source": "official_construction_2024",
+    "page_url": "https://www.gxmu.edu.cn/news/zhxw/t195746.html",
+    "image_url": "https://www.gxmu.edu.cn/news/zhxw/W020240802606490474506.jpg",
+    "title": "",
+    "local_path": "photos/official_construction_2024_063.jpg",
+    "size": [
+      1110,
+      800
+    ],
+    "sha256": "ce602528a56de727227df4a3ebc556a09542296b32bf2e333ae94a850f498d72",
+    "bytes": 624298,
+    "download_status": "ok"
+  }
+]

@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://wuming_campus/assets/meshes/wall_brick_6m_2593.res" id="1_ry0pr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfgoc"]
+size = Vector3(6, 2.1, 0.32)
+
+[node name="wall_brick_6m" type="Node3D" unique_id=1996776059]
+metadata/asset_id = "wall_brick_6m"
+metadata/category = "boundary"
+metadata/display_name = "六米红砖围墙"
+metadata/units = "metre"
+metadata/evidence = "photo_inspired_typical_object_dimensions"
+
+[node name="wall_brick_6m" type="MeshInstance3D" parent="." unique_id=896529818]
+mesh = ExtResource("1_ry0pr")
+
+[node name="Collision_0" type="StaticBody3D" parent="." unique_id=892765980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+
+[node name="@CollisionShape3D@436" type="CollisionShape3D" parent="Collision_0" unique_id=350261017]
+shape = SubResource("BoxShape3D_xfgoc")
