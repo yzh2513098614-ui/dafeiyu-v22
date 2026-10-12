@@ -31,12 +31,14 @@ var last_profile: Dictionary = {}
 var last_frame := -1
 var clock := 0.0
 var saving := false
-var manifest_path := MANIFEST
 var source_text := ""
 var sync_clock := 0.0
 
+func _manifest_path() -> String:
+ return str(get_meta("proportion_manifest_path",MANIFEST))
+
 func _ready() -> void:
- source_text=FileAccess.get_file_as_string(manifest_path)
+ source_text=FileAccess.get_file_as_string(_manifest_path())
  manifest=JSON.parse_string(source_text)
  $PreviewCamera.look_at(Vector3(0,1.2,0))
  _refresh()
@@ -56,7 +58,7 @@ func _process(delta: float) -> void:
   sync_clock+=delta
   if sync_clock>=.5:
    sync_clock=0.0
-   if FileAccess.get_file_as_string(manifest_path)!=source_text:load_game_parameters()
+   if FileAccess.get_file_as_string(_manifest_path())!=source_text:load_game_parameters()
  if animate_walk:
   clock+=delta
   frame_index=int(clock*8.0)%12
@@ -92,7 +94,7 @@ func _pose(sprite: Sprite3D,direction: String,data: Dictionary) -> void:
  Proportions.apply(material,direction,data)
 
 func load_game_parameters() -> void:
- source_text=FileAccess.get_file_as_string(manifest_path)
+ source_text=FileAccess.get_file_as_string(_manifest_path())
  manifest=JSON.parse_string(source_text)
  var config: Dictionary=manifest.proportion_warp_by_direction.down
  head_drop=config.get("head_drop",0.0);head_width=config.get("head_width",0.0);body_width=config.body_width
@@ -102,7 +104,7 @@ func load_game_parameters() -> void:
  notify_property_list_changed()
 
 func save_to_game() -> void:
- await save_parameters(manifest_path,"res://assets/character/collision_profile.json")
+ await save_parameters(_manifest_path(),str(get_meta("proportion_collision_path","res://assets/character/collision_profile.json")))
 
 func save_parameters(manifest_path: String,collision_path: String) -> void:
  if saving:return

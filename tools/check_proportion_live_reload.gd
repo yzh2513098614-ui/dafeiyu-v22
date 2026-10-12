@@ -41,10 +41,12 @@ func run() -> void:
  var before: Image=await capture("before")
  var viewport:=SubViewport.new();viewport.own_world_3d=true;viewport.size=Vector2i(320,240);root.add_child(viewport)
  var editor=load("res://tools/character_proportion_editor.tscn").instantiate()
- editor.manifest_path=OUT+"manifest_test.json";editor.head_width=.30;viewport.add_child(editor)
+ editor.set_meta("proportion_manifest_path",OUT+"manifest_test.json")
+ editor.set_meta("proportion_collision_path",OUT+"collision_test.json")
+ editor.head_width=.30;viewport.add_child(editor)
  check(is_equal_approx(editor.head_width,old_width),"F6 startup reads saved game profile instead of stale scene values")
  editor.head_width=old_width+.12
- await editor.save_parameters(OUT+"manifest_test.json",OUT+"collision_test.json")
+ await editor.save_to_game()
  await create_timer(.8).timeout
  check(is_equal_approx(float(game.character_material.get_shader_parameter("proportion_head_width")),old_width+.12),"editor save updates already running production character")
  check(is_equal_approx(float(editor.get_node("Adjusted").material_override.get_shader_parameter("proportion_head_width")),old_width+.12),"F6 running preview follows saved file changes")
