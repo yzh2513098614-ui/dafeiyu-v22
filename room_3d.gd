@@ -119,6 +119,9 @@ func _ready() -> void:
  _layout(0)
  ghost=Node3D.new();add_child(ghost)
  dialogue_controller=DialogueController.new();add_child(dialogue_controller)
+ if OS.is_debug_build():
+  var proportion_reload=preload("res://character/proportion_live_reload.gd").new()
+  proportion_reload.name="CharacterProportionLiveReload";proportion_reload.game=self;add_child(proportion_reload)
  if "--test-room" in OS.get_cmdline_user_args():call_deferred("_test")
  if "--test-loot" in OS.get_cmdline_user_args():call_deferred("_test_loot")
  if "--test-load" in OS.get_cmdline_user_args():call_deferred("_test_reload")

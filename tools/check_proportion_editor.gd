@@ -15,13 +15,15 @@ func run() -> void:
  var sprite: Sprite3D=scene.get_node("Adjusted")
  var material: ShaderMaterial=sprite.material_override
  var old: float=scene.head_drop
+ var old_width: float=scene.head_width
+ var expected_crown: float=scene.profile().crown_compression
  scene.head_drop=old+.01
  for i in 2:await process_frame
  check(is_equal_approx(float(material.get_shader_parameter("proportion_head_drop")),old+.01),"Inspector parameter updates production shader live")
- check(is_equal_approx(float(material.get_shader_parameter("proportion_crown_compression")),.064),"height lock preserves crown alignment")
+ check(is_equal_approx(float(material.get_shader_parameter("proportion_crown_compression")),expected_crown),"height lock preserves crown alignment")
  scene.head_drop=old
  for i in 2:await process_frame
- check(is_equal_approx(float(material.get_shader_parameter("proportion_head_width")),.18),"head width remains unchanged")
+ check(is_equal_approx(float(material.get_shader_parameter("proportion_head_width")),old_width),"head width remains unchanged")
  scene.frame_index=7
  for i in 2:await process_frame
  check(sprite.texture.resource_path.ends_with("walk_07.png"),"manual frame scrub updates full source texture")

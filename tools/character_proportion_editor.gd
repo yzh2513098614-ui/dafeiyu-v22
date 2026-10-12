@@ -31,11 +31,16 @@ var last_profile: Dictionary = {}
 var last_frame := -1
 var clock := 0.0
 var saving := false
+var manifest_path := MANIFEST
+var source_text := ""
+var sync_clock := 0.0
 
 func _ready() -> void:
- manifest=JSON.parse_string(FileAccess.get_file_as_string(MANIFEST))
+ source_text=FileAccess.get_file_as_string(manifest_path)
+ manifest=JSON.parse_string(source_text)
  $PreviewCamera.look_at(Vector3(0,1.2,0))
  _refresh()
+ if not Engine.is_editor_hint():load_game_parameters()
  if Engine.is_editor_hint():print("CHARACTER PROPORTION EDITOR READY: Inspector controls active")
 
 func profile() -> Dictionary:
@@ -47,6 +52,11 @@ func profile() -> Dictionary:
 
 func _process(delta: float) -> void:
  if manifest.is_empty():return
+ if not Engine.is_editor_hint():
+  sync_clock+=delta
+  if sync_clock>=.5:
+   sync_clock=0.0
+   if FileAccess.get_file_as_string(manifest_path)!=source_text:load_game_parameters()
  if animate_walk:
   clock+=delta
   frame_index=int(clock*8.0)%12
@@ -82,7 +92,8 @@ func _pose(sprite: Sprite3D,direction: String,data: Dictionary) -> void:
  Proportions.apply(material,direction,data)
 
 func load_game_parameters() -> void:
- manifest=JSON.parse_string(FileAccess.get_file_as_string(MANIFEST))
+ source_text=FileAccess.get_file_as_string(manifest_path)
+ manifest=JSON.parse_string(source_text)
  var config: Dictionary=manifest.proportion_warp_by_direction.down
  head_drop=config.get("head_drop",0.0);head_width=config.get("head_width",0.0);body_width=config.body_width
  head_height=config.get("head_height",0.0);body_extension=config.body_extension;crown_compression=config.get("crown_compression",0.0)
@@ -91,7 +102,7 @@ func load_game_parameters() -> void:
  notify_property_list_changed()
 
 func save_to_game() -> void:
- await save_parameters(MANIFEST,"res://assets/character/collision_profile.json")
+ await save_parameters(manifest_path,"res://assets/character/collision_profile.json")
 
 func save_parameters(manifest_path: String,collision_path: String) -> void:
  if saving:return
@@ -109,5 +120,5 @@ func save_parameters(manifest_path: String,collision_path: String) -> void:
  current.proportion_warp_by_direction.down=config
  var collision: Dictionary=await CollisionBuilder.build(current,get_tree())
  file=FileAccess.open(collision_path,FileAccess.WRITE);file.store_string(JSON.stringify(collision,"  ",false)+"\n");file.close()
- manifest=current;saving=false;status="已保存到游戏，并更新碰撞轮廓。重新运行游戏即可生效。"
+ manifest=current;saving=false;status="已保存。正在运行的游戏和 F6 预览会自动同步参数；碰撞轮廓已更新。"
  print(status)

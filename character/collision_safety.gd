@@ -12,6 +12,16 @@ static func add_guards(body: CollisionObject3D) -> void:
 		guard.position.y=(float(band.bottom)+float(band.top))*.5
 		body.add_child(guard)
 
+static func update_guards(body: CollisionObject3D,profile: Dictionary) -> void:
+	var index:=0
+	for child in body.get_children():
+		if child is CollisionShape3D and child.name.begins_with("SilhouetteGuard"):
+			var band: Dictionary=profile.bands[index]
+			child.shape.radius=float(band.radius)
+			child.shape.height=float(band.top)-float(band.bottom)
+			child.position.y=(float(band.bottom)+float(band.top))*.5
+			index+=1
+
 static func clear_at(body: CollisionObject3D,point: Vector3) -> bool:
 	if not point.is_finite():return false
 	if not _body_clear_at(body,point):return false
