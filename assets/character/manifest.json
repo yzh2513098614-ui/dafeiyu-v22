@@ -61,10 +61,10 @@
         "res://assets/character/jimeng_v24/up/walk_01.png"
       ],
       "up_left": [
-        "res://assets/character/up_left_video_20261010/walk_09.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_09.png"
       ],
       "up_right": [
-        "res://assets/character/up_right_mirror_20261010/walk_09.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_09.png"
       ]
     },
     "interact": {
@@ -87,10 +87,10 @@
         "res://assets/character/jimeng_v24/up/walk_01.png"
       ],
       "up_left": [
-        "res://assets/character/up_left_video_20261010/walk_09.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_09.png"
       ],
       "up_right": [
-        "res://assets/character/up_right_mirror_20261010/walk_09.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_09.png"
       ]
     },
     "walk": {
@@ -184,60 +184,60 @@
         "res://assets/character/jimeng_v24/up/walk_11.png"
       ],
       "up_left": [
-        "res://assets/character/up_left_video_20261010/walk_00.png",
-        "res://assets/character/up_left_video_20261010/walk_01.png",
-        "res://assets/character/up_left_video_20261010/walk_02.png",
-        "res://assets/character/up_left_video_20261010/walk_03.png",
-        "res://assets/character/up_left_video_20261010/walk_04.png",
-        "res://assets/character/up_left_video_20261010/walk_05.png",
-        "res://assets/character/up_left_video_20261010/walk_06.png",
-        "res://assets/character/up_left_video_20261010/walk_07.png",
-        "res://assets/character/up_left_video_20261010/walk_08.png",
-        "res://assets/character/up_left_video_20261010/walk_09.png",
-        "res://assets/character/up_left_video_20261010/walk_10.png",
-        "res://assets/character/up_left_video_20261010/walk_11.png",
-        "res://assets/character/up_left_video_20261010/walk_12.png",
-        "res://assets/character/up_left_video_20261010/walk_13.png",
-        "res://assets/character/up_left_video_20261010/walk_14.png",
-        "res://assets/character/up_left_video_20261010/walk_15.png",
-        "res://assets/character/up_left_video_20261010/walk_16.png",
-        "res://assets/character/up_left_video_20261010/walk_17.png",
-        "res://assets/character/up_left_video_20261010/walk_18.png",
-        "res://assets/character/up_left_video_20261010/walk_19.png",
-        "res://assets/character/up_left_video_20261010/walk_20.png",
-        "res://assets/character/up_left_video_20261010/walk_21.png",
-        "res://assets/character/up_left_video_20261010/walk_22.png",
-        "res://assets/character/up_left_video_20261010/walk_23.png",
-        "res://assets/character/up_left_video_20261010/walk_24.png",
-        "res://assets/character/up_left_video_20261010/walk_25.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_00.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_01.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_02.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_03.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_04.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_05.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_06.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_07.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_08.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_09.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_10.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_11.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_12.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_13.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_14.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_15.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_16.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_17.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_18.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_19.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_20.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_21.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_22.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_23.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_24.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_left/walk_25.png"
       ],
       "up_right": [
-        "res://assets/character/up_right_mirror_20261010/walk_00.png",
-        "res://assets/character/up_right_mirror_20261010/walk_01.png",
-        "res://assets/character/up_right_mirror_20261010/walk_02.png",
-        "res://assets/character/up_right_mirror_20261010/walk_03.png",
-        "res://assets/character/up_right_mirror_20261010/walk_04.png",
-        "res://assets/character/up_right_mirror_20261010/walk_05.png",
-        "res://assets/character/up_right_mirror_20261010/walk_06.png",
-        "res://assets/character/up_right_mirror_20261010/walk_07.png",
-        "res://assets/character/up_right_mirror_20261010/walk_08.png",
-        "res://assets/character/up_right_mirror_20261010/walk_09.png",
-        "res://assets/character/up_right_mirror_20261010/walk_10.png",
-        "res://assets/character/up_right_mirror_20261010/walk_11.png",
-        "res://assets/character/up_right_mirror_20261010/walk_12.png",
-        "res://assets/character/up_right_mirror_20261010/walk_13.png",
-        "res://assets/character/up_right_mirror_20261010/walk_14.png",
-        "res://assets/character/up_right_mirror_20261010/walk_15.png",
-        "res://assets/character/up_right_mirror_20261010/walk_16.png",
-        "res://assets/character/up_right_mirror_20261010/walk_17.png",
-        "res://assets/character/up_right_mirror_20261010/walk_18.png",
-        "res://assets/character/up_right_mirror_20261010/walk_19.png",
-        "res://assets/character/up_right_mirror_20261010/walk_20.png",
-        "res://assets/character/up_right_mirror_20261010/walk_21.png",
-        "res://assets/character/up_right_mirror_20261010/walk_22.png",
-        "res://assets/character/up_right_mirror_20261010/walk_23.png",
-        "res://assets/character/up_right_mirror_20261010/walk_24.png",
-        "res://assets/character/up_right_mirror_20261010/walk_25.png"
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_00.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_01.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_02.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_03.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_04.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_05.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_06.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_07.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_08.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_09.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_10.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_11.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_12.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_13.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_14.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_15.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_16.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_17.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_18.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_19.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_20.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_21.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_22.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_23.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_24.png",
+        "res://assets/character/diagonal_black_outline_20261013/up_right/walk_25.png"
       ]
     }
   },
@@ -455,8 +455,8 @@
       ],
       "hair_palette_strength": 1.0,
       "skin_palette_strength": 1.0,
-      "contour_strength": 0.58,
-      "contour_width": 1.8,
+      "contour_strength": 0.12,
+      "contour_width": 0.8,
       "contour_colour": [
         0.055,
         0.075,
@@ -478,8 +478,8 @@
       ],
       "hair_palette_strength": 1.0,
       "skin_palette_strength": 1.0,
-      "contour_strength": 0.58,
-      "contour_width": 1.8,
+      "contour_strength": 0.12,
+      "contour_width": 0.8,
       "contour_colour": [
         0.055,
         0.075,
