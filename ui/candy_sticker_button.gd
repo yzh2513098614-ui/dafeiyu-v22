@@ -38,7 +38,7 @@ func _draw()->void:
  for fraction in [.20,.67,.83]:
   draw_line(Vector2(inner.position.x+inner.size.x*fraction,inner.position.y),Vector2(inner.position.x+inner.size.x*fraction+10,inner.position.y),Color.WHITE,3,true)
  if icon_texture:
-  var icon_h:=h*.60
+  var icon_h:=h*.72
   draw_texture_rect(icon_texture,Rect2(Vector2(18,(h-icon_h)*.40)+shift,Vector2(icon_h,icon_h)),false,Color(1,1,1,.5 if disabled else 1))
  if not compact:
   var center:=Vector2(size.x-24,h*.24)+shift

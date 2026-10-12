@@ -41,7 +41,7 @@ static func icon(parent: Node,key: String,pos: Vector2,dimensions: Vector2) -> T
 
 static func header(parent: Node,title: String,subtitle: String,key: String,close_action: Callable) -> void:
  var badge:=panel(parent,Vector2(25,22),Vector2(78,78),"dark")
- icon(badge,key,Vector2(9,8),Vector2(60,60))
+ icon(badge,key,Vector2(3,3),Vector2(72,72))
  label(parent,title,Vector2(122,20),Vector2(990,43),33)
  label(parent,subtitle,Vector2(124,68),Vector2(972,30),18,MUTED)
  var close:=button(parent,"Esc  关闭",Vector2(1124,29),Vector2(170,50),close_action);close.name="CloseInventory"

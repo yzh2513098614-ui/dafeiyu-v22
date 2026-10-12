@@ -36,7 +36,7 @@ static func button(parent:Node,text:String,pos:Vector2,dimensions:Vector2,action
  for state in ["normal","hover","pressed","disabled","focus"]:node.add_theme_stylebox_override(state,empty)
  node.compact=dimensions.y<70
  if icon!="":node.icon_texture=load("res://assets/ui/candy_title/icons/"+icon+".svg")
- var caption:=Label.new();caption.text=text;caption.position=Vector2((57 if node.compact else 73) if icon!="" else 14,0)
+ var caption:=Label.new();caption.text=text;caption.position=Vector2((69 if node.compact else 85) if icon!="" else 14,0)
  caption.size=Vector2(dimensions.x-caption.position.x-31,dimensions.y-16);caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;caption.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;caption.mouse_filter=Control.MOUSE_FILTER_IGNORE
  caption.add_theme_font_size_override("font_size",32 if dimensions.y>=78 else 23);caption.add_theme_color_override("font_color",INK);node.add_child(caption);node.live_label=caption
  node.pressed.connect(action);parent.add_child(node);return node

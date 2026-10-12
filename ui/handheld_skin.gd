@@ -10,6 +10,7 @@ const MINT:=S.MINT
 const GOLD:=S.GOLD
 const CREAM:=S.PAPER
 const DARK:=S.DARK
+const BUTTON_ICON_SCALE: float=1.3
 static var textures: Dictionary={}
 
 static func frame(kind: String="panel") -> StyleBoxFlat:
@@ -61,7 +62,7 @@ static func icon_texture(key: String) -> Texture2D:
 
 static func button_icon(button: Button,key: String,side: int=26) -> void:
  button.icon=icon_texture(key);button.expand_icon=true
- button.add_theme_constant_override("icon_max_width",side);button.add_theme_constant_override("h_separation",6)
+ button.add_theme_constant_override("icon_max_width",roundi(side*BUTTON_ICON_SCALE));button.add_theme_constant_override("h_separation",6)
  button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 static func primary(button: Button) -> void:
