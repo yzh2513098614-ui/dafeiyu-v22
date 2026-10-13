@@ -3,10 +3,11 @@ render_mode cull_disabled, specular_disabled, depth_prepass_alpha;
 uniform sampler2D character_atlas : source_color, filter_linear_mipmap, repeat_disable;
 uniform vec3 character_tint : source_color = vec3(1.0,1.0,1.0);
 uniform float floor_height = 0.056;
-uniform float illumination_gain : hint_range(0.5, 2.0) = 1.25;
-uniform float direct_light_limit : hint_range(0.4, 1.2) = 0.80;
+uniform float illumination_gain : hint_range(0.5, 2.0) = 1.45;
+uniform float direct_light_limit : hint_range(0.4, 1.2) = 1.05;
+uniform float illustration_fill : hint_range(0.0, 0.2) = 0.10;
 uniform float texture_lod_bias : hint_range(-2.0,0.0) = -1.0;
-uniform float soft_contour_strength : hint_range(0.0,0.6) = 0.42;
+uniform float soft_contour_strength : hint_range(0.0,0.6) = 0.28;
 uniform float soft_contour_width : hint_range(0.5,3.0) = 1.8;
 uniform vec3 soft_contour_colour : source_color = vec3(0.10,0.15,0.22);
 varying vec3 sprite_world;
@@ -127,7 +128,9 @@ void fragment() {
  ROUGHNESS = mix(.94,.70,hair_satin);
  METALLIC = 0.0;
  SPECULAR = 0.0;
- EMISSION = vec3(0.0);
+ // Gentle pigment-coloured fill lifts painted midtones without washing out
+ // dark outlines; the scene's direct lighting and shadows remain active.
+ EMISSION = ALBEDO * illustration_fill;
  // Forward soles belong to the floor plane. Preserve their screen position
  // while assigning their floor depth, so they cannot sink below the mesh.
  vec3 point = sprite_world;
