@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/modern/shaders/story_surface.gdshader" id="1_0ol7n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0ol7n")
+shader_parameter/base_color = Color(0.60784316, 0.5803922, 0.42745098, 1)
+shader_parameter/finish_kind = 0
+shader_parameter/roughness_value = 0.84

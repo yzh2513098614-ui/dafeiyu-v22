@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://models/whale_home/materials/91b9acff_0.tres" id="1_tnxws"]
+[ext_resource type="ArrayMesh" path="res://models/whale_home/meshes/curved_roof_tile.tres" id="2_gsoxk"]
+
+[node name="CurvedRoofTile" type="MeshInstance3D" unique_id=1016251536]
+material_override = ExtResource("1_tnxws")
+mesh = ExtResource("2_gsoxk")

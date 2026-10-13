@@ -9,6 +9,19 @@ const SEA=preload("res://assets/whale_home/sea.gdshader")
 const FABRIC=preload("res://assets/whale_home/fabric.gdshader")
 const MOTIF=preload("res://assets/whale_home/motif.gdshader")
 const Pastel=preload("res://assets/whale_home/pastel_props.gd")
+const PORCH=preload("res://models/whale_home/porch_arch.tscn")
+const WINDOW=preload("res://models/whale_home/round_window.tscn")
+const ROOF_TILE=preload("res://models/whale_home/curved_roof_tile.tscn")
+const TALL_TREE=preload("res://models/whale_home/tree_tall_green.tscn")
+const LOW_TREE=preload("res://models/whale_home/tree_low_green.tscn")
+const SAKURA_TREE=preload("res://models/whale_home/tree_sakura.tscn")
+const BENCH=preload("res://models/whale_home/garden_bench.tscn")
+const FENCE_PANEL=preload("res://models/whale_home/picket_panel.tscn")
+const PERGOLA=preload("res://models/whale_home/garden_pergola.tscn")
+const FLOWER_BED=preload("res://models/whale_home/flower_bed.tscn")
+const PLANTER=preload("res://models/whale_home/flower_planter.tscn")
+const DOCK_POST=preload("res://models/whale_home/dock_post.tscn")
+const ROWBOAT=preload("res://models/whale_home/whale_rowboat.tscn")
 const HEIGHT := 5.2
 const WHITE=Color("f3eedb")
 const BLUE=Color("639cdb")
@@ -44,6 +57,11 @@ func _group(parent: Node3D, label: String, point: Vector3=Vector3.ZERO) -> Node3
 func _furniture(parent: Node3D, label: String, point: Vector3, yaw: float=0.0) -> Node3D:
 	var node: Node3D=_group(parent,label,point);node.rotation_degrees.y=yaw
 	node.set_meta("home_furniture",label);furniture_count+=1;return node
+
+func _model(parent: Node3D, scene: PackedScene, point: Vector3, furniture: bool=false) -> Node3D:
+	var node: Node3D=scene.instantiate();node.position=point;parent.add_child(node)
+	if furniture:node.set_meta("home_furniture",String(node.name));furniture_count+=1
+	return node
 
 func _box(parent: Node3D, size: Vector3, point: Vector3, color: Color=WHITE, finish: int=0, bevel: float=.035) -> MeshInstance3D:
 	var node: MeshInstance3D=Geo.box(parent,size,point,color,finish,bevel)
@@ -123,7 +141,7 @@ func _plant(parent: Node3D, point: Vector3, size: float=1.0, flowers: bool=false
 	for i in 7:
 		var a: float=i*TAU/7.;var tip:=Vector3(cos(a)*.35,.88+float(i%3)*.16,sin(a)*.35)
 		Geo.rod(root,Vector3(0,.5,0),tip,.018,GREEN)
-		var leaf: MeshInstance3D=_sphere(root,tip,Vector3(.25,.51,.10),GREEN if i%2 else Color("8dba7e"));leaf.rotation=Vector3(.4,a,.45)
+		var leaf: MeshInstance3D=Pastel.leaf(root,tip,Vector3(.25,.51,.10),GREEN if i%2 else Color("8dba7e"));leaf.rotation=Vector3(.4,a,.45)
 		if flowers:_flower(root,tip+Vector3.UP*.14,Color("fff5df") if i%2 else Color("efb3c6"),.23)
 	_star(root,Vector3(0,.24,.283),.16)
 
@@ -185,10 +203,15 @@ func _rail(parent: Node3D, a: Vector3, b: Vector3, glass_panel: bool=true) -> vo
 	for i in count+1:
 		var x: float=-length*.5+i*length/count
 		_box(root,Vector3(.16,1.23,.16),Vector3(x,.615,0),WHITE,0,.028)
+		_box(root,Vector3(.23,.14,.24),Vector3(x,.10,0),WHITE,0,.018)
+		_box(root,Vector3(.21,.07,.22),Vector3(x,1.15,0),WHITE,0,.015)
 		_sphere(root,Vector3(x,1.28,0),Vector3.ONE*.23,WHITE)
 		if glass_panel and i<count:
 			var pane: MeshInstance3D=_box(root,Vector3(length/count-.22,.84,.018),Vector3(x+length/count*.5,.65,0),LIGHT,0,.005);pane.material_override=glass;pane.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	_coll(root,Vector3(length,1.25,.19),Vector3(0,.63,0))
+			for y in [.32,.95]:
+				for edge in [-1.0,1.0]:_box(root,Vector3(.06,.07,.04),Vector3(x+length/count*.5+edge*(length/count*.5-.14),y,.018),TEAL,0,.006)
+	for x in [-length*.5,length*.5]:_box(root,Vector3(.075,.13,.19),Vector3(x,1.16,0),WHITE,0,.015)
+	_coll(root,Vector3(length+.10,1.39,.25),Vector3(0,.695,0))
 
 func _curved_balcony(parent: Node3D, left: float, right: float, front: float, height: float, zone_name: String) -> void:
 	var polygon: PackedVector2Array=PackedVector2Array([Vector2(left,front-.03)])
@@ -204,6 +227,7 @@ func _curved_balcony(parent: Node3D, left: float, right: float, front: float, he
 	for i in range(1,polygon.size()-2):
 		var a:=Vector3(polygon[i].x,height,polygon[i].y);var b:=Vector3(polygon[i+1].x,height,polygon[i+1].y)
 		Geo._face(tool,[a,b,b-Vector3.UP*.27,a-Vector3.UP*.27],Vector3(0,0,1))
+		Geo.rod(parent,a-Vector3.UP*.20,b-Vector3.UP*.20,.04,TEAL)
 		_rail(parent,a,b)
 	var mesh:=MeshInstance3D.new();mesh.name="CurvedBalconyDeck";mesh.mesh=tool.commit();mesh.material_override=Geo.material(WOOD,1);parent.add_child(mesh)
 	var body:=StaticBody3D.new();body.name="CurvedWalkableBalcony";body.collision_layer=10;body.collision_mask=4
@@ -223,6 +247,8 @@ func _wall(parent: Node3D, rect: Rect2, height: float) -> void:
 		_box(back,Vector3(.028,2.55,.02),Vector3(x+ .33,2.40,.14),Color("e9dfc7"),0,.004)
 	_box(back,Vector3(rect.size.x,.11,.32),Vector3(0,1.31,.03),TEAL,0,.02)
 	_box(back,Vector3(rect.size.x,.15,.34),Vector3(0,3.86,0),WOOD,1,.025)
+	_box(back,Vector3(rect.size.x+.08,.11,.44),Vector3(0,3.97,.015),WHITE,0,.022)
+	_box(back,Vector3(rect.size.x+.16,.08,.51),Vector3(0,4.055,.025),MINT,0,.015)
 	_coll(back,Vector3(rect.size.x,3.95,.28),Vector3(0,1.95,0))
 	for side in [-1.0,1.0]:
 		var side_wall: Node3D=_group(parent,"LowSideWall",Vector3(rect.position.x if side<0 else rect.end.x,height,rect.get_center().y))
@@ -233,14 +259,14 @@ func _wall(parent: Node3D, rect: Rect2, height: float) -> void:
 		for z in [rect.position.y+.2,rect.end.y-.18]:
 			_box(parent,Vector3(.34,4.58,.34),Vector3(x,height+2.28,z),WHITE,0,.05)
 			_box(parent,Vector3(.54,.18,.54),Vector3(x,height+.18,z),MINT,0,.03)
+			_box(parent,Vector3(.43,.10,.43),Vector3(x,height+.32,z),WHITE,0,.022)
+			_box(parent,Vector3(.45,.12,.45),Vector3(x,height+4.34,z),MINT,0,.022)
+			_box(parent,Vector3(.56,.14,.56),Vector3(x,height+4.49,z),WHITE,0,.028)
 			_coll(parent,Vector3(.36,4.6,.36),Vector3(x,height+2.28,z))
+			_coll(parent,Vector3(.54,.30,.54),Vector3(x,height+.15,z))
 
 func _porthole(parent: Node3D, point: Vector3, radius: float=1.15) -> void:
-	var pane:=MeshInstance3D.new();var disk:=CylinderMesh.new();disk.top_radius=radius;disk.bottom_radius=radius;disk.height=.025;disk.radial_segments=48
-	pane.mesh=disk;pane.position=point;pane.rotation.x=PI*.5;pane.material_override=Geo.material(Color("bad6ca"));parent.add_child(pane)
-	var ring:=MeshInstance3D.new();var torus:=TorusMesh.new();torus.inner_radius=radius;torus.outer_radius=radius+.15;torus.rings=48;torus.ring_segments=10
-	ring.mesh=torus;ring.position=point+Vector3(0,0,.03);ring.rotation.x=PI*.5;ring.material_override=Geo.material(WHITE);parent.add_child(ring)
-	for size in [Vector3(radius*1.95,.055,.07),Vector3(.055,radius*1.95,.07)]:_box(parent,size,point+Vector3(0,0,.06),WHITE,0,.01)
+	var frame: Node3D=_model(parent,WINDOW,point);frame.scale=Vector3(radius,radius,1)
 	for side in [-1.0,1.0]:
 		var curtain: Node3D=_group(parent,"PleatedCurtain",point+Vector3(side*(radius+.27),.05,.15))
 		for i in 5:
@@ -659,9 +685,11 @@ func _roof(parent: Node3D) -> void:
 		var t: float=(i+.5)/28.;var x: float=-14.3+28.6*t;var y: float=h+1.2+sin(t*PI)*6.5
 		var angle: float=atan(cos(t*PI)*PI*6.5/28.6)
 		for row in 4:
-			var tile: MeshInstance3D=_box(parent,Vector3(1.10,.18,.50),Vector3(x,y,-20.84+row*.53),MINT if row%2 else MINT.lightened(.025),0,.04);tile.rotation.z=angle
+			var tile: MeshInstance3D=_model(parent,ROOF_TILE,Vector3(x,y,-20.84+row*.53));tile.rotation.z=angle
+			tile.material_override=Geo.material(MINT if row%2 else MINT.lightened(.025))
 		for z in [-21.10,-18.97]:
 			var eave: MeshInstance3D=_box(parent,Vector3(1.11,.13,.14),Vector3(x,y-.07,z),TEAL,0,.025);eave.rotation.z=angle
+			var soffit: MeshInstance3D=_box(parent,Vector3(1.12,.075,.27),Vector3(x,y-.16,z+.025),WHITE,0,.013);soffit.rotation.z=angle
 	_vines(parent,Vector3(-11,h+4.4,-18.99),Vector3(10,h+4.8,-18.99),1.0)
 	var tail: Node3D=_group(parent,"WhaleTailRoofFin",Vector3(11.3,h+6.0,-20.2))
 	_sphere(tail,Vector3(0,.4,0),Vector3(1.03,3.1,.64),BLUE).rotation.z=-.35
@@ -696,16 +724,19 @@ func _garden(parent: Node3D) -> void:
 		for i in 7:
 			var p:=Vector3(side*20.5,.03,-18+i*5.8)
 			_box(parent,Vector3(5.0,.15,3.6),p,Color("c8d7b4"),0,.20)
-			if i%2==0:_plant(parent,p+Vector3(side*1.20,.08,0),1.4,true)
+			if i%2==0:
+				_model(parent,FLOWER_BED,p+Vector3.UP*.08)
+				_plant(parent,p+Vector3(side*1.20,.16,0),1.4,true)
 			else:
 				var table: Node3D=_table(parent,p+Vector3(-side*.4,0,0),2.1,1.4,.8);_cup(table,Vector3(0,.91,0),BLUE)
 				_chair(parent,p+Vector3(-side*.4,0,1.7),0)
-		var gazebo: Node3D=_furniture(parent,"SeaBreezeGardenPergola",Vector3(side*20.5,0,-12.2))
+		var gazebo: Node3D=_model(parent,PERGOLA,Vector3(side*20.5,0,-12.2),true)
 		for x in [-2.0,2.0]:
 			for z in [-1.65,1.65]:
-				_box(gazebo,Vector3(.14,3.35,.14),Vector3(x,1.67,z),WHITE,0,.025)
 				_coll(gazebo,Vector3(.16,3.35,.16),Vector3(x,1.67,z))
-		var canopy: Node3D=Pastel.tiled_roof(gazebo,4.55,3.85,.85,MINT);canopy.position.y=3.35
+				_coll(gazebo,Vector3(.26,.15,.26),Vector3(x,.075,z))
+		var planter: Node3D=_model(gazebo,PLANTER,Vector3(1.38,0,1.24),true)
+		_coll(planter,Vector3(.73,.49,.73),Vector3(0,.245,0))
 		_vines(gazebo,Vector3(-2,3.18,1.70),Vector3(2,3.18,1.70),.55)
 		_fixture(gazebo,Vector3(0,2.72,.1),true,true)
 	for x in [-22.0,-15.0,15.0,22.0]:
@@ -728,8 +759,15 @@ func _garden(parent: Node3D) -> void:
 	_pastel_garden(parent)
 
 func _picket(parent: Node3D, a: Vector3, b: Vector3) -> void:
-	var fence: Node3D=Pastel.picket_fence(parent,a,b)
-	_coll(fence,Vector3(a.distance_to(b),1.07,.19),Vector3(0,.535,0))
+	var fence: Node3D=_group(parent,"CreamPicketFence",(a+b)*.5)
+	var length: float=a.distance_to(b);var count: int=ceili(length/4.0);var width: float=length/count
+	fence.rotation.y=-atan2(b.z-a.z,b.x-a.x)
+	for i in count:
+		var panel: Node3D=_model(fence,FENCE_PANEL,Vector3(-length*.5+(i+.5)*width,0,0));panel.scale.x=width/4.0
+		if i>0:
+			panel.get_node("EndPostLeft").free()
+			panel.get_node("PointedBoard").free()
+	_coll(fence,Vector3(length+.27,1.14,.25),Vector3(0,.57,-.015))
 
 func _pastel_garden(parent: Node3D) -> void:
 	# Outer lawns keep the existing side walks, pergolas and home doorway clear.
@@ -745,14 +783,14 @@ func _pastel_garden(parent: Node3D) -> void:
 		[Vector3(24.4,.06,8.4),1.9,true],[Vector3(23.8,.06,20.2),1.65,true],
 		[Vector3(-12.0,.06,21.2),1.7,false],[Vector3(10.8,.06,21.2),1.75,true]]
 	var blossom_origins: Array[Vector3]=[]
-	for spec in tree_specs:
-		var tree: Node3D=Pastel.tree(parent,spec[0],float(spec[1]),bool(spec[2]))
-		tree.set_meta("home_furniture","SakuraTree" if spec[2] else "SageTree");furniture_count+=1
+	for i in tree_specs.size():
+		var spec: Array=tree_specs[i]
+		var form: PackedScene=SAKURA_TREE if spec[2] else (LOW_TREE if i in [1,2,8] else TALL_TREE)
+		var tree: Node3D=_model(parent,form,spec[0],true);tree.scale=Vector3.ONE*float(spec[1]);tree.rotation.y=i*.47
 		_coll(tree,Vector3(.42,2.65,.42),Vector3(.06,1.325,0))
 		if spec[2]:blossom_origins.append(spec[0])
 	for spec in [[Vector3(-20.5,.05,19.6),0.0],[Vector3(-20.5,.05,-3.4),90.0],[Vector3(20.5,.05,2.9),-90.0],[Vector3(9.0,.05,15.1),0.0]]:
-		var bench: Node3D=Pastel.bench(parent,spec[0]);bench.rotation_degrees.y=float(spec[1])
-		bench.set_meta("home_furniture","GardenBench");furniture_count+=1
+		var bench: Node3D=_model(parent,BENCH,spec[0],true);bench.rotation_degrees.y=float(spec[1])
 		_coll(bench,Vector3(2.2,1.24,.83),Vector3(0,.62,0))
 	for side in [-1.0,1.0]:
 		for i in 5:
@@ -769,38 +807,34 @@ func _pastel_garden(parent: Node3D) -> void:
 	petals.multimesh=multimesh;petals.material_override=material;parent.add_child(petals)
 	level.set_meta("garden_petals",petals);level.set_meta("blossom_origins",blossom_origins)
 	level.set_meta("pastel_trees",tree_specs.size());level.set_meta("pastel_benches",4)
+	level.set_meta("tree_form_counts",{"tall_green":3,"low_green":3,"sakura":4})
 
-func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> void:
-	var root: Node3D=_group(parent,"WhaleRowboat",point);root.rotation_degrees.y=yaw;root.set_meta("boat_origin",point);root.set_meta("home_dynamic",true)
-	var outline: Array[Vector2]=[Vector2(-1.05,-2.3),Vector2(1.05,-2.3),Vector2(1.35,-1.45),Vector2(1.35,1.2),Vector2(.70,2.1),Vector2(0,2.6),Vector2(-.70,2.1),Vector2(-1.35,1.2),Vector2(-1.35,-1.45)]
-	var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
-	for i in outline.size():
-		var a: Vector2=outline[i];var b: Vector2=outline[(i+1)%outline.size()]
-		Geo._face(tool,[Vector3(a.x,.75,a.y),Vector3(b.x,.75,b.y),Vector3(b.x*.65,-.04,b.y*.85),Vector3(a.x*.65,-.04,a.y*.85)],Vector3(a.x+b.x,.30,a.y+b.y).normalized())
-		Geo.rod(root,Vector3(a.x,.81,a.y),Vector3(b.x,.81,b.y),.09,WHITE)
-	var hull:=MeshInstance3D.new();hull.mesh=tool.commit();hull.material_override=Geo.material(BLUE);root.add_child(hull)
-	_box(root,Vector3(1.75,.12,3.4),Vector3(0,.15,-.1),WOOD,1,.04)
-	for z in [-1.32,.42]:_box(root,Vector3(2.35,.13,.47),Vector3(0,.58,z),WHITE,0,.05)
+func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> Node3D:
+	var root: Node3D=_model(parent,ROWBOAT,point);root.rotation_degrees.y=yaw;root.set_meta("boat_origin",point);root.set_meta("home_dynamic",true)
 	_whale(root,Vector3(0,.57,-1.1),.70)
-	for side in [-1.0,1.0]:
-		Geo.rod(root,Vector3(side*1.16,.91,-.3),Vector3(side*2.3,.63,1.45),.055,WOOD)
-		var paddle: MeshInstance3D=_box(root,Vector3(.28,.07,.8),Vector3(side*2.2,.63,1.4),BLUE,0,.035);paddle.rotation.y=side*.47
-	var ring:=MeshInstance3D.new();var torus:=TorusMesh.new();torus.inner_radius=.22;torus.outer_radius=.34;torus.rings=32;torus.ring_segments=12
-	ring.mesh=torus;ring.material_override=Geo.material(WHITE);ring.position=Vector3(1.30,.45,-.25);ring.rotation.z=PI*.5;root.add_child(ring)
+	var count: int=_batch(root,false)
+	level.set_meta("boat_surfaces",int(level.get_meta("boat_surfaces",0))+count)
+	return root
 
 func _dock(parent: Node3D, sea: Node3D) -> void:
-	for rect in [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]:_slab(parent,rect,0);_deck(parent,rect,0)
+	for rect in [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]:
+		_slab(parent,rect,0);_deck(parent,rect,0)
+		for x in [rect.position.x+.09,rect.end.x-.09]:_box(parent,Vector3(.18,.26,rect.size.y),Vector3(x,-.14,rect.get_center().y),WOOD,1,.018)
+		for z in [rect.position.y+.09,rect.end.y-.09]:_box(parent,Vector3(rect.size.x-.20,.26,.18),Vector3(rect.get_center().x,-.14,z),WOOD,1,.018)
 	for x in [-2.6,2.6]:
 		for z in [25.8,30.4,35.5]:
-			Geo.cylinder(parent,.18,1.8,Vector3(x,-.28,z),WOOD)
-			Geo.cylinder(parent,.22,.11,Vector3(x,.64,z),WHITE)
-			for y in [.12,.19,.26]:
-				var rope:=MeshInstance3D.new();var torus:=TorusMesh.new();torus.inner_radius=.185;torus.outer_radius=.22;torus.rings=16;torus.ring_segments=6;rope.mesh=torus;rope.material_override=Geo.material(Color("b99865"));rope.position=Vector3(x,y,z);parent.add_child(rope)
+			_model(parent,DOCK_POST,Vector3(x,0,z))
+			_coll(parent,Vector3(.44,.80,.48),Vector3(x,.32,z))
 	for z in [25.5,29.3,33.0]:
 		for x in [-21.7,-16.8]:Geo.cylinder(parent,.16,1.40,Vector3(x,-.20,z),WOOD)
-	_boat(sea,Vector3(7.2,-.93,30.2),-22);_boat(sea,Vector3(-25.0,-.93,29.6),15)
-	Geo.rod(parent,Vector3(2.6,.40,30.4),Vector3(5.9,-.23,30.2),.032,Color("c1a47b"))
-	Geo.rod(parent,Vector3(-21.7,.4,29.3),Vector3(-24.0,-.16,29.6),.032,Color("c1a47b"))
+	var east_boat: Node3D=_boat(sea,Vector3(7.2,-.93,30.2),-22)
+	var west_boat: Node3D=_boat(sea,Vector3(-25.0,-.93,29.6),15)
+	var moorings: Array=[]
+	for spec in [[east_boat,"MooringEyeLeft",Vector3(2.6,.59,30.4)],[west_boat,"MooringEyeRight",Vector3(-21.7,.40,29.3)]]:
+		var line: MultiMeshInstance3D=Pastel.mooring(sea);var eye: Node3D=spec[0].get_node(spec[1])
+		Pastel.update_mooring(line,spec[2],eye.global_position)
+		moorings.append({"line":line,"eye":eye,"dock":spec[2]})
+	level.set_meta("home_moorings",moorings)
 	for side in [-1.0,1.0]:_rail(parent,Vector3(side*3.0,0,24.6),Vector3(side*3.0,0,28.0),false)
 	_whale(parent,Vector3(-18.6,0,26.0),.47,25)
 	var sign: Node3D=_furniture(parent,"WhaleHomeWelcomeSign",Vector3(-8.7,0,18.2))
@@ -814,12 +848,12 @@ func _dock(parent: Node3D, sea: Node3D) -> void:
 func _zone(id: String, name_text: String, rect: Rect2, height: float=0.0) -> void:
 	zones.append({"id":id,"name":name_text,"rect":rect,"polygon":Shape.rectangle(rect),"height":height,"center":Vector3(rect.get_center().x,height,rect.get_center().y),"paths":[],"door_clear":[]})
 
-func _batch(parent: Node3D) -> void:
+func _batch(parent: Node3D, count_static: bool=true) -> int:
 	# Merge static surfaces by material, retaining furniture names, colliders,
 	# lights and independently animated fish / cabinet doors in the scene tree.
 	var buckets: Dictionary={}
 	for node: MeshInstance3D in parent.find_children("*","MeshInstance3D",true,false):
-		detail_count+=1
+		if count_static:detail_count+=1
 		var dynamic := false;var ancestor: Node=node.get_parent()
 		while ancestor!=parent and ancestor:
 			if ancestor.has_meta("home_dynamic"):dynamic=true;break
@@ -843,16 +877,20 @@ func _batch(parent: Node3D) -> void:
 				var normalized:=SurfaceTool.new();normalized.create_from(mesh.mesh,int(piece[1]));normalized.index();indexed_cache[source_key]=normalized.commit()
 			tool.append_from(indexed_cache[source_key],0,parent.global_transform.affine_inverse()*mesh.global_transform)
 			mesh.hide()
-		var combined:=MeshInstance3D.new();combined.name="HomeStaticSurface_"+str(batched_surfaces);combined.mesh=tool.commit();combined.material_override=bucket.material;combined.cast_shadow=bucket.shadow;parent.add_child(combined);batched_surfaces+=1
+		var combined:=MeshInstance3D.new();combined.name="HomeStaticSurface_"+str(batched_surfaces) if count_static else "BoatSurface";combined.mesh=tool.commit();combined.material_override=bucket.material;combined.cast_shadow=bucket.shadow;parent.add_child(combined)
+		if count_static:batched_surfaces+=1
 		for piece in bucket.pieces:
 			var mesh: MeshInstance3D=piece[0]
 			if is_instance_valid(mesh) and not mesh.is_queued_for_deletion():mesh.queue_free()
+	return buckets.size()
 
 func build(owner_game) -> Dictionary:
+	Pastel.use_shared_materials()
 	game=owner_game;level=_group(game.world,"WhaleHome");level.set_meta("walkable_slabs",[])
 	glass=StandardMaterial3D.new();glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;glass.albedo_color=Color(.58,.85,.96,.12);glass.roughness=.18;glass.cull_mode=BaseMaterial3D.CULL_DISABLED
 	game.shell.set_meta("layout_revision","whale_home_three_floors_v1")
 	level.set_meta("visual_style","pastel_diorama_v1")
+	level.set_meta("model_revision","pastel_models_v2");level.set_meta("editable_components",13)
 	game.shell.set_meta("guide_anchor",Vector3(-5.2,.05,18.0))
 	var island: Node3D=_group(level,"Island");var sea: Node3D=_group(level,"Sea");var roof: Node3D=_group(level,"Roof")
 	for i in 3:
@@ -886,14 +924,10 @@ func build(owner_game) -> Dictionary:
 		for x in [-12.8,12.8]:_plant(floors[i],Vector3(x,h,front-1.1),1.15,true)
 	_kitchen(floors[0]);_dining(floors[0])
 	_porthole(floors[0],Vector3(.3,2.73,-11.80),1.0)
-	var entry: Node3D=_furniture(floors[0],"WhaleArchedEntry",Vector3(-9.6,0,7.4))
+	var entry: Node3D=_model(floors[0],PORCH,Vector3(-9.6,0,7.4),true)
 	for side in [-1.0,1.0]:
-		_box(entry,Vector3(.23,2.7,.28),Vector3(side*1.3,1.35,0),MINT,0,.04)
+		_coll(entry,Vector3(.34,2.7,.39),Vector3(side*1.3,1.35,0))
 		_plant(entry,Vector3(side*1.94,0,.35),.7,true)
-	var last:=Vector3(-1.3,2.70,0)
-	for i in 16:
-		var a: float=PI-(i+1)*PI/16.;var point:=Vector3(cos(a)*1.3,2.7+sin(a)*1.3,0)
-		Geo.rod(entry,last,point,.13,MINT);last=point
 	_whale(entry,Vector3(0,4.0,0),.40)
 	_art(floors[0],Vector3(-9.6,.06,6.4),Vector2(3.2,1.8),true)
 	_entry_details(floors[0]);_living(floors[1]);_hobby(floors[1]);_bedroom(floors[2]);_bathroom(floors[2]);_telescope(floors[2]);_roof(roof)

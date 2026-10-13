@@ -2,6 +2,7 @@ extends "res://district/harbor_terraces_controller.gd"
 ## Three physical floors, open stairwells, and automatic upper-floor cutaways.
 const Home=preload("res://district/whale_home_map.gd")
 const CONTACT=preload("res://assets/whale_home/contact.gdshader")
+const Props=preload("res://assets/whale_home/pastel_props.gd")
 var fish: Array[Node3D] = []
 var feeding := 0.0
 var extra_lights := false
@@ -10,6 +11,7 @@ var notice_time := 0.0
 var garden_petals: MultiMeshInstance3D
 var blossom_origins: Array[Vector3]=[]
 var previous_contact: Shader
+var moorings: Array=[]
 
 func is_active() -> bool:return is_instance_valid(level) and game.location_id=="whale_home"
 
@@ -24,6 +26,7 @@ func build() -> Dictionary:
 		if node.has_meta("home_action"):facilities.append(node)
 	extra_lights=bool(game.visited.get("whale_home:facility:star_lights",false))
 	garden_petals=level.get_meta("garden_petals");blossom_origins=level.get_meta("blossom_origins")
+	moorings=level.get_meta("home_moorings")
 	previous_contact=game.atmosphere.contact_shading.material_override.shader
 	var slabs: Array=level.get_meta("walkable_slabs",[])
 	game.player.set_meta("floor_slabs",slabs);game.silhouette_body.set_meta("floor_slabs",slabs)
@@ -34,7 +37,7 @@ func build() -> Dictionary:
 	return result
 
 func leave() -> void:
-	super.leave();fish.clear();garden_petals=null;blossom_origins.clear()
+	super.leave();fish.clear();garden_petals=null;blossom_origins.clear();moorings.clear()
 	game.atmosphere.contact_shading.material_override.shader=previous_contact
 	game.atmosphere._apply_lighting()
 
@@ -61,6 +64,8 @@ func _process(delta: float) -> void:
 	for i in boats.size():
 		boats[i].position=boats[i].get_meta("boat_origin")+Vector3.UP*sin(sea_clock*.85+i)*.055
 		boats[i].rotation.z=sin(sea_clock*.6+i)*.016
+	for mooring: Dictionary in moorings:
+		Props.update_mooring(mooring.line,mooring.dock,mooring.eye.global_position)
 	for i in fish.size():
 		var swimmer: Node3D=fish[i]
 		var origin: Vector3=swimmer.get_meta("home_fish")

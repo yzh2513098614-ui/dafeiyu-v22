@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/modern/shaders/story_surface.gdshader" id="1_d72wk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d72wk")
+shader_parameter/base_color = Color(0.67541176, 0.7702353, 0.5368236, 1)
+shader_parameter/finish_kind = 0
+shader_parameter/roughness_value = 0.84

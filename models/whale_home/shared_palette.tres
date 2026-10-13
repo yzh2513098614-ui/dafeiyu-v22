@@ -1,0 +1,40 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Material" path="res://models/whale_home/materials/91b9acff_0.tres" id="1_qvfo7"]
+[ext_resource type="Material" path="res://models/whale_home/materials/f3eedbff_0.tres" id="2_iqiax"]
+[ext_resource type="Material" path="res://models/whale_home/materials/bad6caff_0.tres" id="3_i1nnt"]
+[ext_resource type="Material" path="res://models/whale_home/materials/648e84ff_0.tres" id="4_tmmgn"]
+[ext_resource type="Material" path="res://models/whale_home/materials/9b946dff_0.tres" id="5_74qfw"]
+[ext_resource type="Material" path="res://models/whale_home/materials/a6c080ff_0.tres" id="6_vqc4u"]
+[ext_resource type="Material" path="res://models/whale_home/materials/a9c284ff_0.tres" id="7_5ikge"]
+[ext_resource type="Material" path="res://models/whale_home/materials/acc489ff_0.tres" id="8_1n368"]
+[ext_resource type="Material" path="res://models/whale_home/materials/f3c9d4ff_0.tres" id="9_fyw66"]
+[ext_resource type="Material" path="res://models/whale_home/materials/f3cbd6ff_0.tres" id="10_chgrq"]
+[ext_resource type="Material" path="res://models/whale_home/materials/f4cdd7ff_0.tres" id="11_j8tx6"]
+[ext_resource type="Material" path="res://models/whale_home/materials/c7af7dff_1.tres" id="12_016x3"]
+[ext_resource type="Material" path="res://models/whale_home/materials/94bbaeff_0.tres" id="13_f1deg"]
+[ext_resource type="Material" path="res://models/whale_home/materials/785c42ff_0.tres" id="14_d658e"]
+[ext_resource type="Material" path="res://models/whale_home/materials/c7af7dff_0.tres" id="15_e3s6u"]
+[ext_resource type="Material" path="res://models/whale_home/materials/b99865ff_0.tres" id="16_t1loi"]
+[ext_resource type="Material" path="res://models/whale_home/materials/639cdbff_0.tres" id="17_l3anl"]
+
+[resource]
+metadata/materials = {
+"(0.3882, 0.6118, 0.8588, 1.0):0": ExtResource("17_l3anl"),
+"(0.3922, 0.5569, 0.5176, 1.0):0": ExtResource("4_tmmgn"),
+"(0.4706, 0.3608, 0.2588, 1.0):0": ExtResource("14_d658e"),
+"(0.5686, 0.7255, 0.6745, 1.0):0": ExtResource("1_qvfo7"),
+"(0.5794, 0.7324, 0.6826, 1.0):0": ExtResource("13_f1deg"),
+"(0.6078, 0.5804, 0.4275, 1.0):0": ExtResource("5_74qfw"),
+"(0.651, 0.7529, 0.502, 1.0):0": ExtResource("6_vqc4u"),
+"(0.6632, 0.7616, 0.5194, 1.0):0": ExtResource("7_5ikge"),
+"(0.6754, 0.7702, 0.5368, 1.0):0": ExtResource("8_1n368"),
+"(0.7255, 0.5961, 0.3961, 1.0):0": ExtResource("16_t1loi"),
+"(0.7294, 0.8392, 0.7922, 1.0):0": ExtResource("3_i1nnt"),
+"(0.7804, 0.6863, 0.4902, 1.0):0": ExtResource("15_e3s6u"),
+"(0.7804, 0.6863, 0.4902, 1.0):1": ExtResource("12_016x3"),
+"(0.9529, 0.7882, 0.8314, 1.0):0": ExtResource("9_fyw66"),
+"(0.9529, 0.9333, 0.8588, 1.0):0": ExtResource("2_iqiax"),
+"(0.9546, 0.7956, 0.8373, 1.0):0": ExtResource("10_chgrq"),
+"(0.9562, 0.8031, 0.8432, 1.0):0": ExtResource("11_j8tx6")
+}
