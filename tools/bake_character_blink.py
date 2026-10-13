@@ -55,31 +55,42 @@ def eye_variant(rgba,eyes,shifts,phase):
         _,near=ndi.distance_transform_edt(~skin,return_indices=True)
         fill=tile[near[0],near[1]]
         fill=np.stack([ndi.gaussian_filter(fill[:,:,c],8) for c in range(3)],axis=2)
-        # Half closure retains the original lower iris and lower outline.
-        t=np.clip((xx-margin)/width,0,1)
-        arc=(.34+.20*np.sin(t*np.pi)) if phase=='half' else (.39+.34*np.sin(t*np.pi))
-        lid_y=margin+arc*height
-        blend=full_mask
-        if phase=='half':blend=blend*np.clip((lid_y-yy+1)/2,0,1)
-        painted=tile*(1-blend[:,:,None])+fill*blend[:,:,None]
-        patch=Image.fromarray(np.clip(painted,0,255).astype('uint8')).resize((tw*3,th*3),Image.Resampling.BICUBIC)
-        line=ImageDraw.Draw(patch)
-        points=[]
-        for i in range(65):
-            t=.07+.86*i/64
-            y=(.34+.20*np.sin(t*np.pi)) if phase=='half' else (.39+.34*np.sin(t*np.pi))
-            points.append(((margin+t*width)*3,(margin+y*height)*3))
-        line.line(points,fill=(57,38,52),width=max(6,round(width*.045*3)),joint='curve')
-        # The outer-corner lashes stay small and keep the drawing's style.
-        outer=points[0]
-        line.line([outer,(outer[0]-width*.08*3,outer[1]-height*.08*3)],fill=(57,38,52),width=6)
-        patch=np.array(patch.resize((tw,th),Image.Resampling.LANCZOS))
-        # Commit only the eye mask and eyelid line, never the neighbouring hair.
-        line_mask=Image.new('L',(tw*3,th*3),0);ld=ImageDraw.Draw(line_mask)
-        ld.line(points,fill=255,width=max(8,round(width*.05*3)),joint='curve')
-        ld.line([outer,(outer[0]-width*.08*3,outer[1]-height*.08*3)],fill=255,width=8)
-        line_mask=np.array(line_mask.resize((tw,th),Image.Resampling.LANCZOS))>0
-        changed=(blend>0)|line_mask
+        # Move the ORIGINAL upper eye outline down, keeping its lash pixels.
+        # The original opening compresses towards the fixed lower eye edge.
+        dark=(tile[:,:,0]<155)&(tile[:,:,1]<110)&(tile[:,:,0]>tile[:,:,2]+3)&(full_mask>.1)
+        labels,count=ndi.label(dark)
+        sizes=np.bincount(labels.ravel());sizes[0]=0
+        lash=labels==sizes.argmax()
+        # Blue regions connected to the crop border are hair, not the iris.
+        blue=(tile[:,:,2]>tile[:,:,0]+15)&(tile[:,:,2]>tile[:,:,1]+15)
+        hair_labels,_=ndi.label(blue)
+        border=np.unique(np.concatenate([hair_labels[0],hair_labels[-1],hair_labels[:,0],hair_labels[:,-1]]))
+        hair=np.isin(hair_labels,border[border>0])
+        hair=ndi.maximum_filter(hair,size=3)
+        columns=np.where(lash.any(axis=0))[0]
+        tops=np.array([np.where(lash[:,x])[0][0] for x in columns])
+        top=np.interp(np.arange(tw),columns,tops)
+        t=np.clip((np.arange(tw)-margin)/width,0,1)
+        bottom=margin+height*(.96-.20*(2*np.abs(t-.5))**2)
+        bottom=np.maximum(bottom,top+12)
+        source_mask=np.maximum(full_mask,lash.astype(float))*np.clip((yy-top[None,:]+2)/2,0,1)*(~hair)
+        painted=tile*(1-source_mask[:,:,None])+fill*source_mask[:,:,None]
+        # Keep most of the original upper lash thickness, even when shut.
+        band=np.minimum(10,(bottom-top)*.25)
+        remaining=bottom-top-band
+        squeeze=.48 if phase=='half' else .015
+        lash_scale=.9 if phase=='half' else .75
+        moved_top=bottom-band*lash_scale-remaining*squeeze
+        split=moved_top+band*lash_scale
+        sample_y=np.where(yy<=split[None,:],
+                          top[None,:]+(yy-moved_top[None,:])/lash_scale,
+                          (top+band)[None,:]+(yy-split[None,:])/squeeze)
+        valid=(yy>=moved_top[None,:]-1)&(yy<=bottom[None,:]+1)
+        coords=[sample_y,xx.astype(float)]
+        warped_mask=ndi.map_coordinates(source_mask,coords,order=1,mode='constant',cval=0)*valid*(~hair)
+        original=np.stack([ndi.map_coordinates(tile[:,:,c],coords,order=1,mode='nearest') for c in range(3)],axis=2)
+        patch=np.clip(painted*(1-warped_mask[:,:,None])+original*warped_mask[:,:,None],0,255).astype('uint8')
+        changed=(source_mask>0)|(warped_mask>0)
         destination=result[y0-margin:y1+margin,x0-margin:x1+margin,:3]
         destination[changed]=patch[changed]
     assert np.array_equal(result[:,:,3],rgba[:,:,3]),'Blink changed silhouette alpha'
