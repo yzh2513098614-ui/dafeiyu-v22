@@ -127,6 +127,10 @@
 | 杂项 | `update_v12_source.py` `video_review_readonly.py` `collision_preview.gd` `debug_collision_clearance.gd` `_check_box_pos.gd` `_spec_check.gd` `finalize_restaurant_finish.gd` |
 | 启动 | `launch_game.ps1`（由根目录 `开始试玩.cmd` 调用，日志写 `play_stdout.log` / `play_stderr.log`） |
 
+眼睛高光恢复（2026-10-14）：`restore_original_eye_highlights.py` 默认只检查，带 `--apply` 从原始视频帧恢复高光、同步镜像并重新生成眨眼帧。`import_download_walk_videos.py` 已将蓝色虹膜与白色高光排除在发丝白底清理之外。
+
+本轮备份：`备份/20261014_眼睛高光修复前/`；修复 30 张行走帧（含镜像），眼睛区域透明孔洞为 0；`test_character_blink.gd`：37 passed / 0 failed。
+
 ## 七、覆盖盲区（已知）
 
 - **世界层与 UI 层几乎没有自动化**：引擎层（`test_battle.gd` 500 局 + 定向断言）覆盖扎实，但连续大地图、楼层生成、背包交互、开始界面流程主要靠 `capture_*` 截图**人工看**，没有断言。

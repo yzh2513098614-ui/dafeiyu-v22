@@ -65,11 +65,41 @@ def choose_loop(frames, stabilize_x=False):
     return scores[0], scores[:20]
 
 
-def hair_background_holes(rgb, silhouette):
+def iris_protection(rgb, direction):
+    """Protect the small blue irises and their painted white highlights."""
+    protected = np.zeros(rgb.shape[:2], bool)
+    if direction not in ('down', 'down_right', 'right'): return protected
+    colour = rgb.astype(np.int16)
+    skin = ((colour[:,:,0]>200) & (colour[:,:,0]-colour[:,:,2]>18)
+            & (colour[:,:,0]-colour[:,:,1]>12) & (colour[:,:,1]>110))
+    skin[int(rgb.shape[0]*.60):] = False
+    labels, _ = ndi.label(skin)
+    sizes = np.bincount(labels.ravel()); sizes[0] = 0
+    face = labels == sizes.argmax()
+    face_y, face_x = np.where(face)
+    top, bottom = face_y.min(), face_y.max()+1
+    left, right = face_x.min(), face_x.max()+1
+    height = bottom-top
+    # Iris blue is separated from the large hair mass by skin/eyelashes.
+    blue = (colour[:,:,2]-colour[:,:,0]>22) & (colour[:,:,2]-colour[:,:,1]>8)
+    labels, _ = ndi.label(blue)
+    for label, box in enumerate(ndi.find_objects(labels), 1):
+        if box is None: continue
+        y0,y1,x0,x1 = box[0].start,box[0].stop,box[1].start,box[1].stop
+        if not (top-24<=y0<y1<=bottom and left-24<=x0<x1<=right+24): continue
+        if x1-x0>height*.50 or y1-y0>height*.65: continue
+        local = labels[box]==label
+        if local.sum()<100: continue
+        protected[box] |= ndi.binary_fill_holes(local)
+    return ndi.binary_dilation(protected, iterations=4)
+
+
+def hair_background_holes(rgb, silhouette, protected=None):
     """Find studio-coloured islands enclosed by blue hair, not white clothing."""
     colour = rgb.astype(np.int16)
     neutral = colour.max(2)-colour.min(2)
     candidate = silhouette & (colour.min(2)>=225) & (neutral<=30)
+    if protected is not None: candidate &= ~protected
     labels, _ = ndi.label(candidate)
     yy, xx = np.where(silhouette)
     top, height = int(yy.min()), int(yy.max()+1-yy.min())
@@ -103,6 +133,7 @@ def hair_background_holes(rgb, silhouette):
     # Expand only through pale mixed studio pixels. Dark contour and coloured
     # strands stop the propagation, including where halo touches maid lace.
     eligible = (colour.min(2)>=210)&(neutral<=28)&silhouette
+    if protected is not None: eligible &= ~protected
     selected = ndi.binary_dilation(selected,iterations=3,mask=eligible)
     return selected, records
 
@@ -153,6 +184,7 @@ def rear_foot_background(rgb,silhouette):
 def matte(rgb,direction=None):
     colour = rgb.astype(np.int16)
     neutral = colour.max(2)-colour.min(2)
+    protected = iris_protection(rgb, direction)
     candidate = (colour.min(2) >= 231) & (neutral <= 12)
     # Floor shadows are neutral lavender and lighter than the dark shoes.
     # Only the bottom studio strip is eligible for this broader shadow key.
@@ -189,7 +221,7 @@ def matte(rgb,direction=None):
                    and pixels.mean(0).min() > 244 and pixels.std(0).max() < 3)
         if halo or leg_gap:
             silhouette[box][local] = False
-    hair_holes, hair_records = hair_background_holes(rgb,silhouette)
+    hair_holes, hair_records = hair_background_holes(rgb,silhouette,protected)
     silhouette &= ~hair_holes
     rear_record = {}
     if direction=='up_right':
@@ -215,7 +247,7 @@ def matte(rgb,direction=None):
     # Edge unmixing can split a narrow studio sliver into a new island. Recheck
     # the final occupied mask so these do not flash white on isolated frames.
     for _ in range(3):
-        residual, residual_records = hair_background_holes(rgb,alpha8>127)
+        residual, residual_records = hair_background_holes(rgb,alpha8>127,protected)
         if not residual.any(): break
         alpha8[residual] = 0
         hair_holes |= residual

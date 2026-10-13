@@ -579,7 +579,7 @@
           ],
           "head_x": 559.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 308488,
+          "foreground_pixels": 308514,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -644,22 +644,6 @@
                 252.79
               ],
               "blue_enclosure": 0.9219
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                603,
-                305,
-                608,
-                311
-              ],
-              "pixels": 23,
-              "mean_rgb": [
-                232.7,
-                240.74,
-                254.48
-              ],
-              "blue_enclosure": 0.9558
             },
             {
               "kind": "hair_gap",
@@ -934,7 +918,8 @@
               "blue_enclosure": 0.9179
             }
           ],
-          "hair_background_pixels": 1232
+          "hair_background_pixels": 1206,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 77,
@@ -1307,7 +1292,7 @@
           ],
           "head_x": 561.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 308625,
+          "foreground_pixels": 308645,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -1356,22 +1341,6 @@
                 254.83
               ],
               "blue_enclosure": 0.9417
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                507,
-                302,
-                513,
-                307
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                231.15,
-                238.35,
-                255.0
-              ],
-              "blue_enclosure": 0.9786
             },
             {
               "kind": "hair_gap",
@@ -1646,7 +1615,8 @@
               "blue_enclosure": 0.9263
             }
           ],
-          "hair_background_pixels": 1149
+          "hair_background_pixels": 1129,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 79,
@@ -1663,7 +1633,7 @@
           ],
           "head_x": 561.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 308345,
+          "foreground_pixels": 308373,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -1712,22 +1682,6 @@
                 254.09
               ],
               "blue_enclosure": 0.9127
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                606,
-                296,
-                612,
-                303
-              ],
-              "pixels": 28,
-              "mean_rgb": [
-                231.29,
-                238.61,
-                255.0
-              ],
-              "blue_enclosure": 0.9269
             },
             {
               "kind": "hair_gap",
@@ -2002,7 +1956,8 @@
               "blue_enclosure": 0.9657
             }
           ],
-          "hair_background_pixels": 1320
+          "hair_background_pixels": 1292,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 80,
@@ -2019,7 +1974,7 @@
           ],
           "head_x": 562.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 307771,
+          "foreground_pixels": 307796,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -2052,22 +2007,6 @@
                 253.89
               ],
               "blue_enclosure": 0.9302
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                607,
-                298,
-                612,
-                304
-              ],
-              "pixels": 24,
-              "mean_rgb": [
-                231.92,
-                239.42,
-                254.79
-              ],
-              "blue_enclosure": 0.9592
             },
             {
               "kind": "hair_gap",
@@ -2310,7 +2249,8 @@
               "blue_enclosure": 0.9436
             }
           ],
-          "hair_background_pixels": 1126
+          "hair_background_pixels": 1101,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 81,
@@ -2697,9 +2637,9 @@
             843,
             834
           ],
-          "head_x": 565.0,
+          "head_x": 564.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 306355,
+          "foreground_pixels": 306379,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -2764,22 +2704,6 @@
                 253.79
               ],
               "blue_enclosure": 0.911
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                510,
-                310,
-                516,
-                316
-              ],
-              "pixels": 23,
-              "mean_rgb": [
-                230.48,
-                238.52,
-                254.91
-              ],
-              "blue_enclosure": 0.9762
             },
             {
               "kind": "hair_gap",
@@ -3038,7 +2962,7 @@
               "blue_enclosure": 0.9866
             }
           ],
-          "hair_background_pixels": 1229,
+          "hair_background_pixels": 1205,
           "rear_foot_cleanup": {}
         },
         {
@@ -3056,7 +2980,7 @@
           ],
           "head_x": 565.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 306218,
+          "foreground_pixels": 306245,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -3121,22 +3045,6 @@
                 254.44
               ],
               "blue_enclosure": 0.9217
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                510,
-                313,
-                516,
-                319
-              ],
-              "pixels": 26,
-              "mean_rgb": [
-                236.08,
-                243.92,
-                255.0
-              ],
-              "blue_enclosure": 0.9826
             },
             {
               "kind": "hair_gap",
@@ -3507,7 +3415,8 @@
               "blue_enclosure": 0.9683
             }
           ],
-          "hair_background_pixels": 1394
+          "hair_background_pixels": 1367,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 84,
@@ -3524,7 +3433,7 @@
           ],
           "head_x": 566.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 307031,
+          "foreground_pixels": 307055,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -3557,22 +3466,6 @@
                 253.76
               ],
               "blue_enclosure": 0.9198
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                511,
-                314,
-                516,
-                319
-              ],
-              "pixels": 22,
-              "mean_rgb": [
-                232.86,
-                241.73,
-                253.23
-              ],
-              "blue_enclosure": 0.9762
             },
             {
               "kind": "hair_gap",
@@ -3911,7 +3804,8 @@
               "blue_enclosure": 0.9352
             }
           ],
-          "hair_background_pixels": 1268
+          "hair_background_pixels": 1244,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 85,
@@ -3926,9 +3820,9 @@
             862,
             833
           ],
-          "head_x": 566.0,
+          "head_x": 565.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 308367,
+          "foreground_pixels": 308390,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -4009,22 +3903,6 @@
                 254.3
               ],
               "blue_enclosure": 0.922
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                511,
-                311,
-                516,
-                317
-              ],
-              "pixels": 22,
-              "mean_rgb": [
-                234.09,
-                242.18,
-                255.0
-              ],
-              "blue_enclosure": 0.983
             },
             {
               "kind": "hair_gap",
@@ -4315,7 +4193,8 @@
               "blue_enclosure": 0.9268
             }
           ],
-          "hair_background_pixels": 1247
+          "hair_background_pixels": 1224,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 86,
@@ -4624,7 +4503,7 @@
           ],
           "head_x": 565.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 312041,
+          "foreground_pixels": 312083,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -4689,38 +4568,6 @@
                 254.89
               ],
               "blue_enclosure": 0.9328
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                607,
-                301,
-                613,
-                307
-              ],
-              "pixels": 22,
-              "mean_rgb": [
-                230.18,
-                236.41,
-                255.0
-              ],
-              "blue_enclosure": 0.9626
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                509,
-                304,
-                514,
-                309
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                231.75,
-                240.5,
-                255.0
-              ],
-              "blue_enclosure": 0.9643
             },
             {
               "kind": "hair_gap",
@@ -4963,7 +4810,8 @@
               "blue_enclosure": 0.9022
             }
           ],
-          "hair_background_pixels": 1154
+          "hair_background_pixels": 1112,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 88,
@@ -4978,9 +4826,9 @@
             896,
             829
           ],
-          "head_x": 565.0,
+          "head_x": 564.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 312556,
+          "foreground_pixels": 312577,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -4997,22 +4845,6 @@
                 254.04
               ],
               "blue_enclosure": 0.961
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                508,
-                302,
-                513,
-                307
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                234.1,
-                243.45,
-                255.0
-              ],
-              "blue_enclosure": 0.9929
             },
             {
               "kind": "hair_gap",
@@ -5287,7 +5119,8 @@
               "blue_enclosure": 0.9078
             }
           ],
-          "hair_background_pixels": 1188
+          "hair_background_pixels": 1167,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 89,
@@ -6096,7 +5929,7 @@
           ],
           "head_x": 562.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 312218,
+          "foreground_pixels": 312238,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -6177,22 +6010,6 @@
                 253.98
               ],
               "blue_enclosure": 0.9415
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                604,
-                302,
-                609,
-                308
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                232.85,
-                238.15,
-                254.8
-              ],
-              "blue_enclosure": 0.9791
             },
             {
               "kind": "hair_gap",
@@ -6435,7 +6252,8 @@
               "blue_enclosure": 0.9294
             }
           ],
-          "hair_background_pixels": 1158
+          "hair_background_pixels": 1138,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 92,
@@ -6452,7 +6270,7 @@
           ],
           "head_x": 561.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 311203,
+          "foreground_pixels": 311226,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -6469,22 +6287,6 @@
                 254.06
               ],
               "blue_enclosure": 0.9774
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                602,
-                306,
-                608,
-                311
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                233.8,
-                240.1,
-                254.9
-              ],
-              "blue_enclosure": 0.9652
             },
             {
               "kind": "hair_gap",
@@ -6727,7 +6529,8 @@
               "blue_enclosure": 0.9313
             }
           ],
-          "hair_background_pixels": 997
+          "hair_background_pixels": 974,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 93,
@@ -6742,9 +6545,9 @@
             893,
             834
           ],
-          "head_x": 560.0,
+          "head_x": 561.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 310265,
+          "foreground_pixels": 310286,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -6841,22 +6644,6 @@
                 253.42
               ],
               "blue_enclosure": 0.9051
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                602,
-                309,
-                608,
-                314
-              ],
-              "pixels": 19,
-              "mean_rgb": [
-                233.47,
-                238.84,
-                255.0
-              ],
-              "blue_enclosure": 0.9686
             },
             {
               "kind": "hair_gap",
@@ -7163,7 +6950,8 @@
               "blue_enclosure": 0.9497
             }
           ],
-          "hair_background_pixels": 1270
+          "hair_background_pixels": 1249,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 94,
@@ -7180,7 +6968,7 @@
           ],
           "head_x": 559.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 309413,
+          "foreground_pixels": 309439,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -7213,22 +7001,6 @@
                 254.77
               ],
               "blue_enclosure": 0.9757
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                602,
-                310,
-                608,
-                316
-              ],
-              "pixels": 26,
-              "mean_rgb": [
-                233.19,
-                238.0,
-                254.46
-              ],
-              "blue_enclosure": 0.9762
             },
             {
               "kind": "hair_gap",
@@ -7519,7 +7291,7 @@
               "blue_enclosure": 1.0
             }
           ],
-          "hair_background_pixels": 1082,
+          "hair_background_pixels": 1056,
           "rear_foot_cleanup": {}
         }
       ]
@@ -22365,7 +22137,7 @@
           ],
           "head_x": 578.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 261347,
+          "foreground_pixels": 261366,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -22446,22 +22218,6 @@
                 252.55
               ],
               "blue_enclosure": 0.9426
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                583,
-                287,
-                588,
-                292
-              ],
-              "pixels": 19,
-              "mean_rgb": [
-                231.68,
-                238.63,
-                255.0
-              ],
-              "blue_enclosure": 0.9393
             },
             {
               "kind": "hair_gap",
@@ -22672,7 +22428,8 @@
               "blue_enclosure": 0.9325
             }
           ],
-          "hair_background_pixels": 1363
+          "hair_background_pixels": 1344,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 60,
@@ -22689,7 +22446,7 @@
           ],
           "head_x": 577.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 263479,
+          "foreground_pixels": 263499,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -22770,22 +22527,6 @@
                 254.65
               ],
               "blue_enclosure": 0.9513
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                288,
-                587,
-                293
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                230.7,
-                237.6,
-                255.0
-              ],
-              "blue_enclosure": 0.9512
             },
             {
               "kind": "hair_gap",
@@ -22980,7 +22721,8 @@
               "blue_enclosure": 0.9637
             }
           ],
-          "hair_background_pixels": 1346
+          "hair_background_pixels": 1326,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 61,
@@ -25137,7 +24879,7 @@
           ],
           "head_x": 571.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 264395,
+          "foreground_pixels": 264416,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -25234,22 +24976,6 @@
                 253.17
               ],
               "blue_enclosure": 0.9668
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                576,
-                289,
-                581,
-                295
-              ],
-              "pixels": 21,
-              "mean_rgb": [
-                231.0,
-                239.14,
-                254.76
-              ],
-              "blue_enclosure": 0.9321
             },
             {
               "kind": "hair_gap",
@@ -25492,7 +25218,8 @@
               "blue_enclosure": 0.9655
             }
           ],
-          "hair_background_pixels": 5240
+          "hair_background_pixels": 5219,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 69,
@@ -26594,7 +26321,7 @@
           ],
           "head_x": 572.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 266669,
+          "foreground_pixels": 266690,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -26675,22 +26402,6 @@
                 254.88
               ],
               "blue_enclosure": 0.9079
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                579,
-                289,
-                584,
-                294
-              ],
-              "pixels": 21,
-              "mean_rgb": [
-                234.1,
-                240.95,
-                255.0
-              ],
-              "blue_enclosure": 0.9338
             },
             {
               "kind": "hair_gap",
@@ -26917,7 +26628,8 @@
               "blue_enclosure": 0.956
             }
           ],
-          "hair_background_pixels": 5873
+          "hair_background_pixels": 5852,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 73,
@@ -26934,7 +26646,7 @@
           ],
           "head_x": 573.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265801,
+          "foreground_pixels": 265821,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -27047,22 +26759,6 @@
                 253.56
               ],
               "blue_enclosure": 0.905
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                581,
-                294,
-                586,
-                299
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                234.45,
-                240.55,
-                255.0
-              ],
-              "blue_enclosure": 0.95
             },
             {
               "kind": "hair_gap",
@@ -27401,7 +27097,8 @@
               "blue_enclosure": 0.908
             }
           ],
-          "hair_background_pixels": 6143
+          "hair_background_pixels": 6123,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 74,
@@ -27418,7 +27115,7 @@
           ],
           "head_x": 575.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265561,
+          "foreground_pixels": 265585,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -27515,22 +27212,6 @@
                 254.84
               ],
               "blue_enclosure": 0.9146
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                296,
-                588,
-                302
-              ],
-              "pixels": 24,
-              "mean_rgb": [
-                233.54,
-                240.25,
-                254.88
-              ],
-              "blue_enclosure": 0.9199
             },
             {
               "kind": "hair_gap",
@@ -27773,7 +27454,8 @@
               "blue_enclosure": 0.9406
             }
           ],
-          "hair_background_pixels": 5992
+          "hair_background_pixels": 5968,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 75,
@@ -27790,7 +27472,7 @@
           ],
           "head_x": 575.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265816,
+          "foreground_pixels": 265839,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -27887,22 +27569,6 @@
                 254.44
               ],
               "blue_enclosure": 0.929
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                296,
-                588,
-                302
-              ],
-              "pixels": 23,
-              "mean_rgb": [
-                233.87,
-                240.13,
-                255.0
-              ],
-              "blue_enclosure": 0.9094
             },
             {
               "kind": "hair_gap",
@@ -28097,7 +27763,8 @@
               "blue_enclosure": 0.9336
             }
           ],
-          "hair_background_pixels": 5749
+          "hair_background_pixels": 5726,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 76,
@@ -28114,7 +27781,7 @@
           ],
           "head_x": 576.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265083,
+          "foreground_pixels": 265105,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -28195,22 +27862,6 @@
                 254.68
               ],
               "blue_enclosure": 0.9038
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                584,
-                297,
-                589,
-                303
-              ],
-              "pixels": 22,
-              "mean_rgb": [
-                233.5,
-                240.5,
-                254.95
-              ],
-              "blue_enclosure": 0.9357
             },
             {
               "kind": "hair_gap",
@@ -28565,7 +28216,8 @@
               "blue_enclosure": 0.9122
             }
           ],
-          "hair_background_pixels": 6043
+          "hair_background_pixels": 6021,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 77,
@@ -43901,7 +43553,7 @@
           ],
           "head_x": 578.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 261347,
+          "foreground_pixels": 261366,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -43982,22 +43634,6 @@
                 252.55
               ],
               "blue_enclosure": 0.9426
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                583,
-                287,
-                588,
-                292
-              ],
-              "pixels": 19,
-              "mean_rgb": [
-                231.68,
-                238.63,
-                255.0
-              ],
-              "blue_enclosure": 0.9393
             },
             {
               "kind": "hair_gap",
@@ -44208,7 +43844,8 @@
               "blue_enclosure": 0.9325
             }
           ],
-          "hair_background_pixels": 1363
+          "hair_background_pixels": 1344,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 60,
@@ -44225,7 +43862,7 @@
           ],
           "head_x": 577.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 263479,
+          "foreground_pixels": 263499,
           "hair_background_holes": [
             {
               "kind": "hair_gap",
@@ -44306,22 +43943,6 @@
                 254.65
               ],
               "blue_enclosure": 0.9513
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                288,
-                587,
-                293
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                230.7,
-                237.6,
-                255.0
-              ],
-              "blue_enclosure": 0.9512
             },
             {
               "kind": "hair_gap",
@@ -44516,7 +44137,8 @@
               "blue_enclosure": 0.9637
             }
           ],
-          "hair_background_pixels": 1346
+          "hair_background_pixels": 1326,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 61,
@@ -46673,7 +46295,7 @@
           ],
           "head_x": 571.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 264395,
+          "foreground_pixels": 264416,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -46770,22 +46392,6 @@
                 253.17
               ],
               "blue_enclosure": 0.9668
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                576,
-                289,
-                581,
-                295
-              ],
-              "pixels": 21,
-              "mean_rgb": [
-                231.0,
-                239.14,
-                254.76
-              ],
-              "blue_enclosure": 0.9321
             },
             {
               "kind": "hair_gap",
@@ -47028,7 +46634,8 @@
               "blue_enclosure": 0.9655
             }
           ],
-          "hair_background_pixels": 5240
+          "hair_background_pixels": 5219,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 69,
@@ -48130,7 +47737,7 @@
           ],
           "head_x": 572.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 266669,
+          "foreground_pixels": 266690,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -48211,22 +47818,6 @@
                 254.88
               ],
               "blue_enclosure": 0.9079
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                579,
-                289,
-                584,
-                294
-              ],
-              "pixels": 21,
-              "mean_rgb": [
-                234.1,
-                240.95,
-                255.0
-              ],
-              "blue_enclosure": 0.9338
             },
             {
               "kind": "hair_gap",
@@ -48453,7 +48044,8 @@
               "blue_enclosure": 0.956
             }
           ],
-          "hair_background_pixels": 5873
+          "hair_background_pixels": 5852,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 73,
@@ -48470,7 +48062,7 @@
           ],
           "head_x": 573.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265801,
+          "foreground_pixels": 265821,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -48583,22 +48175,6 @@
                 253.56
               ],
               "blue_enclosure": 0.905
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                581,
-                294,
-                586,
-                299
-              ],
-              "pixels": 20,
-              "mean_rgb": [
-                234.45,
-                240.55,
-                255.0
-              ],
-              "blue_enclosure": 0.95
             },
             {
               "kind": "hair_gap",
@@ -48937,7 +48513,8 @@
               "blue_enclosure": 0.908
             }
           ],
-          "hair_background_pixels": 6143
+          "hair_background_pixels": 6123,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 74,
@@ -48954,7 +48531,7 @@
           ],
           "head_x": 575.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265561,
+          "foreground_pixels": 265585,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -49051,22 +48628,6 @@
                 254.84
               ],
               "blue_enclosure": 0.9146
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                296,
-                588,
-                302
-              ],
-              "pixels": 24,
-              "mean_rgb": [
-                233.54,
-                240.25,
-                254.88
-              ],
-              "blue_enclosure": 0.9199
             },
             {
               "kind": "hair_gap",
@@ -49309,7 +48870,8 @@
               "blue_enclosure": 0.9406
             }
           ],
-          "hair_background_pixels": 5992
+          "hair_background_pixels": 5968,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 75,
@@ -49326,7 +48888,7 @@
           ],
           "head_x": 575.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265816,
+          "foreground_pixels": 265839,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -49423,22 +48985,6 @@
                 254.44
               ],
               "blue_enclosure": 0.929
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                582,
-                296,
-                588,
-                302
-              ],
-              "pixels": 23,
-              "mean_rgb": [
-                233.87,
-                240.13,
-                255.0
-              ],
-              "blue_enclosure": 0.9094
             },
             {
               "kind": "hair_gap",
@@ -49633,7 +49179,8 @@
               "blue_enclosure": 0.9336
             }
           ],
-          "hair_background_pixels": 5749
+          "hair_background_pixels": 5726,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 76,
@@ -49650,7 +49197,7 @@
           ],
           "head_x": 576.0,
           "opaque_rgb_exact": true,
-          "foreground_pixels": 265083,
+          "foreground_pixels": 265105,
           "hair_background_holes": [
             {
               "kind": "halo",
@@ -49731,22 +49278,6 @@
                 254.68
               ],
               "blue_enclosure": 0.9038
-            },
-            {
-              "kind": "hair_gap",
-              "source_box": [
-                584,
-                297,
-                589,
-                303
-              ],
-              "pixels": 22,
-              "mean_rgb": [
-                233.5,
-                240.5,
-                254.95
-              ],
-              "blue_enclosure": 0.9357
             },
             {
               "kind": "hair_gap",
@@ -50101,7 +49632,8 @@
               "blue_enclosure": 0.9122
             }
           ],
-          "hair_background_pixels": 6043
+          "hair_background_pixels": 6021,
+          "rear_foot_cleanup": {}
         },
         {
           "source_frame": 77,
@@ -57554,8 +57086,8 @@
       },
       "down": {
         "frames": 20,
-        "holes": 435,
-        "removed_source_pixels": 24028
+        "holes": 420,
+        "removed_source_pixels": 23678
       },
       "up": {
         "frames": 24,
@@ -57569,8 +57101,8 @@
       },
       "down_right": {
         "frames": 25,
-        "holes": 507,
-        "removed_source_pixels": 108764
+        "holes": 499,
+        "removed_source_pixels": 108594
       },
       "left": {
         "frames": 28,
@@ -57579,8 +57111,8 @@
       },
       "down_left": {
         "frames": 25,
-        "holes": 507,
-        "removed_source_pixels": 108764
+        "holes": 499,
+        "removed_source_pixels": 108594
       },
       "up_left": {
         "frames": 32,
@@ -57597,5 +57129,25 @@
     "frames": 64,
     "source_floor_pixels": 23218,
     "source_leg_gap_pixels": 32647
+  },
+  "eye_highlight_repair": {
+    "method": "source RGB and opaque iris alpha; small iris components excluded from hair-gap matte",
+    "directions": {
+      "down": {
+        "frames": 14,
+        "changed_pixels": 1928,
+        "restored_opaque_pixels": 1221
+      },
+      "down_right": {
+        "frames": 8,
+        "changed_pixels": 974,
+        "restored_opaque_pixels": 584
+      },
+      "right": {
+        "frames": 0,
+        "changed_pixels": 0,
+        "restored_opaque_pixels": 0
+      }
+    }
   }
 }
