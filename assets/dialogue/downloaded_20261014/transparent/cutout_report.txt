@@ -1,4 +1,4 @@
-﻿01_listen.png: 1086x1448, transparent_pixels=1043155, enclosed_hair_gaps=11
+01_listen.png: 1086x1448, transparent_pixels=1043155, enclosed_hair_gaps=11
 02_kiss.png: 1024x1536, transparent_pixels=970149, enclosed_hair_gaps=15
 03_talk.png: 1024x1536, transparent_pixels=1002727, enclosed_hair_gaps=12
 04_think.png: 1024x1536, transparent_pixels=992470, enclosed_hair_gaps=10

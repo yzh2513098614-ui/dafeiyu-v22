@@ -30,4 +30,4 @@ public class PortraitCutout {
 $dir=Join-Path $Project 'assets\dialogue\downloaded_20261014'
 $out=Join-Path $dir 'transparent';New-Item -ItemType Directory -Force $out | Out-Null
 $results=@();foreach($f in Get-ChildItem -LiteralPath $dir -Filter '*.png'){$r=[PortraitCutout]::Run($f.FullName,(Join-Path $out $f.Name));$results+="$($f.Name): $r";Write-Output $results[-1]}
-$results | Set-Content -Encoding UTF8 (Join-Path $out 'cutout_report.txt')
+[IO.File]::WriteAllText((Join-Path $out 'cutout_report.txt'),($results -join "`n")+"`n",(New-Object Text.UTF8Encoding $false))
