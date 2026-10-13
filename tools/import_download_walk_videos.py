@@ -65,7 +65,92 @@ def choose_loop(frames, stabilize_x=False):
     return scores[0], scores[:20]
 
 
-def matte(rgb):
+def hair_background_holes(rgb, silhouette):
+    """Find studio-coloured islands enclosed by blue hair, not white clothing."""
+    colour = rgb.astype(np.int16)
+    neutral = colour.max(2)-colour.min(2)
+    candidate = silhouette & (colour.min(2)>=225) & (neutral<=30)
+    labels, _ = ndi.label(candidate)
+    yy, xx = np.where(silhouette)
+    top, height = int(yy.min()), int(yy.max()+1-yy.min())
+    selected = np.zeros(silhouette.shape,bool)
+    records = []
+    for label, box in enumerate(ndi.find_objects(labels),1):
+        if box is None: continue
+        local = labels[box]==label
+        area = int(local.sum())
+        if area<18: continue
+        pixels = colour[box][local]
+        mean = pixels.mean(0)
+        # Costume whites are lavender/pink. Flat studio gaps are near-neutral.
+        if mean.min()<230 or mean.max()-mean.min()>25 or mean[0]-mean[1]>4 or mean[1]-mean[0]>10: continue
+        y0,y1,x0,x1 = box[0].start,box[0].stop,box[1].start,box[1].stop
+        relative_y = ((y0+y1)*.5-top)/height
+        region = (slice(max(0,y0-12),min(rgb.shape[0],y1+12)),
+                  slice(max(0,x0-12),min(rgb.shape[1],x1+12)))
+        component = labels[region]==label
+        ring = (ndi.binary_dilation(component,iterations=10)
+                & ~ndi.binary_dilation(component,iterations=3) & silhouette[region])
+        colours = colour[region][ring]
+        blue = float(np.mean((colours[:,2]-colours[:,0]>22)&(colours[:,2]-colours[:,1]>8))) if len(colours) else 0
+        halo = (relative_y<.15 and area>=600 and x1-x0>=50 and blue>=.50
+                and mean.max()-mean.min()<11 and abs(mean[0]-mean[1])<4)
+        hair_gap = .20<relative_y<.88 and blue>=.90
+        if not (halo or hair_gap): continue
+        selected[box] |= local
+        records.append({'kind':'halo' if halo else 'hair_gap','source_box':[x0,y0,x1,y1],
+                        'pixels':area,'mean_rgb':np.round(mean,2).tolist(),'blue_enclosure':round(blue,4)})
+    # Expand only through pale mixed studio pixels. Dark contour and coloured
+    # strands stop the propagation, including where halo touches maid lace.
+    eligible = (colour.min(2)>=210)&(neutral<=28)&silhouette
+    selected = ndi.binary_dilation(selected,iterations=3,mask=eligible)
+    return selected, records
+
+
+def rear_foot_background(rgb,silhouette):
+    """Separate the studio cast shadow and enclosed space between stockings."""
+    colour = rgb.astype(np.int16)
+    neutral = colour.max(2)-colour.min(2)
+    yy,xx = np.indices(silhouette.shape)
+    occupied_y = np.where(silhouette)[0]
+    top,height = int(occupied_y.min()),int(occupied_y.max()+1-occupied_y.min())
+    dark = silhouette & (yy>top+.86*height) & (colour.max(2)<125)
+    labels,_ = ndi.label(dark)
+    sizes = np.bincount(labels.ravel());sizes[0] = 0
+    boot_ids = np.argsort(sizes)[-2:]
+    boots = np.isin(labels,boot_ids[ sizes[boot_ids]>30 ])
+    protected = ndi.binary_dilation(ndi.binary_fill_holes(boots),iterations=2)
+    # The low rear ankle can overlap the shadow band. Its pink-white stocking
+    # is part of the drawing, unlike the neutral studio floor beneath it.
+    stocking = (silhouette & (colour.min(2)>220)
+                & (colour[:,:,0]-colour[:,:,1]>4) & (colour[:,:,2]-colour[:,:,0]<12))
+    sole = int(np.where(boots)[0].max())
+    floor = (silhouette & (yy>=sole-26) & ~protected & ~stocking
+             & (colour.min(2)>105) & (neutral<85))
+    candidate = silhouette & (yy>top+.80*height) & (colour.min(2)>230) & (neutral<20)
+    labels,_ = ndi.label(candidate)
+    gaps = np.zeros(silhouette.shape,bool)
+    records = []
+    for label,box in enumerate(ndi.find_objects(labels),1):
+        if box is None: continue
+        local = labels[box]==label
+        area = int(local.sum())
+        pixels = colour[box][local]
+        mean = pixels.mean(0)
+        width,patch_height = box[1].stop-box[1].start,box[0].stop-box[0].start
+        if (area>=50 and width<height*.18 and patch_height>height*.045
+                and mean.min()>242 and mean[0]-mean[1]<4 and mean.max()-mean.min()<8):
+            gaps[box] |= local
+            records.append({'kind':'leg_gap','source_box':[box[1].start,box[0].start,box[1].stop,box[0].stop],
+                            'pixels':area,'mean_rgb':np.round(mean,2).tolist()})
+    eligible = silhouette & (colour.min(2)>215) & (neutral<28) & (colour[:,:,0]-colour[:,:,1]<5)
+    gaps = ndi.binary_dilation(gaps,iterations=3,mask=eligible) & ~protected
+    selected = floor | gaps
+    return selected,{'shoe_sole_row':sole,'floor_pixels':int(floor.sum()),
+                     'leg_gap_pixels':int(gaps.sum()),'leg_gaps':records}
+
+
+def matte(rgb,direction=None):
     colour = rgb.astype(np.int16)
     neutral = colour.max(2)-colour.min(2)
     candidate = (colour.min(2) >= 231) & (neutral <= 12)
@@ -104,6 +189,12 @@ def matte(rgb):
                    and pixels.mean(0).min() > 244 and pixels.std(0).max() < 3)
         if halo or leg_gap:
             silhouette[box][local] = False
+    hair_holes, hair_records = hair_background_holes(rgb,silhouette)
+    silhouette &= ~hair_holes
+    rear_record = {}
+    if direction=='up_right':
+        rear_mask,rear_record = rear_foot_background(rgb,silhouette)
+        silhouette &= ~rear_mask
     distance = ndi.distance_transform_edt(silhouette)
     clean = silhouette & (distance > 4)
     _, nearest = ndi.distance_transform_edt(~clean, return_indices=True)
@@ -121,6 +212,16 @@ def matte(rgb):
     result = rgb.copy()
     result[edge] = foreground[edge].astype(np.uint8)
     result[alpha8 == 0] = foreground[alpha8 == 0].astype(np.uint8)
+    # Edge unmixing can split a narrow studio sliver into a new island. Recheck
+    # the final occupied mask so these do not flash white on isolated frames.
+    for _ in range(3):
+        residual, residual_records = hair_background_holes(rgb,alpha8>127)
+        if not residual.any(): break
+        alpha8[residual] = 0
+        hair_holes |= residual
+        hair_records.extend(residual_records)
+        _, nearby = ndi.distance_transform_edt(alpha8==0,return_indices=True)
+        result[residual] = result[nearby[0][residual],nearby[1][residual]]
     yy, xx = np.where(alpha8 > 127)
     h = int(yy.max()+1-yy.min())
     head = (alpha8 > 127).copy()
@@ -129,8 +230,9 @@ def matte(rgb):
     head_x = np.where(head)[1]
     return np.dstack([result,alpha8]), {
         'bounds': [int(xx.min()),int(yy.min()),int(xx.max()+1),int(yy.max()+1)],
-        'head_x': float(np.median(head_x)), 'opaque_rgb_exact': bool(np.array_equal(result[clean],rgb[clean])),
-        'foreground_pixels': int((alpha8>0).sum())}
+        'head_x': float(np.median(head_x)), 'opaque_rgb_exact': bool(np.array_equal(result[clean&(alpha8==255)],rgb[clean&(alpha8==255)])),
+        'foreground_pixels': int((alpha8>0).sum()),'hair_background_holes':hair_records,
+        'hair_background_pixels':int(hair_holes.sum()),'rear_foot_cleanup':rear_record}
 
 
 def pack(rgba, translation):
@@ -165,7 +267,7 @@ def extract(only_direction=None):
         loop,candidates = choose_loop(frames,stabilize_x=direction=='up_right')
         samples = []
         for n in range(loop['start'],loop['end_exclusive']):
-            rgba,record = matte(frames[n])
+            rgba,record = matte(frames[n],direction)
             samples.append((rgba,record))
         centre = int(round(np.median([r['head_x'] for _,r in samples])))
         foot = int(round(np.median([r['bounds'][3] for _,r in samples])))
@@ -284,11 +386,104 @@ def install():
     print('INSTALLED',sum(manifest['frame_counts_by_direction'].values()),'full RGBA walk frames',flush=True)
 
 
+def repair_hair_gaps(only_direction=None):
+    """Re-matte the already selected source frames; retain all timing/anchors."""
+    report_path = OUT/'extraction.json'
+    report = json.loads(report_path.read_text(encoding='utf-8'))
+    backup = ROOT/('备份/20261013_斜背脚底腿缝修复前' if only_direction else '备份/20261013_发丝空洞修复前')
+    backup.mkdir(parents=True,exist_ok=True)
+    (backup/'.gdignore').touch()
+    for filename in ['manifest.json']:
+        target = backup/filename
+        if not target.exists(): target.write_bytes((ROOT/'assets/character'/filename).read_bytes())
+    if not (backup/'extraction.json').exists(): (backup/'extraction.json').write_bytes(report_path.read_bytes())
+    all_images, totals = {}, {}
+    for direction in VIDEOS:
+        if only_direction and direction!=only_direction: continue
+        row = report['directions'][direction]
+        if only_direction:
+            samples = []
+            for record in row['records']:
+                rgb = np.array(Image.open(RAW/direction/f"source_{record['source_frame']:03d}.png").convert('RGB'))
+                rgba,metrics = matte(rgb,direction)
+                samples.append((rgba,metrics))
+            anchor_adjustment = int(round(np.median([rec['bounds'][3]-metrics['bounds'][3]
+                                                    for rec,(_,metrics) in zip(row['records'],samples)])))
+            row['translation'][1] += anchor_adjustment
+            row['foot_anchor_adjustment'] = anchor_adjustment
+            for record in row['records']:record['translation'][1] += anchor_adjustment
+        pictures, count, pixels = [], 0, 0
+        for i,record in enumerate(row['records']):
+            path = OUT/direction/f'walk_{i:02d}.png'
+            saved = backup/direction/path.name
+            saved.parent.mkdir(exist_ok=True)
+            if not saved.exists(): saved.write_bytes(path.read_bytes())
+            if only_direction:
+                rgba,metrics = samples[i]
+            else:
+                rgb = np.array(Image.open(RAW/direction/f"source_{record['source_frame']:03d}.png").convert('RGB'))
+                rgba, metrics = matte(rgb,direction)
+            packed = pack(rgba,record['translation'])
+            Image.fromarray(packed).save(path)
+            record.update(metrics)
+            pictures.append(packed)
+            count += len(metrics['hair_background_holes'])
+            pixels += metrics['hair_background_pixels']
+        all_images[direction] = pictures
+        totals[direction] = {'frames':len(pictures),'holes':count,'removed_source_pixels':pixels}
+        print('HAIR_REPAIR',direction,totals[direction],flush=True)
+    if only_direction:
+        for direction in VIDEOS:
+            if direction in all_images: continue
+            row = report['directions'][direction]
+            all_images[direction] = [np.array(Image.open(OUT/direction/f'walk_{i:02d}.png')) for i in range(row['frame_count'])]
+            totals[direction] = report['hair_gap_repair']['directions'][direction]
+    for direction,source in MIRRORS.items():
+        pictures = []
+        for i,picture in enumerate(all_images[source]):
+            path = OUT/direction/f'walk_{i:02d}.png'
+            saved = backup/direction/path.name
+            saved.parent.mkdir(exist_ok=True)
+            if (not only_direction or source==only_direction) and not saved.exists(): saved.write_bytes(path.read_bytes())
+            mirrored = np.ascontiguousarray(picture[:,::-1])
+            if not only_direction or source==only_direction:Image.fromarray(mirrored).save(path)
+            pictures.append(mirrored)
+        row = dict(report['directions'][source]); row['mirror_of'] = source
+        report['directions'][direction] = row
+        all_images[direction] = pictures
+        totals[direction] = dict(totals[source])
+    report['hair_gap_repair'] = {'method':'source RGB neutral islands with blue enclosure; halo and hair gaps only; protected costume whites','directions':totals}
+    report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+    manifest_path = ROOT/'assets/character/manifest.json'
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    manifest['mask_note'] = 'Offline studio matte including enclosed blue-hair gaps and halo; opaque costume preserved; no runtime key or outline'
+    manifest['hair_gap_repair'] = 'res://assets/character/download_walk_20261013/extraction.json'
+    manifest['version'] = max(int(manifest['version']),15)
+    if only_direction:
+        manifest['version'] = max(int(manifest['version']),16)
+        manifest['rear_foot_cleanup'] = 'source-shoe protected shadow removal and enclosed leg-gap matte; fixed sole anchor'
+        report['rear_foot_cleanup'] = {'directions':['up_right','up_left'],
+            'frames':64,'source_floor_pixels':sum(r['rear_foot_cleanup']['floor_pixels'] for r in report['directions']['up_right']['records']),
+            'source_leg_gap_pixels':sum(r['rear_foot_cleanup']['leg_gap_pixels'] for r in report['directions']['up_right']['records'])}
+        report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+    manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+    preview(all_images,report)
+    print('HAIR_REPAIR_COMPLETE',sum(t['holes'] for t in totals.values()),'enclosed background islands',flush=True)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--install',action='store_true')
     parser.add_argument('--install-only',action='store_true')
     parser.add_argument('--direction',choices=list(VIDEOS))
+    parser.add_argument('--repair-hair-gaps',action='store_true')
+    parser.add_argument('--repair-rear-feet',action='store_true')
     args = parser.parse_args()
+    if args.repair_rear_feet:
+        repair_hair_gaps('up_right')
+        sys.exit(0)
+    if args.repair_hair_gaps:
+        repair_hair_gaps()
+        sys.exit(0)
     if not args.install_only: extract(args.direction)
     if args.install or args.install_only: install()

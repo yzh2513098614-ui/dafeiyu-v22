@@ -328,7 +328,7 @@
     512.0,
     1080.0
   ],
-  "mask_note": "Offline connected studio matte and boundary colour unmix; opaque costume RGB retained; no runtime key or outline",
+  "mask_note": "Offline studio matte including enclosed blue-hair gaps and halo; opaque costume preserved; no runtime key or outline",
   "method": "download_video_complete_rgba_frames_fixed_registration",
   "note": "Five source videos, three explicitly mirrored directions; complete native frames, fixed ground registration and rear-clip linear horizontal drift correction, no pose synthesis",
   "pixel_size": 0.0022,
@@ -343,7 +343,7 @@
     "up_left": "RGBA horizontal mirror of up_right"
   },
   "runtime_matte_baked": true,
-  "version": 14,
+  "version": 16,
   "video_extraction": "res://assets/character/download_walk_20261013/extraction.json",
   "walk_fps": 24,
   "pixel_size_by_direction": {
@@ -383,5 +383,7 @@
     "up_left": "up_right"
   },
   "proportion_warp_by_direction": {},
-  "palette_match_by_direction": {}
+  "palette_match_by_direction": {},
+  "hair_gap_repair": "res://assets/character/download_walk_20261013/extraction.json",
+  "rear_foot_cleanup": "source-shoe protected shadow removal and enclosed leg-gap matte; fixed sole anchor"
 }
