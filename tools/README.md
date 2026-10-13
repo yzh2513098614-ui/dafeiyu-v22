@@ -33,6 +33,7 @@
 |---|---|---|
 | **战斗引擎规则不变量** | `test_battle_rules_cli.gd` → `test_battle.gd` | CLI 入口调用既有 RefCounted 测试；500 局 + 6 项定向断言（AP 连携 / 护盾减半 / 束缚跳回合 / 无效指令不消耗回合 / 体力回复封顶 / 存档 id 白名单） |
 | 糖果色战斗实机 UI | `preview_candy_battle.gd` | 需 `--test-session-ui --test-dialogue`；真实鼠标输入、手牌、补给、胜利、三目标、4:3 与 16:9，输出 `预览/糖果UI全局改造_20261011/` |
+| 当前战斗布局与大立绘 | `preview_gpt6_large.gd` | 需 `--test-session-ui --test-dialogue`；三种窗口、普通遭遇、三目标、至少双倍 gpt6、手牌悬停/出牌、补给/返回、结束回合、目标切换与 UI 随机数检查，输出 `预览/战斗布局重排_20261013/` |
 | 已接入界面统一换肤 | `preview_candy_global.gd` | 需 `--test-session-ui --test-dialogue`；标题、出发、HUD、背包、设置、对话和暂停实机截图及输入回归 |
 | **战斗数值体检** | `measure_battle_balance.gd` | 胜率、平均回合、等级探针；配合 `现状不足分析_v22.md` 的语气 |
 | 卡牌排版与字体字形覆盖 | `test_cute_card_layout.gd` | 42 张卡的名称与说明字形 |

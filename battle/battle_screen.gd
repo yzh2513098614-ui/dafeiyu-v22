@@ -308,6 +308,8 @@ func _build() -> void:
 	_build_dock()
 	_build_fx()
 	_build_result()
+	if engine.card_mode:
+		_style_card_battle()
 	# 首次版面要等一帧：dock 是 pin_wide 的，size 要等容器自己算完才有值，
 	# 当场算会拿到 0，三条槽就会全部挤在最小宽度上。
 	call_deferred("_layout")
@@ -512,13 +514,19 @@ func _enemy_slot(index: int) -> Dictionary:
 		status.append(si)
 
 	var block_badge:=_build_block_badge(holder,false)
+	var intent_label := WhaleStyle.label(holder, "", Vector2.ZERO, Vector2(320, 32), 20, Color("fff8e7"))
+	intent_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	intent_label.autowrap_mode = TextServer.AUTOWRAP_OFF
+	intent_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	intent_label.add_theme_color_override("font_outline_color", Color("24314d"))
+	intent_label.add_theme_constant_override("outline_size", 4)
 	return {
 		"holder": holder, "shadow": shadow, "art": art, "hit": hit, "mark": mark,
 		"dais_rim": dais_rim, "dais_top": dais_top, "dais_rim_style": dr,
 		"plate": name_plate, "name": name_label, "bar_back": bar_back,
 		"bar_trail": bar_trail, "bar_fill": bar_fill, "bar_style": bf,
 		"ticks": ticks, "trail_w": 0.0, "hp": hp_text, "foe": null,
-		"status": status, "status_state": {}, "block_badge":block_badge,
+		"status": status, "status_state": {}, "block_badge":block_badge, "intent":intent_label,
 	}
 
 func _build_tactics() -> void:
@@ -999,65 +1007,37 @@ func _layout() -> void:
 		_refresh_ally()
 		_refresh_enemies()
 
-func _gpt6_large_layout() -> bool:
-	if engine == null or not engine.card_mode:
-		return false
-	for foe in engine.foes:
-		if str(foe.kind) == "gpt6":
-			return true
-	return false
-
-func _gpt6_sidebar_left() -> float:
-	return clampf(root.size.x * 0.34, 500.0, 660.0)
-
 func _layout_enemies() -> void:
 	var width := enemy_layer.size.x
-	var count := 0
-	for slot in slots:
-		if slot.foe != null:
-			count += 1
-	if count == 0:
-		return
-	if _gpt6_large_layout():
-		var sidebar_left := _gpt6_sidebar_left()
-		var companions: Array = []
-		for slot in slots:
-			if slot.foe == null:
-				slot.holder.hide()
-			elif str(slot.foe.kind) == "gpt6":
-				_layout_one_enemy(slot, sidebar_left * 0.5, sidebar_left - DOCK_MARGIN * 2.0)
-			else:
-				companions.append(slot)
-		var companion_area := width - sidebar_left - DOCK_MARGIN
-		for j in companions.size():
-			var companion_cell := minf(ENEMY_CELL_MAX_W, companion_area / float(companions.size()) - 30.0)
-			_layout_one_enemy(companions[j], sidebar_left + companion_area * (float(j) + 0.5) / float(companions.size()), companion_cell)
-		return
-	# 指令已移到下方，敌人使用完整战场宽度居中排列。
-	var right_limit := width - DOCK_MARGIN
-	var area := maxf(220.0, right_limit - DOCK_MARGIN)
-	var cell_w := minf(ENEMY_CELL_MAX_W, (area - 30.0 * float(count - 1)) / float(count))
-	var spacing := cell_w + 30.0
-	var group := cell_w * float(count) + 30.0 * float(count - 1)
-	var left := DOCK_MARGIN + (area - group) * 0.5
-	var i := 0
+	var active: Array = []
 	for slot in slots:
 		if slot.foe == null:
 			slot.holder.hide()
-			continue
-		_layout_one_enemy(slot, left + cell_w * 0.5 + float(i) * spacing, cell_w)
-		i += 1
+		else:
+			active.append(slot)
+	if active.is_empty():
+		return
+	var left := DOCK_MARGIN
+	var area := width - DOCK_MARGIN * 2.0
+	if engine.card_mode:
+		left = clampf(width * 0.31, 430.0, 600.0)
+		area = width - left - 48.0
+	var total_weight := 0.0
+	for slot in active:
+		total_weight += 440.0 if str(slot.foe.kind) == "gpt6" and engine.card_mode else 280.0
+	var available := area - 28.0 * float(active.size() - 1)
+	var cursor := left
+	for slot in active:
+		var weight := 440.0 if str(slot.foe.kind) == "gpt6" and engine.card_mode else 280.0
+		var cell_w := available * weight / total_weight
+		_layout_one_enemy(slot, cursor + cell_w * 0.5, minf(cell_w, ENEMY_CELL_MAX_W))
+		cursor += cell_w + 28.0
 
 func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
-	var ground_y: float = 395.0 if engine.card_mode else GROUND_Y
+	var ground_y: float = 700.0 if engine.card_mode else GROUND_Y
 	var height_limit: float = 250.0 if engine.card_mode else ENEMY_CELL_H
-	if _gpt6_large_layout():
-		if str(slot.foe.kind) == "gpt6":
-			ground_y = 780.0
-			height_limit = 660.0
-		else:
-			ground_y = 320.0
-			height_limit = 180.0
+	if engine.card_mode and str(slot.foe.kind) == "gpt6":
+		height_limit = 600.0
 	var art_data: Dictionary = slot.get("art_data", {})
 	var used: Rect2i = art_data.get("used", Rect2i())
 	if used.size.x <= 0 or used.size.y <= 0:
@@ -1078,6 +1058,8 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	art.position = slot.art_home+slot.get("reaction_offset",Vector2.ZERO)+slot.get("attack_offset",Vector2.ZERO)
 	art.size = Vector2(draw_w, draw_h)
 	art.pivot_offset=art.size*Vector2(.5,.9)
+	slot.intent.position = Vector2(cx - cell_w * 0.5, art.position.y - 34.0)
+	slot.intent.size = Vector2(cell_w, 32.0)
 
 	var foot_w := minf(cell_w * 0.72, draw_w * 0.78)
 	# 台子：比影子宽一圈，纵向压在脚下 —— 上沿在脚线之上、下沿略低于脚线，
@@ -1139,6 +1121,9 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	hit.size = art.size
 
 func _layout_dock() -> void:
+	if engine != null and engine.card_mode:
+		_layout_card_dock()
+		return
 	var dock: Panel = dash.get("dock")
 	if dock == null:
 		return
@@ -1228,65 +1213,122 @@ func _layout_command() -> void:
 		detail_name.position=Vector2(16,12);detail_name.size=Vector2(cmd_w-64,34)
 		detail_text.position=Vector2(16,58);detail_text.size=Vector2(cmd_w-64,146)
 
+func _card_overlay(panel: Panel, background: Color, radius: int = 16) -> void:
+	panel.set_script(null)
+	var style := StyleBoxFlat.new()
+	style.bg_color = background
+	style.border_color = Color(0.76, 0.87, 1.0, 0.45)
+	style.set_border_width_all(1 if background.a > 0.0 else 0)
+	style.set_corner_radius_all(radius)
+	panel.add_theme_stylebox_override("panel", style)
+
+func _card_text(label: Label, font_size: int) -> void:
+	label.add_theme_font_size_override("font_size", font_size)
+	label.add_theme_color_override("font_color", Color("f0f5ff"))
+	label.add_theme_color_override("font_outline_color", Color("24314d"))
+	label.add_theme_constant_override("outline_size", 3)
+
+func _style_card_battle() -> void:
+	_card_overlay(card_panel, Color.TRANSPARENT)
+	_card_overlay(dash.dock, Color.TRANSPARENT)
+	_card_overlay(dash.portrait_frame, Color.TRANSPARENT)
+	_card_overlay(title_plate, Color(0.12, 0.17, 0.29, 0.72))
+	_card_overlay(phase_plate, Color(0.11, 0.31, 0.36, 0.9))
+	_card_overlay(log_box, Color(0.12, 0.17, 0.29, 0.65), 10)
+	_card_overlay(card_panel.get_node("CardEnergyBadge"), Color(0.12, 0.17, 0.29, 0.9), 52)
+	log_box.get_node("LogCaption").hide()
+	tactics_box.hide()
+	_card_text(dash.name, 24)
+	_card_text(phase_label, 20)
+	_card_text(card_counts, 17)
+	for gauge in dash.gauges:
+		gauge.group.get_node("StatusTile").hide()
+		_card_text(gauge.title, 20)
+		_card_text(gauge.value, 20)
+
+func _layout_card_dock() -> void:
+	var dock: Panel = dash.dock
+	UiFit.pin_left(dock, 320, 64, 520, 278)
+	dash.portrait_frame.position = Vector2(34, -250)
+	dash.portrait_frame.size = Vector2(252, 252)
+	dash.portrait.position = Vector2(10, 10)
+	dash.portrait.size = Vector2(232, 232)
+	dash.name.position = Vector2(0, 20)
+	dash.name.size = Vector2(320, 34)
+	dash.vitals.hide()
+	dash.block_badge.panel.position = Vector2(0, 62)
+	dash.status_icons.position = Vector2(190, 68)
+	for i in dash.icons.size():
+		var icon: TextureRect = dash.icons.values()[i]
+		icon.position = Vector2(i * 28, 0)
+		icon.size = Vector2(24, 24)
+	for i in dash.gauges.size():
+		var gauge: Dictionary = dash.gauges[i]
+		gauge.group.position = Vector2(0, 110 + i * 54)
+		gauge.group.size = Vector2(320, 48)
+		gauge.icon.position = Vector2(0, 0)
+		gauge.icon.size = Vector2(24, 24)
+		gauge.title.position = Vector2(32, -2)
+		gauge.title.size = Vector2(76, 28)
+		gauge.value.position = Vector2(116, -2)
+		gauge.value.size = Vector2(204, 28)
+		gauge.back.position = Vector2(0, 30)
+		gauge.back.size = Vector2(320, 16)
+
 func _layout_card_hand() -> void:
-	if card_panel == null:return
-	card_panel.position=Vector2(DOCK_MARGIN,CARD_HAND_TOP)
-	card_panel.size=Vector2(root.size.x-DOCK_MARGIN*2,CARD_HAND_HEIGHT)
-	var w:=card_panel.size.x
-	card_scroll.position=Vector2(20,76);card_scroll.size=Vector2(w-40,228)
-	var energy_badge:Panel=card_panel.get_node("CardEnergyBadge")
-	energy_badge.position=Vector2(20,14);energy_badge.size=Vector2(162,44)
-	var energy_icon:TextureRect=energy_badge.get_node("CardEnergyIcon")
-	energy_icon.position=Vector2(10,11);energy_icon.size=Vector2(22,22)
-	var caption:Label=energy_badge.get_node("CardEnergyCaption")
-	caption.position=Vector2(38,7);caption.size=Vector2(38,30);caption.add_theme_font_size_override("font_size",17)
-	caption.add_theme_color_override("font_color",Color("eaf1ff"))
-	card_energy_label.position=Vector2(102,20);card_energy_label.size=Vector2(72,32)
-	card_energy_label.add_theme_font_size_override("font_size",23);card_energy_label.add_theme_color_override("font_color",Color("ffe071"))
-	card_counts.position=Vector2(204,18);card_counts.size=Vector2(350,36)
-	card_counts.add_theme_font_size_override("font_size",18);card_counts.add_theme_color_override("font_color",WhaleStyle.INK)
-	card_counts.autowrap_mode=TextServer.AUTOWRAP_OFF
-	card_end_button.position=Vector2(w-204,14);card_end_button.custom_minimum_size=Vector2(184,44);card_end_button.size=Vector2(184,44)
-	card_item_button.position=Vector2(w-464,14);card_item_button.custom_minimum_size=Vector2(116,44);card_item_button.size=Vector2(116,44)
-	card_link_button.position=Vector2(w-334,14);card_link_button.custom_minimum_size=Vector2(116,44);card_link_button.size=Vector2(116,44)
+	if card_panel == null:
+		return
+	UiFit.pin_wide(card_panel, 24, 24, 822, 244)
+	var w := card_panel.size.x
+	card_scroll.position = Vector2(180, 12)
+	card_scroll.size = Vector2(w - 400, 230)
+	var energy_badge: Panel = card_panel.get_node("CardEnergyBadge")
+	energy_badge.position = Vector2(24, 66)
+	energy_badge.size = Vector2(104, 104)
+	var energy_icon: TextureRect = energy_badge.get_node("CardEnergyIcon")
+	energy_icon.position = Vector2(40, 10)
+	energy_icon.size = Vector2(24, 24)
+	var caption: Label = energy_badge.get_node("CardEnergyCaption")
+	caption.position = Vector2(16, 74)
+	caption.size = Vector2(72, 24)
+	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	caption.add_theme_font_size_override("font_size", 16)
+	caption.add_theme_color_override("font_color", Color("eaf1ff"))
+	card_energy_label.position = Vector2(24, 99)
+	card_energy_label.size = Vector2(104, 40)
+	card_energy_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	card_energy_label.add_theme_font_size_override("font_size", 30)
+	card_energy_label.add_theme_color_override("font_color", Color("ffe071"))
+	card_counts.position = Vector2(0, 188)
+	card_counts.size = Vector2(156, 54)
+	card_counts.autowrap_mode = TextServer.AUTOWRAP_OFF
+	card_counts.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var action_x := w - 196
+	var target_button: Button = card_panel.get_node("CardTargetButton")
+	var actions: Array = [target_button, card_item_button, card_link_button, card_end_button]
+	for i in actions.size():
+		actions[i].position = Vector2(action_x, i * 58)
+		actions[i].custom_minimum_size = Vector2(184, 48)
+		actions[i].size = Vector2(184, 48)
+		actions[i].add_theme_font_size_override("font_size", 19)
 	card_panel.get_node("CardPlayHint").hide()
-	var target_button:Button=card_panel.get_node("CardTargetButton")
-	target_button.position=Vector2(w-608,14);target_button.custom_minimum_size=Vector2(130,44);target_button.size=Vector2(130,44)
-	target_button.add_theme_font_size_override("font_size",18)
-	card_preview.position=Vector2(root.size.x-294,94)
-	var info_w:float=clampf(root.size.x*.40,560,660)
-	UiFit.pin_left(log_box,root.size.x-info_w-DOCK_MARGIN*2-24,DOCK_MARGIN,CARD_INFO_TOP,CARD_INFO_HEIGHT)
-	UiFit.pin_right(tactics_box,info_w,DOCK_MARGIN,CARD_INFO_TOP,CARD_INFO_HEIGHT)
-	var log_header:Panel=log_box.get_node("LogCaption")
-	log_header.position=Vector2(12,10);log_header.size=Vector2(76,30)
-	var log_caption:Label=log_header.get_node("CaptionText")
-	log_caption.position=Vector2(0,1);log_caption.size=Vector2(76,26);log_caption.add_theme_color_override("font_color",Color("eaf1ff"))
-	log_text.position=Vector2(102,10);log_text.size=Vector2(log_box.size.x-124,30)
-	log_text.add_theme_font_size_override("normal_font_size",19);log_text.autowrap_mode=TextServer.AUTOWRAP_OFF;log_text.mouse_filter=Control.MOUSE_FILTER_STOP
-	var target_caption:Label=tactics_box.get_node("TargetCaption")
-	target_caption.text="目标";target_caption.position=Vector2(18,10);target_caption.size=Vector2(48,30)
-	tactics_name.position=Vector2(80,10);tactics_name.size=Vector2(132,30);tactics_name.add_theme_color_override("font_color",WhaleStyle.BLUE)
-	tactics_name.max_lines_visible=1;tactics_name.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	tactics_text.position=Vector2(230,10);tactics_text.size=Vector2(info_w-250,30);tactics_text.add_theme_font_size_override("font_size",18)
-	tactics_text.autowrap_mode=TextServer.AUTOWRAP_OFF;tactics_text.mouse_filter=Control.MOUSE_FILTER_STOP
-	tactics_text.max_lines_visible=1;tactics_text.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	if _gpt6_large_layout():
-		var sidebar_left := _gpt6_sidebar_left()
-		var sidebar_width := root.size.x - sidebar_left - DOCK_MARGIN
-		card_panel.position.x = sidebar_left
-		card_panel.size.x = sidebar_width
-		card_scroll.position = Vector2(20, 120)
-		card_scroll.size = Vector2(sidebar_width - 40, 184)
-		card_counts.size.x = sidebar_width - 224
-		var action_x := sidebar_width - 608
-		target_button.position = Vector2(action_x, 64)
-		card_item_button.position = Vector2(action_x + 144, 64)
-		card_link_button.position = Vector2(action_x + 274, 64)
-		card_end_button.position = Vector2(action_x + 404, 64)
-		UiFit.pin_left(log_box, sidebar_width, sidebar_left, 432, CARD_INFO_HEIGHT)
-		UiFit.pin_left(tactics_box, sidebar_width, sidebar_left, CARD_INFO_TOP, CARD_INFO_HEIGHT)
-		log_text.size.x = sidebar_width - 124
-		tactics_text.size.x = sidebar_width - 250
+	card_preview.position = Vector2(root.size.x - 294, 120)
+	UiFit.pin_left(title_plate, 420, 24, 24, 46)
+	title_label.position = Vector2(14, 8)
+	title_label.size = Vector2(268, 32)
+	title_label.add_theme_font_size_override("font_size", 22)
+	round_label.position = Vector2(284, 8)
+	round_label.size = Vector2(122, 30)
+	UiFit.pin_center(phase_plate, 320, 24, 44)
+	phase_label.position = Vector2(12, 6)
+	phase_label.size = Vector2(296, 32)
+	UiFit.pin_right(speed_button, 150, 24, 24, 44)
+	UiFit.pin_left(log_box, 420, 24, 90, 38)
+	log_text.position = Vector2(12, 7)
+	log_text.size = Vector2(396, 26)
+	log_text.add_theme_font_size_override("normal_font_size", 17)
+	log_text.autowrap_mode = TextServer.AUTOWRAP_OFF
+	log_text.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _backdrop_texture() -> Texture2D:
 	if ResourceLoader.exists(BACKGROUND_PATH):
@@ -1498,7 +1540,7 @@ func _refresh_all() -> void:
 func _refresh_cards() -> void:
 	if card_panel == null or card_row == null: return
 	card_energy_label.text = "%d / %d" % [int(engine.card_energy), int(engine.card_energy_max)]
-	card_counts.text = "手牌  ·  牌堆 %d   /   弃牌 %d" % [engine.draw_pile.size(), engine.discard_pile.size()]
+	card_counts.text = "牌堆 %d\n弃牌 %d" % [engine.draw_pile.size(), engine.discard_pile.size()]
 	card_end_button.disabled=mode!="command"
 	card_item_button.disabled=mode!="command" or (context.get("items",[]) as Array).is_empty()
 	card_panel.get_node("CardTargetButton").disabled=mode!="command"
@@ -1510,9 +1552,7 @@ func _refresh_cards() -> void:
 	for entry in engine.card_hand_view():
 		var index := int(entry.index)
 		var button = load("res://battle/card_face.gd").new()
-		button.configure(entry, Vector2(136, 160) if _gpt6_large_layout() else Vector2(172, 216))
-		if _gpt6_large_layout():
-			button.get_node("CardFooter/CardEffect").add_theme_font_size_override("font_size", 14)
+		button.configure(entry, Vector2(172, 216))
 		button.focus_mode = Control.FOCUS_ALL
 		button.disabled = not bool(entry.ready) or mode != "command"
 		button.mouse_entered.connect(func():_preview_card(entry))
@@ -1575,6 +1615,12 @@ func _refresh_enemies() -> void:
 		var foe: Dictionary = pool[i]
 		var visible_foe:=_display_actor(foe)
 		slot.foe = foe
+		var intent: Dictionary = engine.intent_for(foe) if engine.card_mode else {}
+		var planned := "普通攻击"
+		if str(intent.get("kind", "")) == "skill":
+			planned = str(engine.enemy_skills.get(str(intent.get("id", "")), {}).get("name", "未知行动"))
+		slot.intent.text = "下次 · " + planned
+		slot.intent.visible = engine.card_mode and bool(visible_foe.alive)
 		if slot.get("art_data", null) == null:
 			var art_data := _foe_art(str(foe.kind))
 			slot["art_data"] = art_data
@@ -2587,7 +2633,8 @@ func _append_log(text: String, color: String = "") -> void:
 	# 而这些颜色压在同样浅的纸色面板（#fffdf7）上对比度极低，几乎读不出来。
 	# 那不是配色品味问题，是对比度不够 —— 颜色不该同时干「装饰」和「传达语义」两件事。
 	var bar := "#7c8ba8" if color == "" else "#" + color
-	var line := "[color=%s]▌[/color] [color=#293f52]%s[/color]" % [bar, text]
+	var ink := "#f0f5ff" if engine != null and engine.card_mode else "#293f52"
+	var line := "[color=%s]▌[/color] [color=%s]%s[/color]" % [bar, ink, text]
 	log_lines.append(line)
 	while log_lines.size() > MAX_LOG_LINES:
 		log_lines.pop_front()

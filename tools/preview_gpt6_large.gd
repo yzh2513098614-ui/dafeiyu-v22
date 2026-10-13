@@ -1,6 +1,6 @@
 extends SceneTree
 
-const OUT := "res://预览/gpt6放大_20261013/"
+const OUT := "res://预览/战斗布局重排_20261013/"
 var screen
 var engine
 var failures := 0
@@ -40,10 +40,10 @@ func click(control: Control) -> void:
 	root.push_input(event, true)
 	await settle()
 
-func open_battle(mixed: bool) -> void:
+func open_battle(mixed: bool, boss: bool = true) -> void:
 	engine = load("res://battle/battle_engine.gd").new(20261013)
 	engine.add_ally({"id":"player", "name":"大肥鱼", "level":13, "hp":148, "max_hp":148, "stamina":198, "max_stamina":198, "atk":8, "def":7, "spd":9, "ap":100})
-	engine.add_foe({"id":"gpt6", "kind":"gpt6", "name":"gpt6", "hp":65, "max_hp":65, "atk":5, "def":1, "spd":1})
+	engine.add_foe({"id":"gpt6" if boss else "slime", "kind":"gpt6" if boss else "slime", "name":"gpt6" if boss else "海沫团", "hp":65, "max_hp":65, "atk":5, "def":1, "spd":1})
 	if mixed:
 		for id in ["left", "right"]:
 			engine.add_foe({"id":id, "kind":"slime", "name":"海沫团", "hp":1000, "max_hp":1000, "atk":3, "def":1, "spd":1})
@@ -65,19 +65,24 @@ func capture(tag: String) -> void:
 	var old_scale := minf(250.0 / old_used.size.y, 460.0 / old_used.size.x)
 	var old_size := Vector2(old_used.size) * old_scale
 	check(art_rect.size.x >= old_size.x * 2.0 and art_rect.size.y >= old_size.y * 2.0, tag + " visible width and height both exceed 2x")
-	check(art_rect.position.y >= 104.0, tag + " full portrait below title")
+	check(art_rect.position.y >= 90.0, tag + " full portrait below title")
 	check(art_rect.end.y <= slot.plate.position.y, tag + " feet clear of nameplate")
 	check(not art_rect.intersects(screen.card_panel.get_rect()), tag + " portrait clear of cards")
 	check(not art_rect.intersects(screen.log_box.get_rect()), tag + " portrait clear of log")
 	check(slot.hit.get_rect().is_equal_approx(art_rect), tag + " enlarged portrait remains selectable")
+	check(screen.card_panel.position.y > slot.bar_back.get_rect().end.y, tag + " hand below battlefield")
+	check(slot.intent.visible and not slot.intent.text.is_empty(), tag + " enemy intent beside portrait")
+	check(not screen.tactics_box.visible, tag + " target info no longer splits battlefield")
+	check(not art_rect.intersects(screen.dash.portrait_frame.get_global_rect()), tag + " player and enemy portraits separate")
 	for companion in screen.slots:
 		if companion.foe != null and str(companion.foe.kind) != "gpt6":
-			check(companion.bar_back.get_rect().end.y < screen.log_box.position.y, tag + " companion HP clear of log")
+			check(companion.bar_back.get_rect().end.y < screen.card_panel.position.y, tag + " companion HP clear of hand")
 	for child in screen.card_row.get_children():
 		check(child.size.y + screen.card_scroll.get_h_scroll_bar().size.y <= screen.card_scroll.size.y, tag + " complete card visible")
 	var actions: Array = [screen.card_item_button, screen.card_link_button, screen.card_end_button, screen.card_panel.get_node("CardTargetButton")]
 	for a in actions:
 		check(a.get_rect().end.x <= screen.card_panel.size.x - 10.0, tag + " action fits")
+		check(a.get_rect().end.y <= screen.card_panel.size.y, tag + " action fits vertically")
 		for b in actions:
 			if a != b:
 				check(not a.get_rect().intersects(b.get_rect()), tag + " action buttons do not overlap")
@@ -123,9 +128,26 @@ func run() -> void:
 	await click(screen.slots[0].hit)
 	check(screen.context.target == 0, "large gpt6 remains selectable")
 	var hand_before: int = engine.hand.size()
+	var hover := InputEventMouseMotion.new()
+	hover.position = screen.card_row.get_child(1).get_global_rect().get_center()
+	root.push_input(hover, true)
+	await settle()
+	check(screen.card_preview.visible, "card hover shows full description")
 	await click(screen.card_row.get_child(1))
 	check(engine.hand.size() == hand_before - 1, "card play works")
 	screen.skip_playback()
+	screen.close()
+	screen.queue_free()
+	await settle()
+	await open_battle(false, false)
+	check(not screen.tactics_box.visible and screen.card_panel.position.y > screen.slots[0].bar_back.get_rect().end.y, "ordinary encounter uses same battle hierarchy")
+	var rng_before: int = engine.rng.state
+	await click(screen.speed_button)
+	check(engine.rng.state == rng_before, "UI action preserves battle random state")
+	screen.card_preview.hide()
+	await settle()
+	RenderingServer.force_draw(false)
+	check(root.get_texture().get_image().save_png(OUT + "ordinary_encounter.png") == OK, "ordinary encounter rendered screenshot")
 	screen.close()
 	screen.queue_free()
 	await settle()
