@@ -28,6 +28,8 @@ var clock_label: Label
 var life_booted:=false
 var autosave_clock:=0.0
 var loading_save:=false
+var click_navigation: Node
+var world_minimap: Control
 
 func _ready() -> void:
  super._ready()
@@ -57,6 +59,8 @@ func _ready() -> void:
  expedition_controller=preload("res://expedition/expedition_controller.gd").new();add_child(expedition_controller);expedition_controller.configure(self)
  map_interactions=preload("res://district/map_interactions.gd").new();add_child(map_interactions);map_interactions.configure(self)
  life_booted=true
+ click_navigation=preload("res://character/click_navigation.gd").new();add_child(click_navigation);click_navigation.configure(self)
+ world_minimap=preload("res://ui/world_minimap.gd").new();district_canvas.add_child(world_minimap);world_minimap.configure(self,click_navigation)
  if not "--test-dialogue" in OS.get_cmdline_user_args() and not "--capture-dialogue" in OS.get_cmdline_user_args():call_deferred("_welcome_dialogue")
 
 func _welcome_dialogue() -> void:
@@ -198,6 +202,7 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  target={"home_201":"city","street":"city","cafe":"community_1"}.get(target,target)
  if changing or not locations.has(target):return
  changing=true
+ if click_navigation:click_navigation.cancel()
  if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.12,"保存房间布置与当前位置")
  if map_interactions:map_interactions.clear()
  if harbor_controller and harbor_controller.is_active():harbor_controller.leave()
@@ -426,6 +431,7 @@ func _update_view_button() -> void:
  if view_button:view_button.text="Z 跟随人物" if overview_mode else "Z 整图总览"
 
 func _physics_process(delta: float) -> void:
+ if click_navigation:click_navigation.tick(delta)
  if transitioning:return
  if expedition_controller and expedition_controller.blocked():
   player.velocity=Vector3.ZERO;_set_character_pose(false);return
@@ -463,7 +469,7 @@ func _physics_process(delta: float) -> void:
   if reachable != null:
    hint.text = "E 开合 · " + ContainerRooms.describe(reachable) + "  ·  WASD 漫步 · 滚轮缩放"
   else:
-   hint.text="WASD 漫步 · 靠近门或设施点击 / 按 E 交互 · 滚轮缩放"
+   hint.text="右键地面 / 小地图自动寻路 · WASD 接管 · E 交互 · 滚轮缩放"
 
 ## 兜底区域名：走到所有 zone 之外时显示的名字。
 ##
@@ -500,6 +506,8 @@ func _refresh_zone() -> void:
 func _unhandled_input(event: InputEvent) -> void:
  if transitioning:
   get_viewport().set_input_as_handled();return
+ if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT and click_navigation and click_navigation.available():
+  click_navigation.click_screen(event.position);get_viewport().set_input_as_handled();return
  if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_E:
   if map_interactions and map_interactions.try_interact():get_viewport().set_input_as_handled();return
  if harbor_controller and harbor_controller.handle_input(event):get_viewport().set_input_as_handled();return
