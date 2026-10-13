@@ -21,7 +21,7 @@
 |---|---|---|---|
 | A1 | **放过技能后键盘焦点丢失**（`_show_command` 去 `command_box` 直接子节点找 Button，而按钮在里层 VBoxContainer，循环永不执行） | 已修复 | `battle/battle_screen.gd:151-154` 存 `command_buttons` 数组 + `_last_command_focus`，注释明确记录了这个 bug |
 | A2 | **技能子菜单默认焦点落在非伤害技能**（Lv.5 时第一个可用是「泡泡束缚」，把「一路按确认」的玩家引向弱路线） | 已修复 | `battle_screen.gd:1888-1906`：按 `skill_kind == "damage"` 优先抢焦点；全不可用时退回指令菜单不卡死 |
-| A3 | **音乐 wav 无 `.import`，导出时不会进包** | 已修复 | `assets/music/` 现为 **17 个 wav / 17 个 `.import`**（10-03 报告说「一个都没有」，已过时） |
+| A3 | **音乐 wav 无 `.import`，导出时不会进包** | 已修复 | `assets/music/` 现为 **30 个 wav / 30 个 `.import`**（10-03 报告说「一个都没有」、10-10 记的 17 个，均已过时；新增的 6 首《玻璃温室》由编辑器 2026-10-14 自动导入） |
 | A4 | **战斗中不能用道具**（指令只有 攻击/技能/连携/逃跑，连续 5 场无补给） | 已实现待实机 | `battle_screen.gd:144` `card_item_button`、`:155-156` `_pending_item` + 注释「引擎确认执行后才去扣背包」 |
 | A5 | 技能列表无「什么情况值得用」的说明 | 已修复 | `battle_screen.gd:1884-1888` 用 `Guide.skill()` 挂 tooltip 与焦点/悬停描述 |
 
@@ -73,6 +73,19 @@
 | `world_pack26\interior_pack\` 是 `interior_pack\` 的超集 | 2602 vs 764 文件 | 合并前先确认 `library_173` 等额外目录的引用关系 |
 | `项目文件清单.csv`（09-30） | 落后于现状 | 已由 `docs/素材清点_20261010.csv` 补充；旧 CSV 的「碰撞宽高 / 层级 / SHA256」语义字段仍有效，**两者并存** |
 | ~~工程不是 git 仓库~~ | **已解决** | 2026-10-10 完成 `git init` + 首次提交（`ca20909`，9276 文件 / 0.69 GB），已推送到私有仓库 `yzh2513098614-ui/dafeiyu-v22`。`.gitignore` 按方案 C 排除缓存/工具链/预览/源料/备份。详见 `AGENTS.md` 的「版本控制」 |
+
+---
+
+## G. BGM 曲库（2026-10-14 核验）
+
+两条并行产线各出了一套原创钢琴 BGM，都已接进 `MusicDirector`。接入只改了 `music/music_director.gd` 一个文件，没有第二个播放器。
+
+| 项 | 状态 | 证据 |
+|---|---|---|
+| 《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒）作为第三套风格组接入 | **已实现待实机听感** | `music/music_director.gd` 的 `STYLE_SETS["glasshouse"]`（六场合各一首）+ `CATALOG["glasshouse"]`（六行鉴赏条目）；`tools/test_audio_ui.gd` 六项新断言全通过，含「真实播放器播放头推进 0.10 s」。试听方式与曲目表见 `00_玻璃温室BGM接入_v22_20261014.md` |
+| `gal_piano` 七首纯钢琴（另一会话产出） | 已接入 | `STYLE_SETS["galgame"]` 轮换表 + 提交 `9bb2b83`；曲库说明见 `00_钢琴曲批量创作_v22_20261014.md` |
+| `tools/test_audio_ui.gd` 的 `audio tab has three cards` 恒失败 | **待复核** | 设置页「声音」页现有 5 张卡片（`ui/game_settings.gd:214-259`：音乐开关 / 音乐音量 / 配乐风格 / 音效开关 / 音效音量），断言仍写 `== 3`，`_build_audio_cards()` 的注释也还写着「第三张是配乐风格选择」。这是 UI 演进留下的陈旧断言，**本次没有改它**——不知道作者要的是 3 还是 5，改断言等于替别人拍板 |
+| 全曲库驻留内存 | 待复核 | `MusicDirector._streams` 按曲目 id 永久缓存整首 PCM。走一遍三套风格组的鉴赏页会把 30 首全读进内存（六首玻璃温室约 100 MB + 六首 gal_piano 约 90 MB，其余较小），量级 200 MB 以上。桌面端无感，但不是长期做法 |
 
 ---
 

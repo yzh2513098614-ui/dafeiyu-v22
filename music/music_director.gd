@@ -16,9 +16,14 @@ extends Node
 ##   每次进入该场合都会换到组里的下一首；停在同一场合超过 DWELL 秒也会自己换下一首。
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
-## 两套风格组，F8 切换（会记住）：
-##   galgame  galgame 场景配乐十九首（默认，七首原创钢琴加入对应场合轮换）
-##   harbor   最初那五首港町氛围曲（曲目少，组内跨场合复用）
+## 三套风格组，F8 切换（会记住）：
+##   galgame     galgame 场景配乐十九首（默认，七首原创钢琴加入对应场合轮换）
+##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
+##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
+##
+## glasshouse 的音轨放在 assets/music/glasshouse/ 子目录里，所以它的曲目 id 带一段路径
+## （"glasshouse/glasshouse_01_prologue"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
+## 每首都是整段无缝循环（混响尾巴已折回开头），所以一个场合只排一首、靠循环铺满，不轮换。
 ##
 ## 快捷键：F8 切换风格组 · F9 试听下一首（循环回自动）· F10 静音开关 · [ ] 调音量
 ##
@@ -50,6 +55,19 @@ const STYLE_SETS := {
 			"indoor": ["indoor_warm", "night_town"],
 			"battle": ["battle_tide"],
 			"hope": ["day_town", "night_town"],
+		},
+	},
+	"glasshouse": {
+		"name": "玻璃温室六首",
+		"tracks": {
+			# 六首是一条叙事弧：序章 → 相遇 → 思念 → 雨中 → 告白 → 告别。
+			# 每个场合只排一首，循环播放；告白那首是唯一的全奏高潮，给它战斗。
+			"title": "glasshouse/glasshouse_01_prologue",
+			"day": "glasshouse/glasshouse_02_meeting",
+			"indoor": "glasshouse/glasshouse_03_longing",
+			"night": "glasshouse/glasshouse_04_rain",
+			"battle": "glasshouse/glasshouse_05_confession",
+			"hope": "glasshouse/glasshouse_06_farewell",
 		},
 	},
 }
@@ -85,6 +103,14 @@ const CATALOG := {
 		["night_town", "灯塔与夜潮", "街区 · 夜晚"],
 		["indoor_warm", "暖灯小屋", "室内"],
 		["battle_tide", "潮汐试炼", "战斗"],
+	],
+	"glasshouse": [
+		["glasshouse/glasshouse_01_prologue", "玻璃温室的序章", "原创钢琴 + 弦乐 · 序章 / 标题"],
+		["glasshouse/glasshouse_02_meeting", "相遇的圆舞曲", "原创钢琴 + 弦乐 · 相遇 / 街区白天"],
+		["glasshouse/glasshouse_03_longing", "思念的形状", "原创钢琴 + 弦乐 · 思念 / 室内"],
+		["glasshouse/glasshouse_04_rain", "雨中的音乐盒", "原创钢琴 + 弦乐 · 雨中 / 街区夜晚"],
+		["glasshouse/glasshouse_05_confession", "告白，升一个全音", "原创钢琴 + 弦乐 · 高潮 / 潮汐试炼"],
+		["glasshouse/glasshouse_06_farewell", "告别与同主音", "原创钢琴 + 弦乐 · 告别 / 已通关"],
 	],
 }
 const MOOD_LABEL := {

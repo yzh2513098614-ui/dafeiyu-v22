@@ -52,7 +52,7 @@ func run() -> void:
  check(saved.get_value("audio","music","__absent__")==false,"music flag written to [audio]")
  check(is_equal_approx(float(saved.get_value("audio","music_volume",0.0)),0.75),"volume written to [audio]")
  check(str(saved.get_value("audio","music_style",""))=="harbor","style written to [audio]")
- check(saved.get_value("display","shadows","__absent__")!="__absent__","display flags still written to [display]")
+ check(saved.has_section_key("display","shadows"),"display flags still written to [display]")
 
  # ---------- 3. 往返：新格式能被自己读回 ----------
  var reloaded=load("res://ui/harbor_prefs.gd").new()
@@ -69,7 +69,7 @@ func run() -> void:
  check(not music.music_enabled(),"set_enabled(false) writes through to prefs")
  music.set_enabled(true)
  check(music.music_enabled(),"set_enabled(true) restores music")
- check(music.style_keys().size()==2,"both style sets are exposed")
+ check(music.style_keys().size()==3,"all three style sets are exposed")
  var style_home: String=music.style_key()
  music.set_style("harbor")
  check(music.style_key()=="harbor","set_style switches the style set")
@@ -78,6 +78,32 @@ func run() -> void:
  check(music.style_display_name("galgame")!="","style_display_name returns a readable label")
  var catalog: Array=music.catalog()
  check(catalog.size()>0 and catalog[0].has("id") and catalog[0].has("name") and catalog[0].has("use"),"catalog still exposes id/name/use for the gallery")
+
+ # ---------- 4b. 《玻璃温室》六首真的接进了 MusicDirector ----------
+ music.set_style("glasshouse")
+ var gh: Array=music.catalog()
+ check(gh.size()==6,"glasshouse catalog lists six tracks")
+ var missing: Array=[]
+ var seconds: Array=[]
+ for row in gh:
+  var sec: float=float(row["seconds"])
+  if sec<=0.0:missing.append(str(row["id"]))
+  seconds.append(sec)
+ check(missing.is_empty(),"all six glasshouse wavs are readable (missing: %s)"%[str(missing)])
+ check(seconds.min()>30.0 and seconds.max()<200.0,"glasshouse durations are sane: %s"%[JSON.stringify(seconds)])
+ var moods_missing: Array=[]
+ for mood in music.MOOD_ORDER:
+  if not music.STYLE_SETS["glasshouse"]["tracks"].has(mood):moods_missing.append(str(mood))
+ check(moods_missing.is_empty(),"glasshouse covers every mood (missing: %s)"%[str(moods_missing)])
+ # 真选一首播，确认播放头会推进（前面几步只证明「文件能读」，不证明「能播」）
+ music.set_enabled(true)
+ music.select_gallery(gh[3]["id"])
+ check(music.gallery_track()==str(gh[3]["id"]),"gallery accepts a glasshouse track id")
+ await frames(12)
+ var head: float=music._players[music._slot].get_playback_position()
+ check(head>0.0,"glasshouse track advances on the real player (%.2fs)"%[head])
+ music.exit_gallery()
+ music.set_style(style_home)
 
  # ---------- 5. 主菜单「音乐鉴赏」页的真控件 ----------
  prefs.values["music"]=true;prefs.music_volume=0.65;prefs.music_style="galgame";prefs.save()
