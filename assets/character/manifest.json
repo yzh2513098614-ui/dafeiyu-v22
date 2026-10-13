@@ -385,5 +385,6 @@
   "proportion_warp_by_direction": {},
   "palette_match_by_direction": {},
   "hair_gap_repair": "res://assets/character/download_walk_20261013/extraction.json",
-  "rear_foot_cleanup": "source-shoe protected shadow removal and enclosed leg-gap matte; fixed sole anchor"
+  "rear_foot_cleanup": "source-shoe protected shadow removal and enclosed leg-gap matte; fixed sole anchor",
+  "blink_config": "res://assets/character/blink_20261013/blink.json"
 }

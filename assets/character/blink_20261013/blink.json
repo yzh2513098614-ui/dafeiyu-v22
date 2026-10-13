@@ -1,0 +1,513 @@
+{
+  "interval_min": 5.5,
+  "interval_max": 8.5,
+  "closing_time": 0.07,
+  "closed_time": 0.12,
+  "opening_time": 0.09,
+  "variants": {
+    "res://assets/character/download_walk_20261013/down/walk_00.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_00.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_00.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_01.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_01.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_01.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_02.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_02.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_02.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_03.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_03.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_03.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_04.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_04.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_04.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_05.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_05.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_05.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_06.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_06.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_06.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_07.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_07.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_07.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_08.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_08.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_08.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_09.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_09.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_09.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_10.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_10.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_10.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_11.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_11.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_11.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_12.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_12.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_12.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_13.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_13.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_13.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_14.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_14.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_14.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_15.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_15.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_15.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_16.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_16.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_16.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_17.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_17.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_17.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_18.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_18.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_18.png"
+    },
+    "res://assets/character/download_walk_20261013/down/walk_19.png": {
+      "half": "res://assets/character/blink_20261013/half/down/walk_19.png",
+      "closed": "res://assets/character/blink_20261013/closed/down/walk_19.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_00.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_00.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_00.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_01.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_01.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_01.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_02.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_02.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_02.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_03.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_03.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_03.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_04.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_04.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_04.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_05.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_05.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_05.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_06.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_06.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_06.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_07.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_07.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_07.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_08.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_08.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_08.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_09.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_09.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_09.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_10.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_10.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_10.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_11.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_11.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_11.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_12.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_12.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_12.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_13.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_13.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_13.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_14.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_14.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_14.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_15.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_15.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_15.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_16.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_16.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_16.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_17.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_17.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_17.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_18.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_18.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_18.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_19.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_19.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_19.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_20.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_20.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_20.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_21.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_21.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_21.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_22.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_22.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_22.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_23.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_23.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_23.png"
+    },
+    "res://assets/character/download_walk_20261013/down_right/walk_24.png": {
+      "half": "res://assets/character/blink_20261013/half/down_right/walk_24.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_right/walk_24.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_00.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_00.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_00.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_01.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_01.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_01.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_02.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_02.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_02.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_03.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_03.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_03.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_04.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_04.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_04.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_05.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_05.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_05.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_06.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_06.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_06.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_07.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_07.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_07.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_08.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_08.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_08.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_09.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_09.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_09.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_10.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_10.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_10.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_11.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_11.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_11.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_12.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_12.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_12.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_13.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_13.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_13.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_14.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_14.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_14.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_15.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_15.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_15.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_16.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_16.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_16.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_17.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_17.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_17.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_18.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_18.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_18.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_19.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_19.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_19.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_20.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_20.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_20.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_21.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_21.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_21.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_22.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_22.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_22.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_23.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_23.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_23.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_24.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_24.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_24.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_25.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_25.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_25.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_26.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_26.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_26.png"
+    },
+    "res://assets/character/download_walk_20261013/right/walk_27.png": {
+      "half": "res://assets/character/blink_20261013/half/right/walk_27.png",
+      "closed": "res://assets/character/blink_20261013/closed/right/walk_27.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_00.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_00.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_00.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_01.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_01.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_01.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_02.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_02.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_02.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_03.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_03.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_03.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_04.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_04.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_04.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_05.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_05.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_05.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_06.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_06.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_06.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_07.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_07.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_07.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_08.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_08.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_08.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_09.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_09.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_09.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_10.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_10.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_10.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_11.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_11.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_11.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_12.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_12.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_12.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_13.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_13.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_13.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_14.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_14.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_14.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_15.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_15.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_15.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_16.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_16.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_16.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_17.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_17.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_17.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_18.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_18.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_18.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_19.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_19.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_19.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_20.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_20.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_20.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_21.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_21.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_21.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_22.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_22.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_22.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_23.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_23.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_23.png"
+    },
+    "res://assets/character/download_walk_20261013/down_left/walk_24.png": {
+      "half": "res://assets/character/blink_20261013/half/down_left/walk_24.png",
+      "closed": "res://assets/character/blink_20261013/closed/down_left/walk_24.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_00.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_00.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_00.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_01.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_01.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_01.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_02.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_02.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_02.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_03.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_03.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_03.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_04.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_04.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_04.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_05.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_05.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_05.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_06.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_06.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_06.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_07.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_07.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_07.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_08.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_08.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_08.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_09.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_09.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_09.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_10.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_10.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_10.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_11.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_11.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_11.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_12.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_12.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_12.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_13.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_13.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_13.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_14.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_14.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_14.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_15.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_15.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_15.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_16.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_16.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_16.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_17.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_17.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_17.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_18.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_18.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_18.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_19.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_19.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_19.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_20.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_20.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_20.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_21.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_21.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_21.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_22.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_22.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_22.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_23.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_23.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_23.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_24.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_24.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_24.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_25.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_25.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_25.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_26.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_26.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_26.png"
+    },
+    "res://assets/character/download_walk_20261013/left/walk_27.png": {
+      "half": "res://assets/character/blink_20261013/half/left/walk_27.png",
+      "closed": "res://assets/character/blink_20261013/closed/left/walk_27.png"
+    }
+  }
+}

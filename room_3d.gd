@@ -14,6 +14,7 @@ const Atmosphere = preload("res://atmosphere.gd")
 const CharacterSurface = preload("res://character/surface_profiles.gd")
 const CharacterProportions = preload("res://character/proportion_profiles.gd")
 const CharacterPalette = preload("res://character/palette_profiles.gd")
+const CharacterBlink = preload("res://character/blink_controller.gd")
 const CollisionSafety = preload("res://character/collision_safety.gd")
 var collision_recovery_pending:=true
 var collision_last_safe:=Vector3.ZERO
@@ -45,6 +46,7 @@ var facing_timer := 0.0
 var frames: SpriteFrames
 var character_manifest: Dictionary
 var character_material: ShaderMaterial
+var blink_controller
 var safe_matte_sources: Dictionary = {}
 var gait_phase := 0.0
 var gait_cycle_distance := 1.0
@@ -172,6 +174,24 @@ func _player() -> void:
  avatar.material_override=character_material
  avatar.animation_finished.connect(func():_set_character_pose(false))
  player.add_child(avatar);world.add_child(player);_reset_character_gait()
+ if character_manifest.has("blink_config"):
+  var settings: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(character_manifest.blink_config))
+  blink_controller=CharacterBlink.new();blink_controller.name="NaturalBlink";add_child(blink_controller)
+  blink_controller.configure(settings,Callable(self,"_update_character_material"))
+  world.child_entered_tree.connect(func(child: Node):
+   if child.name=="WhaleGuide":_attach_guide_blink.call_deferred(child))
+
+func _attach_guide_blink(guide) -> void:
+ if not is_instance_valid(guide):return # Travel may free a queued companion.
+ for child in guide.get_children():
+  if not child is Sprite3D:continue
+  var base: Texture2D=child.texture
+  var material: ShaderMaterial=child.material_override
+  var guide_blink=CharacterBlink.new();guide_blink.name="NaturalBlink";guide.add_child(guide_blink)
+  guide_blink.configure(blink_controller.config,func():
+   var picture: Texture2D=guide_blink.texture_for(base)
+   child.texture=picture;material.set_shader_parameter("character_atlas",picture))
+  return
 
 func _floor() -> void:
  if not floor_mesh:
@@ -1090,7 +1110,9 @@ func _set_character_pose(walking: bool) -> void:
 func _update_character_material() -> void:
  if not character_material:return
  var frame_texture: Texture2D=frames.get_frame_texture(avatar.animation,avatar.frame)
- character_material.set_shader_parameter("character_atlas",frame_texture.atlas if frame_texture is AtlasTexture else frame_texture)
+ var displayed_texture: Texture2D=frame_texture.atlas if frame_texture is AtlasTexture else frame_texture
+ if blink_controller:displayed_texture=blink_controller.texture_for(displayed_texture)
+ character_material.set_shader_parameter("character_atlas",displayed_texture)
  var repair: Dictionary = safe_matte_sources.get(frame_texture, {})
  character_material.set_shader_parameter("safe_matte_enabled", not repair.is_empty())
  character_material.set_shader_parameter("edge_ink_enabled",not character_manifest.get("runtime_matte_baked",false))
