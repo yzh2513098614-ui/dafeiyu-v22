@@ -127,6 +127,9 @@ func _pose(sprite: Sprite3D,direction: String,data: Dictionary) -> void:
  if not sprite.material_override:
   var material:=ShaderMaterial.new();material.shader=load("res://character/character_depth.gdshader");sprite.material_override=material
  var material: ShaderMaterial=sprite.material_override
+ # Saved preview materials may contain lighting values from an older shader.
+ for key in ["illumination_gain","direct_light_limit","illustration_fill"]:
+  material.set_shader_parameter(key,null)
  material.set_shader_parameter("character_atlas",sprite.texture)
  material.set_shader_parameter("edge_ink_enabled",false)
  Surface.apply(material,direction,data.get("surface_profiles_by_direction",{}).get(direction,{}),frame_index,true)

@@ -128,9 +128,9 @@ void fragment() {
  ROUGHNESS = mix(.94,.70,hair_satin);
  METALLIC = 0.0;
  SPECULAR = 0.0;
- // Gentle pigment-coloured fill lifts painted midtones without washing out
- // dark outlines; the scene's direct lighting and shadows remain active.
- EMISSION = ALBEDO * illustration_fill;
+ // Painted characters receive the scene's light, without a separate glow.
+ // illustration_fill is added in light() and follows attenuation and shadows.
+ EMISSION = vec3(0.0);
  // Forward soles belong to the floor plane. Preserve their screen position
  // while assigning their floor depth, so they cannot sink below the mesh.
  vec3 point = sprite_world;
@@ -156,7 +156,7 @@ void fragment() {
 void light() {
  float ndl = max(dot(NORMAL, LIGHT), 0.0);
  float wrap = LIGHT_IS_DIRECTIONAL ? 0.45 : 0.28;
- float diffuse = wrap + (1.0 - wrap) * ndl;
+ float diffuse = wrap + (1.0 - wrap) * ndl + illustration_fill;
  // A pigment-coloured satin response is deliberately small. Skin and apron
  // stay matte; the real light and its shadow drive the hair highlight.
  vec3 half_light=normalize(LIGHT+VIEW);

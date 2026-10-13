@@ -8,7 +8,7 @@ static func apply(material: ShaderMaterial,direction: String,manifest: Dictionar
   material.set_shader_parameter(key,Vector3(value[0],value[1],value[2]))
  material.set_shader_parameter("hair_palette_strength",profile.get("hair_palette_strength",0.0))
  material.set_shader_parameter("skin_palette_strength",profile.get("skin_palette_strength",0.0))
- material.set_shader_parameter("soft_contour_strength",profile.get("contour_strength",.42))
- material.set_shader_parameter("soft_contour_width",profile.get("contour_width",1.8))
- var colour: Array=profile.get("contour_colour",[.10,.15,.22])
- material.set_shader_parameter("soft_contour_colour",Vector3(colour[0],colour[1],colour[2]))
+ # All directions use the shared shader contour, including saved editor materials.
+ # Clearing overrides restores shader defaults instead of copying stale values.
+ for key in ["soft_contour_strength","soft_contour_width","soft_contour_colour"]:
+  material.set_shader_parameter(key,null)
