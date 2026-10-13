@@ -1,6 +1,6 @@
 extends SceneTree
 
-const OUT := "res://预览/战斗布局重排_20261013/"
+const OUT := "res://预览/角色与能量底框_20261013/"
 var screen
 var engine
 var failures := 0
@@ -74,6 +74,14 @@ func capture(tag: String) -> void:
 	check(slot.intent.visible and not slot.intent.text.is_empty(), tag + " enemy intent beside portrait")
 	check(not screen.tactics_box.visible, tag + " target info no longer splits battlefield")
 	check(not art_rect.intersects(screen.dash.portrait_frame.get_global_rect()), tag + " player and enemy portraits separate")
+	var dock_rect: Rect2 = screen.dash.dock.get_global_rect()
+	check(dock_rect.encloses(screen.dash.portrait_frame.get_global_rect()) and dock_rect.encloses(screen.dash.name.get_global_rect()), tag + " portrait and name inside character frame")
+	for gauge in screen.dash.gauges:
+		var tile_rect: Rect2 = gauge.group.get_node("StatusTile").get_global_rect()
+		check(dock_rect.encloses(tile_rect) and tile_rect.encloses(gauge.value.get_global_rect()), tag + " resource value inside nested frame")
+	var energy_frame: Control = screen.card_panel.get_node("EnergyResourcesFrame")
+	check(energy_frame.get_global_rect().encloses(screen.card_panel.get_node("CardEnergyBadge").get_global_rect()), tag + " energy badge inside resource card")
+	check(energy_frame.get_node("DeckCountsFrame").get_global_rect().encloses(screen.card_counts.get_global_rect()), tag + " draw and discard counts inside frame")
 	for companion in screen.slots:
 		if companion.foe != null and str(companion.foe.kind) != "gpt6":
 			check(companion.bar_back.get_rect().end.y < screen.card_panel.position.y, tag + " companion HP clear of hand")
@@ -140,6 +148,14 @@ func run() -> void:
 	screen.queue_free()
 	await settle()
 	await open_battle(false, false)
+	engine.allies[0].block = 12345
+	engine.allies[0].shield = 1
+	engine.allies[0].haste = 1
+	engine.allies[0].bind = 1
+	screen._refresh_all()
+	await settle()
+	for icon in screen.dash.icons.values():
+		check(not icon.get_global_rect().intersects(screen.dash.block_badge.panel.get_global_rect()), "five-digit block clear of status icons")
 	check(not screen.tactics_box.visible and screen.card_panel.position.y > screen.slots[0].bar_back.get_rect().end.y, "ordinary encounter uses same battle hierarchy")
 	var rng_before: int = engine.rng.state
 	await click(screen.speed_button)

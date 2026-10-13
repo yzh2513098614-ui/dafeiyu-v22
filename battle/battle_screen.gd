@@ -1222,68 +1222,102 @@ func _card_overlay(panel: Panel, background: Color, radius: int = 16) -> void:
 	style.set_corner_radius_all(radius)
 	panel.add_theme_stylebox_override("panel", style)
 
-func _card_text(label: Label, font_size: int) -> void:
+func _hud_frame(panel: Panel, background: Color, radius: int = 24, inner: bool = false) -> void:
+	panel.set_script(null)
+	var style := StyleBoxFlat.new()
+	style.bg_color = background
+	style.border_color = Color("93a5cc") if inner else Color("53648d")
+	style.set_border_width_all(1 if inner else 3)
+	style.set_corner_radius_all(radius)
+	style.shadow_color = Color(0.12, 0.18, 0.33, 0.22)
+	style.shadow_size = 0 if inner else 3
+	style.shadow_offset = Vector2(0, 4)
+	panel.add_theme_stylebox_override("panel", style)
+
+func _hud_text(label: Label, font_size: int) -> void:
 	label.add_theme_font_size_override("font_size", font_size)
-	label.add_theme_color_override("font_color", Color("f0f5ff"))
-	label.add_theme_color_override("font_outline_color", Color("24314d"))
-	label.add_theme_constant_override("outline_size", 3)
+	label.add_theme_color_override("font_color", Color("293f52"))
+	label.add_theme_constant_override("outline_size", 0)
 
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
-	_card_overlay(dash.dock, Color.TRANSPARENT)
-	_card_overlay(dash.portrait_frame, Color.TRANSPARENT)
-	_card_overlay(title_plate, Color(0.12, 0.17, 0.29, 0.72))
-	_card_overlay(phase_plate, Color(0.11, 0.31, 0.36, 0.9))
-	_card_overlay(log_box, Color(0.12, 0.17, 0.29, 0.65), 10)
-	_card_overlay(card_panel.get_node("CardEnergyBadge"), Color(0.12, 0.17, 0.29, 0.9), 52)
+	_hud_frame(dash.dock, Color("b5c4e9"))
+	_hud_frame(dash.portrait_frame, Color("dbeafd"), 18, true)
+	_hud_frame(title_plate, Color("465580"), 14)
+	_hud_frame(phase_plate, Color("4ad9c5"), 14)
+	_hud_frame(log_box, Color("dce5fb"), 10, true)
+	_hud_frame(card_panel.get_node("CardEnergyBadge"), Color("465580"), 52)
+	var resources := Panel.new()
+	resources.name = "EnergyResourcesFrame"
+	resources.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	card_panel.add_child(resources)
+	card_panel.move_child(resources, 0)
+	_hud_frame(resources, Color("b5c4e9"), 20)
+	var counts_frame := Panel.new()
+	counts_frame.name = "DeckCountsFrame"
+	counts_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	resources.add_child(counts_frame)
+	_hud_frame(counts_frame, Color("d9e3fa"), 12, true)
 	log_box.get_node("LogCaption").hide()
 	tactics_box.hide()
-	_card_text(dash.name, 24)
-	_card_text(phase_label, 20)
-	_card_text(card_counts, 17)
+	_hud_text(dash.name, 24)
+	_hud_text(phase_label, 20)
+	_hud_text(card_counts, 18)
 	for gauge in dash.gauges:
-		gauge.group.get_node("StatusTile").hide()
-		_card_text(gauge.title, 20)
-		_card_text(gauge.value, 20)
+		var tile: Panel = gauge.group.get_node("StatusTile")
+		tile.show()
+		_hud_frame(tile, Color("d9e3fa"), 12, true)
+		_hud_text(gauge.title, 20)
+		_hud_text(gauge.value, 20)
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock
-	UiFit.pin_left(dock, 320, 64, 520, 278)
-	dash.portrait_frame.position = Vector2(34, -250)
-	dash.portrait_frame.size = Vector2(252, 252)
-	dash.portrait.position = Vector2(10, 10)
-	dash.portrait.size = Vector2(232, 232)
-	dash.name.position = Vector2(0, 20)
-	dash.name.size = Vector2(320, 34)
+	UiFit.pin_left(dock, 360, 40, 252, 560)
+	dash.portrait_frame.position = Vector2(16, 16)
+	dash.portrait_frame.size = Vector2(328, 248)
+	dash.portrait.position = Vector2(42, 2)
+	dash.portrait.size = Vector2(244, 244)
+	dash.name.position = Vector2(16, 276)
+	dash.name.size = Vector2(328, 34)
+	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(0, 62)
-	dash.status_icons.position = Vector2(190, 68)
+	dash.block_badge.panel.position = Vector2(16, 320)
+	dash.status_icons.position = Vector2(202, 326)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
 		icon.position = Vector2(i * 28, 0)
 		icon.size = Vector2(24, 24)
 	for i in dash.gauges.size():
 		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.position = Vector2(0, 110 + i * 54)
-		gauge.group.size = Vector2(320, 48)
+		gauge.group.position = Vector2(16, 370 + i * 54)
+		gauge.group.size = Vector2(328, 48)
+		var tile: Panel = gauge.group.get_node("StatusTile")
+		tile.position = Vector2(-6, -4)
+		tile.size = Vector2(340, 54)
 		gauge.icon.position = Vector2(0, 0)
 		gauge.icon.size = Vector2(24, 24)
 		gauge.title.position = Vector2(32, -2)
 		gauge.title.size = Vector2(76, 28)
 		gauge.value.position = Vector2(116, -2)
-		gauge.value.size = Vector2(204, 28)
+		gauge.value.size = Vector2(212, 28)
 		gauge.back.position = Vector2(0, 30)
-		gauge.back.size = Vector2(320, 16)
+		gauge.back.size = Vector2(328, 16)
 
 func _layout_card_hand() -> void:
 	if card_panel == null:
 		return
 	UiFit.pin_wide(card_panel, 24, 24, 822, 244)
 	var w := card_panel.size.x
+	var resources: Panel = card_panel.get_node("EnergyResourcesFrame")
+	resources.position = Vector2(4, 8)
+	resources.size = Vector2(148, 224)
+	var counts_frame: Panel = resources.get_node("DeckCountsFrame")
+	counts_frame.position = Vector2(10, 152)
+	counts_frame.size = Vector2(128, 62)
 	card_scroll.position = Vector2(180, 12)
 	card_scroll.size = Vector2(w - 400, 230)
 	var energy_badge: Panel = card_panel.get_node("CardEnergyBadge")
-	energy_badge.position = Vector2(24, 66)
+	energy_badge.position = Vector2(26, 34)
 	energy_badge.size = Vector2(104, 104)
 	var energy_icon: TextureRect = energy_badge.get_node("CardEnergyIcon")
 	energy_icon.position = Vector2(40, 10)
@@ -1294,13 +1328,13 @@ func _layout_card_hand() -> void:
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	caption.add_theme_font_size_override("font_size", 16)
 	caption.add_theme_color_override("font_color", Color("eaf1ff"))
-	card_energy_label.position = Vector2(24, 99)
+	card_energy_label.position = Vector2(26, 67)
 	card_energy_label.size = Vector2(104, 40)
 	card_energy_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	card_energy_label.add_theme_font_size_override("font_size", 30)
 	card_energy_label.add_theme_color_override("font_color", Color("ffe071"))
-	card_counts.position = Vector2(0, 188)
-	card_counts.size = Vector2(156, 54)
+	card_counts.position = Vector2(14, 164)
+	card_counts.size = Vector2(128, 54)
 	card_counts.autowrap_mode = TextServer.AUTOWRAP_OFF
 	card_counts.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var action_x := w - 196
@@ -1714,6 +1748,8 @@ func _refresh_ally() -> void:
 	dash["name"].text = "%s  ·  Lv.%d" % [str(ally.name), int(ally.level)]
 	var marks: Array = []
 	_set_block_badge(dash.block_badge,float(visible_ally.get("block",0)),true)
+	if engine.card_mode:
+		dash.status_icons.position.x = 16 + dash.block_badge.panel.size.x + 12
 	if int(visible_ally.shield) > 0:
 		marks.append("护盾 %d 回合" % int(visible_ally.shield))
 	if int(visible_ally.haste) > 0:
@@ -2633,7 +2669,7 @@ func _append_log(text: String, color: String = "") -> void:
 	# 而这些颜色压在同样浅的纸色面板（#fffdf7）上对比度极低，几乎读不出来。
 	# 那不是配色品味问题，是对比度不够 —— 颜色不该同时干「装饰」和「传达语义」两件事。
 	var bar := "#7c8ba8" if color == "" else "#" + color
-	var ink := "#f0f5ff" if engine != null and engine.card_mode else "#293f52"
+	var ink := "#293f52"
 	var line := "[color=%s]▌[/color] [color=%s]%s[/color]" % [bar, ink, text]
 	log_lines.append(line)
 	while log_lines.size() > MAX_LOG_LINES:
