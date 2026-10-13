@@ -1,7 +1,7 @@
 extends RefCounted
 ## Native editable scenes + immutable baselines. Only visual deltas reach live controls.
 const DIRECTORY="res://ui/design/"
-const DECORATION_SCRIPTS=["res://ui/ocean_menu_backdrop.gd","res://ui/ocean_menu_panel.gd","res://ui/ocean_menu_button.gd","res://ui/handheld_panel.gd","res://dialogue/reference_panel.gd"]
+const DECORATION_SCRIPTS=["res://ui/ocean_menu_backdrop.gd","res://ui/ocean_menu_panel.gd","res://ui/ocean_menu_button.gd","res://ui/handheld_panel.gd"]
 const IGNORED=["script","owner","name","unique_name_in_owner","process_mode","process_priority","process_physics_priority","visible","disabled","button_pressed","value","text","bbcode_enabled","scroll_horizontal","scroll_vertical","selected","mouse_filter","focus_mode","mouse_default_cursor_shape","tooltip_text"]
 static var resource_cache:Dictionary={}
 static var fingerprint_cache:Dictionary={}
