@@ -9,9 +9,6 @@
     "right",
     "down_right"
   ],
-  "baked_source_manifest": "res://assets/character/jimeng_v24/source_manifest.json",
-  "border_cleanup": "native alpha edge color bleed, exterior rim cleanup, fixed foot re-registration; no resize or body deformation",
-  "border_cleanup_source_manifest": "res://assets/character/jimeng_v21/source_manifest.json",
   "canvas_size": [
     1024.0,
     1152.0
@@ -27,14 +24,14 @@
     "walk": 12.0
   },
   "frame_counts_by_direction": {
-    "down": 12.0,
-    "down_left": 12.0,
-    "down_right": 12.0,
-    "left": 16.0,
-    "right": 13.0,
-    "up": 12.0,
-    "up_left": 26,
-    "up_right": 26
+    "down": 20,
+    "up": 24,
+    "right": 28,
+    "down_right": 25,
+    "up_right": 32,
+    "left": 28,
+    "down_left": 25,
+    "up_left": 32
   },
   "frame_size": [
     1024.0,
@@ -43,449 +40,348 @@
   "frames_by_state": {
     "idle": {
       "down": [
-        "res://assets/character/jimeng_v24/down/walk_03.png"
-      ],
-      "down_left": [
-        "res://assets/character/jimeng_v24/down_left/walk_04.png"
-      ],
-      "down_right": [
-        "res://assets/character/jimeng_v24/down_right/walk_04.png"
-      ],
-      "left": [
-        "res://assets/character/jimeng_v24/left/walk_01.png"
-      ],
-      "right": [
-        "res://assets/character/jimeng_v24/right/walk_10.png"
+        "res://assets/character/download_walk_20261013/down/walk_01.png"
       ],
       "up": [
-        "res://assets/character/jimeng_v24/up/walk_01.png"
+        "res://assets/character/download_walk_20261013/up/walk_01.png"
       ],
-      "up_left": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_09.png"
+      "right": [
+        "res://assets/character/download_walk_20261013/right/walk_17.png"
+      ],
+      "down_right": [
+        "res://assets/character/download_walk_20261013/down_right/walk_14.png"
       ],
       "up_right": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_09.png"
+        "res://assets/character/download_walk_20261013/up_right/walk_02.png"
+      ],
+      "left": [
+        "res://assets/character/download_walk_20261013/left/walk_17.png"
+      ],
+      "down_left": [
+        "res://assets/character/download_walk_20261013/down_left/walk_14.png"
+      ],
+      "up_left": [
+        "res://assets/character/download_walk_20261013/up_left/walk_02.png"
       ]
     },
     "interact": {
       "down": [
-        "res://assets/character/jimeng_v24/down/walk_03.png"
-      ],
-      "down_left": [
-        "res://assets/character/jimeng_v24/down_left/walk_04.png"
-      ],
-      "down_right": [
-        "res://assets/character/jimeng_v24/down_right/walk_04.png"
-      ],
-      "left": [
-        "res://assets/character/jimeng_v24/left/walk_01.png"
-      ],
-      "right": [
-        "res://assets/character/jimeng_v24/right/walk_10.png"
+        "res://assets/character/download_walk_20261013/down/walk_01.png"
       ],
       "up": [
-        "res://assets/character/jimeng_v24/up/walk_01.png"
+        "res://assets/character/download_walk_20261013/up/walk_01.png"
       ],
-      "up_left": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_09.png"
+      "right": [
+        "res://assets/character/download_walk_20261013/right/walk_17.png"
+      ],
+      "down_right": [
+        "res://assets/character/download_walk_20261013/down_right/walk_14.png"
       ],
       "up_right": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_09.png"
+        "res://assets/character/download_walk_20261013/up_right/walk_02.png"
+      ],
+      "left": [
+        "res://assets/character/download_walk_20261013/left/walk_17.png"
+      ],
+      "down_left": [
+        "res://assets/character/download_walk_20261013/down_left/walk_14.png"
+      ],
+      "up_left": [
+        "res://assets/character/download_walk_20261013/up_left/walk_02.png"
       ]
     },
     "walk": {
       "down": [
-        "res://assets/character/jimeng_v24/down/walk_00.png",
-        "res://assets/character/jimeng_v24/down/walk_01.png",
-        "res://assets/character/jimeng_v24/down/walk_02.png",
-        "res://assets/character/jimeng_v24/down/walk_03.png",
-        "res://assets/character/jimeng_v24/down/walk_04.png",
-        "res://assets/character/jimeng_v24/down/walk_05.png",
-        "res://assets/character/jimeng_v24/down/walk_06.png",
-        "res://assets/character/jimeng_v24/down/walk_07.png",
-        "res://assets/character/jimeng_v24/down/walk_08.png",
-        "res://assets/character/jimeng_v24/down/walk_09.png",
-        "res://assets/character/jimeng_v24/down/walk_10.png",
-        "res://assets/character/jimeng_v24/down/walk_11.png"
-      ],
-      "down_left": [
-        "res://assets/character/jimeng_v24/down_left/walk_00.png",
-        "res://assets/character/jimeng_v24/down_left/walk_01.png",
-        "res://assets/character/jimeng_v24/down_left/walk_02.png",
-        "res://assets/character/jimeng_v24/down_left/walk_03.png",
-        "res://assets/character/jimeng_v24/down_left/walk_04.png",
-        "res://assets/character/jimeng_v24/down_left/walk_05.png",
-        "res://assets/character/jimeng_v24/down_left/walk_06.png",
-        "res://assets/character/jimeng_v24/down_left/walk_07.png",
-        "res://assets/character/jimeng_v24/down_left/walk_08.png",
-        "res://assets/character/jimeng_v24/down_left/walk_09.png",
-        "res://assets/character/jimeng_v24/down_left/walk_10.png",
-        "res://assets/character/jimeng_v24/down_left/walk_11.png"
-      ],
-      "down_right": [
-        "res://assets/character/jimeng_v24/down_right/walk_00.png",
-        "res://assets/character/jimeng_v24/down_right/walk_01.png",
-        "res://assets/character/jimeng_v24/down_right/walk_02.png",
-        "res://assets/character/jimeng_v24/down_right/walk_03.png",
-        "res://assets/character/jimeng_v24/down_right/walk_04.png",
-        "res://assets/character/jimeng_v24/down_right/walk_05.png",
-        "res://assets/character/jimeng_v24/down_right/walk_06.png",
-        "res://assets/character/jimeng_v24/down_right/walk_07.png",
-        "res://assets/character/jimeng_v24/down_right/walk_08.png",
-        "res://assets/character/jimeng_v24/down_right/walk_09.png",
-        "res://assets/character/jimeng_v24/down_right/walk_10.png",
-        "res://assets/character/jimeng_v24/down_right/walk_11.png"
-      ],
-      "left": [
-        "res://assets/character/jimeng_v24/left/walk_00.png",
-        "res://assets/character/jimeng_v24/left/walk_01.png",
-        "res://assets/character/jimeng_v24/left/walk_02.png",
-        "res://assets/character/jimeng_v24/left/walk_03.png",
-        "res://assets/character/jimeng_v24/left/walk_04.png",
-        "res://assets/character/jimeng_v24/left/walk_05.png",
-        "res://assets/character/jimeng_v24/left/walk_06.png",
-        "res://assets/character/jimeng_v24/left/walk_07.png",
-        "res://assets/character/jimeng_v24/left/walk_08.png",
-        "res://assets/character/jimeng_v24/left/walk_09.png",
-        "res://assets/character/jimeng_v24/left/walk_10.png",
-        "res://assets/character/jimeng_v24/left/walk_11.png",
-        "res://assets/character/jimeng_v24/left/walk_12.png",
-        "res://assets/character/jimeng_v24/left/walk_13.png",
-        "res://assets/character/jimeng_v24/left/walk_14.png",
-        "res://assets/character/jimeng_v24/left/walk_15.png"
-      ],
-      "right": [
-        "res://assets/character/jimeng_v24/right/walk_00.png",
-        "res://assets/character/jimeng_v24/right/walk_01.png",
-        "res://assets/character/jimeng_v24/right/walk_02.png",
-        "res://assets/character/jimeng_v24/right/walk_03.png",
-        "res://assets/character/jimeng_v24/right/walk_04.png",
-        "res://assets/character/jimeng_v24/right/walk_05.png",
-        "res://assets/character/jimeng_v24/right/walk_06.png",
-        "res://assets/character/jimeng_v24/right/walk_07.png",
-        "res://assets/character/jimeng_v24/right/walk_08.png",
-        "res://assets/character/jimeng_v24/right/walk_09.png",
-        "res://assets/character/jimeng_v24/right/walk_10.png",
-        "res://assets/character/jimeng_v24/right/walk_11.png",
-        "res://assets/character/jimeng_v24/right/walk_12.png"
+        "res://assets/character/download_walk_20261013/down/walk_00.png",
+        "res://assets/character/download_walk_20261013/down/walk_01.png",
+        "res://assets/character/download_walk_20261013/down/walk_02.png",
+        "res://assets/character/download_walk_20261013/down/walk_03.png",
+        "res://assets/character/download_walk_20261013/down/walk_04.png",
+        "res://assets/character/download_walk_20261013/down/walk_05.png",
+        "res://assets/character/download_walk_20261013/down/walk_06.png",
+        "res://assets/character/download_walk_20261013/down/walk_07.png",
+        "res://assets/character/download_walk_20261013/down/walk_08.png",
+        "res://assets/character/download_walk_20261013/down/walk_09.png",
+        "res://assets/character/download_walk_20261013/down/walk_10.png",
+        "res://assets/character/download_walk_20261013/down/walk_11.png",
+        "res://assets/character/download_walk_20261013/down/walk_12.png",
+        "res://assets/character/download_walk_20261013/down/walk_13.png",
+        "res://assets/character/download_walk_20261013/down/walk_14.png",
+        "res://assets/character/download_walk_20261013/down/walk_15.png",
+        "res://assets/character/download_walk_20261013/down/walk_16.png",
+        "res://assets/character/download_walk_20261013/down/walk_17.png",
+        "res://assets/character/download_walk_20261013/down/walk_18.png",
+        "res://assets/character/download_walk_20261013/down/walk_19.png"
       ],
       "up": [
-        "res://assets/character/jimeng_v24/up/walk_00.png",
-        "res://assets/character/jimeng_v24/up/walk_01.png",
-        "res://assets/character/jimeng_v24/up/walk_02.png",
-        "res://assets/character/jimeng_v24/up/walk_03.png",
-        "res://assets/character/jimeng_v24/up/walk_04.png",
-        "res://assets/character/jimeng_v24/up/walk_05.png",
-        "res://assets/character/jimeng_v24/up/walk_06.png",
-        "res://assets/character/jimeng_v24/up/walk_07.png",
-        "res://assets/character/jimeng_v24/up/walk_08.png",
-        "res://assets/character/jimeng_v24/up/walk_09.png",
-        "res://assets/character/jimeng_v24/up/walk_10.png",
-        "res://assets/character/jimeng_v24/up/walk_11.png"
+        "res://assets/character/download_walk_20261013/up/walk_00.png",
+        "res://assets/character/download_walk_20261013/up/walk_01.png",
+        "res://assets/character/download_walk_20261013/up/walk_02.png",
+        "res://assets/character/download_walk_20261013/up/walk_03.png",
+        "res://assets/character/download_walk_20261013/up/walk_04.png",
+        "res://assets/character/download_walk_20261013/up/walk_05.png",
+        "res://assets/character/download_walk_20261013/up/walk_06.png",
+        "res://assets/character/download_walk_20261013/up/walk_07.png",
+        "res://assets/character/download_walk_20261013/up/walk_08.png",
+        "res://assets/character/download_walk_20261013/up/walk_09.png",
+        "res://assets/character/download_walk_20261013/up/walk_10.png",
+        "res://assets/character/download_walk_20261013/up/walk_11.png",
+        "res://assets/character/download_walk_20261013/up/walk_12.png",
+        "res://assets/character/download_walk_20261013/up/walk_13.png",
+        "res://assets/character/download_walk_20261013/up/walk_14.png",
+        "res://assets/character/download_walk_20261013/up/walk_15.png",
+        "res://assets/character/download_walk_20261013/up/walk_16.png",
+        "res://assets/character/download_walk_20261013/up/walk_17.png",
+        "res://assets/character/download_walk_20261013/up/walk_18.png",
+        "res://assets/character/download_walk_20261013/up/walk_19.png",
+        "res://assets/character/download_walk_20261013/up/walk_20.png",
+        "res://assets/character/download_walk_20261013/up/walk_21.png",
+        "res://assets/character/download_walk_20261013/up/walk_22.png",
+        "res://assets/character/download_walk_20261013/up/walk_23.png"
       ],
-      "up_left": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_00.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_01.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_02.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_03.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_04.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_05.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_06.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_07.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_08.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_09.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_10.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_11.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_12.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_13.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_14.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_15.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_16.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_17.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_18.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_19.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_20.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_21.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_22.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_23.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_24.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_left/walk_25.png"
+      "right": [
+        "res://assets/character/download_walk_20261013/right/walk_00.png",
+        "res://assets/character/download_walk_20261013/right/walk_01.png",
+        "res://assets/character/download_walk_20261013/right/walk_02.png",
+        "res://assets/character/download_walk_20261013/right/walk_03.png",
+        "res://assets/character/download_walk_20261013/right/walk_04.png",
+        "res://assets/character/download_walk_20261013/right/walk_05.png",
+        "res://assets/character/download_walk_20261013/right/walk_06.png",
+        "res://assets/character/download_walk_20261013/right/walk_07.png",
+        "res://assets/character/download_walk_20261013/right/walk_08.png",
+        "res://assets/character/download_walk_20261013/right/walk_09.png",
+        "res://assets/character/download_walk_20261013/right/walk_10.png",
+        "res://assets/character/download_walk_20261013/right/walk_11.png",
+        "res://assets/character/download_walk_20261013/right/walk_12.png",
+        "res://assets/character/download_walk_20261013/right/walk_13.png",
+        "res://assets/character/download_walk_20261013/right/walk_14.png",
+        "res://assets/character/download_walk_20261013/right/walk_15.png",
+        "res://assets/character/download_walk_20261013/right/walk_16.png",
+        "res://assets/character/download_walk_20261013/right/walk_17.png",
+        "res://assets/character/download_walk_20261013/right/walk_18.png",
+        "res://assets/character/download_walk_20261013/right/walk_19.png",
+        "res://assets/character/download_walk_20261013/right/walk_20.png",
+        "res://assets/character/download_walk_20261013/right/walk_21.png",
+        "res://assets/character/download_walk_20261013/right/walk_22.png",
+        "res://assets/character/download_walk_20261013/right/walk_23.png",
+        "res://assets/character/download_walk_20261013/right/walk_24.png",
+        "res://assets/character/download_walk_20261013/right/walk_25.png",
+        "res://assets/character/download_walk_20261013/right/walk_26.png",
+        "res://assets/character/download_walk_20261013/right/walk_27.png"
+      ],
+      "down_right": [
+        "res://assets/character/download_walk_20261013/down_right/walk_00.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_01.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_02.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_03.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_04.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_05.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_06.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_07.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_08.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_09.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_10.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_11.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_12.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_13.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_14.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_15.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_16.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_17.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_18.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_19.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_20.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_21.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_22.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_23.png",
+        "res://assets/character/download_walk_20261013/down_right/walk_24.png"
       ],
       "up_right": [
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_00.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_01.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_02.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_03.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_04.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_05.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_06.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_07.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_08.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_09.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_10.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_11.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_12.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_13.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_14.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_15.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_16.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_17.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_18.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_19.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_20.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_21.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_22.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_23.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_24.png",
-        "res://assets/character/diagonal_skin_cleanup_20261013/up_right/walk_25.png"
+        "res://assets/character/download_walk_20261013/up_right/walk_00.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_01.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_02.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_03.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_04.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_05.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_06.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_07.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_08.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_09.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_10.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_11.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_12.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_13.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_14.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_15.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_16.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_17.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_18.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_19.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_20.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_21.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_22.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_23.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_24.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_25.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_26.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_27.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_28.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_29.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_30.png",
+        "res://assets/character/download_walk_20261013/up_right/walk_31.png"
+      ],
+      "left": [
+        "res://assets/character/download_walk_20261013/left/walk_00.png",
+        "res://assets/character/download_walk_20261013/left/walk_01.png",
+        "res://assets/character/download_walk_20261013/left/walk_02.png",
+        "res://assets/character/download_walk_20261013/left/walk_03.png",
+        "res://assets/character/download_walk_20261013/left/walk_04.png",
+        "res://assets/character/download_walk_20261013/left/walk_05.png",
+        "res://assets/character/download_walk_20261013/left/walk_06.png",
+        "res://assets/character/download_walk_20261013/left/walk_07.png",
+        "res://assets/character/download_walk_20261013/left/walk_08.png",
+        "res://assets/character/download_walk_20261013/left/walk_09.png",
+        "res://assets/character/download_walk_20261013/left/walk_10.png",
+        "res://assets/character/download_walk_20261013/left/walk_11.png",
+        "res://assets/character/download_walk_20261013/left/walk_12.png",
+        "res://assets/character/download_walk_20261013/left/walk_13.png",
+        "res://assets/character/download_walk_20261013/left/walk_14.png",
+        "res://assets/character/download_walk_20261013/left/walk_15.png",
+        "res://assets/character/download_walk_20261013/left/walk_16.png",
+        "res://assets/character/download_walk_20261013/left/walk_17.png",
+        "res://assets/character/download_walk_20261013/left/walk_18.png",
+        "res://assets/character/download_walk_20261013/left/walk_19.png",
+        "res://assets/character/download_walk_20261013/left/walk_20.png",
+        "res://assets/character/download_walk_20261013/left/walk_21.png",
+        "res://assets/character/download_walk_20261013/left/walk_22.png",
+        "res://assets/character/download_walk_20261013/left/walk_23.png",
+        "res://assets/character/download_walk_20261013/left/walk_24.png",
+        "res://assets/character/download_walk_20261013/left/walk_25.png",
+        "res://assets/character/download_walk_20261013/left/walk_26.png",
+        "res://assets/character/download_walk_20261013/left/walk_27.png"
+      ],
+      "down_left": [
+        "res://assets/character/download_walk_20261013/down_left/walk_00.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_01.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_02.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_03.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_04.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_05.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_06.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_07.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_08.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_09.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_10.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_11.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_12.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_13.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_14.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_15.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_16.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_17.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_18.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_19.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_20.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_21.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_22.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_23.png",
+        "res://assets/character/download_walk_20261013/down_left/walk_24.png"
+      ],
+      "up_left": [
+        "res://assets/character/download_walk_20261013/up_left/walk_00.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_01.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_02.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_03.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_04.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_05.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_06.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_07.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_08.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_09.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_10.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_11.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_12.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_13.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_14.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_15.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_16.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_17.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_18.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_19.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_20.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_21.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_22.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_23.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_24.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_25.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_26.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_27.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_28.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_29.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_30.png",
+        "res://assets/character/download_walk_20261013/up_left/walk_31.png"
       ]
     }
   },
-  "generated_extraction": "res://assets/character/jimeng_v20/generated_extraction.json",
   "generated_source_sequences": {},
   "ground": [
     512.0,
     1080.0
   ],
-  "inner_matte": "Video-source neutral hair openings and leg gaps only; RGB and all generated directions unchanged",
-  "inner_matte_source_manifest": "res://assets/character/jimeng_v22/source_manifest.json",
-  "mask_note": "Explicit per-frame alpha masks; original size and sequence; no runtime colour key or erosion. Ink baked once, disable runtime ink.",
-  "method": "native_complete_frames_baked_alpha_masks_and_blue_ink",
-  "note": "Source artwork retained separately. Full character pictures only; RGB inside retained silhouette unchanged. Transparent RGB prepared for linear sampling.",
+  "mask_note": "Offline connected studio matte and boundary colour unmix; opaque costume RGB retained; no runtime key or outline",
+  "method": "download_video_complete_rgba_frames_fixed_registration",
+  "note": "Five source videos, three explicitly mirrored directions; complete native frames, fixed ground registration and rear-clip linear horizontal drift correction, no pose synthesis",
   "pixel_size": 0.0022,
   "provenance": {
-    "down": "video",
-    "down_left": "video",
-    "down_right": "video",
-    "left": "video",
-    "right": "video",
-    "up": "video",
-    "up_left": "user upLeft.mp4, native 24 fps complete video frames, fixed green-screen alpha",
-    "up_right": "exact native RGBA horizontal mirror of user upLeft.mp4 video frames"
+    "down": "user video 01_front.mp4",
+    "up": "user video 02_back.mp4",
+    "right": "user video 04_right.mp4",
+    "down_right": "user video 06_front_right.mp4",
+    "up_right": "user video 08_back_right.mp4",
+    "left": "RGBA horizontal mirror of right",
+    "down_left": "RGBA horizontal mirror of down_right",
+    "up_left": "RGBA horizontal mirror of up_right"
   },
   "runtime_matte_baked": true,
-  "source_video": "res://art_source/jimeng_20261001/source_video.mp4",
-  "version": 13,
-  "video_extraction": "res://assets/character/jimeng_v20/video_extraction.json",
-  "walk_fps": 12.0,
-  "white_fringe": "Trim 4.6px around newly cleared studio holes, decontaminate opaque edge colours and transparent RGB bleed",
-  "white_fringe_source_manifest": "res://assets/character/jimeng_v23/source_manifest.json",
+  "version": 14,
+  "video_extraction": "res://assets/character/download_walk_20261013/extraction.json",
+  "walk_fps": 24,
   "pixel_size_by_direction": {
-    "up_left": 0.0037219047619047618,
-    "up_right": 0.0037219047619047618
+    "down": 0.0026046285018270408,
+    "up": 0.0020250000000000003,
+    "right": 0.0027468208092485554,
+    "down_right": 0.00271715374841169,
+    "up_right": 0.0030901734104046247,
+    "left": 0.0027468208092485554,
+    "down_left": 0.00271715374841169,
+    "up_left": 0.0030901734104046247
   },
   "walk_fps_by_direction": {
-    "up_left": 24,
-    "up_right": 24
+    "down": 24,
+    "up": 24,
+    "right": 24,
+    "down_right": 24,
+    "up_right": 24,
+    "left": 24,
+    "down_left": 24,
+    "up_left": 24
   },
   "video_extraction_by_direction": {
-    "up_left": "res://assets/character/up_left_video_20261010/extraction.json",
-    "up_right": "res://assets/character/up_right_mirror_20261010/extraction.json"
+    "down": "res://assets/character/download_walk_20261013/extraction.json",
+    "up": "res://assets/character/download_walk_20261013/extraction.json",
+    "right": "res://assets/character/download_walk_20261013/extraction.json",
+    "down_right": "res://assets/character/download_walk_20261013/extraction.json",
+    "up_right": "res://assets/character/download_walk_20261013/extraction.json",
+    "left": "res://assets/character/download_walk_20261013/extraction.json",
+    "down_left": "res://assets/character/download_walk_20261013/extraction.json",
+    "up_left": "res://assets/character/download_walk_20261013/extraction.json"
   },
-  "surface_profiles_by_direction": {
-    "up_left": {
-      "head": [
-        0.504,
-        0.592,
-        0.112,
-        0.108
-      ],
-      "body": [
-        0.48,
-        0.809,
-        0.103,
-        0.089
-      ],
-      "tail": [
-        0.598,
-        0.869,
-        0.106,
-        0.07
-      ],
-      "face": [
-        0.412,
-        0.621,
-        0.029,
-        0.037
-      ],
-      "head_split": [
-        0.68,
-        0.75
-      ],
-      "hair_split": [
-        0.71,
-        0.8
-      ],
-      "tail_split": [
-        0.8,
-        0.85
-      ],
-      "edge_surface_maps": [
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_00.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_01.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_02.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_03.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_04.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_05.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_06.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_07.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_08.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_09.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_10.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_11.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_12.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_13.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_14.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_15.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_16.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_17.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_18.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_19.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_20.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_21.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_22.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_23.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_24.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_left_25.png"
-      ],
-      "edge_surface_strength": 1.0,
-      "edge_vignette_strength": 0.24
-    },
-    "up_right": {
-      "head": [
-        0.496,
-        0.592,
-        0.112,
-        0.108
-      ],
-      "body": [
-        0.52,
-        0.809,
-        0.103,
-        0.089
-      ],
-      "tail": [
-        0.402,
-        0.869,
-        0.106,
-        0.07
-      ],
-      "face": [
-        0.5880000000000001,
-        0.621,
-        0.029,
-        0.037
-      ],
-      "head_split": [
-        0.68,
-        0.75
-      ],
-      "hair_split": [
-        0.71,
-        0.8
-      ],
-      "tail_split": [
-        0.8,
-        0.85
-      ],
-      "edge_surface_maps": [
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_00.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_01.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_02.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_03.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_04.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_05.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_06.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_07.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_08.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_09.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_10.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_11.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_12.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_13.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_14.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_15.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_16.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_17.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_18.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_19.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_20.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_21.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_22.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_23.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_24.png",
-        "res://assets/character/diagonal_edge_surface_20261012/up_right_25.png"
-      ],
-      "edge_surface_strength": 1.0,
-      "edge_vignette_strength": 0.24
-    }
-  },
+  "surface_profiles_by_direction": {},
   "mirrored_directions": {
-    "up_right": "up_left"
+    "left": "right",
+    "down_left": "down_right",
+    "up_left": "up_right"
   },
-  "proportion_warp_by_direction": {
-    "down": {
-      "enabled": true,
-      "head_end": 0.5,
-      "head_height": 0.18,
-      "head_width": 0.18,
-      "crown_compression": 0.064,
-      "head_drop": 0.035,
-      "top_padding": 0.04,
-      "body_end": 0.82,
-      "body_extension": 0.022,
-      "leg_extension": 0.008,
-      "body_width": 0.18,
-      "skirt_width": 0.06,
-      "method": "continuous full-picture UV remap, unchanged head width and total height, compressed crown with head extended downwards and shorter body, smooth shoulder transition and fixed original foot row; original RGBA images unchanged"
-    }
-  },
-  "palette_match_by_direction": {
-    "up_left": {
-      "contour_colour": [
-        0.055,
-        0.075,
-        0.16
-      ],
-      "contour_strength": 0.12,
-      "contour_width": 0.8,
-      "enabled": false,
-      "hair_palette_gamma": [
-        1.0,
-        1.0,
-        1.0
-      ],
-      "hair_palette_strength": 0.0,
-      "method": "six-direction sampled material colour ramps baked into all full-picture frames; no repeated runtime gamma correction",
-      "skin_palette_gamma": [
-        1.0,
-        1.0,
-        1.0
-      ],
-      "skin_palette_strength": 0.0
-    },
-    "up_right": {
-      "contour_colour": [
-        0.055,
-        0.075,
-        0.16
-      ],
-      "contour_strength": 0.12,
-      "contour_width": 0.8,
-      "enabled": false,
-      "hair_palette_gamma": [
-        1.0,
-        1.0,
-        1.0
-      ],
-      "hair_palette_strength": 0.0,
-      "method": "six-direction sampled material colour ramps baked into all full-picture frames; no repeated runtime gamma correction",
-      "skin_palette_gamma": [
-        1.0,
-        1.0,
-        1.0
-      ],
-      "skin_palette_strength": 0.0
-    }
-  }
+  "proportion_warp_by_direction": {},
+  "palette_match_by_direction": {}
 }
