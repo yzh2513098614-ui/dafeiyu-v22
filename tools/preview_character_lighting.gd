@@ -18,6 +18,9 @@ func comparison(tag: String, hour: float) -> void:
 	game.facing="down";game._set_character_pose(false)
 	game.avatar.pause()
 	var material: ShaderMaterial=game.character_material
+	var source: Texture2D=game.frames.get_frame_texture(game.avatar.animation,game.avatar.frame)
+	assert(source.resource_path.begins_with("res://assets/character/download_walk_20261013/"),"Preview must use the new character frames")
+	print("CHARACTER SOURCE ",source.resource_path," SHADER ",material.shader.resource_path)
 	material.set_shader_parameter("illumination_gain",1.25)
 	material.set_shader_parameter("direct_light_limit",0.80)
 	material.set_shader_parameter("illustration_fill",0.0)
@@ -40,7 +43,12 @@ func capture() -> void:
 	prefs.values.music=false;prefs.values.sfx=false;prefs.values.ambience=false
 	game=load("res://district/continuous_world.tscn").instantiate()
 	root.add_child(game);current_scene=game
+	# Let deferred guide setup finish before replacing the starting map.
+	for i in 2:await process_frame
 	game.set_process(false)
+	if game.blink_controller:
+		game.blink_controller.set_process(false)
+		game.blink_controller.phase="open"
 	await comparison("日间",12)
 	await comparison("夜间",22)
 	quit()
