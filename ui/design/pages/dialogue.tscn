@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/tasks.png" id="17_0vblw"]
 [ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="18_cdd3u"]
 [ext_resource type="Script" path="res://ui/handheld_panel.gd" id="19_q2cxl"]
-[ext_resource type="Texture2D" path="res://assets/dialogue/whale_clean_generated_20261013.png" id="20_x5427"]
+[ext_resource type="Texture2D" path="res://assets/dialogue/downloaded_20261014/transparent/01_listen.png" id="20_x5427"]
 
 [ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
 

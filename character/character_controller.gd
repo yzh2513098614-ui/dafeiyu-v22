@@ -42,7 +42,7 @@ func configure(owner_game) -> void:
    game.loot.inventory[id]=mini(9999,int(game.loot.inventory.get(id,0))+int(model.balance.starter[id]))
   if not game.loot.save_state():message="初始补给尚未保存，请使用菜单保存。";dirty=true
  game.loot._bag_count();last_position=game.player.position
- portrait_texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/dialogue/listen_original.png"))
+ portrait_texture=load("res://assets/dialogue/downloaded_20261014/transparent/01_listen.png") as Texture2D
  hud=WhaleStyle.panel(game.district_canvas,Vector2(48,196),Vector2(450,230))
  hud.name="WorldVitals";hud.add_theme_stylebox_override("panel",preload("res://ui/world_hud_skin.gd").frame())
  level_label=WhaleStyle.label(hud,"",Vector2(14,9),Vector2(263,32),22)

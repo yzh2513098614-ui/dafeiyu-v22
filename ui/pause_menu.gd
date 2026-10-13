@@ -18,7 +18,7 @@ var portrait_texture: Texture2D
 
 func configure(owner_game) -> void:
  game=owner_game
- portrait_texture=ImageTexture.create_from_image(Image.load_from_file("res://assets/dialogue/listen_original.png"))
+ portrait_texture=load("res://assets/dialogue/downloaded_20261014/transparent/01_listen.png") as Texture2D
  layer=CanvasLayer.new();layer.layer=60;add_child(layer)
  root=Control.new();root.size=Vector2(1448,1086);root.mouse_filter=Control.MOUSE_FILTER_STOP;root.theme=UiStyle.theme(game._game_font());root.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;layer.add_child(root)
  UiFit.fill(root)

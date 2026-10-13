@@ -1,147 +1,317 @@
 {
-  "method": "original_resolution_rgba",
-  "source": "res://assets/dialogue/whale_clean_generated_20261013.png",
-  "source_size": [
-    1144,
-    1375
-  ],
-  "frame_size": [
-    1144,
-    1375
-  ],
-  "downsampled": false,
-  "resized": false,
-  "textures": {
-    "listen": "res://assets/dialogue/whale_clean_generated_20261013.png",
-    "talk": "res://assets/dialogue/whale_clean_generated_20261013.png",
-    "think": "res://assets/dialogue/variants_20261013/think.png",
-    "shy": "res://assets/dialogue/variants_20261013/shy.png",
-    "concern": "res://assets/dialogue/variants_20261013/concern.png",
-    "side_welcome": "res://assets/dialogue/variants_20261013/side_welcome.png",
-    "pout": "res://assets/dialogue/variants_20261013/pout.png",
-    "relief": "res://assets/dialogue/variants_20261013/relief.png",
-    "happy": "res://assets/dialogue/variants_20261013/happy.png",
-    "surprise": "res://assets/dialogue/variants_20261013/surprise.png"
-  },
-  "variants": {
-    "think": {
-      "title": "认真思考",
-      "texture": "res://assets/dialogue/variants_20261013/think.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "分析问题、回忆来历、提出问题",
-      "nodes": [
-        "welcome/about2",
-        "harbor/name",
-        "home/question",
-        "cafe/books",
-        "desk/hello",
-        "books/hello",
-        "small_thing/ask"
-      ]
-    },
-    "shy": {
-      "title": "害羞感谢",
-      "texture": "res://assets/dialogue/variants_20261013/shy.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "聊昵称、亲近的感谢",
-      "nodes": [
-        "harbor/name2"
-      ]
-    },
-    "concern": {
-      "title": "担忧提醒",
-      "texture": "res://assets/dialogue/variants_20261013/concern.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "回应疲惫、安慰害怕失败",
-      "nodes": [
-        "home/rest",
-        "desk/afraid"
-      ]
-    },
-    "side_welcome": {
-      "title": "斜侧身欢迎",
-      "texture": "res://assets/dialogue/variants_20261013/side_welcome.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "初次迎接、邀请坐下、旅舍欢迎",
-      "nodes": [
-        "welcome/hello",
-        "cafe/hello",
-        "inn/hello"
-      ]
-    },
-    "happy": {
-      "title": "开心说话",
-      "texture": "res://assets/dialogue/variants_20261013/happy.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "称赞尝试、记录小快乐",
-      "nodes": [
-        "plant/leaf",
-        "books/retry",
-        "small_thing/happy"
-      ]
-    },
-    "surprise": {
-      "title": "惊讶发现",
-      "texture": "res://assets/dialogue/variants_20261013/surprise.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "发现新叶、意外变化",
-      "nodes": [
-        "plant/hello"
-      ]
-    },
-    "pout": {
-      "title": "轻微不满",
-      "texture": "res://assets/dialogue/variants_20261013/pout.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "玩笑式抱怨等待太久",
-      "nodes": [
-        "cafe/tea"
-      ]
-    },
-    "relief": {
-      "title": "安心微笑",
-      "texture": "res://assets/dialogue/variants_20261013/relief.png",
-      "source_size": [
-        1144,
-        1375
-      ],
-      "resized": false,
-      "when": "休息、平安确认、温柔陪伴",
-      "nodes": [
-        "home/question2",
-        "home/end",
-        "bed/rest",
-        "plant/grow",
-        "seat/end"
-      ]
-    }
-  }
+    "method":  "script_white_background_extraction",
+    "source":  "res://assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+    "source_size":  [
+                        1086,
+                        1448
+                    ],
+    "frame_size":  [
+                       1086,
+                       1448
+                   ],
+    "downsampled":  false,
+    "resized":  false,
+    "textures":  {
+                     "listen":  "res://assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+                     "kiss":  "res://assets/dialogue/downloaded_20261014/transparent/02_kiss.png",
+                     "talk":  "res://assets/dialogue/downloaded_20261014/transparent/03_talk.png",
+                     "think":  "res://assets/dialogue/downloaded_20261014/transparent/04_think.png",
+                     "relief":  "res://assets/dialogue/downloaded_20261014/transparent/05_relief.png",
+                     "shy":  "res://assets/dialogue/downloaded_20261014/transparent/06_shy.png",
+                     "expectant":  "res://assets/dialogue/downloaded_20261014/transparent/07_expectant.png",
+                     "cheer":  "res://assets/dialogue/downloaded_20261014/transparent/08_cheer.png",
+                     "happy":  "res://assets/dialogue/downloaded_20261014/transparent/09_happy.png",
+                     "concern":  "res://assets/dialogue/downloaded_20261014/transparent/10_concern.png",
+                     "side_welcome":  "res://assets/dialogue/downloaded_20261014/transparent/11_side_welcome.png",
+                     "pout":  "res://assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+                     "surprise":  "res://assets/dialogue/downloaded_20261014/transparent/04_think.png"
+                 },
+    "variants":  {
+                     "think":  {
+                                   "title":  "疑问思考",
+                                   "texture":  "res://assets/dialogue/downloaded_20261014/transparent/04_think.png",
+                                   "source_size":  [
+                                                       1024,
+                                                       1536
+                                                   ],
+                                   "resized":  false,
+                                   "when":  "分析问题、回忆来历、提出问题",
+                                   "nodes":  [
+                                                 "welcome/about2",
+                                                 "harbor/name",
+                                                 "home/question",
+                                                 "cafe/books",
+                                                 "desk/hello",
+                                                 "books/hello",
+                                                 "small_thing/ask"
+                                             ]
+                               },
+                     "shy":  {
+                                 "title":  "害羞低头",
+                                 "texture":  "res://assets/dialogue/downloaded_20261014/transparent/06_shy.png",
+                                 "source_size":  [
+                                                     1024,
+                                                     1536
+                                                 ],
+                                 "resized":  false,
+                                 "when":  "聊昵称、亲近的感谢",
+                                 "nodes":  [
+                                               "harbor/name2"
+                                           ]
+                             },
+                     "concern":  {
+                                     "title":  "哭泣难过",
+                                     "texture":  "res://assets/dialogue/downloaded_20261014/transparent/10_concern.png",
+                                     "source_size":  [
+                                                         1024,
+                                                         1536
+                                                     ],
+                                     "resized":  false,
+                                     "when":  "回应疲惫、安慰害怕失败",
+                                     "nodes":  [
+                                                   "home/rest",
+                                                   "desk/afraid"
+                                               ]
+                                 },
+                     "side_welcome":  {
+                                          "title":  "挥手欢迎",
+                                          "texture":  "res://assets/dialogue/downloaded_20261014/transparent/11_side_welcome.png",
+                                          "source_size":  [
+                                                              1086,
+                                                              1448
+                                                          ],
+                                          "resized":  false,
+                                          "when":  "初次迎接、邀请坐下、旅舍欢迎",
+                                          "nodes":  [
+                                                        "welcome/hello",
+                                                        "cafe/hello",
+                                                        "inn/hello"
+                                                    ]
+                                      },
+                     "happy":  {
+                                   "title":  "星星眼兴奋",
+                                   "texture":  "res://assets/dialogue/downloaded_20261014/transparent/09_happy.png",
+                                   "source_size":  [
+                                                       1024,
+                                                       1536
+                                                   ],
+                                   "resized":  false,
+                                   "when":  "称赞尝试、记录小快乐",
+                                   "nodes":  [
+                                                 "plant/leaf",
+                                                 "books/retry",
+                                                 "small_thing/happy"
+                                             ]
+                               },
+                     "surprise":  {
+                                      "title":  "疑问／惊讶（复用04）",
+                                      "texture":  "res://assets/dialogue/downloaded_20261014/transparent/04_think.png",
+                                      "source_size":  [
+                                                          1024,
+                                                          1536
+                                                      ],
+                                      "resized":  false,
+                                      "when":  "发现新叶、意外变化",
+                                      "nodes":  [
+                                                    "plant/hello"
+                                                ]
+                                  },
+                     "pout":  {
+                                  "title":  "认真／轻微不满（复用01）",
+                                  "texture":  "res://assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+                                  "source_size":  [
+                                                      1086,
+                                                      1448
+                                                  ],
+                                  "resized":  false,
+                                  "when":  "玩笑式抱怨等待太久",
+                                  "nodes":  [
+                                                "cafe/tea"
+                                            ]
+                              },
+                     "relief":  {
+                                    "title":  "点赞鼓励",
+                                    "texture":  "res://assets/dialogue/downloaded_20261014/transparent/05_relief.png",
+                                    "source_size":  [
+                                                        1024,
+                                                        1536
+                                                    ],
+                                    "resized":  false,
+                                    "when":  "休息、平安确认、温柔陪伴",
+                                    "nodes":  [
+                                                  "home/question2",
+                                                  "home/end",
+                                                  "bed/rest",
+                                                  "plant/grow",
+                                                  "seat/end"
+                                              ]
+                                }
+                 },
+    "image_index":  [
+                        {
+                            "id":  "01",
+                            "expression":  "listen",
+                            "title":  "认真倾听",
+                            "source_file":  "676a8d29-1c94-48e7-90c7-6298fef02220.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+                            "source_size":  [
+                                                1086,
+                                                1448
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/01_listen.png"
+                        },
+                        {
+                            "id":  "02",
+                            "expression":  "kiss",
+                            "title":  "比心眨眼",
+                            "source_file":  "41d88ef1-a938-45e9-8182-764dfaeeaf35.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/02_kiss.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/02_kiss.png"
+                        },
+                        {
+                            "id":  "03",
+                            "expression":  "talk",
+                            "title":  "指向说话",
+                            "source_file":  "7583c150-4de3-4ef9-82b6-2db9f0a0d20c.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/03_talk.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/03_talk.png"
+                        },
+                        {
+                            "id":  "04",
+                            "expression":  "think",
+                            "title":  "疑问思考",
+                            "source_file":  "a02b0751-ce04-4547-87b1-a9a365076e25.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/04_think.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/04_think.png"
+                        },
+                        {
+                            "id":  "05",
+                            "expression":  "relief",
+                            "title":  "点赞鼓励",
+                            "source_file":  "ecaae9b9-1754-4f49-9a78-0cb8ffa511cf.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/05_relief.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/05_relief.png"
+                        },
+                        {
+                            "id":  "06",
+                            "expression":  "shy",
+                            "title":  "害羞低头",
+                            "source_file":  "aac13722-0878-4fa3-a9c5-9d55ca463492.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/06_shy.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/06_shy.png"
+                        },
+                        {
+                            "id":  "07",
+                            "expression":  "expectant",
+                            "title":  "期待请求",
+                            "source_file":  "9dc3bf44-f8bd-405e-82fa-69a760248c62.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/07_expectant.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/07_expectant.png"
+                        },
+                        {
+                            "id":  "08",
+                            "expression":  "cheer",
+                            "title":  "闭眼欢呼",
+                            "source_file":  "d4a080a4-99fb-45ea-a386-2214428de0a9.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/08_cheer.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/08_cheer.png"
+                        },
+                        {
+                            "id":  "09",
+                            "expression":  "happy",
+                            "title":  "星星眼兴奋",
+                            "source_file":  "0bbe3344-786a-4baa-9d34-78ba11e0f9cf.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/09_happy.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/09_happy.png"
+                        },
+                        {
+                            "id":  "10",
+                            "expression":  "concern",
+                            "title":  "哭泣难过",
+                            "source_file":  "e4fae42c-bdbc-4028-b881-7ec8c41919ca.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/10_concern.png",
+                            "source_size":  [
+                                                1024,
+                                                1536
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/10_concern.png"
+                        },
+                        {
+                            "id":  "11",
+                            "expression":  "side_welcome",
+                            "title":  "挥手欢迎",
+                            "source_file":  "be2c9033-540b-44ed-ba6b-fc7daf98f6f3.png",
+                            "texture":  "res://assets/dialogue/downloaded_20261014/transparent/11_side_welcome.png",
+                            "source_size":  [
+                                                1086,
+                                                1448
+                                            ],
+                            "resized":  false,
+                            "cropped":  false,
+                            "background":  "transparent",
+                            "original_texture":  "res://assets/dialogue/downloaded_20261014/11_side_welcome.png"
+                        }
+                    ]
 }
