@@ -1,66 +1,19 @@
 {
- "downsampled": false,
- "extraction": [
-  {
-   "dest_position": [
-    22,
-    18
-   ],
-   "expression": "listen",
-   "pixel_scale": 1.0,
-   "pixels_copied": 290500,
-   "source_bounds": [
-    15,
-    2,
-    532,
-    1022
-   ]
-  },
-  {
-   "dest_position": [
-    16,
-    32
-   ],
-   "expression": "talk",
-   "pixel_scale": 1.0,
-   "pixels_copied": 293029,
-   "source_bounds": [
-    512,
-    16,
-    543,
-    1008
-   ]
-  },
-  {
-   "dest_position": [
-    32,
-    32
-   ],
-   "expression": "think",
-   "pixel_scale": 1.0,
-   "pixels_copied": 282233,
-   "source_bounds": [
-    1025,
-    16,
-    511,
-    1008
-   ]
-  }
- ],
- "frame_size": [
-  576,
-  1056
- ],
- "method": "original_resolution_rgba",
- "resized": false,
- "source": "res://assets/dialogue/portraits_original.png",
- "source_size": [
-  1536,
-  1024
- ],
- "textures": {
-  "listen": "res://assets/dialogue/listen_original.png",
-  "talk": "res://assets/dialogue/talk_original.png",
-  "think": "res://assets/dialogue/think_original.png"
- }
+    "method":  "original_resolution_rgba",
+    "source":  "res://assets/dialogue/whale_clean_generated_20261013.png",
+    "source_size":  [
+                        1144,
+                        1375
+                    ],
+    "frame_size":  [
+                       1144,
+                       1375
+                   ],
+    "downsampled":  false,
+    "resized":  false,
+    "textures":  {
+                     "listen":  "res://assets/dialogue/whale_clean_generated_20261013.png",
+                     "talk":  "res://assets/dialogue/whale_clean_generated_20261013.png",
+                     "think":  "res://assets/dialogue/whale_clean_generated_20261013.png"
+                 }
 }

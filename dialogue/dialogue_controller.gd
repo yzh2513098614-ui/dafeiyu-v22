@@ -1,6 +1,6 @@
 extends Node
 ## Data-driven visual-novel dialogue. The game only displays complete PNG portraits.
-const DialogueStyle=preload("res://dialogue/pixel_skin.gd")
+const DialogueStyle=preload("res://dialogue/reference_skin.gd")
 const UiFit=preload("res://ui/ui_fit.gd")
 const DB_PATH="res://dialogue/stories.json"
 var save_path:="user://whale_dialogue_v19.json"
@@ -60,9 +60,7 @@ func _portraits() -> void:
  var metadata: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/dialogue/portraits.json"))
  if metadata.has("textures"):
   for key in metadata.textures:
-   # Direct RGBA upload keeps original pixels and bypasses texture import resizing/compression.
-   var image:=Image.load_from_file(str(metadata.textures[key]))
-   if image:portrait_regions[key]=ImageTexture.create_from_image(image)
+   portrait_regions[key]=load(str(metadata.textures[key])) as Texture2D
   return
  var sheet: Texture2D=load(str(metadata.sheet))
  for key in metadata.regions:
@@ -77,28 +75,33 @@ func _build_ui() -> void:
  layer=CanvasLayer.new();layer.layer=50;add_child(layer)
  root=Control.new();root.size=Vector2(1448,1086);root.mouse_filter=Control.MOUSE_FILTER_STOP;root.theme=DialogueStyle.theme(game._game_font());root.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;layer.add_child(root)
  UiFit.fill(root)
- shade=ColorRect.new();shade.size=root.size;shade.color=Color(.09,.14,.24,.30);root.add_child(shade);shade.gui_input.connect(_click_advance)
+ shade=ColorRect.new();shade.size=root.size;shade.color=Color(.09,.10,.20,.12);root.add_child(shade);shade.gui_input.connect(_click_advance)
  UiFit.fill(shade)
- var context_plate:=DialogueStyle.panel(root,Vector2(73,42),Vector2(863,54),"nameplate")
- UiFit.pin_design(context_plate,73,42,863,54)
- location_text=DialogueStyle.label(context_plate,"",Vector2(17,11),Vector2(827,34),18,Color("edf0f5"))
- portrait=TextureRect.new();portrait.position=Vector2(801,97);portrait.size=Vector2(569,913);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(portrait)
- UiFit.pin_right(portrait,569,78,97,913)
+ var context_plate:=DialogueStyle.panel(root,Vector2(40,34),Vector2(660,48),"nameplate")
+ UiFit.pin_left(context_plate,660,40,34,48)
+ location_text=DialogueStyle.label(context_plate,"",Vector2(17,8),Vector2(626,32),18,Color("edf0f5"))
+ portrait=TextureRect.new();portrait.position=Vector2(801,97);portrait.size=Vector2(569,913);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(portrait)
+ UiFit.pin_center(portrait,950,30,1040)
  box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230),"screen");box.gui_input.connect(_click_advance)
- UiFit.pin_wide(box,72,72,794,230)
+ UiFit.pin_wide(box,18,18,755,313)
  # Nameplate overlaps the upper edge, as in SLG / galgame dialogue layouts.
- var nameplate:=DialogueStyle.panel(root,Vector2(102,759),Vector2(253,62),"speaker")
- speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(22,10),Vector2(213,39),25,DialogueStyle.INK)
+ var nameplate:=DialogueStyle.panel(root,Vector2(220,704),Vector2(350,76),"speaker")
+ speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(52,17),Vector2(254,43),27,DialogueStyle.INK)
+ speaker.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
  text_label=RichTextLabel.new();text_label.position=Vector2(37,35);text_label.size=Vector2(1201,115);text_label.bbcode_enabled=false;text_label.scroll_active=false;text_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text_label.add_theme_font_size_override("normal_font_size",27);text_label.add_theme_color_override("default_color",DialogueStyle.SkyStyle.CREAM);text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(text_label)
  # 对话框变宽后，正文与右下角按钮要跟着拉通/贴右边，否则文字只有一小条、按钮挤在中间
- UiFit.pin_wide(text_label,37,66,35,115)
+ UiFit.pin_wide(text_label,245,90,62,150)
+ text_label.add_theme_color_override("default_color",Color("edf0ff"))
+ text_label.add_theme_constant_override("line_separation",12)
  advance_hint=DialogueStyle.label(box,"",Vector2(37,165),Vector2(646,32),18,DialogueStyle.SkyStyle.MINT)
+ advance_hint.position=Vector2(245,259);advance_hint.size=Vector2(650,30)
+ advance_hint.add_theme_color_override("font_color",Color("afbcdf"))
  var b_log:=_button(box,"回看",Vector2(779,159),Vector2(103,48),func():show_backlog())
- UiFit.pin_right(b_log,103,422,159,48)
+ UiFit.pin_right(b_log,88,340,253,42)
  auto_button=_button(box,"自动：关",Vector2(894,159),Vector2(131,48),func():set_auto(not auto_play))
- UiFit.pin_right(auto_button,131,279,159,48)
+ UiFit.pin_right(auto_button,116,212,253,42)
  var b_next:=_button(box,"下一句 ▸",Vector2(1037,159),Vector2(138,48),func():advance())
- UiFit.pin_right(b_next,138,129,159,48)
+ UiFit.pin_right(b_next,142,58,253,42)
  portrait_button=_button(root,"收起立绘",Vector2(1169,46),Vector2(178,47),func():portrait_visible=not portrait_visible;portrait.visible=portrait_visible and speaker.text!="旁白";portrait_button.text="收起立绘" if portrait_visible else "展开立绘")
  UiFit.pin_right(portrait_button,178,101,46,47)
  var b_end:=_button(root,"结束对话",Vector2(965,46),Vector2(185,47),func():close())
@@ -226,7 +229,7 @@ func _show_line() -> void:
  choice_buttons.clear();choice_panel.hide()
  var choices: Array=current.get("choices",[])
  if not choices.is_empty():
-  choice_panel.size.y=75+choices.size()*65;choice_panel.position.y=740-choice_panel.size.y
+  choice_panel.size.y=75+choices.size()*65;choice_panel.position=Vector2(240,680-choice_panel.size.y)
   DialogueStyle.label(choice_panel,"你想怎么回应？",Vector2(24,13),Vector2(589,35),23)
   for i in choices.size():
    var index: int=i

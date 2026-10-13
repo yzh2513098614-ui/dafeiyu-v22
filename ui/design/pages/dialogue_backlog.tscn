@@ -1,30 +1,30 @@
 [gd_scene format=3]
 
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/attack.png" id="1_2pqpd"]
-[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_3364d"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/backpack.png" id="2_3364d"]
-[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/calendar.png" id="3_a2ril"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/chat.png" id="4_o70wa"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/deck.png" id="5_tjjpq"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/energy.png" id="6_6prch"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="7_aug3a"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/heal.png" id="8_ixsgb"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mail.png" id="9_qlaxc"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mana.png" id="10_w0y04"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/map.png" id="11_wxe30"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/music.png" id="12_ea3rf"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/settings.png" id="13_wj3vg"]
-[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/shell.png" id="14_q2udy"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shield.png" id="15_s44ds"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shop.png" id="16_mgyec"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/tasks.png" id="17_bweqf"]
-[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="18_ogpej"]
-[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="19_vgpt1"]
-[ext_resource type="Texture2D" path="res://ui/design/preview_assets/06efb43cc3dcdb75d614488112943dd64abda51fc7b2551bd16c9c54c1661596.png" id="20_bwwi7"]
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="1_f6idl"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/attack.png" id="2_h34wl"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/backpack.png" id="3_dxtet"]
+[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/calendar.png" id="4_45wvr"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/chat.png" id="5_br6y8"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/deck.png" id="6_c80a8"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/energy.png" id="7_sfx47"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="8_sx16e"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/heal.png" id="9_sar3j"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mail.png" id="10_0yrtb"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mana.png" id="11_ypjg5"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/map.png" id="12_pbomt"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/music.png" id="13_7rlof"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/settings.png" id="14_2wqjg"]
+[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/shell.png" id="15_6gjb6"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shield.png" id="16_3pi3q"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shop.png" id="17_oik7x"]
+[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/tasks.png" id="18_seqaq"]
+[ext_resource type="Script" path="res://dialogue/reference_panel.gd" id="19_prpsn"]
+[ext_resource type="Texture2D" path="res://assets/dialogue/whale_clean_generated_20261013.png" id="20_njej0"]
 
-[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+[sub_resource type="Theme" id="Theme_ensqo"]
+default_font = ExtResource("1_f6idl")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ensqo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prw51"]
 resource_name = "disabled"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -43,7 +43,7 @@ corner_radius_bottom_left = 14
 shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prw51"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfkio"]
 bg_color = Color(1, 1, 1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -59,27 +59,23 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfkio"]
-resource_name = "hover"
-content_margin_left = 12.0
-content_margin_top = 4.0
-content_margin_right = 12.0
-content_margin_bottom = 4.0
-bg_color = Color(0.8352941, 0.89411765, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-shadow_color = Color(0.12, 0.12, 0.27, 0.22)
-shadow_size = 2
-shadow_offset = Vector2(0, 4)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8yvn"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2509804, 0.29411766, 0.47058824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65882355, 0.72156864, 0.87058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsy8c"]
 resource_name = "pressed"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -99,27 +95,39 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsy8c"]
-resource_name = "button"
-content_margin_left = 12.0
-content_margin_top = 4.0
-content_margin_right = 12.0
-content_margin_bottom = 4.0
-bg_color = Color(0.7137255, 0.79607844, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-shadow_color = Color(0.12, 0.12, 0.27, 0.22)
-shadow_size = 2
-shadow_offset = Vector2(0, 4)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wy8rv"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.18039216, 0.21176471, 0.36862746, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65882355, 0.72156864, 0.87058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvorr"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2509804, 0.29411766, 0.47058824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65882355, 0.72156864, 0.87058824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3lj8"]
 resource_name = "bag"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -139,7 +147,27 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvorr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6qfd"]
+resource_name = "button"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7137255, 0.79607844, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4735r"]
 resource_name = "card"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -159,7 +187,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3lj8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q456"]
 resource_name = "chest"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -179,7 +207,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6qfd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydkce"]
 resource_name = "dark"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -199,7 +227,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4735r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pksav"]
 resource_name = "detail"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -219,7 +247,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q456"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fpen"]
 resource_name = "dialogue"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -239,7 +267,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 5
 shadow_offset = Vector2(0, 6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydkce"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpl28"]
 resource_name = "empty"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -258,7 +286,7 @@ corner_radius_bottom_left = 14
 shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pksav"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biebo"]
 resource_name = "focus"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -281,7 +309,7 @@ expand_margin_bottom = 3.0
 shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fpen"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo3ip"]
 resource_name = "gauge_track"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -300,7 +328,7 @@ corner_radius_bottom_left = 9
 shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpl28"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwi3o"]
 resource_name = "hand_tray"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -320,7 +348,27 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 5
 shadow_offset = Vector2(0, 6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biebo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rcv7"]
+resource_name = "hover"
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8352941, 0.89411765, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.12, 0.12, 0.27, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnghu"]
 resource_name = "mint"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -340,7 +388,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo3ip"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqr13"]
 resource_name = "nameplate"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -360,7 +408,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwi3o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8p28"]
 resource_name = "panel"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -380,7 +428,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 5
 shadow_offset = Vector2(0, 6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rcv7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ops6"]
 resource_name = "paper"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -400,7 +448,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnghu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsymf"]
 resource_name = "pink"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -420,7 +468,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqr13"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pka4f"]
 resource_name = "plate"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -440,7 +488,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8p28"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsg8q"]
 resource_name = "primary"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -460,7 +508,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ops6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4sm0"]
 resource_name = "primary_hover"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -480,7 +528,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsymf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl1ww"]
 resource_name = "primary_pressed"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -500,7 +548,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pka4f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7ua7"]
 resource_name = "quote"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -520,7 +568,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsg8q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6itlh"]
 resource_name = "screen"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -540,7 +588,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4sm0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hfp"]
 resource_name = "selected"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -560,7 +608,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl1ww"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46pmr"]
 resource_name = "shell"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -580,7 +628,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 5
 shadow_offset = Vector2(0, 6)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7ua7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jasny"]
 resource_name = "sky"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -600,7 +648,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6itlh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fpl8"]
 resource_name = "status"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -620,7 +668,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hfp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7k2d"]
 resource_name = "tag"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -640,7 +688,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46pmr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf6ph"]
 resource_name = "white"
 content_margin_left = 12.0
 content_margin_top = 4.0
@@ -660,7 +708,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jasny"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxg2e"]
 resource_name = "status"
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -676,7 +724,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fpl8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmxyc"]
 resource_name = "status"
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -692,7 +740,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7k2d"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mx7r"]
 bg_color = Color(1, 1, 1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -708,7 +756,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf6ph"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ul08"]
 resource_name = "status"
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -724,7 +772,7 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxg2e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av1as"]
 resource_name = "status"
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -740,79 +788,80 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="FontVariation" id="FontVariation_cmxyc"]
-base_font = ExtResource("18_ogpej")
+[sub_resource type="FontVariation" id="FontVariation_2hh4d"]
+base_font = ExtResource("1_f6idl")
 variation_opentype = {
 2003265652: 650.0
 }
 
-[sub_resource type="Theme" id="Theme_5mx7r"]
-default_font = SubResource("FontVariation_cmxyc")
+[sub_resource type="Theme" id="Theme_llokb"]
+default_font = SubResource("FontVariation_2hh4d")
 default_font_size = 22
-Button/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+Button/colors/font_color = Color(0.92941177, 0.9411765, 1, 1)
 Button/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
 Button/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-Button/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-Button/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-Button/styles/disabled = SubResource("StyleBoxFlat_ensqo")
-Button/styles/focus = SubResource("StyleBoxFlat_prw51")
-Button/styles/hover = SubResource("StyleBoxFlat_kfkio")
-Button/styles/hover_pressed = SubResource("StyleBoxFlat_m8yvn")
-Button/styles/normal = SubResource("StyleBoxFlat_fsy8c")
-Button/styles/pressed = SubResource("StyleBoxFlat_m8yvn")
-GameIcons/icons/attack = ExtResource("1_2pqpd")
-GameIcons/icons/backpack = ExtResource("2_3364d")
-GameIcons/icons/calendar = ExtResource("3_a2ril")
-GameIcons/icons/chat = ExtResource("4_o70wa")
-GameIcons/icons/deck = ExtResource("5_tjjpq")
-GameIcons/icons/energy = ExtResource("6_6prch")
-GameIcons/icons/gift = ExtResource("7_aug3a")
-GameIcons/icons/heal = ExtResource("8_ixsgb")
-GameIcons/icons/mail = ExtResource("9_qlaxc")
-GameIcons/icons/mana = ExtResource("10_w0y04")
-GameIcons/icons/map = ExtResource("11_wxe30")
-GameIcons/icons/music = ExtResource("12_ea3rf")
-GameIcons/icons/settings = ExtResource("13_wj3vg")
-GameIcons/icons/shell = ExtResource("14_q2udy")
-GameIcons/icons/shield = ExtResource("15_s44ds")
-GameIcons/icons/shop = ExtResource("16_mgyec")
-GameIcons/icons/tasks = ExtResource("17_bweqf")
-GameUI/styles/bag = SubResource("StyleBoxFlat_wy8rv")
-GameUI/styles/button = SubResource("StyleBoxFlat_fsy8c")
-GameUI/styles/card = SubResource("StyleBoxFlat_gvorr")
-GameUI/styles/chest = SubResource("StyleBoxFlat_r3lj8")
-GameUI/styles/dark = SubResource("StyleBoxFlat_c6qfd")
-GameUI/styles/detail = SubResource("StyleBoxFlat_4735r")
-GameUI/styles/dialogue = SubResource("StyleBoxFlat_2q456")
-GameUI/styles/disabled = SubResource("StyleBoxFlat_ensqo")
-GameUI/styles/empty = SubResource("StyleBoxFlat_ydkce")
-GameUI/styles/focus = SubResource("StyleBoxFlat_pksav")
-GameUI/styles/gauge_track = SubResource("StyleBoxFlat_3fpen")
-GameUI/styles/hand_tray = SubResource("StyleBoxFlat_rpl28")
-GameUI/styles/hover = SubResource("StyleBoxFlat_kfkio")
-GameUI/styles/mint = SubResource("StyleBoxFlat_biebo")
-GameUI/styles/nameplate = SubResource("StyleBoxFlat_xo3ip")
-GameUI/styles/panel = SubResource("StyleBoxFlat_fwi3o")
-GameUI/styles/paper = SubResource("StyleBoxFlat_5rcv7")
-GameUI/styles/pink = SubResource("StyleBoxFlat_jnghu")
-GameUI/styles/plate = SubResource("StyleBoxFlat_sqr13")
-GameUI/styles/pressed = SubResource("StyleBoxFlat_m8yvn")
-GameUI/styles/primary = SubResource("StyleBoxFlat_c8p28")
-GameUI/styles/primary_hover = SubResource("StyleBoxFlat_0ops6")
-GameUI/styles/primary_pressed = SubResource("StyleBoxFlat_wsymf")
-GameUI/styles/quote = SubResource("StyleBoxFlat_pka4f")
-GameUI/styles/screen = SubResource("StyleBoxFlat_lsg8q")
-GameUI/styles/selected = SubResource("StyleBoxFlat_x4sm0")
-GameUI/styles/shell = SubResource("StyleBoxFlat_hl1ww")
-GameUI/styles/sky = SubResource("StyleBoxFlat_v7ua7")
-GameUI/styles/status = SubResource("StyleBoxFlat_6itlh")
-GameUI/styles/tag = SubResource("StyleBoxFlat_x8hfp")
-GameUI/styles/white = SubResource("StyleBoxFlat_46pmr")
-HScrollBar/styles/grabber = SubResource("StyleBoxFlat_jasny")
-HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jasny")
-HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_jasny")
-HScrollBar/styles/scroll = SubResource("StyleBoxFlat_5fpl8")
-HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_5fpl8")
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 0.9529412, 0.7764706, 1)
+Button/font_sizes/font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_prw51")
+Button/styles/focus = SubResource("StyleBoxFlat_kfkio")
+Button/styles/hover = SubResource("StyleBoxFlat_m8yvn")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_fsy8c")
+Button/styles/normal = SubResource("StyleBoxFlat_wy8rv")
+Button/styles/pressed = SubResource("StyleBoxFlat_gvorr")
+GameIcons/icons/attack = ExtResource("2_h34wl")
+GameIcons/icons/backpack = ExtResource("3_dxtet")
+GameIcons/icons/calendar = ExtResource("4_45wvr")
+GameIcons/icons/chat = ExtResource("5_br6y8")
+GameIcons/icons/deck = ExtResource("6_c80a8")
+GameIcons/icons/energy = ExtResource("7_sfx47")
+GameIcons/icons/gift = ExtResource("8_sx16e")
+GameIcons/icons/heal = ExtResource("9_sar3j")
+GameIcons/icons/mail = ExtResource("10_0yrtb")
+GameIcons/icons/mana = ExtResource("11_ypjg5")
+GameIcons/icons/map = ExtResource("12_pbomt")
+GameIcons/icons/music = ExtResource("13_7rlof")
+GameIcons/icons/settings = ExtResource("14_2wqjg")
+GameIcons/icons/shell = ExtResource("15_6gjb6")
+GameIcons/icons/shield = ExtResource("16_3pi3q")
+GameIcons/icons/shop = ExtResource("17_oik7x")
+GameIcons/icons/tasks = ExtResource("18_seqaq")
+GameUI/styles/bag = SubResource("StyleBoxFlat_r3lj8")
+GameUI/styles/button = SubResource("StyleBoxFlat_c6qfd")
+GameUI/styles/card = SubResource("StyleBoxFlat_4735r")
+GameUI/styles/chest = SubResource("StyleBoxFlat_2q456")
+GameUI/styles/dark = SubResource("StyleBoxFlat_ydkce")
+GameUI/styles/detail = SubResource("StyleBoxFlat_pksav")
+GameUI/styles/dialogue = SubResource("StyleBoxFlat_3fpen")
+GameUI/styles/disabled = SubResource("StyleBoxFlat_prw51")
+GameUI/styles/empty = SubResource("StyleBoxFlat_rpl28")
+GameUI/styles/focus = SubResource("StyleBoxFlat_biebo")
+GameUI/styles/gauge_track = SubResource("StyleBoxFlat_xo3ip")
+GameUI/styles/hand_tray = SubResource("StyleBoxFlat_fwi3o")
+GameUI/styles/hover = SubResource("StyleBoxFlat_5rcv7")
+GameUI/styles/mint = SubResource("StyleBoxFlat_jnghu")
+GameUI/styles/nameplate = SubResource("StyleBoxFlat_sqr13")
+GameUI/styles/panel = SubResource("StyleBoxFlat_c8p28")
+GameUI/styles/paper = SubResource("StyleBoxFlat_0ops6")
+GameUI/styles/pink = SubResource("StyleBoxFlat_wsymf")
+GameUI/styles/plate = SubResource("StyleBoxFlat_pka4f")
+GameUI/styles/pressed = SubResource("StyleBoxFlat_fsy8c")
+GameUI/styles/primary = SubResource("StyleBoxFlat_lsg8q")
+GameUI/styles/primary_hover = SubResource("StyleBoxFlat_x4sm0")
+GameUI/styles/primary_pressed = SubResource("StyleBoxFlat_hl1ww")
+GameUI/styles/quote = SubResource("StyleBoxFlat_v7ua7")
+GameUI/styles/screen = SubResource("StyleBoxFlat_6itlh")
+GameUI/styles/selected = SubResource("StyleBoxFlat_x8hfp")
+GameUI/styles/shell = SubResource("StyleBoxFlat_46pmr")
+GameUI/styles/sky = SubResource("StyleBoxFlat_jasny")
+GameUI/styles/status = SubResource("StyleBoxFlat_5fpl8")
+GameUI/styles/tag = SubResource("StyleBoxFlat_c7k2d")
+GameUI/styles/white = SubResource("StyleBoxFlat_jf6ph")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_pxg2e")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_pxg2e")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_pxg2e")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_cmxyc")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_cmxyc")
 Label/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 Label/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
 Label/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
@@ -827,21 +876,21 @@ LineEdit/colors/font_placeholder_color = Color(0.4117647, 0.42745098, 0.5647059,
 LineEdit/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 LineEdit/colors/font_selected_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 LineEdit/colors/selection_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
-LineEdit/styles/focus = SubResource("StyleBoxFlat_x4sm0")
-LineEdit/styles/normal = SubResource("StyleBoxFlat_5rcv7")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_x8hfp")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_0ops6")
 OptionButton/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 OptionButton/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
 OptionButton/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 OptionButton/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 OptionButton/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-OptionButton/styles/disabled = SubResource("StyleBoxFlat_ensqo")
-OptionButton/styles/focus = SubResource("StyleBoxFlat_c7k2d")
-OptionButton/styles/hover = SubResource("StyleBoxFlat_kfkio")
-OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_m8yvn")
-OptionButton/styles/normal = SubResource("StyleBoxFlat_fsy8c")
-OptionButton/styles/pressed = SubResource("StyleBoxFlat_m8yvn")
-Panel/styles/panel = SubResource("StyleBoxFlat_fwi3o")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_fwi3o")
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_prw51")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_5mx7r")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_5rcv7")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_fsy8c")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_c6qfd")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_fsy8c")
+Panel/styles/panel = SubResource("StyleBoxFlat_c8p28")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_c8p28")
 RichTextLabel/colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 RichTextLabel/colors/font_disabled_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
 RichTextLabel/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
@@ -853,111 +902,145 @@ SpinBox/colors/font_focus_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 SpinBox/colors/font_hover_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 SpinBox/colors/font_pressed_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 VBoxContainer/constants/separation = 12
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_jf6ph")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_jf6ph")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_jf6ph")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_pxg2e")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_pxg2e")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_2ul08")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_2ul08")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_2ul08")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_av1as")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_av1as")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ul08"]
-content_margin_left = 12.0
-content_margin_top = 4.0
-content_margin_right = 12.0
-content_margin_bottom = 4.0
-bg_color = Color(0.8627451, 0.8980392, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-shadow_color = Color(0.12, 0.12, 0.27, 0.22)
-shadow_size = 2
-shadow_offset = Vector2(0, 4)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le6a7"]
+bg_color = Color(0.14509805, 0.16862746, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7176471, 0.65882355, 0.45882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="Theme" id="Theme_DesignPreview"]
-default_font = ExtResource("font_design_preview")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqkq4"]
+bg_color = Color(0.14509805, 0.16862746, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7176471, 0.65882355, 0.45882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[node name="UI_dialogue_backlog" type="Control" unique_id=1734386428]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rnbv"]
+bg_color = Color(0.94509804, 0.9411765, 0.98039216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7254902, 0.6745098, 0.8156863, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ln3q"]
+bg_color = Color(0.14509805, 0.16862746, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7176471, 0.65882355, 0.45882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0wph"]
+bg_color = Color(0.14509805, 0.16862746, 0.33333334, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7176471, 0.65882355, 0.45882353, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="UI_dialogue_backlog" type="Control" unique_id=160598634]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1448.0
 offset_bottom = 1086.0
 mouse_filter = 2
-theme = SubResource("Theme_DesignPreview")
+theme = SubResource("Theme_ensqo")
 metadata/design_page = "dialogue_backlog"
-metadata/design_title = "对话回看"
+metadata/design_title = "对话 · 示例排版"
 metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
 
-[node name="00_Control" type="Control" parent="." unique_id=1679915613]
+[node name="00_Control" type="Control" parent="." unique_id=2014004769]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_5mx7r")
+theme = SubResource("Theme_llokb")
 metadata/design_id = "."
 metadata/design_native_class = "Control"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_ColorRect" type="ColorRect" parent="00_Control" unique_id=589119398]
+[node name="00_ColorRect" type="ColorRect" parent="00_Control" unique_id=645208287]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.09, 0.14, 0.24, 0.3)
+color = Color(0.09, 0.1, 0.2, 0.12)
 metadata/design_id = "0"
 metadata/design_native_class = "ColorRect"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="01_Panel" type="Panel" parent="00_Control" unique_id=508578801]
-texture_filter = 2
+[node name="01_Panel" type="Panel" parent="00_Control" unique_id=1452238763]
 layout_mode = 0
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -651.0
-offset_top = 42.0
-offset_right = 212.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xo3ip")
-script = ExtResource("19_vgpt1")
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 700.0
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_le6a7")
+script = ExtResource("19_prpsn")
+role = "nameplate"
 metadata/design_id = "1"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_Label_鲸落港  _  云湾公寓  _  第" type="Label" parent="00_Control/01_Panel" unique_id=2022802757]
+[node name="00_Label_鲸落港  _  鲸落港  _  第一" type="Label" parent="00_Control/01_Panel" unique_id=1794608847]
 layout_mode = 0
 offset_left = 17.0
-offset_top = 11.0
-offset_right = 844.0
-offset_bottom = 45.0
+offset_top = 8.0
+offset_right = 643.0
+offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.92941177, 0.9411765, 0.9607843, 1)
 theme_override_font_sizes/font_size = 18
-text = "鲸落港  /  云湾公寓  /  第一次来到鲸落港"
+text = "鲸落港  /  鲸落港  /  第一次来到鲸落港"
 autowrap_mode = 3
 metadata/design_id = "1/0"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="02_TextureRect" type="TextureRect" parent="00_Control" unique_id=1191654658]
-texture_filter = 1
+[node name="02_TextureRect" type="TextureRect" parent="00_Control" unique_id=17730662]
+texture_filter = 2
 layout_mode = 0
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -647.0
-offset_top = 97.0
-offset_right = -78.0
-offset_bottom = 1010.0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -475.0
+offset_top = 30.0
+offset_right = 475.0
+offset_bottom = 1070.0
 mouse_filter = 2
-texture = ExtResource("20_bwwi7")
+texture = ExtResource("20_njej0")
 expand_mode = 1
 stretch_mode = 5
 metadata/design_id = "2"
@@ -965,128 +1048,130 @@ metadata/design_native_class = "TextureRect"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="03_Panel" type="Panel" parent="00_Control" unique_id=709491575]
-texture_filter = 2
+[node name="03_Panel" type="Panel" parent="00_Control" unique_id=2095110503]
 layout_mode = 0
 anchor_right = 1.0
-offset_left = 72.0
-offset_top = 794.0
-offset_right = -72.0
-offset_bottom = 1024.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_lsg8q")
-script = ExtResource("19_vgpt1")
+offset_left = 18.0
+offset_top = 755.0
+offset_right = -18.0
+offset_bottom = 1068.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqkq4")
+script = ExtResource("19_prpsn")
+role = "screen"
 metadata/design_id = "3"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_RichTextLabel" type="RichTextLabel" parent="00_Control/03_Panel" unique_id=453235444]
+[node name="00_RichTextLabel" type="RichTextLabel" parent="00_Control/03_Panel" unique_id=348855677]
 layout_mode = 0
 anchor_right = 1.0
-offset_left = 37.0
-offset_top = 35.0
-offset_right = -66.0
-offset_bottom = 150.0
+offset_left = 245.0
+offset_top = 62.0
+offset_right = -90.0
+offset_bottom = 212.0
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.91764706, 0.94509804, 1, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.9411765, 1, 1)
+theme_override_constants/line_separation = 12
 theme_override_font_sizes/normal_font_size = 27
-text = "你想先做什么？"
+text = "好，我在导览里标记了潮汐社区馆。顺着浅蓝圆环找到入口，靠近后按 E。里面有咖啡、旧书，也有能带走的补给。"
 scroll_active = false
 metadata/design_id = "3/0"
 metadata/design_native_class = "RichTextLabel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="01_Label_请点击选项，或按数字键 1—3" type="Label" parent="00_Control/03_Panel" unique_id=1010349122]
+[node name="01_Label_点击 _ E _ Enter _ S" type="Label" parent="00_Control/03_Panel" unique_id=1242160699]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 165.0
-offset_right = 683.0
-offset_bottom = 197.0
-theme_override_colors/font_color = Color(0.2901961, 0.8509804, 0.77254903, 1)
+offset_left = 245.0
+offset_top = 259.0
+offset_right = 895.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.6862745, 0.7372549, 0.8745098, 1)
 theme_override_font_sizes/font_size = 18
-text = "请点击选项，或按数字键 1—3"
+text = "点击 / E / Enter / Space 继续 · Esc 结束"
 autowrap_mode = 3
 metadata/design_id = "3/1"
 metadata/design_native_class = "Label"
-metadata/design_edit_text = false
+metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="02_Button_回看" type="Button" parent="00_Control/03_Panel" unique_id=287050907]
+[node name="02_Button_回看" type="Button" parent="00_Control/03_Panel" unique_id=1917539593]
 texture_filter = 1
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -525.0
-offset_top = 159.0
-offset_right = -422.0
-offset_bottom = 207.0
+offset_left = -428.0
+offset_top = 253.0
+offset_right = -340.0
+offset_bottom = 295.0
 text = "回看"
 metadata/design_id = "3/2"
 metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="03_Button_自动：关" type="Button" parent="00_Control/03_Panel" unique_id=1234436935]
+[node name="03_Button_自动：开" type="Button" parent="00_Control/03_Panel" unique_id=677829869]
 texture_filter = 1
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -410.0
-offset_top = 159.0
-offset_right = -279.0
-offset_bottom = 207.0
-text = "自动：关"
+offset_left = -328.0
+offset_top = 253.0
+offset_right = -212.0
+offset_bottom = 295.0
+text = "自动：开"
 metadata/design_id = "3/3"
 metadata/design_native_class = "Button"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="04_Button_下一句 ▸" type="Button" parent="00_Control/03_Panel" unique_id=619313796]
+[node name="04_Button_下一句 ▸" type="Button" parent="00_Control/03_Panel" unique_id=2137406068]
 texture_filter = 1
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -267.0
-offset_top = 159.0
-offset_right = -129.0
-offset_bottom = 207.0
+offset_left = -200.0
+offset_top = 253.0
+offset_right = -58.0
+offset_bottom = 295.0
 text = "下一句 ▸"
 metadata/design_id = "3/4"
 metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="04_Panel" type="Panel" parent="00_Control" unique_id=1509703820]
-texture_filter = 2
+[node name="04_Panel" type="Panel" parent="00_Control" unique_id=787502684]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 759.0
-offset_right = 355.0
-offset_bottom = 821.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2ul08")
-script = ExtResource("19_vgpt1")
+offset_left = 220.0
+offset_top = 704.0
+offset_right = 570.0
+offset_bottom = 780.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rnbv")
+script = ExtResource("19_prpsn")
+role = "speaker"
 metadata/design_id = "4"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_Label_大肥鱼" type="Label" parent="00_Control/04_Panel" unique_id=1791633432]
+[node name="00_Label_大肥鱼" type="Label" parent="00_Control/04_Panel" unique_id=610152814]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 10.0
-offset_right = 235.0
-offset_bottom = 49.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-theme_override_font_sizes/font_size = 25
+offset_left = 52.0
+offset_top = 17.0
+offset_right = 306.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.1882353, 0.21176471, 0.36862746, 1)
+theme_override_font_sizes/font_size = 27
 text = "大肥鱼"
+horizontal_alignment = 1
 autowrap_mode = 3
 metadata/design_id = "4/0"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="05_Button_收起立绘" type="Button" parent="00_Control" unique_id=381369591]
+[node name="05_Button_收起立绘" type="Button" parent="00_Control" unique_id=372135431]
 texture_filter = 1
 layout_mode = 0
 anchor_left = 1.0
@@ -1101,7 +1186,7 @@ metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="06_Button_结束对话" type="Button" parent="00_Control" unique_id=1446938999]
+[node name="06_Button_结束对话" type="Button" parent="00_Control" unique_id=1407578248]
 texture_filter = 1
 layout_mode = 0
 anchor_left = 1.0
@@ -1116,80 +1201,22 @@ metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="07_Panel" type="Panel" parent="00_Control" unique_id=1430152825]
+[node name="07_Panel" type="Panel" parent="00_Control" unique_id=63716453]
 visible = false
-texture_filter = 2
 layout_mode = 0
-offset_left = 92.0
-offset_top = 470.0
-offset_right = 737.0
-offset_bottom = 740.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pka4f")
-script = ExtResource("19_vgpt1")
+offset_left = 240.0
+offset_top = 410.0
+offset_right = 885.0
+offset_bottom = 680.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ln3q")
+script = ExtResource("19_prpsn")
+role = "quote"
 metadata/design_id = "7"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_Label_你想怎么回应？" type="Label" parent="00_Control/07_Panel" unique_id=892730359]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 13.0
-offset_right = 613.0
-offset_bottom = 48.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-theme_override_font_sizes/font_size = 23
-text = "你想怎么回应？"
-autowrap_mode = 3
-metadata/design_id = "7/0"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="01_Button_1  认识一下这个地方" type="Button" parent="00_Control/07_Panel" unique_id=2113209745]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 60.0
-offset_right = 622.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 20
-text = "1  认识一下这个地方"
-metadata/design_id = "7/1"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="02_Button_2  帮我标记社区馆的路线" type="Button" parent="00_Control/07_Panel" unique_id=79079644]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 125.0
-offset_right = 622.0
-offset_bottom = 179.0
-theme_override_font_sizes/font_size = 20
-text = "2  帮我标记社区馆的路线"
-metadata/design_id = "7/2"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="03_Button_3  我想先随便走走" type="Button" parent="00_Control/07_Panel" unique_id=1379227686]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 190.0
-offset_right = 622.0
-offset_bottom = 244.0
-theme_override_font_sizes/font_size = 20
-text = "3  我想先随便走走"
-metadata/design_id = "7/3"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="08_Panel" type="Panel" parent="00_Control" unique_id=1354657213]
-texture_filter = 2
+[node name="08_Panel" type="Panel" parent="00_Control" unique_id=1204175609]
 layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1197,20 +1224,20 @@ offset_left = -570.0
 offset_top = 112.0
 offset_right = 570.0
 offset_bottom = 943.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2q456")
-script = ExtResource("19_vgpt1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q0wph")
+script = ExtResource("19_prpsn")
 metadata/design_id = "8"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_Label_对话回看" type="Label" parent="00_Control/08_Panel" unique_id=568920587]
+[node name="00_Label_对话回看" type="Label" parent="00_Control/08_Panel" unique_id=516805692]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 23.0
 offset_right = 799.0
 offset_bottom = 66.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1882353, 0.21176471, 0.36862746, 1)
 theme_override_font_sizes/font_size = 30
 text = "对话回看"
 autowrap_mode = 3
@@ -1219,13 +1246,13 @@ metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="01_Label_已读过的对白和你的选择" type="Label" parent="00_Control/08_Panel" unique_id=1714605914]
+[node name="01_Label_已读过的对白和你的选择" type="Label" parent="00_Control/08_Panel" unique_id=1896193554]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 77.0
 offset_right = 853.0
 offset_bottom = 112.0
-theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_colors/font_color = Color(0.6627451, 0.7058824, 0.8509804, 1)
 theme_override_font_sizes/font_size = 19
 text = "已读过的对白和你的选择"
 autowrap_mode = 3
@@ -1234,7 +1261,7 @@ metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="02_Button_返回对话" type="Button" parent="00_Control/08_Panel" unique_id=2086107771]
+[node name="02_Button_返回对话" type="Button" parent="00_Control/08_Panel" unique_id=204542540]
 texture_filter = 1
 layout_mode = 0
 offset_left = 910.0
@@ -1247,7 +1274,7 @@ metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="03_ScrollContainer" type="ScrollContainer" parent="00_Control/08_Panel" unique_id=1668435909]
+[node name="03_ScrollContainer" type="ScrollContainer" parent="00_Control/08_Panel" unique_id=427092769]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 130.0
@@ -1259,7 +1286,7 @@ metadata/design_native_class = "ScrollContainer"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer" unique_id=1925918783]
+[node name="00_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer" unique_id=949799182]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 19
@@ -1268,7 +1295,7 @@ metadata/design_native_class = "VBoxContainer"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=119899162]
+[node name="00_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=1655379918]
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/design_id = "8/3/0/0"
@@ -1276,9 +1303,9 @@ metadata/design_native_class = "VBoxContainer"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="00_Label_大肥鱼  ·  第一次来到鲸落港" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/00_VBoxContainer" unique_id=697456911]
+[node name="00_Label_大肥鱼  ·  第一次来到鲸落港" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/00_VBoxContainer" unique_id=534720948]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
+theme_override_colors/font_color = Color(0.6627451, 0.7058824, 0.8509804, 1)
 theme_override_font_sizes/font_size = 18
 text = "大肥鱼  ·  第一次来到鲸落港"
 metadata/design_id = "8/3/0/0/0"
@@ -1286,14 +1313,104 @@ metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="01_Label_你想先做什么？" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/00_VBoxContainer" unique_id=1143598107]
+[node name="01_Label_你好呀，我是大肥鱼。欢迎来到鲸落港！" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/00_VBoxContainer" unique_id=84527707]
+custom_minimum_size = Vector2(1034, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "你好呀，我是大肥鱼。欢迎来到鲸落港！先别急着把整张地图走完，这里有很多可以慢慢发现的地方。"
+autowrap_mode = 3
+metadata/design_id = "8/3/0/0/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=1842507858]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/design_id = "8/3/0/1"
+metadata/design_native_class = "VBoxContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_大肥鱼  ·  第一次来到鲸落港" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/01_VBoxContainer" unique_id=337133877]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.7058824, 0.8509804, 1)
+theme_override_font_sizes/font_size = 18
+text = "大肥鱼  ·  第一次来到鲸落港"
+metadata/design_id = "8/3/0/1/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_你想先做什么？" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/01_VBoxContainer" unique_id=1930768733]
 custom_minimum_size = Vector2(1034, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "你想先做什么？"
 autowrap_mode = 3
-metadata/design_id = "8/3/0/0/1"
+metadata/design_id = "8/3/0/1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=97700809]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/design_id = "8/3/0/2"
+metadata/design_native_class = "VBoxContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_你  ·  第一次来到鲸落港" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/02_VBoxContainer" unique_id=1416551030]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.7058824, 0.8509804, 1)
+theme_override_font_sizes/font_size = 18
+text = "你  ·  第一次来到鲸落港"
+metadata/design_id = "8/3/0/2/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_帮我标记社区馆的路线" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/02_VBoxContainer" unique_id=439052344]
+custom_minimum_size = Vector2(1034, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "帮我标记社区馆的路线"
+autowrap_mode = 3
+metadata/design_id = "8/3/0/2/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_VBoxContainer" type="VBoxContainer" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer" unique_id=394690094]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/design_id = "8/3/0/3"
+metadata/design_native_class = "VBoxContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_大肥鱼  ·  第一次来到鲸落港" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/03_VBoxContainer" unique_id=98306967]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.7058824, 0.8509804, 1)
+theme_override_font_sizes/font_size = 18
+text = "大肥鱼  ·  第一次来到鲸落港"
+metadata/design_id = "8/3/0/3/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_好，我在导览里标记了潮汐社区馆。顺着" type="Label" parent="00_Control/08_Panel/03_ScrollContainer/00_VBoxContainer/03_VBoxContainer" unique_id=1681663994]
+custom_minimum_size = Vector2(1034, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "好，我在导览里标记了潮汐社区馆。顺着浅蓝圆环找到入口，靠近后按 E。里面有咖啡、旧书，也有能带走的补给。"
+autowrap_mode = 3
+metadata/design_id = "8/3/0/3/1"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
