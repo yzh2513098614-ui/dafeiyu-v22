@@ -17,7 +17,7 @@ extends Node
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
 ## 两套风格组，F8 切换（会记住）：
-##   galgame  galgame 场景配乐十二首（默认，每个场合两首轮换）
+##   galgame  galgame 场景配乐十九首（默认，七首原创钢琴加入对应场合轮换）
 ##   harbor   最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##
 ## 快捷键：F8 切换风格组 · F9 试听下一首（循环回自动）· F10 静音开关 · [ ] 调音量
@@ -29,14 +29,14 @@ const DIR := "res://assets/music/"
 ## tracks 里每个场合是一个数组：组内轮换。写成单个字符串也兼容（等价于只有一首）。
 const STYLE_SETS := {
 	"galgame": {
-		"name": "galgame 场景十二首",
+		"name": "galgame 场景十九首",
 		"tracks": {
-			"title": ["gal_bittersweet", "gal_title2"],
-			"day": ["gal_daily", "gal_daily2"],
-			"night": ["gal_memory", "gal_memory2"],
-			"indoor": ["gal_light", "gal_light2"],
-			"battle": ["gal_tension", "gal_tension2"],
-			"hope": ["gal_hope", "gal_hope2"],
+			"title": ["gal_piano_daily", "gal_piano_hope", "gal_after_school", "gal_bittersweet", "gal_title2"],
+			"day": ["gal_piano_daily", "gal_daily", "gal_daily2"],
+			"night": ["gal_piano_night", "gal_piano_rain", "gal_after_school", "gal_memory", "gal_memory2"],
+			"indoor": ["gal_piano_indoor", "gal_piano_rain", "gal_after_school", "gal_light", "gal_light2"],
+			"battle": ["gal_piano_tension", "gal_tension", "gal_tension2"],
+			"hope": ["gal_piano_hope", "gal_hope", "gal_hope2"],
 		},
 	},
 	"harbor": {
@@ -59,6 +59,13 @@ const MOOD_ORDER: Array = ["title", "day", "night", "indoor", "battle", "hope"]
 ## 鉴赏用的曲目表（style → [{id, 标题, 用途, 时长}]，时长自动从 WAV 读，这里只写用途）
 const CATALOG := {
 	"galgame": [
+		["gal_piano_daily", "海风课间", "原创钢琴 · 日常 / 标题"],
+		["gal_piano_indoor", "窗边的热茶", "原创钢琴 · 室内 / 温柔对话"],
+		["gal_piano_night", "灯塔替我记得", "原创钢琴 · 夜晚 / 思念"],
+		["gal_piano_rain", "雨声里的约定", "原创钢琴 · 回忆 / 雨夜告白"],
+		["gal_piano_tension", "潮汐之前", "原创钢琴 · 紧张 / 决意"],
+		["gal_piano_hope", "明天仍有晴空", "原创钢琴 · 释怀 / 结尾"],
+		["gal_after_school", "夕照，未寄出的信", "原创钢琴 · 标题 / 室内 / 夜晚"],
 		["gal_daily", "港口的一天", "日常 · 教室 · 据点"],
 		["gal_daily2", "午后集市", "日常 · 白天（轮换）"],
 		["gal_light", "轻快的午后", "喜剧 · 打闹"],
@@ -303,6 +310,9 @@ func _switch(mood: String) -> void:
 	_track = track
 	_advance_rotation(mood)
 	_dwell = DWELL
+	# 新增钢琴曲在自己的尾音段换曲，避免固定计时切进下一遍的乐句。
+	if track.begins_with("gal_piano_") or track == "gal_after_school":
+		_dwell = stream.get_length() - FADE
 	_slot = 1 - _slot
 	_players[_slot].stream = stream
 	_players[_slot].play()
