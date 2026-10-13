@@ -999,6 +999,17 @@ func _layout() -> void:
 		_refresh_ally()
 		_refresh_enemies()
 
+func _gpt6_large_layout() -> bool:
+	if engine == null or not engine.card_mode:
+		return false
+	for foe in engine.foes:
+		if str(foe.kind) == "gpt6":
+			return true
+	return false
+
+func _gpt6_sidebar_left() -> float:
+	return clampf(root.size.x * 0.34, 500.0, 660.0)
+
 func _layout_enemies() -> void:
 	var width := enemy_layer.size.x
 	var count := 0
@@ -1006,6 +1017,21 @@ func _layout_enemies() -> void:
 		if slot.foe != null:
 			count += 1
 	if count == 0:
+		return
+	if _gpt6_large_layout():
+		var sidebar_left := _gpt6_sidebar_left()
+		var companions: Array = []
+		for slot in slots:
+			if slot.foe == null:
+				slot.holder.hide()
+			elif str(slot.foe.kind) == "gpt6":
+				_layout_one_enemy(slot, sidebar_left * 0.5, sidebar_left - DOCK_MARGIN * 2.0)
+			else:
+				companions.append(slot)
+		var companion_area := width - sidebar_left - DOCK_MARGIN
+		for j in companions.size():
+			var companion_cell := minf(ENEMY_CELL_MAX_W, companion_area / float(companions.size()) - 30.0)
+			_layout_one_enemy(companions[j], sidebar_left + companion_area * (float(j) + 0.5) / float(companions.size()), companion_cell)
 		return
 	# 指令已移到下方，敌人使用完整战场宽度居中排列。
 	var right_limit := width - DOCK_MARGIN
@@ -1025,6 +1051,13 @@ func _layout_enemies() -> void:
 func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var ground_y: float = 395.0 if engine.card_mode else GROUND_Y
 	var height_limit: float = 250.0 if engine.card_mode else ENEMY_CELL_H
+	if _gpt6_large_layout():
+		if str(slot.foe.kind) == "gpt6":
+			ground_y = 780.0
+			height_limit = 660.0
+		else:
+			ground_y = 320.0
+			height_limit = 180.0
 	var art_data: Dictionary = slot.get("art_data", {})
 	var used: Rect2i = art_data.get("used", Rect2i())
 	if used.size.x <= 0 or used.size.y <= 0:
@@ -1040,6 +1073,7 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var draw_h := float(src.y) * scale
 	var visible_cx := float(used.position.x + used.end.x) * 0.5 * scale
 	var art: TextureRect = slot.art
+	art.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS if str(slot.foe.kind) == "gpt6" else CanvasItem.TEXTURE_FILTER_NEAREST
 	slot["art_home"]=Vector2(cx - visible_cx, ground_y - float(used.end.y) * scale)
 	art.position = slot.art_home+slot.get("reaction_offset",Vector2.ZERO)+slot.get("attack_offset",Vector2.ZERO)
 	art.size = Vector2(draw_w, draw_h)
@@ -1236,6 +1270,23 @@ func _layout_card_hand() -> void:
 	tactics_text.position=Vector2(230,10);tactics_text.size=Vector2(info_w-250,30);tactics_text.add_theme_font_size_override("font_size",18)
 	tactics_text.autowrap_mode=TextServer.AUTOWRAP_OFF;tactics_text.mouse_filter=Control.MOUSE_FILTER_STOP
 	tactics_text.max_lines_visible=1;tactics_text.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+	if _gpt6_large_layout():
+		var sidebar_left := _gpt6_sidebar_left()
+		var sidebar_width := root.size.x - sidebar_left - DOCK_MARGIN
+		card_panel.position.x = sidebar_left
+		card_panel.size.x = sidebar_width
+		card_scroll.position = Vector2(20, 120)
+		card_scroll.size = Vector2(sidebar_width - 40, 184)
+		card_counts.size.x = sidebar_width - 224
+		var action_x := sidebar_width - 608
+		target_button.position = Vector2(action_x, 64)
+		card_item_button.position = Vector2(action_x + 144, 64)
+		card_link_button.position = Vector2(action_x + 274, 64)
+		card_end_button.position = Vector2(action_x + 404, 64)
+		UiFit.pin_left(log_box, sidebar_width, sidebar_left, 432, CARD_INFO_HEIGHT)
+		UiFit.pin_left(tactics_box, sidebar_width, sidebar_left, CARD_INFO_TOP, CARD_INFO_HEIGHT)
+		log_text.size.x = sidebar_width - 124
+		tactics_text.size.x = sidebar_width - 250
 
 func _backdrop_texture() -> Texture2D:
 	if ResourceLoader.exists(BACKGROUND_PATH):
@@ -1459,7 +1510,9 @@ func _refresh_cards() -> void:
 	for entry in engine.card_hand_view():
 		var index := int(entry.index)
 		var button = load("res://battle/card_face.gd").new()
-		button.configure(entry, Vector2(172, 216))
+		button.configure(entry, Vector2(136, 160) if _gpt6_large_layout() else Vector2(172, 216))
+		if _gpt6_large_layout():
+			button.get_node("CardFooter/CardEffect").add_theme_font_size_override("font_size", 14)
 		button.focus_mode = Control.FOCUS_ALL
 		button.disabled = not bool(entry.ready) or mode != "command"
 		button.mouse_entered.connect(func():_preview_card(entry))
