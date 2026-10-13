@@ -170,6 +170,8 @@ static func apply(root:Control,patch:Dictionary)->int:
   var node:=target(root,str(key))
   if node==null or node.get_class()!=str(patch[key]["class"]):continue
   for property in patch[key].properties:
+   # Dialogue expressions own their live texture; the editable page still controls layout.
+   if property=="texture" and bool(node.get_meta("runtime_texture",false)):continue
    node.set(property,patch[key].properties[property])
   node.queue_redraw();applied+=1
  return applied

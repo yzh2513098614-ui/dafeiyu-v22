@@ -1,19 +1,147 @@
 {
-    "method":  "original_resolution_rgba",
-    "source":  "res://assets/dialogue/whale_clean_generated_20261013.png",
-    "source_size":  [
-                        1144,
-                        1375
-                    ],
-    "frame_size":  [
-                       1144,
-                       1375
-                   ],
-    "downsampled":  false,
-    "resized":  false,
-    "textures":  {
-                     "listen":  "res://assets/dialogue/whale_clean_generated_20261013.png",
-                     "talk":  "res://assets/dialogue/whale_clean_generated_20261013.png",
-                     "think":  "res://assets/dialogue/whale_clean_generated_20261013.png"
-                 }
+  "method": "original_resolution_rgba",
+  "source": "res://assets/dialogue/whale_clean_generated_20261013.png",
+  "source_size": [
+    1144,
+    1375
+  ],
+  "frame_size": [
+    1144,
+    1375
+  ],
+  "downsampled": false,
+  "resized": false,
+  "textures": {
+    "listen": "res://assets/dialogue/whale_clean_generated_20261013.png",
+    "talk": "res://assets/dialogue/whale_clean_generated_20261013.png",
+    "think": "res://assets/dialogue/variants_20261013/think.png",
+    "shy": "res://assets/dialogue/variants_20261013/shy.png",
+    "concern": "res://assets/dialogue/variants_20261013/concern.png",
+    "side_welcome": "res://assets/dialogue/variants_20261013/side_welcome.png",
+    "pout": "res://assets/dialogue/variants_20261013/pout.png",
+    "relief": "res://assets/dialogue/variants_20261013/relief.png",
+    "happy": "res://assets/dialogue/variants_20261013/happy.png",
+    "surprise": "res://assets/dialogue/variants_20261013/surprise.png"
+  },
+  "variants": {
+    "think": {
+      "title": "认真思考",
+      "texture": "res://assets/dialogue/variants_20261013/think.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "分析问题、回忆来历、提出问题",
+      "nodes": [
+        "welcome/about2",
+        "harbor/name",
+        "home/question",
+        "cafe/books",
+        "desk/hello",
+        "books/hello",
+        "small_thing/ask"
+      ]
+    },
+    "shy": {
+      "title": "害羞感谢",
+      "texture": "res://assets/dialogue/variants_20261013/shy.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "聊昵称、亲近的感谢",
+      "nodes": [
+        "harbor/name2"
+      ]
+    },
+    "concern": {
+      "title": "担忧提醒",
+      "texture": "res://assets/dialogue/variants_20261013/concern.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "回应疲惫、安慰害怕失败",
+      "nodes": [
+        "home/rest",
+        "desk/afraid"
+      ]
+    },
+    "side_welcome": {
+      "title": "斜侧身欢迎",
+      "texture": "res://assets/dialogue/variants_20261013/side_welcome.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "初次迎接、邀请坐下、旅舍欢迎",
+      "nodes": [
+        "welcome/hello",
+        "cafe/hello",
+        "inn/hello"
+      ]
+    },
+    "happy": {
+      "title": "开心说话",
+      "texture": "res://assets/dialogue/variants_20261013/happy.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "称赞尝试、记录小快乐",
+      "nodes": [
+        "plant/leaf",
+        "books/retry",
+        "small_thing/happy"
+      ]
+    },
+    "surprise": {
+      "title": "惊讶发现",
+      "texture": "res://assets/dialogue/variants_20261013/surprise.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "发现新叶、意外变化",
+      "nodes": [
+        "plant/hello"
+      ]
+    },
+    "pout": {
+      "title": "轻微不满",
+      "texture": "res://assets/dialogue/variants_20261013/pout.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "玩笑式抱怨等待太久",
+      "nodes": [
+        "cafe/tea"
+      ]
+    },
+    "relief": {
+      "title": "安心微笑",
+      "texture": "res://assets/dialogue/variants_20261013/relief.png",
+      "source_size": [
+        1144,
+        1375
+      ],
+      "resized": false,
+      "when": "休息、平安确认、温柔陪伴",
+      "nodes": [
+        "home/question2",
+        "home/end",
+        "bed/rest",
+        "plant/grow",
+        "seat/end"
+      ]
+    }
+  }
 }

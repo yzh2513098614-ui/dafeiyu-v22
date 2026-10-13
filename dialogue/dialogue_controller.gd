@@ -82,6 +82,7 @@ func _build_ui() -> void:
  location_text=DialogueStyle.label(context_plate,"",Vector2(17,11),Vector2(827,34),18,Color("edf0f5"))
  portrait=TextureRect.new();portrait.position=Vector2(801,97);portrait.size=Vector2(569,913);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(portrait)
  UiFit.pin_right(portrait,569,78,97,913)
+ portrait.set_meta("runtime_texture",true)
  box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230),"screen");box.gui_input.connect(_click_advance)
  UiFit.pin_wide(box,72,72,794,230)
  # Nameplate overlaps the upper edge, as in SLG / galgame dialogue layouts.

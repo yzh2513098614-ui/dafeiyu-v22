@@ -6,7 +6,7 @@
       "hello": {
         "speaker": "大肥鱼",
         "text": "你好呀，我是大肥鱼。欢迎来到鲸落港！先别急着把整张地图走完，这里有很多可以慢慢发现的地方。",
-        "expression": "talk",
+        "expression": "side_welcome",
         "next": "ask"
       },
       "ask": {
@@ -111,7 +111,7 @@
       "name2": {
         "speaker": "大肥鱼",
         "text": "后来大家都这么叫，我也觉得挺好。听起来就像有个人坐在身边，喊你一起去喝杯茶。",
-        "expression": "talk",
+        "expression": "shy",
         "next": "end"
       },
       "home": {
@@ -163,7 +163,7 @@
       "rest": {
         "speaker": "大肥鱼",
         "text": "那就先休息。今天没完成的事，可以写在便签上；不必把它们全都背在身上。",
-        "expression": "talk",
+        "expression": "concern",
         "next": "end"
       },
       "tidy": {
@@ -181,13 +181,13 @@
       "question2": {
         "speaker": "大肥鱼",
         "text": "如果还是想不通，就喝口茶再回来。休息之后，原来的路有时会清楚一点。",
-        "expression": "listen",
+        "expression": "relief",
         "next": "end"
       },
       "end": {
         "speaker": "大肥鱼",
         "text": "愿这个房间里，也有一处能让你放心停下来的地方。",
-        "expression": "listen"
+        "expression": "relief"
       }
     }
   },
@@ -198,7 +198,7 @@
       "hello": {
         "speaker": "大肥鱼",
         "text": "这里是{room}。桌边的位置还空着，书也还没有读完。你愿意坐一会儿吗？",
-        "expression": "talk",
+        "expression": "side_welcome",
         "next": "ask"
       },
       "ask": {
@@ -232,7 +232,7 @@
       "tea": {
         "speaker": "大肥鱼",
         "text": "因为等答案的时候，茶会先凉呀。我们不能保证灵感什么时候来，但可以先让自己舒服一点。",
-        "expression": "talk",
+        "expression": "pout",
         "next": "end"
       },
       "gift": {
@@ -255,7 +255,7 @@
       "hello": {
         "speaker": "大肥鱼",
         "text": "欢迎来到{room}。旅舍的人有的刚到港口，有的明天就要出发，所以每间房都留了一点不一样的风景。",
-        "expression": "talk",
+        "expression": "side_welcome",
         "next": "ask"
       },
       "ask": {
@@ -324,7 +324,7 @@
       "rest": {
         "speaker": "大肥鱼",
         "text": "今天到这里也可以。没有完成所有事情，并不妨碍你睡一个好觉。",
-        "expression": "listen"
+        "expression": "relief"
       },
       "plan": {
         "speaker": "大肥鱼",
@@ -368,7 +368,7 @@
       "afraid": {
         "speaker": "大肥鱼",
         "text": "先做出一个能看见、能试用的版本吧。我们可以一边检查，一边修改；不需要在开始前就猜中所有答案。",
-        "expression": "listen"
+        "expression": "concern"
       }
     }
   },
@@ -379,7 +379,7 @@
       "hello": {
         "speaker": "大肥鱼",
         "text": "{object}又长出新叶子了。变化很小，但昨天没有的东西，今天就出现了。",
-        "expression": "talk",
+        "expression": "surprise",
         "next": "ask"
       },
       "ask": {
@@ -402,12 +402,12 @@
       "leaf": {
         "speaker": "大肥鱼",
         "text": "好呀。记下颜色和位置，下次经过的时候，就会发现它长了多少。",
-        "expression": "talk"
+        "expression": "happy"
       },
       "grow": {
         "speaker": "大肥鱼",
         "text": "会的。给自己一点时间，就像给它一点阳光。安静地长大，也是一件很有力量的事。",
-        "expression": "listen"
+        "expression": "relief"
       }
     }
   },
@@ -441,7 +441,7 @@
       "retry": {
         "speaker": "大肥鱼",
         "text": "这句话我喜欢。它给尝试留了一点勇气，也给回头留了一条路。",
-        "expression": "talk"
+        "expression": "happy"
       },
       "together": {
         "speaker": "大肥鱼",
@@ -492,7 +492,7 @@
       "end": {
         "speaker": "大肥鱼",
         "text": "准备好了再出发吧，我会在这里。",
-        "expression": "listen"
+        "expression": "relief"
       }
     }
   },
@@ -526,7 +526,7 @@
       "happy": {
         "speaker": "大肥鱼",
         "text": "那就把它记在今天这一页吧。快乐不一定很大，能让你想起它时微笑，就已经很好。",
-        "expression": "talk"
+        "expression": "happy"
       },
       "question": {
         "speaker": "大肥鱼",
