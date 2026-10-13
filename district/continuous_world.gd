@@ -12,6 +12,7 @@ var expedition_controller: Node
 var pack26_controller: Node
 var map_interactions: Node
 var harbor_controller: Node
+var home_controller: Node
 var campus_controller: Node
 var space_bounds:=Vector2(84,64)
 var room_zones: Array=[]
@@ -49,6 +50,7 @@ func _ready() -> void:
   if not resumed:_travel("city")
  else:_travel(HarborPrefs.starting_place if locations.has(HarborPrefs.starting_place) else "city")
  HarborPrefs.apply_game(self,resumed)
+ if location_id=="whale_home" and not resumed and not overview_mode:view_size=15.0;camera.size=view_size
  pause_menu=preload("res://ui/pause_menu.gd").new();add_child(pause_menu);pause_menu.configure(self)
  character_controller=preload("res://character/character_controller.gd").new();add_child(character_controller);character_controller.configure(self)
  combat_controller=preload("res://combat/combat_controller.gd").new();add_child(combat_controller);combat_controller.configure(self)
@@ -100,6 +102,8 @@ func _define_locations() -> void:
  locations.city.links.append("story_harbor");locations.story_quay.links.append("story_harbor")
  locations["tidal_cafe"]={"name":"潮汐信笺 · 海景咖啡馆","group":"floor1","type":"salon","subtitle":"海盐咖啡吧 / 分享桌 / 慢读角 / 海景窗湾 / 漂流信笺 · E 操作设施","links":["city"]}
  locations.city.links.append("tidal_cafe")
+ locations["whale_home"]={"name":"大肥鱼之家 · 三层海景宅邸","group":"outside","type":"home3d","subtitle":"海盐厨房 / 水族客厅 / 海景书房 / 鲸鱼卧室 / 观星露台 / 花园码头 · 楼梯直达三层","links":["city"]}
+ locations.city.links.append("whale_home")
  locations["gallery"]={"name":"白帆艺廊 · 创作整层","group":"floor1","type":"floor","building":"gallery","prefix":"gallery","floor":1,"floors":1,"subtitle":"主展厅 / 绘画工坊 / 资料室 / 小展 / 茶厅 / 库房","links":["city"]}
  # 2026-10-03「场景容器扩展包」搭的两个新地点。
  # 单独给一个 type ("depot") 是为了不走 floor 那条分支 ——
@@ -197,6 +201,7 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  if staged:await preload("res://ui/loading_transition.gd").instance(get_tree()).checkpoint(.12,"保存房间布置与当前位置")
  if map_interactions:map_interactions.clear()
  if harbor_controller and harbor_controller.is_active():harbor_controller.leave()
+ if home_controller and home_controller.is_active():home_controller.leave()
  if pack26_controller and pack26_controller.is_active():pack26_controller.leave()
  if campus_controller and campus_controller.is_active():campus_controller.leave()
  var previous:=location_id
@@ -214,7 +219,11 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
   if shell.has_meta(key):shell.remove_meta(key)
  var data: Dictionary=locations[target]
  var built: Dictionary
- if data.type=="campus":
+ if data.type=="home3d":
+  if not home_controller:
+   home_controller=preload("res://district/whale_home_controller.gd").new();add_child(home_controller);home_controller.configure(self)
+  built=home_controller.build()
+ elif data.type=="campus":
   if not campus_controller:
    campus_controller=preload("res://district/wuming_campus.gd").new();add_child(campus_controller);campus_controller.configure(self)
   if staged:await campus_controller.prepare()
@@ -241,6 +250,7 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  if target=="tidal_cafe":overview_size=19.8
  if data.type=="campus":overview_size=1960.0
  if target=="story_harbor":overview_size=40.0
+ if target=="whale_home":overview_size=62.0
  if data.type=="floor":
   var names:=PackedStringArray()
   for zone in room_zones:names.append(str(zone.name))
@@ -256,6 +266,10 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
   _exit(Vector3(0,0,19),"story_quay","进入 · 海风码头样板","entrance")
   _exit(Vector3(-10,0,19),"story_harbor","进入 · 海风码头双层港区","entrance")
   _exit(Vector3(-5,0,19),"tidal_cafe","进入 · 潮汐信笺咖啡馆","entrance")
+  _exit(Vector3(-16,0,19),"whale_home","前往 · 大肥鱼之家","entrance")
+  _sign("大肥鱼之家 · 海景宅邸",Vector3(-16,2.2,19),28)
+ elif data.type=="home3d":
+  _exit(built.exit,"city","离开小岛 · 返回鲸落街区","entrance",built.exit+Vector3(0,0,-1.2))
  elif data.type=="campus":
   _exit(built.exit,"city","校区专线 · 返回鲸落街区","entrance",built.spawn)
  elif data.type=="harbor3d":
@@ -342,7 +356,8 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  player.velocity=Vector3.ZERO;facing="down";facing_accum=Vector2.ZERO;facing_timer=0;_reset_character_gait()
  _queue_collision_recovery(true)
  overview_mode=not HarborPrefs.values.follow;view_size=overview_size if overview_mode else (9.8 if target in ["story_quay","story_harbor"] else (11.6 if target=="tidal_cafe" else (24.0 if data.type=="city" else 22.0)));view_center=Vector3.ZERO if overview_mode else Vector3(player.position.x,0,player.position.z)
- camera_angle=-42 if target in ["story_quay","tidal_cafe","story_harbor"] else 28;camera.size=view_size;_camera()
+ if target=="whale_home":view_size=overview_size if overview_mode else 15.0
+ camera_angle=-28 if target=="whale_home" else (-42 if target in ["story_quay","tidal_cafe","story_harbor"] else 28);camera.size=view_size;_camera()
  title.text=str(data.name);title.tooltip_text=str(data.name)
  # Special maps return before neighborhood.physics, so suppress legacy strips at travel time.
  breadcrumb.hide();arrival_note.hide()
@@ -350,6 +365,10 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  if breadcrumb:breadcrumb.text="鲸落港  /  "+str(data.name)
  if arrival_note:arrival_note.text="同一场景连续行走 · "+("门口点击或按 E 开门、进入建筑" if data.type=="city" else str(room_zones.size())+" 个房间同屏 · 靠近门或设施点击 / 按 E 交互")
  if data.type=="floor" and data.building=="restaurant":arrival_note.text=str(room_zones.size())+" 个空间 · 房间门点击 / 按 E 开合 · 楼梯处换层"+(" · 留意松动的食材架" if target=="restaurant_b1" else "")
+ if data.type=="home3d":
+  view_center=home_controller.overview_center() if overview_mode else player.position
+  home_controller.cutaway=not overview_mode;home_controller.set_layers()
+  arrival_note.text="三层海景宅邸 · 沿楼梯步行上下楼 · E 家具交互 · H 楼层切面 · Z 整图总览"
  if data.type=="campus":
   view_center=campus_controller.overview_center() if overview_mode else player.position
   arrival_note.text="校园漫步 · Z 全校总览 · 右侧导览前往各地标"
@@ -398,7 +417,9 @@ func _toggle_view() -> void:
  overview_mode=not overview_mode
  if pack26_controller and pack26_controller.is_active():pack26_controller.floor_cutaway=not overview_mode
  if harbor_controller and harbor_controller.is_active():harbor_controller.cutaway=not overview_mode;harbor_controller.set_layers()
+ if home_controller and home_controller.is_active():home_controller.cutaway=not overview_mode;home_controller.set_layers()
  view_size=overview_size if overview_mode else (9.8 if location_id in ["story_quay","story_harbor"] else (11.6 if location_id=="tidal_cafe" else (24.0 if location_id=="city" else 22.0)))
+ if location_id=="whale_home":view_size=overview_size if overview_mode else 15.0
  _update_view_button()
 
 func _update_view_button() -> void:
@@ -416,6 +437,8 @@ func _physics_process(delta: float) -> void:
   pack26_controller.physics(delta);return
  if harbor_controller and harbor_controller.is_active():
   harbor_controller.physics(delta);return
+ if home_controller and home_controller.is_active():
+  home_controller.physics(delta);return
  if campus_controller and campus_controller.is_active():
   campus_controller.physics(delta);return
  var stats_before:=player.position
@@ -451,7 +474,7 @@ func _physics_process(delta: float) -> void:
 ## 街区给道路、户外给各自的说法、室内仍是走廊。
 func _fallback_zone() -> String:
  var named: Dictionary={
-  "city":"街区道路","trial":"潮汐试炼场","wuming_campus":"武鸣校区 · 校园道路",
+  "city":"街区道路","trial":"潮汐试炼场","wuming_campus":"武鸣校区 · 校园道路","whale_home":"大肥鱼之家 · 楼梯与海风步道",
   "tidal_high":"潮间滩地","tidal_low":"潮间滩地",
   "garden":"温室庭院","market":"港口小街","gallery":"白帆艺廊"}
  if named.has(location_id):return str(named[location_id])
@@ -463,7 +486,7 @@ func _refresh_zone() -> void:
  var found:=_fallback_zone()
  var current:=""
  for zone in room_zones:
-  if locations[location_id].type in ["pack26","harbor3d"] and absf(player.position.y-float(zone.height))>1.0:continue
+  if locations[location_id].type in ["pack26","harbor3d","home3d"] and absf(player.position.y-float(zone.height))>1.0:continue
   var rectangle: Rect2=zone.rect
   var point:=Vector2(player.position.x,player.position.z)
   var polygon: PackedVector2Array=zone.get("polygon",PackedVector2Array())
@@ -480,6 +503,7 @@ func _unhandled_input(event: InputEvent) -> void:
  if event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_E:
   if map_interactions and map_interactions.try_interact():get_viewport().set_input_as_handled();return
  if harbor_controller and harbor_controller.handle_input(event):get_viewport().set_input_as_handled();return
+ if home_controller and home_controller.handle_input(event):get_viewport().set_input_as_handled();return
  if pack26_controller and pack26_controller.handle_input(event):get_viewport().set_input_as_handled();return
  if expedition_controller:
   if expedition_controller.handle_input(event):get_viewport().set_input_as_handled();return
@@ -502,6 +526,7 @@ func _unhandled_input(event: InputEvent) -> void:
     if overview_mode:
      overview_mode=false;view_size=9.8 if location_id in ["story_quay","story_harbor"] else (11.6 if location_id=="tidal_cafe" else (28.0 if location_id=="city" else 26.0))
      if harbor_controller and harbor_controller.is_active():harbor_controller.cutaway=true;harbor_controller.set_layers()
+     if home_controller and home_controller.is_active():home_controller.cutaway=true;home_controller.set_layers()
     view_size=clampf(view_size+(-2.0 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 2.0),8.0 if location_id in ["story_quay","tidal_cafe","story_harbor"] else 12.0,overview_size)
     _update_view_button();get_viewport().set_input_as_handled();return
  super._unhandled_input(event)
@@ -660,16 +685,17 @@ func _restore() -> bool:
   if not on_floor and data.get("layout_revision",data.get("floor_layout",""))==shell.get_meta("layout_revision"):
    for zone in room_zones:
     if Geometry2D.is_point_in_polygon(restored,zone.polygon):on_floor=true;break
-  if on_floor:player.position=Vector3(restored.x,float(data.get("position_y",0)) if locations[location_id].type in ["pack26","harbor3d","campus"] else 0,restored.y)
+  if on_floor:player.position=Vector3(restored.x,float(data.get("position_y",0)) if locations[location_id].type in ["pack26","harbor3d","home3d","campus"] else 0,restored.y)
  _queue_collision_recovery()
  overview_mode=bool(data.get("overview",true));view_size=clampf(float(data.get("zoom",overview_size)),8.0 if location_id in ["story_quay","tidal_cafe","story_harbor"] else 12.0,overview_size);_update_view_button()
  if pack26_controller and pack26_controller.is_active():pack26_controller.floor_cutaway=not overview_mode
  if harbor_controller and harbor_controller.is_active():harbor_controller.cutaway=not overview_mode;harbor_controller.set_layers()
+ if home_controller and home_controller.is_active():home_controller.cutaway=not overview_mode;home_controller.set_layers()
  atmosphere.restore_clock(data.get("clock",{}))
  return true
 
 func _life_supply(place: String) -> void:
- if place in ["tidal_cafe","story_harbor","wuming_campus"]:loot.chests.clear();loot.nearby=null;return
+ if place in ["tidal_cafe","story_harbor","whale_home","wuming_campus"]:loot.chests.clear();loot.nearby=null;return
  if locations[place].type=="pack26":loot.chests.clear();loot.nearby=null;return
  if place=="research":loot.chests.clear();loot.nearby=null;return
  if place in ["restaurant_2","restaurant_b1"]:
@@ -696,4 +722,3 @@ func _life_supply(place: String) -> void:
  crate.position=Vector3(2.4,0,7) if place=="city" else (shell.get_meta("supply_anchor",Vector3(2,0,1.25)) if locations[place].type=="courtyard" or place=="restaurant_1" else Vector3(2,0,1.25))
  if place=="restaurant_1":crate.display_name="海蓝餐厅 · 食材补给箱"
  world.add_child(crate);loot.chests.append(crate)
-
