@@ -9,9 +9,12 @@ A2 发丝缝隙白：发丝深色描边把白底切成大量「不触边」的�
    泛洪进不去；腐蚀只能吃掉 <=4px 的窄缝，宽缝中心 alpha=255 留在画面上。
    → 分两阶段清除（同一形状判据：邻环线稿深 + 外环发蓝）：
      阶段一 纯白缝隙（min>=BG_T 占比高）；
-     阶段二 带色缝隙（被发丝环境光染到 246~252），再加织物/背景带判据
-     （真缝隙贴外背景纯白，服饰亮部被带阴影白织物包围）与裙摆以下排除，
-     保护鞋面高光、围裙鲸鱼肚皮条；小面积候选块带皮肤邻域则判为眼睛高光。
+     阶段二/三 带色缝隙（被发丝环境光染到 246~252），面积下限 GAP_MIN_AREA，
+     再加「织物×深度」联合判据（服饰亮部＝被带阴影白织物包围 且 深入人物内部；
+     贴轮廓的白块即使挨着白色羽饰也仍是透出来的背景缝）、裙摆以下排除，以及
+     「深块必须嵌在发丝里」判据（离外背景 >=S3_NB_MIN 且 8~12 环带饱和发蓝占比
+     < S3_HAIRFAR_MIN 的小白块＝雏菊花瓣/羽饰褶皱高光，保留），
+     保护鞋面高光、围裙鲸鱼肚皮条；小面积候选块按近/远两带皮肤邻域判为眼睛高光。
    内切半径判据已实测废弃（两方向都误判）。
 B  线性过滤白边：透明像素 RGB 残留白色，缩略采样时插值出亮白边。
    → alpha bleed：核心色向外填 BLEED 像素，透明区不再有白色可供插值。
@@ -49,17 +52,26 @@ BG_T = 253         # 外背景实测 min 通道 253~255；服饰白与发丝高�
 BGCOL_FRAC = 0.5   # 封闭白域内达到背景色的像素占比下限
 RING_DARK_MIN = 0.35  # 域外邻环深色(线稿)占比下限；服饰高光点的邻环是自身浅色阴影
 OUTER_BLUE_MIN = 0.5  # 再外一环为发蓝的占比下限；缝隙藏在发块内，服饰高光藏在阴影内
-EYE_GUARD_AREA = 400  # 眼睛高光误伤保护：小于此面积的候选块若外圈带含皮肤色则跳过
-SKIN_MIN = 0.02       # 外圈带(dilate 6~26)中皮肤色占比下限，超过即判为面部高光
-                      # （阶段三放开面积下限后，实测眼部残留占比 0.025~0.064，收紧到 0.02）
+EYE_GUARD_AREA = 400  # 眼睛高光误伤保护：小于此面积的候选块若邻域含皮肤色则跳过
+SKIN_MIN = 0.02       # 远带（膨胀 6~26）皮肤色占比下限，超过即判为面部高光。
+                      # 0.05 会漏掉眼内 2px 纯白点（03_talk (573,394) skw=0.033）
+SKIN_TIGHT_MIN = 0.05 # 近带（膨胀 6~14）皮肤色占比下限；远带会摊薄贴脸的块，两带取或
 # ---- 第二阶段：带色(min 246~252)发缝残留，BGCOL_FRAC 判据覆盖不到 ----
 S2_RING_DARK_MIN = 0.35   # 同阶段一：邻环有深色线稿
 S2_OUTER_BLUE_MIN = 0.5   # 同阶段一：再外环是发蓝
 S2_FABRIC_BG_MAX = 0.15   # (织物白 240~252 − 外背景白 253+) 占比差上限；
                           # 围裙鲸鱼肚皮条被白织物包围，真发缝贴外背景白
+S2_FABRIC_NB_MIN = 150    # 织物判据只在「深入人物内部」时生效：紧贴外轮廓的白块
+                          # 哪怕被白色羽饰包围也是背景透出来的缝（实测羽饰发缝 nb 8~149，
+                          # 围裙/胸衣亮部 nb 199~248，方向完全分开）
 S2_Y_MAX = 1200           # 裙摆以下的白块是鞋面/袜口高光，不参与
-GAP_MIN_AREA = 60         # 阶段三：带色发缝面积下限。头发两侧是残留高发区，
-                          # 那里的缝隙多在 60~400px，原先被 400px 下限整档跳过
+GAP_MIN_AREA = 20         # 阶段三/四：带色发缝面积下限。头发两侧是残留高发区，
+                          # 原先 400px 下限把 20~400px 这一整档跳过
+S3_HAIRFAR_MIN = 0.25     # 「深块必须嵌在发丝里」：距外背景 >=S3_NB_MIN 的小白块，
+                          # 若 8~12 环带饱和发蓝占比低于此值，判为服饰白（雏菊花瓣、
+                          # 羽饰褶皱高光）保留。实测 149 个候选中只有 5 个误伤块命中，
+                          # 最近的真发缝 hf=0.29，方向不重叠
+S3_NB_MIN = 100           # 距外背景步数达到此值才算「深入轮廓内部」，浅块不受该判据约束
 
 CONN4 = ndimage.generate_binary_structure(2, 1)  # 4 连通
 
@@ -120,8 +132,11 @@ def bake(name: str) -> dict:
         dark = mn < 150
         r_, g_, b_ = rgb[..., 0].astype(np.int32), rgb[..., 1].astype(np.int32), rgb[..., 2].astype(np.int32)
         skin = (r_ > b_ + 20) & (r_ > 170) & (g_ > b_)  # 皮肤偏暖：红高于蓝
+        hairb = (b_ - r_ > 60) & (b_ > 150) & (b_ < 235) & (g_ < b_ - 15)  # 饱和发蓝，排除浅蓝围裙
         fabric_band = (mn >= 240) & (mn < BG_T)         # 织物白（带阴影的布料）
         bg_band = mn >= BG_T                            # 外背景纯白
+        # 到外背景的步数：贴着轮廓的白块即便被白色羽饰环绕，也仍是透出来的背景缝
+        dist_bg = ndimage.distance_transform_cdt(~bg, metric="taxicab")
         sel_list, sel_stage = [], []
         for i in range(1, g_n + 1):
             stage1 = bgcol_frac[i] >= BGCOL_FRAC
@@ -140,19 +155,28 @@ def bake(name: str) -> dict:
             if blue < (OUTER_BLUE_MIN if stage1 else S2_OUTER_BLUE_MIN):
                 continue
             if sizes[i] < EYE_GUARD_AREA:
+                tight = ndimage.binary_dilation(comp, structure=CONN4, iterations=14) & ~oring & ~comp
                 guard = ndimage.binary_dilation(comp, structure=CONN4, iterations=26) & ~oring & ~comp
-                if guard.any() and skin[guard].mean() >= SKIN_MIN:
+                if (tight.any() and skin[tight].mean() >= SKIN_TIGHT_MIN) or \
+                   (guard.any() and skin[guard].mean() >= SKIN_MIN):
                     continue  # 面部/眼睛附近的小白块判为高光，保留
             if not stage1:
                 # 鲸鱼肚皮条等服饰亮部被白织物包围；真发缝贴着外背景纯白
                 band = ndimage.binary_dilation(comp, structure=CONN4, iterations=16) & ~oring
                 if band.any():
                     diff = fabric_band[band].mean() - bg_band[band].mean()
-                    if diff >= S2_FABRIC_BG_MAX:
+                    if diff >= S2_FABRIC_BG_MAX and dist_bg[comp].max() >= S2_FABRIC_NB_MIN:
                         continue
                 # 质心 y 坐标限制：裙摆以下是鞋面/袜口高光
                 cy = ndimage.center_of_mass(comp)[0]
                 if cy > S2_Y_MAX:
+                    continue
+                # 深块必须真的嵌在发丝里：雏菊花瓣、羽饰褶皱高光离外背景 108~172 步，
+                # 但 8~12 环带几乎没有饱和发蓝
+                near4 = ndimage.binary_dilation(comp, structure=CONN4, iterations=4) & ~comp
+                far12 = ndimage.binary_dilation(comp, structure=CONN4, iterations=12) & ~near4 & ~comp
+                if far12.any() and hairb[far12].mean() < S3_HAIRFAR_MIN \
+                        and dist_bg[comp].max() >= S3_NB_MIN:
                     continue
                 sel_stage.append(3 if sizes[i] < EYE_GUARD_AREA else 2)
             else:

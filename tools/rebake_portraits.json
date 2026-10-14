@@ -2,22 +2,22 @@
   {
     "file": "01_listen.png",
     "before": {
-      "opaque_nearwhite": 138474,
+      "opaque_nearwhite": 138431,
       "rim_light": 0,
-      "clear_nearwhite": 1040650
+      "clear_nearwhite": 1040666
     },
     "size": [
       1086,
       1448
     ],
-    "background": 1047904,
-    "enclosed_white_cleared": 15243,
-    "enclosed_white_kept": 102101,
-    "seconds": 9.09,
+    "background": 1047931,
+    "enclosed_white_cleared": 15270,
+    "enclosed_white_kept": 102074,
+    "seconds": 12.68,
     "after": {
-      "opaque_nearwhite": 138474,
+      "opaque_nearwhite": 138431,
       "rim_light": 0,
-      "clear_nearwhite": 1040650
+      "clear_nearwhite": 1040666
     }
   },
   {
@@ -34,7 +34,7 @@
     "background": 978200,
     "enclosed_white_cleared": 22930,
     "enclosed_white_kept": 109467,
-    "seconds": 7.91,
+    "seconds": 10.77,
     "after": {
       "opaque_nearwhite": 136940,
       "rim_light": 0,
@@ -44,51 +44,51 @@
   {
     "file": "03_talk.png",
     "before": {
-      "opaque_nearwhite": 137220,
+      "opaque_nearwhite": 137057,
       "rim_light": 0,
-      "clear_nearwhite": 1006648
+      "clear_nearwhite": 1006708
     },
     "size": [
       1024,
       1536
     ],
-    "background": 1012637,
-    "enclosed_white_cleared": 24802,
-    "enclosed_white_kept": 108062,
-    "seconds": 11.32,
+    "background": 1012658,
+    "enclosed_white_cleared": 24823,
+    "enclosed_white_kept": 108041,
+    "seconds": 15.75,
     "after": {
-      "opaque_nearwhite": 137077,
+      "opaque_nearwhite": 137057,
       "rim_light": 0,
-      "clear_nearwhite": 1006704
+      "clear_nearwhite": 1006708
     }
   },
   {
     "file": "04_think.png",
     "before": {
-      "opaque_nearwhite": 144831,
+      "opaque_nearwhite": 144805,
       "rim_light": 0,
-      "clear_nearwhite": 992963
+      "clear_nearwhite": 992978
     },
     "size": [
       1024,
       1536
     ],
-    "background": 999798,
-    "enclosed_white_cleared": 18322,
-    "enclosed_white_kept": 105183,
-    "seconds": 8.26,
+    "background": 999818,
+    "enclosed_white_cleared": 18342,
+    "enclosed_white_kept": 105163,
+    "seconds": 12.41,
     "after": {
-      "opaque_nearwhite": 144831,
+      "opaque_nearwhite": 144805,
       "rim_light": 0,
-      "clear_nearwhite": 992963
+      "clear_nearwhite": 992978
     }
   },
   {
     "file": "05_relief.png",
     "before": {
-      "opaque_nearwhite": 151303,
+      "opaque_nearwhite": 151017,
       "rim_light": 0,
-      "clear_nearwhite": 1002765
+      "clear_nearwhite": 1002964
     },
     "size": [
       1024,
@@ -97,7 +97,7 @@
     "background": 1009935,
     "enclosed_white_cleared": 20516,
     "enclosed_white_kept": 116731,
-    "seconds": 9.25,
+    "seconds": 14.7,
     "after": {
       "opaque_nearwhite": 151186,
       "rim_light": 0,
@@ -107,127 +107,127 @@
   {
     "file": "06_shy.png",
     "before": {
-      "opaque_nearwhite": 127339,
+      "opaque_nearwhite": 127085,
       "rim_light": 0,
-      "clear_nearwhite": 1011472
+      "clear_nearwhite": 1011574
     },
     "size": [
       1024,
       1536
     ],
-    "background": 1018975,
-    "enclosed_white_cleared": 20594,
-    "enclosed_white_kept": 90114,
-    "seconds": 7.92,
+    "background": 1018998,
+    "enclosed_white_cleared": 20617,
+    "enclosed_white_kept": 90091,
+    "seconds": 11.43,
     "after": {
-      "opaque_nearwhite": 127114,
+      "opaque_nearwhite": 127085,
       "rim_light": 0,
-      "clear_nearwhite": 1011571
+      "clear_nearwhite": 1011574
     }
   },
   {
     "file": "07_expectant.png",
     "before": {
-      "opaque_nearwhite": 142824,
+      "opaque_nearwhite": 142695,
       "rim_light": 0,
-      "clear_nearwhite": 984532
+      "clear_nearwhite": 984567
     },
     "size": [
       1024,
       1536
     ],
-    "background": 992357,
-    "enclosed_white_cleared": 23422,
-    "enclosed_white_kept": 104452,
-    "seconds": 8.66,
+    "background": 992383,
+    "enclosed_white_cleared": 23448,
+    "enclosed_white_kept": 104426,
+    "seconds": 12.36,
     "after": {
-      "opaque_nearwhite": 142736,
+      "opaque_nearwhite": 142695,
       "rim_light": 0,
-      "clear_nearwhite": 984566
+      "clear_nearwhite": 984567
     }
   },
   {
     "file": "08_cheer.png",
     "before": {
-      "opaque_nearwhite": 164035,
+      "opaque_nearwhite": 163053,
       "rim_light": 0,
-      "clear_nearwhite": 972755
+      "clear_nearwhite": 973398
     },
     "size": [
       1024,
       1536
     ],
-    "background": 979113,
-    "enclosed_white_cleared": 17654,
-    "enclosed_white_kept": 128353,
-    "seconds": 13.0,
+    "background": 979915,
+    "enclosed_white_cleared": 18456,
+    "enclosed_white_kept": 127551,
+    "seconds": 17.69,
     "after": {
-      "opaque_nearwhite": 164035,
+      "opaque_nearwhite": 163091,
       "rim_light": 0,
-      "clear_nearwhite": 972755
+      "clear_nearwhite": 973373
     }
   },
   {
     "file": "09_happy.png",
     "before": {
-      "opaque_nearwhite": 152957,
+      "opaque_nearwhite": 152384,
       "rim_light": 0,
-      "clear_nearwhite": 942635
+      "clear_nearwhite": 943013
     },
     "size": [
       1024,
       1536
     ],
-    "background": 950363,
-    "enclosed_white_cleared": 24710,
-    "enclosed_white_kept": 128107,
-    "seconds": 9.13,
+    "background": 950843,
+    "enclosed_white_cleared": 25190,
+    "enclosed_white_kept": 127627,
+    "seconds": 12.27,
     "after": {
-      "opaque_nearwhite": 152957,
+      "opaque_nearwhite": 152384,
       "rim_light": 0,
-      "clear_nearwhite": 942635
+      "clear_nearwhite": 943013
     }
   },
   {
     "file": "10_concern.png",
     "before": {
-      "opaque_nearwhite": 144406,
+      "opaque_nearwhite": 143963,
       "rim_light": 0,
-      "clear_nearwhite": 1001975
+      "clear_nearwhite": 1002279
     },
     "size": [
       1024,
       1536
     ],
-    "background": 1009309,
-    "enclosed_white_cleared": 18574,
-    "enclosed_white_kept": 104017,
-    "seconds": 8.21,
+    "background": 1009701,
+    "enclosed_white_cleared": 18966,
+    "enclosed_white_kept": 103625,
+    "seconds": 11.62,
     "after": {
-      "opaque_nearwhite": 144406,
+      "opaque_nearwhite": 143963,
       "rim_light": 0,
-      "clear_nearwhite": 1001975
+      "clear_nearwhite": 1002279
     }
   },
   {
     "file": "11_side_welcome.png",
     "before": {
-      "opaque_nearwhite": 153933,
+      "opaque_nearwhite": 153649,
       "rim_light": 0,
-      "clear_nearwhite": 947713
+      "clear_nearwhite": 947842
     },
     "size": [
       1086,
       1448
     ],
-    "background": 954718,
-    "enclosed_white_cleared": 18692,
-    "enclosed_white_kept": 123510,
-    "seconds": 11.43,
+    "background": 954788,
+    "enclosed_white_cleared": 18762,
+    "enclosed_white_kept": 123440,
+    "seconds": 14.35,
     "after": {
-      "opaque_nearwhite": 153741,
+      "opaque_nearwhite": 153649,
       "rim_light": 0,
-      "clear_nearwhite": 947840
+      "clear_nearwhite": 947842
     }
   }
 ]
