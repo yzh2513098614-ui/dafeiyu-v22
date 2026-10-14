@@ -12,6 +12,7 @@ func configure(material: ShaderMaterial) -> void:
 	for key in ["wave_height", "crest_sharpness", "shore_wave_period"]:
 		material.set_shader_parameter(key, settings[key])
 	material.set_shader_parameter("island_half_size", Vector2(settings.island_half_size[0], settings.island_half_size[1]))
+	material.set_shader_parameter("island_center", Vector2(settings.island_center[0], settings.island_center[1]))
 	for i in 3:
 		material.set_shader_parameter("wave_" + ["a", "b", "c"][i], waves[i])
 
@@ -23,13 +24,14 @@ func wet_level(time: float) -> float:
 
 func sample(point: Vector2, time: float) -> Vector3:
 	var half_size := Vector2(settings.island_half_size[0], settings.island_half_size[1])
-	var outside := Vector2(maxf(absf(point.x) - half_size.x, 0.0), maxf(absf(point.y) - half_size.y, 0.0))
+	var coast_point := point - Vector2(settings.island_center[0], settings.island_center[1])
+	var outside := Vector2(maxf(absf(coast_point.x) - half_size.x, 0.0), maxf(absf(coast_point.y) - half_size.y, 0.0))
 	var shore := outside.length()
 	var u := clampf((shore - 0.2) / 3.8, 0.0, 1.0)
 	var damping := 0.22 + 0.78 * u * u * (3.0 - 2.0 * u)
 	var damping_gradient := Vector2.ZERO
 	if shore > 0.0:
-		damping_gradient = Vector2(outside.x * signf(point.x), outside.y * signf(point.y)) / shore * (0.78 * 6.0 * u * (1.0 - u) / 3.8)
+		damping_gradient = Vector2(outside.x * signf(coast_point.x), outside.y * signf(coast_point.y)) / shore * (0.78 * 6.0 * u * (1.0 - u) / 3.8)
 	var height := 0.0
 	var gradient := Vector2.ZERO
 	for wave in waves:

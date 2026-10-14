@@ -54,7 +54,7 @@ func leave() -> void:
 	game.atmosphere.contact_shading.material_override.shader=previous_contact
 	game.atmosphere._apply_lighting()
 
-func overview_center() -> Vector3:return Vector3(0,4.5,1.5)
+func overview_center() -> Vector3:return Vector3(0,4.5,-4.5)
 
 func set_layers() -> void:
 	if not is_active():return

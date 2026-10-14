@@ -133,7 +133,7 @@ func review() -> void:
 	check(reef_count > 40 and clear_reefs, "all reef clusters keep clear of the island/dock entrances")
 	check(reef_collision_count == reef_count and matched_reefs, "visible reef crowns are backed by native solid collisions")
 	check(route([Vector3(-9.6, 0.05, 11), Vector3(0, 0.05, 11), Vector3(0, 0.05, 33.7)]), "main entrance to dock return route remains clear and supported")
-	check(route([Vector3(-17, 0.05, -23), Vector3(-17, 0.05, 23)]) and route([Vector3(17, 0.05, -23), Vector3(17, 0.05, 23)]), "both side promenades remain clear and supported")
+	check(route([Vector3(-31, 0.05, -42), Vector3(-31, 0.05, 23)]) and route([Vector3(31, 0.05, -42), Vector3(31, 0.05, 23)]), "both relocated side promenades remain clear and supported")
 	check(route([Vector3(-19.25, 0.05, 22), Vector3(-19.25, 0.05, 29.5), Vector3(0, 0.05, 29.5)]), "west dock entrance and crossbridge T junction remain clear and supported")
 	check(route([Vector3(-19.25, 0.05, 29.5), Vector3(-19.25, 0.05, 33.2)]), "moved whale sculpture leaves the west dock walking lane clear")
 	var solid_posts := true

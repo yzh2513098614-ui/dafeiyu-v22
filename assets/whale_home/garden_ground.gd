@@ -93,9 +93,10 @@ static func _box(parent: Node3D, size: Vector3, point: Vector3, material: Materi
 	node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	return node
 
-static func base(parent: Node3D) -> void:
+static func base(parent: Node3D, area: Rect2 = Rect2(-28, -25, 56, 50)) -> void:
 	prepare()
-	_box(parent, Vector3(55.8, 0.06, 49.8), Vector3(0, float(settings.base_top) - 0.03, 0), field)
+	var center := area.get_center()
+	_box(parent, Vector3(area.size.x - 0.2, 0.06, area.size.y - 0.2), Vector3(center.x, float(settings.base_top) - 0.03, center.y), field)
 
 static func path(parent: Node3D, rect: Rect2, label: String = "GardenStonePath") -> void:
 	prepare()
@@ -216,20 +217,20 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 	parent.add_child(grass)
 	return count
 
-static func gardens(parent: Node3D, tree_specs: Array) -> Dictionary:
-	var clearings: Array[Rect2] = [Rect2(7.5, 14.1, 3.2, 2.1), Rect2(-22.8, 18.6, 4.8, 2.4), Rect2(-23.4, 7.7, 4.9, 5.2), Rect2(18.3, 15.4, 3.9, 3.2)]
+static func gardens(parent: Node3D, tree_specs: Array, side_offset: float = 0.0, depth: float = 47.0) -> Dictionary:
+	var clearings: Array[Rect2] = [Rect2(7.5, 14.1, 3.2, 2.1), Rect2(-22.8 - side_offset, 18.6, 4.8, 2.4), Rect2(-23.4 - side_offset, 7.7, 4.9, 5.2), Rect2(18.3 + side_offset, 15.4, 3.9, 3.2)]
 	for spec: Array in tree_specs:
 		var point: Vector3 = spec[0]
 		clearings.append(Rect2(point.x - 0.85, point.z - 0.85, 1.7, 1.7))
 	for side in [-1.0, 1.0]:
 		for i in 7:
-			clearings.append(Rect2(side * 20.5 - 2.65, -18 + i * 5.8 - 2.2, 5.3, 4.4))
-		clearings.append(Rect2(side * 20.5 - 2.65, -14.55, 5.3, 4.7))
+			clearings.append(Rect2(side * (20.5 + side_offset) - 2.65, -18 + i * 5.8 - 2.2, 5.3, 4.4))
+		clearings.append(Rect2(side * (20.5 + side_offset) - 2.65, -14.55, 5.3, 4.7))
 	var count := 0
 	for side in [-1.0, 1.0]:
-		path(parent, Rect2(side * 20.5 - 2.4, -14.3, 4.8, 4.2), "PergolaStonePad")
+		path(parent, Rect2(side * (20.5 + side_offset) - 2.4, -14.3, 4.8, 4.2), "PergolaStonePad")
 	for side in [-1.0, 1.0]:
-		count += lawn(parent, Rect2(side * 23.25 - 4.25, -23.8, 8.5, 47.0), clearings, 19273 if side < 0 else 32931)
+		count += lawn(parent, Rect2(side * (23.25 + side_offset) - 4.25, 23.2 - depth, 8.5, depth), clearings, 19273 if side < 0 else 32931)
 		count += lawn(parent, Rect2(side * 10.3 - 4.1, 12.5, 8.2, float(settings.front_lawn_depth)), clearings, 1837 if side < 0 else 4791)
 	return {"tufts": count, "lawns": 4}
 

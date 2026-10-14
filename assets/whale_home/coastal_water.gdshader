@@ -12,6 +12,7 @@ uniform vec4 wave_a = vec4(0.37, 0.25, 0.70, 0.60);
 uniform vec4 wave_b = vec4(-0.21, 0.53, 0.57, 0.28);
 uniform vec4 wave_c = vec4(0.71, -0.18, 0.82, 0.12);
 uniform vec2 island_half_size = vec2(28.0, 25.0);
+uniform vec2 island_center = vec2(0.0);
 uniform sampler2D scene_depth : hint_depth_texture, repeat_disable, filter_nearest;
 varying vec3 surface_position;
 
@@ -28,7 +29,7 @@ float noise(vec2 p) {
 }
 
 float shore_distance(vec2 p) {
-	return length(max(abs(p) - island_half_size, vec2(0.0)));
+	return length(max(abs(p - island_center) - island_half_size, vec2(0.0)));
 }
 
 // Sharper crests and broad troughs, using the controller's pausable clock.
@@ -61,9 +62,9 @@ void fragment() {
 	vec3 slope = cos(phase) * (vec3(1.0) + 2.0 * crest_sharpness * sin(phase)) * weights * wave_height * calm_shore;
 	vec2 gradient = vec2(dot(slope, vec3(wave_a.x, wave_b.x, wave_c.x)),
 		dot(slope, vec3(wave_a.y, wave_b.y, wave_c.y)));
-	vec2 outside = max(abs(p) - island_half_size, vec2(0.0));
+	vec2 outside = max(abs(p - island_center) - island_half_size, vec2(0.0));
 	float shore_u = clamp((shore - 0.2) / 3.8, 0.0, 1.0);
-	gradient += outside * sign(p) / max(shore, 0.001) * (0.78 * 6.0 * shore_u * (1.0 - shore_u) / 3.8) * crest_height * wave_height;
+	gradient += outside * sign(p - island_center) / max(shore, 0.001) * (0.78 * 6.0 * shore_u * (1.0 - shore_u) / 3.8) * crest_height * wave_height;
 	vec3 normal = normalize(vec3(-gradient.x, 1.0, -gradient.y));
 	float broad = noise(p * 0.13 + vec2(wave_time * 0.016, -wave_time * 0.012));
 	float detail = noise(p * 0.64 - vec2(wave_time * 0.035, wave_time * 0.026));

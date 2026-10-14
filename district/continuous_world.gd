@@ -255,7 +255,7 @@ func _travel(target: String,route: String="",staged: bool=false) -> void:
  if target=="tidal_cafe":overview_size=19.8
  if data.type=="campus":overview_size=1960.0
  if target=="story_harbor":overview_size=40.0
- if target=="whale_home":overview_size=62.0
+ if target=="whale_home":overview_size=float(built.camera_size)
  if data.type=="floor":
   var names:=PackedStringArray()
   for zone in room_zones:names.append(str(zone.name))

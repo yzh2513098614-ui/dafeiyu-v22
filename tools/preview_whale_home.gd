@@ -21,6 +21,15 @@ func check(condition: bool, label: String, detail: Variant=null) -> void:
 func settle(frames: int=8) -> void:
 	for i in frames:await physics_frame
 
+func route(points: Array[Vector3]) -> bool:
+	for segment in points.size()-1:
+		var steps: int=ceili(points[segment].distance_to(points[segment+1])/.25)
+		for i in steps+1:
+			var point: Vector3=points[segment].lerp(points[segment+1],float(i)/steps)
+			if not Safety.clear_at(game.player,point) or not Safety.supported(game.player,point):
+				print("HOME ROUTE BLOCKED: ",point);return false
+	return true
+
 func _view(center: Vector3, size_value: float, point: Vector3, all_floors: bool=false) -> void:
 	game.movement=Vector2.ZERO;game.player.position=point;game.player.velocity=Vector3.ZERO
 	game.home_controller.cutaway=not all_floors;game.home_controller.set_layers()
@@ -76,12 +85,22 @@ func review() -> void:
 	check(game.locations.city.links.has("whale_home"),"bidirectional city guide connection")
 	check(home.get_meta("furniture_count")>=120,"detailed furniture inventory",home.get_meta("furniture_count"))
 	check(home.get_meta("detail_meshes")>=3000,"authored mesh detail",home.get_meta("detail_meshes"))
-	check(home.get_meta("static_surfaces")<220,"static geometry batched",home.get_meta("static_surfaces"))
-	check(game.room_zones.size()==15,"named indoor and outdoor zones")
+	check(int(home.get_meta("static_surfaces"))*10<int(home.get_meta("detail_meshes")),"static batching reduces authored meshes by more than ten times",{"surfaces":home.get_meta("static_surfaces"),"meshes":home.get_meta("detail_meshes")})
+	check(game.room_zones.size()==25,"named original rooms, nine annex rooms and gardens")
+	check(is_equal_approx(float(home.get_meta("building_footprint_m2")),2240.0),"ground-floor building footprint expands from 560 to 2240 square metres")
+	check(is_equal_approx(float(home.get_meta("gross_floor_area_m2")),1568.0*4.0),"three-floor gross building area is exactly four times the original")
+	for i in 3:
+		var back: float=[-30.0,-32.0,-36.0][i]
+		check(route([Vector3(-26,i*HEIGHT+.05,back),Vector3(-26,i*HEIGHT+.05,back+1)]) and route([Vector3(26,i*HEIGHT+.05,back),Vector3(26,i*HEIGHT+.05,back+1)]),"both expanded rear corners have physical support on floor "+str(i+1))
+	check(route([Vector3(-9.6,.05,11),Vector3(-16,.05,11),Vector3(-16,.05,-28),Vector3(0,.05,-28)]),"first-floor entrance connects to west lounge and rear dining hall")
+	check(route([Vector3(0,.05,11),Vector3(16,.05,11),Vector3(16,.05,-28),Vector3(0,.05,-28)]),"first-floor entrance connects to east workshop and rear dining hall")
+	check(route([Vector3(10.8,HEIGHT+.05,-6.8),Vector3(10.8,HEIGHT+.05,-8),Vector3(16,HEIGHT+.05,-8),Vector3(16,HEIGHT+.05,-29),Vector3(-16,HEIGHT+.05,-29),Vector3(-16,HEIGHT+.05,-9)]),"second-floor stairs connect to both wings and rear library")
+	check(route([Vector3(-10.8,HEIGHT*2+.05,-15.6),Vector3(-16,HEIGHT*2+.05,-15.6),Vector3(-16,HEIGHT*2+.05,-33),Vector3(16,HEIGHT*2+.05,-33),Vector3(16,HEIGHT*2+.05,-10)]),"third-floor landing connects to guest room, dressing hall and rest room")
+	check(route([Vector3(-31,.05,22.75),Vector3(-31,.05,-42),Vector3(31,.05,-42),Vector3(31,.05,22.75)]),"relocated side gardens and rear walk form a continuous route")
 	check(home.get_meta("walkable_slabs").size()>=10,"island, dock, landings and stair support")
 	check(game.home_controller.fish.size()==11,"animated aquarium whale and reef fish")
 	check(game.home_controller.boats.size()==2,"two animated whale rowboats")
-	check(game.home_controller.facilities.size()==9,"nine connected furniture facilities",game.home_controller.facilities.size())
+	check(game.home_controller.facilities.size()==11,"eleven connected furniture facilities",game.home_controller.facilities.size())
 	game.player.position=Vector3(-9.6,.07,11);game._queue_collision_recovery(true)
 	game.home_controller.physics(1.0/60.0)
 	check(Safety.supported(game.player,game.player.position),"safe entry support")
@@ -117,7 +136,7 @@ func review() -> void:
 	await walk_stair(10.8,6.6,-6.0,0,"2F_to_1F",false)
 	await walk_stair(-10.8,-1.4,-14.0,HEIGHT,"2F_to_3F",true)
 	await walk_stair(-10.8,-1.4,-14.0,HEIGHT,"3F_to_2F",false)
-	game.player.position=Vector3(4.4,HEIGHT*2+.05,-7.5);game._queue_collision_recovery(true)
+	game.player.position=Vector3(16,HEIGHT*2+.05,-33);game._queue_collision_recovery(true)
 	check(game._save(),"isolated world save succeeds")
 	var saved: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(prefs.world_save_path))
 	check(saved.location=="whale_home" and float(saved.position_y)>10,"save retains map and upper-floor height")
@@ -127,10 +146,10 @@ func review() -> void:
 	for portal in game.portals:if portal.target=="whale_home":city_gate=true
 	check(city_gate,"walkable city entrance exists")
 	check(game._restore(),"isolated world restore succeeds")
-	check(game.location_id=="whale_home" and game.player.position.y>10,"restore returns to third floor")
+	check(game.location_id=="whale_home" and game.player.position.y>10 and game.player.position.x>14 and game.player.position.z< -30,"restore returns to expanded third-floor room")
 	check(game.home_controller.extra_lights,"facility state survives travel and restore")
 	game.atmosphere.set_time(12.0)
-	_view(Vector3(0,4.4,1.8),62,Vector3(-9.6,.05,11),true);await plate("01_island_overview")
+	_view(Vector3(0,4.4,-4.5),88,Vector3(-9.6,.05,11),true);await plate("01_island_overview")
 	root.size=Vector2i(1200,1450)
 	_view(Vector3(0,6.5,-6.8),50,Vector3(2.5,.05,5.2),true);await plate("02_three_storey_home")
 	root.size=Vector2i(1600,1000)
@@ -141,7 +160,7 @@ func review() -> void:
 	_view(Vector3(-2.8,HEIGHT*2+.8,-13.8),14,Vector3(1.8,HEIGHT*2+.05,-9));await plate("07_whale_bedroom")
 	_view(Vector3(8.1,HEIGHT*2+.8,-7.4),12.6,Vector3(5.5,HEIGHT*2+.05,-7.3));await plate("08_stargazing_terrace")
 	_view(Vector3(0,.4,27.1),25,Vector3(0,.05,28));await plate("09_whale_docks")
-	_view(Vector3(-19.3,.4,10.5),14.5,Vector3(-17,.05,14.4));await plate("10_flower_garden")
+	_view(Vector3(-33.3,.4,10.5),14.5,Vector3(-31,.05,14.4));await plate("10_flower_garden")
 	game.atmosphere.set_time(20.0)
 	_view(Vector3(0,7.0,-8.4),38,Vector3(2.5,.05,5.2),true);await plate("11_home_at_night")
 	game.atmosphere.set_time(12.0)

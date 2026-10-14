@@ -33,9 +33,9 @@ func review() -> void:
 			if not Safety.clear_at(game.player,point) or not Safety.supported(game.player,point):route_ok=false;print("ROUTE BLOCKED: ",point)
 	check(route_ok,"continuous front entrance to dock return route")
 	var side_ok:=true
-	for x in [-17.0,17.0]:
-		for i in 185:
-			var point:=Vector3(x,.05,-23+i*.25)
+	for x in [-31.0,31.0]:
+		for i in 261:
+			var point:=Vector3(x,.05,-42+i*.25)
 			if not Safety.clear_at(game.player,point) or not Safety.supported(game.player,point):side_ok=false;print("SIDE ROUTE BLOCKED: ",point)
 	check(side_ok,"both side garden walking lanes stay clear")
 	var landing: Array[Vector3]=[Vector3(-10.8,10.45,-14.69),Vector3(-10.8,10.45,-15.6),Vector3(-6.8,10.45,-15.6),Vector3(-6.8,10.45,-9.2),Vector3(-4.4,10.45,-9.2)]
