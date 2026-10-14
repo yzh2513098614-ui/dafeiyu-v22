@@ -1,0 +1,17 @@
+{
+  "stone_palette": ["e3dfcc", "dbd7c3", "e8e3d1"],
+  "curb_color": "d5d5bf",
+  "grass_color": "bdcf96",
+  "grass_shadow": "a9bd85",
+  "mulch_color": "a1af80",
+  "base_top": 0.018,
+  "paving_top": 0.032,
+  "grass_top": 0.024,
+  "paver_size": [1.45, 0.74],
+  "paver_gap": 0.045,
+  "curb_width": 0.14,
+  "lawn_corner_radius": 0.55,
+  "front_lawn_depth": 10.7,
+  "tufts_per_square_meter": 1.8,
+  "grass_height_range": [0.09, 0.17]
+}

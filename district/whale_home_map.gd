@@ -10,6 +10,7 @@ const FABRIC=preload("res://assets/whale_home/fabric.gdshader")
 const MOTIF=preload("res://assets/whale_home/motif.gdshader")
 const Pastel=preload("res://assets/whale_home/pastel_props.gd")
 const Coastal=preload("res://assets/whale_home/coastal_props.gd")
+const Ground=preload("res://assets/whale_home/garden_ground.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
 const ROOF_TILE=preload("res://models/whale_home/curved_roof_tile.tscn")
@@ -772,10 +773,10 @@ func _garden(parent: Node3D) -> void:
 	for side in [-1.0,1.0]:
 		for i in 7:
 			var p:=Vector3(side*20.5,.03,-18+i*5.8)
-			_box(parent,Vector3(5.0,.15,3.6),p,Color("c8d7b4"),0,.20)
+			Ground.path(parent,Rect2(p.x-2.5,p.z-1.8,5.0,3.6),"GardenStonePatio")
 			if i%2==0:
-				_model(parent,FLOWER_BED,p+Vector3.UP*.08)
-				_plant(parent,p+Vector3(side*1.20,.16,0),1.4,true)
+				_model(parent,FLOWER_BED,p)
+				_plant(parent,p+Vector3(side*1.20,.08,0),1.4,true)
 			else:
 				var table: Node3D=_table(parent,p+Vector3(-side*.4,0,0),2.1,1.4,.8);_cup(table,Vector3(0,.91,0),BLUE)
 				_chair(parent,p+Vector3(-side*.4,0,1.7),0)
@@ -820,22 +821,21 @@ func _picket(parent: Node3D, a: Vector3, b: Vector3) -> void:
 
 func _pastel_garden(parent: Node3D) -> void:
 	# Outer lawns keep the existing side walks, pergolas and home doorway clear.
-	for side in [-1.0,1.0]:
-		_box(parent,Vector3(8.5,.045,47.0),Vector3(side*23.25,.01,-.3),GRASS,0,.10)
-		_box(parent,Vector3(8.2,.045,6.0),Vector3(side*10.3,.01,15.5),GRASS,0,.12)
-	for i in 7:
-		_box(parent,Vector3(.96,.055,2.0),Vector3(-10.8+i*.99,.027,11.0),STONE,0,.04)
+	Ground.path(parent,Rect2(-11.30,10.0,7.05,2.0),"EntryStoneWalk")
 	var tree_specs: Array=[
 		[Vector3(-24.0,.06,-20.2),1.6,false],[Vector3(-24.2,.06,-3.8),1.8,false],
 		[Vector3(-24.2,.06,5.4),1.6,false],[Vector3(-24.0,.06,19.0),1.65,false],
 		[Vector3(24.1,.06,-20.5),1.8,false],[Vector3(24.3,.06,-3.2),1.65,true],
 		[Vector3(24.4,.06,8.4),1.9,true],[Vector3(23.8,.06,20.2),1.65,true],
 		[Vector3(-12.0,.06,21.2),1.7,false],[Vector3(10.8,.06,21.2),1.75,true]]
+	var ground: Dictionary=Ground.gardens(parent,tree_specs)
+	level.set_meta("ground_revision","garden_paving_lawn_v1");level.set_meta("lawn_tufts",ground.tufts);level.set_meta("lawn_patches",ground.lawns)
 	var blossom_origins: Array[Vector3]=[]
 	for i in tree_specs.size():
 		var spec: Array=tree_specs[i]
 		var form: PackedScene=SAKURA_TREE if spec[2] else (LOW_TREE if i in [1,2,8] else TALL_TREE)
 		var tree: Node3D=_model(parent,form,spec[0],true);tree.scale=Vector3.ONE*float(spec[1]);tree.rotation.y=i*.47
+		Ground.tree_ring(parent,spec[0])
 		_coll(tree,Vector3(.42,2.65,.42),Vector3(.06,1.325,0))
 		if spec[2]:blossom_origins.append(spec[0])
 	for spec in [[Vector3(-20.5,.05,19.6),0.0],[Vector3(-20.5,.05,-3.4),90.0],[Vector3(20.5,.05,2.9),-90.0],[Vector3(9.0,.05,15.1),0.0]]:
@@ -960,12 +960,10 @@ func build(owner_game) -> Dictionary:
 	var water:=ShaderMaterial.new();water.shader=SEA;ocean.material_override=water;ocean.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF;sea.add_child(ocean);level.set_meta("sea_material",water)
 	level.set_meta("coastal_revision","timber_reefs_v1")
 	_slab(island,Rect2(-28,-25,56,50),0)
-	_box(island,Vector3(55.8,.06,49.8),Vector3(0,-.012,0),STONE,0,.08)
-	for i in 16:
-		var z: float=9.2+i*.96
-		_box(island,Vector3(8.5,.08,.91),Vector3(0,.008,z),STONE.lightened(float(i%3)*.025),0,.025)
+	Ground.base(island)
+	Ground.path(island,Rect2(-4.25,8.7,8.5,15.3),"MainStonePromenade")
 	for side in [-1.0,1.0]:
-		_box(island,Vector3(4.0,.06,47.0),Vector3(side*17.0,.006,-.3),STONE,0,.03)
+		Ground.path(island,Rect2(side*17.0-2.0,-23.8,4.0,47.0),"SideStoneWalk")
 		_rail(island,Vector3(side*28,0,-24.8),Vector3(side*28,0,24.8),false)
 	_rail(island,Vector3(-28,0,-25),Vector3(28,0,-25),false)
 	for span in [Vector2(-28,-22.3),Vector2(-16.2,-3.4),Vector2(3.4,28)]:_picket(island,Vector3(span.x,0,25),Vector3(span.y,0,25))
