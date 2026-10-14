@@ -29,18 +29,18 @@
   <div class="lab-layout">
     <nav class="page-nav" aria-label="示例页面">
       <p class="eyebrow">这一轮看什么</p>
-      <button class="nav-button active" data-nav="components" aria-current="page"><svg><use href="#i-grid"/></svg><span>共用组件<small>按钮 · 卡片 · 数值</small></span><b>01</b></button>
+      <button class="nav-button" data-nav="components"><svg><use href="#i-grid"/></svg><span>共用组件<small>按钮 · 卡片 · 数值</small></span><b>01</b></button>
       <button class="nav-button" data-nav="inventory"><svg><use href="#i-bag"/></svg><span>背包与宝箱<small>选中 · 使用 · 收取</small></span><b>02</b></button>
-      <button class="nav-button" data-nav="dialogue"><svg><use href="#i-chat"/></svg><span>对话界面<small>正文 · 选项 · 回看</small></span><b>03</b></button>
+      <button class="nav-button active" data-nav="dialogue" aria-current="page"><svg><use href="#i-chat"/></svg><span>对话界面<small>正文 · 选项 · 回看</small></span><b>03</b></button>
       <div class="nav-footer"><span class="little-star">✦</span><p>同一套白包边<br>同一层蓝色底影<br>各有自己的小表情</p></div>
       <div class="prototype-note">离线交互示例<br>数据在本页内模拟</div>
     </nav>
     <main class="preview-column">
-      <div class="preview-caption"><span id="page-caption">01 / 共用组件</span><span><span id="scale-label">适应窗口</span> · 1448 × 1086</span></div>
-      <div class="viewport" id="viewport">
-        <div class="scene" id="scene">
+      <div class="preview-caption"><span id="page-caption">03 / 对话界面</span><span><span id="scale-label">适应窗口</span> · <span id="canvas-dimensions">16:9 · 1448 × 815</span></span></div>
+      <div class="viewport" id="viewport" data-page="dialogue">
+        <div class="scene" id="scene" data-page="dialogue">
           <div class="scene-top"><div class="location-pill"><span class="dot"></span>鲸落港 · 海风码头</div><div class="time-pill">第 1 天 · 17:30 · 傍晚</div></div>
-          <section id="screen-components" class="screen" aria-label="共用组件">
+          <section id="screen-components" class="screen" aria-label="共用组件" hidden>
             <div class="component-board sticker-card">
               <div class="board-heading"><div><span class="section-kicker">01 / STICKER KIT</span><h1>把每一次点击，变成一张小贴纸。</h1><p>干净的白色承面，轻轻托起图标、读数和操作。</p></div><span class="corner-star">✦</span></div>
               <div class="component-columns">
@@ -60,15 +60,21 @@
               <div class="inventory-vitals"><span>大肥鱼的状态</span><div id="inventory-meters" class="mini-meters"></div></div>
             </div>
           </section>
-          <section id="screen-dialogue" class="screen" aria-label="对话" hidden>
-            <div class="dialogue-place"><span class="section-kicker">03 / A LITTLE CONVERSATION</span><h1>海风刚刚好</h1><p>把今天的小事，说给你听。</p></div>
-            <div class="portrait-halo"></div><img id="portrait" class="dialogue-portrait" src="__ASSET_portrait__" alt="大肥鱼的游戏立绘">
+          <section id="screen-dialogue" class="screen" aria-label="对话">
+            <div class="dialogue-place"><span class="section-kicker">CHAPTER 01</span><h1>海风与来信</h1><p>鲸落港 · 傍晚的码头</p></div>
+            <div id="playback-status" class="playback-status" hidden>AUTO</div>
+            <div class="portrait-halo"></div><img id="portrait-previous" class="dialogue-portrait portrait-previous" src="__ASSET_happy__" alt="" aria-hidden="true" hidden><img id="portrait" class="dialogue-portrait" src="__ASSET_happy__" alt="大肥鱼的游戏立绘">
+            <div id="choice-veil" class="choice-veil" hidden></div>
             <div id="reply-options" class="reply-options" aria-label="回复选项" hidden></div>
-            <div class="dialogue-box sticker-card"><div class="dialogue-topline"><span class="speaker-tag" id="speaker-name">大肥鱼</span><div class="dialogue-tools"><button class="dialogue-tool" data-action="auto" aria-pressed="false" id="auto-button">自动</button><button class="dialogue-tool" data-action="skip">快进</button><button class="dialogue-tool" data-action="backlog">回看</button></div></div><p id="dialogue-text" class="dialogue-text" aria-live="polite"></p><div class="dialogue-footer"><span id="dialogue-progress">01 / 04</span><span class="keyboard-note"><kbd>Space</kbd> 继续 · <kbd>Esc</kbd> 关闭回看</span><button class="continue-button" data-action="next" id="continue-button">继续<span>▶</span></button></div></div>
+            <div id="dialogue-box" class="dialogue-box sticker-card"><div class="dialogue-topline"><span class="speaker-tag" id="speaker-name">大肥鱼</span><span id="dialogue-progress" class="dialogue-progress">第一章 · 01 / 06</span></div><p id="dialogue-text" class="dialogue-text"></p><button class="continue-button" data-action="next" id="continue-button" aria-label="继续对话"><span>◆</span></button></div>
+            <div class="gal-quick-menu" aria-label="对话快捷操作"><button class="dialogue-tool" data-action="backlog" title="回看已出现的对白">回看</button><span></span><button class="dialogue-tool" data-action="auto" aria-pressed="false" id="auto-button" title="A · 自动播放">自动</button><button class="dialogue-tool" data-action="skip" aria-pressed="false" id="skip-button" title="Ctrl · 按住快进，在选项处停止">快进</button><span></span><button class="dialogue-tool" data-action="quick-save" title="Q · 记住当前对白">快存</button><button class="dialogue-tool" data-action="quick-load" id="quick-load-button" disabled title="L · 回到快速存档">快读</button><span></span><button class="dialogue-tool" data-action="hide-ui" title="H · 查看立绘与背景">隐藏</button><button class="dialogue-tool" data-action="gal-settings">设置</button></div>
+            <div id="dialogue-announcement" class="sr-only" aria-live="polite"></div>
+            <button id="restore-ui" class="restore-ui" data-action="restore-ui" hidden aria-label="恢复对话界面"><span>点击画面 / H · 恢复界面</span></button>
           </section>
           <div class="scene-footer"><span id="scene-footer-copy">白包边 · 蓝底影 · 浅色承面</span><span class="scene-footer-mark">大肥鱼 · 糖果贴纸</span></div>
           <div class="toast" id="toast" role="status" hidden></div>
           <div class="modal-overlay" id="backlog-modal" role="dialog" aria-modal="true" aria-labelledby="backlog-title" hidden><div class="backlog-card sticker-card"><div class="modal-heading"><h2 id="backlog-title">刚才聊过的小事</h2><button class="plain-button" data-action="close-modal">关闭 ×</button></div><div id="backlog-list" class="backlog-list"></div></div></div>
+          <div class="modal-overlay" id="gal-settings-modal" role="dialog" aria-modal="true" aria-labelledby="gal-settings-title" hidden><div class="gal-settings-card sticker-card"><div class="modal-heading"><div><span class="section-kicker">READING PREFERENCES</span><h2 id="gal-settings-title">按你的节奏阅读</h2></div><button class="plain-button" data-action="close-modal">关闭 ×</button></div><div class="gal-setting-row"><label for="gal-text-speed">文字速度<small>逐字浮现，也可以直接显示</small></label><div><input id="gal-text-speed" type="range" min="0" max="5" step="1" value="3"><output id="gal-speed-value">标准</output></div></div><div class="gal-setting-row"><label for="gal-auto-wait">自动等待<small>一句显示完后，再等一会儿</small></label><div><input id="gal-auto-wait" type="range" min="1" max="5" step=".5" value="2"><output id="gal-wait-value">2 秒</output></div></div><div class="gal-setting-row"><label for="gal-font-size">正文字号<small>让每一句话都读得舒服</small></label><div><input id="gal-font-size" type="range" min="26" max="34" step="1" value="30"><output id="gal-font-value">30</output></div></div><div class="gal-setting-row"><label for="gal-box-opacity">文本框承面<small>在背景与文字之间留一点空气</small></label><div><input id="gal-box-opacity" type="range" min="70" max="100" step="1" value="94"><output id="gal-opacity-value">94%</output></div></div><p class="gal-shortcuts"><kbd>Space</kbd> 补全 / 继续　<kbd>Ctrl</kbd> 按住快进　<kbd>A</kbd> 自动<br><kbd>Q</kbd> 快存　<kbd>L</kbd> 快读　<kbd>H</kbd> 隐藏　<kbd>Esc</kbd> 关闭</p></div></div>
           <div class="modal-overlay" id="discard-modal" role="dialog" aria-modal="true" aria-labelledby="discard-title" hidden><div class="confirm-card sticker-card"><span class="confirm-icon">?</span><h2 id="discard-title">要放下这个物品吗？</h2><p id="discard-copy"></p><div class="confirm-actions"><button class="sticker-button small" data-action="close-modal">还是留着</button><button class="sticker-button small accent-yellow" data-action="confirm-discard">放下一个</button></div></div></div>
         </div>
       </div>

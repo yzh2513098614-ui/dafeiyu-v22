@@ -3,6 +3,10 @@
     1448,
     1086
   ],
+  "dialogue_canvas": [
+    1448,
+    815
+  ],
   "pages": [
     "components",
     "inventory",
@@ -79,9 +83,17 @@
       "bytes": 1438628
     },
     {
+      "source": "assets/dialogue/downloaded_20261014/transparent/03_talk.png",
+      "bytes": 1443265
+    },
+    {
+      "source": "assets/dialogue/downloaded_20261014/transparent/06_shy.png",
+      "bytes": 1401258
+    },
+    {
       "source": "assets/start/harbor_background.png",
       "bytes": 2393309
     }
   ],
-  "bytes": 26216550
+  "bytes": 31994924
 }

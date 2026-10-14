@@ -19,6 +19,8 @@ ASSETS = {
     "portrait": "assets/dialogue/downloaded_20261014/transparent/01_listen.png",
     "happy": "assets/dialogue/downloaded_20261014/transparent/09_happy.png",
     "think": "assets/dialogue/downloaded_20261014/transparent/04_think.png",
+    "talk": "assets/dialogue/downloaded_20261014/transparent/03_talk.png",
+    "shy": "assets/dialogue/downloaded_20261014/transparent/06_shy.png",
     "harbor": "assets/start/harbor_background.png",
 }
 asset_manifest = []
@@ -71,10 +73,10 @@ def main():
             "icon": data_url(definition["icon_path"].removeprefix("res://")),
         })
     assets = {name: data_url(relative) for name, relative in ASSETS.items()}
-    data = {"items": items, "assets": {name: assets[name] for name in ["portrait", "happy", "think"]}}
+    data = {"items": items, "assets": {name: assets[name] for name in ["portrait", "happy", "think", "talk", "shy"]}}
     template = (HERE / "index.template.html").read_text(encoding="utf-8")
-    style = (HERE / "ui.css").read_text(encoding="utf-8")
-    script = (HERE / "ui.js").read_text(encoding="utf-8")
+    style = (HERE / "ui.css").read_text(encoding="utf-8") + "\n" + (HERE / "gal-dialogue.css").read_text(encoding="utf-8")
+    script = (HERE / "gal-dialogue.js").read_text(encoding="utf-8") + "\n" + (HERE / "ui.js").read_text(encoding="utf-8")
     packed = template.replace("__STYLE__", style).replace("__SCRIPT__", script).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     for name, encoded in assets.items():
         packed = packed.replace(f"__ASSET_{name}__", encoded)
@@ -86,7 +88,7 @@ def main():
     assert set(static_ids) <= audit.ids, f"Missing DOM nodes: {set(static_ids) - audit.ids}"
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(packed, encoding="utf-8", newline="\n")
-    manifest = {"canvas": [1448, 1086], "pages": ["components", "inventory", "dialogue"], "offline": True, "assets": asset_manifest, "bytes": OUTPUT.stat().st_size}
+    manifest = {"canvas": [1448, 1086], "dialogue_canvas": [1448, 815], "pages": ["components", "inventory", "dialogue"], "offline": True, "assets": asset_manifest, "bytes": OUTPUT.stat().st_size}
     (HERE / "asset-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"Built {OUTPUT}")
     print(f"{len(items)} project items; {len(asset_manifest)} embedded assets; {OUTPUT.stat().st_size / 1024 / 1024:.1f} MB; all template references resolved")

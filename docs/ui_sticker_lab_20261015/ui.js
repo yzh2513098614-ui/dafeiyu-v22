@@ -94,24 +94,8 @@ if (typeof document !== 'undefined') {
   const categories = { all: '全部', supplies: '补给', tools: '工具', stories: '线索', materials: '材料' };
   let motions = {};
   let toastTimer;
-  let automaticTimer;
   let previousFocus;
   let activePreset = 'normal';
-  let dialogueIndex = 0;
-  let customLine = null;
-  let showChoices = false;
-  let history = [];
-  const lines = [
-    { speaker: '大肥鱼', text: '你来啦。今天的海风刚刚好，要不要一起去港口走走？', portrait: 'happy' },
-    { speaker: '大肥鱼', text: '我把补给装进了小口袋。海盐饼、热茶，还有一张很认真写好的便签。', portrait: 'portrait' },
-    { speaker: '大肥鱼', text: '不用急着找完所有答案。先照顾好自己，再慢慢看看这个小世界。', portrait: 'think' },
-    { speaker: '大肥鱼', text: '那么，今天想先去哪里？我陪你一起。', portrait: 'happy', choices: true }
-  ];
-  const choices = [
-    { label: '先去咖啡馆补给', text: '好呀，先吃一口，再慢慢思考。咖啡馆窗边的位置，我已经替你留好了。', portrait: 'happy' },
-    { label: '去码头看看海', text: '那就往海风吹来的方向走。看着船慢慢靠岸，也算今天的一点小进度。', portrait: 'portrait' },
-    { label: '在这里聊一会儿', text: '当然可以。问题不会跑掉，我们就在这片海风里，多待一会儿。', portrait: 'think' }
-  ];
   function toast(message) {
     clearTimeout(toastTimer);
     $('toast').textContent = message; $('toast').hidden = false;
@@ -141,41 +125,11 @@ if (typeof document !== 'undefined') {
     const html = Object.keys(vitalNames).map(meterHTML).join('');
     $('component-meters').innerHTML = html; $('inventory-meters').innerHTML = html;
   }
-  function setAuto(on) {
-    clearInterval(automaticTimer); automaticTimer = null;
-    $('auto-button').classList.toggle('selected', on);
-    $('auto-button').setAttribute('aria-pressed', String(on));
-    if (on) automaticTimer = setInterval(nextLine, 3200);
-  }
-  function resetDialogue() {
-    setAuto(false); dialogueIndex = 0; customLine = null; showChoices = false; history = [{ ...lines[0] }];
-  }
-  function renderDialogue() {
-    const line = customLine || lines[dialogueIndex];
-    $('speaker-name').textContent = line.speaker;
-    $('dialogue-text').textContent = line.text;
-    $('portrait').src = data.assets[line.portrait];
-    $('dialogue-progress').textContent = customLine ? '今天的小约定' : `${String(dialogueIndex + 1).padStart(2, '0')} / 04`;
-    $('continue-button').hidden = showChoices;
-    $('continue-button').innerHTML = customLine ? '再聊一遍<span>↻</span>' : '继续<span>▶</span>';
-    $('reply-options').hidden = !showChoices;
-    $('reply-options').innerHTML = showChoices ? choices.map((choice, index) => `<button class="sticker-button reply-button" data-action="reply" data-index="${index}">${escape(choice.label)}${icon('arrow')}</button>`).join('') : '';
-  }
-  function nextLine() {
-    if (showChoices) { setAuto(false); return; }
-    if (customLine) { resetDialogue(); renderDialogue(); return; }
-    if (dialogueIndex < lines.length - 1) {
-      dialogueIndex++; history.push({ ...lines[dialogueIndex] });
-      showChoices = Boolean(lines[dialogueIndex].choices);
-      if (showChoices) setAuto(false);
-      renderDialogue();
-    }
-  }
   function renderPresets() {
     const config = {
       components: { title: '共用组件', states: [['normal', '普通读数'], ['full', '全部满值'], ['low', '低值提醒'], ['zero', '归零空槽']], guide: '点击按钮，看按压反馈；减少体力，看消耗拖尾；增加饱食，看恢复闪头。' },
       inventory: { title: '背包与宝箱', states: [['normal', '默认物品'], ['empty-bag', '空背包'], ['full-bag', '背包装满'], ['empty-chest', '空宝箱']], guide: '选一个物品，查看故事和效果。切到宝箱模式，试试收取、放入或全部收取。' },
-      dialogue: { title: '对话界面', states: [['normal', '普通对话'], ['choices', '回复选项'], ['automatic', '自动播放'], ['backlog', '对话回看']], guide: '点击继续或按 Space，推进正文。选择回复，看看回应；回看里会留下刚才聊过的话。' }
+      dialogue: { title: 'Galgame 对话演出', states: [['normal', '对白与立绘'], ['narration', '旁白演出'], ['choices', '分支选择'], ['automatic', '自动阅读'], ['backlog', '对白回看'], ['hidden-ui', '隐藏界面']], guide: '第一次点击补全当前句，下一次继续。Ctrl 快进到选项；A 自动、Q 快存、L 快读、H 查看立绘。设置里可调整阅读节奏。' }
     }[state.page];
     $('inspector-title').textContent = config.title; $('interaction-guide').textContent = config.guide;
     $('state-presets').innerHTML = config.states.map(([id, label]) => `<button class="state-button ${activePreset === id ? 'selected' : ''}" data-action="preset" data-preset="${id}" aria-pressed="${activePreset === id}">${label}</button>`).join('');
@@ -228,33 +182,34 @@ if (typeof document !== 'undefined') {
     renderDetail(); renderMeters();
   }
   function switchPage(page) {
-    state.page = page; activePreset = 'normal'; setAuto(false); closeModal();
+    state.page = page; activePreset = 'normal'; gal.pause(); closeModal();
     const captions = { components: '01 / 共用组件', inventory: '02 / 背包与宝箱', dialogue: '03 / 对话界面' };
     document.querySelectorAll('.nav-button').forEach(button => { const active = button.dataset.nav === page; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
     Object.keys(captions).forEach(id => { $(`screen-${id}`).hidden = id !== page; });
     $('page-caption').textContent = captions[page];
+    $('scene').dataset.page = page; $('viewport').dataset.page = page;
+    $('canvas-dimensions').textContent = page === 'dialogue' ? '16:9 · 1448 × 815' : '1448 × 1086';
     $('scene-footer-copy').textContent = page === 'components' ? '白包边 · 蓝底影 · 浅色承面' : page === 'inventory' ? '物品、故事和一点点补给，都有自己的位置。' : '慢慢说，今天还很长。';
     window.history.replaceState(null, '', `#${page}`);
-    renderPresets(); renderInventory(); renderDialogue();
+    renderPresets(); renderInventory();
+    if (page === 'dialogue') gal.enter();
+    fitCanvas();
   }
   function openModal(id) {
     previousFocus = document.activeElement; $(id).hidden = false;
-    if (id === 'backlog-modal') $('backlog-list').innerHTML = history.map(entry => `<div class="backlog-entry"><b>${escape(entry.speaker)}</b><p>${escape(entry.text)}</p></div>`).join('');
     $(id).querySelector('button').focus();
   }
   function closeModal() {
-    const open = !$('backlog-modal').hidden || !$('discard-modal').hidden;
-    $('backlog-modal').hidden = true; $('discard-modal').hidden = true;
+    const open = !$('backlog-modal').hidden || !$('discard-modal').hidden || !$('gal-settings-modal').hidden;
+    $('backlog-modal').hidden = true; $('discard-modal').hidden = true; $('gal-settings-modal').hidden = true;
     if (open && previousFocus && previousFocus.isConnected) previousFocus.focus();
+    if (open) gal.resume();
   }
+  const gal = createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal });
   function applyPreset(name) {
     activePreset = name; motions = {}; closeModal();
     if (state.page === 'dialogue') {
-      resetDialogue();
-      if (name === 'choices') { dialogueIndex = 3; history = lines.map(line => ({ ...line })); showChoices = true; }
-      renderDialogue();
-      if (name === 'automatic') setAuto(true);
-      if (name === 'backlog') openModal('backlog-modal');
+      gal.preset(name);
     } else { demo.preset(name); renderInventory(); }
     renderPresets(); renderMeters();
   }
@@ -264,8 +219,9 @@ if (typeof document !== 'undefined') {
     if (!button || button.disabled) return;
     if (button.dataset.nav) { switchPage(button.dataset.nav); return; }
     const action = button.dataset.action;
+    if (state.page === 'dialogue' && gal.handle(action, button)) return;
     if (action === 'preset') { applyPreset(button.dataset.preset); return; }
-    if (action === 'reset') { demo.reset(); motions = {}; resetDialogue(); activePreset = 'normal'; closeModal(); renderInventory(); renderDialogue(); renderPresets(); toast('小口袋和对话，都回到最初啦。'); }
+    if (action === 'reset') { demo.reset(); motions = {}; gal.reset(); activePreset = 'normal'; closeModal(); renderInventory(); renderPresets(); toast('小口袋和对话，都回到最初啦。'); }
     if (action === 'sample') toast(`「${button.textContent.trim()}」· 点击反馈到了。`);
     if (action === 'open-bag') switchPage('inventory');
     if (action === 'demo-tab') { button.parentElement.querySelectorAll('button').forEach(item => { item.classList.toggle('selected', item === button); item.setAttribute('aria-pressed', String(item === button)); }); toast(`切到「${button.textContent}」啦。`); }
@@ -289,40 +245,28 @@ if (typeof document !== 'undefined') {
     }
     if (action === 'discard' && demo.selectedItem()) { $('discard-copy').textContent = `${demo.selectedItem().name}会少一个。也可以先把它留在口袋里。`; openModal('discard-modal'); }
     if (action === 'confirm-discard') { demo.discard(); closeModal(); renderInventory(); toast('已经放下一个物品。'); }
-    if (action === 'next') nextLine();
-    if (action === 'skip') {
-      if (customLine) resetDialogue();
-      while (dialogueIndex < lines.length - 1) nextLine();
-      renderDialogue();
-    }
-    if (action === 'auto') setAuto(!automaticTimer);
-    if (action === 'reply') {
-      const reply = choices[Number(button.dataset.index)];
-      history.push({ speaker: '你', text: reply.label }); customLine = { speaker: '大肥鱼', text: reply.text, portrait: reply.portrait }; history.push({ ...customLine }); showChoices = false; renderDialogue();
-    }
-    if (action === 'backlog') { setAuto(false); openModal('backlog-modal'); }
     if (action === 'close-modal') closeModal();
     if (action === 'background-day' || action === 'background-night') { document.body.dataset.background = action.slice(11); document.querySelectorAll('.background-button').forEach(item => item.classList.toggle('selected', item === button)); }
   });
   $('effects-toggle').addEventListener('change', event => { document.body.dataset.effects = event.target.checked ? 'on' : 'off'; });
   document.addEventListener('keydown', event => {
-    const modal = [$('backlog-modal'), $('discard-modal')].find(element => !element.hidden);
+    const modal = [$('backlog-modal'), $('discard-modal'), $('gal-settings-modal')].find(element => !element.hidden);
     if (modal) {
       if (event.key === 'Escape') { event.preventDefault(); closeModal(); }
-      if (event.key === 'Tab') { const buttons = [...modal.querySelectorAll('button')]; const first = buttons[0]; const last = buttons[buttons.length - 1]; if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); } else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); } }
+      if (event.key === 'Tab') { const controls = [...modal.querySelectorAll('button:not([disabled]),input,select,textarea,a[href]')]; const first = controls[0]; const last = controls[controls.length - 1]; if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); } else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); } }
       return;
     }
-    if (state.page === 'dialogue' && (event.code === 'Space' || event.key === 'Enter') && !event.target.closest('button,input,a')) { event.preventDefault(); nextLine(); }
+    if (state.page === 'dialogue') gal.handleKey(event);
   });
+  document.addEventListener('keyup', event => gal.keyUp(event));
   function fitCanvas() {
     const scale = $('viewport').clientWidth / 1448;
     $('scene').style.setProperty('--scale', scale);
     $('scale-label').textContent = `${Math.round(scale * 100)}% 等比预览`;
   }
   new ResizeObserver(fitCanvas).observe($('viewport'));
-  document.addEventListener('visibilitychange', () => { if (document.hidden) setAuto(false); });
-  resetDialogue();
+  document.addEventListener('visibilitychange', () => { if (document.hidden) gal.pause(); else if (state.page === 'dialogue') gal.enter(); });
   const initialPage = location.hash.slice(1);
-  switchPage(['components', 'inventory', 'dialogue'].includes(initialPage) ? initialPage : 'components');
+  switchPage(['components', 'inventory', 'dialogue'].includes(initialPage) ? initialPage : 'dialogue');
   fitCanvas();
 }
