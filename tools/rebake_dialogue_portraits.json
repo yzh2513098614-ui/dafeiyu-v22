@@ -1,0 +1,211 @@
+[
+  {
+    "after": {
+      "clear_nearwhite": 1027605,
+      "opaque_nearwhite": 154423,
+      "rim_light": 0
+    },
+    "background": 1032661,
+    "before": {
+      "clear_nearwhite": 1041717,
+      "opaque_nearwhite": 145379,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 117344,
+    "file": "01_listen.png",
+    "size": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 950339,
+      "opaque_nearwhite": 160490,
+      "rim_light": 0
+    },
+    "background": 955270,
+    "before": {
+      "clear_nearwhite": 968841,
+      "opaque_nearwhite": 146624,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 132397,
+    "file": "02_kiss.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 984333,
+      "opaque_nearwhite": 162636,
+      "rim_light": 0
+    },
+    "background": 987835,
+    "before": {
+      "clear_nearwhite": 1001803,
+      "opaque_nearwhite": 148657,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 132864,
+    "file": "03_talk.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 976772,
+      "opaque_nearwhite": 163716,
+      "rim_light": 0
+    },
+    "background": 981476,
+    "before": {
+      "clear_nearwhite": 991233,
+      "opaque_nearwhite": 153930,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 123505,
+    "file": "04_think.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 984854,
+      "opaque_nearwhite": 172290,
+      "rim_light": 0
+    },
+    "background": 989419,
+    "before": {
+      "clear_nearwhite": 1001248,
+      "opaque_nearwhite": 160400,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 137247,
+    "file": "05_relief.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 993349,
+      "opaque_nearwhite": 148315,
+      "rim_light": 0
+    },
+    "background": 998381,
+    "before": {
+      "clear_nearwhite": 1009429,
+      "opaque_nearwhite": 137143,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 110708,
+    "file": "06_shy.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 964021,
+      "opaque_nearwhite": 166866,
+      "rim_light": 0
+    },
+    "background": 968935,
+    "before": {
+      "clear_nearwhite": 979349,
+      "opaque_nearwhite": 156383,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 127874,
+    "file": "07_expectant.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 956963,
+      "opaque_nearwhite": 182308,
+      "rim_light": 0
+    },
+    "background": 961459,
+    "before": {
+      "clear_nearwhite": 972581,
+      "opaque_nearwhite": 171150,
+      "rim_light": 1
+    },
+    "enclosed_white_kept": 146007,
+    "file": "08_cheer.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 920597,
+      "opaque_nearwhite": 178392,
+      "rim_light": 0
+    },
+    "background": 925653,
+    "before": {
+      "clear_nearwhite": 941293,
+      "opaque_nearwhite": 162533,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 152817,
+    "file": "09_happy.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 985624,
+      "opaque_nearwhite": 163538,
+      "rim_light": 0
+    },
+    "background": 990735,
+    "before": {
+      "clear_nearwhite": 1001489,
+      "opaque_nearwhite": 152676,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 122591,
+    "file": "10_concern.png",
+    "size": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "after": {
+      "clear_nearwhite": 930981,
+      "opaque_nearwhite": 173177,
+      "rim_light": 0
+    },
+    "background": 936026,
+    "before": {
+      "clear_nearwhite": 949273,
+      "opaque_nearwhite": 159858,
+      "rim_light": 0
+    },
+    "enclosed_white_kept": 142202,
+    "file": "11_side_welcome.png",
+    "size": [
+      1086,
+      1448
+    ]
+  }
+]
