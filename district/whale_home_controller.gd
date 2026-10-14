@@ -3,6 +3,8 @@ extends "res://district/harbor_terraces_controller.gd"
 const Home=preload("res://district/whale_home_map.gd")
 const CONTACT=preload("res://assets/whale_home/contact.gdshader")
 const Props=preload("res://assets/whale_home/pastel_props.gd")
+const Coastal=preload("res://assets/whale_home/coastal_props.gd")
+const SeaMotion=preload("res://assets/whale_home/coastal_motion.gd")
 var fish: Array[Node3D] = []
 var feeding := 0.0
 var extra_lights := false
@@ -12,6 +14,9 @@ var garden_petals: MultiMeshInstance3D
 var blossom_origins: Array[Vector3]=[]
 var previous_contact: Shader
 var moorings: Array=[]
+var sea_motion := SeaMotion.new()
+var sea_surface: MeshInstance3D
+var coastal_materials: Array[ShaderMaterial]=[]
 
 func is_active() -> bool:return is_instance_valid(level) and game.location_id=="whale_home"
 
@@ -27,6 +32,13 @@ func build() -> Dictionary:
 	extra_lights=bool(game.visited.get("whale_home:facility:star_lights",false))
 	garden_petals=level.get_meta("garden_petals");blossom_origins=level.get_meta("blossom_origins")
 	moorings=level.get_meta("home_moorings")
+	sea_surface=level.get_node("Sea/CoastalOcean")
+	sea_motion.configure(level.get_meta("sea_material"))
+	sea_surface.extra_cull_margin=float(sea_motion.settings.wave_height)*(1.0+float(sea_motion.settings.crest_sharpness)*0.5)+.04
+	coastal_materials.clear()
+	for material: ShaderMaterial in Coastal.wood_materials.values():coastal_materials.append(material)
+	coastal_materials.append_array(Coastal.stone_materials)
+	_update_sea()
 	previous_contact=game.atmosphere.contact_shading.material_override.shader
 	var slabs: Array=level.get_meta("walkable_slabs",[])
 	game.player.set_meta("floor_slabs",slabs);game.silhouette_body.set_meta("floor_slabs",slabs)
@@ -38,6 +50,7 @@ func build() -> Dictionary:
 
 func leave() -> void:
 	super.leave();fish.clear();garden_petals=null;blossom_origins.clear();moorings.clear()
+	sea_surface=null;coastal_materials.clear()
 	game.atmosphere.contact_shading.material_override.shader=previous_contact
 	game.atmosphere._apply_lighting()
 
@@ -52,6 +65,7 @@ func set_layers() -> void:
 func _process(delta: float) -> void:
 	if not is_active() or (game.pause_menu and game.pause_menu.active):return
 	sea_clock+=delta;feeding=maxf(0.0,feeding-delta);notice_time=maxf(0.0,notice_time-delta)
+	_update_sea()
 	game.atmosphere.contact_shading.material_override.shader=CONTACT
 	garden_petals.visible=game.atmosphere.effects
 	if garden_petals.visible:
@@ -61,11 +75,6 @@ func _process(delta: float) -> void:
 			var point: Vector3=origin+Vector3(sin(phase)*2.4,.45+fposmod(i*.52-sea_clock*.24,5.0),cos(phase*.7)*2.0)
 			var basis:=Basis.from_euler(Vector3(sin(phase)*.55,phase,cos(phase)*.45))
 			garden_petals.multimesh.set_instance_transform(i,Transform3D(basis,point))
-	for i in boats.size():
-		boats[i].position=boats[i].get_meta("boat_origin")+Vector3.UP*sin(sea_clock*.85+i)*.055
-		boats[i].rotation.z=sin(sea_clock*.6+i)*.016
-	for mooring: Dictionary in moorings:
-		Props.update_mooring(mooring.line,mooring.dock,mooring.eye.global_position)
 	for i in fish.size():
 		var swimmer: Node3D=fish[i]
 		var origin: Vector3=swimmer.get_meta("home_fish")
@@ -91,6 +100,29 @@ func _process(delta: float) -> void:
 		game.atmosphere.sun.light_energy=.40
 		game.atmosphere.sun.light_color=Color("fff2dc")
 		game.atmosphere.sun.shadow_opacity=.78
+
+func _update_sea() -> void:
+	var height: float=sea_motion.mean_level(sea_clock)
+	var water: ShaderMaterial=level.get_meta("sea_material")
+	sea_surface.position.y=height
+	water.set_shader_parameter("water_level",height)
+	water.set_shader_parameter("wave_time",sea_clock)
+	water.set_shader_parameter("tide_amount",.5+.5*sin(sea_clock*TAU/float(sea_motion.settings.tide_period)))
+	var wet_height: float=sea_motion.wet_level(sea_clock)
+	for material in coastal_materials:
+		material.set_shader_parameter("water_level",height)
+		material.set_shader_parameter("wet_level",wet_height)
+	for boat in boats:
+		var origin: Vector3=boat.get_meta("boat_origin")
+		var surface: Vector3=sea_motion.sample(Vector2(origin.x,origin.z),sea_clock)
+		boat.position=origin+Vector3.UP*(surface.x-float(sea_motion.settings.base_level))
+		var yaw: float=boat.rotation.y
+		var local_x: float=surface.y*cos(yaw)-surface.z*sin(yaw)
+		var local_z: float=surface.y*sin(yaw)+surface.z*cos(yaw)
+		boat.rotation.x=-atan(local_z)
+		boat.rotation.z=atan(local_x)
+	for mooring: Dictionary in moorings:
+		Props.update_mooring(mooring.line,mooring.dock,mooring.eye.global_position)
 
 func show_notice(text: String) -> void:notice=text;notice_time=6.0
 
