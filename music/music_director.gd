@@ -17,7 +17,7 @@ extends Node
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
 ## 五套风格组，F8 切换（会记住）：
-##   galgame     galgame 场景配乐十九首（默认，七首原创钢琴加入对应场合轮换）
+##   galgame     galgame 场景配乐二十首（默认，八首原创钢琴加入对应场合轮换）
 ##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
 ##   whalefm     《鲸落电台》六首（电钢 + 贝斯 + 鼓组 + 黑胶炒豆的 Lo-fi 电台，每场合固定一首）
@@ -37,14 +37,14 @@ const DIR := "res://assets/music/"
 ## tracks 里每个场合是一个数组：组内轮换。写成单个字符串也兼容（等价于只有一首）。
 const STYLE_SETS := {
 	"galgame": {
-		"name": "galgame 场景十九首",
+		"name": "galgame 场景二十首",
 		"tracks": {
 			"title": ["gal_piano_daily", "gal_piano_hope", "gal_after_school", "gal_bittersweet", "gal_title2"],
 			"day": ["gal_piano_daily", "gal_daily", "gal_daily2"],
-			"night": ["gal_piano_night", "gal_piano_rain", "gal_after_school", "gal_memory", "gal_memory2"],
+			"night": ["gal_piano_night", "gal_piano_rain", "gal_after_school", "gal_memory", "gal_goodnight", "gal_memory2"],
 			"indoor": ["gal_piano_indoor", "gal_piano_rain", "gal_after_school", "gal_light", "gal_light2"],
 			"battle": ["gal_piano_tension", "gal_tension", "gal_tension2"],
-			"hope": ["gal_piano_hope", "gal_hope", "gal_hope2"],
+			"hope": ["gal_piano_hope", "gal_hope", "gal_goodnight", "gal_hope2"],
 		},
 	},
 	"harbor": {
@@ -114,6 +114,7 @@ const CATALOG := {
 		["gal_piano_tension", "潮汐之前", "原创钢琴 · 紧张 / 决意"],
 		["gal_piano_hope", "明天仍有晴空", "原创钢琴 · 释怀 / 结尾"],
 		["gal_after_school", "夕照，未寄出的信", "原创钢琴 · 标题 / 室内 / 夜晚"],
+		["gal_goodnight", "晚安，鲸落港", "原创钢琴 · 夜晚 / 回忆 / 通关"],
 		["gal_daily", "港口的一天", "日常 · 教室 · 据点"],
 		["gal_daily2", "午后集市", "日常 · 白天（轮换）"],
 		["gal_light", "轻快的午后", "喜剧 · 打闹"],
