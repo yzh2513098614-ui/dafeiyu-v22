@@ -45,6 +45,7 @@ var cloth_cache: Dictionary = {}
 var sphere_mesh: SphereMesh
 var plant_rim_mesh: TorusMesh
 var star_mesh: ArrayMesh
+var blade_cache: Dictionary = {}
 var furniture_count := 0
 var detail_count := 0
 var batched_surfaces := 0
@@ -111,18 +112,66 @@ func _star(parent: Node3D, point: Vector3, size: float=.4) -> void:
 		star_mesh=tool.commit()
 	var node:=MeshInstance3D.new();node.mesh=star_mesh;node.position=point;node.scale=Vector3.ONE*size;node.material_override=Geo.material(GOLD);parent.add_child(node)
 
+func _blade(outlines: Array, thickness: float, axis: Vector3) -> ArrayMesh:
+	var key: String=str(outlines)+":"+str(thickness)+":"+str(axis)
+	if blade_cache.has(key):return blade_cache[key]
+	var U: Vector3; var V: Vector3
+	if axis.is_equal_approx(Vector3.UP):
+		U=Vector3.RIGHT; V=Vector3.BACK
+	else:
+		U=Vector3.BACK; V=Vector3.UP
+	var half: float=thickness*.5
+	var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for outline in outlines:
+		var centroid:=Vector2.ZERO
+		for point in outline:centroid+=point
+		centroid/=float(outline.size())
+		var top: Array[Vector3]=[]; var bottom: Array[Vector3]=[]
+		for point in outline:
+			var flat: Vector3=U*point.x+V*point.y
+			top.append(flat+axis*half); bottom.append(flat-axis*half)
+		Geo._face(tool,top,axis)
+		Geo._face(tool,bottom,-axis)
+		for i in outline.size():
+			var j: int=(i+1)%outline.size()
+			var edge: Vector3=(U*(outline[j].x-outline[i].x)+V*(outline[j].y-outline[i].y)).normalized()
+			var normal: Vector3=edge.cross(axis).normalized()
+			var mid: Vector3=(top[i]+top[j]+bottom[j]+bottom[i])*.25
+			if normal.dot(mid-(U*centroid.x+V*centroid.y))<0:normal=-normal
+			Geo._face(tool,[top[i],top[j],bottom[j],bottom[i]],normal)
+	var mesh: ArrayMesh=tool.commit();blade_cache[key]=mesh;return mesh
+
 func _whale(parent: Node3D, point: Vector3, scale_value: float=1.0, yaw: float=0.0, color: Color=BLUE) -> Node3D:
 	var root: Node3D=_group(parent,"BlueWhale",point);root.scale=Vector3.ONE*scale_value;root.rotation_degrees.y=yaw
-	_sphere(root,Vector3(0,.76,0),Vector3(2.4,1.40,1.75),color)
-	_sphere(root,Vector3(0,.53,.67),Vector3(1.91,.75,.48),WHITE)
+	_sphere(root,Vector3(0,.72,.05),Vector3(1.50,1.26,1.90),color)
+	_sphere(root,Vector3(0,.42,.45),Vector3(1.10,.55,1.35),WHITE)
+	var stock: MeshInstance3D=Geo.cylinder(root,.30,.55,Vector3(0,.80,-1.02),color,.11);stock.rotation.x=PI*.5
+	var pectorals: Array=[]
 	for side in [-1.0,1.0]:
-		_sphere(root,Vector3(side*.74,.83,.73),Vector3(.13,.15,.075),Color("243e61"))
-		_sphere(root,Vector3(side*.75,.86,.77),Vector3(.044,.044,.028),Color.WHITE)
-		_sphere(root,Vector3(side*.83,.61,.76),Vector3(.22,.125,.037),Color("f5aeb8"))
-		var fin: MeshInstance3D=_sphere(root,Vector3(side*1.13,.34,.13),Vector3(.71,.21,.66),color);fin.rotation.z=-side*.28
-		var tail: MeshInstance3D=_sphere(root,Vector3(side*.37,1.22,-1.09),Vector3(.93,.24,.53),color);tail.rotation.z=side*.44
-	_sphere(root,Vector3(0,.94,-.86),Vector3(.45,.64,.44),color)
+		pectoral_outline(side,pectorals)
+	var fins:=MeshInstance3D.new();fins.mesh=_blade(pectorals,.07,Vector3.UP)
+	fins.material_override=Geo.material(color);fins.position=Vector3(0,.40,.25);root.add_child(fins)
+	var flukes:=MeshInstance3D.new();flukes.mesh=_blade([fluke_outline()],.07,Vector3.UP)
+	flukes.material_override=Geo.material(color);flukes.position=Vector3(0,.95,-1.02);root.add_child(flukes)
+	var dorsal:=MeshInstance3D.new();dorsal.mesh=_blade([dorsal_outline()],.07,Vector3.RIGHT)
+	dorsal.material_override=Geo.material(color);dorsal.position=Vector3(0,1.26,-.28);root.add_child(dorsal)
+	for side in [-1.0,1.0]:
+		_sphere(root,Vector3(side*.50,.86,.78),Vector3(.13,.15,.075),Color("243e61"))
+		_sphere(root,Vector3(side*.51,.89,.82),Vector3(.044,.044,.028),Color.WHITE)
+		_sphere(root,Vector3(side*.58,.64,.80),Vector3(.22,.125,.037),Color("f5aeb8"))
 	return root
+
+func pectoral_outline(side: float, into: Array) -> void:
+	var outline: Array[Vector2]=[]
+	for point in [Vector2(.05,.10),Vector2(.50,.02),Vector2(.88,-.22),Vector2(.78,-.40),Vector2(.38,-.34),Vector2(.10,-.16)]:
+		outline.append(Vector2(point.x*side,point.y))
+	into.append(outline)
+
+func fluke_outline() -> Array[Vector2]:
+	return [Vector2(-.09,.05),Vector2(-.42,-.12),Vector2(-.62,-.38),Vector2(-.24,-.30),Vector2(0,-.22),Vector2(.24,-.30),Vector2(.62,-.38),Vector2(.42,-.12),Vector2(.09,.05)]
+
+func dorsal_outline() -> Array[Vector2]:
+	return [Vector2(.16,0),Vector2(.06,.16),Vector2(-.10,.26),Vector2(-.22,.18),Vector2(-.20,.04)]
 
 func _flower(parent: Node3D, point: Vector3, color: Color=Color("f8c6d1"), size: float=.20) -> void:
 	for i in 5:
