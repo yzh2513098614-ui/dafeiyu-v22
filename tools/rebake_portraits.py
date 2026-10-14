@@ -7,9 +7,12 @@ A  抠像残留：白底与白衣同色（250~252），纯阈值分不开。
      轮廓按曼哈顿距离内缩 ERODE 像素 + 1px 羽化，吃掉抗锯齿过渡带。
 A2 发丝缝隙白：发丝深色描边把白底切成大量「不触边」的封闭白连通域，
    泛洪进不去；腐蚀只能吃掉 <=4px 的窄缝，宽缝中心 alpha=255 留在画面上。
-   → 透底缝隙 = 与外背景同色（min 通道 >=BG_T）且深藏于人物内部（到外背景
-   >=DEPTH_MIN px）的封闭白域；服饰白/发丝高光色值低于背景、贴轮廓的纯白
-   部件深度不足，均天然排除。内切半径判据已实测废弃（两方向都误判）。
+   → 分两阶段清除（同一形状判据：邻环线稿深 + 外环发蓝）：
+     阶段一 纯白缝隙（min>=BG_T 占比高）；
+     阶段二 带色缝隙（被发丝环境光染到 246~252），再加织物/背景带判据
+     （真缝隙贴外背景纯白，服饰亮部被带阴影白织物包围）与裙摆以下排除，
+     保护鞋面高光、围裙鲸鱼肚皮条；小面积候选块带皮肤邻域则判为眼睛高光。
+   内切半径判据已实测废弃（两方向都误判）。
 B  线性过滤白边：透明像素 RGB 残留白色，缩略采样时插值出亮白边。
    → alpha bleed：核心色向外填 BLEED 像素，透明区不再有白色可供插值。
 
@@ -46,6 +49,14 @@ BG_T = 253         # 外背景实测 min 通道 253~255；服饰白与发丝高�
 BGCOL_FRAC = 0.5   # 封闭白域内达到背景色的像素占比下限
 RING_DARK_MIN = 0.35  # 域外邻环深色(线稿)占比下限；服饰高光点的邻环是自身浅色阴影
 OUTER_BLUE_MIN = 0.5  # 再外一环为发蓝的占比下限；缝隙藏在发块内，服饰高光藏在阴影内
+EYE_GUARD_AREA = 400  # 眼睛高光误伤保护：小于此面积的候选块若外圈带含皮肤色则跳过
+SKIN_MIN = 0.05       # 外圈带(dilate 6~26)中皮肤色占比下限，超过即判为面部高光
+# ---- 第二阶段：带色(min 246~252)发缝残留，BGCOL_FRAC 判据覆盖不到 ----
+S2_RING_DARK_MIN = 0.35   # 同阶段一：邻环有深色线稿
+S2_OUTER_BLUE_MIN = 0.5   # 同阶段一：再外环是发蓝
+S2_FABRIC_BG_MAX = 0.15   # (织物白 240~252 − 外背景白 253+) 占比差上限；
+                          # 围裙鲸鱼肚皮条被白织物包围，真发缝贴外背景白
+S2_Y_MAX = 1200           # 裙摆以下的白块是鞋面/袜口高光，不参与
 
 CONN4 = ndimage.generate_binary_structure(2, 1)  # 4 连通
 
@@ -103,32 +114,53 @@ def bake(name: str) -> dict:
         bgcol_frac = np.zeros(g_n + 1)
         np.add.at(bgcol_frac, g_labels.ravel(), (mn >= BG_T).ravel())
         bgcol_frac[1:] /= np.maximum(sizes[1:], 1)
-        depth = ndimage.distance_transform_cdt(~bg, metric="taxicab")
-        min_depth = np.full(g_n + 1, 1 << 20, dtype=np.int32)
-        np.minimum.at(min_depth, g_labels.ravel(), depth.ravel())
-        sel = bgcol_frac >= BGCOL_FRAC
-        sel[0] = False
-        pre_ids = np.nonzero(sel)[0]
         dark = mn < 150
-        sel_list = []
-        for i in pre_ids:
+        r_, g_, b_ = rgb[..., 0].astype(np.int32), rgb[..., 1].astype(np.int32), rgb[..., 2].astype(np.int32)
+        skin = (r_ > b_ + 20) & (r_ > 170) & (g_ > b_)  # 皮肤偏暖：红高于蓝
+        fabric_band = (mn >= 240) & (mn < BG_T)         # 织物白（带阴影的布料）
+        bg_band = mn >= BG_T                            # 外背景纯白
+        sel_list, sel_stage = [], []
+        for i in range(1, g_n + 1):
+            stage1 = bgcol_frac[i] >= BGCOL_FRAC
+            # 第二阶段候选：带色发缝残留（>=400px）
+            if not stage1 and sizes[i] < EYE_GUARD_AREA:
+                continue
             comp = g_labels == i
             ring = ndimage.binary_dilation(comp, structure=CONN4, iterations=2) & ~comp
-            if not ring.any() or dark[ring].mean() < RING_DARK_MIN:
+            if not ring.any() or dark[ring].mean() < (RING_DARK_MIN if stage1 else S2_RING_DARK_MIN):
                 continue
             oring = ndimage.binary_dilation(comp, structure=CONN4, iterations=6) & ~ring & ~comp
             if not oring.any():
                 continue
             v = rgb[oring]
             blue = ((v[:, 2].astype(np.int32) - v[:, 0].astype(np.int32)) > 60).mean()
-            if blue >= OUTER_BLUE_MIN:
-                sel_list.append(i)
+            if blue < (OUTER_BLUE_MIN if stage1 else S2_OUTER_BLUE_MIN):
+                continue
+            if sizes[i] < EYE_GUARD_AREA:
+                guard = ndimage.binary_dilation(comp, structure=CONN4, iterations=26) & ~oring & ~comp
+                if guard.any() and skin[guard].mean() >= SKIN_MIN:
+                    continue  # 面部/眼睛附近的小白块判为高光，保留
+            if not stage1:
+                # 鲸鱼肚皮条等服饰亮部被白织物包围；真发缝贴着外背景纯白
+                band = ndimage.binary_dilation(comp, structure=CONN4, iterations=16) & ~oring
+                if band.any():
+                    diff = fabric_band[band].mean() - bg_band[band].mean()
+                    if diff >= S2_FABRIC_BG_MAX:
+                        continue
+                # 质心 y 坐标限制：裙摆以下是鞋面/袜口高光
+                cy = ndimage.center_of_mass(comp)[0]
+                if cy > S2_Y_MAX:
+                    continue
+                sel_stage.append(2)
+            else:
+                sel_stage.append(1)
+            sel_list.append(i)
         sel_ids = np.asarray(sel_list, dtype=np.int64)
+        n2 = sum(1 for s in sel_stage if s == 2)
         cleared = int(sizes[sel_ids].sum()) if sel_ids.size else 0
         if sel_ids.size:
             bg |= np.isin(g_labels, sel_ids)
-            print(f"  gap-domains cleared: {sel_ids.size} comps / {cleared}px "
-                  f"(depth {int(min_depth[sel_ids].min())}~{int(min_depth[sel_ids].max())}px)",
+            print(f"  gap-domains cleared: {sel_ids.size} comps (stage2 {n2}) / {cleared}px",
                   flush=True)
         kept = int(gap.sum()) - cleared
     else:
