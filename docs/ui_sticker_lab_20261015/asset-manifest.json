@@ -1,0 +1,87 @@
+{
+  "canvas": [
+    1448,
+    1086
+  ],
+  "pages": [
+    "components",
+    "inventory",
+    "dialogue"
+  ],
+  "offline": true,
+  "assets": [
+    {
+      "source": "assets/v18/items/token_cracker.png",
+      "bytes": 212642
+    },
+    {
+      "source": "assets/v18/items/sea_biscuit.png",
+      "bytes": 182342
+    },
+    {
+      "source": "assets/v18/items/retry_tea.png",
+      "bytes": 166756
+    },
+    {
+      "source": "assets/ui/chest.svg",
+      "bytes": 329
+    },
+    {
+      "source": "assets/item_icons/retry_tea.svg",
+      "bytes": 333
+    },
+    {
+      "source": "assets/item_icons/sea_biscuit.svg",
+      "bytes": 380
+    },
+    {
+      "source": "assets/v18/items/prompt_pen.png",
+      "bytes": 138105
+    },
+    {
+      "source": "assets/item_icons/hallucination_map.svg",
+      "bytes": 438
+    },
+    {
+      "source": "assets/v18/items/fish_badge.png",
+      "bytes": 181589
+    },
+    {
+      "source": "assets/v18/items/context_note.png",
+      "bytes": 200628
+    },
+    {
+      "source": "assets/item_icons/fish_badge.svg",
+      "bytes": 321
+    },
+    {
+      "source": "assets/item_icons/stopped_pillow.svg",
+      "bytes": 300
+    },
+    {
+      "source": "assets/fonts/misans/MiSans-Bold.ttf",
+      "bytes": 8009316
+    },
+    {
+      "source": "assets/ui/whale_mascot.png",
+      "bytes": 842101
+    },
+    {
+      "source": "assets/dialogue/downloaded_20261014/transparent/01_listen.png",
+      "bytes": 1458970
+    },
+    {
+      "source": "assets/dialogue/downloaded_20261014/transparent/09_happy.png",
+      "bytes": 1465681
+    },
+    {
+      "source": "assets/dialogue/downloaded_20261014/transparent/04_think.png",
+      "bytes": 1438628
+    },
+    {
+      "source": "assets/start/harbor_background.png",
+      "bytes": 2393309
+    }
+  ],
+  "bytes": 26216550
+}
