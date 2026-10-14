@@ -10,6 +10,7 @@
     "max_rounds": 60,
     "stamina_regen_per_round": 4,
     "shield_reduction": 0.5,
+    "defense_softcap": 17.0,
     "enemy_speed_scale": 3.0,
 
     "ap_max": 100,

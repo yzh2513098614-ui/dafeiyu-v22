@@ -18,6 +18,7 @@ const CARD_CATALOG := "res://assets/cards/catalog.json"
 var battle_data: Dictionary = {}
 var balance: Dictionary = {}
 var catalog: Array = []
+var probe = null
 
 func _initialize() -> void:
 	call_deferred("run")
@@ -47,7 +48,7 @@ func _basic_attack_damage(m, kind: String) -> float:
 	return 0.0
 
 ## 用真引擎让**怪物打玩家**，返回实际扣血。
-## 不能用「raw - defense()」自己算 —— 那条路绕过了引擎里的减防下限，
+## 不能用「raw - defense()」自己算 —— 那条路绕过了引擎里的减伤口径（现为双曲软化），
 ## 第一版就是这么写的，结果 30 级显示扣 1 点，看不出下限到底有没有生效。
 func _enemy_hit_damage(m, kind: String) -> float:
 	var monster: Dictionary = balance.monsters.get(kind, {})
@@ -74,9 +75,13 @@ func _stats(m) -> Dictionary:
 		out[key] = m.attribute(key)
 	return out
 
-## 卡牌伤害按 battle_engine._card_effect 的公式算（那一步要手牌状态，这里只算数值）
+## 卡牌伤害直接问引擎要减伤口径（那一步要手牌状态，这里只算数值）。
+## 以前是把公式手抄一遍，引擎改成双曲软化后手抄版立刻过期 —— 正是本文件开头
+## 那句「不做纸面推算」要避免的事。
 func _card_damage(m, value: int, target_def: float) -> float:
-	return maxf(1.0, float(value) + float(m.attack()) * 0.25 - target_def)
+	if probe == null:
+		probe = EngineScript.new(20261005, battle_data)
+	return probe._mitigate(float(value) + float(m.attack()) * 0.25, target_def)
 
 ## 42 张卡里 damage 类的最大值
 func _top_card_value() -> int:

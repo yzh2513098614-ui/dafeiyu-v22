@@ -55,22 +55,27 @@ func _init(seed_value: int = 0, battle_data: Dictionary = {}) -> void:
 
 # ---------------------------------------------------------------- 建人
 
-## 防御减伤的下限比例：**原始伤害的 25%**。
+## 减伤口径：**双曲软化** —— 实收 = 原始 × K / (K + 防御)，K 取自 rules.defense_softcap。
 ##
-## 不加这个下限的话，高等级玩家会变成无敌的。实测（tools/measure_battle_balance.gd）：
-##   1 级  防御 7  → 守潮者原始攻 24，实际扣血 17
-##   10 级 防御 17 → 实际扣血 7
-##   30 级 防御 39 → 实际扣血 **1**（被夹到最低值）
-## 而怪物的强度是**固定**的（血 28~85、攻 13~24，见 combat_balance.json），
-## 耐力却每级 +1，所以防御迟早会超过所有敌人的攻击力。
-## 有了下限，防御仍然有用（24 → 6 是四倍减伤），但永远留一点压力。
+## 旧口径是「减法 + 原始伤害 25% 下限」：maxf(raw - def, raw * 0.25)。下限挡住了
+## 「高等级无敌」，但换来一个平台期：def ≥ raw × 0.75 之后再堆防御**一点用都没有**。
+## 实测（tools/measure_battle_balance.gd，守潮者原始攻 24，玩家防御随耐力每级涨）：
+##   1 级  防御 7  → 扣血 17   线性段，每点防御抵 1 点伤害
+##   10 级 防御 17 → 扣血 6    已经贴死下限
+##   30 级 防御 39 → 扣血 6    又练 20 级、+22 点防御，减伤纹丝不动
+## 怪物攻击固定 13~24（combat_balance.json），所以玩家 10 级之后防御就是废属性 ——
+## 减伤曲线在 10 级断掉，之后 20 级都是平的。
 ##
-## 取值从 battle_data.json 的 rules.defense_floor 读，缺省 0.25 ——
-## 想调平衡改数据即可，不必改代码（和 rules.ap_max 一样的约定）。
-const DEFENSE_FLOOR_DEFAULT := 0.25
+## 双曲式对防御严格单调递减、且永远不为 0，同时满足旧设计的两个意图：
+## 防御一直有用（没有平台）、高等级也留一点压力（不会归零）。
+## K 的含义很直白：**防御正好等于 K 时减伤 50%**。
+## 和 rules.ap_max 一样的约定 —— 想调平衡改 battle_data.json 即可，不必改代码。
+const DEFENSE_SOFTCAP_DEFAULT := 17.0
 
-func _damage_floor_ratio() -> float:
-	return clampf(float(rules.get("defense_floor", DEFENSE_FLOOR_DEFAULT)), 0.0, 1.0)
+## 减伤后的实收伤害。最低 1 点，和旧口径一致：任何一次命中都要有反馈。
+func _mitigate(raw: float, target_def: float) -> float:
+	var softcap := maxf(1.0, float(rules.get("defense_softcap", DEFENSE_SOFTCAP_DEFAULT)))
+	return maxf(1.0, raw * softcap / (softcap + maxf(0.0, target_def)))
 
 func _blank(side: String, entry: Dictionary) -> Dictionary:
 	return {
@@ -243,9 +248,8 @@ func _roll(actor: Dictionary, power: float, stat_key: String, stat_scale: float,
 	var raw := base * variance
 	if crit:
 		raw *= float(rules.crit_multiplier)
-	# 减防但留下限：见 _damage_floor_ratio() 上面那段实测说明
-	var after := maxf(raw - target_def, raw * _damage_floor_ratio())
-	return {"damage": maxf(1.0, after), "crit": crit}
+	# 减伤口径见 _mitigate() 上面那段实测说明
+	return {"damage": _mitigate(raw, target_def), "crit": crit}
 
 ## 攒 AP。只有我方单位有槽；foes 调用直接返回 0。
 ## 只有「刚好蓄满」这一件事会发事件 —— 每次平A都发一条会把演出拖成幻灯片，
@@ -667,8 +671,8 @@ func _card_effect(actor: Dictionary, card: Dictionary, effect: Dictionary, targe
 		"damage":
 			for target in _pick_targets(actor, str(card.get("target", "one")), target_index):
 				var raw_amount := float(value) + float(actor.atk) * 0.25 + float(card_amplify)
-				# 和 _roll 一样留减防下限，理由见 _damage_floor_ratio()
-				var amount := maxf(1.0, maxf(raw_amount - float(target.def), raw_amount * _damage_floor_ratio()))
+				# 和 _roll 同一套减伤口径，理由见 _mitigate()
+				var amount := _mitigate(raw_amount, float(target.def))
 				var dealt := _damage(target, amount, actor)
 				_event("damage", actor, target, dealt, "%s 打出 %s" % [actor.name, label], {"skill": str(card.id), "card": true})
 				_check_down(target)
