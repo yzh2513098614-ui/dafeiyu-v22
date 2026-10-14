@@ -50,13 +50,16 @@ BGCOL_FRAC = 0.5   # 封闭白域内达到背景色的像素占比下限
 RING_DARK_MIN = 0.35  # 域外邻环深色(线稿)占比下限；服饰高光点的邻环是自身浅色阴影
 OUTER_BLUE_MIN = 0.5  # 再外一环为发蓝的占比下限；缝隙藏在发块内，服饰高光藏在阴影内
 EYE_GUARD_AREA = 400  # 眼睛高光误伤保护：小于此面积的候选块若外圈带含皮肤色则跳过
-SKIN_MIN = 0.05       # 外圈带(dilate 6~26)中皮肤色占比下限，超过即判为面部高光
+SKIN_MIN = 0.02       # 外圈带(dilate 6~26)中皮肤色占比下限，超过即判为面部高光
+                      # （阶段三放开面积下限后，实测眼部残留占比 0.025~0.064，收紧到 0.02）
 # ---- 第二阶段：带色(min 246~252)发缝残留，BGCOL_FRAC 判据覆盖不到 ----
 S2_RING_DARK_MIN = 0.35   # 同阶段一：邻环有深色线稿
 S2_OUTER_BLUE_MIN = 0.5   # 同阶段一：再外环是发蓝
 S2_FABRIC_BG_MAX = 0.15   # (织物白 240~252 − 外背景白 253+) 占比差上限；
                           # 围裙鲸鱼肚皮条被白织物包围，真发缝贴外背景白
 S2_Y_MAX = 1200           # 裙摆以下的白块是鞋面/袜口高光，不参与
+GAP_MIN_AREA = 60         # 阶段三：带色发缝面积下限。头发两侧是残留高发区，
+                          # 那里的缝隙多在 60~400px，原先被 400px 下限整档跳过
 
 CONN4 = ndimage.generate_binary_structure(2, 1)  # 4 连通
 
@@ -122,8 +125,8 @@ def bake(name: str) -> dict:
         sel_list, sel_stage = [], []
         for i in range(1, g_n + 1):
             stage1 = bgcol_frac[i] >= BGCOL_FRAC
-            # 第二阶段候选：带色发缝残留（>=400px）
-            if not stage1 and sizes[i] < EYE_GUARD_AREA:
+            # 第二/三阶段候选：带色发缝残留（>=GAP_MIN_AREA）
+            if not stage1 and sizes[i] < GAP_MIN_AREA:
                 continue
             comp = g_labels == i
             ring = ndimage.binary_dilation(comp, structure=CONN4, iterations=2) & ~comp
@@ -151,16 +154,17 @@ def bake(name: str) -> dict:
                 cy = ndimage.center_of_mass(comp)[0]
                 if cy > S2_Y_MAX:
                     continue
-                sel_stage.append(2)
+                sel_stage.append(3 if sizes[i] < EYE_GUARD_AREA else 2)
             else:
                 sel_stage.append(1)
             sel_list.append(i)
         sel_ids = np.asarray(sel_list, dtype=np.int64)
         n2 = sum(1 for s in sel_stage if s == 2)
+        n3 = sum(1 for s in sel_stage if s == 3)
         cleared = int(sizes[sel_ids].sum()) if sel_ids.size else 0
         if sel_ids.size:
             bg |= np.isin(g_labels, sel_ids)
-            print(f"  gap-domains cleared: {sel_ids.size} comps (stage2 {n2}) / {cleared}px",
+            print(f"  gap-domains cleared: {sel_ids.size} comps (s2 {n2} / s3 {n3}) / {cleared}px",
                   flush=True)
         kept = int(gap.sum()) - cleared
     else:
