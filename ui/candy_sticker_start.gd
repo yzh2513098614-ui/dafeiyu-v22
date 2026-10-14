@@ -8,9 +8,9 @@ const CGS=[
  {"title":"糖果色海洋 · 标题插画","path":"res://assets/ui/candy_title/backdrop.png"},
  {"title":"蓝鲸信使 · 挥手立绘","path":"res://assets/ui/candy_title/gallery/whale_wave_source.png"},
  {"title":"鲸落港 · 海风街景","path":"res://assets/v18/harbor_title.png"},
- {"title":"大肥鱼 · 聊聊","path":"res://assets/dialogue/talk_original.png"},
- {"title":"大肥鱼 · 倾听","path":"res://assets/dialogue/listen_original.png"},
- {"title":"大肥鱼 · 思考","path":"res://assets/dialogue/think_original.png"}]
+ {"title":"大肥鱼 · 聊聊","path":"res://assets/dialogue/downloaded_20261014/transparent/03_talk.png"},
+ {"title":"大肥鱼 · 倾听","path":"res://assets/dialogue/downloaded_20261014/transparent/01_listen.png"},
+ {"title":"大肥鱼 · 思考","path":"res://assets/dialogue/downloaded_20261014/transparent/04_think.png"}]
 var design_root:Control
 var logo:TextureRect
 var slot_service
@@ -159,6 +159,8 @@ func _journey()->void:
  _button(content,"26 地图",Vector2(382,96),Vector2(163,56),func():_show_page("pack26"))
  _button(content,"研究远征",Vector2(559,96),Vector2(163,56),func():prefs().starting_place="research";_start(false))
  Candy.label(content,"今天，从哪里开始？",Vector2(30,166),Vector2(684,45),28)
+ var home_entry:=_button(content,"大肥鱼之家 · 直接入住",Vector2(397,165),Vector2(315,47),func():prefs().starting_place="whale_home";_start(false))
+ home_entry.name="StartWhaleHome"
  for i in PLACES.size():
   var place:Array=PLACES[i]
   var button:=_button(content,"",Vector2(25+(i%2)*347,224+(i/2)*94),Vector2(340,86),func():prefs().starting_place=place[0];prefs().save();_render(),prefs().starting_place==place[0]);cards[place[0]]=button
