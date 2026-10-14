@@ -1,0 +1,56 @@
+{
+  "cabinet": {
+    "colors": ["95b5a6", "e9e7da", "d8e5db"],
+    "details": ["688d7e", "c3c0b0", "b2c9bb"],
+    "patterns": [2, 3, 2],
+    "scale": [1.0, 8.0], "contrast": 0.17, "roughness": 0.93
+  },
+  "cream_cabinet": {
+    "colors": ["dbcbc1", "eee5d7", "eee2d9"],
+    "details": ["b99e8f", "c8bba8", "d0b7a8"],
+    "patterns": [2, 3, 2],
+    "scale": [1.2, 9.0], "contrast": 0.15, "roughness": 0.92
+  },
+  "bookcase": {
+    "colors": ["b68c75", "c49a80", "e1d5bf"],
+    "details": ["805a47", "956d52", "bcaa8e"],
+    "patterns": [0, 0, 2],
+    "scale": [0.8, 6.0], "contrast": 0.29, "roughness": 0.88
+  },
+  "display_shelf": {
+    "colors": ["8da9ba", "abc0cb", "dce6e7"],
+    "details": ["5e8098", "789cac", "b5ced1"],
+    "patterns": [4, 4, 2],
+    "scale": [7.0, 8.0], "contrast": 0.18, "roughness": 0.94
+  },
+  "ash_table": {
+    "colors": ["c5b396", "deceb0", "ece1ce"],
+    "details": ["998365", "ac906b", "cab99b"],
+    "patterns": [0, 1, 2],
+    "scale": [0.9, 5.0], "contrast": 0.23, "roughness": 0.90
+  },
+  "desk": {
+    "colors": ["abc0b9", "e9ddc4", "dbe5df"],
+    "details": ["809e93", "bdaa86", "afc4b9"],
+    "patterns": [2, 1, 2],
+    "scale": [0.65, 7.0], "contrast": 0.21, "roughness": 0.91
+  },
+  "tea_table": {
+    "colors": ["c7a99a", "e0c7be", "eddfd7"],
+    "details": ["a18272", "b09289", "cab3a6"],
+    "patterns": [0, 3, 2],
+    "scale": [1.3, 6.0], "contrast": 0.20, "roughness": 0.95
+  },
+  "craft_table": {
+    "colors": ["ada7bf", "d8d0df", "e7e1eb"],
+    "details": ["858096", "aea0be", "c5b9cd"],
+    "patterns": [2, 4, 2],
+    "scale": [6.0, 7.0], "contrast": 0.18, "roughness": 0.95
+  },
+  "garden_table": {
+    "colors": ["ac9275", "c2a484", "ddcbb5"],
+    "details": ["7f6853", "967451", "b7a086"],
+    "patterns": [0, 1, 0],
+    "scale": [0.75, 4.0], "contrast": 0.26, "roughness": 0.94
+  }
+}
