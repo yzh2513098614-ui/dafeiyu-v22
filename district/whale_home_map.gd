@@ -5,10 +5,11 @@ const Geo=preload("res://district/story_geometry.gd")
 const Harbor=preload("res://district/harbor_terraces.gd")
 const Shape=preload("res://district/space_shape.gd")
 const Action=preload("res://district/whale_home_action.gd")
-const SEA=preload("res://assets/whale_home/sea.gdshader")
+const SEA=preload("res://assets/whale_home/coastal_water.gdshader")
 const FABRIC=preload("res://assets/whale_home/fabric.gdshader")
 const MOTIF=preload("res://assets/whale_home/motif.gdshader")
 const Pastel=preload("res://assets/whale_home/pastel_props.gd")
+const Coastal=preload("res://assets/whale_home/coastal_props.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
 const ROOF_TILE=preload("res://models/whale_home/curved_roof_tile.tscn")
@@ -752,8 +753,7 @@ func _roof(parent: Node3D) -> void:
 	_vines(parent,Vector3(14.4,h+1.15,-18.6),Vector3(14.4,.8,6.4),.4)
 
 func _rock(parent: Node3D, point: Vector3, size: Vector3, variant: int=0) -> void:
-	var mesh:=SphereMesh.new();mesh.radius=.5;mesh.height=1.0;mesh.radial_segments=9;mesh.rings=5
-	var node:=MeshInstance3D.new();node.mesh=mesh;node.position=point;node.scale=size;node.rotation=Vector3(variant*.2,variant*.47,variant*.13);node.material_override=Geo.material(Color("b5c5ae") if variant%2 else Color("cdd3bd"));parent.add_child(node)
+	Coastal.reef(parent,point,size,variant)
 
 func _garden(parent: Node3D) -> void:
 	for side in [-1.0,1.0]:
@@ -867,15 +867,27 @@ func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> Node3D:
 
 func _dock(parent: Node3D, sea: Node3D) -> void:
 	for rect in [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]:
-		_slab(parent,rect,0);_deck(parent,rect,0)
-		for x in [rect.position.x+.09,rect.end.x-.09]:_box(parent,Vector3(.18,.26,rect.size.y),Vector3(x,-.14,rect.get_center().y),WOOD,1,.018)
-		for z in [rect.position.y+.09,rect.end.y-.09]:_box(parent,Vector3(rect.size.x-.20,.26,.18),Vector3(rect.get_center().x,-.14,z),WOOD,1,.018)
+		var dock: Node3D=_group(parent,"TimberDock")
+		_slab(dock,rect,0)
+		# Keep the original continuous collider; timber replaces the solid grey shell.
+		dock.get_child(0).free()
+		var cross_bridge: bool=rect.size.x>rect.size.y
+		var visible_rect: Rect2=Rect2(-16.5,28,13.5,3.0) if cross_bridge else rect
+		Coastal.dock(dock,visible_rect,cross_bridge)
 	for x in [-2.6,2.6]:
 		for z in [25.8,30.4,35.5]:
 			_model(parent,DOCK_POST,Vector3(x,0,z))
+			Coastal.pile(parent,Vector3(x,0,z))
 			_coll(parent,Vector3(.44,.80,.48),Vector3(x,.32,z))
+	for z in [25.8,30.4,35.5]:Coastal.trestle(parent,Vector3(-2.6,0,z),Vector3(2.6,0,z))
 	for z in [25.5,29.3,33.0]:
-		for x in [-21.7,-16.8]:Geo.cylinder(parent,.16,1.40,Vector3(x,-.20,z),WOOD)
+		for x in [-21.7,-16.8]:
+			_model(parent,DOCK_POST,Vector3(x,0,z));Coastal.pile(parent,Vector3(x,0,z))
+		Coastal.trestle(parent,Vector3(-21.7,0,z),Vector3(-16.8,0,z))
+	for x in [-12.0,-7.7]:
+		for z in [28.16,30.84]:Coastal.pile(parent,Vector3(x,0,z))
+		Coastal.trestle(parent,Vector3(x,0,28.16),Vector3(x,0,30.84))
+	Coastal.bridge_ropes(parent)
 	var east_boat: Node3D=_boat(sea,Vector3(7.2,-.93,30.2),-22)
 	var west_boat: Node3D=_boat(sea,Vector3(-25.0,-.93,29.6),15)
 	var moorings: Array=[]
@@ -944,8 +956,9 @@ func build(owner_game) -> Dictionary:
 	var island: Node3D=_group(level,"Island");var sea: Node3D=_group(level,"Sea");var roof: Node3D=_group(level,"Roof")
 	for i in 3:
 		var floor_group: Node3D=_group(level,"Floor"+str(i));floor_group.set_meta("floor_height",i*HEIGHT);floors.append(floor_group)
-	var ocean:=MeshInstance3D.new();var plane:=PlaneMesh.new();plane.size=Vector2(140,130);ocean.mesh=plane;ocean.position=Vector3(0,-1.1,5)
+	var ocean:=MeshInstance3D.new();ocean.name="CoastalOcean";var plane:=PlaneMesh.new();plane.size=Vector2(140,130);plane.subdivide_width=95;plane.subdivide_depth=87;ocean.mesh=plane;ocean.position=Vector3(0,-1.1,5);ocean.extra_cull_margin=.12
 	var water:=ShaderMaterial.new();water.shader=SEA;ocean.material_override=water;ocean.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF;sea.add_child(ocean);level.set_meta("sea_material",water)
+	level.set_meta("coastal_revision","timber_reefs_v1")
 	_slab(island,Rect2(-28,-25,56,50),0)
 	_box(island,Vector3(55.8,.06,49.8),Vector3(0,-.012,0),STONE,0,.08)
 	for i in 16:
