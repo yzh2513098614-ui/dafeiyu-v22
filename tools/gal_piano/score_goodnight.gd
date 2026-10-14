@@ -7,8 +7,8 @@ extends RefCounted
 ##
 ## 曲式（♩=68，4/4，A♭ 大调）：
 ##   引子   0–3   A♭maj9 长音铺底，右手单音，像港口的灯一盏盏亮起来
-##   主题 A 4–11  | A♭ | Fm7 | B♭m7 | E♭7 | A♭ | Fm7 | Gm7 | A♭add9 |
-##   回忆 A′ 12–19 同一条旋律落在关系小调上：| Fm7 | B♭m7 | E♭7 | A♭ | D♭maj7 | B♭m7 | Gm7 | C7 |
+##   主题 A 4–11  | A♭ | Fm7 | B♭m7 | E♭7 | A♭ | Fm7 | Gm7♭5 | A♭add9 |
+##   回忆 A′ 12–19 同一条旋律落在关系小调上：| Fm7 | B♭m7 | E♭7 | A♭ | D♭maj7 | B♭m7 | Gm7♭5 | C7 |
 ##   心绪 B 20–27 音区抬高、织体变密，终止在 E♭7 上悬住
 ##   尾声   28–31 回到 A♭，旋律沉回低音，最后一个 A♭ 长鸣接回循环起点
 ##
@@ -30,14 +30,17 @@ const SECTIONS := [
 ]
 
 ## [和弦名, 左手根音 MIDI, 右手四音排列]
+## B♭m7 的三音必须是 D♭4(61)：写成 D4(62) 就成了属七，ii–V–I 的 ii 会走味。
+## G 上那一级用半减七（G B♭ D♭ F），因为 A♭ 大调里的 G 级三和弦本就是减三；
+## 用 Gm7（带 D 自然音）会和旋律里反复出现的 E♭ 撞成半音。
 const H := {
 	"Ab": ["Abmaj9", 32, [60, 63, 67, 70]],
 	"Ab9": ["Ab(add9)", 32, [60, 63, 68, 70]],
 	"Fm": ["Fm7", 29, [56, 63, 68, 72]],
-	"Bm": ["Bbm7", 34, [62, 65, 68, 70]],
+	"Bm": ["Bbm7", 34, [61, 65, 68, 70]],
 	"Eb": ["Eb7", 39, [55, 58, 61, 63]],
 	"Ebs": ["Ebm9", 39, [54, 58, 61, 65]],
-	"Gs": ["Gm7", 31, [58, 62, 65, 67]],
+	"Gs": ["Gm7-5", 31, [58, 61, 65, 67]],
 	"Db": ["Dbmaj7", 37, [60, 65, 68, 72]],
 	"C7": ["C7", 36, [64, 67, 70, 72]],
 	"AbE": ["Ab/Eb", 39, [56, 60, 63, 68]],
@@ -86,12 +89,12 @@ const MEMORY := [
 	[[70, 1.0], [72, 1.0], [75, 1.0], [79, 1.0]],
 	[[77, 1.5], [72, 1.0], [70, 1.5]],
 ]
-## 心绪段：整曲最高点在 22–23 小节（B♭5、C6），之后一路回落。
+## 心绪段：22 小节冲到 B♭5，23 小节摸到全曲最高点 C6，之后一路回落。
 const FEELING := [
 	[[80, 1.0], [77, 0.5], [75, 0.5], [72, 1.5], [70, 0.5]],
 	[[75, 1.0], [77, 1.0], [79, 1.0], [80, 1.0]],
-	[[83, 2.0], [80, 1.0], [77, 1.0]],
-	[[85, 1.0], [83, 1.0], [80, 1.5], [79, 0.5]],
+	[[80, 0.5], [82, 1.5], [80, 1.0], [77, 1.0]],
+	[[84, 1.5], [82, 1.0], [80, 1.0], [79, 0.5]],
 	[[80, 1.5], [77, 0.5], [75, 1.0], [72, 1.0]],
 	[[75, 0.75], [77, 0.75], [79, 0.5], [80, 1.0], [77, 1.0]],
 	[[80, 1.5], [77, 1.0], [75, 1.5]],
@@ -102,6 +105,16 @@ const CODA := [
 	[[72, 1.0], [70, 1.0], [68, 2.0]],
 	[[70, 1.0], [68, 1.0], [65, 2.0]],
 	[[61, 2.0], [56, 2.0]],
+]
+## 尾声的左手独走线：28 小节右手把主题说完，29 小节起旋律整个交给左手，
+## 低两个八度重走一遍引子那句「灯一盏盏亮」（A♭–B♭–C–E♭），
+## 再 F–D♭–B♭ 收拢，最后 E♭–A♭–A♭1 落回踏板音。
+## 空数组 = 这一小节左手不独走。
+const CODA_LH := [
+	[],
+	[[44, 1.0], [46, 1.0], [48, 1.0], [51, 1.0]],
+	[[53, 1.5], [49, 1.0], [46, 1.5]],
+	[[51, 1.5], [44, 1.0], [32, 1.5]],
 ]
 
 
@@ -126,15 +139,19 @@ static func build() -> Dictionary:
 		# --- 左手 ---
 		var bass := int(chord[1])
 		if texture == 2:
-			# 心绪段：根音 + 五音的八分脉动，把低频撑住
+			# 心绪段：根音 + 五音的八分脉动，把低频撑住。
+			# 22–23 小节是全曲最高点，改成四拍都砸根音并逐拍加重，像心跳压上来。
+			var drive := bar == 22 or bar == 23
+			var pulse := _fifth(bass, String(chord[0]))
 			for k in range(4):
-				var pitch := bass if k % 2 == 0 else _fifth(bass)
+				var pitch := bass if (drive or k % 2 == 0) else pulse
 				_add(notes, pitch, start_sec + k * spb, 1.05 * spb,
-					level - 16.0 + (2.0 if k % 2 == 0 else 0.0), "bass", bar * 4.0 + float(k), rng)
+					level - 16.0 + (2.0 if k % 2 == 0 else 0.0) + (0.9 * float(k) if drive else 0.0),
+					"bass", bar * 4.0 + float(k), rng)
 		else:
 			_add(notes, bass, start_sec, 3.8 * spb, level - 14.0, "bass", bar * 4.0, rng)
 			if texture == 1 and bar % 2 == 1:
-				_add(notes, _fifth(bass), start_sec + 2.0 * spb, 1.7 * spb,
+				_add(notes, _fifth(bass, String(chord[0])), start_sec + 2.0 * spb, 1.7 * spb,
 					level - 20.0, "bass", bar * 4.0 + 2.0, rng)
 
 		# --- 右手分解 ---
@@ -172,6 +189,12 @@ static func build() -> Dictionary:
 			rows = CODA[bar - 28]
 			voice = 62.0 - (bar - 28) * 3.0
 		_phrase(notes, rows, bar, start_sec, spb, voice, rng)
+		if bar == 22 or bar == 23:
+			# 最高点用低八度 doubling 把旋律撑成两条声部：上面仍是主线，
+			# 下面这条轻 14，只负责厚度，不去抢轮廓。
+			_phrase(notes, rows, bar, start_sec, spb, voice - 14.0, rng, -12)
+		if bar >= BARS - 4:
+			_lh_line(notes, CODA_LH[bar - (BARS - 4)], bar, start_sec, spb, rng)
 
 		# 最后一小节下方加一个极轻的 A♭ 踏板音，让它自己鸣到自然消失 ——
 		# 循环点于是落在「又一个夜晚」的引子上，而不是硬切。
@@ -203,6 +226,7 @@ static func _tempo(bar: int) -> float:
 
 
 ## 力度布局：引子最轻，主题中性，回忆略暖，心绪最响，尾声收回。
+## 22–23 小节单独再抬 4：那两小节既要顶住最高点，又要给回落留出坡度。
 static func _level(bar: int) -> float:
 	if bar < 4:
 		return 40.0
@@ -210,17 +234,22 @@ static func _level(bar: int) -> float:
 		return 50.0
 	if bar < 20:
 		return 54.0
+	if bar == 22 or bar == 23:
+		return 64.0
 	if bar < 28:
 		return 60.0
 	return 42.0
 
 
-static func _fifth(root_midi: int) -> int:
-	return root_midi + 7
+static func _fifth(root_midi: int, chord_name: String = "") -> int:
+	# Gm7♭5 的五音是 D♭ 而不是 D：脉动音必须跟着和弦走，否则左手会在
+	# 最响的心绪段把 ♭5 的色彩抹平。
+	return root_midi + (6 if chord_name.ends_with("-5") else 7)
 
 
 static func _phrase(notes: Array, rows: Array, bar: int, start: float,
-		spb: float, velocity: float, rng: RandomNumberGenerator) -> void:
+		spb: float, velocity: float, rng: RandomNumberGenerator,
+		transpose: int = 0) -> void:
 	var beat := 0.0
 	for row: Array in rows:
 		var pitch := int(row[0])
@@ -228,10 +257,24 @@ static func _phrase(notes: Array, rows: Array, bar: int, start: float,
 		if pitch >= 0:
 			# 乐句内的拱形：拍位越靠后越推，过三拍后收一点
 			var shaping := 2.5 * sin(beat * PI / 4.0) - (2.0 if beat >= 3.0 else 0.0)
-			_add(notes, pitch, start + beat * spb, length * spb * 0.94,
+			_add(notes, pitch + transpose, start + beat * spb, length * spb * 0.94,
 				velocity + shaping, "melody", bar * 4.0 + beat, rng)
 		beat += length
 	assert(is_equal_approx(beat, 4.0), "旋律小节 %d 必须正好四拍（实得 %s）" % [bar, str(beat)])
+
+
+## 尾声的左手独走线：用 melody 的角色与力度走，是唱出来的独白而不是伴奏。
+## 时值放到 1.6 倍让前后音重叠，靠合成器的释放段自己连成 legato。
+static func _lh_line(notes: Array, rows: Array, bar: int, start: float,
+		spb: float, rng: RandomNumberGenerator) -> void:
+	if rows.is_empty():
+		return
+	var beat := 0.0
+	for row: Array in rows:
+		_add(notes, int(row[0]), start + beat * spb, float(row[1]) * spb * 1.6,
+			52.0 + 1.5 * sin(beat * PI / 4.0), "melody", bar * 4.0 + beat, rng)
+		beat += float(row[1])
+	assert(is_equal_approx(beat, 4.0), "左手独走线小节 %d 必须正好四拍（实得 %s）" % [bar, str(beat)])
 
 
 static func _add(notes: Array, midi: int, time: float, duration: float,
