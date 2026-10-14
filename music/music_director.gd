@@ -16,14 +16,17 @@ extends Node
 ##   每次进入该场合都会换到组里的下一首；停在同一场合超过 DWELL 秒也会自己换下一首。
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
-## 三套风格组，F8 切换（会记住）：
+## 五套风格组，F8 切换（会记住）：
 ##   galgame     galgame 场景配乐十九首（默认，七首原创钢琴加入对应场合轮换）
 ##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
+##   whalefm     《鲸落电台》六首（电钢 + 贝斯 + 鼓组 + 黑胶炒豆的 Lo-fi 电台，每场合固定一首）
+##   chip        《像素掌机》六首（方波×2 + 三角波 + 噪声鼓的芯片音乐，每场合固定一首）
 ##
-## glasshouse 的音轨放在 assets/music/glasshouse/ 子目录里，所以它的曲目 id 带一段路径
-## （"glasshouse/glasshouse_01_prologue"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
-## 每首都是整段无缝循环（混响尾巴已折回开头），所以一个场合只排一首、靠循环铺满，不轮换。
+## glasshouse / whalefm / chip 的音轨放在 assets/music/ 子目录里，所以它们的曲目 id 带一段路径
+## （"glasshouse/glasshouse_01_prologue"、"whalefm/wf_01_fm885"、"chip/chip_title"）——
+## 下面的 DIR + id + ".wav" 拼接天然支持。这三组每首都是整段无缝循环（尾音已折回开头），
+## 一个场合只排一首、靠循环铺满，不轮换。
 ##
 ## 快捷键：F8 切换风格组 · F9 试听下一首（循环回自动）· F10 静音开关 · [ ] 调音量
 ##
@@ -70,6 +73,33 @@ const STYLE_SETS := {
 			"hope": "glasshouse/glasshouse_06_farewell",
 		},
 	},
+	"whalefm": {
+		"name": "鲸落电台六首",
+		"tracks": {
+			# Whale-Fall FM 88.5：港口小镇的 Lo-fi 电台节目单。
+			# 电钢 + 贝斯 + 鼓组 + 黑胶炒豆；整段无缝循环，一个场合一首。
+			"title": "whalefm/wf_01_fm885",
+			"day": "whalefm/wf_02_breakwater",
+			"indoor": "whalefm/wf_03_konbini",
+			"night": "whalefm/wf_04_nightlight",
+			"battle": "whalefm/wf_05_container",
+			"hope": "whalefm/wf_06_ebbtide",
+		},
+	},
+	"chip": {
+		"name": "像素掌机六首",
+		"tracks": {
+			# 同一台「掌机」上的六盘卡带：出海 → 集市 → 夜潮 → 小屋 → 激战 → 归港。
+			# PolyBLEP 方波×2 + 三角波低音 + LFSR 噪声鼓；整段无缝循环，一个场合一首。
+			# 战斗曲 152 BPM 十六分驱动贝斯，是全库最快的曲子。
+			"title": "chip/chip_title",
+			"day": "chip/chip_day",
+			"night": "chip/chip_night",
+			"indoor": "chip/chip_indoor",
+			"battle": "chip/chip_battle",
+			"hope": "chip/chip_hope",
+		},
+	},
 }
 
 const MOOD_ORDER: Array = ["title", "day", "night", "indoor", "battle", "hope"]
@@ -111,6 +141,22 @@ const CATALOG := {
 		["glasshouse/glasshouse_04_rain", "雨中的音乐盒", "原创钢琴 + 弦乐 · 雨中 / 街区夜晚"],
 		["glasshouse/glasshouse_05_confession", "告白，升一个全音", "原创钢琴 + 弦乐 · 高潮 / 潮汐试炼"],
 		["glasshouse/glasshouse_06_farewell", "告别与同主音", "原创钢琴 + 弦乐 · 告别 / 已通关"],
+	],
+	"whalefm": [
+		["whalefm/wf_01_fm885", "调频 88.5", "鲸落电台 · Lo-fi 电钢 · 标题"],
+		["whalefm/wf_02_breakwater", "防波堤散步道", "鲸落电台 · Lo-fi 电钢 · 街区白天"],
+		["whalefm/wf_03_konbini", "便利店暖光", "鲸落电台 · Lo-fi 电钢 · 室内"],
+		["whalefm/wf_04_nightlight", "夜航灯", "鲸落电台 · Lo-fi 电钢 · 街区夜晚"],
+		["whalefm/wf_05_container", "集装箱突围", "鲸落电台 · Lo-fi 电钢 · 潮汐试炼"],
+		["whalefm/wf_06_ebbtide", "退潮，晨光", "鲸落电台 · Lo-fi 电钢 · 已通关"],
+	],
+	"chip": [
+		["chip/chip_title", "像素浪潮", "原创芯片音乐 · 标题 / 出海冒险"],
+		["chip/chip_day", "贝壳集市", "原创芯片音乐 · 街区白天"],
+		["chip/chip_night", "星光栈桥", "原创芯片音乐 · 街区夜晚"],
+		["chip/chip_indoor", "小屋收音机", "原创芯片音乐 · 室内 / 慵懒午后"],
+		["chip/chip_battle", "怒涛排位战", "原创芯片音乐 · 潮汐试炼 / 高速战斗"],
+		["chip/chip_hope", "归港烟火", "原创芯片音乐 · 释怀 / 已通关"],
 	],
 }
 const MOOD_LABEL := {

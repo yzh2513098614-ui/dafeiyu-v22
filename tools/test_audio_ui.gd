@@ -69,7 +69,7 @@ func run() -> void:
  check(not music.music_enabled(),"set_enabled(false) writes through to prefs")
  music.set_enabled(true)
  check(music.music_enabled(),"set_enabled(true) restores music")
- check(music.style_keys().size()==3,"all three style sets are exposed")
+ check(music.style_keys().size()==5,"all five style sets are exposed")
  var style_home: String=music.style_key()
  music.set_style("harbor")
  check(music.style_key()=="harbor","set_style switches the style set")
@@ -102,6 +102,52 @@ func run() -> void:
  await frames(12)
  var head: float=music._players[music._slot].get_playback_position()
  check(head>0.0,"glasshouse track advances on the real player (%.2fs)"%[head])
+ music.exit_gallery()
+
+ # ---------- 4c. 《鲸落电台》六首真的接进了 MusicDirector ----------
+ music.set_style("whalefm")
+ var wf: Array=music.catalog()
+ check(wf.size()==6,"whalefm catalog lists six tracks")
+ var wf_missing: Array=[]
+ var wf_seconds: Array=[]
+ for row in wf:
+  var wf_sec: float=float(row["seconds"])
+  if wf_sec<=0.0:wf_missing.append(str(row["id"]))
+  wf_seconds.append(wf_sec)
+ check(wf_missing.is_empty(),"all six whalefm wavs are readable (missing: %s)"%[str(wf_missing)])
+ check(wf_seconds.min()>30.0 and wf_seconds.max()<200.0,"whalefm durations are sane: %s"%[JSON.stringify(wf_seconds)])
+ var wf_moods_missing: Array=[]
+ for mood in music.MOOD_ORDER:
+  if not music.STYLE_SETS["whalefm"]["tracks"].has(mood):wf_moods_missing.append(str(mood))
+ check(wf_moods_missing.is_empty(),"whalefm covers every mood (missing: %s)"%[str(wf_moods_missing)])
+ music.select_gallery(wf[0]["id"])
+ check(music.gallery_track()==str(wf[0]["id"]),"gallery accepts a whalefm track id")
+ await frames(12)
+ var wf_head: float=music._players[music._slot].get_playback_position()
+ check(wf_head>0.0,"whalefm track advances on the real player (%.2fs)"%[wf_head])
+ music.exit_gallery()
+
+ # ---------- 4d. 《像素掌机》六首芯片音乐真的接进了 MusicDirector ----------
+ music.set_style("chip")
+ var ch: Array=music.catalog()
+ check(ch.size()==6,"chip catalog lists six tracks")
+ var ch_missing: Array=[]
+ var ch_seconds: Array=[]
+ for row in ch:
+  var ch_sec: float=float(row["seconds"])
+  if ch_sec<=0.0:ch_missing.append(str(row["id"]))
+  ch_seconds.append(ch_sec)
+ check(ch_missing.is_empty(),"all six chip wavs are readable (missing: %s)"%[str(ch_missing)])
+ check(ch_seconds.min()>30.0 and ch_seconds.max()<200.0,"chip durations are sane: %s"%[JSON.stringify(ch_seconds)])
+ var ch_moods_missing: Array=[]
+ for mood in music.MOOD_ORDER:
+  if not music.STYLE_SETS["chip"]["tracks"].has(mood):ch_moods_missing.append(str(mood))
+ check(ch_moods_missing.is_empty(),"chip covers every mood (missing: %s)"%[str(ch_moods_missing)])
+ music.select_gallery(ch[4]["id"])
+ check(music.gallery_track()==str(ch[4]["id"]),"gallery accepts a chip track id")
+ await frames(12)
+ var ch_head: float=music._players[music._slot].get_playback_position()
+ check(ch_head>0.0,"chip track advances on the real player (%.2fs)"%[ch_head])
  music.exit_gallery()
  music.set_style(style_home)
 
