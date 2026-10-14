@@ -7,8 +7,9 @@ A  抠像残留：白底与白衣同色（250~252），纯阈值分不开。
      轮廓按曼哈顿距离内缩 ERODE 像素 + 1px 羽化，吃掉抗锯齿过渡带。
 A2 发丝缝隙白：发丝深色描边把白底切成大量「不触边」的封闭白连通域，
    泛洪进不去；腐蚀只能吃掉 <=4px 的窄缝，宽缝中心 alpha=255 留在画面上。
-   → 对每个封闭白连通域算「域内到非候选的曼哈顿距离」峰值（=内切半径），
-   缝隙白块窄（<=GAP_MAX_D）整体并入背景，白衣服块宽则保留。
+   → 透底缝隙 = 与外背景同色（min 通道 >=BG_T）且深藏于人物内部（到外背景
+   >=DEPTH_MIN px）的封闭白域；服饰白/发丝高光色值低于背景、贴轮廓的纯白
+   部件深度不足，均天然排除。内切半径判据已实测废弃（两方向都误判）。
 B  线性过滤白边：透明像素 RGB 残留白色，缩略采样时插值出亮白边。
    → alpha bleed：核心色向外填 BLEED 像素，透明区不再有白色可供插值。
 
@@ -41,7 +42,10 @@ ERODE = 2          # 轮廓内缩像素数（曼哈顿距离），吃掉过渡�
 FEATHER = 1        # 内缩后的 alpha 羽化宽度
 OPAQUE_AT = ERODE + FEATHER + 1
 BLEED = 4          # 核心色外扩像素数，消灭线性过滤白边
-GAP_MAX_D = 6      # 封闭白连通域内切半径上限（cdt 单位，= GDScript max_d+1）
+BG_T = 253         # 外背景实测 min 通道 253~255；服饰白与发丝高光为 247~252
+BGCOL_FRAC = 0.5   # 封闭白域内达到背景色的像素占比下限
+RING_DARK_MIN = 0.35  # 域外邻环深色(线稿)占比下限；服饰高光点的邻环是自身浅色阴影
+OUTER_BLUE_MIN = 0.5  # 再外一环为发蓝的占比下限；缝隙藏在发块内，服饰高光藏在阴影内
 
 CONN4 = ndimage.generate_binary_structure(2, 1)  # 4 连通
 
@@ -79,7 +83,8 @@ def bake(name: str) -> dict:
     rgb = rgba[..., :3].astype(np.uint16)
 
     # ---------- 1. 白色候选 ----------
-    white = rgb.min(axis=2) >= WHITE_MIN
+    mn = rgb.min(axis=2)
+    white = mn >= WHITE_MIN
 
     # ---------- 2. 四边泛洪：与边框连通的白色才是背景 ----------
     labels, n_dom = ndimage.label(white, structure=CONN4)
@@ -89,22 +94,46 @@ def bake(name: str) -> dict:
     bg = np.isin(labels, border_ids) if border_ids.size else np.zeros_like(white)
     del labels
 
-    # ---------- 2.5 封闭白缝：内切半径小的封闭白连通域也是背景 ----------
+    # ---------- 2.5 透底缝隙：与外背景同色、且深藏于人物内部的封闭白 ----------
+    # 内切半径判据已实测废弃：缝隙白是大块泪滴、白服饰细件半径反而小，两方向都误判。
     gap = white & ~bg
-    gap_dt = ndimage.distance_transform_cdt(gap, metric="taxicab")
     g_labels, g_n = ndimage.label(gap, structure=CONN4)
     if g_n:
-        peak = np.zeros(g_n + 1, dtype=np.int32)
-        np.maximum.at(peak, g_labels, gap_dt)
-        narrow_ids = np.nonzero(peak <= GAP_MAX_D)[0]
-        narrow_ids = narrow_ids[narrow_ids != 0]
-        cleared = int(gap_dt[np.isin(g_labels, narrow_ids)].size) if narrow_ids.size else 0
-        if narrow_ids.size:
-            bg |= np.isin(g_labels, narrow_ids)
+        sizes = np.bincount(g_labels.ravel(), minlength=g_n + 1)
+        bgcol_frac = np.zeros(g_n + 1)
+        np.add.at(bgcol_frac, g_labels.ravel(), (mn >= BG_T).ravel())
+        bgcol_frac[1:] /= np.maximum(sizes[1:], 1)
+        depth = ndimage.distance_transform_cdt(~bg, metric="taxicab")
+        min_depth = np.full(g_n + 1, 1 << 20, dtype=np.int32)
+        np.minimum.at(min_depth, g_labels.ravel(), depth.ravel())
+        sel = bgcol_frac >= BGCOL_FRAC
+        sel[0] = False
+        pre_ids = np.nonzero(sel)[0]
+        dark = mn < 150
+        sel_list = []
+        for i in pre_ids:
+            comp = g_labels == i
+            ring = ndimage.binary_dilation(comp, structure=CONN4, iterations=2) & ~comp
+            if not ring.any() or dark[ring].mean() < RING_DARK_MIN:
+                continue
+            oring = ndimage.binary_dilation(comp, structure=CONN4, iterations=6) & ~ring & ~comp
+            if not oring.any():
+                continue
+            v = rgb[oring]
+            blue = ((v[:, 2].astype(np.int32) - v[:, 0].astype(np.int32)) > 60).mean()
+            if blue >= OUTER_BLUE_MIN:
+                sel_list.append(i)
+        sel_ids = np.asarray(sel_list, dtype=np.int64)
+        cleared = int(sizes[sel_ids].sum()) if sel_ids.size else 0
+        if sel_ids.size:
+            bg |= np.isin(g_labels, sel_ids)
+            print(f"  gap-domains cleared: {sel_ids.size} comps / {cleared}px "
+                  f"(depth {int(min_depth[sel_ids].min())}~{int(min_depth[sel_ids].max())}px)",
+                  flush=True)
         kept = int(gap.sum()) - cleared
     else:
         cleared, kept = 0, 0
-    del gap, gap_dt, g_labels
+    del gap, g_labels
 
     # ---------- 3/4. 距离场内缩 + 羽化 ----------
     fg = ~bg
