@@ -112,11 +112,13 @@ static func trestle(parent: Node3D, left: Vector3, right: Vector3) -> void:
 	_beam(parent, left + Vector3(0, -1.0, 0), middle)
 	_beam(parent, right + Vector3(0, -1.0, 0), middle)
 
-static func bridge_ropes(parent: Node3D) -> void:
+static func bridge_ropes(parent: Node3D) -> Array[Vector3]:
+	var posts: Array[Vector3] = []
 	for z in [28.16, 30.84]:
 		var anchors: Array[Vector3] = []
 		for x in [-16.25, -12.0, -7.7, -3.25]:
 			var point := Vector3(x, 0, z)
+			posts.append(point)
 			var post := Geo.cylinder(parent, 0.10, 0.75, point + Vector3(0, 0.32, 0), Color.WHITE, 0.095)
 			post.material_override = timber(2)
 			Geo.cylinder(parent, 0.115, 0.065, point + Vector3(0, 0.715, 0), Color("f3eedb"))
@@ -128,6 +130,7 @@ static func bridge_ropes(parent: Node3D) -> void:
 				var a := anchors[span].lerp(anchors[span + 1], ta) - Vector3.UP * sin(ta * PI) * 0.11
 				var b := anchors[span].lerp(anchors[span + 1], tb) - Vector3.UP * sin(tb * PI) * 0.11
 				Geo.rod(parent, a, b, 0.035, Color("baa785"))
+	return posts
 
 static func _reef_mesh(variant: int) -> ArrayMesh:
 	while reef_meshes.size() <= variant:
@@ -188,7 +191,7 @@ static func _starfish(parent: Node3D, point: Vector3, size: float) -> void:
 	node.scale = Vector3.ONE * size
 	parent.add_child(node)
 
-static func reef(parent: Node3D, point: Vector3, size: Vector3, variant: int) -> void:
+static func reef(parent: Node3D, point: Vector3, size: Vector3, variant: int, keepouts: Array = []) -> Node3D:
 	var root := Node3D.new()
 	root.name = "CoastalReefCluster"
 	root.position = point
@@ -216,3 +219,30 @@ static func reef(parent: Node3D, point: Vector3, size: Vector3, variant: int) ->
 		root.add_child(small)
 	if variant % 4 == 0:
 		_starfish(root, Vector3(0.06 * main.scale.x, 0.48 * main.scale.y + 0.01, 0), minf(size.x, size.z) * 0.23)
+	var bounds: AABB = main.transform * main.mesh.get_aabb()
+	for child in root.get_children():
+		if child is MeshInstance3D: bounds = bounds.merge(child.transform * child.mesh.get_aabb())
+	# Keep the end of both side promenades clear for the full character silhouette.
+	if point.z > 24.0: root.position.z = maxf(root.position.z, 24.2 - bounds.position.z)
+	elif point.z < -24.0: root.position.z = minf(root.position.z, -24.2 - bounds.end.z)
+	var occupied := Rect2(Vector2(root.position.x + bounds.position.x, root.position.z + bounds.position.z), Vector2(bounds.size.x, bounds.size.z))
+	for area: Rect2 in keepouts:
+		if occupied.intersects(area.grow(0.35)):
+			root.free()
+			return null
+	root.set_meta("reef_bounds", occupied)
+	for child in root.get_children():
+		if not child is MeshInstance3D or child.name == "RestingStarfish": continue
+		var vertices := PackedVector3Array()
+		for vertex in child.mesh.get_faces(): vertices.append(child.transform * vertex)
+		var shape := ConvexPolygonShape3D.new()
+		shape.points = vertices
+		var collision := CollisionShape3D.new()
+		collision.shape = shape
+		var body := StaticBody3D.new()
+		body.name = String(child.name) + "Collision"
+		body.collision_layer = 1
+		body.collision_mask = 4
+		body.add_child(collision)
+		root.add_child(body)
+	return root

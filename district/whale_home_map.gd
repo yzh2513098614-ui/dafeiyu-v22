@@ -25,6 +25,7 @@ const PLANTER=preload("res://models/whale_home/flower_planter.tscn")
 const DOCK_POST=preload("res://models/whale_home/dock_post.tscn")
 const ROWBOAT=preload("res://models/whale_home/whale_rowboat.tscn")
 const HEIGHT := 5.2
+const DOCK_RECTS = [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]
 const WHITE=Color("f3eedb")
 const BLUE=Color("639cdb")
 const DEEP=Color("3a71b5")
@@ -754,7 +755,7 @@ func _roof(parent: Node3D) -> void:
 	_vines(parent,Vector3(14.4,h+1.15,-18.6),Vector3(14.4,.8,6.4),.4)
 
 func _rock(parent: Node3D, point: Vector3, size: Vector3, variant: int=0) -> void:
-	Coastal.reef(parent,point,size,variant)
+	Coastal.reef(parent,point,size,variant,DOCK_RECTS)
 
 func _garden(parent: Node3D) -> void:
 	for side in [-1.0,1.0]:
@@ -866,28 +867,32 @@ func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> Node3D:
 	return root
 
 func _dock(parent: Node3D, sea: Node3D) -> void:
-	for rect in [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]:
+	for rect in DOCK_RECTS:
 		var dock: Node3D=_group(parent,"TimberDock")
 		_slab(dock,rect,0)
 		# Keep the original continuous collider; timber replaces the solid grey shell.
 		dock.get_child(0).free()
 		var cross_bridge: bool=rect.size.x>rect.size.y
-		var visible_rect: Rect2=Rect2(-16.5,28,13.5,3.0) if cross_bridge else rect
+		var visible_rect: Rect2=Rect2(-16.5,28,13.5,3.0) if cross_bridge else Rect2(Vector2(rect.position.x,25.0),Vector2(rect.size.x,rect.end.y-25.0))
 		Coastal.dock(dock,visible_rect,cross_bridge)
 	for x in [-2.6,2.6]:
 		for z in [25.8,30.4,35.5]:
-			_model(parent,DOCK_POST,Vector3(x,0,z))
 			Coastal.pile(parent,Vector3(x,0,z))
+			if x==-2.6 and z==30.4:continue
+			_model(parent,DOCK_POST,Vector3(x,0,z))
 			_coll(parent,Vector3(.44,.80,.48),Vector3(x,.32,z))
 	for z in [25.8,30.4,35.5]:Coastal.trestle(parent,Vector3(-2.6,0,z),Vector3(2.6,0,z))
 	for z in [25.5,29.3,33.0]:
 		for x in [-21.7,-16.8]:
-			_model(parent,DOCK_POST,Vector3(x,0,z));Coastal.pile(parent,Vector3(x,0,z))
+			Coastal.pile(parent,Vector3(x,0,z))
+			if x==-16.8 and z==29.3:continue
+			_model(parent,DOCK_POST,Vector3(x,0,z))
+			_coll(parent,Vector3(.44,.80,.48),Vector3(x,.32,z))
 		Coastal.trestle(parent,Vector3(-21.7,0,z),Vector3(-16.8,0,z))
 	for x in [-12.0,-7.7]:
 		for z in [28.16,30.84]:Coastal.pile(parent,Vector3(x,0,z))
 		Coastal.trestle(parent,Vector3(x,0,28.16),Vector3(x,0,30.84))
-	Coastal.bridge_ropes(parent)
+	for point: Vector3 in Coastal.bridge_ropes(parent):_coll(parent,Vector3(.24,.78,.24),point+Vector3(0,.35,0))
 	var east_boat: Node3D=_boat(sea,Vector3(7.2,-.93,30.2),-22)
 	var west_boat: Node3D=_boat(sea,Vector3(-25.0,-.93,29.6),15)
 	var moorings: Array=[]
@@ -897,7 +902,8 @@ func _dock(parent: Node3D, sea: Node3D) -> void:
 		moorings.append({"line":line,"eye":eye,"dock":spec[2]})
 	level.set_meta("home_moorings",moorings)
 	for side in [-1.0,1.0]:_rail(parent,Vector3(side*3.0,0,24.6),Vector3(side*3.0,0,28.0),false)
-	_whale(parent,Vector3(-18.6,0,26.0),.47,25)
+	var dock_whale: Node3D=_whale(parent,Vector3(-20.9,0,32.4),.47,25)
+	_coll(dock_whale,Vector3(1.52,1.45,2.70),Vector3(0,.70,-.10))
 	var sign: Node3D=_furniture(parent,"WhaleHomeWelcomeSign",Vector3(-8.7,0,18.2))
 	for x in [-1.42,1.42]:_box(sign,Vector3(.14,1.7,.14),Vector3(x,.85,0),WOOD,1,.02)
 	_box(sign,Vector3(3.85,.95,.18),Vector3(0,1.10,0),WOOD,1,.07)
@@ -947,6 +953,7 @@ func _batch(parent: Node3D, count_static: bool=true) -> int:
 
 func build(owner_game) -> Dictionary:
 	Pastel.use_shared_materials()
+	Ground.begin()
 	game=owner_game;level=_group(game.world,"WhaleHome");level.set_meta("walkable_slabs",[])
 	glass=StandardMaterial3D.new();glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;glass.albedo_color=Color(.58,.85,.96,.12);glass.roughness=.18;glass.cull_mode=BaseMaterial3D.CULL_DISABLED
 	game.shell.set_meta("layout_revision","whale_home_three_floors_v1")
@@ -962,6 +969,8 @@ func build(owner_game) -> Dictionary:
 	_slab(island,Rect2(-28,-25,56,50),0)
 	Ground.base(island)
 	Ground.path(island,Rect2(-4.25,8.7,8.5,15.3),"MainStonePromenade")
+	Ground.path(island,Rect2(-3,24,6,1),"MainDockStoneLanding")
+	Ground.path(island,Rect2(-22,24,5.5,1),"WestDockStoneLanding")
 	for side in [-1.0,1.0]:
 		Ground.path(island,Rect2(side*17.0-2.0,-23.8,4.0,47.0),"SideStoneWalk")
 		_rail(island,Vector3(side*28,0,-24.8),Vector3(side*28,0,24.8),false)

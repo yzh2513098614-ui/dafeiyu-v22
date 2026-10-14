@@ -9,6 +9,47 @@ static var field: ShaderMaterial
 static var turf: ShaderMaterial
 static var blade_material: StandardMaterial3D
 static var blade_mesh: ArrayMesh
+static var paving_regions: Array[Rect2] = []
+
+static func begin() -> void:
+	prepare()
+	paving_regions.clear()
+
+static func _remaining(rect: Rect2) -> Array[Rect2]:
+	var pieces: Array[Rect2] = [rect]
+	for occupied in paving_regions:
+		var next: Array[Rect2] = []
+		for piece in pieces:
+			if not piece.intersects(occupied):
+				next.append(piece)
+				continue
+			var overlap := piece.intersection(occupied)
+			var cuts: Array[Rect2] = [
+				Rect2(piece.position, Vector2(piece.size.x, overlap.position.y - piece.position.y)),
+				Rect2(Vector2(piece.position.x, overlap.end.y), Vector2(piece.size.x, piece.end.y - overlap.end.y)),
+				Rect2(Vector2(piece.position.x, overlap.position.y), Vector2(overlap.position.x - piece.position.x, overlap.size.y)),
+				Rect2(Vector2(overlap.end.x, overlap.position.y), Vector2(piece.end.x - overlap.end.x, overlap.size.y))]
+			for cut in cuts:
+				if cut.size.x > 0.0001 and cut.size.y > 0.0001: next.append(cut)
+		pieces = next
+	return pieces
+
+static func _rect_polygon(rect: Rect2) -> PackedVector2Array:
+	return PackedVector2Array([rect.position, Vector2(rect.end.x, rect.position.y), rect.end, Vector2(rect.position.x, rect.end.y)])
+
+static func _surface(tool: SurfaceTool, polygon: PackedVector2Array, regions: Array[Rect2], origin: Vector3, normal: Vector3, depth: float = 0.0) -> void:
+	for region in regions:
+		for clipped: PackedVector2Array in Geometry2D.intersect_polygons(polygon, _rect_polygon(region)):
+			var points: Array[Vector3] = []
+			for point in clipped:
+				var y := origin.y - (normal.x * (point.x - origin.x) + normal.z * (point.y - origin.z)) / normal.y
+				points.append(Vector3(point.x, y, point.y))
+			Geo._face(tool, points, normal)
+			if depth > 0.0:
+				for i in points.size():
+					var a := points[i]
+					var b := points[(i + 1) % points.size()]
+					Geo._face(tool, [a, b, b - Vector3.UP * depth, a - Vector3.UP * depth], Vector3(b.z - a.z, 0, a.x - b.x).normalized())
 
 static func prepare() -> void:
 	if not settings.is_empty(): return
@@ -58,11 +99,18 @@ static func base(parent: Node3D) -> void:
 
 static func path(parent: Node3D, rect: Rect2, label: String = "GardenStonePath") -> void:
 	prepare()
+	var regions := _remaining(rect)
+	if regions.is_empty(): return
 	var root := Node3D.new()
 	root.name = label
 	root.set_meta("garden_paving", true)
 	root.set_meta("surface_top", settings.paving_top)
+	root.set_meta("paving_regions", regions)
 	parent.add_child(root)
+	for region in regions: _pavers(root, region)
+	paving_regions.append_array(regions)
+
+static func _pavers(root: Node3D, rect: Rect2) -> void:
 	var center := rect.get_center()
 	var top: float = settings.paving_top
 	_box(root, Vector3(rect.size.x, 0.025, rect.size.y), Vector3(center.x, top - 0.018, center.y), stones[1])
@@ -100,17 +148,20 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 	var outer := _outline(rect, radius)
 	var inner := _outline(rect.grow(-0.10), radius - 0.10)
 	var top: float = settings.grass_top
+	var regions := _remaining(rect)
 	var tool := SurfaceTool.new()
 	tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var center := Vector3(rect.get_center().x, top, rect.get_center().y)
+	_surface(tool, PackedVector2Array(inner), regions, center, Vector3.UP)
 	for i in inner.size():
 		var next := (i + 1) % inner.size()
 		var a := Vector3(inner[i].x, top, inner[i].y)
 		var b := Vector3(inner[next].x, top, inner[next].y)
 		var c := Vector3(outer[next].x, top - 0.014, outer[next].y)
 		var d := Vector3(outer[i].x, top - 0.014, outer[i].y)
-		Geo._face(tool, [center, a, b], Vector3.UP)
-		Geo._face(tool, [a, b, c, d], Vector3.UP)
+		var normal := (b - a).cross(d - a).normalized()
+		if normal.y < 0.0: normal = -normal
+		_surface(tool, PackedVector2Array([inner[i], inner[next], outer[next], outer[i]]), regions, a, normal)
 	var node := MeshInstance3D.new()
 	node.name = "RoundedGardenLawn"
 	node.mesh = tool.commit()
@@ -118,17 +169,26 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 	node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(node)
 	var curb_material := Geo.material(Color(settings.curb_color))
+	var curb_inner := _outline(rect.grow(-float(settings.curb_width)), radius - float(settings.curb_width))
+	var curb_tool := SurfaceTool.new()
+	curb_tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for i in outer.size():
 		var a := outer[i]
 		var b := outer[(i + 1) % outer.size()]
+		var c := curb_inner[(i + 1) % outer.size()]
+		var d := curb_inner[i]
 		var count := ceili(a.distance_to(b) / 1.5)
 		for segment in count:
-			var left := a.lerp(b, float(segment) / count)
-			var right := a.lerp(b, float(segment + 1) / count)
-			var middle := (left + right) * 0.5
-			middle += Vector2(-(right - left).y, (right - left).x).normalized() * float(settings.curb_width) * 0.5
-			var curb := _box(parent, Vector3(left.distance_to(right) - 0.025, 0.06, float(settings.curb_width)), Vector3(middle.x, float(settings.paving_top) - 0.03, middle.y), curb_material)
-			curb.rotation.y = -atan2(right.y - left.y, right.x - left.x)
+			var gap := 0.0125 / a.distance_to(b)
+			var ta := float(segment) / count + gap
+			var tb := float(segment + 1) / count - gap
+			_surface(curb_tool, PackedVector2Array([a.lerp(b, ta), a.lerp(b, tb), d.lerp(c, tb), d.lerp(c, ta)]), regions, Vector3(0, float(settings.paving_top), 0), Vector3.UP, 0.04)
+	var curb := MeshInstance3D.new()
+	curb.name = "ClippedLawnCurb"
+	curb.mesh = curb_tool.commit()
+	curb.material_override = curb_material
+	curb.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	parent.add_child(curb)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = seed_value
 	var mesh := MultiMesh.new()
@@ -141,7 +201,7 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 	var count := 0
 	for i in mesh.instance_count:
 		var point := Vector2(rng.randf_range(inset.position.x, inset.end.x), rng.randf_range(inset.position.y, inset.end.y))
-		if not Geometry2D.is_point_in_polygon(point, polygon) or _clearing(point, clearings): continue
+		if not Geometry2D.is_point_in_polygon(point, polygon) or _clearing(point, clearings) or _clearing(point, paving_regions): continue
 		var height := rng.randf_range(settings.grass_height_range[0], settings.grass_height_range[1])
 		var basis := Basis(Vector3.UP, rng.randf_range(-PI, PI)).scaled(Vector3(rng.randf_range(0.65, 1.1), height, rng.randf_range(0.65, 1.1)))
 		mesh.set_instance_transform(count, Transform3D(basis, Vector3(point.x, top, point.y)))
@@ -167,9 +227,10 @@ static func gardens(parent: Node3D, tree_specs: Array) -> Dictionary:
 		clearings.append(Rect2(side * 20.5 - 2.65, -14.55, 5.3, 4.7))
 	var count := 0
 	for side in [-1.0, 1.0]:
+		path(parent, Rect2(side * 20.5 - 2.4, -14.3, 4.8, 4.2), "PergolaStonePad")
+	for side in [-1.0, 1.0]:
 		count += lawn(parent, Rect2(side * 23.25 - 4.25, -23.8, 8.5, 47.0), clearings, 19273 if side < 0 else 32931)
 		count += lawn(parent, Rect2(side * 10.3 - 4.1, 12.5, 8.2, float(settings.front_lawn_depth)), clearings, 1837 if side < 0 else 4791)
-		path(parent, Rect2(side * 20.5 - 2.4, -14.3, 4.8, 4.2), "PergolaStonePad")
 	return {"tufts": count, "lawns": 4}
 
 static func tree_ring(parent: Node3D, point: Vector3) -> void:
