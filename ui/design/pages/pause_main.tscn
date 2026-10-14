@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://ui/handheld_panel.gd" id="21_vce5u"]
 [ext_resource type="Texture2D" path="res://assets/ui/whale_mascot.png" id="22_0o0et"]
 [ext_resource type="Script" path="res://ui/ocean_menu_button.gd" id="23_o4dhy"]
-[ext_resource type="Texture2D" path="res://ui/design/preview_assets/06efb43cc3dcdb75d614488112943dd64abda51fc7b2551bd16c9c54c1661596.png" id="24_nle5k"]
+[ext_resource type="Texture2D" path="res://assets/dialogue/downloaded_20261014/transparent/05_relief.png" id="24_nle5k"]
 
 [ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
 
@@ -1200,7 +1200,7 @@ metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
 [node name="08_TextureRect" type="TextureRect" parent="00_Control/01_Panel" unique_id=2050993027]
-texture_filter = 1
+texture_filter = 2
 layout_mode = 0
 offset_left = 624.0
 offset_top = 136.0

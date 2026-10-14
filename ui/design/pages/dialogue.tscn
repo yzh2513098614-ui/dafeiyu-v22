@@ -1,28 +1,28 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bhjuwhgcf71k1"]
 
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/attack.png" id="1_8hi2q"]
-[ext_resource type="Theme" path="res://ui/design/game_ui_theme.tres" id="1_jp0fp"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/backpack.png" id="2_jp0fp"]
-[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/calendar.png" id="3_k8lal"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/chat.png" id="4_0t2y8"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/deck.png" id="5_wo1qa"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/energy.png" id="6_x1mhq"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/gift.png" id="7_2hwhq"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/heal.png" id="8_mcj6o"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mail.png" id="9_yy7cv"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/mana.png" id="10_x76eu"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/map.png" id="11_riot5"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/music.png" id="12_xtg87"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/settings.png" id="13_325kn"]
-[ext_resource type="Texture2D" path="res://assets/ui/ocean_handheld/icons/shell.png" id="14_eusqv"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shield.png" id="15_qjhjk"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/shop.png" id="16_anl8m"]
-[ext_resource type="Texture2D" path="res://assets/ui/downloaded_20261011/tasks.png" id="17_0vblw"]
-[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="18_cdd3u"]
-[ext_resource type="Script" path="res://ui/handheld_panel.gd" id="19_q2cxl"]
-[ext_resource type="Texture2D" path="res://assets/dialogue/downloaded_20261014/transparent/01_listen.png" id="20_x5427"]
+[ext_resource type="Texture2D" uid="uid://cnvx4v3trhm3n" path="res://assets/ui/downloaded_20261011/attack.png" id="1_8hi2q"]
+[ext_resource type="Texture2D" uid="uid://xtsi8ec7804x" path="res://assets/ui/downloaded_20261011/backpack.png" id="2_jp0fp"]
+[ext_resource type="Texture2D" uid="uid://cl51nk51kpdkg" path="res://assets/ui/ocean_handheld/icons/calendar.png" id="3_k8lal"]
+[ext_resource type="Texture2D" uid="uid://dfy3g1jrxnesb" path="res://assets/ui/downloaded_20261011/chat.png" id="4_0t2y8"]
+[ext_resource type="Texture2D" uid="uid://cywmh8dkl1btv" path="res://assets/ui/downloaded_20261011/deck.png" id="5_wo1qa"]
+[ext_resource type="Texture2D" uid="uid://dt8c0rihjmbps" path="res://assets/ui/downloaded_20261011/energy.png" id="6_x1mhq"]
+[ext_resource type="Texture2D" uid="uid://cwlu7d7h44pk7" path="res://assets/ui/downloaded_20261011/gift.png" id="7_2hwhq"]
+[ext_resource type="Texture2D" uid="uid://crn0u73xy58l7" path="res://assets/ui/downloaded_20261011/heal.png" id="8_mcj6o"]
+[ext_resource type="Texture2D" uid="uid://dggaq0471kv02" path="res://assets/ui/downloaded_20261011/mail.png" id="9_yy7cv"]
+[ext_resource type="Texture2D" uid="uid://dab24v65rcg2l" path="res://assets/ui/downloaded_20261011/mana.png" id="10_x76eu"]
+[ext_resource type="Texture2D" uid="uid://bcum4txqtivy6" path="res://assets/ui/downloaded_20261011/map.png" id="11_riot5"]
+[ext_resource type="Texture2D" uid="uid://ceuojx7mqlhyx" path="res://assets/ui/downloaded_20261011/music.png" id="12_xtg87"]
+[ext_resource type="Texture2D" uid="uid://dl52hphnfqabq" path="res://assets/ui/downloaded_20261011/settings.png" id="13_325kn"]
+[ext_resource type="Texture2D" uid="uid://fuvfbtgc2p75" path="res://assets/ui/ocean_handheld/icons/shell.png" id="14_eusqv"]
+[ext_resource type="Texture2D" uid="uid://51qkp75emrs0" path="res://assets/ui/downloaded_20261011/shield.png" id="15_qjhjk"]
+[ext_resource type="Texture2D" uid="uid://bxijvcbv5y7tm" path="res://assets/ui/downloaded_20261011/shop.png" id="16_anl8m"]
+[ext_resource type="Texture2D" uid="uid://cqcxetou2rilb" path="res://assets/ui/downloaded_20261011/tasks.png" id="17_0vblw"]
+[ext_resource type="Script" uid="uid://w8o76tsxi2vr" path="res://ui/handheld_panel.gd" id="19_q2cxl"]
+[ext_resource type="Texture2D" path="res://assets/dialogue/downloaded_20261014/transparent/11_side_welcome.png" id="20_x5427"]
+[ext_resource type="FontFile" uid="uid://o472rlusojcv" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
 
-[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
+[sub_resource type="Theme" id="Theme_DesignPreview"]
+default_font = ExtResource("font_design_preview")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlqyc"]
 resource_name = "disabled"
@@ -741,7 +741,7 @@ shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
 [sub_resource type="FontVariation" id="FontVariation_htiv3"]
-base_font = ExtResource("18_cdd3u")
+base_font = ExtResource("font_design_preview")
 variation_opentype = {
 2003265652: 650.0
 }
@@ -878,9 +878,6 @@ shadow_color = Color(0.12, 0.12, 0.27, 0.22)
 shadow_size = 2
 shadow_offset = Vector2(0, 4)
 
-[sub_resource type="Theme" id="Theme_DesignPreview"]
-default_font = ExtResource("font_design_preview")
-
 [node name="UI_dialogue" type="Control" unique_id=1408789801]
 layout_mode = 3
 anchors_preset = 0
@@ -949,13 +946,15 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="02_TextureRect" type="TextureRect" parent="00_Control" unique_id=1453333345]
 texture_filter = 2
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -647.0
-offset_top = 97.0
-offset_right = -78.0
-offset_bottom = 1010.0
+offset_left = -934.0
+offset_top = 104.0
+offset_right = -64.0
+offset_bottom = 1279.0
+grow_horizontal = 0
 mouse_filter = 2
 texture = ExtResource("20_x5427")
 expand_mode = 1
@@ -967,12 +966,14 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="03_Panel" type="Panel" parent="00_Control" unique_id=812235097]
 texture_filter = 2
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
 offset_left = 72.0
-offset_top = 794.0
+offset_top = 839.0
 offset_right = -72.0
-offset_bottom = 1024.0
+offset_bottom = 1103.0
+grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_as0ii")
 script = ExtResource("19_q2cxl")
 metadata/design_id = "3"
@@ -989,6 +990,7 @@ offset_right = -40.0
 offset_bottom = 150.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.91764706, 0.94509804, 1, 1)
+theme_override_constants/line_separation = 8
 theme_override_font_sizes/normal_font_size = 26
 text = "你好呀，我是大肥鱼。欢迎来到鲸落港！先别急着把整张地图走完，这里有很多可以慢慢发现的地方。"
 scroll_active = false
@@ -996,8 +998,6 @@ metadata/design_id = "3/0"
 metadata/design_native_class = "RichTextLabel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-theme_override_constants/line_separation = 8
-
 
 [node name="01_Label_点击 _ E _ Enter _ S" type="Label" parent="00_Control/03_Panel" unique_id=86552166]
 layout_mode = 0
@@ -1062,10 +1062,10 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="04_Panel" type="Panel" parent="00_Control" unique_id=1706716056]
 texture_filter = 2
 layout_mode = 0
-offset_left = 102.0
-offset_top = 759.0
-offset_right = 355.0
-offset_bottom = 821.0
+offset_left = 89.0
+offset_top = 779.0
+offset_right = 342.0
+offset_bottom = 841.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yjwij")
 script = ExtResource("19_q2cxl")
 metadata/design_id = "4"
@@ -1075,9 +1075,9 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="00_Label_大肥鱼" type="Label" parent="00_Control/04_Panel" unique_id=2054478696]
 layout_mode = 0
-offset_left = 22.0
+offset_left = 18.0
 offset_top = 10.0
-offset_right = 235.0
+offset_right = 231.0
 offset_bottom = 49.0
 theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
 theme_override_font_sizes/font_size = 25
