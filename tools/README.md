@@ -124,7 +124,7 @@
 | 渲染 / 合成 | `compose_edge_rendering.py` `compose_map_surfaces.py` `compose_render_refinement.py` `compose_soft_contours.py` `compose_stronger_contours.py` `make_floor_comparison.py` `make_lighting_comparison.py` `profile_render_refinement.gd` |
 | 26 地图包 | `load_pack26.gd` `update_packed_preview.py` `update_scene_runtime.py` |
 | 音效音乐合成 | `music_synth.gd`、`music_synth_gal.gd`、`sfx_synth.gd`；`ambience_synth.gd`（**当前未启用**） |
-| 钢琴 BGM 批量渲染 | `gal_piano/render_batch.gd`（曲目定义在同目录 `batch_scores.json`，输出 `assets/music/gal_piano_*.wav`）、`bgm_glasshouse/main.gd`（《玻璃温室》六首，输出 `assets/music/glasshouse/`，`--tracks 3,5 --quality draft` 可只渲指定曲目）。**两者都会覆盖同名成品，重跑前先备份** |
+| 钢琴 BGM 批量渲染 | `gal_piano/render_batch.gd`（曲目定义在同目录 `batch_scores.json`，输出 `assets/music/gal_piano_*.wav`）、`bgm_glasshouse/main.gd`（《玻璃温室》六首，输出 `assets/music/glasshouse/`）、`bgm_whalefm/main.gd`（《鲸落电台》六首 Lo-fi，输出 `assets/music/whalefm/`）。三者都支持 `--tracks 3,5 --quality draft` 只渲指定曲目，`--list` 只看曲目表。**都会覆盖同名成品，重跑前先备份；部分渲染还会重写该目录的 manifest，要完整清单就跑全量**。
 | 杂项 | `update_v12_source.py` `video_review_readonly.py` `collision_preview.gd` `debug_collision_clearance.gd` `_check_box_pos.gd` `_spec_check.gd` `finalize_restaurant_finish.gd` |
 | 启动 | `launch_game.ps1`（由根目录 `开始试玩.cmd` 调用，日志写 `play_stdout.log` / `play_stderr.log`） |
 

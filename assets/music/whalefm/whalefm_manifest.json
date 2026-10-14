@@ -19,7 +19,7 @@
     {
       "bars": 32,
       "bpm": 72.0,
-      "events": 338,
+      "events": 355,
       "file": "wf_01_fm885.wav",
       "format": "pcm_s16le / 44100 Hz / 2ch",
       "key": "wf_01_fm885",
