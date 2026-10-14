@@ -1,0 +1,23 @@
+[
+  {
+    "file": "09_happy.png",
+    "before": {
+      "opaque_nearwhite": 178392,
+      "rim_light": 0,
+      "clear_nearwhite": 920597
+    },
+    "size": [
+      1024,
+      1536
+    ],
+    "background": 938306,
+    "enclosed_white_cleared": 12653,
+    "enclosed_white_kept": 140164,
+    "seconds": 0.81,
+    "after": {
+      "opaque_nearwhite": 159319,
+      "rim_light": 0,
+      "clear_nearwhite": 930906
+    }
+  }
+]
