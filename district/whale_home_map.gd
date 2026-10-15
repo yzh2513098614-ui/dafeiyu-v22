@@ -13,6 +13,7 @@ const Coastal=preload("res://assets/whale_home/coastal_props.gd")
 const Ground=preload("res://assets/whale_home/garden_ground.gd")
 const Furniture=preload("res://assets/whale_home/furniture_finishes.gd")
 const Beds=preload("res://assets/whale_home/beds.gd")
+const Lounge=preload("res://assets/whale_home/lounge_furniture.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -363,10 +364,12 @@ func _chair(parent: Node3D, point: Vector3, yaw: float=0.0, stool: bool=false) -
 func _table(parent: Node3D, point: Vector3, width: float=3.8, depth: float=2.3, height: float=1.05, profile: String="ash_table") -> Node3D:
 	var root: Node3D=_furniture(parent,"OakDiningTable",point)
 	root.set_meta("furniture_finish",profile)
-	for x in [-width*.38,width*.38]:
-		for z in [-depth*.34,depth*.34]:_finish_box(root,Vector3(.16,height,.16),Vector3(x,height*.5,z),profile,"body",.025)
-	_finish_box(root,Vector3(width,.14,depth),Vector3(0,height,0),profile,"top",.045)
-	_finish_box(root,Vector3(width-.22,.20,.14),Vector3(0,height-.22,-depth*.34),profile,"body",.015)
+	if profile=="tea_table":Lounge.tea_table(self,root,width,depth,height)
+	else:
+		for x in [-width*.38,width*.38]:
+			for z in [-depth*.34,depth*.34]:_finish_box(root,Vector3(.16,height,.16),Vector3(x,height*.5,z),profile,"body",.025)
+		_finish_box(root,Vector3(width,.14,depth),Vector3(0,height,0),profile,"top",.045)
+		_finish_box(root,Vector3(width-.22,.20,.14),Vector3(0,height-.22,-depth*.34),profile,"body",.015)
 	_coll(root,Vector3(width,height+.12,depth),Vector3(0,height*.5,0));return root
 
 func _shelf(parent: Node3D, point: Vector3, width: float=4.4, height: float=2.6, profile: String="bookcase") -> Node3D:
@@ -480,17 +483,7 @@ func _dining(parent: Node3D) -> void:
 
 func _sofa(parent: Node3D, point: Vector3, width: float=5.0, yaw: float=0.0) -> Node3D:
 	var root: Node3D=_furniture(parent,"WhaleCushionSofa",point,yaw)
-	for x in [-width*.39,width*.39]:
-		for z in [-.45,.45]:Geo.cylinder(root,.075,.26,Vector3(x,.13,z),WOOD)
-	_box(root,Vector3(width,.33,1.80),Vector3(0,.42,0),BLUE,0,.15)
-	for x in [-width*.28,0,width*.28]:
-		var cushion: MeshInstance3D=_box(root,Vector3(width*.30,.31,1.46),Vector3(x,.73,.10),WHITE,0,.15);_cloth(cushion,WHITE)
-		var back: MeshInstance3D=_box(root,Vector3(width*.31,1.08,.32),Vector3(x,1.15,-.72),WHITE,0,.12);_cloth(back,WHITE)
-	for side in [-1.0,1.0]:_box(root,Vector3(.36,.86,1.78),Vector3(side*(width*.5-.15),.81,0),LIGHT,0,.14)
-	for x in [-width*.29,width*.29]:
-		var pillow: MeshInstance3D=_box(root,Vector3(.88,.83,.26),Vector3(x,1.17,-.34),BLUE,0,.15);pillow.rotation.z=x*.065;_cloth(pillow,BLUE)
-		_star(root,Vector3(x,1.22,-.17),.47)
-	_whale(root,Vector3(-.20,.80,.06),.55)
+	Lounge.sofa(self,root,width)
 	_coll(root,Vector3(width,1.55,1.85),Vector3(0,.78,0));return root
 
 func _aquarium(parent: Node3D) -> void:

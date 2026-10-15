@@ -70,7 +70,7 @@ static func _panel(outline: PackedVector2Array, thickness: float) -> ArrayMesh:
 		Geo._face(tool, [Vector3(a.x,a.y,-thickness*.5),Vector3(next.x,next.y,-thickness*.5),Vector3(next.x,next.y,thickness*.5),Vector3(a.x,a.y,thickness*.5)], normal)
 	return tool.commit()
 
-static func _puff(b, parent: Node3D, point: Vector3, size: Vector3, color: Color, piped: bool) -> void:
+static func _puff(b, parent: Node3D, point: Vector3, size: Vector3, color: Color, piped: bool) -> Node3D:
 	var root: Node3D = b._group(parent, "PipedSoftPillow" if piped else "TurnedQuiltFold", point)
 	var key := str(size)
 	if not pillows.has(key):
@@ -89,6 +89,7 @@ static func _puff(b, parent: Node3D, point: Vector3, size: Vector3, color: Color
 	if piped:
 		for i in 32:
 			Geo.rod(root, _puff_point(size, 1.0, i*TAU/32, 1), _puff_point(size, 1.0, (i+1)*TAU/32, 1), .010, color.darkened(.12))
+	return root
 
 static func _puff_point(size: Vector3, radius: float, angle: float, side: float) -> Vector3:
 	var c := cos(angle); var s := sin(angle)
