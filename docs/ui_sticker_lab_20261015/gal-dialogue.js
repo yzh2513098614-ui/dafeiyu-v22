@@ -79,7 +79,18 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
   const chars = () => Array.from(story.current().text);
   const complete = () => count >= chars().length;
   const isModalOpen = () => !$('backlog-modal').hidden || !$('gal-settings-modal').hidden;
-  function cancelTimers() { clearTimeout(typeTimer); clearTimeout(playbackTimer); typeTimer = null; playbackTimer = null; }
+  function cancelTimers() { clearTimeout(typeTimer); clearTimeout(playbackTimer); typeTimer = null; playbackTimer = null; $('gal-reading-meter').classList.remove('is-counting'); }
+  function renderReadProgress() {
+    const ready = complete();
+    const choosing = ready && Boolean(story.current().choices);
+    const state = !active || uiHidden ? 'paused' : !ready ? 'typing' : choosing ? 'choice' : story.atEnd() ? 'end' : skipping ? 'skip' : automatic ? 'auto' : 'ready';
+    const percent = Math.round(count / chars().length * 100);
+    $('screen-dialogue').dataset.readState = state;
+    $('gal-reading-fill').style.setProperty('width', `${percent}%`);
+    $('gal-reading-meter').setAttribute('aria-valuenow', String(percent));
+    $('gal-reading-meter').hidden = choosing;
+    $('gal-next-caption').textContent = !ready ? '···' : story.atEnd() ? 'REPLAY' : skipping ? 'SKIP' : automatic ? 'AUTO' : 'NEXT';
+  }
   function renderControls() {
     $('auto-button').classList.toggle('selected', automatic);
     $('auto-button').setAttribute('aria-pressed', String(automatic));
@@ -91,10 +102,10 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
     $('playback-status').hidden = !automatic && !skipping;
     $('playback-status').textContent = skipping ? 'SKIP ▸▸' : 'AUTO ▸';
     $('continue-button').hidden = complete() && Boolean(story.current().choices);
-    $('continue-button').innerHTML = story.atEnd() && complete() ? '回到开头<span>↻</span>' : '<span>◆</span>';
     $('continue-button').setAttribute('aria-label', complete() ? story.atEnd() ? '回到开头' : '继续对话' : '显示完整对白');
+    renderReadProgress();
   }
-  function stopModes() { automatic = false; skipping = false; heldSkip = false; clearTimeout(playbackTimer); playbackTimer = null; renderControls(); }
+  function stopModes() { automatic = false; skipping = false; heldSkip = false; clearTimeout(playbackTimer); playbackTimer = null; $('gal-reading-meter').classList.remove('is-counting'); renderControls(); }
   function renderChoices() {
     const visible = complete() && Boolean(story.current().choices);
     $('reply-options').hidden = !visible; $('choice-veil').hidden = !visible;
@@ -102,12 +113,20 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
   }
   function schedulePlayback() {
     clearTimeout(playbackTimer); playbackTimer = null;
+    const meter = $('gal-reading-meter');
+    meter.classList.remove('is-counting');
     if (!active || !complete() || uiHidden || isModalOpen()) return;
     if (story.current().choices || story.atEnd()) { stopModes(); return; }
-    if (automatic || skipping) playbackTimer = setTimeout(() => {
-      playbackTimer = null;
-      story.next(); showLine(skipping);
-    }, skipping ? 170 : settings.wait * 1000);
+    if (automatic || skipping) {
+      const delay = skipping ? 170 : settings.wait * 1000;
+      meter.style.setProperty('--gal-wait', `${delay}ms`);
+      void meter.offsetWidth;
+      meter.classList.add('is-counting');
+      playbackTimer = setTimeout(() => {
+        playbackTimer = null;
+        story.next(); showLine(skipping);
+      }, delay);
+    }
   }
   function finishTyping() {
     clearTimeout(typeTimer); typeTimer = null; count = chars().length;
@@ -121,6 +140,7 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
     const text = chars();
     count = Math.min(count + 1, text.length);
     $('dialogue-text').textContent = text.slice(0, count).join('');
+    renderReadProgress();
     if (count === text.length) { finishTyping(); return; }
     const punctuationPause = /[。！？…]/.test(text[count - 1]) ? 210 : /[，、；]/.test(text[count - 1]) ? 95 : 0;
     typeTimer = setTimeout(typeNext, characterDelays[settings.speed] + punctuationPause);
@@ -169,7 +189,7 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
     uiHidden = hidden;
     $('screen-dialogue').classList.toggle('dialogue-ui-hidden', hidden);
     $('restore-ui').hidden = !hidden;
-    if (!hidden) renderControls();
+    renderControls();
   }
   function showBacklog() {
     finishTyping(); stopModes(); cancelTimers();
@@ -185,7 +205,7 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
     stopModes(); hideUI(false); story.load(quickSlot); showLine(true);
     toast('回到刚才记住的这一句。');
   }
-  function pause() { cancelTimers(); stopModes(); active = false; }
+  function pause() { active = false; cancelTimers(); stopModes(); }
   function enter() { active = true; hideUI(false); showLine(); }
   function resume() {
     if (!active || uiHidden || isModalOpen()) return;

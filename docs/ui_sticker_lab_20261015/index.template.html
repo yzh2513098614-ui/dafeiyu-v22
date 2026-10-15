@@ -20,6 +20,15 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h17m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5Q7 1 2 4v16q5-3 10 0 5-3 10 0V4q-5-3-10 1v15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3h2Zm2 0v7h10V3M7 21v-7h10v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gal-load" viewBox="0 0 24 24"><path d="M4 10V5h7l2 3h7v13H4v-4M2 13h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-skip" viewBox="0 0 24 24"><path d="m3 5 8 7-8 7Zm10 0 8 7-8 7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-back" viewBox="0 0 24 24"><path d="m15 5-8 7 8 7M4 5v14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-next" viewBox="0 0 24 24"><path d="m9 5 8 7-8 7m11-14v14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gal-config" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gal-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-gal-letter" viewBox="0 0 80 72"><path d="M10 20h57v39H10Zm0 0 28 23 29-23M10 59l20-22m37 22L47 37" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="m59 3 2.5 7.5L69 13l-7.5 2.5L59 23l-2.5-7.5L49 13l7.5-2.5Z" fill="currentColor"/><circle cx="15" cy="8" r="1.5" fill="currentColor"/></symbol>
   </defs></svg>
   <header class="lab-header">
     <a class="brand" href="#components"><img src="__ASSET_mascot__" alt="大肥鱼吉祥物"><span>大肥鱼<small>贴纸界面试衣间</small></span></a>
@@ -68,25 +77,30 @@
             <div id="choice-veil" class="choice-veil" hidden></div>
             <div id="reply-options" class="reply-options" aria-label="回复选项" hidden></div>
             <div id="dialogue-box" class="dialogue-box">
+              <svg class="gal-letter-mark" aria-hidden="true"><use href="#i-gal-letter"/></svg>
               <div class="dialogue-topline"><span class="speaker-tag" id="speaker-name">大肥鱼</span></div>
               <p id="dialogue-text" class="dialogue-text"></p>
-              <button class="continue-button" data-action="next" id="continue-button" aria-label="继续对话"><span>◆</span></button>
+              <button class="continue-button" data-action="next" id="continue-button" aria-label="继续对话">
+                <svg class="gal-next-emblem" viewBox="0 0 48 48" aria-hidden="true"><circle class="gal-next-orbit" cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 7.42"/><path class="gal-next-spark" d="m24 12 3.5 8.5L36 24l-8.5 3.5L24 36l-3.5-8.5L12 24l8.5-3.5Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="24" cy="24" r="2" fill="currentColor"/></svg>
+                <small id="gal-next-caption">NEXT</small>
+              </button>
+              <div id="gal-reading-meter" class="gal-reading-meter" role="progressbar" aria-label="当前对白显示进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="gal-reading-fill" class="gal-reading-fill"></span><span class="gal-wait-fill"></span></div>
               <div class="dialogue-chapter-mark" aria-hidden="true">潮汐手记<small>WHALE DIARY</small></div>
               <span id="dialogue-progress" class="dialogue-progress">第一章 · 01 / 06</span>
             </div>
             <nav class="gal-quick-menu" aria-label="对话快捷操作">
-              <button class="dialogue-tool" data-action="quick-save" aria-label="快存" title="Q · 记住当前对白，仅保留在本次网页会话">Q.SAVE</button>
-              <button class="dialogue-tool" data-action="quick-load" id="quick-load-button" disabled aria-label="快读" title="L · 回到快速存档">Q.LOAD</button>
+              <button class="dialogue-tool" data-action="quick-save" aria-label="快存" title="Q · 记住当前对白，仅保留在本次网页会话"><svg aria-hidden="true"><use href="#i-gal-save"/></svg>Q.SAVE</button>
+              <button class="dialogue-tool" data-action="quick-load" id="quick-load-button" disabled aria-label="快读" title="L · 回到快速存档"><svg aria-hidden="true"><use href="#i-gal-load"/></svg>Q.LOAD</button>
               <span aria-hidden="true"></span>
-              <button class="dialogue-tool" data-action="backlog" aria-label="回看" title="回看已出现的对白">LOG</button>
-              <button class="dialogue-tool" data-action="skip" aria-pressed="false" id="skip-button" aria-label="快进" title="Ctrl · 按住快进，在选项处停止">SKIP</button>
-              <button class="dialogue-tool" data-action="auto" aria-pressed="false" id="auto-button" aria-label="自动阅读" title="A · 自动阅读">AUTO</button>
+              <button class="dialogue-tool" data-action="backlog" aria-label="回看" title="回看已出现的对白"><svg aria-hidden="true"><use href="#i-book"/></svg>LOG</button>
+              <button class="dialogue-tool" data-action="skip" aria-pressed="false" id="skip-button" aria-label="快进" title="Ctrl · 按住快进，在选项处停止"><svg aria-hidden="true"><use href="#i-gal-skip"/></svg>SKIP</button>
+              <button class="dialogue-tool" data-action="auto" aria-pressed="false" id="auto-button" aria-label="自动阅读" title="A · 自动阅读"><svg aria-hidden="true"><use href="#i-gal-play"/></svg>AUTO</button>
               <span aria-hidden="true"></span>
-              <button class="dialogue-tool" data-action="gal-back" id="gal-back-button" disabled aria-label="回到上一句" title="回到上一句；在分支开头可回到选项">BACK</button>
-              <button class="dialogue-tool" data-action="next" id="next-menu-button" aria-label="补全或继续对白" title="Space / Enter · 补全当前句，再次点击继续">NEXT</button>
+              <button class="dialogue-tool" data-action="gal-back" id="gal-back-button" disabled aria-label="回到上一句" title="回到上一句；在分支开头可回到选项"><svg aria-hidden="true"><use href="#i-gal-back"/></svg>BACK</button>
+              <button class="dialogue-tool" data-action="next" id="next-menu-button" aria-label="补全或继续对白" title="Space / Enter · 补全当前句，再次点击继续"><svg aria-hidden="true"><use href="#i-gal-next"/></svg>NEXT</button>
               <span aria-hidden="true"></span>
-              <button class="dialogue-tool" data-action="gal-settings" aria-label="阅读设置" title="调整文字速度、自动等待、字号和粉色渐变浓度">CONFIG</button>
-              <button class="dialogue-tool" data-action="hide-ui" aria-label="隐藏界面" title="H · 查看立绘与背景">HIDE</button>
+              <button class="dialogue-tool" data-action="gal-settings" aria-label="阅读设置" title="调整文字速度、自动等待、字号和粉色渐变浓度"><svg aria-hidden="true"><use href="#i-gal-config"/></svg>CONFIG</button>
+              <button class="dialogue-tool" data-action="hide-ui" aria-label="隐藏界面" title="H · 查看立绘与背景"><svg aria-hidden="true"><use href="#i-gal-eye"/></svg>HIDE</button>
             </nav>
             <div id="dialogue-announcement" class="sr-only" aria-live="polite"></div>
             <button id="restore-ui" class="restore-ui" data-action="restore-ui" hidden aria-label="恢复对话界面"><span>点击画面 / H · 恢复界面</span></button>
