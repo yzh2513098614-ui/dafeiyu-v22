@@ -15,6 +15,8 @@ const Ground=preload("res://assets/whale_home/garden_ground.gd")
 const Furniture=preload("res://assets/whale_home/furniture_finishes.gd")
 const Beds=preload("res://assets/whale_home/beds.gd")
 const Lounge=preload("res://assets/whale_home/lounge_furniture.gd")
+const Joinery=preload("res://assets/whale_home/cabinet_joinery.gd")
+const WallDetails=preload("res://assets/whale_home/wall_details.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -315,12 +317,14 @@ func _wall(parent: Node3D, rect: Rect2, height: float, partition: bool=false) ->
 	_box(back,Vector3(rect.size.x+.08,.11,.44),Vector3(0,3.97,.015),WHITE,0,.022)
 	_box(back,Vector3(rect.size.x+.16,.08,.51),Vector3(0,4.055,.025),MINT,0,.015)
 	_coll(back,Vector3(rect.size.x,3.95,.28),Vector3(0,1.95,0))
+	WallDetails.back_wall(self,back,rect.size.x)
 	if partition:return
 	for side in [-1.0,1.0]:
 		var side_wall: Node3D=_group(parent,"LowSideWall",Vector3(rect.position.x if side<0 else rect.end.x,height,rect.get_center().y))
 		_box(side_wall,Vector3(.23,1.10,rect.size.y),Vector3(0,.55,0),WHITE,0,.024)
 		_box(side_wall,Vector3(.32,.11,rect.size.y),Vector3(0,1.13,0),TEAL,0,.025)
 		_coll(side_wall,Vector3(.25,1.2,rect.size.y),Vector3(0,.6,0))
+		WallDetails.side_wall(self,side_wall,rect.size.y)
 	for x in [rect.position.x+.24,rect.end.x-.24]:
 		for z in [rect.position.y+.2,rect.end.y-.18]:
 			_box(parent,Vector3(.34,4.58,.34),Vector3(x,height+2.28,z),WHITE,0,.05)
@@ -343,12 +347,7 @@ func _porthole(parent: Node3D, point: Vector3, radius: float=1.15) -> void:
 func _cabinet(parent: Node3D, point: Vector3, width: float=1.75, height: float=1.06, profile: String="cabinet") -> Node3D:
 	var root: Node3D=_furniture(parent,"KitchenCabinet",point)
 	root.set_meta("furniture_finish",profile)
-	_finish_box(root,Vector3(width,height,.92),Vector3(0,height*.5,0),profile,"body",.04)
-	_finish_box(root,Vector3(width+.10,.10,1.04),Vector3(0,height+.04,0),profile,"top",.026)
-	for x in [-width*.245,width*.245]:
-		_finish_box(root,Vector3(width*.45,height-.18,.055),Vector3(x,height*.51,.49),profile,"back",.025)
-		_finish_box(root,Vector3(width*.38,height-.30,.025),Vector3(x,height*.51,.532),profile,"body",.016)
-		Geo.rod(root,Vector3(x-.13,height*.78,.565),Vector3(x+.13,height*.78,.565),.025,GOLD)
+	Joinery.cabinet(self,root,width,height,profile)
 	_coll(root,Vector3(width,height+.10,1.04),Vector3(0,height*.5,0));return root
 
 func _chair(parent: Node3D, point: Vector3, yaw: float=0.0, stool: bool=false) -> void:
@@ -360,11 +359,7 @@ func _table(parent: Node3D, point: Vector3, width: float=3.8, depth: float=2.3, 
 	var root: Node3D=_furniture(parent,"OakDiningTable",point)
 	root.set_meta("furniture_finish",profile)
 	if profile=="tea_table":Lounge.tea_table(self,root,width,depth,height)
-	else:
-		for x in [-width*.38,width*.38]:
-			for z in [-depth*.34,depth*.34]:_finish_box(root,Vector3(.16,height,.16),Vector3(x,height*.5,z),profile,"body",.025)
-		_finish_box(root,Vector3(width,.14,depth),Vector3(0,height,0),profile,"top",.045)
-		_finish_box(root,Vector3(width-.22,.20,.14),Vector3(0,height-.22,-depth*.34),profile,"body",.015)
+	else:Joinery.table_frame(self,root,width,depth,height,profile)
 	_coll(root,Vector3(width,height+.12,depth),Vector3(0,height*.5,0));return root
 
 func _shelf(parent: Node3D, point: Vector3, width: float=4.4, height: float=2.6, profile: String="bookcase") -> Node3D:
@@ -1076,6 +1071,7 @@ func build(owner_game) -> Dictionary:
 	_entry_details(floors[0]);_living(floors[1]);_hobby(floors[1]);_bedroom(floors[2]);_bathroom(floors[2]);_telescope(floors[2]);_roof(roof)
 	_annexes()
 	Interiors.new().build(self)
+	WallDetails.build(self)
 	_garden(island);_dock(island,sea)
 	_zone("kitchen","1F · 海盐厨房与中岛",Rect2(-14,-12,19,9.8))
 	_zone("pantry","1F · 蓝鲸餐具收藏柜",Rect2(5,-12,4,5))
