@@ -1,0 +1,477 @@
+{
+  "01_listen": {
+    "fabric_blocked": [
+      {
+        "comp_id": 518,
+        "size": 278,
+        "stage": 2,
+        "bgcol_frac": 0.255,
+        "ring_dark": 0.424,
+        "outer_blue": 0.863,
+        "fabric_minus_bg": 0.435,
+        "dist_bg_max": 221,
+        "bbox": [
+          612,
+          814,
+          644,
+          830
+        ],
+        "cy": 822.5,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 14
+  },
+  "02_kiss": {
+    "fabric_blocked": [
+      {
+        "comp_id": 304,
+        "size": 329,
+        "stage": 2,
+        "bgcol_frac": 0.353,
+        "ring_dark": 0.483,
+        "outer_blue": 0.74,
+        "fabric_minus_bg": 0.153,
+        "dist_bg_max": 238,
+        "bbox": [
+          600,
+          880,
+          638,
+          899
+        ],
+        "cy": 889.8,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 10
+  },
+  "03_talk": {
+    "fabric_blocked": [
+      {
+        "comp_id": 668,
+        "size": 362,
+        "stage": 2,
+        "bgcol_frac": 0.254,
+        "ring_dark": 0.482,
+        "outer_blue": 0.798,
+        "fabric_minus_bg": 0.47,
+        "dist_bg_max": 212,
+        "bbox": [
+          590,
+          877,
+          633,
+          897
+        ],
+        "cy": 886.8,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 14
+  },
+  "04_think": {
+    "fabric_blocked": [
+      {
+        "comp_id": 273,
+        "size": 24,
+        "stage": 2,
+        "bgcol_frac": 0.208,
+        "ring_dark": 0.377,
+        "outer_blue": 0.579,
+        "fabric_minus_bg": 0.276,
+        "dist_bg_max": 199,
+        "bbox": [
+          523,
+          553,
+          525,
+          564
+        ],
+        "cy": 558.2,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 452,
+        "size": 182,
+        "stage": 2,
+        "bgcol_frac": 0.209,
+        "ring_dark": 0.425,
+        "outer_blue": 0.646,
+        "fabric_minus_bg": 0.441,
+        "dist_bg_max": 199,
+        "bbox": [
+          626,
+          863,
+          648,
+          879
+        ],
+        "cy": 872.7,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 11
+  },
+  "05_relief": {
+    "fabric_blocked": [
+      {
+        "comp_id": 477,
+        "size": 221,
+        "stage": 2,
+        "bgcol_frac": 0.339,
+        "ring_dark": 0.363,
+        "outer_blue": 0.814,
+        "fabric_minus_bg": 0.235,
+        "dist_bg_max": 248,
+        "bbox": [
+          572,
+          844,
+          592,
+          860
+        ],
+        "cy": 850.8,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 500,
+        "size": 97,
+        "stage": 2,
+        "bgcol_frac": 0.309,
+        "ring_dark": 0.381,
+        "outer_blue": 0.731,
+        "fabric_minus_bg": 0.258,
+        "dist_bg_max": 237,
+        "bbox": [
+          592,
+          855,
+          605,
+          869
+        ],
+        "cy": 862.2,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 13
+  },
+  "06_shy": {
+    "fabric_blocked": [
+      {
+        "comp_id": 316,
+        "size": 234,
+        "stage": 2,
+        "bgcol_frac": 0.214,
+        "ring_dark": 0.372,
+        "outer_blue": 0.63,
+        "fabric_minus_bg": 0.461,
+        "dist_bg_max": 212,
+        "bbox": [
+          615,
+          860,
+          642,
+          876
+        ],
+        "cy": 868.4,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 339,
+        "size": 28,
+        "stage": 2,
+        "bgcol_frac": 0.25,
+        "ring_dark": 0.357,
+        "outer_blue": 0.542,
+        "fabric_minus_bg": 0.435,
+        "dist_bg_max": 196,
+        "bbox": [
+          638,
+          872,
+          652,
+          877
+        ],
+        "cy": 875.5,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 15
+  },
+  "07_expectant": {
+    "fabric_blocked": [
+      {
+        "comp_id": 383,
+        "size": 90,
+        "stage": 2,
+        "bgcol_frac": 0.111,
+        "ring_dark": 0.372,
+        "outer_blue": 0.657,
+        "fabric_minus_bg": 0.425,
+        "dist_bg_max": 222,
+        "bbox": [
+          593,
+          880,
+          610,
+          890
+        ],
+        "cy": 886.4,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 13
+  },
+  "08_cheer": {
+    "fabric_blocked": [
+      {
+        "comp_id": 278,
+        "size": 237,
+        "stage": 2,
+        "bgcol_frac": 0.215,
+        "ring_dark": 0.553,
+        "outer_blue": 0.753,
+        "fabric_minus_bg": 0.168,
+        "hairfar": 0.53,
+        "dist_bg_max": 23,
+        "bbox": [
+          722,
+          410,
+          743,
+          435
+        ],
+        "cy": 422.5,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 378,
+        "size": 292,
+        "stage": 2,
+        "bgcol_frac": 0.188,
+        "ring_dark": 0.371,
+        "outer_blue": 0.62,
+        "fabric_minus_bg": 0.204,
+        "hairfar": 0.384,
+        "dist_bg_max": 149,
+        "bbox": [
+          668,
+          492,
+          687,
+          517
+        ],
+        "cy": 503.2,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 421,
+        "size": 208,
+        "stage": 2,
+        "bgcol_frac": 0.221,
+        "ring_dark": 0.556,
+        "outer_blue": 0.953,
+        "fabric_minus_bg": 0.164,
+        "hairfar": 0.668,
+        "dist_bg_max": 18,
+        "bbox": [
+          310,
+          522,
+          340,
+          543
+        ],
+        "cy": 531.7,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 471,
+        "size": 131,
+        "stage": 2,
+        "bgcol_frac": 0.137,
+        "ring_dark": 0.388,
+        "outer_blue": 0.517,
+        "fabric_minus_bg": 0.165,
+        "dist_bg_max": 304,
+        "bbox": [
+          510,
+          618,
+          523,
+          634
+        ],
+        "cy": 626.3,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 681,
+        "size": 111,
+        "stage": 2,
+        "bgcol_frac": 0.27,
+        "ring_dark": 0.393,
+        "outer_blue": 0.699,
+        "fabric_minus_bg": 0.375,
+        "dist_bg_max": 241,
+        "bbox": [
+          620,
+          831,
+          631,
+          844
+        ],
+        "cy": 836.6,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 685,
+        "size": 216,
+        "stage": 2,
+        "bgcol_frac": 0.148,
+        "ring_dark": 0.414,
+        "outer_blue": 0.797,
+        "fabric_minus_bg": 0.379,
+        "dist_bg_max": 232,
+        "bbox": [
+          633,
+          832,
+          657,
+          849
+        ],
+        "cy": 842.1,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 13
+  },
+  "09_happy": {
+    "fabric_blocked": [
+      {
+        "comp_id": 56,
+        "size": 196,
+        "stage": 2,
+        "bgcol_frac": 0.276,
+        "ring_dark": 0.381,
+        "outer_blue": 0.582,
+        "fabric_minus_bg": 0.207,
+        "hairfar": 0.276,
+        "dist_bg_max": 28,
+        "bbox": [
+          743,
+          381,
+          764,
+          394
+        ],
+        "cy": 387.7,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 181,
+        "size": 192,
+        "stage": 2,
+        "bgcol_frac": 0.219,
+        "ring_dark": 0.53,
+        "outer_blue": 0.973,
+        "fabric_minus_bg": 0.172,
+        "hairfar": 0.848,
+        "dist_bg_max": 20,
+        "bbox": [
+          270,
+          580,
+          299,
+          605
+        ],
+        "cy": 593.6,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 307,
+        "size": 378,
+        "stage": 2,
+        "bgcol_frac": 0.27,
+        "ring_dark": 0.457,
+        "outer_blue": 0.995,
+        "fabric_minus_bg": 0.24,
+        "dist_bg_max": 236,
+        "bbox": [
+          615,
+          884,
+          650,
+          906
+        ],
+        "cy": 893.8,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 13
+  },
+  "10_concern": {
+    "fabric_blocked": [
+      {
+        "comp_id": 142,
+        "size": 360,
+        "stage": 2,
+        "bgcol_frac": 0.331,
+        "ring_dark": 0.494,
+        "outer_blue": 0.854,
+        "fabric_minus_bg": 0.192,
+        "hairfar": 0.516,
+        "dist_bg_max": 25,
+        "bbox": [
+          336,
+          485,
+          355,
+          522
+        ],
+        "cy": 502.7,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 311,
+        "size": 542,
+        "stage": 2,
+        "bgcol_frac": 0.338,
+        "ring_dark": 0.472,
+        "outer_blue": 0.983,
+        "fabric_minus_bg": 0.226,
+        "dist_bg_max": 236,
+        "bbox": [
+          573,
+          838,
+          615,
+          864
+        ],
+        "cy": 850.2,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 13
+  },
+  "11_side_welcome": {
+    "fabric_blocked": [
+      {
+        "comp_id": 649,
+        "size": 70,
+        "stage": 2,
+        "bgcol_frac": 0.229,
+        "ring_dark": 0.37,
+        "outer_blue": 0.587,
+        "fabric_minus_bg": 0.402,
+        "dist_bg_max": 234,
+        "bbox": [
+          654,
+          833,
+          666,
+          843
+        ],
+        "cy": 837.1,
+        "kind": "fabric_blocked"
+      },
+      {
+        "comp_id": 654,
+        "size": 138,
+        "stage": 2,
+        "bgcol_frac": 0.145,
+        "ring_dark": 0.38,
+        "outer_blue": 0.614,
+        "fabric_minus_bg": 0.425,
+        "dist_bg_max": 220,
+        "bbox": [
+          668,
+          836,
+          689,
+          849
+        ],
+        "cy": 843.8,
+        "kind": "fabric_blocked"
+      }
+    ],
+    "clears_anyway": 9
+  }
+}
