@@ -16,6 +16,10 @@ static func build(sea: Node3D, ocean: MeshInstance3D, water: ShaderMaterial) -> 
 	for key: String in settings.seabed:
 		var value: Variant = settings.seabed[key]
 		material.set_shader_parameter(key, Color(value) if value is String else value)
+	for key: String in ["absorption", "scattering"]:
+		var coefficients: Array = settings.surface[key]
+		material.set_shader_parameter(key, Vector3(coefficients[0], coefficients[1], coefficients[2]))
+	material.set_shader_parameter("water_ior", settings.surface.water_ior)
 	var grid := PlaneMesh.new()
 	grid.size = (ocean.mesh as PlaneMesh).size
 	grid.subdivide_width = int(settings.shelf.subdivisions[0])

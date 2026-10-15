@@ -3,6 +3,12 @@
     "water_tint": "278c9c",
     "night_tint": "163e57",
     "absorption": [0.38, 0.105, 0.075],
+    "scattering": [0.025, 0.055, 0.05],
+    "sun_scatter_tint": "65d9c1",
+    "sun_scatter_strength": 1.2,
+    "scatter_anisotropy": 0.4,
+    "crest_scatter_strength": 2.2,
+    "crest_scatter_height": 0.14,
     "refraction_strength": 0.65,
     "water_ior": 1.333,
     "ripple_strength": 0.055,
@@ -27,7 +33,9 @@
     "sand_dark": "8a9d87",
     "caustic_strength": 0.22,
     "caustic_scale": 0.85,
-    "caustic_depth": 7.0
+    "caustic_depth": 7.0,
+    "caustic_focus_depth": 2.5,
+    "caustic_focus_width": 3.5
   },
   "shelf": {
     "near_depth": 0.95,

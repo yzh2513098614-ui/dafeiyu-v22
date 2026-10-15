@@ -6,6 +6,12 @@ uniform sampler2D scene_depth : hint_depth_texture, repeat_disable, filter_neare
 uniform vec4 water_tint : source_color = vec4(0.15, 0.55, 0.61, 1.0);
 uniform vec4 night_tint : source_color = vec4(0.086, 0.243, 0.341, 1.0);
 uniform vec3 absorption = vec3(0.38, 0.105, 0.075);
+uniform vec3 scattering = vec3(0.025, 0.055, 0.05);
+uniform vec4 sun_scatter_tint : source_color = vec4(0.396, 0.851, 0.757, 1.0);
+uniform float sun_scatter_strength = 1.2;
+uniform float scatter_anisotropy : hint_range(-0.8, 0.8) = 0.4;
+uniform float crest_scatter_strength = 2.2;
+uniform float crest_scatter_height = 0.14;
 uniform float refraction_strength : hint_range(0.0, 1.0) = 0.65;
 uniform float water_ior = 1.333;
 uniform float ripple_strength = 0.055;
@@ -200,10 +206,28 @@ void fragment() {
 	sample_uv = mix(sample_uv, refracted_uv, refract_ok);
 	bottom = mix(bottom, refracted_bottom, refract_ok);
 	path = mix(open_water_depth, min(length(bottom - surface_position), open_water_depth), has_bottom);
-	vec3 transmission = exp(-absorption * path) * has_bottom;
+	// Extinction includes both absorption and light scattered out of the sight ray.
+	vec3 extinction = absorption + scattering;
+	vec3 transmission = exp(-extinction * path) * has_bottom;
 	float light_level = clamp(ambient_energy * 2.0 + 0.25, 0.1, 1.0);
+	// The tint is the art-directed equilibrium radiance of ambient water light.
 	vec3 scatter = mix(water_tint.rgb, night_tint.rgb, night_weight) * light_level;
 	vec3 water = textureLod(scene_colour, sample_uv, 0.0).rgb * transmission + scatter * (vec3(1.0) - transmission);
+	// Homogeneous single-scatter approximation: attenuation along the sight ray
+	// and the incoming sun path are integrated analytically, without more marching.
+	vec3 light = normalize(sun_direction);
+	vec3 sun_ray = refract(-light, normal, 1.0 / water_ior);
+	float light_path_ratio = max(-refracted_ray.y, 0.08) / max(-sun_ray.y, 0.08);
+	vec3 combined_extinction = max(extinction * (1.0 + light_path_ratio), vec3(0.00001));
+	vec3 scatter_integral = scattering * (vec3(1.0) - exp(-combined_extinction * path)) / combined_extinction;
+	// HG relative to isotropic scattering; the exposed strength absorbs 1/(4*PI).
+	float g = scatter_anisotropy;
+	float phase_denominator = 1.0 + g * g - 2.0 * g * dot(-light, to_camera);
+	float phase_weight = (1.0 - g * g) / pow(phase_denominator, 1.5);
+	float crest_mask = smoothstep(0.0, crest_scatter_height, max(surface_position.y - water_level, 0.0));
+	float daylight = sun_energy * max(light.y, 0.0) * (1.0 - night_weight);
+	vec3 sun_scatter = sun_scatter_tint.rgb * sun_colour.rgb * scatter_integral * phase_weight;
+	water += sun_scatter * daylight * sun_scatter_strength * (1.0 + crest_mask * crest_scatter_strength);
 	float facing = clamp(dot(normal, to_camera), 0.0, 1.0);
 	float f0 = pow((water_ior - 1.0) / (water_ior + 1.0), 2.0);
 	float fresnel = clamp((f0 + (1.0 - f0) * pow(1.0 - facing, 5.0)) * reflection_strength, 0.0, 1.0);
@@ -217,7 +241,6 @@ void fragment() {
 	}
 	water = mix(water, reflected_sky, fresnel);
 	// GGX microfacet highlights, broadened by sub-pixel normal variance in overview.
-	vec3 light = normalize(sun_direction);
 	vec3 half_vector = normalize(to_camera + light);
 	float no_l = max(dot(normal, light), 0.001);
 	float no_v = max(facing, 0.001);

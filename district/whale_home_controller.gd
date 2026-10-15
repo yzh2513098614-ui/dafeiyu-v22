@@ -109,6 +109,7 @@ func _process(delta: float) -> void:
 	water.set_shader_parameter("ambient_energy",game.atmosphere.environment.ambient_light_energy)
 	var seabed: ShaderMaterial=level.get_meta("seabed_material")
 	seabed.set_shader_parameter("night_weight",night)
+	seabed.set_shader_parameter("sun_direction",game.atmosphere.sun.global_basis.z.normalized())
 
 func _update_sea() -> void:
 	var height: float=sea_motion.mean_level(sea_clock)
