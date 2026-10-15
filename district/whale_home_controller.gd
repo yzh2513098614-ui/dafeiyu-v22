@@ -100,6 +100,15 @@ func _process(delta: float) -> void:
 		game.atmosphere.sun.light_energy=.40
 		game.atmosphere.sun.light_color=Color("fff2dc")
 		game.atmosphere.sun.shadow_opacity=.78
+	# Read the final map lighting after its daytime override, not fixed shader colours.
+	water.set_shader_parameter("sun_direction",game.atmosphere.sun.global_basis.z.normalized())
+	water.set_shader_parameter("sun_colour",game.atmosphere.sun.light_color)
+	water.set_shader_parameter("sun_energy",game.atmosphere.sun.light_energy)
+	water.set_shader_parameter("sky_colour",game.atmosphere.environment.background_color)
+	water.set_shader_parameter("ambient_colour",game.atmosphere.environment.ambient_light_color)
+	water.set_shader_parameter("ambient_energy",game.atmosphere.environment.ambient_light_energy)
+	var seabed: ShaderMaterial=level.get_meta("seabed_material")
+	seabed.set_shader_parameter("night_weight",night)
 
 func _update_sea() -> void:
 	var height: float=sea_motion.mean_level(sea_clock)
@@ -108,6 +117,9 @@ func _update_sea() -> void:
 	water.set_shader_parameter("water_level",height)
 	water.set_shader_parameter("wave_time",sea_clock)
 	water.set_shader_parameter("tide_amount",.5+.5*sin(sea_clock*TAU/float(sea_motion.settings.tide_period)))
+	var seabed: ShaderMaterial=level.get_meta("seabed_material")
+	seabed.set_shader_parameter("wave_time",sea_clock)
+	seabed.set_shader_parameter("water_level",height)
 	var wet_height: float=sea_motion.wet_level(sea_clock)
 	for material in coastal_materials:
 		material.set_shader_parameter("water_level",height)

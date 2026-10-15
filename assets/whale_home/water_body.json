@@ -1,0 +1,30 @@
+{
+  "surface": {
+    "water_tint": "278c9c",
+    "night_tint": "163e57",
+    "absorption": [0.38, 0.105, 0.075],
+    "refraction_strength": 0.4,
+    "ripple_strength": 0.065,
+    "reflection_strength": 1.0,
+    "sun_glint_strength": 0.65,
+    "sun_glint_power": 150.0,
+    "foam_strength": 0.38,
+    "open_water_depth": 24.0
+  },
+  "seabed": {
+    "sand_light": "c9c3a0",
+    "sand_dark": "8a9d87",
+    "caustic_strength": 0.22,
+    "caustic_scale": 0.85,
+    "caustic_depth": 7.0
+  },
+  "shelf": {
+    "near_depth": 0.95,
+    "slope": 0.3,
+    "drop": 10.0,
+    "drop_start": 8.0,
+    "drop_end": 42.0,
+    "relief": 0.12,
+    "subdivisions": [95, 87]
+  }
+}
