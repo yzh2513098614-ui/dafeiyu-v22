@@ -87,7 +87,7 @@ if (typeof document !== 'undefined') {
   const state = demo.state;
   const $ = id => document.getElementById(id);
   const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const icon = (name, extra = '') => `<svg ${extra} aria-hidden="true"><use href="#i-${name}"/></svg>`;
+  const icon = (name, extra = '') => `<svg ${extra} aria-hidden="true"><use href="#i-ui-${name}"/></svg>`;
   const vitalNames = { health: '生命', stamina: '体力', hunger: '饱食', mood: '心情' };
   const vitalIcons = { health: 'heart', stamina: 'bolt', hunger: 'fish', mood: 'smile' };
   const colors = { health: ['#f4407e', '#ffe3ec'], stamina: ['#23cbd4', '#dcf8f9'], hunger: ['#feb633', '#fff2dc'], mood: ['#638eff', '#e4ecff'] };
@@ -192,7 +192,7 @@ if (typeof document !== 'undefined') {
     $('page-caption').textContent = captions[page];
     $('scene').dataset.page = page; $('viewport').dataset.page = page;
     $('canvas-dimensions').textContent = page === 'dialogue' ? '16:9 · 1448 × 815' : '1448 × 1086';
-    $('scene-footer-copy').textContent = page === 'components' ? '白包边 · 蓝底影 · 浅色承面' : page === 'inventory' ? '物品、故事和一点点补给，都有自己的位置。' : '慢慢说，今天还很长。';
+    $('scene-footer-copy').textContent = page === 'components' ? '粉色承面 · 轻盈底边 · 半透明图标' : page === 'inventory' ? '物品、故事和一点点补给，都有自己的位置。' : '慢慢说，今天还很长。';
     window.history.replaceState(null, '', `#${page}`);
     renderPresets(); renderInventory();
     if (page === 'dialogue') gal.enter();
