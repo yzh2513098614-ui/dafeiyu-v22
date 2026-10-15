@@ -25,6 +25,9 @@ func map_action() -> String:
 		"flowers":return "整理海风花束"
 		"read":return "翻到下一页"
 		"sketch":return "画一张海湾速写"
+		"curtain":return "合上窗帘" if opened else "拉开窗帘"
+		"room_lamp":return "关闭阅读灯" if opened else "打开阅读灯"
+		"wardrobe":return "合上衣柜" if opened else "拉开衣柜"
 		"aquarium":return "喂小鱼"
 		"bed":return "休息两小时"
 		"scope":return "转动望远镜"
@@ -39,6 +42,21 @@ func restore_pose() -> void:
 		for part in parts:part.rotation.y=deg_to_rad(-103.0) if opened else 0.0
 	elif kind=="read":
 		for part in parts:part.rotation.z=PI if opened else 0.0
+	elif kind=="curtain":
+		for part in parts:
+			part.scale.x=.22 if opened else 1.0
+			part.position.x=float(part.get_meta("curtain_side"))*(2.5 if opened else 1.3)
+	elif kind=="wardrobe":
+		for part in parts:part.position.x=.95 if opened else -.95
+	elif kind=="room_lamp":_lamp_pose()
+
+func _lamp_pose() -> void:
+	for part in parts:
+		if part is OmniLight3D:part.visible=opened
+		elif part is MeshInstance3D:
+			var material: StandardMaterial3D=part.material_override
+			material.emission_enabled=opened
+			material.albedo_color=Color("fff0bd") if opened else Color("d3cfba")
 
 func interact() -> void:
 	if busy:return
@@ -70,6 +88,20 @@ func interact() -> void:
 			for part in parts:motion.tween_property(part,"rotation:z",PI if opened else 0.0,.65)
 			motion.finished.connect(func():busy=false;set_meta("map_busy",false))
 			note="这一页写着：鲸鱼用歌声，记住很远很远的朋友。" if opened else "翻回海湾手记的扉页，书签还停在那片蓝色海面。"
+		"curtain","wardrobe":
+			opened=not opened;busy=true;set_meta("map_busy",true)
+			motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+			for part in parts:
+				if kind=="curtain":
+					motion.tween_property(part,"scale:x",.22 if opened else 1.0,.8)
+					motion.tween_property(part,"position:x",float(part.get_meta("curtain_side"))*(2.5 if opened else 1.3),.8)
+				else:motion.tween_property(part,"position:x",.95 if opened else -.95,.7)
+			motion.finished.connect(func():busy=false;set_meta("map_busy",false))
+			if kind=="curtain":note="窗帘收向两边，海湾又映进了窗框。" if opened else "合上柔软的窗帘，给房间留一小片安静。"
+			else:note="衣柜滑门拉开了，干净的毛巾、被褥和备用衣物分层收好。" if opened else "滑门轻轻合拢，把整齐的日常收回柜里。"
+		"room_lamp":
+			opened=not opened;_lamp_pose()
+			note="阅读灯亮了，暖光落在身边。" if opened else "阅读灯关好了，房间留给窗外的光。"
 		"aquarium":
 			game.home_controller.feeding=6.0
 			note="小鱼们游过来了！水族箱里的蓝鲸也跟着摇尾巴。"

@@ -18,6 +18,15 @@ func check(value: bool, label: String) -> void:
 func settle(frames: int = 4) -> void:
 	for i in frames: await physics_frame
 
+func furnishing_pose(node: Node3D) -> bool:
+	if node.kind == "room_lamp":
+		return node.parts[0].visible == node.opened and node.parts[1].material_override.emission_enabled == node.opened
+	if node.kind == "wardrobe":
+		return is_equal_approx(node.parts[0].position.x, .95 if node.opened else -.95)
+	for part: Node3D in node.parts:
+		if not is_equal_approx(part.scale.x, .22 if node.opened else 1.0): return false
+	return true
+
 func review() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUTPUT))
 	root.get_node("MusicDirector").set_process(false)
@@ -55,12 +64,50 @@ func review() -> void:
 		if activity.kind == "read": finished = finished and activity.opened and is_equal_approx(activity.parts[0].rotation.z, PI)
 		else: finished = finished and activity.parts[0].position.is_equal_approx(origin)
 		check(finished and not game.home_controller.notice.is_empty(), spec[0] + " finishes its animation and releases interaction")
-	check(game._save(), "isolated save stores journal page")
+	var furnishings := [
+		["lounge_curtain", Vector3(-24.4, .05, -24)],
+		["studio_curtain", Vector3(24.4, 5.25, -29)],
+		["guest_curtain", Vector3(-24.4, 10.45, -23.5)],
+		["lounge_reading_lamp", Vector3(-22.7, .05, -20.5)],
+		["library_reading_lamp", Vector3(-24.7, 5.25, -15.4)],
+		["rest_reading_lamp", Vector3(25, 10.45, -7.9)],
+		["guest_wardrobe", Vector3(-21, 10.45, -18.3)]]
+	var saved_states := {}
+	game.atmosphere.set_time(22.0)
+	for spec: Array in furnishings:
+		var furnishing: Node3D = game.world.get_node("HomeAction_" + spec[0])
+		game.player.position = spec[1]; game.player.velocity = Vector3.ZERO
+		game.silhouette_body.global_position = spec[1]
+		game.home_controller.set_layers()
+		await settle()
+		check(Safety.clear_at(game.player, spec[1]) and Safety.supported(game.player, spec[1]), spec[0] + " approach stays clear at original character size")
+		var before: bool = furnishing.opened
+		var picked: Dictionary = game.map_interactions._pick()
+		var used: bool = game.map_interactions.try_interact()
+		check(picked.get("node") == furnishing and used and furnishing.opened != before, spec[0] + " responds to the actual E resolver")
+		await settle(58)
+		check(not furnishing.busy and furnishing_pose(furnishing), spec[0] + " settles into its switched pose")
+		saved_states[spec[0]] = furnishing.opened
+	# Keep both lit/unlit and open/closed examples in the same save.
+	game.world.get_node("HomeAction_lounge_reading_lamp").interact()
+	saved_states["lounge_reading_lamp"] = false
+	game.world.get_node("HomeAction_studio_curtain").interact()
+	saved_states["studio_curtain"] = true
+	await settle(58)
+	game.player.position = Vector3(-9.6, .05, 11)
+	game.silhouette_body.global_position = game.player.position
+	game.home_controller.cutaway = true; game.home_controller.set_layers()
+	var upper_lamp: Node3D = game.world.get_node("HomeAction_rest_reading_lamp")
+	check(upper_lamp.opened and not upper_lamp.parts[0].is_visible_in_tree(), "upper-floor reading light follows the floor cutaway")
+	check(game._save(), "isolated save stores journal, curtains, lamps and wardrobe")
 	game._travel("city"); await settle()
 	check(game._restore(), "saved home restores after city travel")
 	await settle()
 	var journal: Node3D = game.world.get_node("HomeAction_bay_journal")
 	check(journal.opened and is_equal_approx(journal.parts[0].rotation.z, PI), "journal page pose survives map reconstruction")
+	for spec: Array in furnishings:
+		var furnishing: Node3D = game.world.get_node("HomeAction_" + spec[0])
+		check(furnishing.opened == saved_states[spec[0]] and furnishing_pose(furnishing), spec[0] + " state and pose restore after city travel")
 	print("HOME INTERIOR CHECK: ", checks, " CHECKS, ", checks - failed, " PASSED, ", failed, " FAILED")
 	game.queue_free(); await settle(6)
 	quit(1 if failed else 0)

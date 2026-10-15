@@ -1,6 +1,6 @@
 extends RefCounted
 ## Life-sized annex furnishings. Static pieces join the existing floor batches;
-## only the baking tray, bouquet, book page and brush remain independent.
+## moving props, curtain folds, wardrobe panels and lamp bulbs stay independent.
 const Geo = preload("res://district/story_geometry.gd")
 var b
 
@@ -15,7 +15,9 @@ func build(builder) -> void:
 	_guest_storage()
 	_rest_corner()
 	_dressing_mirror()
-	b.level.set_meta("interior_revision", "annex_daily_life_v1")
+	_sea_windows()
+	_reading_lamps()
+	b.level.set_meta("interior_revision", "annex_daily_life_v2")
 
 func _baking_corner() -> void:
 	var oven: Node3D = b._action("bake", "star_oven", "花艺与烘焙工坊 · 星星烤箱", Vector3(25, 0, -22), 0)
@@ -146,11 +148,32 @@ func _library_catalogue() -> void:
 
 func _guest_storage() -> void:
 	var h: float = b.HEIGHT * 2
-	var wardrobe: Node3D = b._cabinet(b.floors[2], Vector3(-21, h, -20.5), 4.0, 2.9, "cream_cabinet")
-	wardrobe.name = "GuestLinenWardrobe"
+	var storage: Node3D = b._action("wardrobe", "guest_wardrobe", "海风客房 · 备用被褥衣柜", Vector3(-21, h, -20.5), h)
+	var wardrobe: Node3D = b._furniture(storage, "GuestLinenWardrobe", Vector3.ZERO)
+	b._finish_box(wardrobe, Vector3(4.0, 2.9, .12), Vector3(0, 1.45, -.48), "cream_cabinet", "back")
+	for x in [-1.96, 0.0, 1.96]:
+		b._finish_box(wardrobe, Vector3(.12, 2.9, 1.04), Vector3(x, 1.45, 0), "cream_cabinet")
+	for y in [.12, 1.05, 1.95, 2.92]:
+		b._finish_box(wardrobe, Vector3(4.0, .12, 1.04), Vector3(0, y, 0), "cream_cabinet", "top")
+	for row in 3:
+		for layer in 3:
+			var towel: MeshInstance3D = b._box(wardrobe, Vector3(1.45, .15, .70), Vector3(-.95, .27 + row * .92 + layer * .16, 0), b.WHITE if layer % 2 else b.LIGHT, 0, .045)
+			b._cloth(towel, b.WHITE if layer % 2 else b.LIGHT, 1)
 	b._box(wardrobe, Vector3(4.2, .14, 1.12), Vector3(0, 3.02, 0), b.MINT)
-	b._star(wardrobe, Vector3(-.96, 2.25, .56), .35)
-	b._whale(wardrobe, Vector3(.9, 1.6, .62), .32)
+	# The left door slides over the right one; nothing swings into the walkway.
+	for side in [-1.0, 1.0]:
+		var panel: Node3D = b._group(storage, "SlidingLinenDoor", Vector3(side * .95, 0, .60 if side < 0 else .52))
+		b._finish_box(panel, Vector3(1.89, 2.7, .07), Vector3(0, 1.45, 0), "cream_cabinet")
+		b._finish_box(panel, Vector3(1.62, 2.38, .035), Vector3(0, 1.45, .052), "cream_cabinet", "back")
+		Geo.rod(panel, Vector3(side * .66, 1.15, .12), Vector3(side * .66, 1.58, .12), .028, b.GOLD)
+		b._star(panel, Vector3(0, 2.23, .09), .35)
+		if side < 0:
+			panel.set_meta("home_dynamic", true)
+			storage.parts.append(panel)
+			b._batch(panel, false)
+	b._coll(wardrobe, Vector3(4.12, 3.1, 1.22), Vector3(0, 1.55, .06))
+	storage.restore_pose()
+	b._batch(storage)
 	var luggage: Node3D = b._furniture(b.floors[2], "GuestLuggageRack", Vector3(-22, h, -10))
 	for side in [-1.0, 1.0]:
 		Geo.rod(luggage, Vector3(side * .8, 0, -.45), Vector3(-side * .8, .75, .45), .04, b.WOOD)
@@ -187,3 +210,68 @@ func _dressing_mirror() -> void:
 	var seat: MeshInstance3D = b._box(stool, Vector3(1.2, .22, .95), Vector3(0, .70, 0), b.SAKURA, 0, .10)
 	b._cloth(seat, b.SAKURA)
 	b._coll(stool, Vector3(1.2, .85, .95), Vector3(0, .425, 0))
+
+func _sea_windows() -> void:
+	var windows := [
+		["lounge_curtain", "1F · 海风会客厅窗帘", Vector3(-26.6, 0, -24), -1.0, b.MINT],
+		["studio_curtain", "2F · 创作书房窗帘", Vector3(26.6, b.HEIGHT, -29), 1.0, b.LIGHT],
+		["guest_curtain", "3F · 海风客房窗帘", Vector3(-26.6, b.HEIGHT * 2, -23.5), -1.0, b.SAKURA]]
+	for spec: Array in windows:
+		var state_key: String = "whale_home:facility:" + spec[0]
+		if not b.game.visited.has(state_key): b.game.visited[state_key] = true
+		var point: Vector3 = spec[2]
+		var curtain: Node3D = b._action("curtain", spec[0], spec[1], point, point.y)
+		var frame: Node3D = b._furniture(curtain, "SeaViewWindow", Vector3(float(spec[3]) * 1.25, 0, 0))
+		frame.rotation.y = -float(spec[3]) * PI * .5
+		for x in [-2.7, 0.0, 2.7]:
+			b._box(frame, Vector3(.12, 2.3, .18), Vector3(x, 2.3, 0), b.WHITE)
+		for y in [1.15, 2.3, 3.45]:
+			b._box(frame, Vector3(5.5, .12, .18), Vector3(0, y, 0), b.WHITE)
+		var pane: MeshInstance3D = b._box(frame, Vector3(5.3, 2.15, .025), Vector3(0, 2.3, -.025), b.LIGHT, 0, .004)
+		pane.material_override = b.glass
+		b._finish_box(frame, Vector3(5.8, .13, .50), Vector3(0, 1.14, .12), "cream_cabinet", "top")
+		Geo.rod(frame, Vector3(-3.25, 3.7, .28), Vector3(3.25, 3.7, .28), .04, b.GOLD)
+		for side in [-1.0, 1.0]:
+			b._sphere(frame, Vector3(side * 3.3, 3.7, .28), Vector3.ONE * .17, b.WOOD)
+			var panel: Node3D = b._group(frame, "PleatedSeaCurtain", Vector3(side * 1.3, 0, .3))
+			panel.set_meta("home_dynamic", true); panel.set_meta("curtain_side", side)
+			for i in 10:
+				var pleat: MeshInstance3D = b._box(panel, Vector3(.27, 2.4, .11), Vector3(-1.17 + i * .26, 2.2, .045 if i % 2 else 0.0), spec[4], 0, .025)
+				b._cloth(pleat, spec[4], 1)
+			curtain.parts.append(panel)
+			b._batch(panel, false)
+		# The pull cord marks the interaction point inside the existing low wall.
+		Geo.rod(curtain, Vector3(0, 1.25, 0), frame.position + frame.basis * Vector3(0, 3.7, .28), .016, b.GOLD)
+		b._sphere(curtain, Vector3(0, 1.22, 0), Vector3(.09, .15, .09), b.WOOD)
+		curtain.restore_pose()
+		b._batch(curtain)
+
+func _reading_lamps() -> void:
+	var lamps := [
+		["lounge_reading_lamp", "1F · 会客厅阅读灯", Vector3(-24.8, 0, -20.5)],
+		["library_reading_lamp", "2F · 阅读室落地灯", Vector3(-24.7, b.HEIGHT, -17.5)],
+		["rest_reading_lamp", "3F · 海景休憩室暖灯", Vector3(25, b.HEIGHT * 2, -10)]]
+	for spec: Array in lamps:
+		var point: Vector3 = spec[2]
+		var lamp: Node3D = b._action("room_lamp", spec[0], spec[1], point, point.y)
+		var stand: Node3D = b._furniture(lamp, "SwitchableReadingLamp", Vector3.ZERO)
+		Geo.cylinder(stand, .34, .09, Vector3(0, .055, 0), b.TEAL)
+		Geo.rod(stand, Vector3(0, .1, 0), Vector3(0, 2.35, 0), .035, b.GOLD)
+		Geo.cylinder(stand, .45, .60, Vector3(0, 2.55, 0), b.WHITE, .24)
+		b._coll(stand, Vector3(.70, .12, .70), Vector3(0, .06, 0))
+		b._coll(stand, Vector3(.10, 2.35, .10), Vector3(0, 1.175, 0))
+		var bulb_root: Node3D = b._group(lamp, "SwitchableBulb")
+		bulb_root.set_meta("home_dynamic", true)
+		var bulb: MeshInstance3D = b._sphere(bulb_root, Vector3(0, 2.25, 0), Vector3.ONE * .24, b.WHITE)
+		var material := StandardMaterial3D.new()
+		material.emission = Color("ffd58e"); material.emission_energy_multiplier = .7; material.roughness = .8
+		bulb.material_override = material
+		var light := OmniLight3D.new()
+		light.name = "ReadingLight"; light.position = Vector3(0, 2.1, 0)
+		light.light_color = Color("ffe6b3"); light.light_energy = .65
+		light.omni_range = 5.5; light.shadow_enabled = false
+		light.set_meta("harbor_lamp", true); light.set_meta("fixture_weight", .4)
+		lamp.add_child(light)
+		lamp.parts.append(light); lamp.parts.append(bulb)
+		lamp.restore_pose()
+		b._batch(lamp)
