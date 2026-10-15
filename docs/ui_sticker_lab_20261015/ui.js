@@ -192,7 +192,7 @@ if (typeof document !== 'undefined') {
     $('page-caption').textContent = captions[page];
     $('scene').dataset.page = page; $('viewport').dataset.page = page;
     $('canvas-dimensions').textContent = page === 'dialogue' ? '16:9 · 1448 × 815' : '1448 × 1086';
-    $('scene-footer-copy').textContent = page === 'components' ? '粉色承面 · 轻盈底边 · 半透明图标' : page === 'inventory' ? '物品、故事和一点点补给，都有自己的位置。' : '慢慢说，今天还很长。';
+    $('scene-footer-copy').textContent = page === 'components' ? '厚白包边 · 浅蓝内框 · 分层底座' : page === 'inventory' ? '物品、故事和一点点补给，都有自己的位置。' : '慢慢说，今天还很长。';
     window.history.replaceState(null, '', `#${page}`);
     renderPresets(); renderInventory();
     if (page === 'dialogue') gal.enter();
