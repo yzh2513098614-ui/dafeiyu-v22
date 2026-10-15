@@ -12,6 +12,7 @@ const Pastel=preload("res://assets/whale_home/pastel_props.gd")
 const Coastal=preload("res://assets/whale_home/coastal_props.gd")
 const Ground=preload("res://assets/whale_home/garden_ground.gd")
 const Furniture=preload("res://assets/whale_home/furniture_finishes.gd")
+const Beds=preload("res://assets/whale_home/beds.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -572,16 +573,7 @@ func _bedroom(parent: Node3D) -> void:
 	var h: float=HEIGHT*2
 	_art(parent,Vector3(-1.7,h+.055,-10.7),Vector2(8.0,6.7),true)
 	var bed: Node3D=_furniture(parent,"WhaleDreamBed",Vector3(-2.6,h,-13.6))
-	_box(bed,Vector3(5.2,.43,6.3),Vector3(0,.42,0),WOOD,1,.13)
-	for x in [-2.13,2.13]:
-		for z in [-2.70,2.70]:_box(bed,Vector3(.22,.55,.22),Vector3(x,.26,z),WHITE,0,.045)
-	_box(bed,Vector3(4.95,.54,6.05),Vector3(0,.82,0),WHITE,0,.22)
-	var duvet: MeshInstance3D=_box(bed,Vector3(5.04,.32,4.76),Vector3(0,1.11,.65),BLUE,0,.20);_cloth(duvet,BLUE,1)
-	var fold: MeshInstance3D=_box(bed,Vector3(5.06,.20,.70),Vector3(0,1.30,-1.44),LIGHT,0,.095);_cloth(fold,LIGHT)
-	for x in [-1.28,1.28]:
-		var pillow: MeshInstance3D=_box(bed,Vector3(1.80,.34,1.05),Vector3(x,1.23,-2.13),WHITE,0,.18);_cloth(pillow,WHITE)
-	_whale(bed,Vector3(0,.42,-2.43),1.72)
-	_star(bed,Vector3(-1.68,1.64,-1.65),.73);_star(bed,Vector3(1.40,1.60,-1.6),.60)
+	Beds.build(self,bed)
 	_coll(bed,Vector3(5.28,2.35,6.42),Vector3(0,1.18,0))
 	_action("bed","whale_bed","柔软鲸鱼床 · 海景卧室",Vector3(-2.6,h,-9.95),h)
 	for x in [-6.4,1.12]:
@@ -764,12 +756,7 @@ func _annexes() -> void:
 	_zone("annex_library","2F · 蓝鲸藏书与展示长廊",Rect2(-14,-34,28,18),h)
 	var third: Node3D=floors[2];h=HEIGHT*2
 	var guest: Node3D=_furniture(third,"WhaleGuestBed",Vector3(-21,h,-29))
-	_box(guest,Vector3(3.8,.45,5.0),Vector3(0,.40,0),WOOD,1,.10)
-	_box(guest,Vector3(3.6,.5,4.8),Vector3(0,.82,0),WHITE,0,.18)
-	var duvet: MeshInstance3D=_box(guest,Vector3(3.65,.28,3.7),Vector3(0,1.12,.5),LIGHT,0,.16);_cloth(duvet,LIGHT,1)
-	for x in [-.9,.9]:
-		var pillow: MeshInstance3D=_box(guest,Vector3(1.35,.30,.85),Vector3(x,1.2,-1.6),WHITE,0,.13);_cloth(pillow,WHITE)
-	_box(guest,Vector3(3.9,1.7,.22),Vector3(0,1.05,-2.45),MINT,0,.08)
+	Beds.build(self,guest,true)
 	_coll(guest,Vector3(3.9,1.95,5.1),Vector3(0,.98,0))
 	_action("bed","guest_bed","海风客房 · 午后小憩",Vector3(-21,h,-25.7),h)
 	_art(third,Vector3(-21,h+.055,-27.6),Vector2(8,9),true)
