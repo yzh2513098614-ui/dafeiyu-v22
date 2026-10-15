@@ -48,16 +48,22 @@ function createGalStory() {
     state.cursor = entry.cursor; state.branch = entry.branch;
     state.entries = state.entries.slice(0, index + 1); return true;
   }
+  function previous() {
+    for (let index = state.entries.length - 2; index >= 0; index--) {
+      if (!state.entries[index].reply) return rollback(index);
+    }
+    return false;
+  }
   function load(snapshot) { Object.assign(state, clone(snapshot)); }
   reset();
-  return { state, choices, current, next, choose, jumpChoices, rollback, reset, load, save: () => clone(state), length: () => script().length, atEnd: () => state.branch !== null && state.cursor === script().length - 1 };
+  return { state, choices, current, next, previous, choose, jumpChoices, rollback, reset, load, save: () => clone(state), length: () => script().length, atEnd: () => state.branch !== null && state.cursor === script().length - 1 };
 }
 
 if (typeof module !== 'undefined' && module.exports) module.exports = { createGalStory };
 
 function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal }) {
   const story = createGalStory();
-  const settings = { speed: 3, wait: 2, font: 30, opacity: 94 };
+  const settings = { speed: 3, wait: 2, font: 30, opacity: 82 };
   const speedLabels = ['即显', '很慢', '舒缓', '标准', '轻快', '很快'];
   const characterDelays = [0, 65, 45, 30, 20, 12];
   let typeTimer = null;
@@ -80,6 +86,8 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
     $('skip-button').classList.toggle('selected', skipping);
     $('skip-button').setAttribute('aria-pressed', String(skipping));
     $('quick-load-button').disabled = !quickSlot;
+    $('gal-back-button').disabled = story.state.entries.length < 2;
+    $('next-menu-button').disabled = complete() && Boolean(story.current().choices);
     $('playback-status').hidden = !automatic && !skipping;
     $('playback-status').textContent = skipping ? 'SKIP ▸▸' : 'AUTO ▸';
     $('continue-button').hidden = complete() && Boolean(story.current().choices);
@@ -196,6 +204,7 @@ function createGalDialogue({ data, $, escape, icon, toast, openModal, closeModal
   }
   function handle(action, button) {
     if (action === 'next') advance();
+    else if (action === 'gal-back') { stopModes(); if (story.previous()) showLine(true); }
     else if (action === 'skip') setSkip(!skipping);
     else if (action === 'auto') setAuto(!automatic);
     else if (action === 'reply') {
