@@ -100,7 +100,7 @@ func review() -> void:
 	check(home.get_meta("walkable_slabs").size()>=10,"island, dock, landings and stair support")
 	check(game.home_controller.fish.size()==11,"animated aquarium whale and reef fish")
 	check(game.home_controller.boats.size()==2,"two animated whale rowboats")
-	check(game.home_controller.facilities.size()==11,"eleven connected furniture facilities",game.home_controller.facilities.size())
+	check(game.home_controller.facilities.size()==15,"fifteen connected furniture facilities",game.home_controller.facilities.size())
 	game.player.position=Vector3(-9.6,.07,11);game._queue_collision_recovery(true)
 	game.home_controller.physics(1.0/60.0)
 	check(Safety.supported(game.player,game.player.position),"safe entry support")

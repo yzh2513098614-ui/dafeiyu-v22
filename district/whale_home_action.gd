@@ -21,6 +21,10 @@ func map_action() -> String:
 		"fridge","cabinet":return "关上柜门" if opened else "打开柜门"
 		"tea":return "泡一壶海盐花茶"
 		"cook":return "准备鲸鱼早餐"
+		"bake":return "烤一盘星星饼干"
+		"flowers":return "整理海风花束"
+		"read":return "翻到下一页"
+		"sketch":return "画一张海湾速写"
 		"aquarium":return "喂小鱼"
 		"bed":return "休息两小时"
 		"scope":return "转动望远镜"
@@ -33,6 +37,8 @@ func map_detail() -> String:return str(get_meta("interaction_title",""))
 func restore_pose() -> void:
 	if kind in ["fridge","cabinet"]:
 		for part in parts:part.rotation.y=deg_to_rad(-103.0) if opened else 0.0
+	elif kind=="read":
+		for part in parts:part.rotation.z=PI if opened else 0.0
 
 func interact() -> void:
 	if busy:return
@@ -44,7 +50,7 @@ func interact() -> void:
 			motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 			for part in parts:motion.tween_property(part,"rotation:y",deg_to_rad(-103.0) if opened else 0.0,.65)
 			note="里面的牛奶、果酱和蓝鲸餐具都摆得整整齐齐。" if opened else "柜门轻轻合上了。"
-		"tea","cook":
+		"tea","cook","bake","flowers","sketch":
 			busy=true;set_meta("map_busy",true)
 			motion=create_tween()
 			for part in parts:
@@ -52,7 +58,18 @@ func interact() -> void:
 				motion.tween_property(part,"position",origin+Vector3.UP*.13,.25)
 				motion.tween_property(part,"position",origin,.4)
 			motion.finished.connect(func():busy=false;set_meta("map_busy",false))
-			note="花茶泡好了，桌上还有一份星星饼干。" if kind=="tea" else "煎蛋、吐司和热牛奶，今天也好好吃早餐。"
+			match kind:
+				"tea":note="花茶泡好了，桌上还有一份星星饼干。"
+				"cook":note="煎蛋、吐司和热牛奶，今天也好好吃早餐。"
+				"bake":note="星星饼干出炉了，烤盘上还留着暖暖的黄油香。"
+				"flowers":note="把粉白小花和鼠尾草叶扎成一束，给海风留一个位置。"
+				"sketch":note="画下了海湾、灯塔和一只慢悠悠的小蓝鲸。"
+		"read":
+			opened=not opened;busy=true;set_meta("map_busy",true)
+			motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			for part in parts:motion.tween_property(part,"rotation:z",PI if opened else 0.0,.65)
+			motion.finished.connect(func():busy=false;set_meta("map_busy",false))
+			note="这一页写着：鲸鱼用歌声，记住很远很远的朋友。" if opened else "翻回海湾手记的扉页，书签还停在那片蓝色海面。"
 		"aquarium":
 			game.home_controller.feeding=6.0
 			note="小鱼们游过来了！水族箱里的蓝鲸也跟着摇尾巴。"
