@@ -8,12 +8,34 @@
 .scene[data-page=dialogue] .scene-top,
 .scene[data-page=dialogue] .scene-footer { display:none; }
 .scene[data-page=dialogue] .dialogue-place {
-  left:55px; top:32px; max-width:310px; padding:13px 18px;
-  border-left:2px solid #ffffffa8; background:linear-gradient(90deg,#fff4f6bb,#fff4f600);
+  --chapter-ink:#73556c; --chapter-muted:#9c748b; --chapter-line:#e3bfd5;
+  --chapter-tint:#fbebf4; --chapter-ribbon:#ca9cbb; --chapter-base:#d5b5ca; --chapter-glow:#ffffffd9;
+  left:55px; top:32px; z-index:4; width:310px; max-width:310px; min-height:130px; padding:18px 22px;
+  border:2px solid #fff6fbe8; border-radius:16px;
+  background:linear-gradient(135deg,#fffdf9ed,#fff0f7e6 68%,#eee9ffdc);
+  box-shadow:inset 0 1px 0 var(--chapter-glow),0 4px 0 var(--chapter-base),0 10px 20px #68465c14;
 }
-.scene[data-page=dialogue] .dialogue-place .section-kicker { font-size:11px; letter-spacing:.22em; margin-bottom:6px; color:#9d7286; }
-.scene[data-page=dialogue] .dialogue-place h1 { font-size:23px; letter-spacing:.1em; line-height:1.4; color:#77556c; text-shadow:none; }
-.scene[data-page=dialogue] .dialogue-place p { font-size:12px; letter-spacing:.08em; color:#98798a; margin-top:7px; }
+.scene[data-page=dialogue] .dialogue-place:before {
+  content:''; position:absolute; inset:5px; border:1px solid var(--chapter-line); border-radius:11px; opacity:.75; pointer-events:none;
+}
+.chapter-meta { display:flex; align-items:center; gap:9px; height:20px; padding-right:34px; }
+.scene[data-page=dialogue] .dialogue-place .section-kicker { margin:0; font-size:10px; letter-spacing:.22em; color:var(--chapter-muted); }
+.chapter-number {
+  display:grid; place-items:center; min-width:29px; height:20px; padding:0 6px;
+  border:1px solid var(--chapter-line); border-radius:6px; background:var(--chapter-tint);
+  color:var(--chapter-ink); font-size:11px; font-weight:800; letter-spacing:.06em;
+  box-shadow:inset 0 1px 0 var(--chapter-glow);
+}
+.chapter-rule { height:1px; flex:1; background:linear-gradient(90deg,var(--chapter-line),transparent); }
+.chapter-bookmark {
+  position:absolute; top:-2px; right:22px; display:flex; justify-content:center; width:25px; height:37px; padding-top:8px;
+  background:var(--chapter-ribbon); color:#fff8fc;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 81%,0 100%);
+}
+.chapter-bookmark svg { width:13px; height:13px; opacity:.9; }
+.scene[data-page=dialogue] .dialogue-place h1 { margin-top:8px; font-size:24px; letter-spacing:.09em; line-height:1.35; color:var(--chapter-ink); text-shadow:none; }
+.scene[data-page=dialogue] .dialogue-place p { display:flex; align-items:center; gap:7px; margin-top:7px; font-size:11px; line-height:1.6; letter-spacing:.07em; color:var(--chapter-muted); }
+.scene[data-page=dialogue] .dialogue-place p svg { width:13px; height:13px; flex-shrink:0; color:var(--chapter-ribbon); }
 .scene[data-page=dialogue] .portrait-halo {
   left:455px; top:65px; width:680px; height:640px; right:auto;
   background:radial-gradient(ellipse,#fff1f54d,transparent 68%);
@@ -198,10 +220,11 @@
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 body[data-background=night] .scene[data-page=dialogue] { --gal-blush:116,72,111; --gal-shadow:#35233e; }
 body[data-background=night] .scene[data-page=dialogue]:before { background:linear-gradient(180deg,#2521406b,#35244559 60%,#432b50a1); }
-body[data-background=night] .scene[data-page=dialogue] .dialogue-place { background:linear-gradient(90deg,#49304e77,#49304e00); }
-body[data-background=night] .scene[data-page=dialogue] .dialogue-place h1 { color:#fff2fa; }
-body[data-background=night] .scene[data-page=dialogue] .dialogue-place p,
-body[data-background=night] .scene[data-page=dialogue] .dialogue-place .section-kicker { color:#ead4e9; }
+body[data-background=night] .scene[data-page=dialogue] .dialogue-place {
+  --chapter-ink:#fff2fa; --chapter-muted:#dfc8dd; --chapter-line:#94718f;
+  --chapter-tint:#6c4c6b; --chapter-ribbon:#b889b0; --chapter-base:#49314e; --chapter-glow:#ffffff26;
+  border-color:#dcc4d9; background:linear-gradient(135deg,#604160eb,#4b3459e8 68%,#45375ee3);
+}
 @keyframes gal-portrait-in { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
 @keyframes gal-portrait-out { from { opacity:1; } to { opacity:0; } }
 @keyframes gal-choice-in { from { opacity:0; } to { opacity:1; } }

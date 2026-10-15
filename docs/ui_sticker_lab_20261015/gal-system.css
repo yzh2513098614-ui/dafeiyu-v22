@@ -212,3 +212,15 @@ body[data-background=night] .scene:is([data-page=components],[data-page=inventor
 .component-board .mini-card .pink { color:#cb7598; opacity:.85; }
 .component-board .mini-card .blue-tag { background:var(--ui-aqua-soft); color:var(--ui-aqua-ink); }
 .kit-ready-note i { background:var(--ui-aqua); box-shadow:0 0 6px #31b9c64d; }
+
+/* Feedback uses the same color roles as the inventory categories. */
+.component-bottom .demo-tabs .category[data-category] { --tab-line:var(--ui-accent); --tab-wash:var(--ui-accent-soft); --tab-ink:var(--ui-accent-ink); }
+.component-bottom .demo-tabs .category[data-category=supplies] { --tab-line:var(--ui-aqua); --tab-wash:var(--ui-aqua-soft); --tab-ink:var(--ui-aqua-ink); }
+.component-bottom .demo-tabs .category[data-category=tools] { --tab-line:var(--ui-lilac); --tab-wash:var(--ui-lilac-soft); --tab-ink:var(--ui-lilac-ink); }
+.component-bottom .demo-tabs .category[data-category] svg { color:var(--tab-ink); opacity:.85; }
+.component-bottom .demo-tabs .category[data-category].selected { border-color:white; color:var(--tab-ink); background:linear-gradient(180deg,white,var(--tab-wash)); box-shadow:inset 0 0 0 1px var(--tab-line),0 3px 0 var(--ui-base-light); }
+.component-bottom .demo-tabs .category[data-category]:active { transform:translateY(2px); box-shadow:inset 0 0 0 1px var(--tab-line),0 1px 0 var(--ui-base); }
+.component-board .button-states .is-selected { --accent:var(--ui-aqua); background:var(--ui-aqua-soft); color:var(--ui-aqua-ink); box-shadow:0 3px 0 var(--ui-base-light),0 5px 0 var(--ui-base); }
+.component-board .button-states .is-selected>span { color:var(--ui-aqua-ink); }
+.component-board .hero-buttons [data-action=open-bag]:hover:not(:disabled) { background:var(--ui-aqua-soft); color:var(--ui-aqua-ink); }
+.component-board .hero-buttons [data-action=component-rest]:hover:not(:disabled) { background:var(--ui-sun-soft); color:var(--ui-sun-ink); }

@@ -356,3 +356,20 @@
 .capacity-badge.is-full .capacity-label>span:first-child:before { background:#feb633; }
 .capacity-badge:not(.is-full) .capacity-track i { background:var(--ui-aqua); }
 .detail-actions .sticker-button.primary-action:before { border-color:var(--tag-line,var(--ui-aqua)); }
+
+/* Continue the secondary colors through source markers and action feedback. */
+.inventory-grid-panel { --tray-mark:var(--ui-aqua); }
+.inventory-grid-panel.chest-tray { --tray-mark:var(--ui-sun); }
+.grid-panel-heading>span:before { content:''; display:block; width:5px; height:14px; flex-shrink:0; border:1px solid white; border-radius:3px; background:var(--tray-mark); }
+.inventory-grid-panel .page-button.selected { box-shadow:inset 0 -2px 0 var(--tray-mark),0 3px 0 #95b1df; }
+.inventory-grid-panel .page-button.selected:active { box-shadow:inset 0 -2px 0 var(--tray-mark),0 1px 0 #95b1df; }
+.item-slot[data-category]:hover { background:var(--tag-wash); }
+.item-slot[data-category]:hover .quantity { border-color:var(--tag-line); }
+.item-detail[data-category] .detail-effects { background:var(--tag-wash); border-color:var(--tag-line); color:var(--tag-ink); box-shadow:inset 0 2px 0 white,0 2px 0 var(--tag-line); }
+.item-detail[data-category] .detail-effects>span { color:var(--tag-ink); opacity:.7; }
+.item-detail[data-category] .detail-source svg { color:var(--tag-ink); opacity:.85; }
+.item-detail[data-category]:not(.detail-empty) .detail-topline>span:first-child:after { color:var(--tag-line); }
+.detail-actions .sticker-button.primary-action:hover:not(:disabled) { background:var(--tag-wash); color:var(--tag-ink); }
+.detail-actions .sticker-button[data-action=transfer]:before { border-color:var(--ui-sun); }
+.detail-actions .sticker-button[data-action=transfer]:hover:not(:disabled),
+.inventory-bottom .sticker-button[data-action=take-all]:hover:not(:disabled) { background:var(--ui-sun-soft); color:var(--ui-sun-ink); }
