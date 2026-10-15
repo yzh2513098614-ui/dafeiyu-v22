@@ -75,7 +75,7 @@ def main():
     assets = {name: data_url(relative) for name, relative in ASSETS.items()}
     data = {"items": items, "assets": {name: assets[name] for name in ["portrait", "happy", "think", "talk", "shy"]}}
     template = (HERE / "index.template.html").read_text(encoding="utf-8")
-    style = (HERE / "ui.css").read_text(encoding="utf-8") + "\n" + (HERE / "gal-dialogue.css").read_text(encoding="utf-8")
+    style = "\n".join((HERE / name).read_text(encoding="utf-8") for name in ["ui.css", "inventory.css", "gal-dialogue.css"])
     script = (HERE / "gal-dialogue.js").read_text(encoding="utf-8") + "\n" + (HERE / "ui.js").read_text(encoding="utf-8")
     packed = template.replace("__STYLE__", style).replace("__SCRIPT__", script).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     for name, encoded in assets.items():

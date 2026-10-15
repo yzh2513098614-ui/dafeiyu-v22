@@ -92,6 +92,7 @@ if (typeof document !== 'undefined') {
   const vitalIcons = { health: 'heart', stamina: 'bolt', hunger: 'fish', mood: 'smile' };
   const colors = { health: ['#f4407e', '#ffe3ec'], stamina: ['#23cbd4', '#dcf8f9'], hunger: ['#feb633', '#fff2dc'], mood: ['#638eff', '#e4ecff'] };
   const categories = { all: '全部', supplies: '补给', tools: '工具', stories: '线索', materials: '材料' };
+  const categoryIcons = { all: 'grid', supplies: 'fish', tools: 'bolt', stories: 'book', materials: 'star' };
   let motions = {};
   let toastTimer;
   let previousFocus;
@@ -146,24 +147,24 @@ if (typeof document !== 'undefined') {
     const content = slice.map(({ slot, index }) => {
       const item = demo.items[slot.id];
       const selected = state.selected && state.selected.source === source && state.selected.index === index;
-      return `<button class="item-slot ${selected ? 'selected' : ''}" data-action="select-item" data-source="${source}" data-index="${index}" aria-label="${escape(item.name)}，${slot.count}个" aria-pressed="${Boolean(selected)}"><span class="quantity">${slot.count}</span><img src="${item.icon}" alt=""><span class="slot-name">${escape(item.name)}</span></button>`;
+      return `<button class="item-slot ${selected ? 'selected' : ''}" data-category="${item.category}" data-action="select-item" data-source="${source}" data-index="${index}" aria-label="${escape(item.name)}，${slot.count}个" aria-pressed="${Boolean(selected)}"><span class="slot-index" aria-hidden="true">${selected ? icon('check') : String(index + 1).padStart(2, '0')}</span><span class="quantity">×${slot.count}</span><span class="slot-art"><img src="${item.icon}" alt=""></span><span class="slot-name">${escape(item.name)}</span></button>`;
     }).join('');
-    const blanks = slice.length ? '<div class="item-slot empty" aria-hidden="true"></div>'.repeat(perPage - slice.length) : '';
+    const blanks = '<div class="item-slot empty" aria-hidden="true"><span>＋</span></div>'.repeat(perPage - slice.length);
     const empty = !slice.length ? `<div class="empty-state">${icon(source === 'bag' ? 'bag' : 'star')}<b>${demo.occupied(source) ? '这一类还没有物品' : source === 'bag' ? '小口袋轻轻的' : '宝箱已经收拾好啦'}</b><small>${source === 'bag' ? '把喜欢的东西，慢慢装进来。' : '需要的时候，再放一些补给进来。'}</small></div>` : '';
     const pagination = Array.from({ length: pages }, (_, page) => `<button class="page-button ${state.pages[source] === page ? 'selected' : ''}" data-action="grid-page" data-source="${source}" data-index="${page}" aria-label="${source === 'bag' ? '背包' : '宝箱'}第${page + 1}页" aria-current="${state.pages[source] === page ? 'page' : 'false'}">${String(page + 1).padStart(2, '0')}</button>`).join('');
-    return `<div class="inventory-grid-panel"><div class="grid-panel-heading"><span>${source === 'bag' ? '随身背包' : '码头补给箱'}</span><small>${demo.occupied(source)} 格物品</small></div><div class="inventory-grid">${content}${blanks}${empty}</div><div class="pagination">${pagination}</div></div>`;
+    return `<div class="inventory-grid-panel ${source === 'chest' ? 'chest-tray' : 'bag-tray'}"><div class="grid-panel-heading"><span>${icon(source === 'bag' ? 'bag' : 'grid')}${source === 'bag' ? '随身背包' : '码头补给箱'}</span><small>${demo.occupied(source)} / ${demo.capacity} 格</small></div><div class="inventory-grid">${content}${blanks}${empty}</div><div class="pagination"><span class="page-label">第 ${state.pages[source] + 1} / ${pages} 页</span><div class="page-list">${pagination}</div><span class="page-count">${entries.length} 组物品</span></div></div>`;
   }
   function renderDetail() {
     const item = demo.selectedItem();
     const detail = $('item-detail');
     detail.classList.toggle('detail-empty', !item);
-    if (!item) { detail.innerHTML = `${icon('bag')}<h2>给小物品留个位置</h2><p>点击左边的物品<br>看看它的故事与用途。</p>`; return; }
+    if (!item) { detail.innerHTML = `<div class="detail-topline"><span>物品档案</span><span>ITEM NOTES</span></div><div class="detail-placeholder">${icon('bag')}<h2>给小物品留个位置</h2><p>点击左边的物品<br>看看它的故事与用途。</p><span>每一件，都值得好好收藏。</span></div>`; return; }
     const equipped = Object.values(state.equipment).includes(item.id);
     const useLabel = item.action === 'consume' ? '使用一份' : item.action === 'equip' ? equipped ? '已经装备' : '装备起来' : item.action === 'read' ? '读一读' : '看看它';
     const cannotConsume = item.action === 'consume' && Object.entries(item.effects).every(([vital]) => state.vitals[vital] >= 100);
-    const useButton = `<button class="${state.mode === 'chest' ? 'plain-button' : 'sticker-button small'}" data-action="use" ${cannotConsume || equipped ? 'disabled' : ''}>${useLabel}</button>`;
+    const useButton = `<button class="sticker-button small ${state.mode === 'chest' ? 'secondary-action' : 'primary-action'}" data-action="use" ${cannotConsume || equipped ? 'disabled' : ''}>${icon(equipped ? 'check' : categoryIcons[item.category])}${useLabel}</button>`;
     const primary = state.mode === 'chest' ? `<button class="sticker-button small accent-yellow" data-action="transfer">${item.source === 'chest' ? '收取一个' : '放入一个'}${icon('arrow')}</button>` : useButton;
-    detail.innerHTML = `<div class="detail-art"><img src="${item.icon}" alt="${escape(item.name)}"></div><span class="detail-kind">${escape(item.kind)} · ${item.source === 'chest' ? '宝箱里' : '背包里'}</span><h2>${escape(item.name)}</h2><p class="detail-description">${escape(item.description)}</p><div class="detail-effects">${escape(item.summary).replace(/\n/g, '<br>')}</div><p class="detail-quote">「${escape(item.quote)}」</p><div class="detail-actions">${primary}${state.mode === 'chest' && item.source === 'bag' ? useButton : ''}${item.source === 'bag' ? '<button class="plain-button" data-action="discard">放下一个…</button>' : ''}</div>`;
+    detail.innerHTML = `<div class="detail-topline"><span>物品档案</span><span class="detail-source">${icon(item.source === 'chest' ? 'grid' : 'bag')}${item.source === 'chest' ? '宝箱里' : '背包里'}</span></div><div class="detail-art" data-category="${item.category}"><img src="${item.icon}" alt="${escape(item.name)}"><span class="detail-stack">持有 <b>×${item.count}</b></span>${equipped ? `<span class="equipped-stamp">${icon('check')}已装备</span>` : ''}</div><div class="detail-heading"><span class="detail-kind">${escape(item.kind)}</span><h2>${escape(item.name)}</h2></div><div class="detail-copy" tabindex="0" aria-label="物品说明"><p class="detail-description">${escape(item.description)}</p><div class="detail-effects"><span>${icon(categoryIcons[item.category])}${item.action === 'consume' ? '补给效果' : item.action === 'equip' ? '装备效果' : '物品用途'}</span>${escape(item.summary).replace(/\n/g, '<br>')}</div><p class="detail-quote">「${escape(item.quote)}」</p></div><div class="detail-actions">${primary}${state.mode === 'chest' && item.source === 'bag' ? useButton : ''}${item.source === 'bag' ? '<button class="plain-button" data-action="discard">放下一个…</button>' : ''}</div>`;
   }
   function renderInventory() {
     const chest = state.mode === 'chest';
@@ -172,9 +173,11 @@ if (typeof document !== 'undefined') {
       const chosen = button.dataset.action === (chest ? 'mode-chest' : 'mode-bag');
       button.classList.toggle('selected', chosen); button.setAttribute('aria-pressed', String(chosen));
     });
-    $('inventory-categories').innerHTML = Object.entries(categories).map(([id, label]) => `<button class="category ${state.category === id ? 'selected' : ''}" data-action="category" data-category="${id}" aria-pressed="${state.category === id}">${label}</button>`).join('');
-    $('bag-capacity').textContent = `${demo.occupied('bag')} / ${demo.capacity} 格`;
-    $('bag-capacity').className = `tag ${demo.occupied('bag') >= demo.capacity ? 'warm-tag' : 'blue-tag'}`;
+    $('inventory-categories').innerHTML = Object.entries(categories).map(([id, label]) => `<button class="category ${state.category === id ? 'selected' : ''}" data-action="category" data-category="${id}" aria-pressed="${state.category === id}">${icon(categoryIcons[id])}${label}</button>`).join('');
+    const occupied = demo.occupied('bag');
+    $('bag-capacity').textContent = `${occupied} / ${demo.capacity} 格`;
+    $('inventory-load').classList.toggle('is-full', occupied >= demo.capacity);
+    $('bag-capacity-fill').style.setProperty('width', `${occupied / demo.capacity * 100}%`);
     $('inventory-grids').classList.toggle('chest-mode', chest);
     $('inventory-grids').innerHTML = renderGrid('bag') + (chest ? renderGrid('chest') : '');
     $('take-all').hidden = !chest; $('take-all').disabled = !demo.occupied('chest');
