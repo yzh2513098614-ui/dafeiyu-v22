@@ -2,6 +2,7 @@ extends RefCounted
 ## Life-sized annex furnishings. Static pieces join the existing floor batches;
 ## moving props, curtain folds, wardrobe panels and lamp bulbs stay independent.
 const Geo = preload("res://district/story_geometry.gd")
+const Outdoors = preload("res://district/whale_home_outdoors.gd")
 var b
 
 func build(builder) -> void:
@@ -17,6 +18,7 @@ func build(builder) -> void:
 	_dressing_mirror()
 	_sea_windows()
 	_reading_lamps()
+	Outdoors.new().build(b)
 	b.level.set_meta("interior_revision", "annex_daily_life_v2")
 
 func _baking_corner() -> void:

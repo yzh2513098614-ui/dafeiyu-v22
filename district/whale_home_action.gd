@@ -28,6 +28,9 @@ func map_action() -> String:
 		"curtain":return "合上窗帘" if opened else "拉开窗帘"
 		"room_lamp":return "关闭阅读灯" if opened else "打开阅读灯"
 		"wardrobe":return "合上衣柜" if opened else "拉开衣柜"
+		"water":return "给花箱浇水"
+		"sea_rest":return "吹会儿海风"
+		"chime":return "收起风铃" if opened else "挂起风铃"
 		"aquarium":return "喂小鱼"
 		"bed":return "休息两小时"
 		"scope":return "转动望远镜"
@@ -49,6 +52,17 @@ func restore_pose() -> void:
 	elif kind=="wardrobe":
 		for part in parts:part.position.x=.95 if opened else -.95
 	elif kind=="room_lamp":_lamp_pose()
+	elif kind=="water":
+		for part in parts:
+			if part.has_meta("plant_bloom"):part.scale=Vector3.ONE*(1.0 if opened else .65)
+	elif kind=="chime":_chime_pose()
+
+func _chime_pose() -> void:
+	parts[0].visible=opened;parts[0].rotation.z=0.0
+	if opened:
+		motion=create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		motion.tween_property(parts[0],"rotation:z",.12,1.4).from(-.12)
+		motion.tween_property(parts[0],"rotation:z",-.12,1.4)
 
 func _lamp_pose() -> void:
 	for part in parts:
@@ -102,6 +116,24 @@ func interact() -> void:
 		"room_lamp":
 			opened=not opened;_lamp_pose()
 			note="阅读灯亮了，暖光落在身边。" if opened else "阅读灯关好了，房间留给窗外的光。"
+		"water":
+			opened=true;busy=true;set_meta("map_busy",true)
+			var can: Node3D=parts[0]
+			var stream: Node3D=can.get_node("PouringWater")
+			stream.show()
+			motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE)
+			motion.tween_property(can,"rotation:x",-.35,.3)
+			motion.tween_property(can,"rotation:x",0.0,.4).set_delay(.55)
+			for part in parts:
+				if part.has_meta("plant_bloom"):motion.tween_property(part,"scale",Vector3.ONE,.8)
+			motion.finished.connect(func():stream.hide();busy=false;set_meta("map_busy",false))
+			note="给花箱浇过水了，小花舒展开来，叶片也精神了一点。"
+		"sea_rest":
+			game.atmosphere.set_time(game.atmosphere.hour+.5)
+			note="看海湾的云慢慢走过，半小时也跟着海风溜走了。"
+		"chime":
+			opened=not opened;_chime_pose()
+			note="把小鲸鱼风铃挂回檐下，海风轻轻摇动了纸签。" if opened else "风铃收好了，让这片庭院安静一会儿。"
 		"aquarium":
 			game.home_controller.feeding=6.0
 			note="小鱼们游过来了！水族箱里的蓝鲸也跟着摇尾巴。"
