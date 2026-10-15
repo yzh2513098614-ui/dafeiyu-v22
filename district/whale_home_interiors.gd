@@ -3,6 +3,7 @@ extends RefCounted
 ## moving props, curtain folds, wardrobe panels and lamp bulbs stay independent.
 const Geo = preload("res://district/story_geometry.gd")
 const Outdoors = preload("res://district/whale_home_outdoors.gd")
+const StudyDetails = preload("res://assets/whale_home/study_details.gd")
 var b
 
 func build(builder) -> void:
@@ -95,14 +96,7 @@ func _reading_corner() -> void:
 	var table: Node3D = b._table(read, Vector3.ZERO, 3.3, 1.8, .83, "tea_table")
 	b._cup(table, Vector3(1.05, .95, .25), b.BLUE)
 	b._fixture(table, Vector3(-1.15, .94, -.35), false)
-	b._box(table, Vector3(1.35, .08, .95), Vector3(0, .96, .05), b.TEAL, 0, .015)
-	for side in [-1.0, 1.0]:
-		b._box(table, Vector3(.61, .045, .86), Vector3(side * .32, 1.025, .05), b.WHITE, 0, .006)
-	var page: Node3D = b._group(read, "TurningJournalPage", Vector3(0, 1.07, .05))
-	page.set_meta("home_dynamic", true)
-	b._box(page, Vector3(.61, .016, .86), Vector3(.32, 0, 0), b.WHITE, 0, .003)
-	for i in 5:
-		b._box(page, Vector3(.39, .006, .012), Vector3(.32, .012, -.25 + i * .1), b.TEAL, 0, .001)
+	var page: Node3D = StudyDetails.journal(b, read, table)
 	read.parts.append(page)
 	read.restore_pose()
 	b._batch(page, false)

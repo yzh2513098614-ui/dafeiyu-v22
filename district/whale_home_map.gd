@@ -18,6 +18,7 @@ const Lounge=preload("res://assets/whale_home/lounge_furniture.gd")
 const Joinery=preload("res://assets/whale_home/cabinet_joinery.gd")
 const WallDetails=preload("res://assets/whale_home/wall_details.gd")
 const Fixtures=preload("res://assets/whale_home/household_fixtures.gd")
+const StudyDetails=preload("res://assets/whale_home/study_details.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -484,14 +485,7 @@ func _study(parent: Node3D) -> void:
 	for i in 3:
 		_finish_box(desk,Vector3(.95,.23,.045),Vector3(1.55,.29+i*.27,.66),"cabinet","body",.02)
 		Geo.rod(desk,Vector3(1.43,.32+i*.27,.73),Vector3(1.66,.32+i*.27,.73),.019,GOLD)
-	var monitor: Node3D=_group(desk,"WhaleComputer",Vector3(-.14,1.15,-.1))
-	_box(monitor,Vector3(.68,.045,.42),Vector3(0,.02,0),WHITE,0,.025)
-	_box(monitor,Vector3(.09,.30,.10),Vector3(0,.17,-.09),GOLD,2,.01)
-	_box(monitor,Vector3(1.42,.92,.10),Vector3(0,.75,-.09),BLUE,0,.05)
-	_art(monitor,Vector3(0,.75,-.015),Vector2(1.26,.77))
-	_box(desk,Vector3(.95,.035,.31),Vector3(-.12,1.16,.49),WHITE,0,.025)
-	for i in 11:
-		for j in 3:_box(desk,Vector3(.057,.010,.059),Vector3(-.51+i*.077,1.185,.41+j*.082),LIGHT,0,.003)
+	StudyDetails.computer(self,desk)
 	_cup(desk,Vector3(-1.7,1.15,.36),BLUE);_fixture(desk,Vector3(1.76,1.16,-.33),false)
 	_chair(parent,Vector3(5.8,h,-10.3),0)
 	_shelf(parent,Vector3(10.8,h,-14.9),4.15,3.4)
@@ -619,13 +613,7 @@ func _bathroom(parent: Node3D) -> void:
 func _hobby(parent: Node3D) -> void:
 	var h: float=HEIGHT
 	var cart: Node3D=_furniture(parent,"WhaleTeaTrolley",Vector3(1.65,h,-9.15))
-	for x in [-.53,.53]:
-		for z in [-.25,.25]:
-			Geo.rod(cart,Vector3(x,.12,z),Vector3(x,1.05,z),.03,GOLD)
-			_sphere(cart,Vector3(x,.10,z),Vector3(.17,.18,.17),DEEP)
-	for y in [.24,.80]:_box(cart,Vector3(1.26,.07,.77),Vector3(0,y,0),WOOD,1,.02)
-	for x in [-.38,0,.38]:_cup(cart,Vector3(x,.86,.05),BLUE)
-	_books(cart,Vector3(-.39,.31,0),5)
+	StudyDetails.tea_trolley(self,cart)
 	_coll(cart,Vector3(1.35,1.08,.82),Vector3(0,.54,0))
 	var hobby: Node3D=_table(parent,Vector3(6.0,h,-2.0),3.1,1.5,.82,"craft_table")
 	for i in 7:
