@@ -199,6 +199,37 @@ body[data-background=night] .scene:is([data-page=components],[data-page=inventor
 @keyframes ui-ready-pulse { 0%,100% { opacity:.35; } 50% { opacity:.9; } }
 @keyframes ui-capacity-sheen { from { transform:translateX(-120%); } to { transform:translateX(420%); } }
 
+/* Small candy accents sit inside the established white rims and blue bases. */
+:root {
+  --ui-aqua:#31b9c6; --ui-aqua-soft:#e7f7f8; --ui-aqua-ink:#287780;
+  --ui-sun:#edbf65; --ui-sun-soft:#fff5df; --ui-sun-ink:#8b662d;
+  --ui-rose:#e697b8; --ui-rose-soft:#fff0f6; --ui-rose-ink:#9b607d;
+  --ui-lilac:#a592d5; --ui-lilac-soft:#f2edff; --ui-lilac-ink:#75609c;
+}
+.version-tag { border-left:3px solid var(--ui-aqua); }
+.nav-button[data-nav=inventory]>svg { color:var(--ui-aqua-ink); }
+.nav-button[data-nav=dialogue]>svg { color:var(--ui-rose-ink); }
+.little-star { color:var(--ui-sun); opacity:.85; text-shadow:1px 2px white; }
+.component-corner-mark { color:var(--ui-aqua); opacity:.42; }
+.component-board .board-heading .section-kicker:before {
+  content:''; display:inline-block; width:5px; height:5px; margin:0 24px 1px 1px;
+  border-radius:50%; background:var(--ui-aqua); box-shadow:8px 0 0 var(--ui-sun),16px 0 0 var(--ui-rose);
+}
+.component-columns>.component-group:first-child { --group-line:var(--ui-aqua); --group-wash:var(--ui-aqua-soft); --group-ink:var(--ui-aqua-ink); }
+.component-columns>.component-group:last-child { --group-line:var(--ui-sun); --group-wash:var(--ui-sun-soft); --group-ink:var(--ui-sun-ink); }
+.component-bottom>.component-group:first-child { --group-line:var(--ui-rose); --group-wash:var(--ui-rose-soft); --group-ink:var(--ui-rose-ink); }
+.component-bottom>.component-group:last-child { --group-line:var(--ui-lilac); --group-wash:var(--ui-lilac-soft); --group-ink:var(--ui-lilac-ink); }
+.component-group { background:linear-gradient(180deg,var(--group-wash) 0,var(--ui-glass) 92px); }
+.component-group h2>span { color:var(--group-ink); border-color:var(--group-line); background:var(--group-wash); }
+.component-board .hero-buttons .button-star { color:var(--ui-sun); opacity:1; }
+.component-board .hero-buttons .accent-yellow { --accent:var(--ui-sun); }
+.component-board .hero-buttons .accent-yellow svg { color:var(--ui-sun-ink); }
+.component-board .mini-card .cyan { color:var(--ui-aqua-ink); opacity:.9; }
+.component-board .mini-card .yellow { color:var(--ui-sun-ink); opacity:.85; }
+.component-board .mini-card .pink { color:#cb7598; opacity:.85; }
+.component-board .mini-card .blue-tag { background:var(--ui-aqua-soft); color:var(--ui-aqua-ink); }
+.kit-ready-note i { background:var(--ui-aqua); box-shadow:0 0 6px #31b9c64d; }
+
 /* A white rim, a solid blue base and recessed trays give the pocket its weight. */
 .inventory-window {
   position: absolute;
@@ -513,6 +544,51 @@ body[data-background=night] .scene:is([data-page=components],[data-page=inventor
 .inventory-vitals { box-shadow:inset 0 3px 0 #d3e0f5,0 3px 0 #b7cdef,0 5px 0 #9db8e2; }
 .scene[data-page=inventory] .confirm-card { border-width:7px; box-shadow:0 7px 0 #a6c3f6,0 12px 0 #638eff,0 16px 0 #4269cb; }
 
+/* Category colors occupy icons, small labels and the inset line; storage remains blue-white. */
+.heading-icon { position:relative; }
+.heading-icon .pocket-sticker {
+  position:absolute; right:-9px; top:-8px; display:grid; place-items:center; width:29px; height:29px;
+  border:3px solid white; border-radius:10px; background:var(--ui-sun-soft);
+  box-shadow:0 3px 0 #d7ad5e; transform:rotate(12deg); pointer-events:none;
+}
+.heading-icon .pocket-sticker svg { width:17px; height:17px; color:var(--ui-sun-ink); opacity:.95; }
+.inventory-title .section-kicker:before { content:''; display:inline-block; width:5px; height:5px; margin:0 7px 1px 0; border-radius:50%; background:var(--ui-rose); }
+.mode-tabs .category[data-action=mode-chest] svg { color:var(--ui-sun-ink); }
+.inventory-toolbar .category[data-category],.item-slot[data-category],.item-detail[data-category] {
+  --tag-line:#a6c7ff; --tag-wash:#eaf2ff; --tag-ink:#5879a5;
+}
+.inventory-toolbar .category[data-category=supplies],.item-slot[data-category=supplies],.item-detail[data-category=supplies] {
+  --tag-line:var(--ui-aqua); --tag-wash:var(--ui-aqua-soft); --tag-ink:var(--ui-aqua-ink);
+}
+.inventory-toolbar .category[data-category=tools],.item-slot[data-category=tools],.item-detail[data-category=tools] {
+  --tag-line:var(--ui-lilac); --tag-wash:var(--ui-lilac-soft); --tag-ink:var(--ui-lilac-ink);
+}
+.inventory-toolbar .category[data-category=stories],.item-slot[data-category=stories],.item-detail[data-category=stories] {
+  --tag-line:var(--ui-rose); --tag-wash:var(--ui-rose-soft); --tag-ink:var(--ui-rose-ink);
+}
+.inventory-toolbar .category[data-category=materials],.item-slot[data-category=materials],.item-detail[data-category=materials] {
+  --tag-line:var(--ui-sun); --tag-wash:var(--ui-sun-soft); --tag-ink:var(--ui-sun-ink);
+}
+.inventory-toolbar .category[data-category] svg { color:var(--tag-ink); opacity:.9; }
+.inventory-toolbar .category[data-category].selected {
+  color:#2857c9; background:linear-gradient(180deg,white,var(--tag-wash));
+  border-color:white; box-shadow:inset 0 0 0 1px var(--tag-line),0 4px 0 #638eff;
+}
+.inventory-toolbar .category[data-category]:hover { background:linear-gradient(180deg,white,var(--tag-wash)); }
+.inventory-toolbar .category[data-category].selected:active { transform:translateY(3px); box-shadow:inset 0 0 0 1px var(--tag-line),0 1px 0 #638eff; }
+.item-slot[data-category] .quantity { background:var(--tag-wash); color:var(--tag-ink); box-shadow:0 1px 0 var(--tag-line); }
+.item-slot[data-category] { --slot-tint:var(--tag-wash); --slot-edge:var(--tag-line); }
+.item-slot[data-category]:not(.selected) .slot-index { color:var(--tag-ink); opacity:.6; }
+.item-slot[data-category].selected:after { background:var(--tag-line); }
+.item-detail[data-category]:not(.detail-empty) { background:linear-gradient(180deg,var(--tag-wash) 0,#fcfdff 160px); }
+.item-detail[data-category] .detail-art { --slot-edge:var(--tag-line); background:radial-gradient(ellipse at 50% 40%,#ffffffb3,transparent 68%),var(--tag-wash); }
+.item-detail[data-category] .detail-kind { color:var(--tag-ink); background:var(--tag-wash); box-shadow:inset 0 0 0 1px var(--tag-line); }
+.item-detail:not(.detail-empty) .detail-topline>span:first-child:after { color:var(--ui-aqua); }
+.capacity-label>span:first-child:before { content:''; display:inline-block; width:4px; height:4px; margin:0 5px 1px 0; border-radius:50%; background:var(--ui-aqua); }
+.capacity-badge.is-full .capacity-label>span:first-child:before { background:#feb633; }
+.capacity-badge:not(.is-full) .capacity-track i { background:var(--ui-aqua); }
+.detail-actions .sticker-button.primary-action:before { border-color:var(--tag-line,var(--ui-aqua)); }
+
 /* Open stage, full-width blush wash, and a compact footer based on the supplied crop. */
 .viewport[data-page=dialogue] { aspect-ratio:16/9; }
 .scene[data-page=dialogue] {
@@ -794,7 +870,7 @@ body[data-background=night] .scene[data-page=dialogue] .dialogue-place .section-
           <section id="screen-inventory" class="screen" aria-label="背包和宝箱" hidden>
             <div class="inventory-window sticker-card">
               <span class="case-rivet rivet-top-left" aria-hidden="true"></span><span class="case-rivet rivet-top-right" aria-hidden="true"></span><span class="case-rivet rivet-bottom-left" aria-hidden="true"></span><span class="case-rivet rivet-bottom-right" aria-hidden="true"></span>
-              <div class="inventory-heading"><div class="inventory-title"><span class="heading-icon"><svg aria-hidden="true"><use href="#i-ui-bag"/></svg></span><div><span class="section-kicker">02 / LITTLE POCKET</span><h1 id="inventory-title">随身小口袋</h1><p>把沿途的小确幸，好好收起来。</p></div></div><div class="mode-tabs" role="group" aria-label="背包展示模式"><button class="category selected" data-action="mode-bag"><svg aria-hidden="true"><use href="#i-ui-bag"/></svg>随身背包</button><button class="category" data-action="mode-chest"><svg aria-hidden="true"><use href="#i-ui-grid"/></svg>宝箱与背包</button></div></div>
+              <div class="inventory-heading"><div class="inventory-title"><span class="heading-icon"><svg aria-hidden="true"><use href="#i-ui-bag"/></svg><span class="pocket-sticker" aria-hidden="true"><svg><use href="#i-ui-star"/></svg></span></span><div><span class="section-kicker">02 / LITTLE POCKET</span><h1 id="inventory-title">随身小口袋</h1><p>把沿途的小确幸，好好收起来。</p></div></div><div class="mode-tabs" role="group" aria-label="背包展示模式"><button class="category selected" data-action="mode-bag"><svg aria-hidden="true"><use href="#i-ui-bag"/></svg>随身背包</button><button class="category" data-action="mode-chest"><svg aria-hidden="true"><use href="#i-ui-grid"/></svg>宝箱与背包</button></div></div>
               <div class="inventory-content">
                 <div class="inventory-main"><div class="inventory-toolbar"><div id="inventory-categories" class="demo-tabs" role="group" aria-label="物品分类"></div><div class="capacity-badge" id="inventory-load"><div class="capacity-label"><span>收纳空间</span><span id="bag-capacity"></span></div><span class="capacity-track"><i id="bag-capacity-fill"></i></span></div></div><div id="inventory-grids" class="inventory-grids"></div><div class="inventory-bottom"><span class="inventory-tip"><svg aria-hidden="true"><use href="#i-check"/></svg><span id="inventory-hint">点击物品，看看它的小故事。</span></span><button class="sticker-button small accent-yellow" data-action="take-all" id="take-all" hidden>全部收取<svg><use href="#i-arrow"/></svg></button></div></div>
                 <aside class="item-detail" id="item-detail" aria-label="物品详情"></aside>
@@ -1282,6 +1358,7 @@ if (typeof document !== 'undefined') {
     const item = demo.selectedItem();
     const detail = $('item-detail');
     detail.classList.toggle('detail-empty', !item);
+    detail.dataset.category = item ? item.category : '';
     if (!item) { detail.innerHTML = `<div class="detail-topline"><span>物品档案</span><span>ITEM NOTES</span></div><div class="detail-placeholder">${icon('bag')}<h2>给小物品留个位置</h2><p>点击左边的物品<br>看看它的故事与用途。</p><span>每一件，都值得好好收藏。</span></div>`; return; }
     const equipped = Object.values(state.equipment).includes(item.id);
     const useLabel = item.action === 'consume' ? '使用一份' : item.action === 'equip' ? equipped ? '已经装备' : '装备起来' : item.action === 'read' ? '读一读' : '看看它';

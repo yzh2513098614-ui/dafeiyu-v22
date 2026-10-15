@@ -158,6 +158,7 @@ if (typeof document !== 'undefined') {
     const item = demo.selectedItem();
     const detail = $('item-detail');
     detail.classList.toggle('detail-empty', !item);
+    detail.dataset.category = item ? item.category : '';
     if (!item) { detail.innerHTML = `<div class="detail-topline"><span>物品档案</span><span>ITEM NOTES</span></div><div class="detail-placeholder">${icon('bag')}<h2>给小物品留个位置</h2><p>点击左边的物品<br>看看它的故事与用途。</p><span>每一件，都值得好好收藏。</span></div>`; return; }
     const equipped = Object.values(state.equipment).includes(item.id);
     const useLabel = item.action === 'consume' ? '使用一份' : item.action === 'equip' ? equipped ? '已经装备' : '装备起来' : item.action === 'read' ? '读一读' : '看看它';
