@@ -352,13 +352,7 @@ func _cabinet(parent: Node3D, point: Vector3, width: float=1.75, height: float=1
 
 func _chair(parent: Node3D, point: Vector3, yaw: float=0.0, stool: bool=false) -> void:
 	var root: Node3D=_furniture(parent,"DiningStool" if stool else "BlueDiningChair",point,yaw)
-	for x in [-.28,.28]:
-		for z in [-.27,.27]:Geo.rod(root,Vector3(x,.04,z),Vector3(x*.85,.65,z*.85),.038,WOOD)
-	var seat: MeshInstance3D=_box(root,Vector3(.83,.16,.77),Vector3(0,.67,0),LIGHT,0,.07);_cloth(seat,LIGHT)
-	if not stool:
-		for x in [-.32,.32]:Geo.rod(root,Vector3(x,.68,-.31),Vector3(x,1.22,-.32),.037,WOOD)
-		var back: MeshInstance3D=_box(root,Vector3(.80,.54,.12),Vector3(0,1.06,-.34),BLUE,0,.065);_cloth(back,BLUE)
-		_star(root,Vector3(0,1.10,-.26),.27)
+	Lounge.chair(self,root,stool)
 	_coll(root,Vector3(.86,.9,.83),Vector3(0,.45,0))
 
 func _table(parent: Node3D, point: Vector3, width: float=3.8, depth: float=2.3, height: float=1.05, profile: String="ash_table") -> Node3D:
@@ -375,16 +369,7 @@ func _table(parent: Node3D, point: Vector3, width: float=3.8, depth: float=2.3, 
 func _shelf(parent: Node3D, point: Vector3, width: float=4.4, height: float=2.6, profile: String="bookcase") -> Node3D:
 	var root: Node3D=_furniture(parent,"DisplayBookcase",point)
 	root.set_meta("furniture_finish",profile)
-	_finish_box(root,Vector3(width,height,.12),Vector3(0,height*.5,-.40),profile,"back",.02)
-	for x in [-width*.5,0,width*.5]:_finish_box(root,Vector3(.12,height,.94),Vector3(x,height*.5,0),profile,"body",.02)
-	for row in 4:
-		var y: float=.12+row*(height-.16)/3.
-		_finish_box(root,Vector3(width+.15,.095,1.0),Vector3(0,y,0),profile,"top",.016)
-		if row<3:
-			_books(root,Vector3(-width*.5+.24,y+.06,.08),7)
-			_whale(root,Vector3(.65,y+.06,.02),.28)
-			_cup(root,Vector3(width*.35,y+.07,.16),BLUE)
-	_plant(root,Vector3(-width*.32,height+.03,0),.55,true)
+	Lounge.bookcase(self,root,width,height,profile)
 	_coll(root,Vector3(width+.12,height,1.0),Vector3(0,height*.5,0));return root
 
 func _action(kind: String, id: String, title: String, point: Vector3, height: float) -> Action:

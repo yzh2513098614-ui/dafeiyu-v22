@@ -3,6 +3,87 @@ const Geo = preload("res://district/story_geometry.gd")
 const Soft = preload("res://assets/whale_home/beds.gd")
 const Finishes = preload("res://assets/whale_home/furniture_finishes.gd")
 
+static func chair(b, root: Node3D, stool: bool) -> void:
+	root.set_meta("chair_model_revision", "curved_back_piped_seat_v2")
+	for x in [-1.0, 1.0]:
+		for z in [-1.0, 1.0]:
+			Geo.rod(root, Vector3(x*.30,.04,z*.29), Vector3(x*.25,.60,z*.23), .035, b.WOOD)
+		Geo.rod(root, Vector3(x*.275,.31,-.26), Vector3(x*.275,.31,.26), .025, b.WOOD)
+		Geo.rod(root, Vector3(-.275,.31,x*.26), Vector3(.275,.31,x*.26), .025, b.WOOD)
+	var seat := MeshInstance3D.new(); seat.mesh = _table_top(Vector2(.82,.76)); seat.position.y = .59
+	seat.material_override = Finishes.material("ash_table","top"); root.add_child(seat)
+	Soft._puff(b, root, Vector3(0,.70,0), Vector3(.80,.17,.74), b.LIGHT, true)
+	if stool: return
+	for side in [-1.0, 1.0]:
+		Geo.rod(root, Vector3(side*.30,.59,-.25), Vector3(side*.30,1.27,-.28), .032, b.WOOD)
+		b._sphere(root, Vector3(side*.30,.90,-.215), Vector3.ONE*.045, b.GOLD)
+	var back := MeshInstance3D.new(); back.mesh = _curved_back(.79,.54,.055); back.position = Vector3(0,1.06,-.34)
+	back.material_override = Finishes.material("ash_table","body"); root.add_child(back)
+	var pad := MeshInstance3D.new(); pad.mesh = _curved_back(.68,.40,.07); pad.position = Vector3(0,1.06,-.285)
+	b._cloth(pad,b.BLUE); root.add_child(pad)
+	b._star(root, Vector3(0,1.08,-.235), .17)
+
+static func _curved_back(width: float, height: float, thickness: float) -> ArrayMesh:
+	var tool := SurfaceTool.new(); tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for face in [-1.0, 1.0]:
+		for i in 20:
+			var points: Array[Vector3] = []
+			for corner in [Vector2(0,-1),Vector2(1,-1),Vector2(1,1),Vector2(0,1)]:
+				var u: float = ((i+corner.x)/20.0)*2.0-1.0
+				points.append(Vector3(u*width*.5,corner.y*(height*.5-.06*pow(absf(u),6)),.08*u*u+face*thickness*.5))
+			Geo._face(tool,points,Vector3.BACK*face)
+	for edge in [-1.0, 1.0]:
+		for i in 20:
+			var points: Array[Vector3] = []
+			for corner in [Vector2(0,-1),Vector2(1,-1),Vector2(1,1),Vector2(0,1)]:
+				var u: float = ((i+corner.x)/20.0)*2.0-1.0
+				points.append(Vector3(u*width*.5,edge*(height*.5-.06*pow(absf(u),6)),.08*u*u+corner.y*thickness*.5))
+			Geo._face(tool,points,Vector3.UP*edge)
+		var y: float = height*.5-.06
+		Geo._face(tool,[Vector3(edge*width*.5,-y,.08-thickness*.5),Vector3(edge*width*.5,y,.08-thickness*.5),Vector3(edge*width*.5,y,.08+thickness*.5),Vector3(edge*width*.5,-y,.08+thickness*.5)],Vector3.RIGHT*edge)
+	tool.index(); tool.generate_normals(); return tool.commit()
+
+static func bookcase(b, root: Node3D, width: float, height: float, profile: String) -> void:
+	root.set_meta("bookcase_model_revision", "grouped_library_shelves_v2")
+	var frame: Node3D = b._group(root,"FramedBookcase")
+	b._finish_box(frame,Vector3(width,height,.09),Vector3(0,height*.5,-.43),profile,"back",.02)
+	for x in [-width*.5+.055,0.0,width*.5-.055]:
+		b._finish_box(frame,Vector3(.11,height,.94),Vector3(x,height*.5,0),profile,"body",.02)
+	b._finish_box(frame,Vector3(width+.10,.17,1.0),Vector3(0,.085,0),profile,"body",.025)
+	b._finish_box(frame,Vector3(width+.10,.13,1.0),Vector3(0,height-.065,0),profile,"top",.025)
+	var spacing: float = (height-.30)/3.0
+	var bay_width: float = width*.5-.22
+	for row in 3:
+		var y: float = .16+row*spacing
+		b._finish_box(frame,Vector3(width+.08,.08,1.0),Vector3(0,y,0),profile,"top",.015)
+		b._finish_box(frame,Vector3(width+.08,.055,.09),Vector3(0,y-.005,.45),profile,"body",.012)
+		var books: Node3D = b._group(root,"GroupedShelfBooks",Vector3(-width*.5+.17,y+.05,.02))
+		var count: int = clampi(floori(bay_width/.145),3,12)
+		var max_height: float = minf(.57,spacing-.13)
+		_book_group(b,books,count,max_height,row)
+		for x in [-.045,count*.145]:
+			b._box(books,Vector3(.035,max_height*.55,.40),Vector3(x,max_height*.275,0),b.MINT,0,.006)
+			b._box(books,Vector3(.12,.025,.40),Vector3(x+(.05 if x<0 else -.05),.0125,0),b.MINT,0,.004)
+		var right: Node3D = b._group(root,"ShelfDisplayBay",Vector3(width*.25,y+.05,0))
+		if row==0:
+			for i in 3:
+				b._box(right,Vector3(minf(.72,bay_width*.82),.065,.44),Vector3(0,.035+i*.07,0),b.LIGHT if i%2 else b.SAKURA,0,.009)
+		elif row==1:
+			b._whale(right,Vector3.ZERO,minf(.30,bay_width*.28),12)
+		else:
+			b._cup(right,Vector3(-bay_width*.18 if bay_width>1.0 else 0.0,0,.05),b.BLUE)
+			if bay_width>1.0:b._cup(right,Vector3(bay_width*.18,0,.05),b.WHITE)
+	b._plant(root,Vector3(-width*.32,height+.03,0),.55,true)
+
+static func _book_group(b, parent: Node3D, count: int, max_height: float, row: int) -> void:
+	var palette: Array[Color] = [b.BLUE,b.MINT,b.WHITE,b.LIGHT,b.SAKURA,b.GOLD]
+	for i in count:
+		var h: float = max_height*(.76+.12*float((i+row)%3))
+		var book: Node3D = b._group(parent,"BoundBook",Vector3(i*.145,h*.5,0))
+		b._box(book,Vector3(.115,h,.38),Vector3.ZERO,palette[(i+row)%palette.size()],0,.008)
+		b._box(book,Vector3(.09,h-.045,.025),Vector3(0,0,-.18),b.WHITE,0,.003)
+		for line in [.22,.73]: b._box(book,Vector3(.075,.017,.012),Vector3(0,h*(line-.5),.195),b.GOLD,0,.002)
+
 static func sofa(b, root: Node3D, width: float) -> void:
 	root.set_meta("sofa_model_revision", "piped_upholstery_v2")
 	var structure: Node3D = b._group(root, "SofaWoodenUnderframe")
