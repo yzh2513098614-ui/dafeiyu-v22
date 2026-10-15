@@ -17,6 +17,7 @@ const Beds=preload("res://assets/whale_home/beds.gd")
 const Lounge=preload("res://assets/whale_home/lounge_furniture.gd")
 const Joinery=preload("res://assets/whale_home/cabinet_joinery.gd")
 const WallDetails=preload("res://assets/whale_home/wall_details.gd")
+const Fixtures=preload("res://assets/whale_home/household_fixtures.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -376,28 +377,20 @@ func _kitchen(parent: Node3D) -> void:
 	for i in 7:
 		var root: Node3D=_cabinet(parent,Vector3(-8.2+i*1.80,0,-10.90))
 		if i==2:
-			_box(root,Vector3(1.30,.07,.65),Vector3(0,1.16,0),Color("a7c8d3"),2,.045)
-			_box(root,Vector3(.94,.05,.46),Vector3(0,1.19,0),Color("658b9b"),0,.04)
-			Geo.rod(root,Vector3(.37,1.16,-.26),Vector3(.37,1.68,-.26),.038,GOLD)
-			Geo.rod(root,Vector3(.37,1.68,-.26),Vector3(.12,1.68,-.06),.038,GOLD)
+			Fixtures.kitchen_sink(self,root)
 		elif i==4:
-			_box(root,Vector3(1.40,.05,.77),Vector3(0,1.18,0),DEEP,2,.025)
-			for x in [-.36,.36]:
-				for z in [-.22,.22]:
-					Geo.cylinder(root,.19,.035,Vector3(x,1.23,z),Color("405670"))
-					Geo.rod(root,Vector3(x-.20,1.26,z),Vector3(x+.20,1.26,z),.018,GOLD)
-			_box(root,Vector3(1.20,.50,.04),Vector3(0,.65,.57),Color("395e85"),0,.026)
-			Geo.rod(root,Vector3(-.48,.95,.63),Vector3(.48,.95,.63),.026,GOLD)
+			Fixtures.cooker(self,root)
 		elif i in [0,5]:
 			for j in 3:
 				Geo.cylinder(root,.11,.25,Vector3(-.40+j*.27,1.25,-.10),WHITE,.09)
 				Geo.cylinder(root,.115,.05,Vector3(-.40+j*.27,1.40,-.10),GOLD)
 		else:_cup(root,Vector3(.15,1.14,.22),BLUE)
 	var cook: Action=_action("cook","breakfast","明档厨房 · 鲸鱼早餐",Vector3(-1,0,-10.9),0)
-	var pot: Node3D=_group(cook,"BreakfastPan",Vector3(.10,1.23,.1));Geo.cylinder(pot,.31,.10,Vector3.ZERO,WHITE);Geo.rod(pot,Vector3(.3,.01,0),Vector3(.7,.01,0),.035,WOOD);_sphere(pot,Vector3(0,.07,0),Vector3(.34,.035,.30),WHITE);_sphere(pot,Vector3(.02,.09,.02),Vector3(.13,.035,.13),GOLD);cook.parts.append(pot)
+	var pot: Node3D=_group(cook,"BreakfastPan",Vector3(.36,1.34,.18));Geo.cylinder(pot,.31,.10,Vector3.ZERO,WHITE);Geo.rod(pot,Vector3(.3,.01,0),Vector3(.7,.01,0),.035,WOOD);_sphere(pot,Vector3(0,.07,0),Vector3(.34,.035,.30),WHITE);_sphere(pot,Vector3(.02,.09,.02),Vector3(.13,.035,.13),GOLD);cook.parts.append(pot)
 	for x in [-7.2,-3.3,2.2]:
 		var shelf: Node3D=_furniture(parent,"KitchenWallShelf",Vector3(x,2.5,-11.55))
 		_finish_box(shelf,Vector3(3.1,.12,.75),Vector3.ZERO,"display_shelf","top",.025)
+		Fixtures.shelf_brackets(self,shelf)
 		for j in 4:
 			_cup(shelf,Vector3(-1.15+j*.55,.10,.05),WHITE if j%2 else BLUE)
 			_star(shelf,Vector3(-1.15+j*.55,.20,.17),.08)
@@ -407,18 +400,7 @@ func _kitchen(parent: Node3D) -> void:
 		Geo.rod(parent,Vector3(x,2.18,-11.65),Vector3(x,1.79,-11.65),.016,GOLD)
 		Geo.cylinder(parent,.12,.10,Vector3(x,1.75,-11.6),GOLD).rotation.x=PI*.5
 	var fridge: Action=_action("fridge","blue_fridge","蓝鲸双层冰箱",Vector3(-11.9,0,-8.9),0)
-	_box(fridge,Vector3(2.1,3.1,1.5),Vector3(0,1.55,0),BLUE,0,.16)
-	_box(fridge,Vector3(1.72,2.75,.025),Vector3(0,1.58,.76),Color("eee7d3"),0,.018)
-	for y in [.45,1.14,1.84,2.56]:
-		_box(fridge,Vector3(1.63,.045,.98),Vector3(0,y,.29),WHITE,0,.014)
-		for i in 3:
-			Geo.cylinder(fridge,.12,.35,Vector3(-.53+i*.48,y+.2,.59),LIGHT if i%2 else WHITE,.09)
-			Geo.cylinder(fridge,.10,.055,Vector3(-.53+i*.48,y+.40,.59),GOLD)
-	for spec in [[.96,1.8],[2.52,1.10]]:
-		var pivot: Node3D=_group(fridge,"FridgeDoorPivot",Vector3(-1.02,float(spec[0]),.78));fridge.parts.append(pivot)
-		_box(pivot,Vector3(2.04,float(spec[1]),.14),Vector3(1.02,0,0),LIGHT,0,.08)
-		Geo.rod(pivot,Vector3(1.83,-.27,.13),Vector3(1.83,.27,.13),.035,GOLD)
-		_whale(pivot,Vector3(.7,-.1,.08),.19,0,DEEP)
+	Fixtures.fridge(self,fridge)
 	_coll(fridge,Vector3(2.1,3.15,1.65),Vector3(0,1.55,0));fridge.restore_pose()
 	var island: Node3D=_table(parent,Vector3(-5.0,0,-5.0),4.3,2.1,1.17,"desk")
 	_finish_box(island,Vector3(3.8,.83,1.52),Vector3(0,.56,0),"cabinet","back",.04)
@@ -625,24 +607,11 @@ func _entry_details(parent: Node3D) -> void:
 func _bathroom(parent: Node3D) -> void:
 	var h: float=HEIGHT*2
 	var bath: Node3D=_furniture(parent,"WhaleFootedBath",Vector3(-11.25,h,-18.40))
-	for x in [-1.03,1.03]:
-		for z in [-.48,.48]:_sphere(bath,Vector3(x,.23,z),Vector3(.22,.40,.22),GOLD)
-	_sphere(bath,Vector3(0,.75,0),Vector3(3.40,1.06,1.72),WHITE)
-	_sphere(bath,Vector3(0,1.16,0),Vector3(2.77,.19,1.20),Color("87cbdc"))
-	for x in [-1.22,1.22]:_box(bath,Vector3(.23,.18,1.20),Vector3(x,1.08,0),WHITE,0,.07)
-	Geo.rod(bath,Vector3(1.50,.13,-.15),Vector3(1.50,1.40,-.15),.047,GOLD)
-	Geo.rod(bath,Vector3(1.50,1.40,-.15),Vector3(1.15,1.40,-.15),.047,GOLD)
-	_whale(bath,Vector3(-.42,1.19,.1),.18)
+	Fixtures.bath(self,bath)
 	_coll(bath,Vector3(3.44,1.3,1.8),Vector3(0,.66,0))
 	var vanity: Node3D=_cabinet(parent,Vector3(-7.0,h,-18.7),2.1,1.02)
-	_sphere(vanity,Vector3(0,1.20,0),Vector3(1.10,.20,.72),WHITE)
-	_sphere(vanity,Vector3(0,1.29,0),Vector3(.78,.045,.50),LIGHT)
-	Geo.rod(vanity,Vector3(.3,1.18,-.26),Vector3(.3,1.57,-.26),.033,GOLD)
-	Geo.rod(vanity,Vector3(.3,1.57,-.26),Vector3(.02,1.57,-.12),.033,GOLD)
+	Fixtures.vanity_sink(self,vanity)
 	_porthole(parent,Vector3(-7.0,h+2.75,-19.8),.70)
-	for i in 3:
-		Geo.cylinder(vanity,.075,.23,Vector3(.65+i*.15,1.29,-.17),BLUE if i%2 else WHITE)
-		Geo.cylinder(vanity,.08,.035,Vector3(.65+i*.15,1.425,-.17),GOLD)
 	var cabinet: Node3D=_cabinet(parent,Vector3(-6.5,h,-7.1),1.55,2.15)
 	for i in 3:
 		var towel: MeshInstance3D=_box(cabinet,Vector3(1.25,.10,.60),Vector3(0,2.28+i*.11,0),BLUE if i%2 else WHITE,0,.03);_cloth(towel,BLUE if i%2 else WHITE,1)

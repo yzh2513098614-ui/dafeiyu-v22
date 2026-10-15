@@ -26,6 +26,7 @@ static func cabinet(b, root: Node3D, width: float, height: float, profile: Strin
 		var x: float = -(width-.16)*.5+(i+.5)*slot
 		var door_height: float = door_top-.23
 		var panel: Node3D = b._group(root, "FramedCabinetDoor", Vector3(x, .23+door_height*.5, .468))
+		panel.set_meta("cabinet_front", true)
 		_panel(b, panel, slot-.025, door_height, profile)
 		var pull_x: float = 0.0 if bays==1 else (slot*.30 if i%2==0 else -slot*.30)
 		_pull(b, panel, Vector3(pull_x, door_height*.20, .064), false)
@@ -33,6 +34,7 @@ static func cabinet(b, root: Node3D, width: float, height: float, profile: Strin
 			Geo.cylinder(panel, .018, .075, Vector3(-slot*.5+.055, hinge_y, .047), b.GOLD)
 		if drawers:
 			var drawer: Node3D = b._group(root, "InsetDrawerFront", Vector3(x, top-drawer_height*.5, .468))
+			drawer.set_meta("cabinet_front", true)
 			b._finish_box(drawer, Vector3(slot-.025, drawer_height, .060), Vector3.ZERO, profile, "body", .016)
 			b._finish_box(drawer, Vector3(slot-.15, drawer_height-.075, .018), Vector3(0, 0, .037), profile, "back", .009)
 			_pull(b, drawer, Vector3(0, 0, .064), true)
