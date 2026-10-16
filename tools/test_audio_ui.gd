@@ -172,6 +172,23 @@ func run() -> void:
  var gv_head: float=music._players[music._slot].get_playback_position()
  check(gv_head>0.0,"glasshouse_var track advances on the real player (%.2fs)"%[gv_head])
  music.exit_gallery()
+
+ # ---------- 4f. 《灯塔，音乐盒变奏》（《灯塔替我记得》的音乐盒变奏）接进了 galgame ----------
+ music.set_style("galgame")
+ var gg: Array=music.catalog()
+ var gg_row: Dictionary={}
+ for row in gg:
+  if str(row["id"])=="lighthouse/lighthouse_musicbox":gg_row=row
+ check(not gg_row.is_empty(),"galgame catalog lists the lighthouse music-box variation")
+ var gg_sec: float=float(gg_row.get("seconds",0.0))
+ check(gg_sec>30.0 and gg_sec<200.0,"variation wav is readable and its length is sane (%.1fs)"%[gg_sec])
+ check(music.STYLE_SETS["galgame"]["tracks"]["night"].has("lighthouse/lighthouse_musicbox"),"variation joined the galgame night rotation")
+ music.select_gallery("lighthouse/lighthouse_musicbox")
+ check(music.gallery_track()=="lighthouse/lighthouse_musicbox","gallery accepts the variation track id")
+ await frames(12)
+ var lh_head: float=music._players[music._slot].get_playback_position()
+ check(lh_head>0.0,"variation advances on the real player (%.2fs)"%[lh_head])
+ music.exit_gallery()
  music.set_style(style_home)
 
  # ---------- 5. 主菜单「音乐鉴赏」页的真控件 ----------

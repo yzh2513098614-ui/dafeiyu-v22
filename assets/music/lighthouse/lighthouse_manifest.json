@@ -1,0 +1,34 @@
+{
+  "engine": "4.7.2-stable (official)",
+  "generated_by": "tools/bgm_lighthouse",
+  "options": {
+    "damp": 0.3,
+    "noise_floor_db": -72.0,
+    "partials_max": 24,
+    "predelay_ms": 42.0,
+    "room": 0.84,
+    "tail_sec": 3.5,
+    "target_peak_db": -1.5,
+    "unison": 2,
+    "wet": 0.72
+  },
+  "quality": "final",
+  "source": "主题与和声取自 tools/gal_piano 的 gal_piano_night（D# 小调），编曲重写为音乐盒 + 弦乐垫",
+  "tracks": [
+    {
+      "bars": 40,
+      "bpm": 80.0,
+      "events": 583,
+      "file": "lighthouse_musicbox.wav",
+      "format": "pcm_s16le / 44100 Hz / 2ch",
+      "key": "lighthouse_musicbox",
+      "loop_frames": 5292000,
+      "loop_sec": 120.0,
+      "seam_ratio": 0.0082,
+      "seed": 20261014,
+      "target_peak_dbfs": -1.5,
+      "time_sig": "4/4",
+      "title": "灯塔，音乐盒变奏"
+    }
+  ]
+}

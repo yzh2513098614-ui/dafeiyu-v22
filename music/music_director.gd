@@ -17,7 +17,7 @@ extends Node
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
 ## 六套风格组，F8 切换（会记住）：
-##   galgame     galgame 场景配乐二十首（默认，八首原创钢琴加入对应场合轮换）
+##   galgame     galgame 场景配乐二十二首（默认；九首原创钢琴 + 《灯塔，音乐盒变奏》加入对应场合轮换）
 ##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
 ##   whalefm     《鲸落电台》六首（电钢 + 贝斯 + 鼓组 + 黑胶炒豆的 Lo-fi 电台，每场合固定一首）
@@ -28,6 +28,8 @@ extends Node
 ## 带一段路径（"glasshouse/glasshouse_01_prologue"、"chip/chip_title"、
 ## "glasshouse_var/glasshouse_var_01_intro"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
 ## 这四组每首都是整段无缝循环（尾音已折回开头），一个场合只排一首、靠循环铺满，不轮换。
+## galgame 里的《灯塔，音乐盒变奏》音轨也在子目录（"lighthouse/lighthouse_musicbox"），但它属于
+## galgame 的夜晚轮换，按整曲长度换曲（见 _switch 里的 dwell 特例）。
 ##
 ## 快捷键：F8 切换风格组 · F9 试听下一首（循环回自动）· F10 静音开关 · [ ] 调音量
 ##
@@ -38,11 +40,11 @@ const DIR := "res://assets/music/"
 ## tracks 里每个场合是一个数组：组内轮换。写成单个字符串也兼容（等价于只有一首）。
 const STYLE_SETS := {
 	"galgame": {
-		"name": "galgame 场景二十首",
+		"name": "galgame 场景二十二首",
 		"tracks": {
 			"title": ["gal_piano_daily", "gal_piano_hope", "gal_after_school", "gal_bittersweet", "gal_title2"],
 			"day": ["gal_piano_daily", "gal_daily", "gal_daily2"],
-			"night": ["gal_piano_night", "gal_piano_rain", "gal_after_school", "gal_memory", "gal_goodnight", "gal_memory2"],
+			"night": ["gal_piano_night", "gal_piano_rain", "gal_after_school", "gal_memory", "gal_goodnight", "gal_memory2", "gal_dream", "lighthouse/lighthouse_musicbox"],
 			"indoor": ["gal_piano_indoor", "gal_piano_rain", "gal_after_school", "gal_light", "gal_light2"],
 			"battle": ["gal_piano_tension", "gal_tension", "gal_tension2"],
 			"hope": ["gal_piano_hope", "gal_hope", "gal_goodnight", "gal_hope2"],
@@ -129,6 +131,8 @@ const CATALOG := {
 		["gal_piano_hope", "明天仍有晴空", "原创钢琴 · 释怀 / 结尾"],
 		["gal_after_school", "夕照，未寄出的信", "原创钢琴 · 标题 / 室内 / 夜晚"],
 		["gal_goodnight", "晚安，鲸落港", "原创钢琴 · 夜晚 / 回忆 / 通关"],
+		["gal_dream", "梦的城堡", "原创钢琴 · 梦境 / 夜晚"],
+		["lighthouse/lighthouse_musicbox", "灯塔，音乐盒变奏", "原创变奏 · 音乐盒 + 弦乐 · 夜晚 / 回忆"],
 		["gal_daily", "港口的一天", "日常 · 教室 · 据点"],
 		["gal_daily2", "午后集市", "日常 · 白天（轮换）"],
 		["gal_light", "轻快的午后", "喜剧 · 打闹"],
@@ -410,8 +414,9 @@ func _switch(mood: String) -> void:
 	_track = track
 	_advance_rotation(mood)
 	_dwell = DWELL
-	# 新增钢琴曲在自己的尾音段换曲，避免固定计时切进下一遍的乐句。
-	if track.begins_with("gal_piano_") or track == "gal_after_school":
+	# 新增钢琴曲与《灯塔，音乐盒变奏》在自己的尾音段换曲，避免固定计时切进下一遍的乐句。
+	# 变奏曲 120 秒长于 DWELL(96)，不特判就会在乐句中间被切掉。
+	if track.begins_with("gal_piano_") or track == "gal_after_school" or track.begins_with("lighthouse/"):
 		_dwell = stream.get_length() - FADE
 	_slot = 1 - _slot
 	_players[_slot].stream = stream
