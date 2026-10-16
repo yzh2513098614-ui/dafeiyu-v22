@@ -110,6 +110,7 @@ func _primary(b: Button) -> void:
  HarborStyle.primary(b);b.add_theme_font_size_override("font_size",28)
 
 func _render() -> void:
+ content.add_theme_stylebox_override("panel",HarborStyle.frame())
  for child in content.get_children():
   content.remove_child(child);child.queue_free()
  cards.clear();setting_cards.clear();tabs.clear();menu_buttons.clear()
@@ -125,9 +126,9 @@ func _render() -> void:
  UiFit.pin_design(portrait,830,282,510,640)
  UiFit.pin_design(greeting,821,927,528,67)
  if page=="title":_title();return
+ if page=="settings":_settings();return
  tabs["back"]=_button(content,"‹ 返回标题",Vector2(542,25),Vector2(170,48),func():_show_page("title"))
  HarborStyle.label(content,{"music":"音乐鉴赏","harbor":"东港仓储带","journey":"出发选择","pack26":"立体新区 · 26地图","settings":"画面设置"}[page],Vector2(30,25),Vector2(460,48),29)
- if page=="settings":_settings();return
  if page=="music":_music();return
  if page=="harbor":_harbor();return
  if page=="pack26":_pack26();return
@@ -243,24 +244,8 @@ func _place_name() -> String:
  return "漫步鲸落港"
 
 func _settings() -> void:
- HarborStyle.label(content,"把画面调成喜欢的样子",Vector2(29,101),Vector2(680,43),30)
- HarborStyle.label(content,"设置会自动保存，下次打开依然生效。",Vector2(31,149),Vector2(677,33),18,HarborStyle.MUTED)
- var options: Array=[["fullscreen","全屏显示","专心漫步鲸落港"],["shadows","柔和阴影","保留建筑与家具层次"],["effects","氛围微光","让房间有细微的变化"],["dusk","固定暮色","需关闭自动昼夜循环"],["follow","跟随人物","开场镜头靠近出发点"],["smooth_camera","柔顺镜头","行走时平缓地跟随"],["day_cycle","昼夜循环","清晨到深夜逐渐变化"]]
- for i in options.size():
-  var option: Array=options[i];var on: bool=prefs().values[option[0]]
-  var b:=_button(content,"",Vector2(25+(i%2)*347,209+(i/2)*100),Vector2(340,92),func():var pref:=prefs();pref.values[option[0]]=not pref.values[option[0]];pref.apply_window();var result=pref.save();_render();feedback.text="设置已保存。" if result==OK else "设置保存失败，请重试。",on)
-  setting_cards[option[0]]=b
-  HarborStyle.label(b,option[1],Vector2(16,16),Vector2(226,32),23)
-  var pill:=HarborStyle.panel(b,Vector2(253,15),Vector2(69,36),"nameplate" if on else "dialogue");pill.mouse_filter=Control.MOUSE_FILTER_IGNORE
-  var status:=HarborStyle.label(pill,"开启" if on else "关闭",Vector2(9,5),Vector2(51,26),17,Color("fff8e7") if on else HarborStyle.MUTED);status.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-  HarborStyle.label(b,option[2],Vector2(17,55),Vector2(305,30),17,HarborStyle.MUTED)
- var speed:=OptionButton.new();speed.position=Vector2(382,548);speed.size=Vector2(305,43);content.add_child(speed)
- for duration in [6,12,24]:speed.add_item("一天 = 现实 %d 分钟"%duration)
- speed.select([6.0,12.0,24.0].find(prefs().day_minutes) if prefs().day_minutes in [6.0,12.0,24.0] else 1)
- speed.item_selected.connect(func(index: int):var pref:=prefs();pref.day_minutes=[6.0,12.0,24.0][index];pref.save())
- feedback=HarborStyle.label(content,"喜欢安静一点的画面，可以关闭氛围微光。",Vector2(32,626),Vector2(679,45),18,HarborStyle.MUTED)
- HarborStyle.label(content,"战斗界面使用 MiSans 字体 · Xiaomi",Vector2(32,674),Vector2(679,18),14,HarborStyle.MUTED)
- var back:=_button(content,"返回标题",Vector2(25,696),Vector2(687,54),func():_show_page("title"));_primary(back)
+ var view:=preload("res://ui/title_settings_view.gd").new()
+ content.add_child(view);view.configure(self)
 
 ## 音频控件的小回调：统一走 MusicDirector 的公开接口，界面不再直接碰 _store_* 私有方法。
 func _toggle_music() -> void:

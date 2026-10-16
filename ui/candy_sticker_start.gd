@@ -107,6 +107,8 @@ func _render()->void:
  content.size=DESIGN_SIZE if page=="title" else Vector2(760,805);content.scale=Vector2.ONE
  content.add_theme_stylebox_override("panel",Candy.frame("empty" if page=="title" else "panel"))
  if page=="title":_title();return
+ if page=="settings":
+  content.size=Vector2(739,773);_settings();return
  var title:String={"journey":"开始游戏","harbor":"东港仓储带","pack26":"立体新区","settings":"设置","music":"音乐鉴赏","load":"读取存档","save":"保存游戏","memories":"回想","cg":"CG 鉴赏","help":"操作说明","website":"官方网站"}.get(page,"鲸落港")
  Candy.label(content,title,Vector2(30,25),Vector2(300,48),31)
  tabs["back"]=_button(content,"‹ 返回标题",Vector2(542,25),Vector2(180,53),func():_show_page("title"));tabs.back.name="BackToTitle"
@@ -114,8 +116,6 @@ func _render()->void:
   "journey":_journey()
   "harbor":_harbor()
   "pack26":_pack26()
-  "settings":
-   _settings();_button(content,"音乐设置",Vector2(350,25),Vector2(170,53),func():_show_page("music"))
   "music":_music()
   "load","save":_slots_page()
   "memories":_memories_page()

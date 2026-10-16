@@ -35,11 +35,11 @@
   "title": "音乐鉴赏"
  },
  {
-  "controls": 59,
+  "controls": 81,
   "error": 0.0,
-  "id": "title_settings",
-  "scene": "res://ui/design/pages/title_settings.tscn",
-  "title": "标题画面设置"
+  "id": "title_settings_sticker",
+  "scene": "res://ui/design/pages/title_settings_sticker.tscn",
+  "title": "标题设置 · 蓝白分层"
  },
  {
   "controls": 18,
