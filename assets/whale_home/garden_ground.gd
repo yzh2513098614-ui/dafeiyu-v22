@@ -3,11 +3,12 @@ extends RefCounted
 const Geo = preload("res://district/story_geometry.gd")
 const PAVING = preload("res://assets/whale_home/garden_paving.gdshader")
 const GRASS = preload("res://assets/whale_home/garden_grass.gdshader")
+const BLADES = preload("res://assets/whale_home/garden_blades.gdshader")
 static var settings: Dictionary = {}
 static var stones: Array[ShaderMaterial] = []
 static var field: ShaderMaterial
 static var turf: ShaderMaterial
-static var blade_material: StandardMaterial3D
+static var blade_material: ShaderMaterial
 static var blade_mesh: ArrayMesh
 static var paving_regions: Array[Rect2] = []
 
@@ -65,24 +66,21 @@ static func prepare() -> void:
 	turf.shader = GRASS
 	turf.set_shader_parameter("grass_color", Color(settings.grass_color))
 	turf.set_shader_parameter("grass_shadow", Color(settings.grass_shadow))
-	blade_material = StandardMaterial3D.new()
-	blade_material.vertex_color_use_as_albedo = true
-	blade_material.vertex_color_is_srgb = true
-	blade_material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	blade_material.roughness = 1.0
-	blade_material.metallic_specular = 0.08
+	blade_material = ShaderMaterial.new()
+	blade_material.shader = BLADES
 	var tool := SurfaceTool.new()
 	tool.begin(Mesh.PRIMITIVE_TRIANGLES)
-	for i in 3:
-		var angle := i * TAU / 3.0
-		var side := Vector3(cos(angle), 0, sin(angle)) * 0.035
-		var middle := Vector3(sin(angle) * 0.025, 0.55, cos(angle) * 0.025)
-		var tip := Vector3(sin(angle) * 0.085, 1.0, cos(angle) * 0.085)
+	for i in 5:
+		var angle := i * 2.4
+		var blade_height := 0.68 + float(i % 3) * 0.16
+		var side := Vector3(cos(angle), 0, sin(angle)) * 0.048
+		var middle := Vector3(sin(angle) * 0.075, blade_height * 0.56, cos(angle) * 0.075)
+		var tip := Vector3(sin(angle) * 0.20, blade_height, cos(angle) * 0.20)
 		var normal := (Vector3(sin(angle), 0, -cos(angle)) * 0.4 + Vector3.UP * 0.6).normalized()
 		var vertices: Array[Vector3] = [-side, side, middle + side * 0.65, -side, middle + side * 0.65, middle - side * 0.65, middle - side * 0.65, middle + side * 0.65, tip]
 		for vertex in vertices:
 			tool.set_normal(normal)
-			tool.set_color(Color(settings.grass_shadow).lerp(Color("d0dcaa"), vertex.y * 0.70))
+			tool.set_color(Color(settings.grass_shadow).lerp(Color("cedfa7"), vertex.y * 0.85).srgb_to_linear())
 			tool.set_uv(Vector2(vertex.x, vertex.y))
 			tool.add_vertex(vertex)
 	blade_mesh = tool.commit()
@@ -203,6 +201,8 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 	for i in mesh.instance_count:
 		var point := Vector2(rng.randf_range(inset.position.x, inset.end.x), rng.randf_range(inset.position.y, inset.end.y))
 		if not Geometry2D.is_point_in_polygon(point, polygon) or _clearing(point, clearings) or _clearing(point, paving_regions): continue
+		var patch := 0.5 + 0.5 * sin(point.x * 0.74 + sin(point.y * 0.37) * 1.8) * cos(point.y * 0.61)
+		if rng.randf() > 0.35 + patch * 0.65: continue
 		var height := rng.randf_range(settings.grass_height_range[0], settings.grass_height_range[1])
 		var basis := Basis(Vector3.UP, rng.randf_range(-PI, PI)).scaled(Vector3(rng.randf_range(0.65, 1.1), height, rng.randf_range(0.65, 1.1)))
 		mesh.set_instance_transform(count, Transform3D(basis, Vector3(point.x, top, point.y)))
@@ -210,9 +210,10 @@ static func lawn(parent: Node3D, rect: Rect2, clearings: Array[Rect2], seed_valu
 		count += 1
 	mesh.visible_instance_count = count
 	var grass := MultiMeshInstance3D.new()
-	grass.name = "GardenGrassTufts"
+	grass.name = "GardenGrassTufts_" + str(seed_value)
 	grass.multimesh = mesh
 	grass.material_override = blade_material
+	grass.extra_cull_margin = 0.18
 	grass.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(grass)
 	return count

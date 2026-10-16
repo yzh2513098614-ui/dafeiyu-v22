@@ -1,8 +1,8 @@
 {
   "stone_palette": ["e3dfcc", "dbd7c3", "e8e3d1"],
   "curb_color": "d5d5bf",
-  "grass_color": "bdcf96",
-  "grass_shadow": "a9bd85",
+  "grass_color": "b9ce91",
+  "grass_shadow": "9fb67b",
   "mulch_color": "a1af80",
   "base_top": 0.018,
   "paving_top": 0.032,
@@ -12,6 +12,6 @@
   "curb_width": 0.14,
   "lawn_corner_radius": 0.55,
   "front_lawn_depth": 10.7,
-  "tufts_per_square_meter": 1.8,
-  "grass_height_range": [0.09, 0.17]
+  "tufts_per_square_meter": 6.5,
+  "grass_height_range": [0.12, 0.23]
 }

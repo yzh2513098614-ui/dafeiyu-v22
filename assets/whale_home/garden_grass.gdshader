@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode diffuse_lambert, specular_schlick_ggx;
+#include "res://assets/whale_home/garden_wind.gdshaderinc"
 uniform vec4 grass_color : source_color = vec4(0.74, 0.81, 0.59, 1.0);
 uniform vec4 grass_shadow : source_color = vec4(0.66, 0.74, 0.52, 1.0);
 varying vec2 ground_point;
@@ -23,8 +24,10 @@ float noise(vec2 p) {
 void fragment() {
 	float broad = noise(ground_point * 0.25);
 	float patches = noise(ground_point * 0.72 + vec2(9.3, 17.1));
+	float grain = noise(ground_point * 2.6 + vec2(3.4, 8.7));
 	vec3 color = mix(grass_shadow.rgb, grass_color.rgb, 0.40 + broad * 0.55);
-	color *= 0.98 + patches * 0.045;
+	color *= 0.965 + patches * 0.055 + grain * 0.012;
+	color *= 1.0 + garden_breeze(ground_point) * 0.035;
 	ALBEDO = color;
 	ROUGHNESS = 1.0;
 	SPECULAR = 0.08;

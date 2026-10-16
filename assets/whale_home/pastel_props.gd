@@ -172,31 +172,66 @@ static func clump(parent: Node3D, point: Vector3, size: Vector3, color: Color) -
 	parent.add_child(node)
 	return node
 
+static func _crown_point(polar: float, azimuth: float, axes: Vector3) -> Vector3:
+	var ring:=sin(polar)
+	var lobe:=1.0+.085*sin(azimuth*5.0+cos(polar*3.0)*.7)*pow(ring,1.5)
+	lobe+=.028*sin(azimuth*11.0+polar*4.0)*ring*ring
+	var point:=Vector3(ring*cos(azimuth),cos(polar),ring*sin(azimuth))*axes*lobe
+	point.x+=.12*cos(polar)
+	point.z+=.08*sin(polar*2.0)
+	return point
+
+static func _crown_mesh(axes: Vector3, form: String) -> ArrayMesh:
+	var key: String="crown_"+form
+	if mesh_cache.has(key):return mesh_cache[key]
+	var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var rings:=18;var sectors:=28
+	for row in rings:
+		for column in sectors:
+			var corners: Array[Vector3]=[
+				_crown_point(PI*row/rings,TAU*column/sectors,axes),
+				_crown_point(PI*(row+1)/rings,TAU*column/sectors,axes),
+				_crown_point(PI*(row+1)/rings,TAU*(column+1)/sectors,axes),
+				_crown_point(PI*row/rings,TAU*(column+1)/sectors,axes)]
+			for tri: Array in [[corners[0],corners[1],corners[2]],[corners[0],corners[2],corners[3]]]:
+				var face: Vector3=(tri[1]-tri[0]).cross(tri[2]-tri[0])
+				if face.length_squared()<1e-10:continue
+				var center: Vector3=(tri[0]+tri[1]+tri[2])/3.0
+				var outward: Vector3=(center/(axes*axes)).normalized()
+				if face.dot(outward)<0:face=-face
+				face=face.normalized()
+				if (tri[1]-tri[0]).cross(tri[2]-tri[0]).dot(outward)>0:tri=[tri[0],tri[2],tri[1]]
+				for point: Vector3 in tri:
+					var normal: Vector3=(point/(axes*axes)).normalized().lerp(face,.18).normalized()
+					var tone: float=.945+.035*(point.y/axes.y)+.012*sin(point.x*5.0+point.z*3.0)
+					tool.set_normal(normal)
+					tool.set_color(Color(tone,tone,tone))
+					tool.set_uv(Vector2(point.x/axes.x*.5+.5,point.y/axes.y*.5+.5))
+					tool.add_vertex(point)
+	mesh_cache[key]=tool.commit()
+	return mesh_cache[key]
+
 static func tree(parent: Node3D, point: Vector3, scale_value: float = 1.0, sakura: bool = false, low: bool = false) -> Node3D:
-	var root := group(parent,"SakuraTree" if sakura else ("LowSageTree" if low else "TallSageTree"),point)
-	root.scale = Vector3.ONE * scale_value
-	var trunk_color:=Color("9b946d")
-	var fork:=Vector3(-.06,1.50 if low else 1.92,.03)
-	rod(root,Vector3.ZERO,Vector3(.08,.91,-.05),.18,trunk_color)
-	rod(root,Vector3(.08,.86,-.05),fork,.145,trunk_color)
-	var color := PINK if sakura else SAGE
-	var points: Array[Vector3]
-	if sakura:
-		points=[Vector3(-1.05,2.75,.12),Vector3(.94,3.01,.37),Vector3(-.17,2.71,1.01),Vector3(.34,3.10,-.83),Vector3(-.93,3.34,-.54),Vector3(.91,3.67,-.17),Vector3(-.12,3.87,.14),Vector3(.54,2.58,.83)]
-	elif low:
-		points=[Vector3(-.88,2.16,.23),Vector3(.85,2.35,.18),Vector3(-.12,2.27,.82),Vector3(.33,2.51,-.67),Vector3(-.62,2.66,-.43),Vector3(.13,2.91,.08)]
-	else:
-		points=[Vector3(-.79,2.78,.19),Vector3(.85,2.98,.28),Vector3(-.09,2.88,.79),Vector3(.36,3.28,-.60),Vector3(-.55,3.59,-.35),Vector3(.21,4.03,.08),Vector3(-.21,3.44,.54)]
-	for i in points.size():
-		var p: Vector3=points[i]
-		var elbow:=fork.lerp(p,.48)+Vector3(.08,.06,-.06)
-		rod(root,fork,elbow,.105 if i%2==0 else .085,trunk_color)
-		rod(root,elbow,p,.064,trunk_color)
-		var size:=Vector3(1.68+float(i%3)*.17,1.48+float(i%2)*.14,1.57+float((i+1)%3)*.12)
-		if low:size*=Vector3(1.12,.88,1.07)
-		var leaves:=clump(root,p,size,color.lightened(float(i%3)*.035))
-		leaves.rotation=Vector3(.13*(i%3-1),i*.71,.12*(i%2*2-1))
-	root.set_meta("tree_form","sakura" if sakura else ("low_green" if low else "tall_green"))
+	var form: String="sakura" if sakura else ("low_green" if low else "tall_green")
+	var root:=group(parent,"SakuraTree" if sakura else ("LowSageTree" if low else "TallSageTree"),point)
+	root.scale=Vector3.ONE*scale_value
+	var bark:=Color("9b946d")
+	var fork:=Vector3(-.04,1.46 if low else 1.88,.03)
+	rod(root,Vector3.ZERO,Vector3(.05,.70,-.02),.20,bark)
+	rod(root,Vector3(.05,.66,-.02),Vector3(-.08,1.34,.04),.16,bark)
+	rod(root,Vector3(-.08,1.30,.04),fork,.12,bark)
+	var center:=Vector3(.04,2.55,.04) if low else Vector3(-.03,3.16 if sakura else 3.25,0)
+	var axes:=Vector3(1.65,1.12,1.43) if low else (Vector3(1.86,1.32,1.63) if sakura else Vector3(1.60,1.55,1.42))
+	for i in 5:
+		var a: float=i*TAU/5.0+.32
+		var end:=center+Vector3(cos(a)*.85,-.40+float(i%2)*.28,sin(a)*.72)
+		var elbow: Vector3=fork.lerp(end,.48)+Vector3(.04,.07,0)
+		rod(root,fork,elbow,.077,bark)
+		rod(root,elbow,end,.045,bark)
+	var crown:=mesh_node(root,_crown_mesh(axes,form),center,Color("f0c6d3") if sakura else Color("acc68c"),"ContinuousCanopy")
+	crown.set_meta("continuous_tree_crown",true)
+	root.set_meta("tree_form",form)
+	root.set_meta("tree_model_revision","continuous_crown_directional_wind_v4")
 	return root
 
 static func leaf(parent: Node3D, point: Vector3, size: Vector3, color: Color) -> MeshInstance3D:

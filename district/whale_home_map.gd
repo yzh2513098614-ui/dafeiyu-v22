@@ -12,6 +12,7 @@ const MOTIF=preload("res://assets/whale_home/motif.gdshader")
 const Pastel=preload("res://assets/whale_home/pastel_props.gd")
 const Coastal=preload("res://assets/whale_home/coastal_props.gd")
 const Ground=preload("res://assets/whale_home/garden_ground.gd")
+const GardenWind=preload("res://assets/whale_home/garden_wind.gd")
 const Furniture=preload("res://assets/whale_home/furniture_finishes.gd")
 const Beds=preload("res://assets/whale_home/beds.gd")
 const Lounge=preload("res://assets/whale_home/lounge_furniture.gd")
@@ -69,6 +70,7 @@ var furniture_count := 0
 var detail_count := 0
 var batched_surfaces := 0
 var facility_nodes: Array[Node3D] = []
+var garden_wind: Node
 var indexed_cache: Dictionary = {}
 
 func _group(parent: Node3D, label: String, point: Vector3=Vector3.ZERO) -> Node3D:
@@ -821,12 +823,15 @@ func _pastel_garden(parent: Node3D) -> void:
 		spec[0]=point
 	tree_specs.append_array([[Vector3(-38,.06,-36),1.5,false],[Vector3(38,.06,-36),1.5,false],[Vector3(-20,.06,-40),1.4,true],[Vector3(20,.06,-40),1.4,true]])
 	var ground: Dictionary=Ground.gardens(parent,tree_specs,SIDE_GARDEN_OFFSET,67.0)
+	garden_wind.bind_material(Ground.turf)
+	garden_wind.bind_material(Ground.blade_material)
 	level.set_meta("ground_revision","garden_paving_lawn_v1");level.set_meta("lawn_tufts",ground.tufts);level.set_meta("lawn_patches",ground.lawns)
 	var blossom_origins: Array[Vector3]=[]
 	for i in tree_specs.size():
 		var spec: Array=tree_specs[i]
 		var form: PackedScene=SAKURA_TREE if spec[2] else (LOW_TREE if i in [1,2,8] else TALL_TREE)
 		var tree: Node3D=_model(parent,form,spec[0],true);tree.scale=Vector3.ONE*float(spec[1]);tree.rotation.y=i*.47
+		garden_wind.bind_tree(tree)
 		Ground.tree_ring(parent,spec[0])
 		_coll(tree,Vector3(.42,2.65,.42),Vector3(.06,1.325,0))
 		if spec[2]:blossom_origins.append(spec[0])
@@ -935,6 +940,7 @@ func _batch(parent: Node3D, count_static: bool=true) -> int:
 			tool.append_from(indexed_cache[source_key],0,parent.global_transform.affine_inverse()*mesh.global_transform)
 			mesh.hide()
 		var combined:=MeshInstance3D.new();combined.name="HomeStaticSurface_"+str(batched_surfaces) if count_static else "BoatSurface";combined.mesh=tool.commit();combined.material_override=bucket.material;combined.cast_shadow=bucket.shadow;parent.add_child(combined)
+		if bucket.material.get_meta("garden_tree_wind",false):combined.extra_cull_margin=2.5
 		if count_static:batched_surfaces+=1
 		for piece in bucket.pieces:
 			var mesh: MeshInstance3D=piece[0]
@@ -945,6 +951,7 @@ func build(owner_game) -> Dictionary:
 	Pastel.use_shared_materials()
 	Ground.begin()
 	game=owner_game;level=_group(game.world,"WhaleHome");level.set_meta("walkable_slabs",[])
+	garden_wind=GardenWind.new();garden_wind.configure(game);level.add_child(garden_wind)
 	glass=StandardMaterial3D.new();glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;glass.albedo_color=Color(.58,.85,.96,.12);glass.roughness=.18;glass.cull_mode=BaseMaterial3D.CULL_DISABLED
 	game.shell.set_meta("layout_revision","whale_home_three_floors_v1")
 	level.set_meta("visual_style","pastel_diorama_v1")
