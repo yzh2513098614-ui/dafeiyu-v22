@@ -2,7 +2,6 @@ extends "res://ui/harbor_start.gd"
 ## Reference-led title presentation; original travel, preferences and music actions are inherited.
 const Candy=preload("res://ui/candy_sticker_skin.gd")
 const Slots=preload("res://ui/candy_title_saves.gd")
-const TitleView=preload("res://ui/title_home_view.gd")
 const DESIGN_SIZE=Vector2(1672,941)
 const INTRO=["未来，也想和你一起编写……","海风正好，一起去鲸落港走走吧。","把今天的小小惊喜，收进我们的故事里。"]
 const CGS=[
@@ -45,9 +44,21 @@ func _ready()->void:
  backdrop.size=DESIGN_SIZE;backdrop.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;backdrop.stretch_mode=TextureRect.STRETCH_SCALE;backdrop.mouse_filter=Control.MOUSE_FILTER_IGNORE;design_root.add_child(backdrop)
  logo=TextureRect.new();logo.name="StickerLogo";logo.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;logo.texture=load("res://assets/ui/candy_title/logo.png");logo.position=Vector2(52,-15);logo.size=Vector2(740,525)
  logo.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;logo.mouse_filter=Control.MOUSE_FILTER_IGNORE;design_root.add_child(logo)
- TitleView.build_dialogue(self)
+ greeting=Panel.new();greeting.name="TitleDialogue";greeting.position=Vector2(623,776);greeting.size=Vector2(995,129);greeting.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ greeting.add_theme_stylebox_override("panel",Candy.frame("dialogue"));design_root.add_child(greeting)
+ var inner:=Panel.new();inner.position=Vector2(8,8);inner.size=greeting.size-Vector2(16,16);inner.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ var line:=Candy.frame("empty");line.set_border_width_all(2);line.border_color=Color("b8ddff");line.set_corner_radius_all(34);inner.add_theme_stylebox_override("panel",line);greeting.add_child(inner)
+ var nameplate:=Panel.new();nameplate.position=Vector2(102,-18);nameplate.size=Vector2(167,44);nameplate.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ var name_style:=Candy.frame();name_style.bg_color=Color("9bdaff");name_style.set_border_width_all(3);name_style.shadow_size=0;name_style.set_corner_radius_all(22);nameplate.add_theme_stylebox_override("panel",name_style);greeting.add_child(nameplate)
+ var name_label:=Candy.label(nameplate,"大肥鱼",Vector2(10,3),Vector2(147,35),22);name_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+ intro_label=Candy.label(greeting,INTRO[0],Vector2(81,57),Vector2(814,49),27);intro_label.visible_characters=0
+ auto_button=_dialogue_tool("▶ AUTO",Vector2(656,12),func():auto_intro=not auto_intro;auto_button.text="▶ AUTO ✓" if auto_intro else "▶ AUTO")
+ _dialogue_tool("▶▶ SKIP",Vector2(764,12),func():intro_index=INTRO.size()-1;intro_elapsed=0;intro_label.text=INTRO[intro_index];intro_label.visible_characters=-1)
+ _dialogue_tool("☰ LOG",Vector2(868,12),func():_show_page("memories"))
+ _dialogue_tool("▼",Vector2(919,74),_next_intro).size=Vector2(50,34)
  content=Panel.new();content.name="StickerMenu";content.mouse_filter=Control.MOUSE_FILTER_IGNORE;design_root.add_child(content)
- TitleView.build_tools(self)
+ var help:=Candy.button(design_root,"操作说明",Vector2(1289,19),Vector2(176,70),func():_show_page("help"),"settings");help.name="TitleHelp"
+ var website:=Candy.button(design_root,"官方网站",Vector2(1482,19),Vector2(171,70),func():_show_page("website"),"help");website.name="TitleWebsite"
  var quote:=Candy.label(design_root,"{ 未来，\n  也想和你\n  一起编写… }",Vector2(1407,140),Vector2(248,184),38)
  var handwriting:=SystemFont.new();handwriting.font_names=PackedStringArray(["KaiTi","STKaiti"]);handwriting.fallbacks=[load("res://assets/fonts/misans/MiSans-Bold.ttf")];quote.add_theme_font_override("font",handwriting);quote.rotation=-.06
  quote.add_theme_color_override("font_outline_color",Color.WHITE);quote.add_theme_constant_override("outline_size",10)
@@ -71,6 +82,11 @@ func _process(delta:float)->void:
 func _next_intro()->void:
  intro_index=(intro_index+1)%INTRO.size();intro_elapsed=0;intro_label.text=INTRO[intro_index];intro_label.visible_characters=0
 
+func _dialogue_tool(text:String,pos:Vector2,action:Callable)->Button:
+ var button:=Button.new();button.text=text;button.position=pos;button.size=Vector2(100,30);button.add_theme_font_size_override("font_size",15)
+ for state in ["normal","hover","pressed","disabled","focus"]:button.add_theme_stylebox_override(state,StyleBoxEmpty.new())
+ button.pressed.connect(action);button.mouse_default_cursor_shape=Control.CURSOR_POINTING_HAND;greeting.add_child(button);return button
+
 func _button(parent:Node,label:String,pos:Vector2,dimensions:Vector2,action:Callable,selected:bool=false)->Button:
  var button:=Candy.button(parent,label,pos,dimensions,action)
  if selected:button.accent=Color("ff99c8")
@@ -80,7 +96,6 @@ func _primary(button:Button)->void:
  button.accent=Color("ff8ebf");button.add_theme_font_size_override("font_size",26)
 
 func _render()->void:
- content.theme=null
  for child in content.get_children():content.remove_child(child);child.queue_free()
  cards.clear();setting_cards.clear();tabs.clear();menu_buttons.clear();slots_buttons.clear();gallery_rows.clear()
  gallery_hint=null;gallery_scroll=null;music_mute_button=null;music_volume_slider=null;music_volume_value=null
@@ -112,7 +127,31 @@ func _render()->void:
    note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 
 func _title()->void:
- TitleView.build(self)
+ var definitions:Array=[
+  ["journey","开始游戏","play",Vector2(67,466),Vector2(345,90),Color("ff8fbd"),func():_show_page("journey")],
+  ["resume","继续游戏","folder",Vector2(425,470),Vector2(292,86),Color("ffd680"),func():_start(true)],
+  ["load","读取存档","book",Vector2(98,565),Vector2(302,85),Color("add5ff"),func():_show_page("load")],
+  ["save","保存游戏","save",Vector2(426,563),Vector2(291,86),Color("add5ff"),func():_show_page("save")],
+  ["settings","设置","settings",Vector2(116,657),Vector2(280,80),Color("add5ff"),func():_show_page("settings")],
+  ["memories","回想","chat",Vector2(427,657),Vector2(282,80),Color("add5ff"),func():_show_page("memories")],
+  ["cg","CG 鉴赏","image",Vector2(112,750),Vector2(278,79),Color("add5ff"),func():_show_page("cg")],
+  ["quit","退出游戏","exit",Vector2(425,749),Vector2(292,82),Color("d5b2ff"),func():get_tree().quit()]]
+ for entry in definitions:
+  var button:=Candy.button(content,entry[1],entry[3],entry[4],entry[6],entry[2],entry[5]);button.name="Menu_"+str(entry[0]);button.decoration="heart" if entry[0] in ["save","memories"] else ("dot" if entry[0] in ["load","settings","quit"] else "star")
+  menu_buttons[entry[0]]=button
+ resume_button=menu_buttons.resume;resume_button.disabled=_saved_journey().is_empty() or not recovery_ok
+ resume_button.tooltip_text="还没有旅程记录，请先开始游戏。" if resume_button.disabled else "继续上次已保存的旅程。"
+ var focus_order:Array=[]
+ for id in menu_buttons:
+  var button:Button=menu_buttons[id]
+  button.pivot_offset=button.size*.5
+  button.rotation=-.016 if id in ["load","settings","cg","quit"] else -.008
+  if not button.disabled:focus_order.append(button)
+ for index in focus_order.size():
+  var button:Button=focus_order[index]
+  button.focus_next=button.get_path_to(focus_order[(index+1)%focus_order.size()])
+  button.focus_previous=button.get_path_to(focus_order[posmod(index-1,focus_order.size())])
+ if page_status!="":Candy.label(content,page_status,Vector2(88,842),Vector2(590,48),17)
 
 func _journey()->void:
  _button(content,"鲸落港",Vector2(28,96),Vector2(163,56),func():_show_page("journey"))
