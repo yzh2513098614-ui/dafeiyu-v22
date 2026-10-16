@@ -304,5 +304,65 @@
     "use": "你用掉一份蓝鲸皂，留下清爽的海盐香。",
     "icon_path": "res://assets/v18/items/whale_soap.png",
     "icon": "open_book"
+  },
+  "fresh_egg": {
+    "name": "新鲜鸡蛋",
+    "kind": "材料 · 烹饪食材",
+    "storage_group": "food",
+    "description": "冰箱里的早餐食材。在厨房搭配牛奶和吐司，可以做一份鲸鱼早餐。",
+    "quote": "今天也好好吃早餐。",
+    "use": "需要在厨房加工后食用。",
+    "icon_path": "res://assets/v18/items/sea_biscuit.png",
+    "icon": "bakery_case"
+  },
+  "fresh_milk": {
+    "name": "冷藏牛奶",
+    "kind": "材料 · 烹饪食材",
+    "storage_group": "food",
+    "description": "可用于鲸鱼早餐和星星饼干的冷藏牛奶。",
+    "quote": "留一点奶香给早晨。",
+    "use": "在厨房或烘焙工坊用作食材。",
+    "icon_path": "res://assets/item_icons/retry_tea.svg",
+    "icon": "whale_mug"
+  },
+  "baking_flour": {
+    "name": "烘焙面粉",
+    "kind": "材料 · 烹饪食材",
+    "storage_group": "food",
+    "description": "餐具柜里收好的烘焙面粉。搭配一份牛奶，能烤出三块小饼干。",
+    "quote": "把灵感揉进面团。",
+    "use": "在星星烤箱用作食材。",
+    "icon_path": "res://assets/v18/items/seed_packet.png",
+    "icon": "bakery_case"
+  },
+  "tea_leaves": {
+    "name": "海盐花茶叶",
+    "kind": "材料 · 泡茶食材",
+    "storage_group": "food",
+    "description": "一份茶叶加一杯饮用水，可以在家中的茶桌泡成热茶。",
+    "quote": "等水烧开，也等灵感上线。",
+    "use": "在茶桌用作食材。",
+    "icon_path": "res://assets/v18/items/hydrangea_bouquet.png",
+    "icon": "whale_mug"
+  },
+  "drinking_water": {
+    "name": "饮用水",
+    "kind": "补给 · 可使用",
+    "storage_group": "food",
+    "description": "从厨房水槽接的一杯饮用水。可以直接喝，也可以搭配茶叶泡茶。",
+    "quote": "慢慢喝一口，再继续。",
+    "use": "喝下一杯清水，精神恢复了一点。",
+    "icon_path": "res://assets/item_icons/retry_tea.svg",
+    "icon": "whale_mug"
+  },
+  "whale_breakfast": {
+    "name": "鲸鱼早餐",
+    "kind": "补给 · 可使用",
+    "storage_group": "food",
+    "description": "在家中做好的一份煎蛋、吐司和热牛奶。可以随身带走，饿了再吃。",
+    "quote": "今天也好好照顾自己。",
+    "use": "慢慢吃完鲸鱼早餐，胃里暖和了起来。",
+    "icon_path": "res://assets/v18/items/butter_bread.png",
+    "icon": "bakery_case"
   }
 }

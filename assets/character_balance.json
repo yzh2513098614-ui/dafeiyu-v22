@@ -180,6 +180,20 @@
         "mood": 12
       },
       "summary": "心情 +12 · 心情充足时不会消耗"
+    },
+    "fresh_egg": {"action": "material", "summary": "厨房食材：用于鲸鱼早餐"},
+    "fresh_milk": {"action": "material", "summary": "厨房食材：用于早餐和烘焙"},
+    "baking_flour": {"action": "material", "summary": "烘焙食材：搭配牛奶制作饼干"},
+    "tea_leaves": {"action": "material", "summary": "泡茶食材：搭配饮用水制作热茶"},
+    "drinking_water": {
+      "action": "consume",
+      "effects": {"stamina": 8},
+      "summary": "体力 +8 · 也可用于泡茶"
+    },
+    "whale_breakfast": {
+      "action": "consume",
+      "effects": {"health": 12, "stamina": 30, "hunger": 45, "mood": 8},
+      "summary": "生命 +12 · 体力 +30 · 饱食 +45 · 心情 +8"
     }
   }
 }

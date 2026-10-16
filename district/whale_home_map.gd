@@ -1021,6 +1021,7 @@ func build(owner_game) -> Dictionary:
 	Interiors.new().build(self)
 	WallDetails.build(self)
 	_garden(island);_dock(island,sea)
+	preload("res://district/whale_home_life.gd").new().build(self)
 	_zone("kitchen","1F · 海盐厨房与中岛",Rect2(-14,-12,19,9.8))
 	_zone("pantry","1F · 蓝鲸餐具收藏柜",Rect2(5,-12,4,5))
 	_zone("dining","1F · 鲸鱼餐厅",Rect2(-3,-2,11,9.8))

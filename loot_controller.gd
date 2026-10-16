@@ -94,6 +94,7 @@ func can_receive(id: String) -> int:
 
 func can_store(id: String) -> int:
  if mode!="loot" or not _in_range(current_chest) or not definitions.has(id):return 0
+ if current_chest.has_method("can_store_item") and not current_chest.can_store_item(id):return 0
  var stock: Dictionary=stocks.get(current_chest.container_id,{})
  var existing:=int(stock.get(id,0));var slots:=0
  for value in stock.values():
@@ -106,6 +107,8 @@ func can_store(id: String) -> int:
 func deposit(id: String,count: int) -> bool:
  if mode!="loot" or not _in_range(current_chest) or not definitions.has(id) or count<=0:return false
  if count>can_store(id):
+  if current_chest.has_method("can_store_item") and not current_chest.can_store_item(id):
+   status="冰箱只收纳食材、食物和饮料。";_render();return false
   status="容器已满或数量不足；正在装备的最后一件需要先卸下。";_render();return false
  var old_inventory:=inventory.duplicate(true);var old_stocks:=stocks.duplicate(true)
  var container_id: String=current_chest.container_id
@@ -166,7 +169,8 @@ func _ready() -> void:
   definitions[id]["effect_summary"]=str(rules.get(id,{}).get("summary","可查看"))
   if rules.get(id,{}).get("action","")=="equip":definitions[id].kind="工具 · 可装备" if rules[id].slot=="tool" else "收藏 · 可装备"
  var args:=OS.get_cmdline_user_args()
- if "--test-expedition" in args:save_path="res://预览/expedition_inventory_test.json"
+ if "--test-home-life" in args:save_path="user://whale_inventory_home_life_test.json"
+ elif "--test-expedition" in args:save_path="res://预览/expedition_inventory_test.json"
  elif "--test-loot" in args or "--test-room" in args or "--test-load" in args:
   save_path="user://whale_inventory_test.json"
   if "--test-load" in args:load_state()
@@ -238,6 +242,7 @@ func _in_range(chest: Node3D) -> bool:
 
 func open_chest() -> void:
  if mode!="" or not _in_range(nearby):return
+ if game.get("click_navigation"):game.click_navigation.cancel()
  current_chest=nearby;mode="loot";chosen="";chest_bag_chosen="";chest_page=0;chest_bag_page=0;status="右侧取出，左侧存入；每次转移自动保存。"
  current_chest.set_open(true);_face_chest();prompt.hide();_render()
  game.get_node("/root/SfxDirector").play("chest_open",-2.0)

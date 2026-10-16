@@ -703,7 +703,12 @@ func _restore() -> bool:
  return true
 
 func _life_supply(place: String) -> void:
- if place in ["tidal_cafe","story_harbor","whale_home","wuming_campus"]:loot.chests.clear();loot.nearby=null;return
+ if place=="whale_home":
+  loot.chests.clear();loot.nearby=null
+  for node in world.get_children():
+   if node.get_meta("home_storage",false):loot.chests.append(node)
+  return
+ if place in ["tidal_cafe","story_harbor","wuming_campus"]:loot.chests.clear();loot.nearby=null;return
  if locations[place].type=="pack26":loot.chests.clear();loot.nearby=null;return
  if place=="research":loot.chests.clear();loot.nearby=null;return
  if place in ["restaurant_2","restaurant_b1"]:

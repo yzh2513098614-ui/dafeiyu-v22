@@ -7,6 +7,33 @@ var opened := false
 var parts: Array[Node3D] = []
 var motion: Tween
 var busy := false
+var container_id := ""
+var display_name := ""
+var note := ""
+var food_only := false
+const HomeLife=preload("res://district/whale_home_life.gd")
+
+func configure_storage(id: String, title: String, initial: Dictionary={}, only_food: bool=false) -> void:
+	container_id="whale_home:storage:"+id;display_name=title;food_only=only_food
+	note="蓝鲸家居收纳 · 每个柜子独立保存。\n\n左侧选择背包物品存入，右侧选择容器物品取出。关闭界面时柜门自动合上。"
+	if food_only:note+="\n\n冰箱只收纳食材、食物和饮料。初始食材取完后不会刷新。"
+	set_meta("home_storage",true);set_meta("container_type","home_storage")
+	opened=false;restore_pose()
+	if not game.loot.stocks.has(container_id):game.loot.stocks[container_id]=initial.duplicate(true)
+
+func can_store_item(id: String) -> bool:
+	return not food_only or HomeLife.is_food(game.loot.definitions[id],id)
+
+func set_open(value: bool) -> void:
+	opened=value
+	if motion and motion.is_valid():motion.kill()
+	motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	for part in parts:
+		if kind=="storage":
+			if part.get_meta("drawer",false):motion.tween_property(part,"position:z",float(part.get_meta("closed_z"))+(.35 if opened else 0.0),.4)
+			else:motion.tween_property(part,"rotation:y",deg_to_rad(-75.0) if opened else 0.0,.45)
+		elif kind=="wardrobe":motion.tween_property(part,"position:x",.95 if opened else -.95,.45)
+		else:motion.tween_property(part,"rotation:y",deg_to_rad(-103.0) if opened else 0.0,.45)
 
 func configure(owner_game, action: String, id: String, title: String) -> void:
 	game=owner_game;kind=action;action_id="whale_home:facility:"+id
@@ -17,11 +44,13 @@ func configure(owner_game, action: String, id: String, title: String) -> void:
 func has_action() -> bool:return true
 
 func map_action() -> String:
+	if container_id!="":return "打开冰箱" if kind=="fridge" else "存取物品"
 	match kind:
 		"fridge","cabinet":return "关上柜门" if opened else "打开柜门"
 		"tea":return "泡一壶海盐花茶"
 		"cook":return "准备鲸鱼早餐"
 		"bake":return "烤一盘星星饼干"
+		"drink":return "接一杯饮用水"
 		"flowers":return "整理海风花束"
 		"read":return "翻到下一页"
 		"sketch":return "画一张海湾速写"
@@ -74,6 +103,12 @@ func _lamp_pose() -> void:
 
 func interact() -> void:
 	if busy:return
+	if container_id!="":
+		game.loot.nearby=self;game.loot.open_chest();return
+	if kind in ["tea","cook","bake","drink"]:
+		var result: Dictionary=HomeLife.produce(game,kind)
+		game.home_controller.show_notice(str(result.message))
+		if not result.ok:return
 	if motion and motion.is_valid():motion.kill()
 	var note := ""
 	match kind:
@@ -82,7 +117,7 @@ func interact() -> void:
 			motion=create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 			for part in parts:motion.tween_property(part,"rotation:y",deg_to_rad(-103.0) if opened else 0.0,.65)
 			note="里面的牛奶、果酱和蓝鲸餐具都摆得整整齐齐。" if opened else "柜门轻轻合上了。"
-		"tea","cook","bake","flowers","sketch":
+		"tea","cook","bake","drink","flowers","sketch":
 			busy=true;set_meta("map_busy",true)
 			motion=create_tween()
 			for part in parts:
@@ -91,9 +126,7 @@ func interact() -> void:
 				motion.tween_property(part,"position",origin,.4)
 			motion.finished.connect(func():busy=false;set_meta("map_busy",false))
 			match kind:
-				"tea":note="花茶泡好了，桌上还有一份星星饼干。"
-				"cook":note="煎蛋、吐司和热牛奶，今天也好好吃早餐。"
-				"bake":note="星星饼干出炉了，烤盘上还留着暖暖的黄油香。"
+				"tea","cook","bake","drink":note=game.home_controller.notice
 				"flowers":note="把粉白小花和鼠尾草叶扎成一束，给海风留一个位置。"
 				"sketch":note="画下了海湾、灯塔和一只慢悠悠的小蓝鲸。"
 		"read":
@@ -151,4 +184,4 @@ func interact() -> void:
 			note="星星灯串亮起来了。" if opened else "灯串熄灭，留下温柔的海景。"
 	game.visited[action_id]=opened
 	game.home_controller.show_notice(note)
-	if game.life_booted:game._save()
+	if game.life_booted and kind not in ["tea","cook","bake","drink"]:game._save()
