@@ -118,8 +118,8 @@
   },
   "lemon_water": {
     "name": "海盐柠檬水",
-    "icon": "whale_mug",
-    "icon_path": "res://assets/item_icons/retry_tea.svg",
+    "icon": "lemon_water",
+    "icon_path": "res://assets/item_icons/lemon_water.svg",
     "kind": "补给 · 可使用",
     "description": "清爽的海盐柠檬水，适合逛完一段街道后慢慢喝。",
     "quote": "歇一口气，再看远处的海。",
@@ -127,8 +127,8 @@
   },
   "sea_soup": {
     "name": "暖心海藻汤",
-    "icon": "whale_mug",
-    "icon_path": "res://assets/item_icons/sea_biscuit.svg",
+    "icon": "sea_soup",
+    "icon_path": "res://assets/item_icons/sea_soup.svg",
     "kind": "补给 · 可使用",
     "description": "社区厨房煮的一碗热汤，同时恢复生命、体力与饱食。",
     "quote": "今天也要好好吃饭。",
@@ -145,8 +145,8 @@
   },
   "sea_shell": {
     "name": "潮纹贝壳",
-    "icon": "painting_whale",
-    "icon_path": "res://assets/item_icons/fish_badge.svg",
+    "icon": "sea_shell",
+    "icon_path": "res://assets/item_icons/sea_shell.svg",
     "kind": "材料 · 可查看",
     "description": "海边拾到的带着潮纹的贝壳。先收好，未来可以用于制作。",
     "quote": "海也有自己的笔迹。",
@@ -312,8 +312,8 @@
     "description": "冰箱里的早餐食材。在厨房搭配牛奶和吐司，可以做一份鲸鱼早餐。",
     "quote": "今天也好好吃早餐。",
     "use": "需要在厨房加工后食用。",
-    "icon_path": "res://assets/v18/items/sea_biscuit.png",
-    "icon": "bakery_case"
+    "icon_path": "res://assets/item_icons/fresh_egg.svg",
+    "icon": "fresh_egg"
   },
   "fresh_milk": {
     "name": "冷藏牛奶",
@@ -322,8 +322,8 @@
     "description": "可用于鲸鱼早餐和星星饼干的冷藏牛奶。",
     "quote": "留一点奶香给早晨。",
     "use": "在厨房或烘焙工坊用作食材。",
-    "icon_path": "res://assets/item_icons/retry_tea.svg",
-    "icon": "whale_mug"
+    "icon_path": "res://assets/item_icons/fresh_milk.svg",
+    "icon": "fresh_milk"
   },
   "baking_flour": {
     "name": "烘焙面粉",
@@ -332,8 +332,8 @@
     "description": "餐具柜里收好的烘焙面粉。搭配一份牛奶，能烤出三块小饼干。",
     "quote": "把灵感揉进面团。",
     "use": "在星星烤箱用作食材。",
-    "icon_path": "res://assets/v18/items/seed_packet.png",
-    "icon": "bakery_case"
+    "icon_path": "res://assets/item_icons/baking_flour.svg",
+    "icon": "baking_flour"
   },
   "tea_leaves": {
     "name": "海盐花茶叶",
@@ -342,8 +342,8 @@
     "description": "一份茶叶加一杯饮用水，可以在家中的茶桌泡成热茶。",
     "quote": "等水烧开，也等灵感上线。",
     "use": "在茶桌用作食材。",
-    "icon_path": "res://assets/v18/items/hydrangea_bouquet.png",
-    "icon": "whale_mug"
+    "icon_path": "res://assets/item_icons/tea_leaves.svg",
+    "icon": "tea_leaves"
   },
   "drinking_water": {
     "name": "饮用水",
@@ -352,8 +352,8 @@
     "description": "从厨房水槽接的一杯饮用水。可以直接喝，也可以搭配茶叶泡茶。",
     "quote": "慢慢喝一口，再继续。",
     "use": "喝下一杯清水，精神恢复了一点。",
-    "icon_path": "res://assets/item_icons/retry_tea.svg",
-    "icon": "whale_mug"
+    "icon_path": "res://assets/item_icons/drinking_water.svg",
+    "icon": "drinking_water"
   },
   "whale_breakfast": {
     "name": "鲸鱼早餐",
