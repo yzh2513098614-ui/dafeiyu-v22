@@ -287,6 +287,12 @@ body[data-background=night] .scene:is([data-page=components],[data-page=inventor
 .component-board .hero-buttons [data-action=open-bag]:hover:not(:disabled) { background:var(--ui-aqua-soft); color:var(--ui-aqua-ink); }
 .component-board .hero-buttons [data-action=component-rest]:hover:not(:disabled) { background:var(--ui-sun-soft); color:var(--ui-sun-ink); }
 
+/* Show keyboard focus on the existing edge instead of adding another frame. */
+.scene:is([data-page=components],[data-page=inventory]) .sticker-button:is(.force-focus,:focus-visible),
+.scene:is([data-page=components],[data-page=inventory]) .category:focus-visible {
+  outline:none; border-color:var(--ui-focus); background:linear-gradient(180deg,#fff,#eef7ff);
+}
+
 /* A white rim, a solid blue base and recessed trays give the pocket its weight. */
 .inventory-window {
   position: absolute;
