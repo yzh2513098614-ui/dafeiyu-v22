@@ -19,6 +19,7 @@ const Joinery=preload("res://assets/whale_home/cabinet_joinery.gd")
 const WallDetails=preload("res://assets/whale_home/wall_details.gd")
 const Fixtures=preload("res://assets/whale_home/household_fixtures.gd")
 const StudyDetails=preload("res://assets/whale_home/study_details.gd")
+const Optics=preload("res://assets/whale_home/lighting_and_optics.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -240,13 +241,9 @@ func _books(parent: Node3D, point: Vector3, count: int=7) -> void:
 
 func _fixture(parent: Node3D, point: Vector3, hanging: bool=true, star: bool=false) -> void:
 	var root: Node3D=_group(parent,"StarLantern" if star else "WarmLamp",point)
-	if hanging:Geo.rod(root,Vector3(0,.4,0),Vector3(0,1.35,0),.018,GOLD)
-	else:
-		Geo.cylinder(root,.30,.08,Vector3(0,.04,0),GOLD)
-		Geo.cylinder(root,.055,.64,Vector3(0,.36,0),GOLD)
+	Optics.fixture_frame(self,root,hanging)
 	var bulb: MeshInstance3D=_sphere(root,Vector3(0,.72 if not hanging else 0,0),Vector3(.6,.44,.6),Color("fff0bd"))
 	var glow:=StandardMaterial3D.new();glow.albedo_color=Color("fff0bd");glow.emission_enabled=true;glow.emission=Color("ffd58e");glow.emission_energy_multiplier=.55;bulb.material_override=glow
-	if not hanging:Geo.cylinder(root,.45,.50,Vector3(0,.81,0),WHITE,.20)
 	if star:_star(root,Vector3(0,0,.34),.82)
 	var lamp:=OmniLight3D.new();lamp.position=Vector3(0,.6 if not hanging else -.1,0);lamp.omni_range=6.0;lamp.light_color=Color("ffe8b9");lamp.light_energy=.30;lamp.shadow_enabled=false;lamp.set_meta("home_energy",.85);lamp.set_meta("fixture_weight",.5);lamp.set_meta("harbor_lamp",true)
 	if star:lamp.set_meta("star_string",true)
@@ -545,17 +542,11 @@ func _bedroom(parent: Node3D) -> void:
 func _telescope(parent: Node3D) -> void:
 	var h: float=HEIGHT*2
 	var scope: Action=_action("scope","stargazer","观星望远镜 · 灯塔与星空",Vector3(8,h,-10.5),h)
-	for i in 3:
-		var a: float=i*TAU/3.;Geo.rod(scope,Vector3(cos(a)*.92,.05,sin(a)*.92),Vector3(0,1.55,0),.055,WOOD)
-	var axis: Node3D=_group(scope,"TelescopeAxis",Vector3(0,1.73,0));axis.rotation.y=-.2;scope.parts.append(axis)
-	var tube: MeshInstance3D=Geo.cylinder(axis,.22,1.86,Vector3(0,.18,0),WHITE);tube.rotation.x=1.1
-	for y in [-.83,-.62,.74]:
-		var collar: MeshInstance3D=Geo.cylinder(axis,.24,.12,Vector3(0,.18+cos(1.1)*y,sin(1.1)*y),DEEP);collar.rotation.x=1.1
-	var lens: MeshInstance3D=Geo.cylinder(axis,.18,.02,Vector3(0,.18+cos(1.1)*.96,sin(1.1)*.96),Color("9bdfe8"));lens.rotation.x=1.1
-	Geo.rod(scope,Vector3(-.34,1.56,0),Vector3(.34,1.56,0),.045,GOLD)
+	Optics.telescope(self,scope)
 	_coll(scope,Vector3(1.8,2.18,1.8),Vector3(0,1.09,0))
 	_chair(parent,Vector3(6.1,h,-8.8),28,true)
 	var tea: Node3D=_table(parent,Vector3(6.5,h,-5.4),2.0,1.4,.66,"tea_table");_cup(tea,Vector3(-.35,.76,0),BLUE);_books(tea,Vector3(.20,.75,-.05),3)
+	Optics.eyepiece_tray(self,tea)
 	_sofa(parent,Vector3(10.8,h,-4.1),2.8,-28)
 	_plant(parent,Vector3(12.8,h,-8.0),1.1,true)
 	_whale(parent,Vector3(2.8,h,-4.6),.44,15)

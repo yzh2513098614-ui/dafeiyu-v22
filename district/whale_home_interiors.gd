@@ -4,6 +4,7 @@ extends RefCounted
 const Geo = preload("res://district/story_geometry.gd")
 const Outdoors = preload("res://district/whale_home_outdoors.gd")
 const StudyDetails = preload("res://assets/whale_home/study_details.gd")
+const Optics = preload("res://assets/whale_home/lighting_and_optics.gd")
 var b
 
 func build(builder) -> void:
@@ -251,9 +252,7 @@ func _reading_lamps() -> void:
 		var point: Vector3 = spec[2]
 		var lamp: Node3D = b._action("room_lamp", spec[0], spec[1], point, point.y)
 		var stand: Node3D = b._furniture(lamp, "SwitchableReadingLamp", Vector3.ZERO)
-		Geo.cylinder(stand, .34, .09, Vector3(0, .055, 0), b.TEAL)
-		Geo.rod(stand, Vector3(0, .1, 0), Vector3(0, 2.35, 0), .035, b.GOLD)
-		Geo.cylinder(stand, .45, .60, Vector3(0, 2.55, 0), b.WHITE, .24)
+		Optics.reading_stand(b, stand)
 		b._coll(stand, Vector3(.70, .12, .70), Vector3(0, .06, 0))
 		b._coll(stand, Vector3(.10, 2.35, .10), Vector3(0, 1.175, 0))
 		var bulb_root: Node3D = b._group(lamp, "SwitchableBulb")
