@@ -1,6 +1,6 @@
 extends Control
-const UiStyle=preload("res://ui/whale_skin.gd")
-const PixelFrames=preload("res://dialogue/pixel_skin.gd")
+const UiStyle=preload("res://ui/harbor_inventory_skin.gd")
+const WorldStyle=preload("res://ui/whale_skin.gd")
 var game
 var switches: Dictionary={}
 var feedback: Label
@@ -21,42 +21,49 @@ var audition_rows: Array=[]
 var audition_hint: Label
 var _syncing_audio:=false
 func configure(owner_game) -> void:
- game=owner_game;size=Vector2(980,668)
- UiStyle.mascot(self,Vector2(25,18),Vector2(96,96))
- UiStyle.label(self,"鲸鱼的小设置",Vector2(139,27),Vector2(607,48),32)
- UiStyle.label(self,"把鲸落港调成喜欢的样子。",Vector2(141,79),Vector2(597,28),21,UiStyle.MUTED)
- tab_buttons["display"]=game._button("画面",Vector2(139,110),Vector2(150,32),self,func():_set_tab("display"))
- tab_buttons["audio"]=game._button("声音",Vector2(297,110),Vector2(150,32),self,func():_set_tab("audio"))
- tab_buttons["audition"]=game._button("音效试听",Vector2(455,110),Vector2(150,32),self,func():_set_tab("audition"))
- # Compact tabs must not inherit the tall margins used by full-size buttons.
- for button in tab_buttons.values():
-  button.add_theme_font_size_override("font_size",18)
- game._button("Esc 关闭",Vector2(800,31),Vector2(150,50),self,func():game._settings(false))
- var options: Array=[["fullscreen","全屏显示","展开整个鲸落港"],["shadows","柔和阴影","保留建筑与家具的层次"],["effects","光影细节","墙角、物件底部与氛围微光"],["dusk","暮色暖光","让窗口亮起暖色的灯"],["follow","跟随人物","镜头靠近正在漫步的你"],["smooth_camera","柔顺镜头","走动时平缓地跟随"],["day_cycle","昼夜循环","清晨、午后、黄昏与夜晚"]]
+ game=owner_game;size=Vector2(980,668);theme=UiStyle.theme();mouse_filter=Control.MOUSE_FILTER_IGNORE
+ game.settings_panel.theme=theme;game.settings_panel.set_script(null);game.settings_panel.add_theme_stylebox_override("panel",UiStyle.frame("shell"))
+ var background:=UiStyle.surface(game.settings_panel,Color("fcfdff"),Color("edf2ff"),8,24);game.settings_panel.move_child(background,0)
+ WorldStyle.mascot(self,Vector2(26,20),Vector2(78,78))
+ UiStyle.label(self,"鲸鱼的小设置",Vector2(123,20),Vector2(645,42),31)
+ UiStyle.label(self,"把鲸落港调成喜欢的样子。",Vector2(125,66),Vector2(620,27),17,UiStyle.MUTED)
+ var tabs:Array=[["display","画面","grid"],["audio","声音","gal-play"],["audition","音效试听","gal-next"]]
+ for i in tabs.size():
+  var id:String=tabs[i][0]
+  var tab:=UiStyle.button(self,tabs[i][1],Vector2(28+i*154,110),Vector2(144,36),func():_set_tab(id));tab.name="SettingsTab_"+id;tab.add_theme_font_size_override("font_size",17);tab_buttons[id]=tab
+  var glyph:=UiStyle.icon(tab,tabs[i][2],Vector2(14,10),Vector2(16,16));glyph.modulate.a=.7
+ UiStyle.button(self,"Esc 关闭",Vector2(826,27),Vector2(126,44),func():game._settings(false)).name="CloseSettings"
+ var rule:=ColorRect.new();rule.position=Vector2(28,155);rule.size=Vector2(924,1);rule.color=Color("c7d8ef");rule.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(rule)
+ var options:Array=[["fullscreen","全屏显示","展开整个鲸落港"],["shadows","柔和阴影","保留建筑与家具的层次"],["effects","光影细节","墙角、物件底部与氛围微光"],["dusk","暮色暖光","让窗口亮起暖色的灯"],["follow","跟随人物","镜头靠近正在漫步的你"],["smooth_camera","柔顺镜头","走动时平缓地跟随"],["day_cycle","昼夜循环","清晨、午后、黄昏与夜晚"]]
+ var washes:Array[Color]=[Color("eaf3ff"),Color("eaf3ff"),Color("f1edfc"),Color("fff0f6"),Color("e8f7f8"),Color("e8f7f8"),Color("fff5e3")]
  for i in options.size():
-  var option: Array=options[i];var id: String=option[0]
-  var card:=UiStyle.panel(self,Vector2(30+(i%2)*467,144+(i/2)*100),Vector2(453,90),"card")
-  display_cards.append(card)
-  UiStyle.label(card,option[1],Vector2(17,15),Vector2(271,37),25)
-  UiStyle.label(card,option[2],Vector2(18,55),Vector2(415,32),19,UiStyle.MUTED)
-  switches[id]=game._button("",Vector2(320,15),Vector2(113,40),card,func():_toggle(id))
- var time_card:=UiStyle.panel(self,Vector2(497,444),Vector2(453,90),"card")
- UiStyle.label(time_card,"一天的长度",Vector2(17,9),Vector2(260,30),23)
- day_speed=OptionButton.new();day_speed.position=Vector2(17,44);day_speed.size=Vector2(417,35);time_card.add_child(day_speed)
+  var option:Array=options[i];var id:String=option[0]
+  var card:=_card("Display_"+id,Vector2(28+(i%2)*470,170+(i/2)*94),Vector2(454,82),washes[i]);display_cards.append(card)
+  var number:=UiStyle.label(card,"%02d"%[i+1],Vector2(14,17),Vector2(30,23),12,UiStyle.BLUE);number.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+  UiStyle.label(card,option[1],Vector2(56,11),Vector2(266,32),22)
+  UiStyle.label(card,option[2],Vector2(56,49),Vector2(378,24),14,UiStyle.MUTED)
+  switches[id]=UiStyle.button(card,"",Vector2(338,13),Vector2(96,34),func():_toggle(id));switches[id].name="Setting_"+id;switches[id].add_theme_font_size_override("font_size",16)
+ var time_card:=_card("DayLength",Vector2(498,452),Vector2(454,82),Color("fff5e3"));display_cards.append(time_card)
+ UiStyle.label(time_card,"08",Vector2(14,17),Vector2(30,23),12,UiStyle.BLUE)
+ UiStyle.label(time_card,"一天的长度",Vector2(56,11),Vector2(260,28),22)
+ day_speed=OptionButton.new();day_speed.name="DayLengthPicker";day_speed.position=Vector2(56,44);day_speed.size=Vector2(378,29);day_speed.add_theme_font_size_override("font_size",15);time_card.add_child(day_speed)
  for duration in [6,12,24]:day_speed.add_item("现实 %d 分钟"%duration)
- day_speed.item_selected.connect(func(index: int):HarborPrefs.day_minutes=[6.0,12.0,24.0][index];HarborPrefs.save();HarborPrefs.apply_game(game,true))
- display_cards.append(time_card)
- _build_audio_cards()
- _build_audition_cards()
- feedback=UiStyle.label(self,"设置会自动保存，下次打开依然生效。",Vector2(33,553),Vector2(911,36),20,UiStyle.MUTED)
- UiStyle.label(self,"战斗界面使用 MiSans 字体 · Xiaomi",Vector2(33,589),Vector2(911,18),14,UiStyle.MUTED)
- var done: Button=game._button("回到鲸落港   ▸",Vector2(30,610),Vector2(920,42),self,func():game._settings(false))
- PixelFrames.SkyStyle.primary(done)
- # Keep debug controls available to existing engine diagnostics, outside the player UI.
+ day_speed.item_selected.connect(func(index:int):HarborPrefs.day_minutes=[6.0,12.0,24.0][index];HarborPrefs.save();HarborPrefs.apply_game(game,true))
+ _build_audio_cards();_build_audition_cards()
+ UiStyle.icon(self,"check",Vector2(29,578),Vector2(19,19)).self_modulate=UiStyle.MINT
+ feedback=UiStyle.label(self,"设置会自动保存，下次打开依然生效。",Vector2(59,574),Vector2(670,32),15,UiStyle.MUTED)
+ UiStyle.label(self,"潮汐手记  /  PREFERENCES",Vector2(30,625),Vector2(620,19),11,UiStyle.MUTED)
+ UiStyle.button(self,"完成设置   ↗",Vector2(740,609),Vector2(212,42),func():game._settings(false),true).name="DoneSettings"
+ # Keep existing diagnostics attached to the same callbacks.
  game.settings_front_button=Button.new();game.settings_front_button.pressed.connect(func():game._set_actor_front(not game.actor_front));add_child(game.settings_front_button);game.settings_front_button.hide()
  game.settings_foot_button=Button.new();game.settings_foot_button.pressed.connect(func():game.foot_debug.visible=not game.foot_debug.visible);add_child(game.settings_foot_button);game.settings_foot_button.hide()
  game.settings_fx_button=switches.effects;game.settings_light_button=switches.dusk
  refresh()
+
+func _card(id:String,pos:Vector2,dimensions:Vector2,wash:Color)->Panel:
+ var card:=UiStyle.panel(self,pos,dimensions,"card");card.name=id
+ UiStyle.surface(card,Color("fcfdff"),wash,3,11);return card
+
 func refresh() -> void:
  for id in switches:
   var on: bool=HarborPrefs.values[id];var button: Button=switches[id]
@@ -118,7 +125,7 @@ func _refresh_tab() -> void:
     var compact:=button.get_theme_stylebox(state).duplicate()
     compact.content_margin_top=3;compact.content_margin_bottom=3
     button.add_theme_stylebox_override(state,compact)
-   button.size.y=32
+   button.size.y=36
  for card in display_cards:
   if is_instance_valid(card):card.visible=settings_tab=="display"
  for card in audio_cards:
@@ -136,55 +143,25 @@ func _refresh_tab() -> void:
 ## 试听走的是真实的分类音量偏移（见 SfxDirector.CATALOG），
 ## 所以听到的就是游戏里的实际配比，不是把所有音效拉到同一响度。
 func _build_audition_cards() -> void:
- var board:=UiStyle.panel(self,Vector2(30,144),Vector2(920,400))
- audition_cards.append(board)
- UiStyle.label(board,"音效试听",Vector2(16,10),Vector2(150,30),25)
- audition_hint=UiStyle.label(board,"按分类排列 · 点一行听一个 · 音量配比与游戏内一致",Vector2(140,14),Vector2(560,26),17,UiStyle.MUTED)
- var stop_btn: Button=game._button("停止整类试听",Vector2(716,10),Vector2(190,30),board,func():_stop_audition())
- stop_btn.add_theme_font_size_override("font_size",17)
- var scroll:=ScrollContainer.new()
- scroll.position=Vector2(14,44);scroll.size=Vector2(892,344)
- scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
- var list:=VBoxContainer.new()
- list.size_flags_horizontal=Control.SIZE_EXPAND_FILL
- list.add_theme_constant_override("separation",5)
- scroll.add_child(list);board.add_child(scroll)
+ var board:=_card("SoundAudition",Vector2(28,170),Vector2(924,384),Color("f1edfc"));audition_cards.append(board)
+ UiStyle.label(board,"音效试听",Vector2(20,14),Vector2(400,34),24)
+ audition_hint=UiStyle.label(board,"按分类排列 · 点一行听一个 · 音量配比与游戏内一致",Vector2(21,55),Vector2(730,26),14,UiStyle.MUTED)
+ var stop_btn:=UiStyle.button(board,"停止试听",Vector2(738,17),Vector2(166,36),func():_stop_audition());stop_btn.name="StopSoundAudition";stop_btn.add_theme_font_size_override("font_size",16)
+ var scroll:=ScrollContainer.new();scroll.name="AuditionScroll";scroll.position=Vector2(16,91);scroll.size=Vector2(892,277);scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+ var list:=VBoxContainer.new();list.size_flags_horizontal=Control.SIZE_EXPAND_FILL;list.add_theme_constant_override("separation",7);scroll.add_child(list);board.add_child(scroll)
  for entry in SfxDirector.catalog():
-  var head:=HBoxContainer.new()
-  head.custom_minimum_size=Vector2(0,32)
-  head.add_theme_constant_override("separation",10)
-  var title:=Label.new()
-  title.text="%s   %+.1f dB   ·   %d 个" % [str(entry.name),float(entry.gain_db),entry.sounds.size()]
-  title.add_theme_font_size_override("font_size",20)
-  title.add_theme_color_override("font_color",UiStyle.INK)
-  head.add_child(title)
+  var head:=HBoxContainer.new();head.custom_minimum_size=Vector2(0,36);head.add_theme_constant_override("separation",10)
+  var title:=Label.new();title.text="%s  ·  %d 个音效"%[str(entry.name),entry.sounds.size()];title.add_theme_font_size_override("font_size",18);title.add_theme_color_override("font_color",UiStyle.INK);head.add_child(title)
   var spacer:=Control.new();spacer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;head.add_child(spacer)
   var cat_id:=str(entry.id)
-  var all:=Button.new()
-  all.text="整类试听"
-  all.custom_minimum_size=Vector2(112,28)
-  all.add_theme_font_size_override("font_size",17)
-  UiStyle.card_button(all,false)
-  all.pressed.connect(func():_audition_category(cat_id))
-  head.add_child(all)
-  list.add_child(head)
+  var all:=UiStyle.button(head,"整类试听",Vector2.ZERO,Vector2(112,30),func():_audition_category(cat_id));all.custom_minimum_size=Vector2(112,30);all.add_theme_font_size_override("font_size",15);list.add_child(head)
   for row in entry.sounds:
    var id:=str(row.id)
-   var card:=Button.new()
-   card.custom_minimum_size=Vector2(840,38)
-   card.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
-   card.add_theme_stylebox_override("normal",UiStyle.frame("dialogue"))
-   var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=UiStyle.BLUE
-   focus.set_border_width_all(2);focus.set_corner_radius_all(9);focus.set_expand_margin_all(2)
-   card.add_theme_stylebox_override("focus",focus)
-   card.pressed.connect(func():_audition_one(id))
-   list.add_child(card)
-   # 「正在响」标记固定建一次，之后只改文字 —— 靠名字查找会因为 Godot 清理非法字符而失败
-   var mark:=UiStyle.label(card,"",Vector2(10,7),Vector2(24,24),18)
-   UiStyle.label(card,str(row.name),Vector2(38,7),Vector2(180,24),19)
-   UiStyle.label(card,str(row.use),Vector2(228,8),Vector2(510,24),17,UiStyle.MUTED)
-   var length_label:=UiStyle.label(card,SfxDirector.duration_text(id),Vector2(748,8),Vector2(82,24),17,UiStyle.MUTED)
-   length_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
+   var card:=UiStyle.button(list,"",Vector2.ZERO,Vector2(840,42),func():_audition_one(id));card.name="Audition_"+id;card.custom_minimum_size=Vector2(840,42)
+   var mark:=UiStyle.label(card,"",Vector2(12,9),Vector2(24,24),17,UiStyle.MINT)
+   UiStyle.label(card,str(row.name),Vector2(48,9),Vector2(190,26),17)
+   UiStyle.label(card,str(row.use),Vector2(248,10),Vector2(500,24),14,UiStyle.MUTED)
+   var duration:=UiStyle.label(card,SfxDirector.duration_text(id),Vector2(766,10),Vector2(72,24),14,UiStyle.MUTED);duration.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
    audition_rows.append({"id":id,"mark":mark})
 
 func _audition_one(id: String) -> void:
@@ -212,51 +189,27 @@ func _stop_audition() -> void:
 ## 「声音」页：沿用画面开关的卡片外观。背景音乐与音效各一组「开关 + 音量」，
 ## 第三张是配乐风格选择。
 func _build_audio_cards() -> void:
- var music_card:=UiStyle.panel(self,Vector2(30,144),Vector2(453,90),"card")
- UiStyle.label(music_card,"背景音乐",Vector2(17,15),Vector2(200,37),25)
- UiStyle.label(music_card,"关闭后彻底静音，鉴赏页也不出声",Vector2(18,55),Vector2(296,32),17,UiStyle.MUTED)
- music_switch=game._button("",Vector2(320,15),Vector2(113,40),music_card,func():_toggle_music())
- audio_cards.append(music_card)
-
- var volume_card:=UiStyle.panel(self,Vector2(497,144),Vector2(453,90),"card")
- UiStyle.label(volume_card,"音乐音量",Vector2(17,10),Vector2(200,30),25)
- volume_slider=HSlider.new();volume_slider.position=Vector2(17,52);volume_slider.size=Vector2(310,26)
- volume_slider.min_value=0.0;volume_slider.max_value=100.0;volume_slider.step=5.0
- volume_slider.value_changed.connect(_set_music_volume)
- UiStyle.style_slider(volume_slider)
- volume_card.add_child(volume_slider)
- volume_value=UiStyle.label(volume_card,"",Vector2(337,48),Vector2(97,32),22,UiStyle.INK)
- volume_value.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
- volume_value.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
- audio_cards.append(volume_card)
-
- var style_card:=UiStyle.panel(self,Vector2(30,244),Vector2(453,90),"card")
- UiStyle.label(style_card,"配乐风格",Vector2(17,10),Vector2(260,30),25)
- style_picker=OptionButton.new();style_picker.position=Vector2(17,46);style_picker.size=Vector2(417,34)
+ var music_card:=_card("MusicSettings",Vector2(28,170),Vector2(924,138),Color("e7f5fa"));audio_cards.append(music_card)
+ UiStyle.icon(music_card,"gal-play",Vector2(20,21),Vector2(27,27))
+ UiStyle.label(music_card,"背景音乐",Vector2(63,13),Vector2(600,37),24)
+ UiStyle.label(music_card,"关闭后彻底静音，鉴赏页也不出声",Vector2(64,53),Vector2(660,27),15,UiStyle.MUTED)
+ music_switch=UiStyle.button(music_card,"",Vector2(790,18),Vector2(110,37),func():_toggle_music());music_switch.name="MusicEnabled";music_switch.add_theme_font_size_override("font_size",17)
+ volume_slider=HSlider.new();volume_slider.name="MusicVolume";volume_slider.position=Vector2(64,93);volume_slider.size=Vector2(650,25);volume_slider.min_value=0;volume_slider.max_value=100;volume_slider.step=5;volume_slider.value_changed.connect(_set_music_volume);WorldStyle.style_slider(volume_slider,UiStyle.MINT);music_card.add_child(volume_slider)
+ volume_value=UiStyle.label(music_card,"",Vector2(778,82),Vector2(122,38),24);volume_value.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;volume_value.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ var sfx_card:=_card("SfxSettings",Vector2(28,322),Vector2(924,138),Color("f1edfc"));audio_cards.append(sfx_card)
+ UiStyle.icon(sfx_card,"bolt",Vector2(20,21),Vector2(27,27)).self_modulate=Color("a18acb")
+ UiStyle.label(sfx_card,"游戏音效",Vector2(63,13),Vector2(600,37),24)
+ UiStyle.label(sfx_card,"按钮、战斗、拾取与对白反馈",Vector2(64,53),Vector2(660,27),15,UiStyle.MUTED)
+ sfx_switch=UiStyle.button(sfx_card,"",Vector2(790,18),Vector2(110,37),func():_toggle_sfx());sfx_switch.name="SfxEnabled";sfx_switch.add_theme_font_size_override("font_size",17)
+ sfx_slider=HSlider.new();sfx_slider.name="SfxVolume";sfx_slider.position=Vector2(64,93);sfx_slider.size=Vector2(650,25);sfx_slider.min_value=0;sfx_slider.max_value=100;sfx_slider.step=5;sfx_slider.value_changed.connect(_set_sfx_volume);sfx_slider.drag_ended.connect(func(_changed:bool):SfxDirector.play("ui_confirm",-3.0));WorldStyle.style_slider(sfx_slider,Color("ab94d0"));sfx_card.add_child(sfx_slider)
+ sfx_value=UiStyle.label(sfx_card,"",Vector2(778,82),Vector2(122,38),24);sfx_value.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;sfx_value.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ var style_card:=_card("MusicStyle",Vector2(28,474),Vector2(924,80),Color("fff5e7"));audio_cards.append(style_card)
+ UiStyle.icon(style_card,"gal-letter",Vector2(20,24),Vector2(28,28)).self_modulate=UiStyle.GOLD
+ UiStyle.label(style_card,"配乐风格",Vector2(64,10),Vector2(178,32),21)
+ UiStyle.label(style_card,"按场景自动选曲",Vector2(65,46),Vector2(176,22),13,UiStyle.MUTED)
+ style_picker=OptionButton.new();style_picker.name="MusicStylePicker";style_picker.position=Vector2(250,20);style_picker.size=Vector2(650,40);style_picker.add_theme_font_size_override("font_size",17)
  for key in MusicDirector.style_keys():style_picker.add_item(MusicDirector.style_display_name(str(key)))
- style_picker.item_selected.connect(_pick_style)
- style_card.add_child(style_picker)
- audio_cards.append(style_card)
-
- var sfx_card:=UiStyle.panel(self,Vector2(30,344),Vector2(453,90),"card")
- UiStyle.label(sfx_card,"音效",Vector2(17,15),Vector2(200,37),25)
- UiStyle.label(sfx_card,"按钮、战斗与拾取",Vector2(18,55),Vector2(296,32),17,UiStyle.MUTED)
- sfx_switch=game._button("",Vector2(320,15),Vector2(113,40),sfx_card,func():_toggle_sfx())
- audio_cards.append(sfx_card)
-
- var sfx_volume_card:=UiStyle.panel(self,Vector2(497,344),Vector2(453,90),"card")
- UiStyle.label(sfx_volume_card,"音效音量",Vector2(17,10),Vector2(200,30),25)
- sfx_slider=HSlider.new();sfx_slider.position=Vector2(17,52);sfx_slider.size=Vector2(310,26)
- sfx_slider.min_value=0.0;sfx_slider.max_value=100.0;sfx_slider.step=5.0
- sfx_slider.value_changed.connect(_set_sfx_volume)
- # 松手时给一声试听：拖动过程中连续响会像盖革计数器，一下一下反而听不出音量
- sfx_slider.drag_ended.connect(func(_changed: bool):SfxDirector.play("ui_confirm",-3.0))
- UiStyle.style_slider(sfx_slider)
- sfx_volume_card.add_child(sfx_slider)
- sfx_value=UiStyle.label(sfx_volume_card,"",Vector2(337,48),Vector2(97,32),22,UiStyle.INK)
- sfx_value.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
- sfx_value.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
- audio_cards.append(sfx_volume_card)
+ style_picker.item_selected.connect(_pick_style);style_card.add_child(style_picker)
 
 func _toggle_music() -> void:
  MusicDirector.set_enabled(not MusicDirector.music_enabled())

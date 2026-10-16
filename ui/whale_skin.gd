@@ -51,30 +51,32 @@ static var _grabber_tex: Texture2D
 ## Native slider handle; no external icon asset.
 static func _grabber() -> Texture2D:
  if _grabber_tex != null:return _grabber_tex
- var side:=18
+ var side:=22
  var img:=Image.create(side,side,false,Image.FORMAT_RGBA8)
  img.fill(Color(0,0,0,0))
  for y in side:
   for x in side:
-   var dx:=float(x)-side/2.0+0.5;var dy:=float(y)-side/2.0+0.5
+   var dx:=float(x)-side/2.0+0.5;var dy:=float(y)-side/2.0+1.5
    var distance:=sqrt(dx*dx+dy*dy)
-   if distance<=side/2.0-1.5:img.set_pixel(x,y,GOLD)
-   elif distance<=side/2.0-0.5:img.set_pixel(x,y,Color("ffffff"))
+   if distance<=9.5:
+    var color:=Color.WHITE if distance<7.5 else Color("638eff");color.a=clampf(9.5-distance,0,1);img.set_pixel(x,y,color)
+   elif Vector2(dx,dy-2).length()<9:img.set_pixel(x,y,Color("8ca9d890"))
  _grabber_tex=ImageTexture.create_from_image(img)
  return _grabber_tex
 
 ## Shared blue slider for title and in-game settings.
-static func style_slider(bar: HSlider) -> void:
- var track:=StyleBoxFlat.new();track.bg_color=Color("d7d0df");track.border_color=INK
- track.set_border_width_all(1);track.set_corner_radius_all(7)
- track.content_margin_top=7;track.content_margin_bottom=7
- var filled:=StyleBoxFlat.new();filled.bg_color=SkyStyle.MINT;filled.set_corner_radius_all(7)
- filled.content_margin_top=7;filled.content_margin_bottom=7
+static func style_slider(bar: HSlider,accent: Color=SkyStyle.MINT) -> void:
+ var track:=StyleBoxFlat.new();track.bg_color=Color("dbe6f6");track.set_corner_radius_all(4)
+ track.content_margin_top=4;track.content_margin_bottom=4
+ var filled:=StyleBoxFlat.new();filled.bg_color=accent;filled.set_corner_radius_all(4)
+ filled.content_margin_top=4;filled.content_margin_bottom=4
  bar.add_theme_stylebox_override("slider",track)
  bar.add_theme_stylebox_override("grabber_area",filled)
  bar.add_theme_stylebox_override("grabber_area_highlight",filled)
  bar.add_theme_icon_override("grabber",_grabber())
  bar.add_theme_icon_override("grabber_highlight",_grabber())
+ var muted:=track.duplicate();muted.bg_color=Color("d4deed");bar.add_theme_stylebox_override("grabber_area_disabled",muted)
+ var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=Color("638eff");focus.set_border_width_all(2);focus.set_corner_radius_all(6);bar.add_theme_stylebox_override("focus",focus)
 
 static func pulse(node: Control) -> void:
  node.pivot_offset=node.size/2

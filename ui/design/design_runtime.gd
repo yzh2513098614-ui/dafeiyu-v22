@@ -30,7 +30,7 @@ func contexts()->Array:
    if game.get("district_canvas")!=null:result.append(context("world_navigation",game.district_canvas,"世界 · 地点与导览入口"))
    if is_instance_valid(loot.canvas):result.append(context("world_loot_prompt",loot.canvas,"世界 · 背包入口与宝箱提示"))
    if is_instance_valid(loot.modal) and loot.mode!="":result.append(context("inventory_"+{"inventory":"bag_sticker","loot":"chest_sticker","note":"note"}.get(loot.mode,loot.mode),loot.modal,"背包 · "+loot.mode))
-   if is_instance_valid(game.settings_view):result.append(context("settings_"+str(game.settings_view.settings_tab),game.settings_panel,"设置 · "+str(game.settings_view.settings_tab)))
+   if is_instance_valid(game.settings_view):result.append(context("settings_"+str(game.settings_view.settings_tab)+"_sticker",game.settings_panel,"设置 · "+str(game.settings_view.settings_tab)))
    if game.pause_menu and is_instance_valid(game.pause_menu.root):result.append(context("pause_"+str(game.pause_menu.page),game.pause_menu.root,"暂停 · "+str(game.pause_menu.page)))
    if game.dialogue_controller and is_instance_valid(game.dialogue_controller.root):
     var dialogue=game.dialogue_controller

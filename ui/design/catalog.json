@@ -91,25 +91,25 @@
   "title": "漂流便签"
  },
  {
-  "controls": 217,
+  "controls": 243,
   "error": 0.0,
-  "id": "settings_display",
-  "scene": "res://ui/design/pages/settings_display.tscn",
-  "title": "画面设置"
+  "id": "settings_display_sticker",
+  "scene": "res://ui/design/pages/settings_display_sticker.tscn",
+  "title": "设置 · 蓝白画面"
  },
  {
-  "controls": 217,
+  "controls": 243,
   "error": 0.0,
-  "id": "settings_audio",
-  "scene": "res://ui/design/pages/settings_audio.tscn",
-  "title": "声音设置"
+  "id": "settings_audio_sticker",
+  "scene": "res://ui/design/pages/settings_audio_sticker.tscn",
+  "title": "设置 · 音乐与音效"
  },
  {
-  "controls": 217,
+  "controls": 243,
   "error": 0.0,
-  "id": "settings_audition",
-  "scene": "res://ui/design/pages/settings_audition.tscn",
-  "title": "音效试听"
+  "id": "settings_audition_sticker",
+  "scene": "res://ui/design/pages/settings_audition_sticker.tscn",
+  "title": "设置 · 音效试听"
  },
  {
   "controls": 19,
