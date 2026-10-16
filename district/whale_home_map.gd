@@ -898,7 +898,6 @@ func _dock(parent: Node3D, sea: Node3D) -> void:
 	var sign: Node3D=_furniture(parent,"WhaleHomeWelcomeSign",Vector3(-8.7,0,18.2))
 	for x in [-1.42,1.42]:_box(sign,Vector3(.14,1.7,.14),Vector3(x,.85,0),WOOD,1,.02)
 	_box(sign,Vector3(3.85,.95,.18),Vector3(0,1.10,0),WOOD,1,.07)
-	var label:=Label3D.new();label.text="大肥鱼之家";label.font=game._game_font();label.font_size=64;label.pixel_size=.009;label.position=Vector3(0,1.12,.11);label.modulate=WHITE;label.outline_size=0;sign.add_child(label)
 	_whale(sign,Vector3(-.95,1.50,0),.35,0)
 	_coll(sign,Vector3(3.9,1.5,.30),Vector3(0,.75,0))
 	_action("mail","welcome_letter","家门口的漂流信",Vector3(-8.7,0,19.1),0)

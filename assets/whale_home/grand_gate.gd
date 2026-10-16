@@ -52,7 +52,7 @@ static func build(b) -> void:
 		b._box(upper,Vector3(opening,header_height,.26),Vector3(gate.position.x,height+header_height*.5,0),CREAM)
 		b._coll(wall,Vector3(opening,header_height,.28),Vector3(gate.position.x,height+header_height*.5,0))
 		if gate==door:_surround(b,wall,upper,gate.position.x)
-		else:_regular_frame(b,wall,upper,gate.position.x,gate.display_name)
+		else:_regular_frame(b,wall,upper,gate.position.x)
 		start=gate.position.x+opening*.5
 	_wall_span(b,wall,upper,start,float(wall.get_meta("wall_length"))*.5)
 	b._batch(upper,false)
@@ -73,13 +73,12 @@ static func _wall_span(b,wall: Node3D,upper: Node3D,start: float,end: float) -> 
 	b._box(upper,Vector3(width,.12,.34),Vector3(x,3.9,0),b.WOOD,1)
 	b._coll(wall,Vector3(width,3.9,.26),Vector3(x,1.95,0))
 
-static func _regular_frame(b,wall: Node3D,upper: Node3D,x: float,title: String) -> void:
+static func _regular_frame(b,wall: Node3D,upper: Node3D,x: float) -> void:
 	for side in [-1.0,1.0]:
 		b._box(wall,Vector3(.12,3.02,.34),Vector3(x+side*1.74,1.51,0),b.TEAL)
 		b._coll(wall,Vector3(.12,3.02,.34),Vector3(x+side*1.74,1.51,0))
 	b._box(upper,Vector3(3.6,.12,.36),Vector3(x,2.96,0),b.TEAL)
 	b._box(upper,Vector3(3.5,.5,.30),Vector3(x,3.32,0),b.MINT)
-	for face in [-1.0,1.0]:_label(b,upper,title,Vector3(x,3.32,face*.16),face,.007)
 
 static func _surround(b,wall: Node3D,upper: Node3D,x: float) -> void:
 	var low: Node3D=b._group(wall,"GrandGateStoneBases",Vector3(x,0,0))
@@ -122,7 +121,6 @@ static func _surround(b,wall: Node3D,upper: Node3D,x: float) -> void:
 		b._box(high,Vector3(.10,.13,1.46),Vector3(side*4.5,4.62,.28),b.TEAL,0,.022)
 		for dx in [-2.75,-1.55,1.55,2.75]:
 			Geo.rod(high,Vector3(dx,4.02,side*.16),Vector3(dx,4.24,side*.55),.045,CREAM)
-		_label(b,high,"大肥鱼之家" if side>0 else "海风前庭",Vector3(0,4.26,side*.855),side,.0085)
 		for dx in [-2.65,-1.78,1.78,2.65]:_wave(b,high,Vector3(dx,4.22,side*.838),.62,.05,side,BRASS)
 	_crest(b,high,Vector3(0,4.70,1.04))
 

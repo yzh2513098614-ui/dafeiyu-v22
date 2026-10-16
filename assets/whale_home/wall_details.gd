@@ -55,10 +55,11 @@ static func _partition(b, wall: Node3D) -> void:
 		if not door.get_meta("home_custom_frame",false):_door_frame(b, lower_trim, upper_trim, door.position.x)
 		start = door.position.x+opening*.5
 	_span(b, lower_trim, upper_trim, start, length*.5)
-	# Header boards and room names should disappear with the wall above them.
+	# Room names stay in interaction/UI data, never on model surfaces.
 	for child: Node in wall.get_children():
 		if child is Label3D:
-			child.reparent(upper_trim)
+			wall.remove_child(child)
+			child.queue_free()
 		elif child is MeshInstance3D:
 			var bounds: AABB = child.get_aabb()
 			if child.position.y+bounds.position.y >= DOOR_HEIGHT-.001:
