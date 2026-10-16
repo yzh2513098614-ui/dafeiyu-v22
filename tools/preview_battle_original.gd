@@ -15,6 +15,7 @@ func _ready() -> void:
 	get_node("/root/HarborPrefs").values.fullscreen = false
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_window().size = Vector2i(1280, 720)
+	get_window().title = "战斗界面 · 分层与渐变"
 	var verify := "--verify-original-battle" in OS.get_cmdline_user_args()
 	if verify:
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
@@ -65,7 +66,19 @@ func verify_inputs() -> void:
 	await settle()
 	var title_style: StyleBoxFlat = screen.title_plate.get_theme_stylebox("panel")
 	var player_style: StyleBoxFlat = screen.dash.dock.get_theme_stylebox("panel")
-	check(title_style.border_color == Color.WHITE and player_style.bg_color.is_equal_approx(Color("eff5ff")), "production screen receives the native design page")
+	check(title_style.border_color == Color.WHITE and player_style.bg_color.is_equal_approx(Color("dceaff")) and get_node("/root/UiDesign").applied_count > 0, "production screen receives the native design page")
+	var field: Panel = screen.root.get_node("BattlefieldFrame")
+	var hand_frame: Panel = screen.root.get_node("HandAreaFrame")
+	check(field.get_script().resource_path == "res://battle/layered_panel.gd" and field.z_index < screen.enemy_layer.z_index, "gradient battlefield frame stays behind clickable portraits")
+	check(hand_frame.get_global_rect().encloses(screen.card_scroll.get_global_rect()), "hand scroll fits within the new outer frame")
+	var actions_frame: Panel = hand_frame.get_node("ActionFrame")
+	var actions: Array = [screen.card_panel.get_node("CardTargetButton"), screen.card_item_button, screen.card_link_button, screen.card_end_button]
+	var fit := true
+	for i in actions.size():
+		fit = fit and actions_frame.get_global_rect().encloses(actions[i].get_global_rect())
+		if i > 0:
+			fit = fit and not actions[i].get_global_rect().intersects(actions[i - 1].get_global_rect())
+	check(fit, "all action buttons fit their inner frame without overlap")
 	check(screen.dash.dock.position.x < screen.slots[0].art.position.x and screen.card_panel.position.y > screen.slots[0].bar_back.get_rect().end.y, "original player / portrait / hand layout retained")
 	var rng_before: int = engine.rng.state
 	await click(screen.slots[1].hit)

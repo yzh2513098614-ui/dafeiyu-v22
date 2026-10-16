@@ -32,6 +32,8 @@ const AttackFx = preload("res://battle/attack_fx.gd")
 const PixelFrames = preload("res://dialogue/pixel_skin.gd")
 const UiFit = preload("res://ui/ui_fit.gd")
 const Guide = preload("res://battle/battle_guide.gd")
+const LayeredPanel = preload("res://battle/layered_panel.gd")
+const LayeredButton = preload("res://battle/layered_button.gd")
 const BACKGROUND_PATH = "res://assets/battle/harbor_plaza_pixel_v1.png"
 
 const MAX_FOES := 3
@@ -1223,15 +1225,15 @@ func _card_overlay(panel: Panel, background: Color, radius: int = 16) -> void:
 	panel.add_theme_stylebox_override("panel", style)
 
 func _hud_frame(panel: Panel, background: Color, radius: int = 24, inner: bool = false) -> void:
-	panel.set_script(null)
+	panel.set_script(LayeredPanel)
 	var style := StyleBoxFlat.new()
 	style.bg_color = background
-	style.border_color = Color("ceddf1") if inner else Color.WHITE
-	style.set_border_width_all(1 if inner else 4)
+	style.border_color = Color.WHITE
+	style.set_border_width_all(2 if inner else 4)
 	style.set_corner_radius_all(radius)
-	style.shadow_color = Color("8eaddb")
+	style.shadow_color = Color("638eff", 0.65 if inner else 0.9)
 	style.shadow_size = 0
-	style.shadow_offset = Vector2.ZERO if inner else Vector2(2, 5)
+	style.shadow_offset = Vector2(1, 2) if inner else Vector2(3, 5)
 	panel.add_theme_stylebox_override("panel", style)
 
 func _hud_text(label: Label, font_size: int) -> void:
@@ -1241,24 +1243,26 @@ func _hud_text(label: Label, font_size: int) -> void:
 
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
-	_hud_frame(dash.dock, Color("eff5ff"))
-	_hud_frame(dash.portrait_frame, Color("dceeff"), 18, true)
-	_hud_frame(title_plate, Color("f7fbff"), 14)
-	_hud_frame(phase_plate, Color("d9f5ed"), 14)
-	_hud_frame(log_box, Color("f3f8ff", 0.94), 10, true)
+	_hud_frame(dash.dock, Color("dceaff"))
+	_hud_frame(dash.portrait_frame, Color("c5e5fa"), 20, true)
+	_hud_frame(title_plate, Color("cedfff"), 18)
+	_hud_frame(phase_plate, Color("ade4e7"), 18)
+	_hud_frame(log_box, Color("e4edff"), 18)
 	_hud_frame(card_panel.get_node("CardEnergyBadge"), Color("4d77c5"), 52)
 	var resources := Panel.new()
 	resources.name = "EnergyResourcesFrame"
 	resources.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	card_panel.add_child(resources)
 	card_panel.move_child(resources, 0)
-	_hud_frame(resources, Color("eff5ff"), 20)
+	_hud_frame(resources, Color("d8e5ff"), 18, true)
 	var counts_frame := Panel.new()
 	counts_frame.name = "DeckCountsFrame"
 	counts_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	resources.add_child(counts_frame)
-	_hud_frame(counts_frame, Color("e1ecfa"), 12, true)
-	log_box.get_node("LogCaption").hide()
+	_hud_frame(counts_frame, Color("edf3ff"), 12, true)
+	var log_caption: Panel = log_box.get_node("LogCaption")
+	_hud_frame(log_caption, Color("cbdfff"), 12, true)
+	log_caption.show()
 	tactics_box.hide()
 	_hud_text(dash.name, 24)
 	_hud_text(phase_label, 20)
@@ -1270,23 +1274,47 @@ func _style_card_battle() -> void:
 	for gauge in dash.gauges:
 		var tile: Panel = gauge.group.get_node("StatusTile")
 		tile.show()
-		_hud_frame(tile, Color("e6effb"), 12, true)
-		_hud_text(gauge.title, 20)
-		_hud_text(gauge.value, 20)
-	_hud_frame(dash.block_badge.panel, Color("e1ecfa"), 12, true)
+		_hud_frame(tile, Color("f7fbff"), 14, true)
+		_hud_text(gauge.title, 18)
+		_hud_text(gauge.value, 19)
+	_hud_frame(dash.block_badge.panel, Color("cbdfff"), 12, true)
 	for slot in slots:
 		_hud_frame(slot.plate, Color("f4f9ff"), 12)
 		_hud_text(slot.name, 20)
 		_hud_text(slot.hp, 16)
+	backdrop.z_index = -3
+	root.get_child(1).z_index = -2
+	var battlefield := Panel.new()
+	battlefield.name = "BattlefieldFrame"
+	battlefield.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	battlefield.z_index = -1
+	root.add_child(battlefield)
+	_hud_frame(battlefield, Color("c3dcff", 0.14), 28)
+	var hand_frame := Panel.new()
+	hand_frame.name = "HandAreaFrame"
+	hand_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hand_frame.z_index = -1
+	root.add_child(hand_frame)
+	_hud_frame(hand_frame, Color("c7d9fb", 0.96), 24)
+	var action_frame := Panel.new()
+	action_frame.name = "ActionFrame"
+	action_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	hand_frame.add_child(action_frame)
+	_hud_frame(action_frame, Color("d4e3ff"), 18, true)
+	var caption := WhaleStyle.label(card_panel, "手牌", Vector2.ZERO, Vector2(100, 24), 17, Color("416ca9"))
+	caption.name = "HandCaption"
+	var actions_caption := WhaleStyle.label(card_panel, "回合行动", Vector2.ZERO, Vector2(168, 24), 17, Color("416ca9"))
+	actions_caption.name = "ActionsCaption"
 
 func _style_card_action(button: Button, primary: bool = false) -> void:
+	button.set_script(LayeredButton)
 	for state in ["normal", "hover", "pressed", "hover_pressed", "disabled", "focus"]:
 		var box := StyleBoxFlat.new()
-		box.bg_color = Color("d6f3eb") if primary else Color("f7fbff")
+		box.bg_color = Color("99d8e1") if primary else Color("f7fbff")
 		box.border_color = Color.WHITE
 		box.set_border_width_all(3)
 		box.set_corner_radius_all(14)
-		box.shadow_color = Color("75bcb5") if primary else Color("8eaddb")
+		box.shadow_color = Color("459bb8") if primary else Color("638eff")
 		box.shadow_offset = Vector2(1, 4)
 		box.content_margin_left = 10
 		box.content_margin_right = 10
@@ -1304,57 +1332,66 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 			box.shadow_color = Color("b2c1d6")
 		button.add_theme_stylebox_override(state, box)
 	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		button.add_theme_color_override(state, Color("285e70") if primary else Color("315ca4"))
+		button.add_theme_color_override(state, Color("1d537c") if primary else Color("315ca4"))
 	button.add_theme_color_override("font_disabled_color", Color("7c8da4"))
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock
-	UiFit.pin_left(dock, 360, 40, 252, 560)
+	UiFit.pin_left(dock, 312, 28, 246, 520)
 	dash.portrait_frame.position = Vector2(16, 16)
-	dash.portrait_frame.size = Vector2(328, 248)
-	dash.portrait.position = Vector2(42, 2)
-	dash.portrait.size = Vector2(244, 244)
-	dash.name.position = Vector2(16, 276)
-	dash.name.size = Vector2(328, 34)
+	dash.portrait_frame.size = Vector2(280, 200)
+	dash.portrait.position = Vector2(50, 4)
+	dash.portrait.size = Vector2(180, 188)
+	dash.name.position = Vector2(16, 226)
+	dash.name.size = Vector2(280, 34)
 	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(16, 320)
-	dash.status_icons.position = Vector2(202, 326)
+	dash.block_badge.panel.position = Vector2(16, 276)
+	dash.status_icons.position = Vector2(190, 282)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
 		icon.position = Vector2(i * 28, 0)
 		icon.size = Vector2(24, 24)
 	for i in dash.gauges.size():
 		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.position = Vector2(16, 370 + i * 54)
-		gauge.group.size = Vector2(328, 48)
+		gauge.group.position = Vector2(20, 336 + i * 56)
+		gauge.group.size = Vector2(272, 48)
 		var tile: Panel = gauge.group.get_node("StatusTile")
 		tile.position = Vector2(-6, -4)
-		tile.size = Vector2(340, 54)
+		tile.size = Vector2(284, 54)
 		gauge.icon.position = Vector2(0, 0)
 		gauge.icon.size = Vector2(24, 24)
 		gauge.title.position = Vector2(32, -2)
 		gauge.title.size = Vector2(76, 28)
-		gauge.value.position = Vector2(116, -2)
-		gauge.value.size = Vector2(212, 28)
+		gauge.value.position = Vector2(100, -2)
+		gauge.value.size = Vector2(172, 28)
 		gauge.back.position = Vector2(0, 30)
-		gauge.back.size = Vector2(328, 16)
+		gauge.back.size = Vector2(272, 14)
 
 func _layout_card_hand() -> void:
 	if card_panel == null:
 		return
-	UiFit.pin_wide(card_panel, 24, 24, 822, 244)
+	UiFit.pin_wide(card_panel, 24, 24, 786, 280)
 	var w := card_panel.size.x
+	UiFit.pin_wide(root.get_node("BattlefieldFrame"), 362, 24, 94, 678)
+	var hand_frame: Panel = root.get_node("HandAreaFrame")
+	UiFit.pin_wide(hand_frame, 24, 24, 786, 280)
+	var action_frame: Panel = hand_frame.get_node("ActionFrame")
+	action_frame.position = Vector2(w - 218, 12)
+	action_frame.size = Vector2(204, 256)
 	var resources: Panel = card_panel.get_node("EnergyResourcesFrame")
-	resources.position = Vector2(4, 8)
-	resources.size = Vector2(148, 224)
+	resources.position = Vector2(12, 12)
+	resources.size = Vector2(138, 256)
 	var counts_frame: Panel = resources.get_node("DeckCountsFrame")
-	counts_frame.position = Vector2(10, 152)
-	counts_frame.size = Vector2(128, 62)
-	card_scroll.position = Vector2(180, 12)
-	card_scroll.size = Vector2(w - 400, 230)
+	counts_frame.position = Vector2(8, 174)
+	counts_frame.size = Vector2(122, 66)
+	card_scroll.position = Vector2(164, 32)
+	card_scroll.size = Vector2(w - 398, 244)
+	card_row.add_theme_constant_override("separation", 16)
+	card_panel.get_node("HandCaption").position = Vector2(178, 6)
+	card_panel.get_node("ActionsCaption").position = Vector2(w - 196, 16)
 	var energy_badge: Panel = card_panel.get_node("CardEnergyBadge")
-	energy_badge.position = Vector2(26, 34)
+	energy_badge.position = Vector2(29, 44)
 	energy_badge.size = Vector2(104, 104)
 	var energy_icon: TextureRect = energy_badge.get_node("CardEnergyIcon")
 	energy_icon.position = Vector2(40, 10)
@@ -1365,40 +1402,44 @@ func _layout_card_hand() -> void:
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	caption.add_theme_font_size_override("font_size", 16)
 	caption.add_theme_color_override("font_color", Color("eaf1ff"))
-	card_energy_label.position = Vector2(26, 67)
+	card_energy_label.position = Vector2(29, 77)
 	card_energy_label.size = Vector2(104, 40)
 	card_energy_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	card_energy_label.add_theme_font_size_override("font_size", 30)
 	card_energy_label.add_theme_color_override("font_color", Color("ffe071"))
-	card_counts.position = Vector2(14, 164)
-	card_counts.size = Vector2(128, 54)
+	card_counts.position = Vector2(20, 192)
+	card_counts.size = Vector2(122, 54)
 	card_counts.autowrap_mode = TextServer.AUTOWRAP_OFF
 	card_counts.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var action_x := w - 196
+	var action_x := w - 206
 	var target_button: Button = card_panel.get_node("CardTargetButton")
 	var actions: Array = [target_button, card_item_button, card_link_button, card_end_button]
 	for i in actions.size():
-		actions[i].position = Vector2(action_x, i * 58)
-		actions[i].custom_minimum_size = Vector2(184, 48)
-		actions[i].size = Vector2(184, 48)
+		actions[i].position = Vector2(action_x, 48 + i * 50 + (10 if i == 3 else 0))
+		actions[i].custom_minimum_size = Vector2.ZERO
+		actions[i].size = Vector2(180, 42 if i < 3 else 54)
+		actions[i].custom_minimum_size = actions[i].size
 		actions[i].add_theme_font_size_override("font_size", 19)
 	card_panel.get_node("CardPlayHint").hide()
 	card_preview.position = Vector2(root.size.x - 294, 120)
-	UiFit.pin_left(title_plate, 420, 24, 24, 46)
+	UiFit.pin_left(title_plate, 420, 24, 24, 54)
 	title_label.position = Vector2(14, 8)
 	title_label.size = Vector2(268, 32)
 	title_label.add_theme_font_size_override("font_size", 22)
 	round_label.position = Vector2(284, 8)
 	round_label.size = Vector2(122, 30)
-	UiFit.pin_center(phase_plate, 320, 24, 44)
+	UiFit.pin_center(phase_plate, 320, 24, 50)
 	phase_label.position = Vector2(12, 6)
 	phase_label.size = Vector2(296, 32)
 	UiFit.pin_right(speed_button, 150, 24, 24, 44)
-	UiFit.pin_left(log_box, 420, 24, 90, 38)
-	log_text.position = Vector2(12, 7)
-	log_text.size = Vector2(396, 26)
+	UiFit.pin_left(log_box, 312, 28, 104, 118)
+	var log_caption: Panel = log_box.get_node("LogCaption")
+	log_caption.position = Vector2(14, 10)
+	log_caption.size = Vector2(86, 28)
+	log_text.position = Vector2(18, 46)
+	log_text.size = Vector2(276, 62)
 	log_text.add_theme_font_size_override("normal_font_size", 17)
-	log_text.autowrap_mode = TextServer.AUTOWRAP_OFF
+	log_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	log_text.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _backdrop_texture() -> Texture2D:
@@ -1623,7 +1664,7 @@ func _refresh_cards() -> void:
 	for entry in engine.card_hand_view():
 		var index := int(entry.index)
 		var button = load("res://battle/card_face.gd").new()
-		button.configure(entry, Vector2(172, 216))
+		button.configure(entry, Vector2(182, 232))
 		button.focus_mode = Control.FOCUS_ALL
 		button.disabled = not bool(entry.ready) or mode != "command"
 		button.mouse_entered.connect(func():_preview_card(entry))

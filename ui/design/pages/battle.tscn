@@ -39,6 +39,8 @@
 
 [ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="font_design_preview"]
 
+[ext_resource type="Script" path="res://battle/layered_panel.gd" id="layered_panel"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3fja"]
 resource_name = "disabled"
 content_margin_left = 12.0
@@ -3334,6 +3336,132 @@ corner_radius_bottom_left = 12
 shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
 shadow_offset = Vector2(0, 0)
 
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Title"]
+bg_color = Color(0.8078431, 0.8745098, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.9)
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Phase"]
+bg_color = Color(0.6784314, 0.8941176, 0.9058824, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.9)
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Log"]
+bg_color = Color(0.8941176, 0.9294118, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.9)
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_LogCaption"]
+bg_color = Color(0.7960784, 0.8745098, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.65)
+shadow_offset = Vector2(1, 2)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Player"]
+bg_color = Color(0.8627451, 0.9176471, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.9)
+shadow_offset = Vector2(3, 5)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Portrait"]
+bg_color = Color(0.7725490, 0.8980392, 0.9803922, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.65)
+shadow_offset = Vector2(1, 2)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Block"]
+bg_color = Color(0.7960784, 0.8745098, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.65)
+shadow_offset = Vector2(1, 2)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Stat"]
+bg_color = Color(0.9686275, 0.9843137, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.65)
+shadow_offset = Vector2(1, 2)
+
+[sub_resource type="StyleBoxFlat" id="LayeredBattle_Enemy"]
+bg_color = Color(0.9568627, 0.9764706, 1.0000000, 1)
+border_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.3882353, 0.5568627, 1.0000000, 0.9)
+shadow_offset = Vector2(3, 5)
+
 [node name="UI_battle" type="Control" unique_id=1314729348]
 layout_mode = 3
 anchors_preset = 0
@@ -3388,11 +3516,11 @@ layout_mode = 0
 anchor_right = 1.0
 offset_left = 24.0
 offset_top = 24.0
-offset_right = -24.0
-offset_bottom = 96.0
+offset_right = 444.0
+offset_bottom = 78.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("OriginalBattle_Title")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Title")
+script = ExtResource("layered_panel")
 metadata/design_id = "2"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -3439,12 +3567,12 @@ theme_override_constants/outline_size = 0
 layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.0
-offset_top = 36.0
-offset_right = 170.0
-offset_bottom = 84.0
-theme_override_styles/panel = SubResource("OriginalBattle_Phase")
-script = ExtResource("21_03yfh")
+offset_left = -160.0
+offset_top = 24.0
+offset_right = 160.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("LayeredBattle_Phase")
+script = ExtResource("layered_panel")
 metadata/design_id = "3"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -3614,8 +3742,8 @@ offset_top = 403.0
 offset_right = 858.0
 offset_bottom = 437.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2pldp")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Enemy")
+script = ExtResource("layered_panel")
 metadata/design_id = "5/0/6"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -3922,8 +4050,8 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 texture_filter = 1
 layout_mode = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_c7xdl")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Enemy")
+script = ExtResource("layered_panel")
 metadata/design_id = "5/1/6"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -4199,8 +4327,8 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 texture_filter = 1
 layout_mode = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_our6g")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Enemy")
+script = ExtResource("layered_panel")
 metadata/design_id = "5/2/6"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -4400,12 +4528,12 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="06_Panel" type="Panel" parent="00_Control" unique_id=1267776837]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 512.0
-offset_right = 820.8
-offset_bottom = 562.0
-theme_override_styles/panel = SubResource("OriginalBattle_Log")
-script = ExtResource("21_03yfh")
+offset_left = 28.0
+offset_top = 104.0
+offset_right = 340.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("LayeredBattle_Log")
+script = ExtResource("layered_panel")
 metadata/design_id = "6"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -4414,13 +4542,13 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="00_LogCaption" type="Panel" parent="00_Control/06_Panel" unique_id=1100141691]
 texture_filter = 1
 layout_mode = 0
-offset_left = 12.0
+offset_left = 14.0
 offset_top = 10.0
-offset_right = 88.0
-offset_bottom = 40.0
+offset_right = 100.0
+offset_bottom = 38.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_abayi")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_LogCaption")
+script = ExtResource("layered_panel")
 metadata/design_id = "6/0"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -4444,10 +4572,10 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="01_RichTextLabel" type="RichTextLabel" parent="00_Control/06_Panel" unique_id=452282854]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 10.0
-offset_right = 774.8
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = 46.0
+offset_right = 294.0
+offset_bottom = 108.0
 tooltip_text = "▌ 潮汐连携已就绪 — 可以发动了。
 ▌ 遭遇 gpt6
 ▌ 第 1 回合 · 抽 5 张牌"
@@ -4457,7 +4585,7 @@ theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 text = "[color=#9fb4d8]▌[/color] [color=#293f52]第 1 回合 · 抽 5 张牌[/color]"
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 3
 metadata/design_id = "6/1"
 metadata/design_native_class = "RichTextLabel"
 metadata/design_edit_text = false
@@ -5949,13 +6077,13 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="12_Panel" type="Panel" parent="00_Control" unique_id=232776054]
 layout_mode = 0
 anchor_right = 1.0
-offset_left = 24.0
-offset_top = 922.0
-offset_right = -24.0
-offset_bottom = 1062.0
+offset_left = 28.0
+offset_top = 246.0
+offset_right = 340.0
+offset_bottom = 766.0
 tooltip_text = "角色状态：状态正常"
-theme_override_styles/panel = SubResource("OriginalBattle_Player")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Player")
+script = ExtResource("layered_panel")
 metadata/design_id = "12"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -5963,12 +6091,12 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="00_Panel" type="Panel" parent="00_Control/12_Panel" unique_id=962578030]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 28.0
-offset_right = 102.0
-offset_bottom = 110.0
-theme_override_styles/panel = SubResource("OriginalBattle_Portrait")
-script = ExtResource("21_03yfh")
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 296.0
+offset_bottom = 216.0
+theme_override_styles/panel = SubResource("LayeredBattle_Portrait")
+script = ExtResource("layered_panel")
 metadata/design_id = "12/0"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -5977,10 +6105,10 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="00_TextureRect" type="TextureRect" parent="00_Control/12_Panel/00_Panel" unique_id=1661929412]
 texture_filter = 2
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 72.0
-offset_bottom = 72.0
+offset_left = 50.0
+offset_top = 4.0
+offset_right = 230.0
+offset_bottom = 192.0
 mouse_filter = 2
 texture = ExtResource("33_t34mo")
 expand_mode = 1
@@ -5992,10 +6120,10 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="01_Label_大肥鱼  ·  Lv_13" type="Label" parent="00_Control/12_Panel" unique_id=988907227]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 26.0
-offset_right = 334.0
-offset_bottom = 62.0
+offset_left = 16.0
+offset_top = 226.0
+offset_right = 296.0
+offset_bottom = 260.0
 theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 24
@@ -6026,10 +6154,10 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="03_Control" type="Control" parent="00_Control/12_Panel" unique_id=1481343348]
 anchors_preset = 0
-offset_left = 124.0
-offset_top = 116.0
-offset_right = 364.0
-offset_bottom = 148.0
+offset_left = 190.0
+offset_top = 282.0
+offset_right = 274.0
+offset_bottom = 306.0
 mouse_filter = 2
 metadata/design_id = "12/3"
 metadata/design_native_class = "Control"
@@ -6085,24 +6213,25 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="04_Control" type="Control" parent="00_Control/12_Panel" unique_id=1020652438]
 anchors_preset = 0
-offset_left = 350.0
-offset_right = 667.3334
-offset_bottom = 140.0
+offset_left = 20.0
+offset_right = 292.0
+offset_bottom = 384.0
 mouse_filter = 2
 metadata/design_id = "12/4"
 metadata/design_native_class = "Control"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_top = 336.0
 
 [node name="00_StatusTile" type="Panel" parent="00_Control/12_Panel/04_Control" unique_id=1256538088]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 12.0
-offset_right = 329.33334
-offset_bottom = 122.0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 278.0
+offset_bottom = 50.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("OriginalBattle_Status")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Stat")
+script = ExtResource("layered_panel")
 metadata/design_id = "12/4/0"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -6142,10 +6271,10 @@ theme_override_constants/outline_size = 0
 
 [node name="03_Label_69 _ 148" type="Label" parent="00_Control/12_Panel/04_Control" unique_id=1478095648]
 layout_mode = 0
-offset_left = 175.33333
-offset_top = 21.0
-offset_right = 317.3333
-offset_bottom = 53.0
+offset_left = 100.0
+offset_top = -2.0
+offset_right = 272.0
+offset_bottom = 26.0
 theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
@@ -6161,15 +6290,16 @@ theme_override_constants/outline_size = 0
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/04_Control" unique_id=1864366936]
 clip_contents = true
 layout_mode = 0
-offset_top = 64.0
-offset_right = 317.33334
-offset_bottom = 88.0
+offset_top = 30.0
+offset_right = 272.0
+offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8a0k2")
 metadata/design_id = "12/4/4"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_left = 0.0
 
 [node name="00_Panel" type="Panel" parent="00_Control/12_Panel/04_Control/04_Panel" unique_id=696024890]
 layout_mode = 0
@@ -6198,24 +6328,25 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="05_Control" type="Control" parent="00_Control/12_Panel" unique_id=1417634010]
 anchors_preset = 0
-offset_left = 699.3333
-offset_right = 1016.6666
-offset_bottom = 140.0
+offset_left = 20.0
+offset_right = 292.0
+offset_bottom = 440.0
 mouse_filter = 2
 metadata/design_id = "12/5"
 metadata/design_native_class = "Control"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_top = 392.0
 
 [node name="00_StatusTile" type="Panel" parent="00_Control/12_Panel/05_Control" unique_id=1542522751]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 12.0
-offset_right = 329.33334
-offset_bottom = 122.0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 278.0
+offset_bottom = 50.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("OriginalBattle_Status")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Stat")
+script = ExtResource("layered_panel")
 metadata/design_id = "12/5/0"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -6255,10 +6386,10 @@ theme_override_constants/outline_size = 0
 
 [node name="03_Label_198 _ 198" type="Label" parent="00_Control/12_Panel/05_Control" unique_id=2028569421]
 layout_mode = 0
-offset_left = 175.33333
-offset_top = 21.0
-offset_right = 317.3333
-offset_bottom = 53.0
+offset_left = 100.0
+offset_top = -2.0
+offset_right = 272.0
+offset_bottom = 26.0
 theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
@@ -6274,15 +6405,16 @@ theme_override_constants/outline_size = 0
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/05_Control" unique_id=690895632]
 clip_contents = true
 layout_mode = 0
-offset_top = 64.0
-offset_right = 317.33334
-offset_bottom = 88.0
+offset_top = 30.0
+offset_right = 272.0
+offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ydky7")
 metadata/design_id = "12/5/4"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_left = 0.0
 
 [node name="00_Panel" type="Panel" parent="00_Control/12_Panel/05_Control/04_Panel" unique_id=1932539894]
 layout_mode = 0
@@ -6311,24 +6443,25 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="06_Control" type="Control" parent="00_Control/12_Panel" unique_id=704698829]
 anchors_preset = 0
-offset_left = 1048.6666
-offset_right = 1366.0
-offset_bottom = 140.0
+offset_left = 20.0
+offset_right = 292.0
+offset_bottom = 496.0
 mouse_filter = 2
 metadata/design_id = "12/6"
 metadata/design_native_class = "Control"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_top = 448.0
 
 [node name="00_StatusTile" type="Panel" parent="00_Control/12_Panel/06_Control" unique_id=1436165837]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 12.0
-offset_right = 329.33334
-offset_bottom = 122.0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 278.0
+offset_bottom = 50.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("OriginalBattle_Status")
-script = ExtResource("21_03yfh")
+theme_override_styles/panel = SubResource("LayeredBattle_Stat")
+script = ExtResource("layered_panel")
 metadata/design_id = "12/6/0"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
@@ -6368,10 +6501,10 @@ theme_override_constants/outline_size = 0
 
 [node name="03_Label_100_" type="Label" parent="00_Control/12_Panel/06_Control" unique_id=1351621028]
 layout_mode = 0
-offset_left = 175.33333
-offset_top = 21.0
-offset_right = 317.3333
-offset_bottom = 53.0
+offset_left = 100.0
+offset_top = -2.0
+offset_right = 272.0
+offset_bottom = 26.0
 theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
@@ -6387,15 +6520,16 @@ theme_override_constants/outline_size = 0
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/06_Control" unique_id=357855656]
 clip_contents = true
 layout_mode = 0
-offset_top = 64.0
-offset_right = 317.33334
-offset_bottom = 88.0
+offset_top = 30.0
+offset_right = 272.0
+offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l0rng")
 metadata/design_id = "12/6/4"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_left = 0.0
 
 [node name="00_Panel" type="Panel" parent="00_Control/12_Panel/06_Control/04_Panel" unique_id=1430739295]
 modulate = Color(1, 1, 1, 0.9389291)
@@ -6425,17 +6559,18 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="07_BlockBadge" type="Panel" parent="00_Control/12_Panel" unique_id=173145522]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 70.0
-offset_right = 298.0
-offset_bottom = 110.0
+offset_left = 16.0
+offset_top = 276.0
+offset_right = 190.0
+offset_bottom = 314.0
 tooltip_text = "格挡：0 点。受到伤害时先消耗格挡，再扣除生命；与按回合持续的护盾效果独立。"
 mouse_filter = 1
-theme_override_styles/panel = SubResource("OriginalBattle_Block")
+theme_override_styles/panel = SubResource("LayeredBattle_Block")
 metadata/design_id = "12/7"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+script = ExtResource("layered_panel")
 
 [node name="00_TextureRect" type="TextureRect" parent="00_Control/12_Panel/07_BlockBadge" unique_id=1654045256]
 modulate = Color(0.78, 0.85, 0.87, 0.65)
