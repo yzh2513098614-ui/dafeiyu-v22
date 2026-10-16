@@ -15,7 +15,7 @@ func _ready() -> void:
 	get_node("/root/HarborPrefs").values.fullscreen = false
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_window().size = Vector2i(1280, 720)
-	get_window().title = "战斗试玩 · 手牌与敌方意图"
+	get_window().title = "战斗试玩 · 紧凑状态卡"
 	var verify := "--verify-original-battle" in OS.get_cmdline_user_args()
 	if verify:
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
@@ -64,6 +64,7 @@ func click(control: Control) -> void:
 
 func verify_inputs() -> void:
 	await settle()
+	await verify_compact_status()
 	var title_style: StyleBoxFlat = screen.title_plate.get_theme_stylebox("panel")
 	var player_style: StyleBoxFlat = screen.dash.dock.get_theme_stylebox("panel")
 	check(title_style.border_color.is_equal_approx(Color("40567d")) and player_style.bg_color.is_equal_approx(Color("dceaff")) and get_node("/root/UiDesign").applied_count > 0, "production screen receives the native dark-edge design page")
@@ -151,3 +152,43 @@ func verify_inputs() -> void:
 	print("ORIGINAL BATTLE UI: %d checks, %d failures" % [checks, failures])
 	screen.close()
 	get_tree().quit(1 if failures else 0)
+
+func verify_compact_status() -> void:
+	var dock: Panel = screen.dash.dock
+	check(dock.size.is_equal_approx(Vector2(312, 390)) and is_equal_approx(dock.position.y + dock.size.y, 766.0), "compact card keeps its width and bottom while reducing height by one quarter")
+	var actor: Dictionary = engine.allies[0]
+	var original: Dictionary = actor.duplicate(true)
+	var health: Dictionary = screen.dash.gauges[0]
+	for hp in [107, 148, 29, 0]:
+		actor.hp = hp
+		screen._refresh_ally()
+		await settle()
+		var expected_color := Color("a74762") if hp <= 29 else Color("31547e")
+		check(health.value.text == str(hp) and screen.dash.hp_max.text == "/ 148" and health.value.get_theme_color("font_color").is_equal_approx(expected_color), "health %d / 148 keeps accurate split values and correct warning color" % hp)
+	actor.hp = 107
+	actor.block = 12345
+	actor.shield = 1
+	actor.haste = 1
+	actor.bind = 1
+	actor.ap = engine.link_status(actor).max_ap
+	screen._refresh_ally()
+	await settle()
+	var badge: Dictionary = screen.dash.block_badge
+	var fit: bool = dock.get_global_rect().encloses(badge.panel.get_global_rect())
+	fit = fit and badge.value.get_theme_font("font").get_string_size(badge.value.text, HORIZONTAL_ALIGNMENT_LEFT, -1, badge.value.get_theme_font_size("font_size")).x <= badge.value.size.x
+	for icon in screen.dash.icons.values():
+		fit = fit and icon.visible and dock.get_global_rect().encloses(icon.get_global_rect()) and not icon.get_global_rect().intersects(badge.panel.get_global_rect())
+	check(fit, "five-digit block and all three active statuses fit without collision")
+	check(screen.dash.gauges[2].value.text == "100%" and screen.dash.gauges[2].value.get_theme_color("font_color").is_equal_approx(Color("31547e")), "ready link retains its exact percent and emphasis")
+	actor.block = 0
+	screen._refresh_ally()
+	await settle()
+	check(badge.panel.visible and badge.value.text == "0" and badge.value.get_theme_color("font_color").is_equal_approx(Color("8494aa")), "zero block remains in place with a muted readout")
+	var resources_fit := true
+	for gauge in screen.dash.gauges:
+		resources_fit = resources_fit and dock.get_global_rect().encloses(gauge.value.get_global_rect()) and dock.get_global_rect().encloses(gauge.back.get_global_rect()) and gauge.value.get_global_rect().end.y <= gauge.back.get_global_rect().position.y
+	resources_fit = resources_fit and not health.value.get_global_rect().intersects(screen.dash.hp_max.get_global_rect())
+	check(resources_fit, "all resource values and tracks fit; split health values do not overlap")
+	actor.merge(original, true)
+	screen._refresh_ally()
+	await settle()

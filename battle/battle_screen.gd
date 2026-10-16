@@ -1269,8 +1269,13 @@ func _hud_text(label: Label, font_size: int) -> void:
 
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
-	_hud_frame(dash.dock, Color("dceaff"))
-	_hud_frame(dash.portrait_frame, Color("dbe9f8"), 20, true)
+	_hud_frame(dash.dock, Color("dceaff"), 20)
+	_card_overlay(dash.portrait_frame, Color.TRANSPARENT)
+	dash["level"] = WhaleStyle.label(dash.dock, "", Vector2(106, 56), Vector2(188, 26), 18, Color("647c99"))
+	dash.level.name = "CompactLevel"
+	dash["hp_max"] = WhaleStyle.label(dash.gauges[0].group, "", Vector2(184, 24), Vector2(92, 44), 18, Color("647c99"))
+	dash.hp_max.name = "CompactHealthMaximum"
+	dash.hp_max.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 	_hud_frame(title_plate, Color("cedfff"), 18)
 	_hud_frame(phase_plate, Color("ade4e7"), 18)
 	_hud_frame(log_box, Color("e4edff"), 18)
@@ -1297,14 +1302,24 @@ func _style_card_battle() -> void:
 	round_label.add_theme_color_override("font_color", Color("4973ae"))
 	for action in [speed_button, card_panel.get_node("CardTargetButton"), card_item_button, card_link_button, card_end_button]:
 		_style_card_action(action, action == card_end_button)
-	_hud_frame(dash.block_badge.panel, Color("cbdfff"), 12, true)
+	_card_overlay(dash.block_badge.panel, Color.TRANSPARENT)
 	for i in dash.gauges.size():
 		var gauge: Dictionary = dash.gauges[i]
 		gauge.group.get_node("StatusTile").show()
-		_hud_frame(gauge.group.get_node("StatusTile"), Color("f8fbff") if i == 0 else Color("e6edf7"), 14, true)
-		_hud_text(gauge.title, 18 if i == 0 else 16)
-		_hud_text(gauge.value, 24 if i == 0 else 17)
+		if i == 0:
+			_hud_frame(gauge.group.get_node("StatusTile"), Color("f8fbff"), 14, true)
+		else:
+			_card_overlay(gauge.group.get_node("StatusTile"), Color.TRANSPARENT)
+		_hud_text(gauge.title, 16)
+		_hud_text(gauge.value, 30 if i == 0 else 18)
 		if i > 0:
+			var track := StyleBoxFlat.new()
+			track.bg_color = Color("eaf0f7")
+			track.border_color = Color("b7c6d9")
+			track.set_border_width_all(1)
+			track.set_corner_radius_all(3)
+			track.set_content_margin_all(0)
+			gauge.back.add_theme_stylebox_override("panel", track)
 			gauge.title.add_theme_color_override("font_color", Color("647c99"))
 			gauge.value.add_theme_color_override("font_color", Color("647c99"))
 			gauge.fill.modulate = Color(0.88, 0.92, 0.96)
@@ -1373,36 +1388,38 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock
-	UiFit.pin_left(dock, 312, 28, 246, 520)
-	dash.portrait_frame.position = Vector2(16, 16)
-	dash.portrait_frame.size = Vector2(280, 180)
-	dash.portrait.position = Vector2(62, 10)
-	dash.portrait.size = Vector2(156, 156)
-	dash.name.position = Vector2(16, 208)
-	dash.name.size = Vector2(280, 34)
-	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	UiFit.pin_left(dock, 312, 28, 376, 390)
+	dash.portrait_frame.position = Vector2(18, 18)
+	dash.portrait_frame.size = Vector2(72, 72)
+	dash.portrait.position = Vector2.ZERO
+	dash.portrait.size = Vector2(72, 72)
+	dash.name.position = Vector2(106, 20)
+	dash.name.size = Vector2(188, 32)
+	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(16, 252)
-	dash.status_icons.position = Vector2(190, 258)
+	dash.block_badge.panel.position = Vector2(18, 216)
+	dash.status_icons.position = Vector2(210, 218)
+	dash.status_icons.size = Vector2(84, 24)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
-		icon.position = Vector2(i * 28, 0)
+		icon.position = Vector2(i * 30, 0)
 		icon.size = Vector2(24, 24)
 	for i in dash.gauges.size():
 		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.position = Vector2(20, [308.0, 392.0, 448.0][i])
-		gauge.group.size = Vector2(272, 62 if i == 0 else 44)
+		gauge.group.position = Vector2(18, [112.0, 264.0, 316.0][i])
+		gauge.group.size = Vector2(276, 96 if i == 0 else 38)
 		var tile: Panel = gauge.group.get_node("StatusTile")
-		tile.position = Vector2(-6, -4)
-		tile.size = Vector2(284, 68 if i == 0 else 50)
+		tile.position = Vector2(-2, -8 if i == 0 else -4)
+		tile.size = Vector2(280, 148 if i == 0 else 44)
 		gauge.icon.position = Vector2(0, 0)
 		gauge.icon.size = Vector2(24, 24)
-		gauge.title.position = Vector2(32, -2)
-		gauge.title.size = Vector2(76, 28)
-		gauge.value.position = Vector2(100, -2)
-		gauge.value.size = Vector2(172, 34 if i == 0 else 26)
-		gauge.back.position = Vector2(0, 38 if i == 0 else 28)
-		gauge.back.size = Vector2(272, 18 if i == 0 else 10)
+		gauge.title.position = Vector2(30, -2)
+		gauge.title.size = Vector2(76, 26)
+		gauge.value.position = Vector2(72, 24) if i == 0 else Vector2(100, -2)
+		gauge.value.size = Vector2(104, 44) if i == 0 else Vector2(176, 26)
+		gauge.value.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM if i == 0 else VERTICAL_ALIGNMENT_CENTER
+		gauge.back.position = Vector2(0, 78 if i == 0 else 30)
+		gauge.back.size = Vector2(276, 16 if i == 0 else 6)
 
 func _layout_card_hand() -> void:
 	if card_panel == null:
@@ -1864,8 +1881,6 @@ func _refresh_ally() -> void:
 	dash["name"].text = "%s  ·  Lv.%d" % [str(ally.name), int(ally.level)]
 	var marks: Array = []
 	_set_block_badge(dash.block_badge,float(visible_ally.get("block",0)),true)
-	if engine.card_mode:
-		dash.status_icons.position.x = 16 + dash.block_badge.panel.size.x + 12
 	if int(visible_ally.shield) > 0:
 		marks.append("护盾 %d 回合" % int(visible_ally.shield))
 	if int(visible_ally.haste) > 0:
@@ -1888,6 +1903,8 @@ func _refresh_ally() -> void:
 	_set_gauge(gauges[2], float(link.ap), float(link.max_ap), "%d%%" % int(round(float(link.ap) / maxf(1.0, float(link.max_ap)) * 100.0)))
 
 	var ready := bool(link.ready)
+	if engine.card_mode:
+		_refresh_compact_card_status(visible_ally, ready)
 	if ready != _ap_ready:
 		_ap_ready = ready
 		gauges[2].style.bg_color = AP_READY if ready else AP_FILL
@@ -1896,6 +1913,28 @@ func _refresh_ally() -> void:
 	link_button.disabled = not ready
 	link_button.tooltip_text = str(link.desc) if ready else str(link.reason)
 	if card_link_button != null: card_link_button.disabled = not ready
+
+func _refresh_compact_card_status(visible_ally: Dictionary, link_ready: bool) -> void:
+	dash.name.text = str(ally.name)
+	dash.level.text = "Lv.%d" % int(ally.level)
+	var health: Dictionary = dash.gauges[0]
+	health.value.text = str(ceili(float(visible_ally.hp)))
+	dash.hp_max.text = "/ %d" % int(ally.max_hp)
+	var low := float(visible_ally.hp) / maxf(1.0, float(ally.max_hp)) <= 0.2
+	health.value.add_theme_color_override("font_color", Color("a74762") if low else Color("31547e"))
+	dash.gauges[2].value.add_theme_color_override("font_color", Color("31547e") if link_ready else Color("647c99"))
+	var badge: Dictionary = dash.block_badge
+	badge.panel.size = Vector2(180, 28)
+	badge.icon.position = Vector2.ZERO
+	badge.icon.size = Vector2(24, 24)
+	badge.caption.position = Vector2(32, 2)
+	badge.caption.size = Vector2(42, 24)
+	badge.caption.add_theme_font_size_override("font_size", 16)
+	badge.value.position = Vector2(80, 0)
+	badge.value.size = Vector2(80, 28)
+	badge.value.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	badge.value.add_theme_font_size_override("font_size", 22)
+	badge.value.add_theme_color_override("font_color", Color("31547e") if float(visible_ally.get("block", 0)) > 0 else Color("8494aa"))
 
 ## 状态图标的出现 / 消失演出。
 ## 直接切 visible 的话，「护盾没了」这件事几乎不会被注意到 —— 图标在视线边缘，
@@ -1953,10 +1992,11 @@ func _hide_icon(key: String) -> void:
 func _set_gauge(g: Dictionary, value: float, maximum: float, text: String) -> void:
 	g.value.text = text
 	var back: Panel = g.back
-	var w: float = maxf(1.0, back.size.x - 8.0)
-	var h: float = maxf(1.0, back.size.y - 8.0)
+	var inset := 2.0 if engine.card_mode and back.size.y <= 8.0 else 4.0
+	var w: float = maxf(1.0, back.size.x - inset * 2.0)
+	var h: float = maxf(1.0, back.size.y - inset * 2.0)
 	var ratio := clampf(value / maxf(1.0, maximum), 0.0, 1.0)
-	g.fill.position = Vector2(4, 4)
+	g.fill.position = Vector2(inset, inset)
 	g.fill.size = Vector2(w * ratio, h)
 	# 高光条是填充条的子节点，填充条一变宽就得跟着重算
 	var gloss: Variant = g.get("gloss")
