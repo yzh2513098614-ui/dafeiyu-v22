@@ -9,6 +9,7 @@ const PANE = Color("a5c1c0")
 const ROOF = Color("627e83")
 const WALL_HEIGHT := 5.2
 const THICKNESS := .36
+const FRONT := 8.18
 var b
 
 func build(builder) -> void:
@@ -16,20 +17,35 @@ func build(builder) -> void:
 	var villa: Node3D = b._group(b.level, "ExteriorVilla")
 	villa.set_meta("home_exterior", true)
 	# Fewer, broader window groups, with uninterrupted wall between them.
-	_elevation(villa, "GroundFront", -28, 28, Vector3(0, 0, 8.18), 0, [-15.5, 12.0])
-	_elevation(villa, "MiddleFront", -28, 28, Vector3(0, b.HEIGHT, 2.18), 0, [-21.0, 2.5, 21.0])
-	_elevation(villa, "UpperFront", -28, 28, Vector3(0, b.HEIGHT * 2, -1.82), 0, [-21.0, -8.8, 19.0])
+	# Wrap the projecting floors at the outer edge, enclosing the former terrace
+	# voids instead of repeating recessed walls behind the exposed floor strips.
+	_elevation(villa, "GroundFront", -28, 28, Vector3(0, 0, FRONT), 0, [-15.5, 12.0])
+	_elevation(villa, "MiddleFront", -28, 28, Vector3(0, b.HEIGHT, FRONT), 0, [-21.0, 2.5, 21.0])
+	_elevation(villa, "UpperFront", -28, 28, Vector3(0, b.HEIGHT * 2, FRONT), 0, [-21.0, -8.8, 19.0])
 	for i in 3:
 		var rect: Rect2 = b.FLOOR_RECTS[i]
 		var h: float = i * b.HEIGHT
-		_elevation(villa, "WestWall" + str(i), rect.position.y, rect.end.y, Vector3(-28.18, h, 0), -PI * .5, [-22.0])
-		_elevation(villa, "EastWall" + str(i), -rect.end.y, -rect.position.y, Vector3(28.18, h, 0), PI * .5, [20.0])
+		_elevation(villa, "WestWall" + str(i), rect.position.y, FRONT, Vector3(-28.18, h, 0), -PI * .5, [-22.0])
+		_elevation(villa, "EastWall" + str(i), -FRONT, -rect.position.y, Vector3(28.18, h, 0), PI * .5, [20.0])
 		_elevation(villa, "RearWall" + str(i), -28, 28, Vector3(0, h, rect.position.y - .18), PI, [0.0])
+		if i > 0:
+			_floor_extension(villa, i, rect.end.y)
 	_entry(villa)
 	_roof(villa)
 	b._batch(villa)
 	b.level.set_meta("exterior_villa", villa)
-	villa.set_meta("exterior_revision", "complete_recessed_facade_v2")
+	villa.set_meta("exterior_revision", "enclosed_projecting_storeys_v3")
+	villa.set_meta("enclosed_front", FRONT)
+
+func _floor_extension(villa: Node3D, floor_index: int, recessed_front: float) -> void:
+	var floor_body: Node3D = b._group(villa, "EnclosedFloorExtension" + str(floor_index))
+	var depth: float = FRONT - recessed_front
+	var height: float = floor_index * b.HEIGHT
+	# Close both the underside and the outer edge of the formerly exposed bands.
+	# Original walkable slabs and stair openings remain the gameplay geometry.
+	b._box(floor_body, Vector3(56.36, .34, depth), Vector3(0, height - .22, recessed_front + depth * .5), WALL, 0, .015)
+	b._box(floor_body, Vector3(56.56, .20, .46), Vector3(0, height - .10, FRONT + .025), TRIM, 0, .018)
+	floor_body.set_meta("enclosed_projection", Rect2(-28.18, recessed_front, 56.36, depth))
 
 func _elevation(villa: Node3D, label: String, left: float, right: float, origin: Vector3, yaw: float, windows: Array) -> void:
 	var face: Node3D = b._group(villa, label, origin)
@@ -115,7 +131,7 @@ func _entry(villa: Node3D) -> void:
 
 func _roof(villa: Node3D) -> void:
 	# A closed hip roof replaces the old open dollhouse ribs in exterior mode.
-	_hip_roof(villa, "MainHipRoof", Rect2(-28.65, -38.65, 57.30, 37.30), b.HEIGHT * 3.0, 2.65)
+	_hip_roof(villa, "MainHipRoof", Rect2(-28.65, -38.65, 57.30, FRONT + .47 + 38.65), b.HEIGHT * 3.0, 2.65)
 
 func _hip_roof(villa: Node3D, label: String, rect: Rect2, height: float, rise: float) -> void:
 	var roof: Node3D = b._group(villa, label)
