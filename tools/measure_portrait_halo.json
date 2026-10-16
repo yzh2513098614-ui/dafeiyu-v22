@@ -1,0 +1,57 @@
+[
+  {
+    "after": 136,
+    "before": 4767,
+    "file": "01_listen.png"
+  },
+  {
+    "after": 76,
+    "before": 5016,
+    "file": "02_kiss.png"
+  },
+  {
+    "after": 510,
+    "before": 5373,
+    "file": "03_talk.png"
+  },
+  {
+    "after": 597,
+    "before": 5165,
+    "file": "04_think.png"
+  },
+  {
+    "after": 25,
+    "before": 5130,
+    "file": "05_relief.png"
+  },
+  {
+    "after": 215,
+    "before": 5034,
+    "file": "06_shy.png"
+  },
+  {
+    "after": 123,
+    "before": 4936,
+    "file": "07_expectant.png"
+  },
+  {
+    "after": 671,
+    "before": 5729,
+    "file": "08_cheer.png"
+  },
+  {
+    "after": 285,
+    "before": 5379,
+    "file": "09_happy.png"
+  },
+  {
+    "after": 186,
+    "before": 4901,
+    "file": "10_concern.png"
+  },
+  {
+    "after": 234,
+    "before": 5710,
+    "file": "11_side_welcome.png"
+  }
+]
