@@ -1,6 +1,6 @@
 @tool
 extends Panel
-## Native rounded gradient, inset keyline and top highlight. No input or extra nodes.
+## Rounded gradient within the existing panel edge; no additional inner outlines.
 
 static var _gradients: Dictionary = {}
 
@@ -41,11 +41,3 @@ static func paint(control: Control, box: StyleBoxFlat) -> void:
 			points.append(point)
 			uvs.append((point - rect.position) / rect.size)
 	control.draw_polygon(points, PackedColorArray([Color.WHITE]), uvs, _gradients[box.bg_color])
-	var line := StyleBoxFlat.new()
-	line.bg_color = Color.TRANSPARENT
-	line.border_color = Color("8cb6ed", box.bg_color.a * 0.85)
-	line.set_border_width_all(1)
-	line.set_corner_radius_all(roundi(radius))
-	control.draw_style_box(line, rect)
-	if dimensions.y >= 40:
-		control.draw_line(Vector2(inset + radius, inset + 4), Vector2(dimensions.x - inset - radius, inset + 4), Color(1, 1, 1, box.bg_color.a * 0.8), 2, true)

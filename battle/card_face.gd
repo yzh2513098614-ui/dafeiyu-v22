@@ -11,20 +11,20 @@ func configure(entry:Dictionary, dimensions:=Vector2(172,252), large:=false)->vo
  var kind:=str(entry.effects[0].kind) if not entry.get("effects",[]).is_empty() else "draw"
  var accent:Color={"damage":Color("596cde"),"heal":Color("238d85"),"block":Color("7765c7"),"stamina":Color("238d85"),"cleanse":Color("238d85"),"bind":Color("ac527c")}.get(kind,Color("6764bd"))
  var base:=StyleBoxFlat.new()
- base.bg_color=accent.lightened(.91);base.border_color=Color.WHITE
- base.shadow_color=Color("638eff");base.shadow_offset=Vector2(2,5)
- base.set_corner_radius_all(18);base.set_border_width_all(4);base.set_content_margin_all(0)
+ base.bg_color=accent.lightened(.91);base.border_color=Color("455a7e")
+ base.shadow_color=Color("40567d",.24);base.shadow_offset=Vector2(2,3)
+ base.set_corner_radius_all(18);base.set_border_width_all(2);base.set_content_margin_all(0)
  for state in ["normal","hover","pressed","disabled","focus"]:
   var box:=base.duplicate() as StyleBoxFlat
-  if state in ["hover","focus"]:box.border_color=Color("57bfce");box.shadow_color=Color("57a9c4")
+  if state in ["hover","focus"]:box.border_color=Color("2f8c9f");box.set_border_width_all(3)
   elif state=="pressed":box.bg_color=Color("ccf4f1")
-  elif state=="disabled":box.bg_color=Color("e5eaf2");box.border_color=Color("edf2f9");box.shadow_color=Color("acbdd3")
+  elif state=="disabled":box.bg_color=Color("e5eaf2");box.border_color=Color("a0aec1");box.shadow_color=Color("40567d",.1)
   add_theme_stylebox_override(state,box)
  var header:=Panel.new();header.name="CardHeader";header.position=Vector2(6,6);header.size=Vector2(dimensions.x-12,dimensions.y*.18)
- var h:=StyleBoxFlat.new();h.bg_color=accent.lightened(.60);h.border_color=Color.WHITE;h.set_border_width_all(2);h.set_corner_radius_all(12)
+ var h:=StyleBoxFlat.new();h.bg_color=accent.lightened(.60);h.set_corner_radius_all(12)
  header.set_script(Surface);header.add_theme_stylebox_override("panel",h);header.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(header)
  var badge:=Panel.new();badge.position=Vector2(10,10);badge.size=Vector2(dimensions.y*.15,dimensions.y*.15)
- var b:=StyleBoxFlat.new();b.bg_color=Color("ffdf86");b.border_color=Color.WHITE;b.set_corner_radius_all(100);b.set_border_width_all(2);b.shadow_color=accent.lightened(.2);b.shadow_offset=Vector2(0,2)
+ var b:=StyleBoxFlat.new();b.bg_color=Color("ffdf86");b.border_color=Color("8d7545");b.set_corner_radius_all(100);b.set_border_width_all(1)
  badge.add_theme_stylebox_override("panel",b);badge.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(badge)
  var cost:=CardStyle.label(self,str(int(entry.cost)),badge.position,badge.size,28 if large else 23,CardStyle.INK)
  cost.name="CardCost";cost.add_theme_font_override("font",CardStyle.numeric_font());cost.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;cost.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
@@ -34,9 +34,6 @@ func configure(entry:Dictionary, dimensions:=Vector2(172,252), large:=false)->vo
  var painting:Dictionary=paintings.get(str(entry.id),{})
  var art_size:=Vector2(dimensions.x-20,dimensions.y*.47)
  var art_pos:=Vector2(10,dimensions.y*.22)
- var art_frame:=Panel.new();art_frame.name="CardArtFrame";art_frame.position=art_pos-Vector2(3,3);art_frame.size=art_size+Vector2(6,6)
- var art_box:=StyleBoxFlat.new();art_box.bg_color=Color.WHITE;art_box.border_color=accent.lightened(.5);art_box.set_border_width_all(2);art_box.set_corner_radius_all(12)
- art_frame.add_theme_stylebox_override("panel",art_box);art_frame.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(art_frame)
  if not painting.is_empty():
   var art:=ColorRect.new();art.name="CardPainting"
   var material:=ShaderMaterial.new();material.shader=preload("res://battle/cute_card_painting.gdshader")
@@ -50,7 +47,7 @@ func configure(entry:Dictionary, dimensions:=Vector2(172,252), large:=false)->vo
   art.texture=atlas;art.position=art_pos;art.size=art_size;art.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
   art.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(art)
  var footer:=Panel.new();footer.name="CardFooter";footer.position=Vector2(9,dimensions.y*.72);footer.size=Vector2(dimensions.x-18,dimensions.y*.25)
- var f:=StyleBoxFlat.new();f.bg_color=accent.lightened(.82);f.border_color=Color.WHITE;f.set_border_width_all(2);f.set_corner_radius_all(10)
+ var f:=StyleBoxFlat.new();f.bg_color=accent.lightened(.82);f.set_corner_radius_all(10)
  footer.set_script(Surface);footer.add_theme_stylebox_override("panel",f);footer.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(footer)
  var body:=CardStyle.label(footer,str(entry.description).replace("；","\n") if large else _brief_effects(entry),Vector2(3,1),footer.size-Vector2(6,2),17 if large else 17,Color("31547e"))
  body.name="CardEffect";body.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;body.vertical_alignment=VERTICAL_ALIGNMENT_CENTER

@@ -1228,12 +1228,12 @@ func _hud_frame(panel: Panel, background: Color, radius: int = 24, inner: bool =
 	panel.set_script(LayeredPanel)
 	var style := StyleBoxFlat.new()
 	style.bg_color = background
-	style.border_color = Color.WHITE
-	style.set_border_width_all(2 if inner else 4)
+	style.border_color = Color("40567d")
+	style.set_border_width_all(0 if inner else 2)
 	style.set_corner_radius_all(radius)
-	style.shadow_color = Color("638eff", 0.65 if inner else 0.9)
+	style.shadow_color = Color("40567d", 0.0 if inner else 0.24)
 	style.shadow_size = 0
-	style.shadow_offset = Vector2(1, 2) if inner else Vector2(3, 5)
+	style.shadow_offset = Vector2.ZERO if inner else Vector2(2, 3)
 	panel.add_theme_stylebox_override("panel", style)
 
 func _hud_text(label: Label, font_size: int) -> void:
@@ -1290,6 +1290,7 @@ func _style_card_battle() -> void:
 	battlefield.z_index = -1
 	root.add_child(battlefield)
 	_hud_frame(battlefield, Color("c3dcff", 0.14), 28)
+	battlefield.hide()
 	var hand_frame := Panel.new()
 	hand_frame.name = "HandAreaFrame"
 	hand_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -1311,25 +1312,25 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 	for state in ["normal", "hover", "pressed", "hover_pressed", "disabled", "focus"]:
 		var box := StyleBoxFlat.new()
 		box.bg_color = Color("99d8e1") if primary else Color("f7fbff")
-		box.border_color = Color.WHITE
-		box.set_border_width_all(3)
+		box.border_color = Color("315d77") if primary else Color("476189")
+		box.set_border_width_all(2)
 		box.set_corner_radius_all(14)
-		box.shadow_color = Color("459bb8") if primary else Color("638eff")
-		box.shadow_offset = Vector2(1, 4)
+		box.shadow_color = Color("40567d", 0.24)
+		box.shadow_offset = Vector2(1, 3)
 		box.content_margin_left = 10
 		box.content_margin_right = 10
 		box.content_margin_top = 4
 		box.content_margin_bottom = 4
 		if state in ["hover", "focus"]:
 			box.bg_color = Color("bcebdd") if primary else Color("e4f1ff")
-			box.border_color = Color("6baacb")
+			box.border_color = Color("2f729b")
 		elif state in ["pressed", "hover_pressed"]:
 			box.bg_color = Color("aedfce") if primary else Color("d1e4fb")
 			box.shadow_offset = Vector2(0, 1)
 		elif state == "disabled":
 			box.bg_color = Color("e2e8f1")
-			box.border_color = Color("edf2f9")
-			box.shadow_color = Color("b2c1d6")
+			box.border_color = Color("aab8cb")
+			box.shadow_color = Color("40567d", 0.10)
 		button.add_theme_stylebox_override(state, box)
 	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
 		button.add_theme_color_override(state, Color("1d537c") if primary else Color("315ca4"))
