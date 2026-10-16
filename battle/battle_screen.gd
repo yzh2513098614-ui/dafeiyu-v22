@@ -522,13 +522,20 @@ func _enemy_slot(index: int) -> Dictionary:
 	intent_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	intent_label.add_theme_color_override("font_outline_color", Color("24314d"))
 	intent_label.add_theme_constant_override("outline_size", 4)
+	var intent_icon := TextureRect.new()
+	intent_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	intent_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	intent_icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	intent_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	intent_icon.hide()
+	holder.add_child(intent_icon)
 	return {
 		"holder": holder, "shadow": shadow, "art": art, "hit": hit, "mark": mark,
 		"dais_rim": dais_rim, "dais_top": dais_top, "dais_rim_style": dr,
 		"plate": name_plate, "name": name_label, "bar_back": bar_back,
 		"bar_trail": bar_trail, "bar_fill": bar_fill, "bar_style": bf,
 		"ticks": ticks, "trail_w": 0.0, "hp": hp_text, "foe": null,
-		"status": status, "status_state": {}, "block_badge":block_badge, "intent":intent_label,
+		"status": status, "status_state": {}, "block_badge":block_badge, "intent":intent_label, "intent_icon":intent_icon,
 	}
 
 func _build_tactics() -> void:
@@ -718,7 +725,15 @@ func _build_card_hand() -> void:
 	card_row.add_theme_constant_override("separation", 22)
 	card_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	card_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	card_scroll.add_child(card_row)
+	var card_margin := MarginContainer.new()
+	card_margin.name = "CardHoverSpace"
+	card_margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	card_margin.add_theme_constant_override("margin_top", 10)
+	card_margin.add_theme_constant_override("margin_bottom", 2)
+	card_margin.add_theme_constant_override("margin_left", 4)
+	card_margin.add_theme_constant_override("margin_right", 8)
+	card_scroll.add_child(card_margin)
+	card_margin.add_child(card_row)
 	card_end_button = _cmd_button(card_panel, "结束回合  ›", func():_submit_action({"kind":"end_turn"}))
 	card_end_button.position = Vector2(1200, 18); card_end_button.size = Vector2(178, 64)
 	WhaleStyle.primary(card_end_button)
@@ -1036,10 +1051,10 @@ func _layout_enemies() -> void:
 		cursor += cell_w + 28.0
 
 func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
-	var ground_y: float = 700.0 if engine.card_mode else GROUND_Y
+	var ground_y: float = 668.0 if engine.card_mode else GROUND_Y
 	var height_limit: float = 250.0 if engine.card_mode else ENEMY_CELL_H
 	if engine.card_mode and str(slot.foe.kind) == "gpt6":
-		height_limit = 600.0
+		height_limit = 552.0
 	var art_data: Dictionary = slot.get("art_data", {})
 	var used: Rect2i = art_data.get("used", Rect2i())
 	if used.size.x <= 0 or used.size.y <= 0:
@@ -1081,6 +1096,8 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var plate: Panel = slot.plate
 	plate.position = Vector2(cx - plate_w * 0.5, ground_y + 8.0)
 	plate.size = Vector2(plate_w, 34.0)
+	if engine.card_mode:
+		plate.size.y = 66.0
 	# 名字与血量数字同处一块铭牌。血量放进牌里而不是挂在血条下面 ——
 	# 挂在下面时第三条信息会顶到 y≈715，正好钻进战报板（700 起）。
 	slot.name.position = Vector2(14.0, 4.0)
@@ -1092,13 +1109,21 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var bar_back: Panel = slot.bar_back
 	bar_back.position = Vector2(cx - bar_w * 0.5, ground_y + 48.0)
 	bar_back.size = Vector2(bar_w, 18.0)
+	if engine.card_mode:
+		bar_w = plate_w - 24.0
+		bar_back.position = Vector2(cx - bar_w * 0.5, ground_y + 37.0)
+		bar_back.size = Vector2(bar_w, 12.0)
+		slot.intent.position = Vector2(cx - plate_w * 0.5 + 36.0, ground_y + 50.0)
+		slot.intent.size = Vector2(plate_w - 48.0, 24.0)
+		slot.intent_icon.position = Vector2(cx - plate_w * 0.5 + 12.0, ground_y + 53.0)
+		slot.intent_icon.size = Vector2(18, 18)
 	# 刻度：3 条把血条分成 4 格（25% 一档），落在填充区内侧
 	var ticks: Array = slot.ticks
 	var tick_inner := bar_w - 8.0
 	for i in ticks.size():
 		var tick: ColorRect = ticks[i]
 		tick.position = Vector2(4.0 + tick_inner * float(i + 1) / 4.0 - 0.5, 3.0)
-		tick.size = Vector2(1.0, 12.0)
+		tick.size = Vector2(1.0, bar_back.size.y - 6.0)
 	var mark: Control = slot.mark
 	mark.position = Vector2(cx - plate_w*.5 - 26.0,ground_y+10)
 	mark.size = Vector2(24.0,30.0)
@@ -1113,10 +1138,11 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var status_width:=float(active_status.size())*34.0
 	var badge_width:=badge.size.x+8 if badge.visible else 0.0
 	var status_x:=cx-(status_width+badge_width)*.5
-	badge.position=Vector2(status_x,ground_y+70)
+	badge.position=Vector2(status_x,ground_y+(78 if engine.card_mode else 70))
 	status_x+=badge_width
 	for i in active_status.size():
-		active_status[i].position=Vector2(status_x+float(i)*34,ground_y+74)
+		active_status[i].position=Vector2(status_x+float(i)*34,ground_y+(80 if engine.card_mode else 74))
+		active_status[i].size=Vector2(24,24) if engine.card_mode else Vector2(32,32)
 
 	var hit: Control = slot.hit
 	hit.position = art.position
@@ -1244,7 +1270,7 @@ func _hud_text(label: Label, font_size: int) -> void:
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
 	_hud_frame(dash.dock, Color("dceaff"))
-	_hud_frame(dash.portrait_frame, Color("c5e5fa"), 20, true)
+	_hud_frame(dash.portrait_frame, Color("dbe9f8"), 20, true)
 	_hud_frame(title_plate, Color("cedfff"), 18)
 	_hud_frame(phase_plate, Color("ade4e7"), 18)
 	_hud_frame(log_box, Color("e4edff"), 18)
@@ -1271,17 +1297,24 @@ func _style_card_battle() -> void:
 	round_label.add_theme_color_override("font_color", Color("4973ae"))
 	for action in [speed_button, card_panel.get_node("CardTargetButton"), card_item_button, card_link_button, card_end_button]:
 		_style_card_action(action, action == card_end_button)
-	for gauge in dash.gauges:
-		var tile: Panel = gauge.group.get_node("StatusTile")
-		tile.show()
-		_hud_frame(tile, Color("f7fbff"), 14, true)
-		_hud_text(gauge.title, 18)
-		_hud_text(gauge.value, 19)
 	_hud_frame(dash.block_badge.panel, Color("cbdfff"), 12, true)
+	for i in dash.gauges.size():
+		var gauge: Dictionary = dash.gauges[i]
+		gauge.group.get_node("StatusTile").show()
+		_hud_frame(gauge.group.get_node("StatusTile"), Color("f8fbff") if i == 0 else Color("e6edf7"), 14, true)
+		_hud_text(gauge.title, 18 if i == 0 else 16)
+		_hud_text(gauge.value, 24 if i == 0 else 17)
+		if i > 0:
+			gauge.title.add_theme_color_override("font_color", Color("647c99"))
+			gauge.value.add_theme_color_override("font_color", Color("647c99"))
+			gauge.fill.modulate = Color(0.88, 0.92, 0.96)
 	for slot in slots:
 		_hud_frame(slot.plate, Color("f4f9ff"), 12)
 		_hud_text(slot.name, 20)
 		_hud_text(slot.hp, 16)
+		_hud_text(slot.intent, 16)
+		slot.intent.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		slot.intent.add_theme_color_override("font_color", Color("5b718f"))
 	backdrop.z_index = -3
 	root.get_child(1).z_index = -2
 	var battlefield := Panel.new()
@@ -1311,7 +1344,7 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 	button.set_script(LayeredButton)
 	for state in ["normal", "hover", "pressed", "hover_pressed", "disabled", "focus"]:
 		var box := StyleBoxFlat.new()
-		box.bg_color = Color("99d8e1") if primary else Color("f7fbff")
+		box.bg_color = Color("73c4d6") if primary else Color("f3f7fc")
 		box.border_color = Color("315d77") if primary else Color("476189")
 		box.set_border_width_all(2)
 		box.set_corner_radius_all(14)
@@ -1322,10 +1355,10 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 		box.content_margin_top = 4
 		box.content_margin_bottom = 4
 		if state in ["hover", "focus"]:
-			box.bg_color = Color("bcebdd") if primary else Color("e4f1ff")
+			box.bg_color = Color("91d9df") if primary else Color("e4edf8")
 			box.border_color = Color("2f729b")
 		elif state in ["pressed", "hover_pressed"]:
-			box.bg_color = Color("aedfce") if primary else Color("d1e4fb")
+			box.bg_color = Color("66b7ca") if primary else Color("d1e0f2")
 			box.shadow_offset = Vector2(0, 1)
 		elif state == "disabled":
 			box.bg_color = Color("e2e8f1")
@@ -1335,39 +1368,41 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
 		button.add_theme_color_override(state, Color("1d537c") if primary else Color("315ca4"))
 	button.add_theme_color_override("font_disabled_color", Color("7c8da4"))
+	button.add_theme_constant_override("icon_max_width", 24)
+	button.add_theme_constant_override("h_separation", 8)
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock
 	UiFit.pin_left(dock, 312, 28, 246, 520)
 	dash.portrait_frame.position = Vector2(16, 16)
-	dash.portrait_frame.size = Vector2(280, 200)
-	dash.portrait.position = Vector2(50, 4)
-	dash.portrait.size = Vector2(180, 188)
-	dash.name.position = Vector2(16, 226)
+	dash.portrait_frame.size = Vector2(280, 180)
+	dash.portrait.position = Vector2(62, 10)
+	dash.portrait.size = Vector2(156, 156)
+	dash.name.position = Vector2(16, 208)
 	dash.name.size = Vector2(280, 34)
 	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(16, 276)
-	dash.status_icons.position = Vector2(190, 282)
+	dash.block_badge.panel.position = Vector2(16, 252)
+	dash.status_icons.position = Vector2(190, 258)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
 		icon.position = Vector2(i * 28, 0)
 		icon.size = Vector2(24, 24)
 	for i in dash.gauges.size():
 		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.position = Vector2(20, 336 + i * 56)
-		gauge.group.size = Vector2(272, 48)
+		gauge.group.position = Vector2(20, [308.0, 392.0, 448.0][i])
+		gauge.group.size = Vector2(272, 62 if i == 0 else 44)
 		var tile: Panel = gauge.group.get_node("StatusTile")
 		tile.position = Vector2(-6, -4)
-		tile.size = Vector2(284, 54)
+		tile.size = Vector2(284, 68 if i == 0 else 50)
 		gauge.icon.position = Vector2(0, 0)
 		gauge.icon.size = Vector2(24, 24)
 		gauge.title.position = Vector2(32, -2)
 		gauge.title.size = Vector2(76, 28)
 		gauge.value.position = Vector2(100, -2)
-		gauge.value.size = Vector2(172, 28)
-		gauge.back.position = Vector2(0, 30)
-		gauge.back.size = Vector2(272, 14)
+		gauge.value.size = Vector2(172, 34 if i == 0 else 26)
+		gauge.back.position = Vector2(0, 38 if i == 0 else 28)
+		gauge.back.size = Vector2(272, 18 if i == 0 else 10)
 
 func _layout_card_hand() -> void:
 	if card_panel == null:
@@ -1386,8 +1421,8 @@ func _layout_card_hand() -> void:
 	var counts_frame: Panel = resources.get_node("DeckCountsFrame")
 	counts_frame.position = Vector2(8, 174)
 	counts_frame.size = Vector2(122, 66)
-	card_scroll.position = Vector2(164, 32)
-	card_scroll.size = Vector2(w - 398, 244)
+	card_scroll.position = Vector2(164, 26)
+	card_scroll.size = Vector2(w - 398, 250)
 	card_row.add_theme_constant_override("separation", 16)
 	card_panel.get_node("HandCaption").position = Vector2(178, 6)
 	card_panel.get_node("ActionsCaption").position = Vector2(w - 196, 16)
@@ -1418,9 +1453,9 @@ func _layout_card_hand() -> void:
 	for i in actions.size():
 		actions[i].position = Vector2(action_x, 48 + i * 50 + (10 if i == 3 else 0))
 		actions[i].custom_minimum_size = Vector2.ZERO
-		actions[i].size = Vector2(180, 42 if i < 3 else 54)
+		actions[i].size = Vector2(180, 42 if i < 3 else 58)
 		actions[i].custom_minimum_size = actions[i].size
-		actions[i].add_theme_font_size_override("font_size", 19)
+		actions[i].add_theme_font_size_override("font_size", 20 if i == 3 else 18)
 	card_panel.get_node("CardPlayHint").hide()
 	card_preview.position = Vector2(root.size.x - 294, 120)
 	UiFit.pin_left(title_plate, 420, 24, 24, 54)
@@ -1665,7 +1700,7 @@ func _refresh_cards() -> void:
 	for entry in engine.card_hand_view():
 		var index := int(entry.index)
 		var button = load("res://battle/card_face.gd").new()
-		button.configure(entry, Vector2(182, 232))
+		button.configure(entry, Vector2(182, 222))
 		button.focus_mode = Control.FOCUS_ALL
 		button.disabled = not bool(entry.ready) or mode != "command"
 		button.mouse_entered.connect(func():_preview_card(entry))
@@ -1734,6 +1769,8 @@ func _refresh_enemies() -> void:
 			planned = str(engine.enemy_skills.get(str(intent.get("id", "")), {}).get("name", "未知行动"))
 		slot.intent.text = "下次 · " + planned
 		slot.intent.visible = engine.card_mode and bool(visible_foe.alive)
+		slot.intent_icon.visible = slot.intent.visible
+		slot.intent_icon.texture = load(_pack_icon("intent_cast" if str(intent.get("kind", "")) == "skill" else "attack"))
 		if slot.get("art_data", null) == null:
 			var art_data := _foe_art(str(foe.kind))
 			slot["art_data"] = art_data

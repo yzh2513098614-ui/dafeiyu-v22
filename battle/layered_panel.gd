@@ -19,7 +19,8 @@ static func paint(control: Control, box: StyleBoxFlat) -> void:
 	if not _gradients.has(box.bg_color):
 		var texture := GradientTexture2D.new()
 		var colors := Gradient.new()
-		colors.colors = PackedColorArray([box.bg_color.lightened(0.65), box.bg_color.lightened(0.18), box.bg_color])
+		var strength := 0.32 if box.border_width_left > 0 else 0.12
+		colors.colors = PackedColorArray([box.bg_color.lightened(strength), box.bg_color.lightened(strength * 0.4), box.bg_color])
 		colors.offsets = PackedFloat32Array([0.0, 0.42, 1.0])
 		texture.gradient = colors
 		texture.width = 128

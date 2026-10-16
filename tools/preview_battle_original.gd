@@ -15,7 +15,7 @@ func _ready() -> void:
 	get_node("/root/HarborPrefs").values.fullscreen = false
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_window().size = Vector2i(1280, 720)
-	get_window().title = "战斗界面 · 深色边缘"
+	get_window().title = "战斗试玩 · 手牌与敌方意图"
 	var verify := "--verify-original-battle" in OS.get_cmdline_user_args()
 	if verify:
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
@@ -80,6 +80,38 @@ func verify_inputs() -> void:
 			fit = fit and not actions[i].get_global_rect().intersects(actions[i - 1].get_global_rect())
 	check(fit, "all action buttons fit their inner frame without overlap")
 	check(screen.dash.dock.position.x < screen.slots[0].art.position.x and screen.card_panel.position.y > screen.slots[0].bar_back.get_rect().end.y, "original player / portrait / hand layout retained")
+	var intel_fits := true
+	for slot in screen.slots:
+		if slot.foe != null:
+			intel_fits = intel_fits and slot.plate.get_global_rect().encloses(slot.intent.get_global_rect()) and slot.plate.get_global_rect().encloses(slot.bar_back.get_global_rect())
+	check(intel_fits, "enemy intent and health share one readable nameplate group")
+	var hand_before_scroll: Array = engine.hand.duplicate()
+	for entry in engine.card_hand_view():
+		if int(entry.cost) > 0:
+			engine.card_energy = 0
+			screen._refresh_cards()
+			await settle()
+			var unavailable: Button = screen.card_row.get_child(int(entry.index))
+			check(unavailable.disabled and unavailable.has_node("CardAvailability"), "insufficient energy disables the card with a readable reason")
+			break
+	engine.card_energy = engine.card_energy_max
+	engine.hand.clear()
+	for id in engine.card_catalog.keys().slice(0, 8):
+		engine.hand.append(str(id))
+	screen._refresh_cards()
+	await settle()
+	var scrollbar: HScrollBar = screen.card_scroll.get_h_scroll_bar()
+	var cards_fit := scrollbar.visible
+	var content_bottom: float = screen.card_scroll.get_global_rect().end.y - scrollbar.size.y
+	for card in screen.card_row.get_children():
+		cards_fit = cards_fit and card.get_global_rect().end.y <= content_bottom + 1.0
+	check(cards_fit, "eight-card hand keeps card bottoms above the scrollbar")
+	screen.card_row.get_child(7).grab_focus()
+	await settle()
+	check(screen.card_scroll.scroll_horizontal > 0, "keyboard focus still scrolls to a later card")
+	engine.hand = hand_before_scroll
+	screen._refresh_cards()
+	await settle()
 	var rng_before: int = engine.rng.state
 	await click(screen.slots[1].hit)
 	check(screen.context.target == 1 and screen.slots[1].mark.visible, "portrait click selects the real target")
@@ -102,6 +134,9 @@ func verify_inputs() -> void:
 		get_viewport().push_input(motion, true)
 		await settle()
 		check(screen.card_preview.visible, "card hover opens the full original illustration preview")
+		check(card.scale.y > 1.02 and card.get_global_rect().position.y >= screen.card_scroll.get_global_rect().position.y, "hover lifts the card within its reserved scroll space")
+		var effects: RichTextLabel = card.get_node("CardFooter/CardEffect")
+		check(not effects.get_parsed_text().is_empty() and effects.get_content_height() <= effects.size.y + 1.0, "card effect text remains readable without vertical clipping")
 		var hand_before: int = engine.hand.size()
 		var hp_before: float = engine.foes[0].hp
 		await click(card)
