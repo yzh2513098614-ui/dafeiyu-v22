@@ -69,7 +69,7 @@ func run() -> void:
  check(not music.music_enabled(),"set_enabled(false) writes through to prefs")
  music.set_enabled(true)
  check(music.music_enabled(),"set_enabled(true) restores music")
- check(music.style_keys().size()==6,"all six style sets are exposed")
+ check(music.style_keys().size()==7,"all seven style sets are exposed")
  var style_home: String=music.style_key()
  music.set_style("harbor")
  check(music.style_key()=="harbor","set_style switches the style set")
@@ -231,6 +231,31 @@ func run() -> void:
  await frames(12)
  var tv_head: float=music._players[music._slot].get_playback_position()
  check(tv_head>0.0,"tension variation advances on the real player (%.2fs)"%[tv_head])
+ music.exit_gallery()
+
+ # ---------- 4i. 《钢琴改编集》：全项目 BGM 的钢琴版，每场合轮换三首 ----------
+ music.set_style("piano_edition")
+ var pe: Array=music.catalog()
+ check(pe.size()==18,"piano_edition catalog lists eighteen tracks")
+ var pe_missing: Array=[]
+ var pe_seconds: Array=[]
+ for row in pe:
+  var pe_sec: float=float(row["seconds"])
+  if pe_sec<=0.0:pe_missing.append(str(row["id"]))
+  pe_seconds.append(pe_sec)
+ check(pe_missing.is_empty(),"all eighteen piano editions are readable (missing: %s)"%[str(pe_missing)])
+ check(pe_seconds.min()>30.0 and pe_seconds.max()<200.0,"piano edition durations are sane: %s"%[JSON.stringify(pe_seconds)])
+ var pe_moods_missing: Array=[]
+ var pe_count_ok:=true
+ for mood in music.MOOD_ORDER:
+  if not music.STYLE_SETS["piano_edition"]["tracks"].has(mood):pe_moods_missing.append(str(mood))
+  elif music.STYLE_SETS["piano_edition"]["tracks"][mood].size()!=3:pe_count_ok=false
+ check(pe_moods_missing.is_empty() and pe_count_ok,"piano_edition rotates three editions in every mood")
+ music.select_gallery(pe[0]["id"])
+ check(music.gallery_track()==str(pe[0]["id"]),"gallery accepts a piano edition id")
+ await frames(12)
+ var pe_head: float=music._players[music._slot].get_playback_position()
+ check(pe_head>0.0,"piano edition advances on the real player (%.2fs)"%[pe_head])
  music.exit_gallery()
  music.set_style(style_home)
 

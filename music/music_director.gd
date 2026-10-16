@@ -16,18 +16,20 @@ extends Node
 ##   每次进入该场合都会换到组里的下一首；停在同一场合超过 DWELL 秒也会自己换下一首。
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
-## 六套风格组，F8 切换（会记住）：
+## 七套风格组，F8 切换（会记住）：
 ##   galgame     galgame 场景二十八首（默认；九首原创钢琴 + 《灯塔变奏》六首：每首是原曲的钢琴变奏，接进对应场合轮换）
 ##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
 ##   whalefm     《鲸落电台》六首（电钢 + 贝斯 + 鼓组 + 黑胶炒豆的 Lo-fi 电台，每场合固定一首）
 ##   chip        《像素掌机》六首（方波×2 + 三角波 + 噪声鼓的芯片音乐，每场合固定一首）
 ##   glasshouse_var 《玻璃温室·变奏集》六首（《相遇的圆舞曲》的六首性格变奏，全 3/4 圆舞曲）
+##   piano_edition 《钢琴改编集》（全项目 BGM 的钢琴版，同一场合轮换，目前每场合三首）
 ##
-## glasshouse / whalefm / chip / glasshouse_var 的音轨放在 assets/music/ 子目录里，所以它们的曲目 id
-## 带一段路径（"glasshouse/glasshouse_01_prologue"、"chip/chip_title"、
-## "glasshouse_var/glasshouse_var_01_intro"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
-## 这四组每首都是整段无缝循环（尾音已折回开头），一个场合只排一首、靠循环铺满，不轮换。
+## glasshouse / whalefm / chip / glasshouse_var / piano_edition 的音轨放在 assets/music/ 子目录里，
+## 所以它们的曲目 id 带一段路径（"glasshouse/glasshouse_01_prologue"、"chip/chip_title"、
+## "piano_edition/wf_01_fm885_piano"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
+## 前四组每首都是整段无缝循环（尾音已折回开头），一个场合只排一首、靠循环铺满，不轮换；
+## piano_edition 是同场合多首轮换（见 tools/bgm_piano/ 的改编规则）。
 ## galgame 里的《灯塔变奏》六首音轨也在子目录（"lighthouse/lighthouse_piano_var" 等）：它们与各自的
 ## 原曲同处一个场合轮换（原曲在前、变奏紧随其后），按整曲长度换曲（见 _switch 里的 dwell 特例）。
 ##
@@ -116,6 +118,20 @@ const STYLE_SETS := {
 			"hope": "glasshouse_var/glasshouse_var_06_final",
 		},
 	},
+	"piano_edition": {
+		"name": "钢琴改编集",
+		"tracks": {
+			# 全项目 BGM 的钢琴版：源乐谱按音区分成旋律 / 低音 / 和弦 / 加花，弦乐垫的长音改成
+			# 每拍触键的钢琴和弦，鼓组整层丢掉（见 tools/bgm_piano/）。同一场合轮换，
+			# 目前每个场合三首（玻璃温室 / 圆舞曲变奏 / 鲸落电台 各一），后续批次继续往这里加。
+			"title": ["piano_edition/glasshouse_01_prologue_piano", "piano_edition/glasshouse_var_01_intro_piano", "piano_edition/wf_01_fm885_piano"],
+			"day": ["piano_edition/glasshouse_02_meeting_piano", "piano_edition/glasshouse_var_02_reunion_piano", "piano_edition/wf_02_breakwater_piano"],
+			"indoor": ["piano_edition/glasshouse_03_longing_piano", "piano_edition/glasshouse_var_03_steps_piano", "piano_edition/wf_03_konbini_piano"],
+			"night": ["piano_edition/glasshouse_04_rain_piano", "piano_edition/glasshouse_var_04_moon_piano", "piano_edition/wf_04_nightlight_piano"],
+			"battle": ["piano_edition/glasshouse_05_confession_piano", "piano_edition/glasshouse_var_05_spin_piano", "piano_edition/wf_05_container_piano"],
+			"hope": ["piano_edition/glasshouse_06_farewell_piano", "piano_edition/glasshouse_var_06_final_piano", "piano_edition/wf_06_ebbtide_piano"],
+		},
+	},
 }
 
 const MOOD_ORDER: Array = ["title", "day", "night", "indoor", "battle", "hope"]
@@ -190,6 +206,26 @@ const CATALOG := {
 		["glasshouse_var/glasshouse_var_04_moon", "月下的圆舞曲", "圆舞曲变奏 · 月下 / 街区夜晚"],
 		["glasshouse_var/glasshouse_var_05_spin", "旋转的圆舞曲", "圆舞曲变奏 · 旋转 / 潮汐试炼"],
 		["glasshouse_var/glasshouse_var_06_final", "终场的圆舞曲", "圆舞曲变奏 · 终场 / 已通关"],
+	],
+	"piano_edition": [
+		["piano_edition/glasshouse_01_prologue_piano", "玻璃温室的序章 · 钢琴版", "钢琴改编 · 玻璃温室 / 标题"],
+		["piano_edition/glasshouse_02_meeting_piano", "相遇的圆舞曲 · 钢琴版", "钢琴改编 · 玻璃温室 / 街区白天"],
+		["piano_edition/glasshouse_03_longing_piano", "思念的形状 · 钢琴版", "钢琴改编 · 玻璃温室 / 室内"],
+		["piano_edition/glasshouse_04_rain_piano", "雨中的音乐盒 · 钢琴版", "钢琴改编 · 玻璃温室 / 街区夜晚"],
+		["piano_edition/glasshouse_05_confession_piano", "告白，升一个全音 · 钢琴版", "钢琴改编 · 玻璃温室 / 潮汐试炼"],
+		["piano_edition/glasshouse_06_farewell_piano", "告别与同主音 · 钢琴版", "钢琴改编 · 玻璃温室 / 已通关"],
+		["piano_edition/glasshouse_var_01_intro_piano", "序奏的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 标题"],
+		["piano_edition/glasshouse_var_02_reunion_piano", "重逢的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 街区白天"],
+		["piano_edition/glasshouse_var_03_steps_piano", "小步的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 室内"],
+		["piano_edition/glasshouse_var_04_moon_piano", "月下的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 街区夜晚"],
+		["piano_edition/glasshouse_var_05_spin_piano", "旋转的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 潮汐试炼"],
+		["piano_edition/glasshouse_var_06_final_piano", "终场的圆舞曲 · 钢琴版", "钢琴改编 · 圆舞曲变奏 / 已通关"],
+		["piano_edition/wf_01_fm885_piano", "调频 88.5 · 钢琴版", "钢琴改编 · 鲸落电台 / 标题"],
+		["piano_edition/wf_02_breakwater_piano", "防波堤散步道 · 钢琴版", "钢琴改编 · 鲸落电台 / 街区白天"],
+		["piano_edition/wf_03_konbini_piano", "便利店暖光 · 钢琴版", "钢琴改编 · 鲸落电台 / 室内"],
+		["piano_edition/wf_04_nightlight_piano", "夜航灯 · 钢琴版", "钢琴改编 · 鲸落电台 / 街区夜晚"],
+		["piano_edition/wf_05_container_piano", "集装箱突围 · 钢琴版", "钢琴改编 · 鲸落电台 / 潮汐试炼"],
+		["piano_edition/wf_06_ebbtide_piano", "退潮，晨光 · 钢琴版", "钢琴改编 · 鲸落电台 / 已通关"],
 	],
 }
 const MOOD_LABEL := {

@@ -1,0 +1,331 @@
+{
+  "engine": "4.7.2-stable (official)",
+  "generated_by": "tools/bgm_piano/render.gd",
+  "rule": "源乐谱按音区分成 melody/bass/chord/ornament，弦乐垫长音改成每拍触键的钢琴和弦，鼓组整层丢掉",
+  "tracks": [
+    {
+      "bits": 16,
+      "cached_keys": 24,
+      "channels": 2,
+      "duration": 107.866666666667,
+      "file": "res://assets/music/piano_edition/glasshouse_01_prologue_piano.wav",
+      "frames": 4756920,
+      "moods": [
+        "title"
+      ],
+      "notes": 381,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 39.788,
+      "rms_dbfs": -18.0536671757237,
+      "sample_rate": 44100,
+      "source": "glasshouse_01_prologue",
+      "title": "序章 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 35,
+      "channels": 2,
+      "duration": 66.6545578231293,
+      "file": "res://assets/music/piano_edition/glasshouse_02_meeting_piano.wav",
+      "frames": 2939466,
+      "moods": [
+        "day"
+      ],
+      "notes": 439,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 26.133,
+      "rms_dbfs": -15.9727505540861,
+      "sample_rate": 44100,
+      "source": "glasshouse_02_meeting",
+      "title": "相遇 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 39,
+      "channels": 2,
+      "duration": 100.510362811791,
+      "file": "res://assets/music/piano_edition/glasshouse_03_longing_piano.wav",
+      "frames": 4432507,
+      "moods": [
+        "indoor"
+      ],
+      "notes": 413,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 26.959,
+      "rms_dbfs": -18.0683447489874,
+      "sample_rate": 44100,
+      "source": "glasshouse_03_longing",
+      "title": "思念 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 50,
+      "channels": 2,
+      "duration": 107.866666666667,
+      "file": "res://assets/music/piano_edition/glasshouse_04_rain_piano.wav",
+      "frames": 4756920,
+      "moods": [
+        "night"
+      ],
+      "notes": 819,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 49.347,
+      "rms_dbfs": -17.0169921747179,
+      "sample_rate": 44100,
+      "source": "glasshouse_04_rain",
+      "title": "雨中 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 53,
+      "channels": 2,
+      "duration": 102.252653061224,
+      "file": "res://assets/music/piano_edition/glasshouse_05_confession_piano.wav",
+      "frames": 4509342,
+      "moods": [
+        "battle"
+      ],
+      "notes": 948,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 49.52,
+      "rms_dbfs": -18.0603873239304,
+      "sample_rate": 44100,
+      "source": "glasshouse_05_confession",
+      "title": "告白 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 54,
+      "channels": 2,
+      "duration": 107.866666666667,
+      "file": "res://assets/music/piano_edition/glasshouse_06_farewell_piano.wav",
+      "frames": 4756920,
+      "moods": [
+        "hope"
+      ],
+      "notes": 508,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 34.487,
+      "rms_dbfs": -16.1142678217229,
+      "sample_rate": 44100,
+      "source": "glasshouse_06_farewell",
+      "title": "告别 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 52.6285714285714,
+      "file": "res://assets/music/piano_edition/glasshouse_var_01_intro_piano.wav",
+      "frames": 2320920,
+      "moods": [
+        "title"
+      ],
+      "notes": 276,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 15.348,
+      "rms_dbfs": -17.3418337209283,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_01_intro",
+      "title": "序奏的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 66.6545578231293,
+      "file": "res://assets/music/piano_edition/glasshouse_var_02_reunion_piano.wav",
+      "frames": 2939466,
+      "moods": [
+        "day"
+      ],
+      "notes": 795,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 31.553,
+      "rms_dbfs": -17.336699604161,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_02_reunion",
+      "title": "重逢的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 54.5333333333333,
+      "file": "res://assets/music/piano_edition/glasshouse_var_03_steps_piano.wav",
+      "frames": 2404920,
+      "moods": [
+        "indoor"
+      ],
+      "notes": 471,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 18.022,
+      "rms_dbfs": -17.5036161204086,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_03_steps",
+      "title": "小步的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 61.2,
+      "file": "res://assets/music/piano_edition/glasshouse_var_04_moon_piano.wav",
+      "frames": 2698920,
+      "moods": [
+        "night"
+      ],
+      "notes": 530,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 19.839,
+      "rms_dbfs": -18.1854945714547,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_04_moon",
+      "title": "月下的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 52.6285714285714,
+      "file": "res://assets/music/piano_edition/glasshouse_var_05_spin_piano.wav",
+      "frames": 2320920,
+      "moods": [
+        "battle"
+      ],
+      "notes": 869,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 28.521,
+      "rms_dbfs": -15.9074874379757,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_05_spin",
+      "title": "旋转的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 81.2,
+      "file": "res://assets/music/piano_edition/glasshouse_var_06_final_piano.wav",
+      "frames": 3580920,
+      "moods": [
+        "hope"
+      ],
+      "notes": 613,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 27.169,
+      "rms_dbfs": -17.8382483577014,
+      "sample_rate": 44100,
+      "source": "glasshouse_var_06_final",
+      "title": "终场的圆舞曲 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 56,
+      "channels": 2,
+      "duration": 107.866666666667,
+      "file": "res://assets/music/piano_edition/wf_01_fm885_piano.wav",
+      "frames": 4756920,
+      "moods": [
+        "title"
+      ],
+      "notes": 400,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 25.171,
+      "rms_dbfs": -18.7645962617756,
+      "sample_rate": 44100,
+      "source": "wf_01_fm885",
+      "title": "调频 88.5 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 57,
+      "channels": 2,
+      "duration": 90.502335600907,
+      "file": "res://assets/music/piano_edition/wf_02_breakwater_piano.wav",
+      "frames": 3991153,
+      "moods": [
+        "day"
+      ],
+      "notes": 522,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 29.098,
+      "rms_dbfs": -18.5014411428983,
+      "sample_rate": 44100,
+      "source": "wf_02_breakwater",
+      "title": "防波堤散步道 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 57,
+      "channels": 2,
+      "duration": 102.252653061224,
+      "file": "res://assets/music/piano_edition/wf_03_konbini_piano.wav",
+      "frames": 4509342,
+      "moods": [
+        "indoor"
+      ],
+      "notes": 329,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 19.643,
+      "rms_dbfs": -18.1661235343368,
+      "sample_rate": 44100,
+      "source": "wf_03_konbini",
+      "title": "便利店暖光 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 57,
+      "channels": 2,
+      "duration": 117.563650793651,
+      "file": "res://assets/music/piano_edition/wf_04_nightlight_piano.wav",
+      "frames": 5184557,
+      "moods": [
+        "night"
+      ],
+      "notes": 590,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 33.149,
+      "rms_dbfs": -17.2917237254222,
+      "sample_rate": 44100,
+      "source": "wf_04_nightlight",
+      "title": "夜航灯 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 57,
+      "channels": 2,
+      "duration": 81.2,
+      "file": "res://assets/music/piano_edition/wf_05_container_piano.wav",
+      "frames": 3580920,
+      "moods": [
+        "battle"
+      ],
+      "notes": 516,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 26.775,
+      "rms_dbfs": -18.4280063581843,
+      "sample_rate": 44100,
+      "source": "wf_05_container",
+      "title": "集装箱突围 · 钢琴版"
+    },
+    {
+      "bits": 16,
+      "cached_keys": 57,
+      "channels": 2,
+      "duration": 107.866666666667,
+      "file": "res://assets/music/piano_edition/wf_06_ebbtide_piano.wav",
+      "frames": 4756920,
+      "moods": [
+        "hope"
+      ],
+      "notes": 256,
+      "peak_dbfs": -1.11034655699663,
+      "render_seconds": 19.438,
+      "rms_dbfs": -19.2367958687649,
+      "sample_rate": 44100,
+      "source": "wf_06_ebbtide",
+      "title": "退潮，晨光 · 钢琴版"
+    }
+  ]
+}
