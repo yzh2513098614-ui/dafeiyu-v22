@@ -1,10 +1,10 @@
 [
  {
-  "controls": 30,
+  "controls": 47,
   "error": 0.0,
-  "id": "title_title",
-  "scene": "res://ui/design/pages/title_title.tscn",
-  "title": "标题菜单"
+  "id": "title_home_sticker",
+  "scene": "res://ui/design/pages/title_home_sticker.tscn",
+  "title": "标题首页 · 海风手记"
  },
  {
   "controls": 64,

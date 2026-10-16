@@ -24,8 +24,8 @@ func contexts()->Array:
   var script:Script=game.get_script()
   if script!=null and script.resource_path=="res://ui/harbor_start.gd":
    result.append(context("title_settings_sticker" if game.page=="settings" else "title_"+str(game.page),game,"标题 · "+str(game.page)))
-  elif script!=null and script.resource_path=="res://ui/candy_sticker_start.gd" and game.page=="settings":
-   result.append(context("title_settings_sticker",game,"标题 · 设置"))
+  elif script!=null and script.resource_path=="res://ui/candy_sticker_start.gd" and game.page in ["settings","title"]:
+   result.append(context("title_settings_sticker" if game.page=="settings" else "title_home_sticker",game,"标题 · "+str(game.page)))
   elif game.has_method("_game_font") and game.get("loot")!=null:
    var loot=game.loot
    result.append(context("world_hud",game.ui.get_child(0),"世界 · 常用工具栏"))
