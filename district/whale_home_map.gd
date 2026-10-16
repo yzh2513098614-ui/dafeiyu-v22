@@ -22,6 +22,7 @@ const StudyDetails=preload("res://assets/whale_home/study_details.gd")
 const Optics=preload("res://assets/whale_home/lighting_and_optics.gd")
 const EntryDetails=preload("res://assets/whale_home/entry_and_laundry.gd")
 const LoungePassage=preload("res://assets/whale_home/lounge_passage.gd")
+const GrandGate=preload("res://assets/whale_home/grand_gate.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -783,7 +784,7 @@ func _garden(parent: Node3D) -> void:
 		_whale(root,Vector3(0,1.52,0),.25)
 	for i in 10:
 		var x: float=-12.8+i*2.85
-		if absf(x+9.2)<2.1:continue
+		if absf(x+9.2)<2.1 or absf(x-3.5)<5.0:continue
 		_plant(parent,Vector3(x,.06,8.6),.8,true)
 	var picnic: Node3D=_table(parent,Vector3(-35.5,0,10.3),3.6,2.2,.85,"garden_table")
 	for i in 4:_cup(picnic,Vector3(-1.1+i*.73,.95,.14),BLUE if i%2 else WHITE)
@@ -1001,6 +1002,7 @@ func build(owner_game) -> Dictionary:
 	_entry_details(floors[0]);_living(floors[1]);_hobby(floors[1]);_bedroom(floors[2]);_bathroom(floors[2]);_telescope(floors[2]);_roof(roof)
 	_annexes()
 	Interiors.new().build(self)
+	GrandGate.build(self)
 	WallDetails.build(self)
 	LoungePassage.terrace_door(self)
 	_garden(island);_dock(island,sea)

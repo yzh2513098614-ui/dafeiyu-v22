@@ -50,9 +50,10 @@ static func _partition(b, wall: Node3D) -> void:
 	doors.sort_custom(func(a: Node3D, c: Node3D) -> bool: return a.position.x < c.position.x)
 	var start := -length*.5
 	for door: Node3D in doors:
-		_span(b, lower_trim, upper_trim, start, door.position.x-OPENING*.5)
-		_door_frame(b, lower_trim, upper_trim, door.position.x)
-		start = door.position.x+OPENING*.5
+		var opening: float=door.get_meta("home_opening_width",OPENING)
+		_span(b, lower_trim, upper_trim, start, door.position.x-opening*.5)
+		if not door.get_meta("home_custom_frame",false):_door_frame(b, lower_trim, upper_trim, door.position.x)
+		start = door.position.x+opening*.5
 	_span(b, lower_trim, upper_trim, start, length*.5)
 	# Header boards and room names should disappear with the wall above them.
 	for child: Node in wall.get_children():
