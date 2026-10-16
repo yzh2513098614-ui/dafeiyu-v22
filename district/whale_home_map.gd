@@ -20,6 +20,7 @@ const WallDetails=preload("res://assets/whale_home/wall_details.gd")
 const Fixtures=preload("res://assets/whale_home/household_fixtures.gd")
 const StudyDetails=preload("res://assets/whale_home/study_details.gd")
 const Optics=preload("res://assets/whale_home/lighting_and_optics.gd")
+const EntryDetails=preload("res://assets/whale_home/entry_and_laundry.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -555,20 +556,10 @@ func _telescope(parent: Node3D) -> void:
 
 func _entry_details(parent: Node3D) -> void:
 	var bench: Node3D=_furniture(parent,"EntryBenchAndShoeStorage",Vector3(-10.6,0,1.1))
-	_box(bench,Vector3(3.8,.63,1.10),Vector3(0,.32,0),WHITE,0,.075)
-	var seat: MeshInstance3D=_box(bench,Vector3(3.73,.16,1.09),Vector3(0,.71,0),BLUE,0,.08);_cloth(seat,BLUE,1)
-	for x in [-1.23,0,1.23]:
-		_box(bench,Vector3(1.08,.39,.055),Vector3(x,.34,.57),LIGHT,0,.018)
-		Geo.rod(bench,Vector3(x-.1,.46,.63),Vector3(x+.1,.46,.63),.018,GOLD)
-		_sphere(bench,Vector3(x-.18,.09,.80),Vector3(.23,.15,.46),BLUE)
-		_sphere(bench,Vector3(x+.15,.09,.80),Vector3(.23,.15,.46),WHITE)
+	EntryDetails.shoe_bench(self,bench)
 	_coll(bench,Vector3(3.8,.8,1.12),Vector3(0,.4,0))
 	var rack: Node3D=_furniture(parent,"BrassCoatTree",Vector3(-12.8,0,3.1))
-	Geo.cylinder(rack,.40,.09,Vector3(0,.05,0),WHITE);Geo.rod(rack,Vector3(0,.1,0),Vector3(0,2.50,0),.045,GOLD)
-	for i in 4:
-		var a: float=i*PI*.5;Geo.rod(rack,Vector3(0,2.15,0),Vector3(cos(a)*.44,2.35,sin(a)*.44),.03,GOLD)
-	var coat: MeshInstance3D=_box(rack,Vector3(.59,1.10,.15),Vector3(.3,1.55,0),BLUE,0,.09);_cloth(coat,BLUE)
-	Geo.cylinder(rack,.28,.075,Vector3(0,2.60,0),WOOD);Geo.cylinder(rack,.15,.17,Vector3(0,2.71,0),WOOD)
+	EntryDetails.coat_tree(self,rack)
 	_coll(rack,Vector3(.80,2.6,.8),Vector3(0,1.3,0))
 	var dresser: Node3D=_cabinet(parent,Vector3(-6.2,0,5.7),2.25,.90,"cream_cabinet")
 	_plant(dresser,Vector3(.62,1.02,.0),.47,true);_books(dresser,Vector3(-.82,1.02,0),4)
@@ -580,13 +571,7 @@ func _entry_details(parent: Node3D) -> void:
 	Geo.cylinder(baking,.26,.25,Vector3(.55,1.32,-.22),WHITE,.29)
 	for i in 3:Geo.cylinder(baking,.12,.25,Vector3(-.80+i*.38,.23,0),LIGHT)
 	var laundry: Node3D=_furniture(parent,"WhaleLaundryStation",Vector3(-11.3,0,-3.2))
-	_box(laundry,Vector3(1.55,1.53,1.28),Vector3(0,.78,0),LIGHT,0,.12)
-	var drum:=MeshInstance3D.new();var ring:=TorusMesh.new();ring.inner_radius=.39;ring.outer_radius=.47;ring.rings=32;ring.ring_segments=12
-	drum.mesh=ring;drum.material_override=Geo.material(WHITE);drum.position=Vector3(0,.74,.68);drum.rotation.x=PI*.5;laundry.add_child(drum)
-	_sphere(laundry,Vector3(0,.73,.67),Vector3(.73,.73,.09),Color("74a9c7"))
-	for i in 3:
-		var towel: MeshInstance3D=_box(laundry,Vector3(1.15,.10,.70),Vector3(0,1.6+i*.11,0),WHITE if i%2 else BLUE,0,.035);_cloth(towel,WHITE if i%2 else BLUE,1)
-	for x in [-.48,-.15,.2]:_sphere(laundry,Vector3(x,1.30,.67),Vector3.ONE*.065,GOLD)
+	EntryDetails.washer(self,laundry)
 	_coll(laundry,Vector3(1.58,1.90,1.34),Vector3(0,.95,0))
 
 func _bathroom(parent: Node3D) -> void:
@@ -617,10 +602,7 @@ func _hobby(parent: Node3D) -> void:
 	var shelf: Node3D=_shelf(parent,Vector3(11.4,h,-10.8),3.2,1.9,"display_shelf")
 	_art(shelf,Vector3(.6,2.64,-.25),Vector2(1.10,1.1))
 	var basket: Node3D=_furniture(parent,"CushionBasket",Vector3(-7.1,h,-4.2))
-	Geo.cylinder(basket,.52,.57,Vector3(0,.29,0),WOOD,.62)
-	for i in 10:Geo.cylinder(basket,.53+i*.008,.025,Vector3(0,.06+i*.054,0),WHITE)
-	_sphere(basket,Vector3(0,.56,0),Vector3(.72,.60,.69),BLUE)
-	_star(basket,Vector3(0,.67,.41),.30)
+	EntryDetails.cushion_basket(self,basket)
 	_coll(basket,Vector3(1.15,.78,1.15),Vector3(0,.39,0))
 	var ottoman: Node3D=_furniture(parent,"StripedRoundOttoman",Vector3(.4,h,-2.3))
 	var cushion: MeshInstance3D=Geo.cylinder(ottoman,.67,.45,Vector3(0,.27,0),BLUE);_cloth(cushion,BLUE,1)
