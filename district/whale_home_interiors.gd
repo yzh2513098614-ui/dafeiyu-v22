@@ -15,12 +15,8 @@ func build(builder) -> void:
 	_reading_corner()
 	_artist_corner()
 	_library_catalogue()
-	_guest_storage()
-	_rest_corner()
-	_dressing_mirror()
 	_sea_windows()
 	_reading_lamps()
-	Outdoors.new().build(b)
 	b.level.set_meta("interior_revision", "annex_daily_life_v2")
 
 func _baking_corner() -> void:
@@ -212,7 +208,7 @@ func _sea_windows() -> void:
 	var windows := [
 		["lounge_curtain", "1F · 海风会客厅窗帘", Vector3(-26.6, 0, -24), -1.0, b.MINT],
 		["studio_curtain", "2F · 创作书房窗帘", Vector3(26.6, b.HEIGHT, -29), 1.0, b.LIGHT],
-		["guest_curtain", "3F · 海风客房窗帘", Vector3(-26.6, b.HEIGHT * 2, -23.5), -1.0, b.SAKURA]]
+		["guest_curtain", "3F · 海风客房窗帘", Vector3(-18.5, b.HEIGHT * 2, -24), -1.0, b.SAKURA]]
 	for spec: Array in windows:
 		var state_key: String = "whale_home:facility:" + spec[0]
 		if not b.game.visited.has(state_key): b.game.visited[state_key] = true
@@ -247,7 +243,7 @@ func _reading_lamps() -> void:
 	var lamps := [
 		["lounge_reading_lamp", "1F · 会客厅阅读灯", Vector3(-24.8, 0, -20.5)],
 		["library_reading_lamp", "2F · 阅读室落地灯", Vector3(-24.7, b.HEIGHT, -17.5)],
-		["rest_reading_lamp", "3F · 海景休憩室暖灯", Vector3(25, b.HEIGHT * 2, -10)]]
+		["rest_reading_lamp", "3F · 海景休憩室暖灯", Vector3(20, b.HEIGHT * 2, -29)]]
 	for spec: Array in lamps:
 		var point: Vector3 = spec[2]
 		var lamp: Node3D = b._action("room_lamp", spec[0], spec[1], point, point.y)

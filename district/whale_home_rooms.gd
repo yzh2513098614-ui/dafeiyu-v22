@@ -20,7 +20,7 @@ func build(home_builder) -> void:
 	var west_names := ["海风会客厅", "海景阅读会客室", "海风客房"]
 	var east_names := ["花艺与烘焙工坊", "双人创作书房", "海景休憩室"]
 	var rear_names := ["家庭长桌厅", "蓝鲸藏书长廊", "晨光梳妆长廊"]
-	for i in 3:
+	for i in 2:
 		var floor_root: Node3D = builder.floors[i]
 		var height: float = i * builder.HEIGHT
 		var rect: Rect2 = builder.FLOOR_RECTS[i]
@@ -47,8 +47,6 @@ func build(home_builder) -> void:
 		[Vector2(3.5, -15), "dining", "鲸鱼餐厅", true]])
 	_partition(builder.floors[1], Vector2(2.2, -16), Vector2(2.2, 2), builder.HEIGHT, [
 		[Vector2(2.2, -8.1), "study", "海景书房", true]])
-	_partition(builder.floors[2], Vector2(2.2, -20), Vector2(2.2, -2), builder.HEIGHT * 2, [
-		[Vector2(2.2, -7.2), "bedroom", "鲸鱼梦境卧室", false]])
 	_partition(builder.floors[0], Vector2(-14, 8), Vector2(-3, 8), 0, [
 		[Vector2(-9.6, 8), "porch", "花藤门廊与前庭", true]])
 	_partition(builder.floors[0], Vector2(-3, 8), Vector2(14, 8), 0, [
@@ -56,20 +54,6 @@ func build(home_builder) -> void:
 	_partition(builder.floors[1], Vector2(-14, 2), Vector2(2.2, 2), builder.HEIGHT, [
 		[Vector2(-6.8, 2), "living_terrace", "水族客厅与海景露台", true]])
 	_partition(builder.floors[1], Vector2(2.2, 2), Vector2(8.4, 2), builder.HEIGHT)
-	_partition(builder.floors[2], Vector2(-8.4, -2), Vector2(2.2, -2), builder.HEIGHT * 2, [
-		[Vector2(0.2, -2), "bedroom_terrace", "卧室与海景露台", false]])
-	_partition(builder.floors[2], Vector2(2.2, -2), Vector2(14, -2), builder.HEIGHT * 2, [
-		[Vector2(8.5, -2), "stars_terrace", "观星室与海景露台", true]])
-	_partition(builder.floors[2], Vector2(-8.4, -20), Vector2(-8.4, -14), builder.HEIGHT * 2, [
-		[Vector2(-8.4, -17.5), "bedroom_landing", "鲸鱼卧室与楼梯厅", false]])
-	# The bathroom occupies the new rear hall, keeping the third-floor stair
-	# landing outside every private room and every closed doorway.
-	var top: float = builder.HEIGHT * 2
-	_partition(builder.floors[2], Vector2(-14, -32), Vector2(-4.5, -32), top)
-	_partition(builder.floors[2], Vector2(-14, -22), Vector2(-4.5, -22), top)
-	_partition(builder.floors[2], Vector2(-4.5, -32), Vector2(-4.5, -22), top, [
-		[Vector2(-4.5, -26.5), "bathroom", "海盐卫浴", false]])
-	builder._zone("bathroom", "3F · 海盐卫浴", Rect2(-14, -32, 9.5, 10), top)
 	builder.level.set_meta("home_room_doors", doors)
 	builder.level.set_meta("home_wall_tops", wall_tops)
 	builder.level.set_meta("home_partitions", partitions)

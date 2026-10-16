@@ -6,7 +6,6 @@ var b
 func build(builder) -> void:
 	b = builder
 	_balcony_tea()
-	_sea_recliner()
 	_watering_box()
 	_garden_chime()
 	b.level.set_meta("outdoor_revision", "seaside_daily_life_v1")

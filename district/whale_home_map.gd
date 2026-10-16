@@ -26,6 +26,8 @@ const LoungePassage=preload("res://assets/whale_home/lounge_passage.gd")
 const GrandGate=preload("res://assets/whale_home/grand_gate.gd")
 const Rooms=preload("res://district/whale_home_rooms.gd")
 const Interiors=preload("res://district/whale_home_interiors.gd")
+const Outdoors=preload("res://district/whale_home_outdoors.gd")
+const Rooftop=preload("res://district/whale_home_rooftop.gd")
 const Exterior=preload("res://district/whale_home_exterior.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
@@ -41,7 +43,7 @@ const PLANTER=preload("res://models/whale_home/flower_planter.tscn")
 const DOCK_POST=preload("res://models/whale_home/dock_post.tscn")
 const ROWBOAT=preload("res://models/whale_home/whale_rowboat.tscn")
 const HEIGHT := 5.2
-const FLOOR_RECTS = [Rect2(-28,-32,56,40),Rect2(-28,-34,56,36),Rect2(-28,-38,56,36)]
+const FLOOR_RECTS = [Rect2(-28,-32,56,40),Rect2(-28,-34,56,36),Rooftop.PLATFORM]
 const ISLAND_RECT = Rect2(-42,-45,84,70)
 const SIDE_GARDEN_OFFSET := 14.0
 const DOCK_RECTS = [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]
@@ -663,29 +665,6 @@ func _annexes() -> void:
 	_zone("annex_reading","2F · 海景阅读会客室",Rect2(-28,-34,14,36),h)
 	_zone("annex_studio","2F · 双人创作书房",Rect2(14,-34,14,36),h)
 	_zone("annex_library","2F · 蓝鲸藏书与展示长廊",Rect2(-14,-34,28,18),h)
-	var third: Node3D=floors[2];h=HEIGHT*2
-	var guest: Node3D=_furniture(third,"WhaleGuestBed",Vector3(-21,h,-29))
-	Beds.build(self,guest,true)
-	_coll(guest,Vector3(3.9,1.95,5.1),Vector3(0,.98,0))
-	_action("bed","guest_bed","海风客房 · 午后小憩",Vector3(-21,h,-25.7),h)
-	_art(third,Vector3(-21,h+.055,-27.6),Vector2(8,9),true)
-	for x in [-24.0,-18.0]:
-		var nightstand: Node3D=_cabinet(third,Vector3(x,h,-30),1.3,.85,"cream_cabinet")
-		_fixture(nightstand,Vector3(0,.95,0),false)
-	_sofa(third,Vector3(21,h,-16),5.4)
-	var rest: Node3D=_table(third,Vector3(21,h,-12.3),3.6,1.8,.65,"tea_table")
-	_cup(rest,Vector3(-1,.76,0),BLUE);_books(rest,Vector3(.4,.76,0),5)
-	for x in [-9.0,0.0,9.0]:
-		var dresser: Node3D=_cabinet(third,Vector3(x,h,-36.8),4.2,1.1,"cream_cabinet")
-		_plant(dresser,Vector3(1.3,1.22,0),.6,true);_whale(dresser,Vector3(-.8,1.2,0),.35)
-		_art(third,Vector3(x,h+2.7,-37.8),Vector2(2.1,1.8))
-	for x in [-21.0,21.0]:
-		_porthole(third,Vector3(x,h+2.8,-37.8),1.15)
-		_fixture(third,Vector3(x,h+3.45,-23),true,true)
-	for point in [Vector3(-25,h,-8),Vector3(25,h,-26),Vector3(13,h,-31)]:_plant(third,point,1.2,true)
-	_zone("annex_guest","3F · 海风客房",Rect2(-28,-38,14,36),h)
-	_zone("annex_rest","3F · 海景休憩室",Rect2(14,-38,14,36),h)
-	_zone("annex_dressing","3F · 晨光梳妆长廊",Rect2(-14,-38,28,18),h)
 
 func _stairs(parent: Node3D, x: float, front: float, back: float, base: float, label: String) -> void:
 	var width := 3.5;var run: float=front-back
@@ -955,13 +934,14 @@ func build(owner_game) -> Dictionary:
 	game=owner_game;level=_group(game.world,"WhaleHome");level.set_meta("walkable_slabs",[])
 	garden_wind=GardenWind.new();garden_wind.configure(game);level.add_child(garden_wind)
 	glass=StandardMaterial3D.new();glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;glass.albedo_color=Color(.58,.85,.96,.12);glass.roughness=.18;glass.cull_mode=BaseMaterial3D.CULL_DISABLED
-	game.shell.set_meta("layout_revision","whale_home_three_floors_v1")
+	game.shell.set_meta("layout_revision","whale_home_rooftop_tower_v2")
 	level.set_meta("visual_style","pastel_diorama_v1")
 	level.set_meta("model_revision","pastel_models_v2");level.set_meta("editable_components",13)
-	level.set_meta("building_revision","fourfold_floor_area_v1")
+	level.set_meta("building_revision","sea_tower_rooftop_v2")
 	level.set_meta("floor_footprints",FLOOR_RECTS)
 	level.set_meta("building_footprint_m2",FLOOR_RECTS[0].get_area())
-	level.set_meta("gross_floor_area_m2",FLOOR_RECTS[0].get_area()+FLOOR_RECTS[1].get_area()+FLOOR_RECTS[2].get_area())
+	level.set_meta("gross_floor_area_m2",FLOOR_RECTS[0].get_area()+FLOOR_RECTS[1].get_area()+Rooftop.TOWER.get_area())
+	level.set_meta("outdoor_rooftop_area_m2",Rooftop.PLATFORM.get_area()-Rooftop.TOWER.get_area())
 	game.shell.set_meta("guide_anchor",Vector3(-5.2,.05,18.0))
 	var island: Node3D=_group(level,"Island");var sea: Node3D=_group(level,"Sea");var roof: Node3D=_group(level,"Roof")
 	for i in 3:
@@ -987,16 +967,13 @@ func build(owner_game) -> Dictionary:
 	# East stairwell in 2F and west stairwell in 3F remain open all the way
 	# through the floor slabs, so the character's head never hits a landing.
 	for rect in [Rect2(-28,-34,36.4,36),Rect2(8.4,-34,19.6,28),Rect2(14,-6,14,8)]:_slab(floors[1],rect,HEIGHT);_deck(floors[1],rect,HEIGHT)
-	for rect in [Rect2(-8.4,-38,36.4,36),Rect2(-28,-38,19.6,24),Rect2(-28,-14,14,12)]:_slab(floors[2],rect,HEIGHT*2);_deck(floors[2],rect,HEIGHT*2)
-	_wall(floors[1],Rect2(-14,-16,28,18),HEIGHT,true);_wall(floors[2],Rect2(-14,-20,28,18),HEIGHT*2,true)
-	for i in 3:_wall(floors[i],FLOOR_RECTS[i],i*HEIGHT)
+	_wall(floors[1],Rect2(-14,-16,28,18),HEIGHT,true)
+	for i in 2:_wall(floors[i],FLOOR_RECTS[i],i*HEIGHT)
 	_stairs(floors[0],10.8,6.6,-6.0,0,"SeaBreezeStairs_1F_2F")
 	_stairs(floors[1],-10.8,-1.4,-14.0,HEIGHT,"StarLightStairs_2F_3F")
 	_curved_balcony(floors[1],-28,8.4,2,HEIGHT,"curved_lounge_balcony")
 	_rail(floors[1],Vector3(8.4,HEIGHT,-5.9),Vector3(8.4,HEIGHT,2))
-	_curved_balcony(floors[2],-8.4,28,-2,HEIGHT*2,"curved_stars_balcony")
-	_rail(floors[2],Vector3(-8.4,HEIGHT*2,-13.9),Vector3(-8.4,HEIGHT*2,-2))
-	for i in 3:
+	for i in 2:
 		var h: float=i*HEIGHT;var front: float=8-i*5
 		for x in [-12.8,12.8]:_plant(floors[i],Vector3(x,h,front-1.1),1.15,true)
 	_kitchen(floors[0]);_dining(floors[0])
@@ -1007,14 +984,16 @@ func build(owner_game) -> Dictionary:
 		_plant(entry,Vector3(side*1.94,0,.35),.7,true)
 	_whale(entry,Vector3(0,4.0,0),.40)
 	_art(floors[0],Vector3(-9.6,.06,6.4),Vector2(3.2,1.8),true)
-	_entry_details(floors[0]);_living(floors[1]);_hobby(floors[1]);_bedroom(floors[2]);_bathroom(floors[2]);_telescope(floors[2]);_roof(roof)
+	_entry_details(floors[0]);_living(floors[1]);_hobby(floors[1])
 	Rooms.new().build(self)
 	_annexes()
 	Interiors.new().build(self)
 	GrandGate.build(self)
 	WallDetails.build(self)
 	LoungePassage.terrace_door(self)
+	Rooftop.new().build(self)
 	Exterior.new().build(self)
+	Outdoors.new().build(self)
 	_garden(island);_dock(island,sea)
 	preload("res://district/whale_home_life.gd").new().build(self)
 	_zone("kitchen","1F · 海盐厨房与中岛",Rect2(-14,-12,19,9.8))
@@ -1024,8 +1003,6 @@ func build(owner_game) -> Dictionary:
 	_zone("aquarium","2F · 全景水族客厅",Rect2(-8,-16,10,9.0),HEIGHT)
 	_zone("study","2F · 海景书房",Rect2(2,-16,12,12),HEIGHT)
 	_zone("lounge","2F · 鲸鱼茶会与玻璃露台",Rect2(-8,-7,16,9),HEIGHT)
-	_zone("bedroom","3F · 鲸鱼梦境卧室",Rect2(-8.4,-20,10.6,14),HEIGHT*2)
-	_zone("stars","3F · 观星与阅读露台",Rect2(2.2,-20,11.8,18),HEIGHT*2)
 	_zone("west_garden","花园 · 茶点庭院",Rect2(-42,-45,14,70))
 	_zone("east_garden","花园 · 蓝鲸花径",Rect2(28,-45,14,70))
 	_zone("front_garden","花园 · 迎风前庭",Rect2(-28,8,56,17))

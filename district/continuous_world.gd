@@ -635,18 +635,22 @@ func _restore_room_edits() -> void:
    var ordered: Array=room_zones.duplicate()
    ordered.sort_custom(func(a,b):return origin.distance_squared_to(Vector2(a.center.x,a.center.z))<origin.distance_squared_to(Vector2(b.center.x,b.center.z)))
    for zone in ordered:
+    if location_id=="whale_home" and absf(float(zone.height)-float(entry.pos[1]))>.6:continue
     var footprint: Rect2=zone.rect
     var fitted:=false
     for point in SpaceShape.fitted_candidates(zone.center,zone.rect.grow(-.65)):
      var candidate: Dictionary=entry.duplicate(true);candidate.pos=[point.x,float(entry.pos[1]),point.z]
      var object=_spawn(candidate);footprint=WholeFloor._footprint(object)
      var blocked: bool=not SpaceShape.contains_rect(zone.polygon,footprint,.65)
-     for occupied: Rect2 in structure:
-      if occupied.grow(.42).intersects(footprint):blocked=true;break
+     if location_id=="whale_home":
+      blocked=blocked or not _home_placement_supported(object,footprint)
+     else:
+      for occupied: Rect2 in structure:
+       if occupied.grow(.42).intersects(footprint):blocked=true;break
      for aisle: Rect2 in zone.door_clear+zone.paths:
       if footprint.intersects(aisle):blocked=true;break
      for existing in items:
-      if existing==object or existing.position.y>.3:continue
+      if existing==object or absf(existing.position.y-object.position.y)>.6:continue
       var occupied: Rect2=WholeFloor._footprint(existing)
       if occupied.has_area() and occupied.grow(.85).intersects(footprint):blocked=true;break
      if blocked:items.erase(object);object.free();continue
@@ -664,6 +668,21 @@ func _restore_room_edits() -> void:
  items.clear()
  for entry in room_edits[location_id].items:
   if catalog.has(entry.id):_spawn(entry)
+
+func _home_placement_supported(object: Node3D,footprint: Rect2) -> bool:
+ var space=player.get_world_3d().direct_space_state
+ var h: float=object.position.y
+ for p: Vector2 in [footprint.position,Vector2(footprint.end.x,footprint.position.y),footprint.end,Vector2(footprint.position.x,footprint.end.y),footprint.get_center()]:
+  var query:=PhysicsRayQueryParameters3D.create(Vector3(p.x,h+.35,p.y),Vector3(p.x,h-.45,p.y),2)
+  var hit: Dictionary=space.intersect_ray(query)
+  if hit.is_empty() or absf(hit.position.y-h)>.15:return false
+ var shape:=BoxShape3D.new();shape.size=Vector3(footprint.size.x,.9,footprint.size.y)
+ var test:=PhysicsShapeQueryParameters3D.new();test.shape=shape;test.collision_mask=1
+ test.transform=Transform3D(Basis.IDENTITY,Vector3(footprint.get_center().x,h+.55,footprint.get_center().y))
+ var excluded: Array[RID]=[]
+ for child in object.find_children("*","CollisionObject3D",true,false):excluded.append(child.get_rid())
+ test.exclude=excluded
+ return space.intersect_shape(test,1).is_empty()
 
 func _save() -> bool:
  if expedition_controller and (expedition_controller.is_active() or location_id=="research"):return expedition_controller.checkpoint_save()

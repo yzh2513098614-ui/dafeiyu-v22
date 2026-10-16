@@ -30,7 +30,7 @@ func build(builder) -> void:
 		{"name": "EastPavilion", "left": 18.0, "right": 28.0, "projection": .85, "color": WALL}]
 	var villa: Node3D = b._group(b.level, "ExteriorVilla")
 	villa.set_meta("home_exterior", true)
-	for i in 3:
+	for i in 2:
 		var h: float = i * b.HEIGHT
 		for mass: Dictionary in masses:
 			_elevation(villa, str(mass.name) + str(i), mass.left, mass.right,
@@ -46,12 +46,12 @@ func build(builder) -> void:
 			_floor_extension(villa, i, rect.end.y)
 	_vertical_members(villa)
 	_entry(villa, gate)
-	_roofs(villa)
+	_tower()
 	b._batch(villa)
 	b.level.set_meta("exterior_villa", villa)
-	villa.set_meta("exterior_revision", "coastal_manor_hall_and_wings_v4")
+	villa.set_meta("exterior_revision", "sea_tower_rooftop_v5")
 	villa.set_meta("enclosed_front", FRONT)
-	villa.set_meta("principal_roofs", 3)
+	villa.set_meta("principal_roofs", 1)
 	villa.set_meta("facade_masses", masses)
 
 func _window_spec(x: float, width: float, bottom: float, top: float, style: String) -> Dictionary:
@@ -160,7 +160,7 @@ func _window(face: Node3D, opening: Dictionary) -> void:
 
 func _vertical_members(villa: Node3D) -> void:
 	var root: Node3D = b._group(villa, "FullHeightPiers")
-	var height: float = 3 * b.HEIGHT
+	var height: float = 2 * b.HEIGHT
 	for spec: Vector2 in [Vector2(-27.72, .85), Vector2(-15.05, .85), Vector2(entry_x - 5.72, 1.10), Vector2(entry_x + 5.72, 1.10), Vector2(18.24, .85), Vector2(27.72, .85)]:
 		var point := Vector3(spec.x, 0, FRONT + spec.y + .20)
 		b._box(root, Vector3(.44, height - .24, .22), point + Vector3(0, height * .5, 0), TRIM, 0, .023)
@@ -306,3 +306,41 @@ func _round_window(parent: Node3D, point: Vector3) -> void:
 	root.add_child(ring)
 	b._box(root, Vector3(1.40, .06, .08), Vector3(0, 0, .05), TRIM, 0, .006)
 	b._box(root, Vector3(.06, 1.40, .08), Vector3(0, 0, .05), TRIM, 0, .006)
+
+func _tower() -> void:
+	var contract=preload("res://district/whale_home_rooftop.gd")
+	var tower: Node3D=b._group(b.level,"TowerExterior")
+	tower.set_meta("home_dynamic",true)
+	var h: float=contract.HEIGHT
+	var rect: Rect2=contract.TOWER
+	_elevation(tower,"TowerWest",-30,-6,Vector3(-20.18,h,0),-PI*.5,[_window_spec(-25.5,3.8,1.25,4.05,"paired")])
+	_elevation(tower,"TowerEast",6,30,Vector3(.18,h,0),PI*.5,[_window_spec(15.5,4.6,1.25,4.05,"wide"),_window_spec(26,2.8,1.6,4.05,"paired")])
+	_elevation(tower,"TowerRear",-20,0,Vector3(0,h,-30.18),PI,[_window_spec(-16.75,3.6,1.25,4.05,"paired")])
+	var front: Node3D=b._group(tower,"TowerFront",Vector3(0,h,-6))
+	front.set_meta("wall_projection",0.0);front.set_meta("wall_color",WALL)
+	_wall_piece(front,-20,-18.25,0,5.2)
+	_wall_piece(front,-15.25,-13.5,0,5.2)
+	_wall_piece(front,-8.5,0,0,5.2)
+	_wall_piece(front,-18.25,-15.25,3.05,5.2)
+	b._box(tower,Vector3(rect.size.x+1.3,.16,rect.size.y+1.3),Vector3(rect.get_center().x,h+5.18,rect.get_center().y),TRIM)
+	var roof: Node3D=_hip_roof(tower,"TowerHipRoof",rect.grow(.65),h+5.26,3.6)
+	roof.set_meta("principal_roof",true)
+	# An octagonal glazed lantern, with no extra usable floor.
+	var crown: Node3D=b._group(tower,"OctagonalDaylightCrown",Vector3(-10,19.26,-18))
+	for i in 8:
+		var a: float=i*TAU/8.0
+		var c: float=(i+1)*TAU/8.0
+		var v:=Vector3(cos(a)*1.65,0,sin(a)*1.65)
+		var w:=Vector3(cos(c)*1.65,0,sin(c)*1.65)
+		var apron:=SurfaceTool.new();apron.begin(Mesh.PRIMITIVE_TRIANGLES)
+		Geo._face(apron,[v-Vector3.UP*1.3,w-Vector3.UP*1.3,w,v],Vector3(cos(a+.39),0,sin(a+.39)))
+		_roof_mesh(crown,apron)
+		Geo.rod(crown,v,w,.09,TRIM)
+		Geo.rod(crown,v,v+Vector3.UP*1.65,.085,TRIM)
+		var pane: MeshInstance3D=b._box(crown,Vector3(v.distance_to(w)-.08,1.48,.055),(v+w)*.5+Vector3.UP*.82,PANE)
+		pane.rotation.y=-atan2(w.z-v.z,w.x-v.x)
+		var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+		Geo._face(tool,[v+Vector3.UP*1.65,w+Vector3.UP*1.65,Vector3(0,2.65,0)],Vector3(cos(a+.39),1,sin(a+.39)).normalized())
+		_roof_mesh(crown,tool)
+	b._batch(tower)
+	b.level.set_meta("tower_exterior",tower)

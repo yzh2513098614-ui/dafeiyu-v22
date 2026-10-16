@@ -68,6 +68,11 @@ func set_layers() -> void:
 	var reveal_all := exterior_showcase or not cutaway
 	var exterior: Node3D = level.get_node_or_null("ExteriorVilla")
 	if exterior:exterior.visible=reveal_all
+	var tower: Node3D = level.get_node_or_null("TowerExterior")
+	var p: Vector3 = game.player.position
+	var top_floor: bool = p.y > Home.HEIGHT*2-.65
+	var indoors: bool = Home.Rooftop.TOWER.has_point(Vector2(p.x,p.z))
+	if tower:tower.visible=reveal_all or (top_floor and not indoors)
 	for i in 3:level.get_node("Floor"+str(i)).visible=reveal_all or game.player.position.y+1.0>=i*Home.HEIGHT
 	# The complete roof is part of ExteriorVilla; keep the old cutaway ribs hidden.
 	level.get_node("Roof").visible=false
@@ -182,6 +187,7 @@ func show_notice(text: String) -> void:notice=text;notice_time=6.0
 func physics(delta: float) -> void:
 	super.physics(delta)
 	_update_exterior_showcase()
+	set_layers()
 	var y: float=game.player.position.y
 	if y>.65 and absf(y-Home.HEIGHT)>.6 and absf(y-Home.HEIGHT*2)>.6:
 		game.zone_label.text="当前："+("1F ↔ 2F · 海风木楼梯" if y<Home.HEIGHT else "2F ↔ 3F · 星光木楼梯")
