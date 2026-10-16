@@ -17,12 +17,16 @@ var moorings: Array=[]
 var sea_motion := SeaMotion.new()
 var sea_surface: MeshInstance3D
 var coastal_materials: Array[ShaderMaterial]=[]
+var room_wall_tops: Array=[]
+var exterior_showcase := false
+var overview_before_exterior := false
 
 func is_active() -> bool:return is_instance_valid(level) and game.location_id=="whale_home"
 
 func build() -> Dictionary:
 	var result: Dictionary=Home.new().build(game)
 	level=result.level;spawn=result.spawn;cutaway=HarborPrefs.values.follow
+	room_wall_tops=level.get_meta("home_wall_tops")
 	boats.clear();fish.clear();gulls.clear();facilities.clear();sea_clock=0.0
 	for node in level.find_children("*","Node3D",true,false):
 		if node.has_meta("boat_origin"):boats.append(node)
@@ -51,6 +55,9 @@ func build() -> Dictionary:
 func leave() -> void:
 	super.leave();fish.clear();garden_petals=null;blossom_origins.clear();moorings.clear()
 	sea_surface=null;coastal_materials.clear()
+	room_wall_tops.clear()
+	exterior_showcase=false
+	overview_before_exterior=false
 	game.atmosphere.contact_shading.material_override.shader=previous_contact
 	game.atmosphere._apply_lighting()
 
@@ -58,9 +65,42 @@ func overview_center() -> Vector3:return Vector3(0,4.5,-4.5)
 
 func set_layers() -> void:
 	if not is_active():return
-	for i in 3:level.get_node("Floor"+str(i)).visible=not cutaway or game.player.position.y+1.0>=i*Home.HEIGHT
-	level.get_node("Roof").visible=not cutaway
-	for facility in facilities:facility.visible=not cutaway or game.player.position.y+1.0>=float(facility.get_meta("floor_height",0.0))
+	var reveal_all := exterior_showcase or not cutaway
+	var exterior: Node3D = level.get_node_or_null("ExteriorVilla")
+	if exterior:exterior.visible=reveal_all
+	for i in 3:level.get_node("Floor"+str(i)).visible=reveal_all or game.player.position.y+1.0>=i*Home.HEIGHT
+	# The complete roof is part of ExteriorVilla; keep the old cutaway ribs hidden.
+	level.get_node("Roof").visible=false
+	for facility in facilities:facility.visible=reveal_all or game.player.position.y+1.0>=float(facility.get_meta("floor_height",0.0))
+	for top: Node3D in room_wall_tops:
+		var wall: Node3D=top.get_parent()
+		var player_side: float=wall.to_local(game.player.global_position).z
+		var camera_side: float=wall.to_local(game.camera.global_position).z
+		top.visible=reveal_all or game.player.position.y>float(wall.get_meta("floor_height"))+4.0 or player_side*camera_side>=0.0
+
+func _is_exterior_player() -> bool:
+	if game.player.position.y > .9:return false
+	var point: Vector3=game.player.position
+	return point.z > 8.25 or point.z < -33.2 or absf(point.x) > 28.0
+
+func _update_exterior_showcase() -> void:
+	var outside := _is_exterior_player()
+	if outside == exterior_showcase:return
+	if outside:
+		exterior_showcase=true
+		overview_before_exterior=game.overview_mode
+		game.overview_mode=true
+		game.view_size=game.overview_size
+		game.view_center=overview_center()
+		cutaway=false
+	else:
+		exterior_showcase=false
+		game.overview_mode=overview_before_exterior
+		game.view_size=game.overview_size if game.overview_mode else 15.0
+		game.view_center=overview_center() if game.overview_mode else game.player.position
+		cutaway=not game.overview_mode
+	set_layers()
+	game._update_view_button()
 
 func _process(delta: float) -> void:
 	if not is_active() or (game.pause_menu and game.pause_menu.active):return
@@ -141,8 +181,9 @@ func show_notice(text: String) -> void:notice=text;notice_time=6.0
 
 func physics(delta: float) -> void:
 	super.physics(delta)
+	_update_exterior_showcase()
 	var y: float=game.player.position.y
 	if y>.65 and absf(y-Home.HEIGHT)>.6 and absf(y-Home.HEIGHT*2)>.6:
 		game.zone_label.text="当前："+("1F ↔ 2F · 海风木楼梯" if y<Home.HEIGHT else "2F ↔ 3F · 星光木楼梯")
 	if notice_time>0:game.hint.text=notice
-	elif not game.dialog_open:game.hint.text="WASD 漫步 · 楼梯直达三层 · E 家具交互 · H 楼层切面 · Z 总览 · M 导览"
+	elif not game.dialog_open:game.hint.text="WASD 漫步 · 楼梯直达三层 · E 开门 / 家具交互 · H 楼层切面 · Z 总览 · M 导览"
