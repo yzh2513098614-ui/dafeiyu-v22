@@ -1226,49 +1226,86 @@ func _hud_frame(panel: Panel, background: Color, radius: int = 24, inner: bool =
 	panel.set_script(null)
 	var style := StyleBoxFlat.new()
 	style.bg_color = background
-	style.border_color = Color("93a5cc") if inner else Color("53648d")
-	style.set_border_width_all(1 if inner else 3)
+	style.border_color = Color("ceddf1") if inner else Color.WHITE
+	style.set_border_width_all(1 if inner else 4)
 	style.set_corner_radius_all(radius)
-	style.shadow_color = Color(0.12, 0.18, 0.33, 0.22)
-	style.shadow_size = 0 if inner else 3
-	style.shadow_offset = Vector2(0, 4)
+	style.shadow_color = Color("8eaddb")
+	style.shadow_size = 0
+	style.shadow_offset = Vector2.ZERO if inner else Vector2(2, 5)
 	panel.add_theme_stylebox_override("panel", style)
 
 func _hud_text(label: Label, font_size: int) -> void:
 	label.add_theme_font_size_override("font_size", font_size)
-	label.add_theme_color_override("font_color", Color("293f52"))
+	label.add_theme_color_override("font_color", Color("31547e"))
 	label.add_theme_constant_override("outline_size", 0)
 
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
-	_hud_frame(dash.dock, Color("b5c4e9"))
-	_hud_frame(dash.portrait_frame, Color("dbeafd"), 18, true)
-	_hud_frame(title_plate, Color("465580"), 14)
-	_hud_frame(phase_plate, Color("4ad9c5"), 14)
-	_hud_frame(log_box, Color("dce5fb"), 10, true)
-	_hud_frame(card_panel.get_node("CardEnergyBadge"), Color("465580"), 52)
+	_hud_frame(dash.dock, Color("eff5ff"))
+	_hud_frame(dash.portrait_frame, Color("dceeff"), 18, true)
+	_hud_frame(title_plate, Color("f7fbff"), 14)
+	_hud_frame(phase_plate, Color("d9f5ed"), 14)
+	_hud_frame(log_box, Color("f3f8ff", 0.94), 10, true)
+	_hud_frame(card_panel.get_node("CardEnergyBadge"), Color("4d77c5"), 52)
 	var resources := Panel.new()
 	resources.name = "EnergyResourcesFrame"
 	resources.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	card_panel.add_child(resources)
 	card_panel.move_child(resources, 0)
-	_hud_frame(resources, Color("b5c4e9"), 20)
+	_hud_frame(resources, Color("eff5ff"), 20)
 	var counts_frame := Panel.new()
 	counts_frame.name = "DeckCountsFrame"
 	counts_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	resources.add_child(counts_frame)
-	_hud_frame(counts_frame, Color("d9e3fa"), 12, true)
+	_hud_frame(counts_frame, Color("e1ecfa"), 12, true)
 	log_box.get_node("LogCaption").hide()
 	tactics_box.hide()
 	_hud_text(dash.name, 24)
 	_hud_text(phase_label, 20)
 	_hud_text(card_counts, 18)
+	_hud_text(title_label, 22)
+	round_label.add_theme_color_override("font_color", Color("4973ae"))
+	for action in [speed_button, card_panel.get_node("CardTargetButton"), card_item_button, card_link_button, card_end_button]:
+		_style_card_action(action, action == card_end_button)
 	for gauge in dash.gauges:
 		var tile: Panel = gauge.group.get_node("StatusTile")
 		tile.show()
-		_hud_frame(tile, Color("d9e3fa"), 12, true)
+		_hud_frame(tile, Color("e6effb"), 12, true)
 		_hud_text(gauge.title, 20)
 		_hud_text(gauge.value, 20)
+	_hud_frame(dash.block_badge.panel, Color("e1ecfa"), 12, true)
+	for slot in slots:
+		_hud_frame(slot.plate, Color("f4f9ff"), 12)
+		_hud_text(slot.name, 20)
+		_hud_text(slot.hp, 16)
+
+func _style_card_action(button: Button, primary: bool = false) -> void:
+	for state in ["normal", "hover", "pressed", "hover_pressed", "disabled", "focus"]:
+		var box := StyleBoxFlat.new()
+		box.bg_color = Color("d6f3eb") if primary else Color("f7fbff")
+		box.border_color = Color.WHITE
+		box.set_border_width_all(3)
+		box.set_corner_radius_all(14)
+		box.shadow_color = Color("75bcb5") if primary else Color("8eaddb")
+		box.shadow_offset = Vector2(1, 4)
+		box.content_margin_left = 10
+		box.content_margin_right = 10
+		box.content_margin_top = 4
+		box.content_margin_bottom = 4
+		if state in ["hover", "focus"]:
+			box.bg_color = Color("bcebdd") if primary else Color("e4f1ff")
+			box.border_color = Color("6baacb")
+		elif state in ["pressed", "hover_pressed"]:
+			box.bg_color = Color("aedfce") if primary else Color("d1e4fb")
+			box.shadow_offset = Vector2(0, 1)
+		elif state == "disabled":
+			box.bg_color = Color("e2e8f1")
+			box.border_color = Color("edf2f9")
+			box.shadow_color = Color("b2c1d6")
+		button.add_theme_stylebox_override(state, box)
+	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
+		button.add_theme_color_override(state, Color("285e70") if primary else Color("315ca4"))
+	button.add_theme_color_override("font_disabled_color", Color("7c8da4"))
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock

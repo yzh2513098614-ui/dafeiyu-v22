@@ -3236,6 +3236,104 @@ shadow_offset = Vector2(0, 6)
 [sub_resource type="Theme" id="Theme_DesignPreview"]
 default_font = ExtResource("font_design_preview")
 
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Title"]
+bg_color = Color(0.9686275, 0.9843137, 1.0000000, 1)
+border_color = Color(1.0000000, 1.0000000, 1.0000000, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Phase"]
+bg_color = Color(0.8509804, 0.9607843, 0.9294118, 1)
+border_color = Color(1.0000000, 1.0000000, 1.0000000, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Log"]
+bg_color = Color(0.9529412, 0.9725490, 1.0000000, 1)
+border_color = Color(0.8078431, 0.8666667, 0.9450980, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Player"]
+bg_color = Color(0.9372549, 0.9607843, 1.0000000, 1)
+border_color = Color(1.0000000, 1.0000000, 1.0000000, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(2, 5)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Portrait"]
+bg_color = Color(0.8627451, 0.9333333, 1.0000000, 1)
+border_color = Color(0.8078431, 0.8666667, 0.9450980, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Block"]
+bg_color = Color(0.8823529, 0.9254902, 0.9803922, 1)
+border_color = Color(0.8078431, 0.8666667, 0.9450980, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="OriginalBattle_Status"]
+bg_color = Color(0.9019608, 0.9372549, 0.9843137, 1)
+border_color = Color(0.8078431, 0.8666667, 0.9450980, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.5568627, 0.6784314, 0.8588235, 1)
+shadow_offset = Vector2(0, 0)
+
 [node name="UI_battle" type="Control" unique_id=1314729348]
 layout_mode = 3
 anchors_preset = 0
@@ -3293,7 +3391,7 @@ offset_top = 24.0
 offset_right = -24.0
 offset_bottom = 96.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4iy6r")
+theme_override_styles/panel = SubResource("OriginalBattle_Title")
 script = ExtResource("21_03yfh")
 metadata/design_id = "2"
 metadata/design_native_class = "Panel"
@@ -3306,7 +3404,7 @@ offset_left = 22.0
 offset_top = 17.0
 offset_right = 374.0
 offset_bottom = 55.0
-theme_override_colors/font_color = Color(0.91764706, 0.94509804, 1, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 27
 text = "潮汐遭遇战"
@@ -3317,6 +3415,7 @@ metadata/design_id = "2/0"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="01_Label_第 1 回合" type="Label" parent="00_Control/02_Panel" unique_id=1546173949]
 layout_mode = 0
@@ -3324,7 +3423,7 @@ offset_left = 384.0
 offset_top = 20.0
 offset_right = 528.0
 offset_bottom = 52.0
-theme_override_colors/font_color = Color(1, 0.8784314, 0.44313726, 1)
+theme_override_colors/font_color = Color(0.2862745, 0.4509804, 0.6823529, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 21
 text = "第 1 回合"
@@ -3334,6 +3433,7 @@ metadata/design_id = "2/1"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="03_Panel" type="Panel" parent="00_Control" unique_id=442239968]
 layout_mode = 0
@@ -3343,7 +3443,7 @@ offset_left = -170.0
 offset_top = 36.0
 offset_right = 170.0
 offset_bottom = 84.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_p81il")
+theme_override_styles/panel = SubResource("OriginalBattle_Phase")
 script = ExtResource("21_03yfh")
 metadata/design_id = "3"
 metadata/design_native_class = "Panel"
@@ -3356,7 +3456,7 @@ offset_left = 12.0
 offset_top = 7.0
 offset_right = 328.0
 offset_bottom = 41.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 20
 text = "你的回合 · 打出手牌"
@@ -3366,6 +3466,7 @@ metadata/design_id = "3/0"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="04_Button_演出 ×1" type="Button" parent="00_Control" unique_id=482773587]
 texture_filter = 1
@@ -4303,7 +4404,7 @@ offset_left = 24.0
 offset_top = 512.0
 offset_right = 820.8
 offset_bottom = 562.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_c0jur")
+theme_override_styles/panel = SubResource("OriginalBattle_Log")
 script = ExtResource("21_03yfh")
 metadata/design_id = "6"
 metadata/design_native_class = "Panel"
@@ -5853,7 +5954,7 @@ offset_top = 922.0
 offset_right = -24.0
 offset_bottom = 1062.0
 tooltip_text = "角色状态：状态正常"
-theme_override_styles/panel = SubResource("StyleBoxFlat_f2cyt")
+theme_override_styles/panel = SubResource("OriginalBattle_Player")
 script = ExtResource("21_03yfh")
 metadata/design_id = "12"
 metadata/design_native_class = "Panel"
@@ -5866,7 +5967,7 @@ offset_left = 20.0
 offset_top = 28.0
 offset_right = 102.0
 offset_bottom = 110.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_yjyyu")
+theme_override_styles/panel = SubResource("OriginalBattle_Portrait")
 script = ExtResource("21_03yfh")
 metadata/design_id = "12/0"
 metadata/design_native_class = "Panel"
@@ -5895,7 +5996,7 @@ offset_left = 124.0
 offset_top = 26.0
 offset_right = 334.0
 offset_bottom = 62.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 24
 text = "大肥鱼  ·  Lv.13"
@@ -5904,6 +6005,7 @@ metadata/design_id = "12/1"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="02_Label_状态正常" type="Label" parent="00_Control/12_Panel" unique_id=1900588126]
 visible = false
@@ -5999,7 +6101,7 @@ offset_top = 12.0
 offset_right = 329.33334
 offset_bottom = 122.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_djhdp")
+theme_override_styles/panel = SubResource("OriginalBattle_Status")
 script = ExtResource("21_03yfh")
 metadata/design_id = "12/4/0"
 metadata/design_native_class = "Panel"
@@ -6027,7 +6129,7 @@ offset_left = 42.0
 offset_top = 22.0
 offset_right = 118.0
 offset_bottom = 52.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 20
 text = "生命"
@@ -6036,6 +6138,7 @@ metadata/design_id = "12/4/2"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="03_Label_69 _ 148" type="Label" parent="00_Control/12_Panel/04_Control" unique_id=1478095648]
 layout_mode = 0
@@ -6043,7 +6146,7 @@ offset_left = 175.33333
 offset_top = 21.0
 offset_right = 317.3333
 offset_bottom = 53.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
 text = "69 / 148"
@@ -6053,6 +6156,7 @@ metadata/design_id = "12/4/3"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/04_Control" unique_id=1864366936]
 clip_contents = true
@@ -6110,7 +6214,7 @@ offset_top = 12.0
 offset_right = 329.33334
 offset_bottom = 122.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8ctmy")
+theme_override_styles/panel = SubResource("OriginalBattle_Status")
 script = ExtResource("21_03yfh")
 metadata/design_id = "12/5/0"
 metadata/design_native_class = "Panel"
@@ -6138,7 +6242,7 @@ offset_left = 42.0
 offset_top = 22.0
 offset_right = 118.0
 offset_bottom = 52.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 20
 text = "体力"
@@ -6147,6 +6251,7 @@ metadata/design_id = "12/5/2"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="03_Label_198 _ 198" type="Label" parent="00_Control/12_Panel/05_Control" unique_id=2028569421]
 layout_mode = 0
@@ -6154,7 +6259,7 @@ offset_left = 175.33333
 offset_top = 21.0
 offset_right = 317.3333
 offset_bottom = 53.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
 text = "198 / 198"
@@ -6164,6 +6269,7 @@ metadata/design_id = "12/5/3"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/05_Control" unique_id=690895632]
 clip_contents = true
@@ -6221,7 +6327,7 @@ offset_top = 12.0
 offset_right = 329.33334
 offset_bottom = 122.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wk17i")
+theme_override_styles/panel = SubResource("OriginalBattle_Status")
 script = ExtResource("21_03yfh")
 metadata/design_id = "12/6/0"
 metadata/design_native_class = "Panel"
@@ -6249,7 +6355,7 @@ offset_left = 42.0
 offset_top = 22.0
 offset_right = 118.0
 offset_bottom = 52.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("18_01dtu")
 theme_override_font_sizes/font_size = 20
 text = "连携"
@@ -6258,6 +6364,7 @@ metadata/design_id = "12/6/2"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="03_Label_100_" type="Label" parent="00_Control/12_Panel/06_Control" unique_id=1351621028]
 layout_mode = 0
@@ -6265,7 +6372,7 @@ offset_left = 175.33333
 offset_top = 21.0
 offset_right = 317.3333
 offset_bottom = 53.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
+theme_override_colors/font_color = Color(0.1921569, 0.3294118, 0.4941176, 1)
 theme_override_fonts/font = ExtResource("26_8ndq6")
 theme_override_font_sizes/font_size = 22
 text = "100%"
@@ -6275,6 +6382,7 @@ metadata/design_id = "12/6/3"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_constants/outline_size = 0
 
 [node name="04_Panel" type="Panel" parent="00_Control/12_Panel/06_Control" unique_id=357855656]
 clip_contents = true
@@ -6323,7 +6431,7 @@ offset_right = 298.0
 offset_bottom = 110.0
 tooltip_text = "格挡：0 点。受到伤害时先消耗格挡，再扣除生命；与按回合持续的护盾效果独立。"
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ia3xm")
+theme_override_styles/panel = SubResource("OriginalBattle_Block")
 metadata/design_id = "12/7"
 metadata/design_native_class = "Panel"
 metadata/design_edit_text = false
