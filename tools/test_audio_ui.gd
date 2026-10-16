@@ -182,12 +182,28 @@ func run() -> void:
  check(not gg_row.is_empty(),"galgame catalog lists the lighthouse music-box variation")
  var gg_sec: float=float(gg_row.get("seconds",0.0))
  check(gg_sec>30.0 and gg_sec<200.0,"variation wav is readable and its length is sane (%.1fs)"%[gg_sec])
- check(music.STYLE_SETS["galgame"]["tracks"]["night"].has("lighthouse/lighthouse_musicbox"),"variation joined the galgame night rotation")
+ # 音乐盒那首此后不再占夜晚轮换位（4g 段断言钢琴变奏接手、它让位），只保留鉴赏目录。
  music.select_gallery("lighthouse/lighthouse_musicbox")
  check(music.gallery_track()=="lighthouse/lighthouse_musicbox","gallery accepts the variation track id")
  await frames(12)
  var lh_head: float=music._players[music._slot].get_playback_position()
  check(lh_head>0.0,"variation advances on the real player (%.2fs)"%[lh_head])
+ music.exit_gallery()
+
+ # ---------- 4g. 《灯塔替我记得 · 钢琴变奏》接进了 galgame 的夜晚轮换 ----------
+ var pv_row: Dictionary={}
+ for row in gg:
+  if str(row["id"])=="lighthouse/lighthouse_piano_var":pv_row=row
+ check(not pv_row.is_empty(),"galgame catalog lists the piano variation")
+ var pv_sec: float=float(pv_row.get("seconds",0.0))
+ check(pv_sec>30.0 and pv_sec<200.0,"piano variation is readable and its length is sane (%.1fs)"%[pv_sec])
+ check(music.STYLE_SETS["galgame"]["tracks"]["night"].has("lighthouse/lighthouse_piano_var"),"piano variation joined the galgame night rotation")
+ check(not music.STYLE_SETS["galgame"]["tracks"]["night"].has("lighthouse/lighthouse_musicbox"),"music-box variation left the rotation for the piano one")
+ music.select_gallery("lighthouse/lighthouse_piano_var")
+ check(music.gallery_track()=="lighthouse/lighthouse_piano_var","gallery accepts the piano variation track id")
+ await frames(12)
+ var pv_head: float=music._players[music._slot].get_playback_position()
+ check(pv_head>0.0,"piano variation advances on the real player (%.2fs)"%[pv_head])
  music.exit_gallery()
  music.set_style(style_home)
 

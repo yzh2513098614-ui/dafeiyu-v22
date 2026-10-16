@@ -1,0 +1,63 @@
+{
+  "engine": "4.7.2-stable (official)",
+  "generated_by": "tools/bgm_lighthouse/piano_render.gd",
+  "output": "res://assets/music/lighthouse/lighthouse_piano_var.wav",
+  "sections": [
+    {
+      "length_sec": 24.0,
+      "name": "主题",
+      "peak_db": -14.5453662000106,
+      "rms_db": -27.5214741730114,
+      "start_sec": 0.22
+    },
+    {
+      "length_sec": 24.0,
+      "name": "变奏一 · 流动",
+      "peak_db": -10.5674804452762,
+      "rms_db": -23.9135558032222,
+      "start_sec": 24.22
+    },
+    {
+      "length_sec": 24.0,
+      "name": "变奏二 · 低语",
+      "peak_db": -18.5019300421906,
+      "rms_db": -31.4760439597228,
+      "start_sec": 48.22
+    },
+    {
+      "length_sec": 24.0,
+      "name": "变奏三 · 涌动",
+      "peak_db": -5.93854867885535,
+      "rms_db": -19.4438490360949,
+      "start_sec": 72.22
+    },
+    {
+      "length_sec": 24.0,
+      "name": "变奏四 · 辽阔",
+      "peak_db": -1.36712418621393,
+      "rms_db": -16.0892840886596,
+      "start_sec": 96.22
+    },
+    {
+      "length_sec": 25.1275736961451,
+      "name": "尾声",
+      "peak_db": -12.5783551188882,
+      "rms_db": -28.8221321672977,
+      "start_sec": 120.22
+    }
+  ],
+  "source": "主题与发展部取自 tools/gal_piano 的 gal_piano_night（D# 小调），编曲为钢琴变奏（主题 + 四变奏 + 尾声）",
+  "track": {
+    "bits": 16,
+    "cached_keys": 37,
+    "channels": 2,
+    "duration": 146.547596371882,
+    "frames": 6462749,
+    "notes": 805,
+    "peak_dbfs": -1.11034655699663,
+    "render_seconds": 67.79,
+    "rms_dbfs": -21.357050371817,
+    "sample_rate": 44100,
+    "title": "灯塔替我记得 · 钢琴变奏"
+  }
+}
