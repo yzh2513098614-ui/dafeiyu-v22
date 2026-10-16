@@ -16,17 +16,18 @@ extends Node
 ##   每次进入该场合都会换到组里的下一首；停在同一场合超过 DWELL 秒也会自己换下一首。
 ##   这样在街区里待久了不会从进游戏到退出都听同一段旋律。
 ##
-## 五套风格组，F8 切换（会记住）：
+## 六套风格组，F8 切换（会记住）：
 ##   galgame     galgame 场景配乐二十首（默认，八首原创钢琴加入对应场合轮换）
 ##   harbor      最初那五首港町氛围曲（曲目少，组内跨场合复用）
 ##   glasshouse  《玻璃温室》六首（钢琴 + 弦乐垫 + 音乐盒，一条叙事弧，每场合固定一首）
 ##   whalefm     《鲸落电台》六首（电钢 + 贝斯 + 鼓组 + 黑胶炒豆的 Lo-fi 电台，每场合固定一首）
 ##   chip        《像素掌机》六首（方波×2 + 三角波 + 噪声鼓的芯片音乐，每场合固定一首）
+##   glasshouse_var 《玻璃温室·变奏集》六首（《相遇的圆舞曲》的六首性格变奏，全 3/4 圆舞曲）
 ##
-## glasshouse / whalefm / chip 的音轨放在 assets/music/ 子目录里，所以它们的曲目 id 带一段路径
-## （"glasshouse/glasshouse_01_prologue"、"whalefm/wf_01_fm885"、"chip/chip_title"）——
-## 下面的 DIR + id + ".wav" 拼接天然支持。这三组每首都是整段无缝循环（尾音已折回开头），
-## 一个场合只排一首、靠循环铺满，不轮换。
+## glasshouse / whalefm / chip / glasshouse_var 的音轨放在 assets/music/ 子目录里，所以它们的曲目 id
+## 带一段路径（"glasshouse/glasshouse_01_prologue"、"chip/chip_title"、
+## "glasshouse_var/glasshouse_var_01_intro"）—— 下面的 DIR + id + ".wav" 拼接天然支持。
+## 这四组每首都是整段无缝循环（尾音已折回开头），一个场合只排一首、靠循环铺满，不轮换。
 ##
 ## 快捷键：F8 切换风格组 · F9 试听下一首（循环回自动）· F10 静音开关 · [ ] 调音量
 ##
@@ -100,6 +101,19 @@ const STYLE_SETS := {
 			"hope": "chip/chip_hope",
 		},
 	},
+	"glasshouse_var": {
+		"name": "玻璃温室·变奏集",
+		"tracks": {
+			# 《相遇的圆舞曲》的六首性格变奏：同一动机、同一配器（钢琴 + 弦乐垫 + 音乐盒），
+			# 全部 3/4 圆舞曲。序奏 → 重逢 → 小步 → 月下 → 旋转 → 终场，每场合一首循环。
+			"title": "glasshouse_var/glasshouse_var_01_intro",
+			"day": "glasshouse_var/glasshouse_var_02_reunion",
+			"indoor": "glasshouse_var/glasshouse_var_03_steps",
+			"night": "glasshouse_var/glasshouse_var_04_moon",
+			"battle": "glasshouse_var/glasshouse_var_05_spin",
+			"hope": "glasshouse_var/glasshouse_var_06_final",
+		},
+	},
 }
 
 const MOOD_ORDER: Array = ["title", "day", "night", "indoor", "battle", "hope"]
@@ -159,6 +173,14 @@ const CATALOG := {
 		["chip/chip_battle", "怒涛排位战", "原创芯片音乐 · 潮汐试炼 / 高速战斗"],
 		["chip/chip_hope", "归港烟火", "原创芯片音乐 · 释怀 / 已通关"],
 	],
+	"glasshouse_var": [
+		["glasshouse_var/glasshouse_var_01_intro", "序奏的圆舞曲", "圆舞曲变奏 · 序奏 / 标题"],
+		["glasshouse_var/glasshouse_var_02_reunion", "重逢的圆舞曲", "圆舞曲变奏 · 重逢 / 街区白天"],
+		["glasshouse_var/glasshouse_var_03_steps", "小步的圆舞曲", "圆舞曲变奏 · 小步 / 室内"],
+		["glasshouse_var/glasshouse_var_04_moon", "月下的圆舞曲", "圆舞曲变奏 · 月下 / 街区夜晚"],
+		["glasshouse_var/glasshouse_var_05_spin", "旋转的圆舞曲", "圆舞曲变奏 · 旋转 / 潮汐试炼"],
+		["glasshouse_var/glasshouse_var_06_final", "终场的圆舞曲", "圆舞曲变奏 · 终场 / 已通关"],
+	],
 }
 const MOOD_LABEL := {
 	"title": "标题",
@@ -178,6 +200,11 @@ const NIGHT_FROM := 19.0 ## 夜晚音乐起点（小时）
 const NIGHT_TO := 6.0
 
 var _streams: Dictionary = {}
+var _prefetching := ""
+## _streams 只保留最近几首的解析结果；长期运行切换多套风格组
+## 不再把整库 PCM（200 MB 以上）永久留在内存。
+## 正在两个播放槽上使用的流由播放器持有引用，清字典项不会打断播放。
+const MAX_CACHED_STREAMS := 6
 var _players: Array[AudioStreamPlayer] = []
 var _gain: Array[float] = [0.0, 0.0]
 var _target: Array[float] = [0.0, 0.0]
@@ -391,6 +418,8 @@ func _switch(mood: String) -> void:
 	_players[_slot].play()
 	_target[_slot] = 1.0
 	_target[1 - _slot] = 0.0
+	# 后台预读同场合的下一首，轮换到来时无需同步解析。
+	_prefetch_specific(_track_for(_mood))
 
 ## 停留太久就在同一场合里换下一首。
 ## 不能走 _evaluate()：_mood 没变，_evaluate 会认为「不需要切」，永远是同一首。
@@ -454,23 +483,16 @@ func _has_living_monster(scene: Node) -> bool:
 
 # ---------------------------------------------------------------- WAV 解析
 
-func _load_stream(track: String) -> AudioStreamWAV:
-	if track == "":
-		return null
-	if _streams.has(track):
-		return _streams[track]
+## 解析整首 WAV（读文件 + 切片，不触碰 _streams / UI）。
+## 返回 {} 并带 error（missing / format / empty）；成功返回 {pcm, rate, stereo, frames}。
+## 只读取与切片，可在工作线程里跑（后台预读用）。
+func _parse_wav_bytes(track: String) -> Dictionary:
 	var bytes := FileAccess.get_file_as_bytes(DIR + track + ".wav")
 	if bytes.size() < 44 or bytes.slice(0, 4).get_string_from_ascii() != "RIFF":
-		push_warning("[MusicDirector] 读取不到音乐：" + DIR + track + ".wav")
-		_toast("曲目文件缺失：" + track)
-		_streams[track] = null
-		return null
+		return {"error": "missing"}
 	var channels := int(bytes.decode_u16(22))
 	if bytes.decode_u16(20) != 1 or bytes.decode_u16(34) != 16 or (channels != 1 and channels != 2):
-		push_warning("[MusicDirector] 只支持 16bit 单声道或立体声 PCM：" + track)
-		_toast("曲目格式不支持：" + track)
-		_streams[track] = null
-		return null
+		return {"error": "format"}
 	var rate := int(bytes.decode_u32(24))
 	var offset := 12
 	var frames := 0
@@ -484,18 +506,81 @@ func _load_stream(track: String) -> AudioStreamWAV:
 			break
 		offset += 8 + size + (size & 1)
 	if frames <= 0:
-		_streams[track] = null
-		return null
+		return {"error": "empty"}
+	return {"pcm": pcm, "rate": rate, "stereo": channels == 2, "frames": frames}
+
+## 由解析结果构造 AudioStreamWAV 并放入缓存（主线程调用）。
+func _store_stream(track: String, parsed: Dictionary) -> AudioStreamWAV:
 	var stream := AudioStreamWAV.new()
 	stream.format = AudioStreamWAV.FORMAT_16_BITS
-	stream.mix_rate = rate
-	stream.stereo = channels == 2
-	stream.data = pcm
+	stream.mix_rate = int(parsed.rate)
+	stream.stereo = bool(parsed.stereo)
+	stream.data = parsed.pcm
 	stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
 	stream.loop_begin = 0
-	stream.loop_end = frames
+	stream.loop_end = int(parsed.frames)
 	_streams[track] = stream
+	_evict_idle_streams()
 	return stream
+
+func _load_stream(track: String) -> AudioStreamWAV:
+	if track == "":
+		return null
+	if _streams.has(track):
+		return _streams[track]
+	var parsed := _parse_wav_bytes(track)
+	var error: String = str(parsed.get("error", ""))
+	if error == "missing":
+		push_warning("[MusicDirector] 读取不到音乐：" + DIR + track + ".wav")
+		_toast("曲目文件缺失：" + track)
+		_streams[track] = null
+		return null
+	if error == "format":
+		push_warning("[MusicDirector] 只支持 16bit 单声道或立体声 PCM：" + track)
+		_toast("曲目格式不支持：" + track)
+		_streams[track] = null
+		return null
+	if error != "":
+		_streams[track] = null
+		return null
+	return _store_stream(track, parsed)
+
+## 缓存上限：超出后从最早插入的开始清（跳过正在播与鉴赏中的曲目）。
+func _evict_idle_streams() -> void:
+	for key in _streams.keys():
+		if _streams[key] == null:
+			_streams.erase(key)
+	while _streams.size() > MAX_CACHED_STREAMS:
+		var removed := false
+		for key in _streams.keys():
+			if key == _track or key == _gallery:
+				continue
+			if _players.size() == 2 and (_players[0].stream == _streams[key] or _players[1].stream == _streams[key]):
+				continue
+			_streams.erase(key)
+			removed = true
+			break
+		if not removed:
+			break
+
+## 后台预读下一首：工作线程只读文件与切片，回主线程构造流。
+## 轮换或切场景的下一首进缓存时无需再同步解析。
+func _prefetch_specific(id: String) -> void:
+	if id == "" or _prefetching != "" or _streams.has(id):
+		return
+	_prefetching = id
+	WorkerThreadPool.add_task(_prefetch_worker)
+
+func _prefetch_worker() -> void:
+	var id := _prefetching
+	var parsed := _parse_wav_bytes(id)
+	call_deferred("_prefetch_finish", id, parsed)
+
+func _prefetch_finish(id: String, parsed: Dictionary) -> void:
+	_prefetching = ""
+	if parsed.has("error") or _streams.has(id):
+		return
+	_store_stream(id, parsed)
 
 # ---------------------------------------------------------------- 快捷键与提示
 
@@ -656,6 +741,8 @@ func _play_track(track: String) -> void:
 	_players[_slot].play()
 	_target[_slot] = 1.0
 	_target[1 - _slot] = 0.0
+	# 鉴赏页里预读下一首，点过去时无需同步解析。
+	_prefetch_specific(next_gallery_track())
 
 ## 试听指定场合；_preview 指向 MOOD_ORDER 的序号，-1 表示恢复自动跟随场合
 func preview_index() -> int:
@@ -685,17 +772,49 @@ func catalog() -> Array:
 		})
 	return out
 
+## 只读 WAV 头取时长（不解析整首 PCM，打开鉴赏页不再逐首全量读取）。
+## 返回 -1 表示文件缺失或格式不支持。
+func _header_seconds(id: String) -> float:
+	var file := FileAccess.open(DIR + id + ".wav", FileAccess.READ)
+	if file == null or file.get_length() < 44:
+		return -1.0
+	var riff := file.get_buffer(12)
+	if riff.size() < 12 or riff.slice(0, 4).get_string_from_ascii() != "RIFF" or riff.slice(8, 12).get_string_from_ascii() != "WAVE":
+		return -1.0
+	var pcm_format := 0
+	var channels := 0
+	var rate := 0
+	var bits := 0
+	while file.get_position() + 8 <= file.get_length():
+		var tag := file.get_buffer(4).get_string_from_ascii()
+		var size := int(file.get_32())
+		var chunk_end := file.get_position() + size + (size & 1)
+		if tag == "fmt ":
+			if size < 16:
+				return -1.0
+			pcm_format = int(file.get_16())
+			channels = int(file.get_16())
+			rate = int(file.get_32())
+			file.seek(file.get_position() + 6)
+			bits = int(file.get_16())
+		elif tag == "data":
+			if pcm_format != 1 or bits != 16 or (channels != 1 and channels != 2) or rate <= 0:
+				return -1.0
+			return float(size) / float(2 * channels * rate)
+		file.seek(mini(chunk_end, file.get_length()))
+	return -1.0
+
 ## 从 WAV 头读时长（顺带验证文件是否可读）
 func track_seconds(id: String) -> float:
-	var stream := _load_stream(id)
-	if stream == null:
+	var seconds := _header_seconds(id)
+	if seconds < 0.0:
 		return 0.0
-	return round(float(stream.loop_end) / float(maxi(1, stream.mix_rate)) * 10.0) / 10.0
+	return round(seconds * 10.0) / 10.0
 
 func track_time_text(id: String) -> String:
-	if _load_stream(id) == null:
+	var seconds := _header_seconds(id)
+	if seconds < 0.0:
 		return "缺失"
-	var seconds := track_seconds(id)
 	var whole := int(round(seconds))
 	return "%d:%02d" % [whole / 60, whole % 60]
 

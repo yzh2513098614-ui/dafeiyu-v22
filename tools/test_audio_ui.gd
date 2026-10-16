@@ -69,7 +69,7 @@ func run() -> void:
  check(not music.music_enabled(),"set_enabled(false) writes through to prefs")
  music.set_enabled(true)
  check(music.music_enabled(),"set_enabled(true) restores music")
- check(music.style_keys().size()==5,"all five style sets are exposed")
+ check(music.style_keys().size()==6,"all six style sets are exposed")
  var style_home: String=music.style_key()
  music.set_style("harbor")
  check(music.style_key()=="harbor","set_style switches the style set")
@@ -148,6 +148,29 @@ func run() -> void:
  await frames(12)
  var ch_head: float=music._players[music._slot].get_playback_position()
  check(ch_head>0.0,"chip track advances on the real player (%.2fs)"%[ch_head])
+ music.exit_gallery()
+
+ # ---------- 4e. 《玻璃温室·变奏集》六首圆舞曲变奏真的接进了 MusicDirector ----------
+ music.set_style("glasshouse_var")
+ var gv: Array=music.catalog()
+ check(gv.size()==6,"glasshouse_var catalog lists six tracks")
+ var gv_missing: Array=[]
+ var gv_seconds: Array=[]
+ for row in gv:
+  var gv_sec: float=float(row["seconds"])
+  if gv_sec<=0.0:gv_missing.append(str(row["id"]))
+  gv_seconds.append(gv_sec)
+ check(gv_missing.is_empty(),"all six glasshouse_var wavs are readable (missing: %s)"%[str(gv_missing)])
+ check(gv_seconds.min()>30.0 and gv_seconds.max()<200.0,"glasshouse_var durations are sane: %s"%[JSON.stringify(gv_seconds)])
+ var gv_moods_missing: Array=[]
+ for mood in music.MOOD_ORDER:
+  if not music.STYLE_SETS["glasshouse_var"]["tracks"].has(mood):gv_moods_missing.append(str(mood))
+ check(gv_moods_missing.is_empty(),"glasshouse_var covers every mood (missing: %s)"%[str(gv_moods_missing)])
+ music.select_gallery(gv[1]["id"])
+ check(music.gallery_track()==str(gv[1]["id"]),"gallery accepts a glasshouse_var track id")
+ await frames(12)
+ var gv_head: float=music._players[music._slot].get_playback_position()
+ check(gv_head>0.0,"glasshouse_var track advances on the real player (%.2fs)"%[gv_head])
  music.exit_gallery()
  music.set_style(style_home)
 
