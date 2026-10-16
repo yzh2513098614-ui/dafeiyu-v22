@@ -34,7 +34,17 @@ const UiFit = preload("res://ui/ui_fit.gd")
 const Guide = preload("res://battle/battle_guide.gd")
 const LayeredPanel = preload("res://battle/layered_panel.gd")
 const LayeredButton = preload("res://battle/layered_button.gd")
+const InventorySkin = preload("res://ui/harbor_inventory_skin.gd")
+const WorldVitals = preload("res://character/character_controller.gd")
 const BACKGROUND_PATH = "res://assets/battle/harbor_plaza_pixel_v1.png"
+
+class BattleMeterValues extends RefCounted:
+	var actor: Dictionary
+	var link: Dictionary
+	func value(kind: String) -> float:
+		return float(actor.hp if kind == "health" else actor.stamina if kind == "stamina" else link.ap)
+	func maximum(kind: String) -> float:
+		return float(actor.max_hp if kind == "health" else actor.max_stamina if kind == "stamina" else link.max_ap)
 
 const MAX_FOES := 3
 const STEP_SECONDS := 0.30          ## 事件逐个播放的间隔
@@ -211,6 +221,7 @@ func _pack_icon(name: String) -> String:
 var ally: Dictionary = {}
 var portraits: Dictionary = {}
 var dash: Dictionary = {}                   ## 状态坞各部件
+var status_meters: Node
 var cmd_w := CMD_W                          ## 指令窗实际宽度（随画布宽度伸缩，见 _layout）
 var slots: Array = []                       ## 敌人卡片
 var queue: Array = []                       ## 待播放事件
@@ -250,6 +261,9 @@ func open(battle_engine, open_context: Dictionary = {}) -> void:
 func close() -> void:
 	_vfx_epoch+=1
 	_display_states.clear()
+	if status_meters != null:
+		status_meters.queue_free()
+		status_meters = null
 	if layer != null and is_instance_valid(layer):
 		layer.queue_free()
 	layer = null
@@ -1269,13 +1283,19 @@ func _hud_text(label: Label, font_size: int) -> void:
 
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
-	_hud_frame(dash.dock, Color("dceaff"), 20)
+	dash.dock.set_script(null)
+	dash.dock.add_theme_stylebox_override("panel", InventorySkin.frame("panel"))
 	_card_overlay(dash.portrait_frame, Color.TRANSPARENT)
 	dash["level"] = WhaleStyle.label(dash.dock, "", Vector2(106, 56), Vector2(188, 26), 18, Color("647c99"))
 	dash.level.name = "CompactLevel"
 	dash["hp_max"] = WhaleStyle.label(dash.gauges[0].group, "", Vector2(184, 24), Vector2(92, 44), 18, Color("647c99"))
 	dash.hp_max.name = "CompactHealthMaximum"
 	dash.hp_max.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+	# Keep existing child indices for UiDesign; the bag surface draws below content via z_index.
+	for child in dash.dock.get_children():
+		child.z_index = 1
+	InventorySkin.surface(dash.dock, Color("fcfdff"), Color("edf4ff"), 4, 17)
+	_build_status_meters()
 	_hud_frame(title_plate, Color("cedfff"), 18)
 	_hud_frame(phase_plate, Color("ade4e7"), 18)
 	_hud_frame(log_box, Color("e4edff"), 18)
@@ -1303,26 +1323,13 @@ func _style_card_battle() -> void:
 	for action in [speed_button, card_panel.get_node("CardTargetButton"), card_item_button, card_link_button, card_end_button]:
 		_style_card_action(action, action == card_end_button)
 	_card_overlay(dash.block_badge.panel, Color.TRANSPARENT)
-	for i in dash.gauges.size():
-		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.get_node("StatusTile").show()
-		if i == 0:
-			_hud_frame(gauge.group.get_node("StatusTile"), Color("f8fbff"), 14, true)
-		else:
-			_card_overlay(gauge.group.get_node("StatusTile"), Color.TRANSPARENT)
-		_hud_text(gauge.title, 16)
-		_hud_text(gauge.value, 30 if i == 0 else 18)
-		if i > 0:
-			var track := StyleBoxFlat.new()
-			track.bg_color = Color("eaf0f7")
-			track.border_color = Color("b7c6d9")
-			track.set_border_width_all(1)
-			track.set_corner_radius_all(3)
-			track.set_content_margin_all(0)
-			gauge.back.add_theme_stylebox_override("panel", track)
-			gauge.title.add_theme_color_override("font_color", Color("647c99"))
-			gauge.value.add_theme_color_override("font_color", Color("647c99"))
-			gauge.fill.modulate = Color(0.88, 0.92, 0.96)
+	for gauge in dash.gauges:
+		gauge.group.hide()
+	for label in [dash.name, dash.level, dash.block_badge.caption, dash.block_badge.value]:
+		label.add_theme_font_override("font", preload("res://assets/fonts/misans/MiSans-Bold.ttf"))
+	dash.name.add_theme_color_override("font_color", InventorySkin.INK)
+	dash.level.add_theme_color_override("font_color", InventorySkin.MUTED)
+	dash.block_badge.caption.add_theme_color_override("font_color", InventorySkin.MUTED)
 	for slot in slots:
 		_hud_frame(slot.plate, Color("f4f9ff"), 12)
 		_hud_text(slot.name, 20)
@@ -1354,6 +1361,31 @@ func _style_card_battle() -> void:
 	caption.name = "HandCaption"
 	var actions_caption := WhaleStyle.label(card_panel, "回合行动", Vector2.ZERO, Vector2(168, 24), 17, Color("416ca9"))
 	actions_caption.name = "ActionsCaption"
+
+func _build_status_meters() -> void:
+	# Reuse the world HUD renderer without configuring world gameplay or enabling its input/process.
+	status_meters = WorldVitals.new()
+	status_meters.process_mode = Node.PROCESS_MODE_DISABLED
+	var values := BattleMeterValues.new()
+	values.actor = ally
+	values.link = engine.link_status(ally)
+	status_meters.model = values
+	add_child(status_meters)
+	for spec in [["health", "生命", "f4407e"], ["stamina", "体力", "23cbd4"], ["mood", "连携", "638eff"]]:
+		status_meters._meter(dash.dock, spec[0], spec[1], Vector2(18, 112 + status_meters.meters.size() * 60), Vector2(276, 42), Color(spec[2]), spec[0])
+		var meter: Dictionary = status_meters.meters[spec[0]]
+		meter.fill.get_parent().z_index = 1
+	# Link retains its battle icon; its rim, track, readings and effects come from the HUD.
+	var link_meter: Dictionary = status_meters.meters.mood
+	link_meter.icon_art.hide()
+	var icon := TextureRect.new()
+	icon.texture = dash.gauges[2].icon.texture
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	icon.position = Vector2(3, 3)
+	icon.size = Vector2(18, 18)
+	link_meter.icon.add_child(icon)
 
 func _style_card_action(button: Button, primary: bool = false) -> void:
 	button.set_script(LayeredButton)
@@ -1397,8 +1429,8 @@ func _layout_card_dock() -> void:
 	dash.name.size = Vector2(188, 32)
 	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(18, 216)
-	dash.status_icons.position = Vector2(210, 218)
+	dash.block_badge.panel.position = Vector2(18, 326)
+	dash.status_icons.position = Vector2(210, 328)
 	dash.status_icons.size = Vector2(84, 24)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
@@ -1904,7 +1936,7 @@ func _refresh_ally() -> void:
 
 	var ready := bool(link.ready)
 	if engine.card_mode:
-		_refresh_compact_card_status(visible_ally, ready)
+		_refresh_card_status(visible_ally, link)
 	if ready != _ap_ready:
 		_ap_ready = ready
 		gauges[2].style.bg_color = AP_READY if ready else AP_FILL
@@ -1914,15 +1946,19 @@ func _refresh_ally() -> void:
 	link_button.tooltip_text = str(link.desc) if ready else str(link.reason)
 	if card_link_button != null: card_link_button.disabled = not ready
 
-func _refresh_compact_card_status(visible_ally: Dictionary, link_ready: bool) -> void:
+func _refresh_card_status(visible_ally: Dictionary, link: Dictionary) -> void:
 	dash.name.text = str(ally.name)
 	dash.level.text = "Lv.%d" % int(ally.level)
-	var health: Dictionary = dash.gauges[0]
-	health.value.text = str(ceili(float(visible_ally.hp)))
-	dash.hp_max.text = "/ %d" % int(ally.max_hp)
-	var low := float(visible_ally.hp) / maxf(1.0, float(ally.max_hp)) <= 0.2
-	health.value.add_theme_color_override("font_color", Color("a74762") if low else Color("31547e"))
-	dash.gauges[2].value.add_theme_color_override("font_color", Color("31547e") if link_ready else Color("647c99"))
+	status_meters.model.actor = visible_ally
+	status_meters.model.link = link
+	for kind in ["health", "stamina", "mood"]:
+		status_meters._update_meter(kind, kind)
+		var meter: Dictionary = status_meters.meters[kind]
+		var row: Control = meter.fill.get_parent()
+		row.mouse_filter = Control.MOUSE_FILTER_PASS
+		row.tooltip_text = "%s：%d / %d" % [meter.title, ceili(status_meters.model.value(kind)), int(status_meters.model.maximum(kind))]
+	status_meters.meters.mood.icon.get_child(-1).self_modulate = Color("b1bed9") if status_meters.meters.mood.zero else Color.WHITE
+	dash.dock.tooltip_text += "\n" + str(link.desc if link.ready else link.reason)
 	var badge: Dictionary = dash.block_badge
 	badge.panel.size = Vector2(180, 28)
 	badge.icon.position = Vector2.ZERO
@@ -1934,7 +1970,7 @@ func _refresh_compact_card_status(visible_ally: Dictionary, link_ready: bool) ->
 	badge.value.size = Vector2(80, 28)
 	badge.value.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	badge.value.add_theme_font_size_override("font_size", 22)
-	badge.value.add_theme_color_override("font_color", Color("31547e") if float(visible_ally.get("block", 0)) > 0 else Color("8494aa"))
+	badge.value.add_theme_color_override("font_color", InventorySkin.INK if float(visible_ally.get("block", 0)) > 0 else InventorySkin.MUTED)
 
 ## 状态图标的出现 / 消失演出。
 ## 直接切 visible 的话，「护盾没了」这件事几乎不会被注意到 —— 图标在视线边缘，

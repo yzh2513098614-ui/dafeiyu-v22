@@ -15,7 +15,7 @@ func _ready() -> void:
 	get_node("/root/HarborPrefs").values.fullscreen = false
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_window().size = Vector2i(1280, 720)
-	get_window().title = "战斗试玩 · 紧凑状态卡"
+	get_window().title = "战斗试玩 · 背包与主界面同款"
 	var verify := "--verify-original-battle" in OS.get_cmdline_user_args()
 	if verify:
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
@@ -64,10 +64,10 @@ func click(control: Control) -> void:
 
 func verify_inputs() -> void:
 	await settle()
-	await verify_compact_status()
+	await verify_shared_status()
 	var title_style: StyleBoxFlat = screen.title_plate.get_theme_stylebox("panel")
 	var player_style: StyleBoxFlat = screen.dash.dock.get_theme_stylebox("panel")
-	check(title_style.border_color.is_equal_approx(Color("40567d")) and player_style.bg_color.is_equal_approx(Color("dceaff")) and get_node("/root/UiDesign").applied_count > 0, "production screen receives the native dark-edge design page")
+	check(title_style.border_color.is_equal_approx(Color("40567d")) and player_style.bg_color.is_equal_approx(Color("fcfdff")) and player_style.border_color.is_equal_approx(Color.WHITE) and get_node("/root/UiDesign").applied_count > 0, "production screen receives the backpack frame and native design page")
 	var field: Panel = screen.root.get_node("BattlefieldFrame")
 	var hand_frame: Panel = screen.root.get_node("HandAreaFrame")
 	check(not field.visible and field.mouse_filter == Control.MOUSE_FILTER_IGNORE, "extra battlefield outline removed without blocking portraits")
@@ -153,19 +153,28 @@ func verify_inputs() -> void:
 	screen.close()
 	get_tree().quit(1 if failures else 0)
 
-func verify_compact_status() -> void:
+func verify_shared_status() -> void:
 	var dock: Panel = screen.dash.dock
-	check(dock.size.is_equal_approx(Vector2(312, 390)) and is_equal_approx(dock.position.y + dock.size.y, 766.0), "compact card keeps its width and bottom while reducing height by one quarter")
+	check(dock.size.is_equal_approx(Vector2(312, 390)) and is_equal_approx(dock.position.y + dock.size.y, 766.0), "shared-style status card retains its compact placement")
 	var actor: Dictionary = engine.allies[0]
 	var original: Dictionary = actor.duplicate(true)
-	var health: Dictionary = screen.dash.gauges[0]
+	var renderer: Node = screen.status_meters
+	var health: Dictionary = renderer.meters.health
+	check(renderer.process_mode == Node.PROCESS_MODE_DISABLED and renderer.game == null, "world meter renderer has no world gameplay, processing or input")
+	var face: StyleBoxFlat = health.fill.get_theme_stylebox("background")
+	check(face.border_width_left == 3 and face.border_color.is_equal_approx(Color.WHITE) and face.shadow_color.is_equal_approx(Color("638eff")) and face.shadow_offset.is_equal_approx(Vector2(2, 3)), "health uses the actual HUD white rim and solid blue offset")
 	for hp in [107, 148, 29, 0]:
 		actor.hp = hp
 		screen._refresh_ally()
-		await settle()
-		var expected_color := Color("a74762") if hp <= 29 else Color("31547e")
-		check(health.value.text == str(hp) and screen.dash.hp_max.text == "/ 148" and health.value.get_theme_color("font_color").is_equal_approx(expected_color), "health %d / 148 keeps accurate split values and correct warning color" % hp)
+		await get_tree().create_timer(0.45).timeout
+		var expected: String = "0 !" if hp == 0 else "29 / 148 !" if hp == 29 else "满" if hp == 148 else "107 / 148"
+		var expected_color := Color("974154") if hp <= 29 else Color("93a6c4") if hp == 148 else Color("2857c9")
+		check(health.text.text == expected and is_equal_approx(health.fill.value, hp) and health.text.get_theme_color("font_color").is_equal_approx(expected_color) and health.zero == (hp == 0), "health %d / 148 follows the real HUD reading and warning rules" % hp)
 	actor.hp = 107
+	actor.stamina = 20
+	screen._refresh_ally()
+	await settle()
+	check(renderer.meters.stamina.low and renderer.meters.stamina.reading_color.is_equal_approx(Color("8a5a17")) and renderer.meters.stamina.track_backing.face.shadow_color.is_equal_approx(Color("feb633")), "low stamina uses the HUD warm warning colors")
 	actor.block = 12345
 	actor.shield = 1
 	actor.haste = 1
@@ -179,16 +188,16 @@ func verify_compact_status() -> void:
 	for icon in screen.dash.icons.values():
 		fit = fit and icon.visible and dock.get_global_rect().encloses(icon.get_global_rect()) and not icon.get_global_rect().intersects(badge.panel.get_global_rect())
 	check(fit, "five-digit block and all three active statuses fit without collision")
-	check(screen.dash.gauges[2].value.text == "100%" and screen.dash.gauges[2].value.get_theme_color("font_color").is_equal_approx(Color("31547e")), "ready link retains its exact percent and emphasis")
+	check(renderer.meters.mood.reading == "满" and not screen.card_link_button.disabled, "full link follows HUD readings and enables the real link action")
 	actor.block = 0
 	screen._refresh_ally()
 	await settle()
-	check(badge.panel.visible and badge.value.text == "0" and badge.value.get_theme_color("font_color").is_equal_approx(Color("8494aa")), "zero block remains in place with a muted readout")
+	check(badge.panel.visible and badge.value.text == "0" and badge.value.get_theme_color("font_color").is_equal_approx(Color("7690b5")), "zero block remains in place with the backpack muted color")
 	var resources_fit := true
-	for gauge in screen.dash.gauges:
-		resources_fit = resources_fit and dock.get_global_rect().encloses(gauge.value.get_global_rect()) and dock.get_global_rect().encloses(gauge.back.get_global_rect()) and gauge.value.get_global_rect().end.y <= gauge.back.get_global_rect().position.y
-	resources_fit = resources_fit and not health.value.get_global_rect().intersects(screen.dash.hp_max.get_global_rect())
-	check(resources_fit, "all resource values and tracks fit; split health values do not overlap")
+	for meter in renderer.meters.values():
+		var row: Control = meter.fill.get_parent()
+		resources_fit = resources_fit and dock.get_global_rect().encloses(row.get_global_rect()) and row.get_global_rect().encloses(meter.text.get_global_rect()) and row.get_global_rect().encloses(meter.fill.get_global_rect()) and not meter.fill.get_global_rect().intersects(meter.text.get_global_rect())
+	check(resources_fit, "all shared HUD rows, readouts and tracks fit without overlap")
 	actor.merge(original, true)
 	screen._refresh_ally()
 	await settle()
