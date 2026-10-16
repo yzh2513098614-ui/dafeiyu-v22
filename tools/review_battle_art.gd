@@ -41,7 +41,7 @@ func build(kinds: Array) -> void:
  for kind in balance.monsters:textures[kind]=balance.monsters[kind].texture
  for i in kinds.size():engine.add_foe(engine.foe_entry_from_monster({"id":"review_"+str(i),"type":kinds[i]},balance.monsters[kinds[i]]))
  screen=load("res://battle/battle_screen.gd").new();root.add_child(screen)
- screen.open(engine,{"title":"潮汐遭遇战","textures":textures,"items":[{"id":"first_aid","name":"急救包","count":3,"effects":{"health":35},"usable":true},{"id":"sea_biscuit","name":"海盐饼干","count":2,"effects":{"stamina":25},"usable":true}]})
+ screen.open(engine,{"title":"潮汐遭遇战","textures":textures,"items":[{"id":"first_aid_kit","name":"急救包","count":3,"effects":{"health":35},"usable":true},{"id":"snack_basket","name":"零食篮","count":2,"effects":{"stamina":25},"usable":true}]})
 func run() -> void:
  if DisplayServer.get_name()=="headless" or not "--battle-art-review" in OS.get_cmdline_user_args():quit(2);return
  AudioServer.set_bus_mute(0,true);DirAccess.make_dir_recursive_absolute(OUT)
@@ -88,7 +88,7 @@ func real_battle() -> void:
  var game=load("res://district/continuous_world.tscn").instantiate();root.add_child(game);current_scene=game;await draw()
  game.dialogue_controller.close();game.loot.save_path="user://battle_art_review_inventory.json"
  game.character_controller.model=load("res://character/life_state.gd").new()
- game.loot.inventory.first_aid=2;game._travel("trial")
+ game.loot.inventory.first_aid_kit=2;game._travel("trial")
  var combat=game.combat_controller
  game.player.position=combat.markers[0].position+Vector3(0,0,1.5);await create_timer(.15).timeout
  check(combat.near!=null and combat.prompt.visible,"real encounter offers battle entry")
@@ -109,7 +109,7 @@ func real_battle() -> void:
  if not item_buttons.is_empty():
   await click(item_buttons[0])
   if screen.mode=="busy":screen.skip_playback()
-  check(int(game.loot.inventory.first_aid)==1 and screen.engine.allies[0].hp>40,"real item click consumes one supply and heals")
+  check(int(game.loot.inventory.first_aid_kit)==1 and screen.engine.allies[0].hp>40,"real item click consumes one supply and heals")
  screen.engine.foes[0].hp=1;screen._on_attack();screen.skip_playback();await create_timer(.4).timeout
  check(screen.mode=="result" and screen.result_box.visible,"real battle opens reward result")
  await shot("11_实际游戏_奖励结算")

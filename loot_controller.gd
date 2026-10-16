@@ -8,18 +8,30 @@ const Compact=preload("res://ui/map_action_button.gd")
 const CHEST = preload("res://scenes/meme_chest.tscn")
 const LifeState=preload("res://character/life_state.gd")
 const INITIAL_STOCK := {
- "garden_supply":{"seed_packet":3,"hydrangea_bouquet":2,"whale_soap":3,"blue_teapot":1,"picnic_blanket":1},
- "market_supply":{"butter_bread":8,"sea_glass":2,"whale_compass":1,"harbor_ticket":1,"ivory_shell":2,"instant_camera":1},
- "gallery_supply":{"whale_sketchbook":1,"sewing_kit":1,"whale_music_box":1,"harbor_key":1,"paper_boat":2},
- "bedroom_supply":{"token_cracker":8,"context_note":1,"stopped_pillow":1,"retry_tea":3,"first_aid":2},
- "studio_supply":{"thinking_lamp":1,"prompt_pen":1,"hallucination_map":1,"cache_book":2,"tide_compass":1,"sea_shell":4,"soft_linen":3},
- "cafe_supply":{"fish_badge":1,"sea_biscuit":5,"branch_bookmark":2,"whale_letter":1,"lemon_water":4,"sea_soup":2},
- "restaurant_tea_supply":{"retry_tea":2,"butter_bread":3,"lemon_water":2},
- "restaurant_hidden_cache":{"harbor_key":1,"whale_music_box":1,"cache_book":1,"whale_letter":1}}
+ "garden_supply":{"potted_plant":2,"soap_bar":2,"electric_kettle":1,"scented_candle":1,"cosmetic_jar":1,"lotion_bottle":1,"spray_bottle":1,"rubber_duck":1},
+ "market_supply":{"bread_loaf":8,"crystal_cluster":2,"map_route":1,"gift_box":1,"star_coin":2,"instant_camera":1,"sunglasses":1,"wallet":1},
+ "gallery_supply":{"collectible_cards":1,"pencil_cup":1,"retro_radio":1,"heart_key":1,"magic_scroll":2,"vinyl_music":1,"chat_bubbles":1,"game_controller":1,"handheld_console":1,"digital_camera":1},
+ "bedroom_supply":{"token_snack":8,"checklist":1,"sleep_mask":1,"tea_cup":3,"first_aid_kit":2,"backpack_crown":1,"red_alarm_clock":1,"blue_alarm_clock":1,"heart_keychain":1},
+ "studio_supply":{"bedside_lamp":1,"smartphone":1,"map_route":1,"memory_module":2,"crystal_cluster":4,"wave_handbag":3,"settings_gear":1,"keyboard":1,"computer_mouse":1,"lightning_bolt":1,"crystal_sword":1,"star_shield":1,"star_bomb":1,"star_orb_bomb":1},
+ "cafe_supply":{"star_coin":1,"snack_basket":5,"collectible_cards":2,"heart_letter":1,"mana_potion":4,"bento_box":2},
+ "restaurant_tea_supply":{"tea_cup":2,"bread_loaf":3,"mana_potion":2,"frying_pan":1,"rice_cooker":1,"blender":1},
+ "restaurant_hidden_cache":{"heart_key":1,"retro_radio":1,"memory_module":1,"heart_letter":1}}
 const ROOM_CHESTS := [
  {"id":"bedroom_supply","title":"大肥鱼的生活补给箱","pos":Vector3(-1.35,0,.50),"note":"鲸落港 · 新居民须知\n\n大肥鱼是港口蓝鲸信使的昵称。DeepSeek 深潜站在海面下收集居民的问题；港口在海面上认真生活。\n\n箱里的东西可以拿走，取走后不会凭空长回来。困了就休息，饿了就吃一点。\n\n——大肥鱼：今晚也不必给所有问题一个答案。"},
  {"id":"studio_supply","title":"DeepSeek 深潜站工具箱","pos":Vector3(-.85,0,.50),"note":"深潜站 · 值班守则\n\n一、先弄清问题，再开始思考。\n二、地图只是线索，重要的路要再核对。\n三、看到‘稍后重试’，先喝口茶。\n\n思考中……也可能是在摸鱼。\n\n——大肥鱼：别催，鱼在潜水。"},
- {"id":"cafe_supply","title":"鲸落港的阅读漂流箱","pos":Vector3(-.85,0,.50),"note":"鲸落港 · 阅读室留言\n\n故事未完，欢迎续杯。\n缓存旧书记得昨天，分支书签留给明天。\n如果一条路暂时走不通，就找个地方坐下。\n\n——大肥鱼：一起潜下去，也一起浮上来。"}]
+ {"id":"cafe_supply","title":"鲸落港的阅读漂流箱","pos":Vector3(-.85,0,.50),"note":"鲸落港 · 阅读室留言\n\n故事未完，欢迎续杯。\n记忆模块存着过去，卡片留给明天。\n如果一条路暂时走不通，就找个地方坐下。\n\n——大肥鱼：一起潜下去，也一起浮上来。"}]
+## Old saved IDs fold into the current image-backed inventory during load.
+const LEGACY_ITEM_MAP := {
+ "token_cracker":"token_snack","context_note":"checklist","stopped_pillow":"sleep_mask","retry_tea":"tea_cup",
+ "thinking_lamp":"bedside_lamp","prompt_pen":"pencil_cup","hallucination_map":"smartphone","cache_book":"memory_module",
+ "fish_badge":"heart_keychain","sea_biscuit":"snack_basket","branch_bookmark":"collectible_cards","whale_letter":"heart_letter",
+ "first_aid":"first_aid_kit","lemon_water":"mana_potion","sea_soup":"bento_box","tide_compass":"map_route",
+ "sea_shell":"crystal_cluster","soft_linen":"wave_handbag","sea_glass":"crystal_cluster","whale_compass":"map_route",
+ "butter_bread":"bread_loaf","hydrangea_bouquet":"potted_plant","harbor_ticket":"gift_box","whale_sketchbook":"collectible_cards",
+ "seed_packet":"potted_plant","blue_teapot":"electric_kettle","sewing_kit":"hair_comb","ivory_shell":"crystal_cluster",
+ "picnic_blanket":"wave_handbag","whale_music_box":"retro_radio","harbor_key":"heart_key","paper_boat":"magic_scroll",
+ "whale_soap":"soap_bar","fresh_egg":"snack_basket","fresh_milk":"milk_carton","baking_flour":"bread_loaf",
+ "tea_leaves":"tea_cup","drinking_water":"water_drop","whale_breakfast":"bento_box"}
 var game: Node3D
 var definitions: Dictionary
 var inventory: Dictionary = {}
@@ -337,31 +349,49 @@ func load_state() -> bool:
  var data=JSON.parse_string(FileAccess.get_file_as_string(save_path))
  if not data is Dictionary or not _valid_count(data.get("version",0)) or not int(data.get("version",0)) in [1,2,3] or not data.get("inventory") is Dictionary or not data.get("stocks") is Dictionary:return false
  var loaded: Dictionary={};var loaded_stocks: Dictionary=INITIAL_STOCK.duplicate(true)
- for id in data.inventory:
-  if not definitions.has(id) or not _valid_count(data.inventory[id]):return false
-  loaded[id]=int(data.inventory[id])
- # v3 stores arbitrary known items, including newly deposited kinds and empty boxes.
- # Earlier saves remain readable with their original fixed-stock upper bounds.
+ for old_id in data.inventory:
+  if not _valid_count(data.inventory[old_id]):return false
+  var id:=_canonical_item_id(str(old_id))
+  if id=="":return false
+  loaded[id]=mini(9999,int(loaded.get(id,0))+int(data.inventory[old_id]))
  for container in data.stocks:
   if not data.stocks[container] is Dictionary:return false
   var restored: Dictionary=INITIAL_STOCK.get(container,{}).duplicate(true) if int(data.version)<3 else {}
-  for id in data.stocks[container]:
-   if not definitions.has(id) or not _valid_count(data.stocks[container][id]):return false
-   if int(data.version)<3 and INITIAL_STOCK.get(container,{}).has(id) and int(data.stocks[container][id])>int(INITIAL_STOCK[container][id]):return false
-   restored[id]=int(data.stocks[container][id])
+  var migrated_stock: Dictionary={}
+  for old_id in data.stocks[container]:
+   if not _valid_count(data.stocks[container][old_id]):return false
+   var id:=_canonical_item_id(str(old_id))
+   if id=="":return false
+   migrated_stock[id]=mini(9999,int(migrated_stock.get(id,0))+int(data.stocks[container][old_id]))
+  for id in migrated_stock:restored[id]=migrated_stock[id]
   loaded_stocks[container]=restored
  var profile: Dictionary={}
  if data.has("character"):
+  if not data.character is Dictionary:return false
+  var migrated_profile: Dictionary=data.character.duplicate(true)
+  if migrated_profile.get("equipment") is Dictionary:
+   for slot in ["tool","charm"]:
+    var old_item:=str(migrated_profile.equipment.get(slot,""))
+    if old_item!="":migrated_profile.equipment[slot]=_canonical_item_id(old_item)
   var candidate:=LifeState.new()
-  if not candidate.restore(data.character):return false
+  if not candidate.restore(migrated_profile):return false
   for item in candidate.state.equipment.values():
    if item!="" and int(loaded.get(item,0))<1:return false
   profile=candidate.snapshot()
  var saved_favorites=data.get("favorites",{})
  if not saved_favorites is Dictionary:return false
- inventory=loaded;stocks=loaded_stocks;bag_favorites=saved_favorites;character_data=profile
+ var migrated_favorites: Dictionary={}
+ for old_id in saved_favorites:
+  if saved_favorites[old_id]!=true:continue
+  var id:=_canonical_item_id(str(old_id))
+  if id!="":migrated_favorites[id]=true
+ inventory=loaded;stocks=loaded_stocks;bag_favorites=migrated_favorites;character_data=profile
  if game.character_controller and not profile.is_empty():game.character_controller.model.restore(profile);game.character_controller.refresh()
  _bag_count();return true
+
+func _canonical_item_id(old_id: String) -> String:
+ var id:=str(LEGACY_ITEM_MAP.get(old_id,old_id))
+ return id if definitions.has(id) else ""
 
 func _valid_count(value: Variant) -> bool:
  return (value is int or value is float) and float(value)==floorf(float(value)) and float(value)>=0 and float(value)<=9999

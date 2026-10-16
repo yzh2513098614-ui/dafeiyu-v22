@@ -72,10 +72,10 @@ func run() -> void:
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUTPUT))
  AudioServer.set_bus_mute(0,true)
  var prefs=root.get_node("HarborPrefs");prefs.settings_path=OUTPUT+"settings.cfg";prefs.world_save_path=OUTPUT+"world.json";prefs.values.fullscreen=false;prefs.values.music=false;prefs.values.sfx=false;prefs.values.day_cycle=false;prefs.continue_game=false;prefs.starting_place="apt_2"
- var initial_inventory: Dictionary={"sea_biscuit":5,"first_aid":3,"prompt_pen":1,"fish_badge":1,"whale_letter":1,"sea_shell":4,"retry_tea":2,"tide_compass":1}
+ var initial_inventory: Dictionary={"bread_loaf":5,"first_aid_kit":3,"pencil_cup":1,"heart_keychain":1,"heart_letter":1,"crystal_cluster":4,"tea_cup":2,"map_route":1}
  root.size=Vector2i(1000,750)
  game=load("res://district/continuous_world.tscn").instantiate();root.add_child(game);current_scene=game;await settle(15)
- game.set_physics_process(false);game.dialogue_controller.close();loot=game.loot;loot.inventory=initial_inventory;loot.bag_favorites={"whale_letter":true};loot._bag_count();root.notify_mouse_entered()
+ game.set_physics_process(false);game.dialogue_controller.close();loot=game.loot;loot.inventory=initial_inventory;loot.bag_favorites={"heart_letter":true};loot._bag_count();root.notify_mouse_entered()
  loot.save_path=OUTPUT+"inventory.json";loot.save_state()
  check(prefs.world_save_path.begins_with(OUTPUT) and loot.save_path.begins_with(OUTPUT),"preview uses isolated world, settings and inventory")
  check(not loot.chests.is_empty(),"real map contains an interactive chest")
@@ -85,13 +85,13 @@ func run() -> void:
  check(loot.modal.get_child(0).bag_grid.get_child_count()==24 and loot.modal.get_child(0).chest_grid.get_child_count()==12,"two inventories render real grids")
  bounds();await shot("01_宝箱_4比3")
  var chest_id: String=loot.current_chest.container_id
- loot.stocks[chest_id]={"token_cracker":4,"first_aid":2,"context_note":1};loot._render();await settle()
- await click(loot.rows.token_cracker)
- check(loot.chosen=="token_cracker","mouse selects container item")
- var before_count: int=int(loot.inventory.get("token_cracker",0))
+ loot.stocks[chest_id]={"token_snack":4,"first_aid_kit":2,"checklist":1};loot._render();await settle()
+ await click(loot.rows.token_snack)
+ check(loot.chosen=="token_snack","mouse selects container item")
+ var before_count: int=int(loot.inventory.get("token_snack",0))
  await click(loot.quantity_plus);check(int(loot.quantity.value)==2,"mouse increases quantity")
  await click(loot.take_button)
- check(int(loot.inventory.token_cracker)==before_count+2 and int(loot.stocks[chest_id].token_cracker)==2,"quantity transfer conserves both inventories")
+ check(int(loot.inventory.token_snack)==before_count+2 and int(loot.stocks[chest_id].token_snack)==2,"quantity transfer conserves both inventories")
  await shot("02_取物反馈")
  var before_inventory: Dictionary=loot.inventory.duplicate(true);var before_stock: Dictionary=loot.stocks.duplicate(true);var valid_path: String=loot.save_path
  loot.save_path=OUTPUT+"missing/fail.json"
@@ -107,27 +107,27 @@ func run() -> void:
  await key(KEY_I);check(loot.mode=="inventory","I opens backpack")
  bounds();await shot("04_背包_4比3")
  var bag=loot.modal.get_child(0)
- await click(bag.tabs["材料"]);check(bag.visible_ids.has("sea_shell") and bag.visible_ids.size()==1,"mouse category filters material")
+ await click(bag.tabs["材料"]);check(bag.visible_ids.has("crystal_cluster") and bag.visible_ids.size()==1,"mouse category filters material")
  await click(bag.tabs.all)
  bag.search.text="不存在的鲸鱼物品";bag.search.text_changed.emit(bag.search.text);await settle()
  check(bag.visible_ids.is_empty() and loot.selected_button==null,"empty search shows safe empty state");await shot("05_空搜索")
  bag.search.text="";bag.search.text_changed.emit("");await settle()
- await select_item("first_aid")
+ await select_item("first_aid_kit")
  var favorite_button=loot.modal.find_child("FavoriteSelectedItem",true,false)
- await click(favorite_button);check(loot.bag_favorites.has("first_aid"),"mouse favorite is persisted")
+ await click(favorite_button);check(loot.bag_favorites.has("first_aid_kit"),"mouse favorite is persisted")
  var model=game.character_controller.model;model.state.vitals.health=50.0
- var aid_before: int=int(loot.inventory.first_aid)
+ var aid_before: int=int(loot.inventory.first_aid_kit)
  await click(loot.selected_button)
- check(loot.inventory.first_aid==aid_before-1 and model.value("health")>50,"mouse uses supply and updates character")
+ check(loot.inventory.first_aid_kit==aid_before-1 and model.value("health")>50,"mouse uses supply and updates character")
  var saved_inventory: Dictionary=loot.inventory.duplicate(true);var saved_character: Dictionary=model.snapshot()
- loot.save_path=OUTPUT+"missing/fail.json";await select_item("sea_biscuit");await click(loot.selected_button)
+ loot.save_path=OUTPUT+"missing/fail.json";await select_item("bread_loaf");await click(loot.selected_button)
  check(saved_inventory==loot.inventory and saved_character==model.snapshot(),"failed item save restores quantity and character")
  loot.save_path=valid_path
- await select_item("prompt_pen");var pen_before: int=int(loot.inventory.prompt_pen);await click(loot.selected_button)
- check(loot.is_equipped("prompt_pen") and loot.inventory.prompt_pen==pen_before,"mouse equips without consuming item")
+ await select_item("pencil_cup");var pen_before: int=int(loot.inventory.pencil_cup);await click(loot.selected_button)
+ check(loot.is_equipped("pencil_cup") and loot.inventory.pencil_cup==pen_before,"mouse equips without consuming item")
  await shot("06_装备与反馈")
- await select_item("whale_letter");var letter_before: int=int(loot.inventory.whale_letter);await click(loot.selected_button)
- check(loot.inventory.whale_letter==letter_before,"reading clue never consumes it")
+ await select_item("heart_letter");var letter_before: int=int(loot.inventory.heart_letter);await click(loot.selected_button)
+ check(loot.inventory.heart_letter==letter_before,"reading clue never consumes it")
  for id in loot.definitions:loot.inventory[id]=2
  loot.bag_category="all";loot.bag_query="";loot.bag_page=0;loot._render();await settle()
  bag=loot.modal.get_child(0);await click(bag.next_button)
@@ -138,12 +138,12 @@ func run() -> void:
  loot.close();await open_fixture()
  loot.stocks[chest_id]=loot.INITIAL_STOCK[chest_id].duplicate(true)
  for id in loot.stocks[chest_id]:loot.stocks[chest_id][id]=0
- loot.stocks[chest_id].token_cracker=3;loot.stocks[chest_id].context_note=1;loot.inventory={"token_cracker":9998}
+ loot.stocks[chest_id].token_snack=3;loot.stocks[chest_id].checklist=1;loot.inventory={"token_snack":9998}
  for i in 63:
-  var id:="fixture_"+str(i);loot.definitions[id]=loot.definitions.sea_shell.duplicate(true);loot.inventory[id]=1
+  var id:="fixture_"+str(i);loot.definitions[id]=loot.definitions.crystal_cluster.duplicate(true);loot.inventory[id]=1
  loot._render();await settle()
  check(loot.occupied_slots()==64 and loot.receivable_total()==1,"full inventory can fill existing stack without a new slot")
- check(loot.transfer_all() and loot.inventory.token_cracker==9999 and loot.stocks[chest_id].token_cracker==2 and loot.stocks[chest_id].context_note==1,"partial collection leaves overflow in chest")
+ check(loot.transfer_all() and loot.inventory.token_snack==9999 and loot.stocks[chest_id].token_snack==2 and loot.stocks[chest_id].checklist==1,"partial collection leaves overflow in chest")
  await shot("07_容量已满")
  check(not loot.transfer_all(),"full slots and stacks block further receipt")
  var full_inventory: Dictionary=loot.inventory.duplicate(true);var full_stocks: Dictionary=loot.stocks.duplicate(true);loot.close()
@@ -151,7 +151,7 @@ func run() -> void:
  for slot in model.state.equipment:model.state.equipment[slot]=""
  loot.save_state();check(loot.load_state() and loot.inventory==full_inventory and loot.stocks==full_stocks,"reload preserves depleted stocks and full inventory")
  for i in 63:loot.inventory.erase("fixture_"+str(i));loot.definitions.erase("fixture_"+str(i))
- loot.inventory={"sea_biscuit":5,"first_aid":3,"prompt_pen":1,"whale_letter":1,"fish_badge":1,"retry_tea":2};loot.save_state();loot._bag_count();loot.bag_category="all";loot.bag_query="";loot.bag_page=0
+ loot.inventory={"bread_loaf":5,"first_aid_kit":3,"pencil_cup":1,"heart_letter":1,"heart_keychain":1,"tea_cup":2};loot.save_state();loot._bag_count();loot.bag_category="all";loot.bag_query="";loot.bag_page=0
  for dimensions in [Vector2i(1280,720),Vector2i(1920,1080),Vector2i(800,600),Vector2i(720,960)]:
   root.size=dimensions;await settle(10);loot.open_bag();await settle(4);bounds();await shot("08_背包_"+str(dimensions.x)+"x"+str(dimensions.y));loot.close()
  root.size=Vector2i(1280,720);await settle(8);await open_fixture();bounds();await shot("09_宝箱_宽屏")

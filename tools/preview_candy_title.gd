@@ -135,7 +135,7 @@ func run()->void:
  check(menu.memories.is_empty(),"empty recollection shown honestly")
  await title()
  write(menu.slot_service.paths.world,{"version":6,"location":"apt_2","position":[1,1],"rooms":{},"visited":{},"favorites":{}})
- write(menu.slot_service.paths.inventory,{"version":3,"inventory":{"token_cracker":3},"stocks":{},"favorites":{}})
+ write(menu.slot_service.paths.inventory,{"version":3,"inventory":{"token_snack":3},"stocks":{},"favorites":{}})
  write(menu.slot_service.paths.dialogue,{"version":1,"seen":{},"flags":{},"bookmark":{},"history":[{"speaker":"大肥鱼","text":"未来，也想和你一起编写…","topic":"鲸落港"},{"speaker":"你","text":"那么，就从今天的海风开始吧。","topic":"鲸落港"}]})
  menu._render();await settle();check(not menu.resume_button.disabled,"valid world progress enables continue")
  await click(menu.menu_buttons.save);await click(menu.slots_buttons[1])

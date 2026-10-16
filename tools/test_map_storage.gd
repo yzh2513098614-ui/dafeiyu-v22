@@ -112,30 +112,30 @@ func run()->void:
  if failures>0:finish("checks");return
  var target:Node3D=loot.chests[0]
  check(await open_target(target),"open storage fixture")
- loot.inventory={"sea_biscuit":6,"first_aid":3,"prompt_pen":2,"whale_letter":1}
+ loot.inventory={"snack_basket":6,"first_aid_kit":3,"pencil_cup":2,"heart_letter":1}
  loot._render();await settle()
  await shot("01_打开大地图容器")
  var id:String=target.container_id
- var before_stock:int=int(loot.stocks[id].get("sea_biscuit",0))
+ var before_stock:int=int(loot.stocks[id].get("snack_basket",0))
  var view=loot.modal.get_child(0)
- await click(view.bag_grid.find_child("BagItem_sea_biscuit",true,false))
+ await click(view.bag_grid.find_child("BagItem_snack_basket",true,false))
  check(loot.take_button.text=="存入容器" and not loot.take_button.disabled,"mouse selects left bag and enables deposit")
  await click(loot.quantity_plus);await click(loot.take_button)
- check(int(loot.inventory.sea_biscuit)==4 and int(loot.stocks[id].sea_biscuit)==before_stock+2,"mouse deposits selected quantity without loss")
+ check(int(loot.inventory.snack_basket)==4 and int(loot.stocks[id].snack_basket)==before_stock+2,"mouse deposits selected quantity without loss")
  check(loot.modal.get_child(0).inspecting_bag,"deposit keeps the bag selection")
  await shot("02_存入物品与反馈")
  var snapshot_inventory:Dictionary=loot.inventory.duplicate(true);var snapshot_stocks:Dictionary=loot.stocks.duplicate(true)
  var valid_path:String=loot.save_path;loot.save_path=OUT+"missing/fail.json"
- check(not loot.deposit("first_aid",2) and loot.inventory==snapshot_inventory and loot.stocks==snapshot_stocks,"failed deposit save rolls back both sides")
+ check(not loot.deposit("first_aid_kit",2) and loot.inventory==snapshot_inventory and loot.stocks==snapshot_stocks,"failed deposit save rolls back both sides")
  loot.save_path=valid_path
- check(not loot.deposit("unknown",1) and not loot.deposit("first_aid",0) and not loot.deposit("first_aid",-1) and not loot.deposit("first_aid",99),"invalid deposit IDs and amounts rejected")
+ check(not loot.deposit("unknown",1) and not loot.deposit("first_aid_kit",0) and not loot.deposit("first_aid_kit",-1) and not loot.deposit("first_aid_kit",99),"invalid deposit IDs and amounts rejected")
  var model=game.character_controller.model
- check(model.apply_item("prompt_pen"),"equip storage fixture tool")
- check(loot.can_store("prompt_pen")==1 and not loot.deposit("prompt_pen",2),"last equipped copy is protected")
- check(loot.deposit("prompt_pen",1) and int(loot.inventory.prompt_pen)==1 and loot.is_equipped("prompt_pen"),"extra equipped copy may be stored")
- check(loot.deposit("whale_letter",1) and int(loot.inventory.whale_letter)==0,"clue can be stored without using it")
- loot._render();await settle();await click(loot.rows.sea_biscuit);await click(loot.take_button)
- check(int(loot.inventory.sea_biscuit)==5 and int(loot.stocks[id].sea_biscuit)==before_stock+1,"mouse takes an item back from right grid")
+ check(model.apply_item("pencil_cup"),"equip storage fixture tool")
+ check(loot.can_store("pencil_cup")==1 and not loot.deposit("pencil_cup",2),"last equipped copy is protected")
+ check(loot.deposit("pencil_cup",1) and int(loot.inventory.pencil_cup)==1 and loot.is_equipped("pencil_cup"),"extra equipped copy may be stored")
+ check(loot.deposit("heart_letter",1) and int(loot.inventory.heart_letter)==0,"clue can be stored without using it")
+ loot._render();await settle();await click(loot.rows.snack_basket);await click(loot.take_button)
+ check(int(loot.inventory.snack_basket)==5 and int(loot.stocks[id].snack_basket)==before_stock+1,"mouse takes an item back from right grid")
  var saved_inventory:Dictionary=loot.inventory.duplicate(true);var saved_stocks:Dictionary=loot.stocks.duplicate(true)
  check(loot.load_state() and loot.inventory==saved_inventory and loot.stocks==saved_stocks,"reload retains added kinds and equipment ownership")
  loot.close();game._travel("coldstore");await settle();game._travel("city");await settle()
@@ -147,15 +147,15 @@ func run()->void:
  loot.close();game._travel("coldstore");await settle();game._travel("city");await settle()
  check(loot.stocks[id].is_empty(),"empty city box stays empty after travel")
  target=loot.chests[0];check(await open_target(target),"empty box still opens for storage")
- loot.inventory.sea_biscuit=9999;loot.stocks[id]={"sea_biscuit":9998};loot._render()
- check(loot.can_store("sea_biscuit")==1 and not loot.deposit("sea_biscuit",2),"container stack limit rejects overflow")
- check(loot.deposit("sea_biscuit",1) and loot.stocks[id].sea_biscuit==9999 and loot.can_store("sea_biscuit")==0,"container stack reaches exactly 9999")
+ loot.inventory.snack_basket=9999;loot.stocks[id]={"snack_basket":9998};loot._render()
+ check(loot.can_store("snack_basket")==1 and not loot.deposit("snack_basket",2),"container stack limit rejects overflow")
+ check(loot.deposit("snack_basket",1) and loot.stocks[id].snack_basket==9999 and loot.can_store("snack_basket")==0,"container stack reaches exactly 9999")
  var fake:Array=[]
  loot.stocks[id]={}
  for i in 64:
   var fixture_id:="storage_fixture_"+str(i);fake.append(fixture_id)
-  loot.definitions[fixture_id]=loot.definitions.sea_biscuit.duplicate(true);loot.stocks[id][fixture_id]=1
- check(loot.can_store("first_aid")==0 and not loot.deposit("first_aid",1),"full 64-kind container blocks a new kind")
+  loot.definitions[fixture_id]=loot.definitions.snack_basket.duplicate(true);loot.stocks[id][fixture_id]=1
+ check(loot.can_store("first_aid_kit")==0 and not loot.deposit("first_aid_kit",1),"full 64-kind container blocks a new kind")
  loot.inventory[fake[0]]=2
  check(loot.deposit(fake[0],1),"full container accepts an existing stack")
  loot.inventory.erase(fake[0]);loot.stocks[id]={}
@@ -166,15 +166,15 @@ func run()->void:
  solid.position=(target.global_position+game.player.global_position)*.5
  var direction:Vector3=target.global_position-game.player.global_position
  solid.rotation.y=atan2(-direction.z,direction.x);game.world.add_child(solid);await settle()
- check(not loot._in_range(target) and not loot.deposit("first_aid",1) and not loot.transfer("sea_biscuit",1),"wall blocks deposits and withdrawals")
+ check(not loot._in_range(target) and not loot.deposit("first_aid_kit",1) and not loot.transfer("snack_basket",1),"wall blocks deposits and withdrawals")
  solid.free();await settle()
  game.player.position=Vector3.ZERO;await settle()
- check(not loot.deposit("first_aid",1) and not loot.transfer_all(),"out-of-range actions cannot mutate inventory")
+ check(not loot.deposit("first_aid_kit",1) and not loot.transfer_all(),"out-of-range actions cannot mutate inventory")
  check(await open_target(target),"storage reopens after returning")
- loot.inventory={"sea_biscuit":6,"first_aid":3,"prompt_pen":1,"sea_shell":7}
+ loot.inventory={"snack_basket":6,"first_aid_kit":3,"pencil_cup":1,"crystal_cluster":7}
  loot.stocks[id]={};loot._render();await settle()
- view=loot.modal.get_child(0);await click(view.bag_grid.find_child("BagItem_sea_shell",true,false));await click(loot.all_button)
- check(loot.stocks[id].sea_shell==7 and loot.inventory.sea_shell==0,"mouse stores the entire selected stack")
+ view=loot.modal.get_child(0);await click(view.bag_grid.find_child("BagItem_crystal_cluster",true,false));await click(loot.all_button)
+ check(loot.stocks[id].crystal_cluster==7 and loot.inventory.crystal_cluster==0,"mouse stores the entire selected stack")
  for dimensions in [Vector2i(1000,750),Vector2i(1280,720)]:
   root.size=dimensions;await settle()
   for control in [loot.quantity_plus,loot.quantity_minus,loot.take_button,loot.all_button,loot.take_all_button]:
@@ -185,16 +185,20 @@ func run()->void:
  loot.save_path=OUT+"legacy.json"
  for version in [1,2]:
   var file:=FileAccess.open(loot.save_path,FileAccess.WRITE)
-  file.store_string(JSON.stringify({"version":version,"inventory":{"first_aid":1},"stocks":loot.INITIAL_STOCK}));file.close()
-  check(loot.load_state() and loot.inventory.first_aid==1,"legacy v"+str(version)+" loads")
+  file.store_string(JSON.stringify({"version":version,"inventory":{"first_aid":1},"stocks":{"bedroom_supply":{"token_cracker":3,"context_note":1}}}));file.close()
+  check(loot.load_state() and loot.inventory.first_aid_kit==1 and loot.stocks.bedroom_supply.token_snack==3 and loot.stocks.bedroom_supply.checklist==1,"legacy v"+str(version)+" item IDs migrate")
+ var legacy_profile: Dictionary=game.character_controller.model.snapshot();legacy_profile.equipment.tool="prompt_pen"
+ var legacy_file:=FileAccess.open(loot.save_path,FileAccess.WRITE)
+ legacy_file.store_string(JSON.stringify({"version":3,"inventory":{"prompt_pen":1},"stocks":{},"favorites":{"prompt_pen":true},"character":legacy_profile}));legacy_file.close()
+ check(loot.load_state() and loot.inventory.get("pencil_cup",0)==1 and loot.character_data.equipment.tool=="pencil_cup" and loot.bag_favorites.has("pencil_cup"),"legacy equipment and favorites migrate to the new item ID")
  loot.inventory=final_inventory;loot.stocks=final_stocks;loot.save_path=valid_path
  # Ordinary fixed-stock supply chests must also accept extra counts and new kinds.
  game._travel("apt_2");await settle()
  check(await open_target(loot.chests[0]),"ordinary supply chest also opens for storage")
- loot.inventory.token_cracker=19;loot.inventory.sea_shell=2
- check(loot.deposit("token_cracker",19) and loot.stocks.bedroom_supply.token_cracker==27,"fixed supply chest accepts more than its original quantity")
- check(loot.deposit("sea_shell",2),"fixed supply chest accepts a new item kind")
- check(loot.load_state() and loot.stocks.bedroom_supply.token_cracker==27 and loot.stocks.bedroom_supply.sea_shell==2,"v3 reload preserves extra quantities and new kinds in fixed chests")
+ loot.inventory.token_snack=19;loot.inventory.crystal_cluster=2
+ check(loot.deposit("token_snack",19) and loot.stocks.bedroom_supply.token_snack==27,"fixed supply chest accepts more than its original quantity")
+ check(loot.deposit("crystal_cluster",2),"fixed supply chest accepts a new item kind")
+ check(loot.load_state() and loot.stocks.bedroom_supply.token_snack==27 and loot.stocks.bedroom_supply.crystal_cluster==2,"v3 reload preserves extra quantities and new kinds in fixed chests")
  loot.close();loot.inventory=final_inventory;loot.stocks=final_stocks
  game._travel("city");await settle()
  check(loot.save_state(),"final deposit state committed for separate process")

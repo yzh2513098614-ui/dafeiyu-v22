@@ -60,7 +60,7 @@ func run()->void:
  var loot=game.loot
  capture("world_loot_prompt",loot.canvas,"背包入口与宝箱提示",[loot.modal_shade])
  game.map_interactions.card.show();capture("world_interaction",game.map_interactions.root,"附近互动提示");game.map_interactions.card.hide()
- loot.inventory={"sea_biscuit":5,"first_aid":3,"prompt_pen":1,"fish_badge":1,"whale_letter":1,"sea_shell":4,"retry_tea":2,"tide_compass":1};loot._bag_count()
+ loot.inventory={"snack_basket":5,"first_aid_kit":3,"pencil_cup":1,"heart_keychain":1,"heart_letter":1,"crystal_cluster":4,"tea_cup":2,"map_route":1};loot._bag_count()
  loot.open_bag();await settle();capture("inventory_bag",loot.modal,"随身背包");loot.close()
  loot.current_chest=loot.chests[0];loot.mode="loot";loot._render();await settle();capture("inventory_chest",loot.modal,"发现宝箱")
  loot.mode="note";loot._render();await settle();capture("inventory_note",loot.modal,"漂流便签");loot.close()
@@ -106,7 +106,7 @@ func run()->void:
  engine.add_foe({"id":"gpt6","kind":"gpt6","name":"gpt6","hp":65,"max_hp":65,"atk":5,"def":1,"spd":1})
  engine.enable_cards(JSON.parse_string(FileAccess.get_file_as_string("res://assets/cards/catalog.json")))
  var screen=load("res://battle/battle_screen.gd").new();root.add_child(screen)
- screen.open(engine,{"title":"潮汐遭遇战","textures":{"gpt6":"res://assets/monsters/gpt6.png"},"items":[{"id":"first_aid","name":"港口急救包","count":3,"description":"恢复生命","effects":{"heal":10},"usable":true}]})
+ screen.open(engine,{"title":"潮汐遭遇战","textures":{"gpt6":"res://assets/monsters/gpt6.png"},"items":[{"id":"first_aid_kit","name":"港口急救包","count":3,"description":"恢复生命","effects":{"heal":10},"usable":true}]})
  await create_timer(.5).timeout;screen.skip_playback();await settle();capture("battle",screen.root,"卡牌战斗")
  screen._on_item_menu();await settle();capture("battle_item",screen.root,"战斗补给")
  screen._back_to_command();screen._on_skill_menu();await settle();capture("battle_skill",screen.root,"战斗技能")

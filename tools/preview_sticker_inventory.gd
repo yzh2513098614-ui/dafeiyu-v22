@@ -53,7 +53,7 @@ func run()->void:
  var loot=game.loot;loot.save_path=OUT+"inventory.json";loot.inventory.clear();loot.bag_favorites.clear()
  for id in loot.definitions:
   if loot.inventory.size()<25:loot.inventory[id]=2
- loot.inventory["sea_biscuit"]=3
+ loot.inventory["snack_basket"]=3
  loot.character_data={};loot.bag_category="all";loot.bag_query="";loot.bag_page=0;loot.chosen=""
  loot.open_bag();await settle()
  if "--show-inventory" in args:
@@ -66,19 +66,19 @@ func run()->void:
  view.next_button.pressed.emit();await settle();check(view.page==1,"next page works with 20 slots")
  view.previous_button.pressed.emit();await settle();check(view.page==0,"previous page works")
  view.tabs["补给"].pressed.emit();await settle();check(loot.bag_category=="补给" and not view.visible_ids.is_empty(),"existing category callback works")
- view.search.text="海盐";view.search.text_changed.emit("海盐");await settle();check(view.visible_ids.has("sea_biscuit"),"existing search finds real item")
+ view.search.text="零食";view.search.text_changed.emit("零食");await settle();check(view.visible_ids.has("snack_basket"),"existing search finds real item")
  view.search.text="";view.search.text_changed.emit("");view.tabs["all"].pressed.emit();await settle()
  capture("inventory_bag_sticker","随身背包 · 蓝白贴纸")
  await screenshot("01_正式背包")
- loot.chosen="sea_biscuit";view.refresh();await settle()
+ loot.chosen="snack_basket";view.refresh();await settle()
  var model=game.character_controller.model
  model.state.vitals.health=40;model.state.vitals.stamina=40;model.state.vitals.hunger=40
- var previous_count:int=loot.inventory["sea_biscuit"]
+ var previous_count:int=loot.inventory["snack_basket"]
  loot.selected_button.pressed.emit();await settle()
- check(int(loot.inventory["sea_biscuit"])==previous_count-1,"real use callback consumes exactly one item")
+ check(int(loot.inventory["snack_basket"])==previous_count-1,"real use callback consumes exactly one item")
  check(model.value("health")>40,"real item use updates character state")
  var favorite=loot.modal.find_child("FavoriteSelectedItem",true,false)
- favorite.pressed.emit();await settle();check(loot.bag_favorites.has("sea_biscuit"),"favorite still uses original autosave callback")
+ favorite.pressed.emit();await settle();check(loot.bag_favorites.has("snack_basket"),"favorite still uses original autosave callback")
  check(FileAccess.file_exists(loot.save_path),"actions save to isolated real inventory file")
  loot.close();loot.current_chest=loot.chests[0]
  # Movement is driven by the world, not by the CharacterBody node.
@@ -87,17 +87,17 @@ func run()->void:
  await settle(3)
  check(loot._in_range(loot.current_chest),"test player can reach actual container")
  var chest_id:String=loot.current_chest.container_id
- loot.stocks[chest_id]={"sea_biscuit":4,"retry_tea":3,"context_note":1}
- loot.mode="loot";loot.chosen="sea_biscuit";loot.chest_bag_chosen="";loot._render();await settle()
+ loot.stocks[chest_id]={"snack_basket":4,"tea_cup":3,"checklist":1}
+ loot.mode="loot";loot.chosen="snack_basket";loot.chest_bag_chosen="";loot._render();await settle()
  var chest_view=loot.modal.get_child(1)
  check(chest_view.bag_grid.columns==3 and chest_view.chest_grid.columns==3,"real container uses two three-column trays")
- var before_bag:int=loot.inventory.get("sea_biscuit",0)
- var before_stock:int=loot.stocks[chest_id]["sea_biscuit"]
+ var before_bag:int=loot.inventory.get("snack_basket",0)
+ var before_stock:int=loot.stocks[chest_id]["snack_basket"]
  loot.take_button.pressed.emit();await settle()
- check(int(loot.inventory.get("sea_biscuit",0))==before_bag+1 and int(loot.stocks[chest_id]["sea_biscuit"])==before_stock-1,"real take transaction conserves items")
- check(loot.deposit("sea_biscuit",1),"real deposit transaction succeeds")
+ check(int(loot.inventory.get("snack_basket",0))==before_bag+1 and int(loot.stocks[chest_id]["snack_basket"])==before_stock-1,"real take transaction conserves items")
+ check(loot.deposit("snack_basket",1),"real deposit transaction succeeds")
  await settle()
- check(int(loot.inventory.get("sea_biscuit",0))==before_bag and int(loot.stocks[chest_id]["sea_biscuit"])==before_stock,"deposit returns both stocks to previous values")
+ check(int(loot.inventory.get("snack_basket",0))==before_bag and int(loot.stocks[chest_id]["snack_basket"])==before_stock,"deposit returns both stocks to previous values")
  capture("inventory_chest_sticker","容器与背包 · 蓝白贴纸")
  await screenshot("02_正式宝箱")
  if not entries.is_empty():

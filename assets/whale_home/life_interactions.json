@@ -1,14 +1,66 @@
 {
-  "food_ids": ["token_cracker", "sea_biscuit", "retry_tea", "lemon_water", "sea_soup", "butter_bread"],
+  "food_ids": [
+    "token_snack",
+    "bread_loaf",
+    "tea_cup",
+    "mana_potion",
+    "bento_box",
+    "water_drop",
+    "milk_carton",
+    "snack_basket"
+  ],
   "initial_stock": {
-    "blue_fridge": {"fresh_egg": 4, "fresh_milk": 4, "butter_bread": 4, "lemon_water": 2, "sea_soup": 2},
-    "pantry": {"baking_flour": 6, "tea_leaves": 6, "drinking_water": 4, "blue_teapot": 1},
-    "guest_wardrobe": {"soft_linen": 3}
+    "blue_fridge": {
+      "milk_carton": 4,
+      "bread_loaf": 4,
+      "snack_basket": 4,
+      "mana_potion": 2,
+      "bento_box": 2
+    },
+    "pantry": {
+      "token_snack": 6,
+      "water_drop": 6,
+      "tea_cup": 2,
+      "electric_kettle": 1
+    },
+    "guest_wardrobe": {
+      "wave_handbag": 3
+    }
   },
   "recipes": {
-    "cook": {"inputs": {"fresh_egg": 1, "fresh_milk": 1, "butter_bread": 1}, "outputs": {"whale_breakfast": 1}},
-    "bake": {"inputs": {"baking_flour": 1, "fresh_milk": 1}, "outputs": {"token_cracker": 3}},
-    "tea": {"inputs": {"tea_leaves": 1, "drinking_water": 1}, "outputs": {"retry_tea": 1}},
-    "drink": {"inputs": {}, "outputs": {"drinking_water": 1}}
+    "cook": {
+      "inputs": {
+        "milk_carton": 1,
+        "bread_loaf": 1,
+        "snack_basket": 1
+      },
+      "outputs": {
+        "bento_box": 1
+      }
+    },
+    "bake": {
+      "inputs": {
+        "milk_carton": 1,
+        "bread_loaf": 1
+      },
+      "outputs": {
+        "token_snack": 3
+      }
+    },
+    "tea": {
+      "inputs": {
+        "milk_carton": 1,
+        "water_drop": 1
+      },
+      "outputs": {
+        "tea_cup": 1
+      }
+    },
+    "drink": {
+      "inputs": {},
+      "outputs": {
+        "water_drop": 1
+      }
+    }
   }
 }

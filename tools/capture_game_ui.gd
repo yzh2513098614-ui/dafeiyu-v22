@@ -75,11 +75,11 @@ func run() -> void:
  check(bag.search.text=="zzzz" and bag.visible_ids.is_empty(),"actual keyboard typing updates backpack search")
  root.gui_release_focus()
  bag.search.text="";bag.search.text_changed.emit(bag.search.text);bag.tabs.all.pressed.emit();await process_frame
- loot.rows.sea_biscuit.pressed.emit();await process_frame
- var biscuits: int=int(loot.inventory.sea_biscuit)
+ loot.rows.snack_basket.pressed.emit();await process_frame
+ var snacks: int=int(loot.inventory.snack_basket)
  game.character_controller.model.state.vitals.stamina=50.0
  loot.selected_button.pressed.emit();await process_frame
- check(int(loot.inventory.sea_biscuit)==biscuits-1,"actual item action consumes exactly one item")
+ check(int(loot.inventory.snack_basket)==snacks-1,"actual item action consumes exactly one item")
  check(loot.modal.get_child(0).action_feedback.text==loot.status,"item result appears inside the styled backpack")
  await shot("08_背包使用反馈.png")
  loot.close()

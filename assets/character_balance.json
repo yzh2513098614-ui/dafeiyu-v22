@@ -37,23 +37,208 @@
     "rest_mood": 5
   },
   "starter": {
-    "token_cracker": 3,
-    "sea_biscuit": 2,
-    "retry_tea": 1,
-    "first_aid": 1,
-    "prompt_pen": 1
+    "token_snack": 3,
+    "snack_basket": 2,
+    "tea_cup": 1,
+    "first_aid_kit": 1,
+    "pencil_cup": 1
   },
   "items": {
-    "token_cracker": {
+    "map_route": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "luck": 2,
+        "agility": 1
+      },
+      "summary": "工具位：幸运 +2 · 灵巧 +1"
+    },
+    "backpack_crown": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "max_stamina": 12
+      },
+      "summary": "随身物：体力上限 +12"
+    },
+    "checklist": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "chat_bubbles": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "wave_handbag": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "charm": 2
+      },
+      "summary": "随身物：亲和 +2"
+    },
+    "vinyl_music": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "collectible_cards": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "settings_gear": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "heart_letter": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "gift_box": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "water_drop": {
       "action": "consume",
       "effects": {
-        "stamina": 24,
-        "hunger": 8,
-        "mood": 3
+        "stamina": 8
       },
-      "summary": "体力 +24 · 饱食 +8 · 心情 +3"
+      "summary": "体力 +8"
     },
-    "sea_biscuit": {
+    "crystal_sword": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "strength": 2
+      },
+      "summary": "工具位：力量 +2"
+    },
+    "star_shield": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "endurance": 1
+      },
+      "summary": "随身物：耐力 +1"
+    },
+    "lightning_bolt": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "agility": 2
+      },
+      "summary": "工具位：灵巧 +2"
+    },
+    "first_aid_kit": {
+      "action": "consume",
+      "effects": {
+        "health": 35
+      },
+      "summary": "生命 +35 · 满生命时不会消耗"
+    },
+    "heart_potion": {
+      "action": "consume",
+      "effects": {
+        "health": 20,
+        "mood": 5
+      },
+      "summary": "生命 +20 · 心情 +5"
+    },
+    "mana_potion": {
+      "action": "consume",
+      "effects": {
+        "stamina": 25,
+        "mood": 5
+      },
+      "summary": "体力 +25 · 心情 +5"
+    },
+    "heart_key": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "star_bomb": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "magic_scroll": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "crystal_cluster": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "star_orb_bomb": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "insight": 2
+      },
+      "summary": "随身物：学识 +2"
+    },
+    "milk_carton": {
+      "action": "consume",
+      "effects": {
+        "health": 5,
+        "hunger": 10
+      },
+      "summary": "生命 +5 · 饱食 +10"
+    },
+    "bread_loaf": {
+      "action": "consume",
+      "effects": {
+        "stamina": 20,
+        "hunger": 25
+      },
+      "summary": "体力 +20 · 饱食 +25"
+    },
+    "red_alarm_clock": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "frying_pan": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "soap_bar": {
+      "action": "consume",
+      "effects": {
+        "mood": 12
+      },
+      "summary": "心情 +12"
+    },
+    "bedside_lamp": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "insight": 1
+      },
+      "summary": "随身物：学识 +1"
+    },
+    "electric_kettle": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "potted_plant": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "rubber_duck": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "spray_bottle": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "game_controller": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "charm": 1
+      },
+      "summary": "随身物：亲和 +1"
+    },
+    "snack_basket": {
       "action": "consume",
       "effects": {
         "health": 10,
@@ -62,7 +247,41 @@
       },
       "summary": "生命 +10 · 体力 +18 · 饱食 +22"
     },
-    "retry_tea": {
+    "retro_radio": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "blue_alarm_clock": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "max_stamina": 8
+      },
+      "summary": "随身物：体力上限 +8"
+    },
+    "bento_box": {
+      "action": "consume",
+      "effects": {
+        "health": 12,
+        "stamina": 30,
+        "hunger": 45,
+        "mood": 8
+      },
+      "summary": "生命 +12 · 体力 +30 · 饱食 +45 · 心情 +8"
+    },
+    "rice_cooker": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "instant_camera": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "blender": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "tea_cup": {
       "action": "consume",
       "effects": {
         "health": 4,
@@ -73,56 +292,7 @@
       "duration": 90,
       "summary": "生命 +4 · 体力 +12 · 心情 +12\n暖茶 90 秒：停下时体力恢复 +1/秒"
     },
-    "first_aid": {
-      "action": "consume",
-      "effects": {
-        "health": 35
-      },
-      "summary": "生命 +35 · 满生命时不会消耗"
-    },
-    "lemon_water": {
-      "action": "consume",
-      "effects": {
-        "stamina": 20,
-        "mood": 5
-      },
-      "summary": "体力 +20 · 心情 +5"
-    },
-    "sea_soup": {
-      "action": "consume",
-      "effects": {
-        "health": 20,
-        "stamina": 35,
-        "hunger": 40
-      },
-      "summary": "生命 +20 · 体力 +35 · 饱食 +40"
-    },
-    "prompt_pen": {
-      "action": "equip",
-      "slot": "tool",
-      "modifiers": {
-        "insight": 2
-      },
-      "summary": "工具位：学识 +2 · 不消耗物品"
-    },
-    "tide_compass": {
-      "action": "equip",
-      "slot": "tool",
-      "modifiers": {
-        "luck": 2,
-        "agility": 1
-      },
-      "summary": "工具位：幸运 +2 · 灵巧 +1"
-    },
-    "fish_badge": {
-      "action": "equip",
-      "slot": "charm",
-      "modifiers": {
-        "charm": 2
-      },
-      "summary": "随身物：亲和 +2 · 不消耗物品"
-    },
-    "stopped_pillow": {
+    "sleep_mask": {
       "action": "equip",
       "slot": "charm",
       "modifiers": {
@@ -130,70 +300,110 @@
       },
       "summary": "随身物：体力上限 +10"
     },
-    "thinking_lamp": {
-      "action": "equip",
-      "slot": "charm",
-      "modifiers": {
-        "insight": 1
-      },
-      "summary": "随身物：学识 +1"
-    },
-    "context_note": {
-      "action": "read",
-      "summary": "线索：阅读后保留，不重复消耗"
-    },
-    "hallucination_map": {
-      "action": "read",
-      "summary": "线索：阅读后保留，不重复消耗"
-    },
-    "cache_book": {
-      "action": "read",
-      "summary": "线索：阅读后保留，不重复消耗"
-    },
-    "whale_letter": {
-      "action": "read",
-      "summary": "线索：阅读后保留，不重复消耗"
-    },
-    "branch_bookmark": {
+    "scented_candle": {
       "action": "inspect",
       "summary": "收藏品：可以查看，保留在背包"
     },
-    "sea_shell": {
-      "action": "material",
-      "summary": "材料：保留备用，暂未开放制作"
-    },
-    "soft_linen": {
-      "action": "material",
-      "summary": "材料：保留备用，暂未开放制作"
-    },
-    "butter_bread": {
+    "lotion_bottle": {
       "action": "consume",
       "effects": {
-        "stamina": 20,
-        "hunger": 25
+        "mood": 8
       },
-      "summary": "体力 +20 · 饱食 +25"
+      "summary": "心情 +8"
     },
-    "whale_soap": {
+    "hair_comb": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "sunglasses": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "agility": 1
+      },
+      "summary": "随身物：灵巧 +1"
+    },
+    "heart_keychain": {
+      "action": "equip",
+      "slot": "charm",
+      "modifiers": {
+        "charm": 2
+      },
+      "summary": "随身物：亲和 +2"
+    },
+    "wallet": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "smartphone": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "insight": 2
+      },
+      "summary": "工具位：学识 +2"
+    },
+    "graphics_card": {
+      "action": "material",
+      "summary": "材料：收好备用，可以随时查看"
+    },
+    "memory_module": {
+      "action": "read",
+      "summary": "线索：阅读后保留，不重复消耗"
+    },
+    "token_snack": {
       "action": "consume",
       "effects": {
-        "mood": 12
+        "stamina": 24,
+        "hunger": 8,
+        "mood": 3
       },
-      "summary": "心情 +12 · 心情充足时不会消耗"
+      "summary": "体力 +24 · 饱食 +8 · 心情 +3"
     },
-    "fresh_egg": {"action": "material", "summary": "厨房食材：用于鲸鱼早餐"},
-    "fresh_milk": {"action": "material", "summary": "厨房食材：用于早餐和烘焙"},
-    "baking_flour": {"action": "material", "summary": "烘焙食材：搭配牛奶制作饼干"},
-    "tea_leaves": {"action": "material", "summary": "泡茶食材：搭配饮用水制作热茶"},
-    "drinking_water": {
-      "action": "consume",
-      "effects": {"stamina": 8},
-      "summary": "体力 +8 · 也可用于泡茶"
+    "star_coin": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
     },
-    "whale_breakfast": {
-      "action": "consume",
-      "effects": {"health": 12, "stamina": 30, "hunger": 45, "mood": 8},
-      "summary": "生命 +12 · 体力 +30 · 饱食 +45 · 心情 +8"
+    "keyboard": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "insight": 2
+      },
+      "summary": "工具位：学识 +2"
+    },
+    "computer_mouse": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "agility": 1
+      },
+      "summary": "工具位：灵巧 +1"
+    },
+    "pencil_cup": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "insight": 2
+      },
+      "summary": "工具位：学识 +2"
+    },
+    "handheld_console": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
+    },
+    "digital_camera": {
+      "action": "equip",
+      "slot": "tool",
+      "modifiers": {
+        "luck": 1,
+        "insight": 1
+      },
+      "summary": "工具位：幸运 +1 · 学识 +1"
+    },
+    "cosmetic_jar": {
+      "action": "inspect",
+      "summary": "收藏品：可以查看，保留在背包"
     }
   }
 }

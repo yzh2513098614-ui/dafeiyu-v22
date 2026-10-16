@@ -27,7 +27,7 @@ func run() -> void:
  game=load("res://district/continuous_world.tscn").instantiate();root.add_child(game);current_scene=game
  await frames(12)
  game.dialogue_controller.close();game.dialogue_controller.state={"version":1,"seen":{"welcome":true},"flags":{},"bookmark":{},"history":[]}
- game.loot.inventory={"sea_biscuit":3};game.loot.bag_favorites={"sea_biscuit":true};game.loot._bag_count()
+ game.loot.inventory={"snack_basket":3};game.loot.bag_favorites={"snack_basket":true};game.loot._bag_count()
  await key(KEY_ESCAPE)
  check(game.pause_menu.active and not game.ui.visible,"actual Escape opens pause and hides underlying HUD")
  var anchor: Vector3=game.player.position
@@ -82,7 +82,7 @@ func run() -> void:
  game=current_scene
  check(game.location_id=="apt_2" and game.player.position.distance_to(Vector3(1.25,0,0))<.01,"real Continue restores exact floor and position")
  check(game.overview_mode and absf(game.view_size-35.5)<.001,"continue preserves saved zoom despite follow preference")
- check(game.loot.inventory.get("sea_biscuit",0)==3 and game.loot.bag_favorites.has("sea_biscuit"),"continue restores inventory and item favorites")
+ check(game.loot.inventory.get("snack_basket",0)==3 and game.loot.bag_favorites.has("snack_basket"),"continue restores inventory and item favorites")
  check(game.favorites.has("inn_2") and game.route_destination=="inn_2","continue restores navigation favorites and route")
  check(game.dialogue_controller.state.history.size()==1,"continue restores conversation history")
  await shot("06_恢复后的漫步.png")

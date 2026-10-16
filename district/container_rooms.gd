@@ -1096,48 +1096,47 @@ static func _zone(id: String, name: String, rect: Rect2) -> Dictionary:
 	return {"id": id, "name": name, "rect": rect, "center": Vector3(c.x, 0, c.y)}
 
 # ---------------------------------------------------------------- 容器里装什么
-## 物品 id **全部取自 loot_controller.gd 的 INITIAL_STOCK** —— 那是工程已有的物品表，
-## 有图标、有说明、能进背包。这里不新造 id：造了背包 UI 也认不出来。
-## 按容器用途分组，让「医疗柜里有急救包、货笼里是海边捡的东西」符合直觉。
+## 物品 id 全部取自 assets/meme_items.json，库存只引用物品表里已登记的项目。
+## 按容器用途分组，让不同区域的补给符合直觉。
 const STOCK := {
 	# 医疗 / 实验
-	"field_medical_chest":{"first_aid":2,"sea_biscuit":2},
-	"cold_chain_medical_cabinet":{"first_aid":2,"soft_linen":2},
-	"laboratory_specimen_freezer":{"first_aid":2,"retry_tea":2},
-	"sample_transport_case":{"first_aid":1,"sea_shell":3},
-	"wall_emergency_supply_cabinet":{"first_aid":3,"stopped_pillow":1},
+	"field_medical_chest":{"first_aid_kit":2,"bread_loaf":2},
+	"cold_chain_medical_cabinet":{"first_aid_kit":2,"milk_carton":2},
+	"laboratory_specimen_freezer":{"first_aid_kit":2,"mana_potion":2},
+	"sample_transport_case":{"first_aid_kit":1,"crystal_cluster":3},
+	"wall_emergency_supply_cabinet":{"first_aid_kit":3,"heart_potion":1},
 	# 物流 / 货运
-	"harbor_cargo_cage":{"sea_shell":4,"paper_boat":2,"ivory_shell":1},
-	"rolling_logistics_case":{"sea_glass":2,"butter_bread":2,"paper_boat":1},
-	"reinforced_flight_case":{"whale_compass":1,"instant_camera":1},
-	"field_supply_crate":{"sea_biscuit":3,"lemon_water":2},
-	"long_equipment_case":{"harbor_key":1,"fish_badge":1},
+	"harbor_cargo_cage":{"crystal_cluster":4,"magic_scroll":2,"star_coin":1},
+	"rolling_logistics_case":{"crystal_cluster":2,"bread_loaf":2,"magic_scroll":1},
+	"reinforced_flight_case":{"map_route":1,"instant_camera":1},
+	"field_supply_crate":{"bread_loaf":3,"mana_potion":2},
+	"long_equipment_case":{"heart_key":1,"star_coin":1},
 	# 海事 / 潜水
-	"marine_waterproof_case":{"sea_glass":3,"ivory_shell":2},
-	"diver_equipment_case":{"sea_shell":3,"sea_glass":2,"tide_compass":1},
-	"maritime_signal_locker":{"harbor_ticket":1,"whale_compass":1},
-	"lifesaving_deck_box":{"soft_linen":2,"paper_boat":1},
+	"marine_waterproof_case":{"crystal_cluster":3,"star_coin":2},
+	"diver_equipment_case":{"crystal_cluster":3,"map_route":1},
+	"maritime_signal_locker":{"gift_box":1,"map_route":1},
+	"lifesaving_deck_box":{"wave_handbag":2,"magic_scroll":1},
 	# 设备 / 电力
-	"server_service_cabinet":{"thinking_lamp":1,"cache_book":1},
-	"encrypted_electronics_case":{"prompt_pen":1,"cache_book":1},
-	"battery_module_crate":{"thinking_lamp":1,"retry_tea":1},
-	"secure_equipment_locker":{"soft_linen":3,"whale_soap":2},
+	"server_service_cabinet":{"bedside_lamp":1,"memory_module":1},
+	"encrypted_electronics_case":{"smartphone":1,"memory_module":1},
+	"battery_module_crate":{"graphics_card":1,"tea_cup":1},
+	"secure_equipment_locker":{"wave_handbag":3,"soap_bar":2},
 	# 金库 / 单证
-	"office_armored_safe":{"whale_music_box":1,"harbor_key":1},
-	"wall_data_safe":{"context_note":1,"branch_bookmark":1},
-	"restaurant_cash_drop_safe":{"token_cracker":4},
-	"currency_transport_case":{"token_cracker":3,"harbor_ticket":1},
-	"searchable_file_cabinet":{"context_note":1,"branch_bookmark":2,"paper_boat":1},
-	"port_manifest_drawer":{"harbor_ticket":1,"branch_bookmark":1},
+	"office_armored_safe":{"retro_radio":1,"heart_key":1},
+	"wall_data_safe":{"checklist":1,"collectible_cards":1},
+	"restaurant_cash_drop_safe":{"token_snack":4},
+	"currency_transport_case":{"token_snack":3,"gift_box":1},
+	"searchable_file_cabinet":{"checklist":1,"collectible_cards":2,"magic_scroll":1},
+	"port_manifest_drawer":{"gift_box":1,"collectible_cards":1},
 	# 餐饮 / 后厨
-	"restaurant_tall_fridge":{"lemon_water":3,"sea_soup":2},
-	"bottle_storage_cabinet":{"lemon_water":2,"blue_teapot":1},
-	"pantry_ingredient_bin":{"butter_bread":3,"sea_biscuit":2},
-	"undercounter_service_drawer":{"sea_biscuit":2,"whale_soap":1},
-	"insulated_seafood_chest":{"sea_soup":3},
-	"industrial_tool_chest":{"sewing_kit":1,"prompt_pen":1},
+	"restaurant_tall_fridge":{"mana_potion":3,"bento_box":2},
+	"bottle_storage_cabinet":{"water_drop":2,"electric_kettle":1},
+	"pantry_ingredient_bin":{"bread_loaf":3,"snack_basket":2},
+	"undercounter_service_drawer":{"bread_loaf":2,"soap_bar":1},
+	"insulated_seafood_chest":{"bento_box":3},
+	"industrial_tool_chest":{"hair_comb":1,"pencil_cup":1},
 }
-const STOCK_DEFAULT := {"sea_shell":1}
+const STOCK_DEFAULT := {"crystal_cluster":1}
 
 ## 搜刮界面上那句「这是哪儿」的说明
 const ROOM_NOTES := {
