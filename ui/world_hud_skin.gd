@@ -1,13 +1,11 @@
 extends RefCounted
-## Compact world cards retain the project's blue-purple palette.
-const INK:=Color("394364")
+## Compact cards share the approved blue-white palette and short blue base.
+const Shared=preload("res://ui/harbor_inventory_skin.gd")
+const INK:=Shared.INK
 
 static func frame(dark: bool=false) -> StyleBoxFlat:
- var style:=StyleBoxFlat.new()
- style.bg_color=Color("414a75") if dark else Color("e5ebfc")
- style.border_color=Color("8b99c6") if dark else Color("7584ae")
- style.set_border_width_all(2);style.set_corner_radius_all(18)
- style.shadow_color=Color(.10,.13,.24,.18);style.shadow_size=3;style.shadow_offset=Vector2(0,3)
+ var style:StyleBoxFlat=Shared.frame("dark" if dark else "paper").duplicate()
+ style.set_corner_radius_all(18)
  return style
 
 static func single_line(label: Label) -> void:

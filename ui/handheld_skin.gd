@@ -25,8 +25,7 @@ static func theme(font: Font) -> Theme:
  for type in ["Button","OptionButton"]:
   for state in {"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}:
    t.set_stylebox(state,type,frame({"normal":"button","hover":"hover","pressed":"pressed","hover_pressed":"pressed","disabled":"disabled"}[state]))
-  var focus:=StyleBoxFlat.new();focus.bg_color=Color.TRANSPARENT;focus.border_color=BLUE
-  focus.set_border_width_all(3);focus.set_corner_radius_all(14);focus.set_expand_margin_all(2);t.set_stylebox("focus",type,focus)
+  t.set_stylebox("focus",type,frame("focus"))
  t.set_stylebox("normal","LineEdit",frame("paper"));t.set_stylebox("focus","LineEdit",frame("selected"))
  t.set_color("caret_color","LineEdit",BLUE);t.set_color("selection_color","LineEdit",MINT)
  t.set_color("font_placeholder_color","LineEdit",MUTED);t.set_color("font_selected_color","LineEdit",INK)

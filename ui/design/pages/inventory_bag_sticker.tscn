@@ -1,0 +1,3387 @@
+[gd_scene format=3]
+
+[ext_resource type="FontFile" path="res://assets/NotoSansSC.ttf" id="1_gdtc3"]
+[ext_resource type="FontFile" path="res://assets/fonts/misans/MiSans-Demibold.ttf" id="2_k5gw8"]
+[ext_resource type="Shader" path="res://assets/ui/sticker/rounded_gradient.gdshader" id="3_6twqp"]
+[ext_resource type="Texture2D" path="res://assets/ui/sticker/icons/bag.svg" id="4_kgeh2"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/whale_sketchbook.png" id="5_yxxvo"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/whale_compass.png" id="6_8hlk6"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/seed_packet.png" id="7_rcr45"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/prompt_pen.png" id="8_r3rhe"]
+[ext_resource type="Texture2D" path="res://assets/item_icons/hallucination_map.svg" id="9_41k2b"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/branch_bookmark.png" id="10_d8gar"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/sea_glass.png" id="11_1l42s"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/hydrangea_bouquet.png" id="12_lppo2"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/stopped_pillow.png" id="13_6e67v"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/thinking_lamp.png" id="14_o55vc"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/fish_badge.png" id="15_3jtks"]
+[ext_resource type="Texture2D" path="res://assets/item_icons/stopped_pillow.svg" id="16_xupxu"]
+[ext_resource type="Texture2D" path="res://assets/item_icons/fish_badge.svg" id="17_dbi80"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/context_note.png" id="18_yyb6e"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/whale_letter.png" id="19_u2ph5"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/hallucination_map.png" id="20_lgo3h"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/harbor_ticket.png" id="21_j0mci"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/cache_book.png" id="22_2i7t8"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/token_cracker.png" id="23_di52t"]
+[ext_resource type="Texture2D" path="res://assets/v18/items/butter_bread.png" id="24_3a84b"]
+
+[sub_resource type="Theme" id="Theme_b862d"]
+default_font = ExtResource("1_gdtc3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhf4"]
+resource_name = "disabled"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.92941177, 0.94509804, 0.96862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik2ud"]
+resource_name = "focus"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.03137255, 0.4745098, 0.95686275, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8c0r"]
+resource_name = "hover"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.9529412, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r43fn"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0yfb"]
+resource_name = "pressed"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.8901961, 0.9372549, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjhdw"]
+resource_name = "card"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="Theme" id="Theme_3vdmk"]
+default_font = ExtResource("2_k5gw8")
+default_font_size = 18
+Button/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Button/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+Button/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Button/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Button/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+Button/styles/focus = SubResource("StyleBoxFlat_ik2ud")
+Button/styles/hover = SubResource("StyleBoxFlat_y8c0r")
+Button/styles/normal = SubResource("StyleBoxFlat_r43fn")
+Button/styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+Label/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Label/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+Label/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Label/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+Label/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+LineEdit/colors/caret_color = Color(0.3882353, 0.5568628, 1, 1)
+LineEdit/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+LineEdit/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+LineEdit/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+LineEdit/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+LineEdit/colors/font_placeholder_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+LineEdit/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+LineEdit/colors/selection_color = Color(0.84313726, 0.9137255, 1, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_ik2ud")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_sjhdw")
+OptionButton/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+OptionButton/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+OptionButton/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+OptionButton/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+OptionButton/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_ik2ud")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_y8c0r")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_r43fn")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+PopupMenu/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+PopupMenu/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+PopupMenu/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+PopupMenu/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+PopupMenu/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+RichTextLabel/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+RichTextLabel/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+RichTextLabel/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+RichTextLabel/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+RichTextLabel/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+SpinBox/colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+SpinBox/colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+SpinBox/colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+SpinBox/colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+SpinBox/colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tdya"]
+resource_name = "shell"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.92941177, 0.95686275, 1, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.3254902, 0.4862745, 0.85882354, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya242"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.9882353, 0.99215686, 1, 1)
+shader_parameter/end_color = Color(0.92941177, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(1304, 864)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgt3s"]
+resource_name = "paper"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmh24"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.9882353, 0.99215686, 1, 1)
+shader_parameter/end_color = Color(0.92941177, 0.95686275, 1, 1)
+shader_parameter/rect_size = Vector2(70, 70)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 17.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbwtn"]
+resource_name = "bag"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.8745098, 0.91764706, 0.98039216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tm8sg"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.8745098, 0.93333334, 0.98039216, 1)
+shader_parameter/end_color = Color(0.91764706, 0.95686275, 1, 1)
+shader_parameter/rect_size = Vector2(880, 636)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfddj"]
+resource_name = "selected"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.95686275, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3882353, 0.5568628, 1, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.3882353, 0.5568628, 1, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ul608"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbawc"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0ck1"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwui8"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6lwx"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_myref"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6or6w"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipuky"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3imxe"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbuhh"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf7jo"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.91764706, 0.9490196, 1, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ud1ag"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9607843, 0.8745098, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_skyh4"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9607843, 0.8745098, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7xyc"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9411765, 0.9647059, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v83l7"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9411765, 0.9647059, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y12fa"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9411765, 0.9647059, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_62i15"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9411765, 0.9647059, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kslco"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(1, 0.9411765, 0.9647059, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hg8s"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.90588236, 0.96862745, 0.972549, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bwbl"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(1, 1, 1, 1)
+shader_parameter/end_color = Color(0.90588236, 0.96862745, 0.972549, 1)
+shader_parameter/rect_size = Vector2(154, 98)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 11.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta73j"]
+resource_name = "selected"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.9490196, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3882353, 0.5568628, 1, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.3882353, 0.5568628, 1, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv8gc"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ccpt"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k2ar"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1aiw"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27h8b"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uq3"]
+resource_name = "button"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oux37"]
+resource_name = "button"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khepx"]
+resource_name = "pressed"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.8901961, 0.9372549, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf203"]
+resource_name = "hover"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.9529412, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqgui"]
+resource_name = "disabled"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.92941177, 0.94509804, 0.96862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pgn2"]
+resource_name = "focus"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.03137255, 0.4745098, 0.95686275, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4uoj"]
+resource_name = "button"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oegbf"]
+resource_name = "pressed"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.8901961, 0.9372549, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_320da"]
+resource_name = "hover"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.9529412, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1c1g"]
+resource_name = "disabled"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.92941177, 0.94509804, 0.96862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.76862746, 0.8117647, 0.8666667, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4p7j"]
+resource_name = "focus"
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.03137255, 0.4745098, 0.95686275, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0ujg"]
+resource_name = "detail"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9882353, 0.99215686, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 23
+corner_radius_top_right = 23
+corner_radius_bottom_right = 23
+corner_radius_bottom_left = 23
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 9)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_equar"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/end_color = Color(0.9882353, 0.99215686, 1, 1)
+shader_parameter/rect_size = Vector2(348, 614)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwmqn"]
+resource_name = "chest"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.9019608, 0.9411765, 0.9882353, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujthj"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.8980392, 0.94509804, 0.9882353, 1)
+shader_parameter/end_color = Color(0.9372549, 0.9411765, 1, 1)
+shader_parameter/rect_size = Vector2(302, 138)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxprr"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.8745098, 0.93333334, 0.98039216, 1)
+shader_parameter/end_color = Color(0.9490196, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(306, 60)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shsmi"]
+resource_name = "primary"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.92941177, 0.96862745, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ju7jq"]
+resource_name = "primary_pressed"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.87058824, 0.9372549, 0.9647059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxjfb"]
+resource_name = "primary_hover"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.90588236, 0.96862745, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.6627451, 0.84705883, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfajw"]
+bg_color = Color(0.8235294, 0.8745098, 0.95686275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15wqi"]
+bg_color = Color(0.19215687, 0.7254902, 0.7764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqjaf"]
+resource_name = "status"
+content_margin_left = 10.0
+content_margin_top = 3.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+bg_color = Color(0.91764706, 0.9490196, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.53333336, 0.65882355, 0.89411765, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r6f7"]
+shader = ExtResource("3_6twqp")
+shader_parameter/start_color = Color(0.89411765, 0.9529412, 1, 1)
+shader_parameter/end_color = Color(0.94509804, 0.92941177, 1, 1)
+shader_parameter/rect_size = Vector2(352, 54)
+shader_parameter/axis = Vector2(0.7, 0.3)
+shader_parameter/radius = 17.0
+
+[node name="UI_inventory_bag_sticker" type="Control" unique_id=799310397]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1448.0
+offset_bottom = 1086.0
+mouse_filter = 2
+theme = SubResource("Theme_b862d")
+metadata/design_page = "inventory_bag_sticker"
+metadata/design_title = "随身背包 · 蓝白贴纸"
+metadata/design_help = "修改带 design_id 的原生控件；保存后 F5 使用新设计。不要删除 design_id。"
+
+[node name="03_Panel" type="Panel" parent="." unique_id=2053014124]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -440.0
+offset_right = 660.0
+offset_bottom = 440.0
+theme = SubResource("Theme_3vdmk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6tdya")
+metadata/design_id = "."
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel" unique_id=1972170384]
+material = SubResource("ShaderMaterial_ya242")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 1312.0
+offset_bottom = 872.0
+mouse_filter = 2
+metadata/design_id = "0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Control" type="Control" parent="03_Panel" unique_id=84841544]
+anchors_preset = 0
+offset_right = 1320.0
+offset_bottom = 880.0
+mouse_filter = 2
+metadata/design_id = "1"
+metadata/design_native_class = "Control"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Panel" type="Panel" parent="03_Panel/01_Control" unique_id=256270695]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 103.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgt3s")
+metadata/design_id = "1/0"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/00_Panel" unique_id=906006261]
+material = SubResource("ShaderMaterial_dmh24")
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 74.0
+offset_bottom = 74.0
+mouse_filter = 2
+metadata/design_id = "1/0/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/00_Panel" unique_id=549094497]
+self_modulate = Color(0.15686275, 0.34117648, 0.7882353, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 63.0
+offset_bottom = 63.0
+mouse_filter = 2
+texture = ExtResource("4_kgeh2")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/0/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_随身背包" type="Label" parent="03_Panel/01_Control" unique_id=1168895392]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 20.0
+offset_right = 1112.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 33
+text = "随身背包"
+autowrap_mode = 3
+metadata/design_id = "1/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_鲸落港  _  旅途收纳     ·" type="Label" parent="03_Panel/01_Control" unique_id=1717507752]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 68.0
+offset_right = 1096.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+theme_override_font_sizes/font_size = 16
+text = "鲸落港  /  旅途收纳     ·     补给、装备与发现的故事"
+autowrap_mode = 3
+metadata/design_id = "1/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_CloseInventory" type="Button" parent="03_Panel/01_Control" unique_id=994992236]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 29.0
+offset_right = 1294.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_r43fn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "Esc  关闭"
+metadata/design_id = "1/3"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_ColorRect" type="ColorRect" parent="03_Panel/01_Control" unique_id=369285917]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 117.0
+offset_right = 1295.0
+offset_bottom = 119.0
+mouse_filter = 2
+color = Color(0.7411765, 0.8156863, 0.92941177, 1)
+metadata/design_id = "1/4"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Panel" type="Panel" parent="03_Panel/01_Control" unique_id=1354784975]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 136.0
+offset_right = 914.0
+offset_bottom = 782.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbwtn")
+metadata/design_id = "1/5"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel" unique_id=1288377676]
+material = SubResource("ShaderMaterial_tm8sg")
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 885.0
+offset_bottom = 641.0
+mouse_filter = 2
+metadata/design_id = "1/5/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_GridContainer" type="GridContainer" parent="03_Panel/01_Control/05_Panel" unique_id=1810192289]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 125.0
+offset_right = 19.0
+offset_bottom = 125.0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 5
+metadata/design_id = "1/5/1"
+metadata/design_native_class = "GridContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Item_whale_sketchbook" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1771619183]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "蓝鲸写生本
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rfddj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/0"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/00_Item_whale_sketchbook" unique_id=704318697]
+material = SubResource("ShaderMaterial_ul608")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/0/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/00_Item_whale_sketchbook" unique_id=1236253894]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("5_yxxvo")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/0/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/00_Item_whale_sketchbook" unique_id=1340616735]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/0/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_蓝鲸写生本" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/00_Item_whale_sketchbook" unique_id=512442870]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "蓝鲸写生本"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/0/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Label_✓" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/00_Item_whale_sketchbook" unique_id=1387321550]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 29.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.3882353, 0.5568628, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "✓"
+autowrap_mode = 3
+metadata/design_id = "1/5/1/0/4"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Item_whale_compass" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1513239778]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "蓝鲸罗盘
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/1"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/01_Item_whale_compass" unique_id=278942646]
+material = SubResource("ShaderMaterial_tbawc")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/01_Item_whale_compass" unique_id=1455728588]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("6_8hlk6")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/1/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/01_Item_whale_compass" unique_id=1909592995]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/1/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_蓝鲸罗盘" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/01_Item_whale_compass" unique_id=909528953]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "蓝鲸罗盘"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/1/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Item_seed_packet" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1068489632]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "青柠种子袋
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/2"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/02_Item_seed_packet" unique_id=626220872]
+material = SubResource("ShaderMaterial_g0ck1")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/2/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/02_Item_seed_packet" unique_id=279545605]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("7_rcr45")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/2/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/02_Item_seed_packet" unique_id=1454109371]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/2/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_青柠种子袋" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/02_Item_seed_packet" unique_id=419170179]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "青柠种子袋"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/2/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Item_prompt_pen" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1824754461]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "提示词钢笔
+工具位：学识 +2 · 不消耗物品"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/3"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/03_Item_prompt_pen" unique_id=202986863]
+material = SubResource("ShaderMaterial_bwui8")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/3/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/03_Item_prompt_pen" unique_id=1847464095]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("8_r3rhe")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/3/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/03_Item_prompt_pen" unique_id=775040188]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/3/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_提示词钢笔" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/03_Item_prompt_pen" unique_id=386557758]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "提示词钢笔"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/3/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_Item_tide_compass" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1486030337]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "潮汐指南针
+工具位：幸运 +2 · 灵巧 +1"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/4"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/04_Item_tide_compass" unique_id=2104017811]
+material = SubResource("ShaderMaterial_x6lwx")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/4/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/04_Item_tide_compass" unique_id=2113520095]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("9_41k2b")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/4/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/04_Item_tide_compass" unique_id=32504972]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/4/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_潮汐指南针" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/04_Item_tide_compass" unique_id=2059329684]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "潮汐指南针"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/4/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Item_branch_bookmark" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=42632675]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "分支书签
+收藏品：可以查看，保留在背包"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/5"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/05_Item_branch_bookmark" unique_id=750532855]
+material = SubResource("ShaderMaterial_myref")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/5/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/05_Item_branch_bookmark" unique_id=1976075648]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("10_d8gar")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/5/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/05_Item_branch_bookmark" unique_id=2052117246]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/5/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_分支书签" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/05_Item_branch_bookmark" unique_id=1644271155]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "分支书签"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/5/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Item_sea_glass" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1580008014]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "海玻璃小瓶
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/06_Item_sea_glass" unique_id=961082205]
+material = SubResource("ShaderMaterial_6or6w")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/6/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/06_Item_sea_glass" unique_id=1431593986]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("11_1l42s")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/6/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/06_Item_sea_glass" unique_id=1590755630]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/6/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_海玻璃小瓶" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/06_Item_sea_glass" unique_id=2031742738]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "海玻璃小瓶"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/6/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Item_hydrangea_bouquet" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=724928206]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "蓝白绣球花束
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/07_Item_hydrangea_bouquet" unique_id=1941183563]
+material = SubResource("ShaderMaterial_ipuky")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/7/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/07_Item_hydrangea_bouquet" unique_id=375254128]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("12_lppo2")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/7/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/07_Item_hydrangea_bouquet" unique_id=2034038011]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/7/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_蓝白绣球花束" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/07_Item_hydrangea_bouquet" unique_id=328639176]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "蓝白绣球花束"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/7/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Item_stopped_pillow" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=21384833]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "已停止思考抱枕
+随身物：体力上限 +10"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/08_Item_stopped_pillow" unique_id=1854237767]
+material = SubResource("ShaderMaterial_3imxe")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/8/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/08_Item_stopped_pillow" unique_id=334955783]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("13_6e67v")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/8/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/08_Item_stopped_pillow" unique_id=1934733093]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/8/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_已停止思考抱枕" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/08_Item_stopped_pillow" unique_id=663568371]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "已停止思考抱枕"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/8/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Item_thinking_lamp" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1754534500]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "思考中夜灯
+随身物：学识 +1"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/9"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/09_Item_thinking_lamp" unique_id=1624739888]
+material = SubResource("ShaderMaterial_dbuhh")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/9/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/09_Item_thinking_lamp" unique_id=667456290]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("14_o55vc")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/9/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/09_Item_thinking_lamp" unique_id=53853156]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/9/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_思考中夜灯" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/09_Item_thinking_lamp" unique_id=1253793417]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "思考中夜灯"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/9/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Item_fish_badge" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1069599391]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "摸鱼许可证
+随身物：亲和 +2 · 不消耗物品"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/10"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/10_Item_fish_badge" unique_id=1520554479]
+material = SubResource("ShaderMaterial_qf7jo")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/10/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/10_Item_fish_badge" unique_id=1156325184]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("15_3jtks")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/10/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/10_Item_fish_badge" unique_id=177903587]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/10/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_摸鱼许可证" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/10_Item_fish_badge" unique_id=1722591886]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "摸鱼许可证"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/10/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="11_Item_soft_linen" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=679673720]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "柔软亚麻
+材料：保留备用，暂未开放制作"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/11"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/11_Item_soft_linen" unique_id=1975926673]
+material = SubResource("ShaderMaterial_ud1ag")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/11/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/11_Item_soft_linen" unique_id=1195438481]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("16_xupxu")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/11/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/11_Item_soft_linen" unique_id=860522098]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.54509807, 0.4, 0.1764706, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/11/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_柔软亚麻" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/11_Item_soft_linen" unique_id=1144417120]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "柔软亚麻"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/11/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="12_Item_sea_shell" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=782211899]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "潮纹贝壳
+材料：保留备用，暂未开放制作"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/12"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/12_Item_sea_shell" unique_id=1894155341]
+material = SubResource("ShaderMaterial_skyh4")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/12/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/12_Item_sea_shell" unique_id=675733439]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("17_dbi80")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/12/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/12_Item_sea_shell" unique_id=544940172]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.54509807, 0.4, 0.1764706, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/12/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_潮纹贝壳" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/12_Item_sea_shell" unique_id=265990764]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "潮纹贝壳"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/12/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="13_Item_context_note" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1668227928]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "上下文便签
+线索：阅读后保留，不重复消耗"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/13"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/13_Item_context_note" unique_id=2115931870]
+material = SubResource("ShaderMaterial_g7xyc")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/13/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/13_Item_context_note" unique_id=1125440627]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("18_yyb6e")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/13/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/13_Item_context_note" unique_id=163240564]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.60784316, 0.3764706, 0.49019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/13/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_上下文便签" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/13_Item_context_note" unique_id=530046683]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "上下文便签"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/13/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="14_Item_whale_letter" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=257619465]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "大肥鱼的来信
+线索：阅读后保留，不重复消耗"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/14"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/14_Item_whale_letter" unique_id=2129544917]
+material = SubResource("ShaderMaterial_v83l7")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/14/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/14_Item_whale_letter" unique_id=1781307198]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("19_u2ph5")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/14/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/14_Item_whale_letter" unique_id=1854388900]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.60784316, 0.3764706, 0.49019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/14/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_大肥鱼的来信" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/14_Item_whale_letter" unique_id=778453524]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "大肥鱼的来信"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/14/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="15_Item_hallucination_map" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1492718450]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "幻觉地图
+线索：阅读后保留，不重复消耗"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/15"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/15_Item_hallucination_map" unique_id=2046396067]
+material = SubResource("ShaderMaterial_y12fa")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/15/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/15_Item_hallucination_map" unique_id=1260282566]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("20_lgo3h")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/15/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/15_Item_hallucination_map" unique_id=1189475616]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.60784316, 0.3764706, 0.49019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/15/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_幻觉地图" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/15_Item_hallucination_map" unique_id=1885163653]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "幻觉地图"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/15/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="16_Item_harbor_ticket" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=493401620]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "海风纪念票
+可查看"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/16"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/16_Item_harbor_ticket" unique_id=396876954]
+material = SubResource("ShaderMaterial_62i15")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/16/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/16_Item_harbor_ticket" unique_id=348815348]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("21_j0mci")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/16/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/16_Item_harbor_ticket" unique_id=1521949937]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.60784316, 0.3764706, 0.49019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/16/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_海风纪念票" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/16_Item_harbor_ticket" unique_id=1730364248]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "海风纪念票"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/16/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="17_Item_cache_book" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=477933480]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "缓存旧书
+线索：阅读后保留，不重复消耗"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/17"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/17_Item_cache_book" unique_id=1237838626]
+material = SubResource("ShaderMaterial_kslco")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/17/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/17_Item_cache_book" unique_id=2036110597]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("22_2i7t8")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/17/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/17_Item_cache_book" unique_id=1979235811]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.60784316, 0.3764706, 0.49019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/17/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_缓存旧书" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/17_Item_cache_book" unique_id=1429954941]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "缓存旧书"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/17/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="18_Item_token_cracker" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1227098325]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "Token 小饼干
+体力 +24 · 饱食 +8 · 心情 +3"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/18"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/18_Item_token_cracker" unique_id=129513378]
+material = SubResource("ShaderMaterial_3hg8s")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/18/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/18_Item_token_cracker" unique_id=1197829762]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("23_di52t")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/18/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/18_Item_token_cracker" unique_id=302597135]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.46666667, 0.5019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/18/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_Token 小饼干" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/18_Item_token_cracker" unique_id=881694850]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "Token 小饼干"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/18/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="19_Item_butter_bread" type="Button" parent="03_Panel/01_Control/05_Panel/01_GridContainer" unique_id=1883285739]
+texture_filter = 2
+custom_minimum_size = Vector2(160, 104)
+clip_contents = true
+layout_mode = 2
+tooltip_text = "晨光黄油面包
+体力 +20 · 饱食 +25"
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+metadata/design_id = "1/5/1/19"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/19_Item_butter_bread" unique_id=1499915047]
+material = SubResource("ShaderMaterial_1bwbl")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/design_id = "1/5/1/19/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/05_Panel/01_GridContainer/19_Item_butter_bread" unique_id=109570659]
+texture_filter = 2
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("24_3a84b")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/5/1/19/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_×2" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/19_Item_butter_bread" unique_id=1691539176]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.15686275, 0.46666667, 0.5019608, 1)
+theme_override_font_sizes/font_size = 12
+text = "×2"
+horizontal_alignment = 2
+autowrap_mode = 3
+metadata/design_id = "1/5/1/19/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_晨光黄油面包" type="Label" parent="03_Panel/01_Control/05_Panel/01_GridContainer/19_Item_butter_bread" unique_id=507813242]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 14
+text = "晨光黄油面包"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+metadata/design_id = "1/5/1/19/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Category_all" type="Button" parent="03_Panel/01_Control" unique_id=278594839]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 153.0
+offset_right = 155.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_ta73j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "全部"
+metadata/design_id = "1/6"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_Category_补给" type="Button" parent="03_Panel/01_Control" unique_id=307329160]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 153.0
+offset_right = 276.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv8gc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "补给"
+metadata/design_id = "1/7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_Category_工具" type="Button" parent="03_Panel/01_Control" unique_id=1538048274]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 153.0
+offset_right = 397.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ccpt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "工具"
+metadata/design_id = "1/8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="09_Category_收藏" type="Button" parent="03_Panel/01_Control" unique_id=1397823376]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 153.0
+offset_right = 518.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_3k2ar")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "随身物"
+metadata/design_id = "1/9"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="10_Category_线索" type="Button" parent="03_Panel/01_Control" unique_id=1730100562]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 153.0
+offset_right = 639.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1aiw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "便签"
+metadata/design_id = "1/10"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="11_Category_材料" type="Button" parent="03_Panel/01_Control" unique_id=201947056]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 153.0
+offset_right = 760.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_27h8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "材料"
+metadata/design_id = "1/11"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="12_Category_favorite" type="Button" parent="03_Panel/01_Control" unique_id=1899204402]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 153.0
+offset_right = 881.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_05uq3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "收藏夹"
+metadata/design_id = "1/12"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="13_InventorySearch" type="LineEdit" parent="03_Panel/01_Control" unique_id=238230853]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 209.0
+offset_right = 563.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_sjhdw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rfddj")
+placeholder_text = "搜索物品名称、用途或故事…"
+clear_button_enabled = true
+metadata/design_id = "1/13"
+metadata/design_native_class = "LineEdit"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="14_InventorySort" type="OptionButton" parent="03_Panel/01_Control" unique_id=1700623447]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 209.0
+offset_right = 887.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_r43fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+selected = 0
+item_count = 3
+popup/item_0/text = "类别整理"
+popup/item_0/id = 0
+popup/item_1/text = "数量从多到少"
+popup/item_1/id = 1
+popup/item_2/text = "名称排序"
+popup/item_2/id = 2
+metadata/design_id = "1/14"
+metadata/design_native_class = "OptionButton"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="15_PreviousBagPage" type="Button" parent="03_Panel/01_Control" unique_id=1178573656]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 733.0
+offset_right = 732.0
+offset_bottom = 768.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_oux37")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_khepx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wf203")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_uqgui")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3pgn2")
+disabled = true
+text = "‹"
+metadata/design_id = "1/15"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="16_Label_1 _ 2" type="Label" parent="03_Panel/01_Control" unique_id=1592047667]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 739.0
+offset_right = 828.0
+offset_bottom = 765.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 16
+text = "1 / 2"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/design_id = "1/16"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="17_NextBagPage" type="Button" parent="03_Panel/01_Control" unique_id=2067346641]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 733.0
+offset_right = 883.0
+offset_bottom = 768.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4uoj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oegbf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_320da")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_b1c1g")
+theme_override_styles/focus = SubResource("StyleBoxFlat_v4p7j")
+text = "›"
+metadata/design_id = "1/17"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="18_Label_点击格子查看  ·  ★ 收藏  ·" type="Label" parent="03_Panel/01_Control" unique_id=680736061]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 739.0
+offset_right = 558.0
+offset_bottom = 766.0
+theme_override_colors/font_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+theme_override_font_sizes/font_size = 17
+text = "点击格子查看  ·  ★ 收藏  ·  I / Esc 关闭"
+autowrap_mode = 3
+metadata/design_id = "1/18"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="19_Panel" type="Panel" parent="03_Panel/01_Control" unique_id=1371371654]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 154.0
+offset_right = 1296.0
+offset_bottom = 780.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0ujg")
+metadata/design_id = "1/19"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/19_Panel" unique_id=719712312]
+material = SubResource("ShaderMaterial_equar")
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 354.0
+offset_bottom = 620.0
+mouse_filter = 2
+metadata/design_id = "1/19/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Panel" type="Panel" parent="03_Panel/01_Control/19_Panel" unique_id=932252872]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 336.0
+offset_bottom = 166.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bwmqn")
+metadata/design_id = "1/19/1"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/19_Panel/01_Panel" unique_id=621873659]
+material = SubResource("ShaderMaterial_ujthj")
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 307.0
+offset_bottom = 143.0
+mouse_filter = 2
+metadata/design_id = "1/19/1/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_TextureRect" type="TextureRect" parent="03_Panel/01_Control/19_Panel/01_Panel" unique_id=433438691]
+texture_filter = 2
+layout_mode = 0
+offset_left = 96.0
+offset_top = 14.0
+offset_right = 216.0
+offset_bottom = 134.0
+mouse_filter = 2
+texture = ExtResource("5_yxxvo")
+expand_mode = 1
+stretch_mode = 5
+metadata/design_id = "1/19/1/1"
+metadata/design_native_class = "TextureRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="02_Label_蓝鲸写生本" type="Label" parent="03_Panel/01_Control/19_Panel" unique_id=1148533487]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 336.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 26
+text = "蓝鲸写生本"
+autowrap_mode = 3
+metadata/design_id = "1/19/2"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="03_Label_工具 · 可查看  ·  ×2" type="Label" parent="03_Panel/01_Control/19_Panel" unique_id=400144121]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 232.0
+offset_right = 336.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 14
+text = "工具 · 可查看  ·  ×2"
+autowrap_mode = 3
+metadata/design_id = "1/19/3"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="04_ScrollContainer" type="ScrollContainer" parent="03_Panel/01_Control/19_Panel" unique_id=1499849470]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 285.0
+offset_right = 336.0
+offset_bottom = 383.0
+horizontal_scroll_mode = 0
+metadata/design_id = "1/19/4"
+metadata/design_native_class = "ScrollContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_还没画满的厚纸本，留给街角与小故事。" type="Label" parent="03_Panel/01_Control/19_Panel/04_ScrollContainer" unique_id=90799727]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+theme_override_font_sizes/font_size = 16
+text = "还没画满的厚纸本，留给街角与小故事。"
+autowrap_mode = 3
+metadata/design_id = "1/19/4/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="05_Panel" type="Panel" parent="03_Panel/01_Control/19_Panel" unique_id=28068242]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 395.0
+offset_right = 338.0
+offset_bottom = 465.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbwtn")
+metadata/design_id = "1/19/5"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/19_Panel/05_Panel" unique_id=526454513]
+material = SubResource("ShaderMaterial_mxprr")
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 311.0
+offset_bottom = 65.0
+mouse_filter = 2
+metadata/design_id = "1/19/5/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_Label_可查看" type="Label" parent="03_Panel/01_Control/19_Panel/05_Panel" unique_id=1609419818]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 302.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.45882353, 0.3764706, 0.6117647, 1)
+theme_override_font_sizes/font_size = 16
+text = "可查看"
+autowrap_mode = 3
+metadata/design_id = "1/19/5/1"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="06_Label_「先画下来，慢慢补完。」" type="Label" parent="03_Panel/01_Control/19_Panel" unique_id=525223563]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 481.0
+offset_right = 336.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+theme_override_font_sizes/font_size = 14
+text = "「先画下来，慢慢补完。」"
+autowrap_mode = 3
+metadata/design_id = "1/19/6"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="07_UseSelectedItem" type="Button" parent="03_Panel/01_Control/19_Panel" unique_id=1996128185]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 548.0
+offset_right = 217.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_shsmi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ju7jq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xxjfb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "查看物品"
+metadata/design_id = "1/19/7"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="08_FavoriteSelectedItem" type="Button" parent="03_Panel/01_Control/19_Panel" unique_id=1500918738]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 548.0
+offset_right = 338.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_colors/font_disabled_color = Color(0.6039216, 0.6627451, 0.7529412, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_r43fn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0yfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y8c0r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jyhf4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ik2ud")
+text = "☆ 收藏"
+metadata/design_id = "1/19/8"
+metadata/design_native_class = "Button"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="20_Label_收纳 25 _ 64 格   ·  " type="Label" parent="03_Panel/01_Control" unique_id=1643915118]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 797.0
+offset_right = 907.0
+offset_bottom = 829.0
+theme_override_colors/font_color = Color(0.15686275, 0.34117648, 0.7882353, 1)
+theme_override_font_sizes/font_size = 18
+text = "收纳 25 / 64 格   ·   空余 39 格   ·   共 51 件"
+autowrap_mode = 3
+metadata/design_id = "1/20"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="21_ProgressBar" type="ProgressBar" parent="03_Panel/01_Control" unique_id=853825661]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 840.0
+offset_right = 908.0
+offset_bottom = 867.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_qfajw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_15wqi")
+max_value = 64.0
+value = 25.0
+show_percentage = false
+metadata/design_id = "1/21"
+metadata/design_native_class = "ProgressBar"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="22_Panel" type="Panel" parent="03_Panel/01_Control" unique_id=465474989]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 798.0
+offset_right = 1296.0
+offset_bottom = 860.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqjaf")
+metadata/design_id = "1/22"
+metadata/design_native_class = "Panel"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_StickerSurface" type="ColorRect" parent="03_Panel/01_Control/22_Panel" unique_id=389923558]
+material = SubResource("ShaderMaterial_7r6f7")
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 356.0
+offset_bottom = 58.0
+mouse_filter = 2
+metadata/design_id = "1/22/0"
+metadata/design_native_class = "ColorRect"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="01_ScrollContainer" type="ScrollContainer" parent="03_Panel/01_Control/22_Panel" unique_id=1378691591]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 346.0
+offset_bottom = 53.0
+horizontal_scroll_mode = 0
+metadata/design_id = "1/22/1"
+metadata/design_native_class = "ScrollContainer"
+metadata/design_edit_text = false
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+
+[node name="00_Label_收取、使用与收藏后自动保存。" type="Label" parent="03_Panel/01_Control/22_Panel/01_ScrollContainer" unique_id=1398469912]
+custom_minimum_size = Vector2(316, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.4627451, 0.5647059, 0.70980394, 1)
+theme_override_font_sizes/font_size = 14
+text = "收取、使用与收藏后自动保存。"
+autowrap_mode = 3
+metadata/design_id = "1/22/1/0"
+metadata/design_native_class = "Label"
+metadata/design_edit_text = true
+metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"

@@ -70,18 +70,18 @@
   "title": "附近互动 · 小按钮"
  },
  {
-  "controls": 89,
+  "controls": 148,
   "error": 0.0,
-  "id": "inventory_bag",
-  "scene": "res://ui/design/pages/inventory_bag.tscn",
-  "title": "随身背包"
+  "id": "inventory_bag_sticker",
+  "scene": "res://ui/design/pages/inventory_bag_sticker.tscn",
+  "title": "随身背包 · 蓝白贴纸"
  },
  {
-  "controls": 95,
+  "controls": 139,
   "error": 0.0,
-  "id": "inventory_chest",
-  "scene": "res://ui/design/pages/inventory_chest.tscn",
-  "title": "背包 · 容器存取"
+  "id": "inventory_chest_sticker",
+  "scene": "res://ui/design/pages/inventory_chest_sticker.tscn",
+  "title": "容器与背包 · 蓝白贴纸"
  },
  {
   "controls": 10,
@@ -154,25 +154,25 @@
   "title": "通用互动对话"
  },
  {
-  "controls": 22,
+  "controls": 70,
   "error": 0.0,
-  "id": "dialogue",
-  "scene": "res://ui/design/pages/dialogue.tscn",
-  "title": "对话正文"
+  "id": "dialogue_gal",
+  "scene": "res://ui/design/pages/dialogue_gal.tscn",
+  "title": "对话 · 粉色渐变正文"
  },
  {
-  "controls": 26,
+  "controls": 74,
   "error": 0.0,
-  "id": "dialogue_choices",
-  "scene": "res://ui/design/pages/dialogue_choices.tscn",
-  "title": "对话回复"
+  "id": "dialogue_gal_choices",
+  "scene": "res://ui/design/pages/dialogue_gal_choices.tscn",
+  "title": "对话 · 粉色回复"
  },
  {
-  "controls": 29,
+  "controls": 75,
   "error": 0.0,
-  "id": "dialogue_backlog",
-  "scene": "res://ui/design/pages/dialogue_backlog.tscn",
-  "title": "对话回看"
+  "id": "dialogue_gal_backlog",
+  "scene": "res://ui/design/pages/dialogue_gal_backlog.tscn",
+  "title": "对话 · 粉色回看"
  },
  {
   "controls": 12,
@@ -306,5 +306,12 @@
   "id": "battle_result",
   "scene": "res://ui/design/pages/battle_result.tscn",
   "title": "战斗结算"
+ },
+ {
+  "controls": 75,
+  "id": "dialogue_gal_config",
+  "scene": "res://ui/design/pages/dialogue_gal_config.tscn",
+  "title": "对话 · 阅读设置",
+  "error": 0.0
  }
 ]

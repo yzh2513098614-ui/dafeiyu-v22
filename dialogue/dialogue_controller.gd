@@ -1,6 +1,7 @@
 extends Node
 ## Data-driven visual-novel dialogue. The game only displays complete PNG portraits.
-const DialogueStyle=preload("res://dialogue/pixel_skin.gd")
+const DialogueStyle=preload("res://ui/harbor_inventory_skin.gd")
+const GalView=preload("res://dialogue/gal_view.gd")
 const UiFit=preload("res://ui/ui_fit.gd")
 const DB_PATH="res://dialogue/stories.json"
 var save_path:="user://whale_dialogue_v19.json"
@@ -43,6 +44,13 @@ var companion: Node3D
 var portrait_regions: Dictionary={}
 var transition: Tween
 var chars_per_second:=34.0
+var view
+var trail:Array=[]
+var line_start_history:=0
+var reading:Dictionary={"speed":34.0,"wait":1.6,"font":30.0,"opacity":.82,"motion":true}
+var skip_play:=false
+var ui_hidden:=false
+var config_open:=false
 
 func _ready() -> void:
  game=get_parent()
@@ -53,7 +61,7 @@ func _ready() -> void:
  elif "--test-combat-ui" in OS.get_cmdline_user_args():save_path="user://whale_dialogue_combat_ui_test.json"
  elif "--capture-dialogue" in OS.get_cmdline_user_args():save_path="user://whale_dialogue_v19_preview.json"
  stories=JSON.parse_string(FileAccess.get_file_as_string(DB_PATH))
- _load_state();_portraits();_build_ui()
+ _load_state();reading.merge(state.get("reading",{}),true);chars_per_second=float(reading.speed);_portraits();_build_ui()
 
 func _portraits() -> void:
  if not FileAccess.file_exists("res://assets/dialogue/portraits.json"):return
@@ -72,54 +80,11 @@ func _button(parent: Node,label: String,pos: Vector2,size: Vector2,action: Calla
  var b:=Button.new();b.text=label;b.position=pos;b.size=size;b.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;b.pressed.connect(action);parent.add_child(b);return b
 
 func _build_ui() -> void:
- layer=CanvasLayer.new();layer.layer=50;add_child(layer)
- root=Control.new();root.size=Vector2(1448,1086);root.mouse_filter=Control.MOUSE_FILTER_STOP;root.theme=DialogueStyle.theme(game._game_font());root.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;layer.add_child(root)
- UiFit.fill(root)
- shade=ColorRect.new();shade.size=root.size;shade.color=Color(.09,.14,.24,.30);root.add_child(shade);shade.gui_input.connect(_click_advance)
- UiFit.fill(shade)
- var context_plate:=DialogueStyle.panel(root,Vector2(73,42),Vector2(863,54),"nameplate")
- UiFit.pin_design(context_plate,73,42,863,54)
- location_text=DialogueStyle.label(context_plate,"",Vector2(17,11),Vector2(827,34),18,Color("edf0f5"))
- portrait=TextureRect.new();portrait.position=Vector2(801,97);portrait.size=Vector2(569,913);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(portrait)
- UiFit.pin_right(portrait,569,78,97,913)
- portrait.set_meta("runtime_texture",true)
- box=DialogueStyle.panel(root,Vector2(72,794),Vector2(1304,230),"screen");box.gui_input.connect(_click_advance)
- UiFit.pin_wide(box,72,72,794,230)
- # Nameplate overlaps the upper edge, as in SLG / galgame dialogue layouts.
- var nameplate:=DialogueStyle.panel(root,Vector2(102,759),Vector2(253,62),"speaker")
- speaker=DialogueStyle.label(nameplate,"大肥鱼",Vector2(22,10),Vector2(213,39),25,DialogueStyle.INK)
- text_label=RichTextLabel.new();text_label.position=Vector2(37,35);text_label.size=Vector2(1201,115);text_label.bbcode_enabled=false;text_label.scroll_active=false;text_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text_label.add_theme_font_size_override("normal_font_size",27);text_label.add_theme_color_override("default_color",DialogueStyle.SkyStyle.CREAM);text_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(text_label)
- # 对话框变宽后，正文与右下角按钮要跟着拉通/贴右边，否则文字只有一小条、按钮挤在中间
- UiFit.pin_wide(text_label,40,40,38,112)
- text_label.add_theme_font_size_override("normal_font_size",26)
- text_label.add_theme_constant_override("line_separation",8)
- advance_hint=DialogueStyle.label(box,"",Vector2(37,165),Vector2(646,32),18,DialogueStyle.SkyStyle.MINT)
- advance_hint.position.x=40;advance_hint.size.x=806
- var b_log:=_button(box,"回看",Vector2(779,159),Vector2(103,48),func():show_backlog())
- UiFit.pin_right(b_log,103,321,159,48)
- auto_button=_button(box,"自动：关",Vector2(894,159),Vector2(131,48),func():set_auto(not auto_play))
- UiFit.pin_right(auto_button,131,178,159,48)
- var b_next:=_button(box,"下一句 ▸",Vector2(1037,159),Vector2(138,48),func():advance())
- UiFit.pin_right(b_next,138,28,159,48)
- portrait_button=_button(root,"收起立绘",Vector2(1169,46),Vector2(178,47),func():portrait_visible=not portrait_visible;portrait.visible=portrait_visible and speaker.text!="旁白";portrait_button.text="收起立绘" if portrait_visible else "展开立绘")
- UiFit.pin_right(portrait_button,178,101,46,47)
- var b_end:=_button(root,"结束对话",Vector2(965,46),Vector2(185,47),func():close())
- UiFit.pin_right(b_end,185,298,46,47)
- choice_panel=DialogueStyle.panel(root,Vector2(92,433),Vector2(645,299),"quote");choice_panel.hide()
- backlog=DialogueStyle.panel(root,Vector2(154,112),Vector2(1140,831));backlog.hide()
- UiFit.pin_center(backlog,1140,112,831)
- DialogueStyle.label(backlog,"对话回看",Vector2(30,23),Vector2(769,43),30)
- DialogueStyle.label(backlog,"已读过的对白和你的选择",Vector2(33,77),Vector2(820,35),19,DialogueStyle.MUTED)
- _button(backlog,"返回对话",Vector2(910,25),Vector2(197,49),func():hide_backlog())
- log_scroll=ScrollContainer.new();log_scroll.position=Vector2(30,130);log_scroll.size=Vector2(1080,666);log_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;backlog.add_child(log_scroll)
- log_list=VBoxContainer.new();log_list.size_flags_horizontal=Control.SIZE_EXPAND_FILL;log_list.add_theme_constant_override("separation",19);log_scroll.add_child(log_list)
- root.hide()
- hud_button=game._button("Q 和大肥鱼聊聊",Vector2(72,979),Vector2(248,55),game.ui.get_child(0),func():start_topic())
+ view=GalView.new(self);view.build()
+ hud_button=DialogueStyle.button(game.ui.get_child(0),"Q 和大肥鱼聊聊",Vector2(72,979),Vector2(248,55),func():start_topic())
  UiFit.pin_design(hud_button,72,979,248,55)
- hud_button.add_theme_stylebox_override("normal",DialogueStyle.frame("button"));hud_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));hud_button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
- resume_button=game._button("接着上次",Vector2(334,979),Vector2(163,55),game.ui.get_child(0),func():resume())
+ resume_button=DialogueStyle.button(game.ui.get_child(0),"接着上次",Vector2(334,979),Vector2(163,55),func():resume())
  UiFit.pin_design(resume_button,334,979,163,55)
- resume_button.add_theme_stylebox_override("normal",DialogueStyle.frame("button"));resume_button.add_theme_stylebox_override("hover",DialogueStyle.frame("selected"));resume_button.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 func world_changed() -> void:
  if active:close()
@@ -199,7 +164,7 @@ func start(id: String,node: String="") -> void:
  if not active:game_ui_was_visible=game.ui.visible
  game.loot.close();game.panel.hide();game.settings_panel.hide();game.dialog.hide();game.editing=false
  if game.get("map_panel"):game._show_map(false)
- game.dialog_open=true;active=true;backlog_open=false;backlog.hide();auto_play=false;auto_button.text="自动：关"
+ game.dialog_open=true;active=true;backlog_open=false;config_open=false;ui_hidden=false;backlog.hide();view.config.hide();view.chrome.show();auto_play=false;skip_play=false;trail.clear()
  game.ui.hide();_hide_scene_labels()
  current_story=id;current_node=node if node!="" else str(stories[id].start)
  root.show();_show_line()
@@ -213,28 +178,20 @@ func _format(value: String) -> String:
 func _show_line() -> void:
  if not stories[current_story].nodes.has(current_node):close();return
  current=stories[current_story].nodes[current_node]
- revealed=0.0;dwell=0.0;line_logged=false
+ revealed=0.0;dwell=0.0;line_logged=false;line_start_history=state.history.size()
  type_tick_at=3
  speaker.text=str(current.get("speaker","大肥鱼"))
  text_label.text=_format(str(current.get("text","")));text_label.visible_characters=0
+ text_label.scroll_to_line(0)
  var expression: String=str(current.get("expression","listen"))
  portrait.texture=portrait_regions.get(expression,game.frames.get_frame_texture("idle_down",0))
  portrait.visible=portrait_visible and speaker.text!="你" and speaker.text!="旁白"
- location_text.text="鲸落港  /  "+str(context.get("room",game.title.text))+"  /  "+str(stories[current_story].title)
+ location_text.text=str(context.get("room",game.title.text))
  # 每显示一行对白翻一页。音量压得很低（连点会翻得很快），"page" 声道自带节流。
  SfxDirector.play("page",-9.0,1.0,"page")
- for child in choice_panel.get_children():
-  choice_panel.remove_child(child);child.queue_free()
- choice_buttons.clear();choice_panel.hide()
- var choices: Array=current.get("choices",[])
- if not choices.is_empty():
-  choice_panel.size.y=75+choices.size()*65;choice_panel.position.y=740-choice_panel.size.y
-  DialogueStyle.label(choice_panel,"你想怎么回应？",Vector2(24,13),Vector2(589,35),23)
-  for i in choices.size():
-   var index: int=i
-   var b:=_button(choice_panel,str(i+1)+"  "+_format(str(choices[i].text)),Vector2(23,60+i*65),Vector2(599,54),func():choose(index))
-   b.add_theme_font_size_override("font_size",20);choice_buttons.append(b)
- state.bookmark={"story":current_story,"node":current_node,"context":context.duplicate(true)}
+ view.choices(current.get("choices",[]))
+ state.bookmark={"story":current_story,"node":current_node,"context":context.duplicate(true),"trail":trail.duplicate(true)}
+ view.line_changed()
  if current.has("route") and game.has_method("set_route") and game.locations.has(str(current.route)):
   game.set_route(str(current.route))
  _save_state();_refresh_hint()
@@ -242,10 +199,11 @@ func _show_line() -> void:
 func _process(delta: float) -> void:
  if not active:return
  if not game.dialog_open:close();return
- if backlog_open:return
+ if backlog_open or config_open or ui_hidden:return
+ view.tick(delta)
  var total:=text_label.get_total_character_count()
  if is_typing():
-  revealed=minf(total,revealed+delta*chars_per_second)
+  revealed=minf(total,revealed+delta*(1800.0 if fast_forwarding() else float(reading.speed)))
   text_label.visible_characters=int(revealed)
   # 打字机音：每 3 个字响一次。一个字一响在中文语速下会变成机关枪，
   # 而且 type_tick 是正弦短点（不是噪声），连续响也不会积成沙沙声。
@@ -253,51 +211,57 @@ func _process(delta: float) -> void:
    type_tick_at=text_label.visible_characters+3
    SfxDirector.play("type_tick",-15.0,1.0,"type")
   if text_label.visible_characters>=total:_line_complete()
- elif auto_play and choice_buttons.is_empty():
+ elif (auto_play or fast_forwarding()) and choice_buttons.is_empty():
   dwell+=delta
-  if dwell>=maxf(1.6,float(total)*.045):advance()
+  if dwell>=auto_delay():advance()
 
 func _line_complete() -> void:
  text_label.visible_characters=-1
  if not line_logged:
-  state.history.append({"speaker":speaker.text,"text":text_label.text,"topic":str(stories[current_story].title)})
-  while state.history.size()>200:state.history.pop_front()
+  state.history.append({"speaker":str(current.get("speaker","大肥鱼")),"text":text_label.text,"topic":str(stories[current_story].title),"story":current_story,"node":current_node,"context":context.duplicate(true),"flags":state.flags.duplicate(true)})
+  while state.history.size()>200:state.history.pop_front();line_start_history=maxi(0,line_start_history-1)
   line_logged=true;_save_state()
- choice_panel.visible=not choice_buttons.is_empty();_refresh_hint()
+ choice_panel.visible=not choice_buttons.is_empty()
+ if not choice_buttons.is_empty():skip_play=false
+ _refresh_hint()
 
 func is_typing() -> bool:
  return text_label.visible_characters>=0 and text_label.visible_characters<text_label.get_total_character_count()
 
 func _refresh_hint() -> void:
- advance_hint.text="点击 / E / Enter / Space 显示整句" if is_typing() else ("请点击选项，或按数字键 1—3" if not choice_buttons.is_empty() else "点击 / E / Enter / Space 继续 · Esc 结束")
+ advance_hint.text="…" if is_typing() else ("SKIP" if fast_forwarding() else "AUTO" if auto_play else "NEXT")
+ view.refresh()
 
 func advance() -> void:
- if not active or backlog_open:return
+ if not active or backlog_open or config_open or ui_hidden:return
  if is_typing():revealed=text_label.get_total_character_count();_line_complete();return
  if not choice_buttons.is_empty():return
  var next: String=str(current.get("next",""))
  if next=="":
   state.seen[current_story]=true;state.bookmark={};_save_state();close();return
- current_node=next;_show_line()
+ trail.append(_reading_snapshot());current_node=next;_show_line()
 
 func choose(index: int) -> void:
  if not active or backlog_open or is_typing() or index<0 or index>=choice_buttons.size():return
  var choices: Array=current.get("choices",[])
  if index>=choices.size():return
  var choice: Dictionary=choices[index]
+ var previous:=_reading_snapshot()
  var old: Dictionary=state.duplicate(true)
  state.history.append({"speaker":"你","text":_format(str(choice.text)),"topic":str(stories[current_story].title)})
  if choice.has("flag"):state.flags[str(choice.flag)]=true
  state.bookmark={"story":current_story,"node":str(choice.next),"context":context.duplicate(true)}
  if not _save_state():state=old;advance_hint.text="选择保存失败，请重试。";return
- current_node=str(choice.next);_show_line()
+ trail.append(previous);current_node=str(choice.next);_show_line()
 
 func set_auto(value: bool) -> void:
- auto_play=value;dwell=0;auto_button.text="自动：开" if value else "自动：关"
+ auto_play=value;dwell=0
+ if value:skip_play=false
+ _refresh_hint()
 
 func close() -> void:
  if active:_save_state()
- active=false;auto_play=false;backlog_open=false;root.hide();backlog.hide();choice_panel.hide();game.dialog_open=false
+ active=false;auto_play=false;skip_play=false;backlog_open=false;config_open=false;ui_hidden=false;root.hide();backlog.hide();view.config.hide();choice_panel.hide();game.dialog_open=false
  game.ui.visible=game_ui_was_visible
  if is_instance_valid(companion):
   for child in companion.get_children():
@@ -311,7 +275,10 @@ func _hide_scene_labels() -> void:
    if child is Label3D:child.hide()
 
 func _click_advance(event: InputEvent) -> void:
- if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:advance();get_viewport().set_input_as_handled()
+ if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
+  if ui_hidden:toggle_hidden()
+  else:advance()
+  get_viewport().set_input_as_handled()
 
 func _input(event: InputEvent) -> void:
  var pack: Variant=game.get("pack26_controller")
@@ -323,11 +290,20 @@ func _input(event: InputEvent) -> void:
  if game.character_controller and game.character_controller.active:return
  if event is InputEventKey and event.pressed and not event.echo:
   if active:
+   if not event.physical_keycode in [KEY_ESCAPE,KEY_H,KEY_A,KEY_Q,KEY_L,KEY_ENTER,KEY_SPACE,KEY_E,KEY_1,KEY_2,KEY_3]:return
+   var focused:=get_viewport().gui_get_focus_owner()
+   if event.physical_keycode in [KEY_ENTER,KEY_SPACE] and focused is BaseButton and root.is_ancestor_of(focused):return
    if backlog_open:
     if event.physical_keycode in [KEY_ESCAPE,KEY_H]:hide_backlog()
+   elif config_open:
+    if event.physical_keycode in [KEY_ESCAPE,KEY_H]:hide_config()
+   elif ui_hidden:
+    if event.physical_keycode in [KEY_ESCAPE,KEY_H,KEY_ENTER,KEY_SPACE]:toggle_hidden()
    elif event.physical_keycode==KEY_ESCAPE:close()
-   elif event.physical_keycode==KEY_H:show_backlog()
+   elif event.physical_keycode==KEY_H:toggle_hidden()
    elif event.physical_keycode==KEY_A:set_auto(not auto_play)
+   elif event.physical_keycode==KEY_Q:quick_save()
+   elif event.physical_keycode==KEY_L:quick_load()
    elif event.physical_keycode in [KEY_ENTER,KEY_SPACE,KEY_E]:advance()
    elif event.physical_keycode in [KEY_1,KEY_2,KEY_3]:choose(int(event.physical_keycode)-KEY_1)
    get_viewport().set_input_as_handled()
@@ -336,13 +312,16 @@ func _input(event: InputEvent) -> void:
 func show_backlog() -> void:
  if not active:return
  if is_typing():_line_complete()
- backlog_open=true;backlog.show();choice_panel.hide()
- for child in log_list.get_children():
-  log_list.remove_child(child);child.queue_free()
- for entry in state.history:
+ config_open=false;view.config.hide();backlog_open=true;backlog.show();choice_panel.hide()
+ for child in log_list.get_children():log_list.remove_child(child);child.queue_free()
+ for i in state.history.size():
+  var entry:Dictionary=state.history[i]
   var block:=VBoxContainer.new();block.size_flags_horizontal=Control.SIZE_EXPAND_FILL;log_list.add_child(block)
-  var who:=Label.new();who.text=str(entry.speaker)+"  ·  "+str(entry.topic);who.add_theme_font_size_override("font_size",18);who.add_theme_color_override("font_color",DialogueStyle.MUTED);block.add_child(who)
-  var line:=Label.new();line.text=str(entry.text);line.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;line.custom_minimum_size.x=1034;line.size_flags_horizontal=Control.SIZE_EXPAND_FILL;line.add_theme_font_size_override("font_size",24);block.add_child(line)
+  var row:=HBoxContainer.new();block.add_child(row)
+  var who:=Label.new();who.text=str(entry.speaker)+"  ·  "+str(entry.topic);who.size_flags_horizontal=Control.SIZE_EXPAND_FILL;who.add_theme_font_size_override("font_size",17);who.add_theme_color_override("font_color",view.MUTED);row.add_child(who)
+  if stories.has(str(entry.get("story",""))) and stories[str(entry.story)].nodes.has(str(entry.get("node",""))):
+   var index:int=i;var jump:Button=view.action(row,"回到这里 ↶",func():jump_history(index));jump.custom_minimum_size=Vector2(140,32);jump.add_theme_font_size_override("font_size",14)
+  var line:=Label.new();line.text=str(entry.text);line.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;line.custom_minimum_size.x=974;line.size_flags_horizontal=Control.SIZE_EXPAND_FILL;line.add_theme_font_size_override("font_size",22);line.add_theme_color_override("font_color",view.INK);block.add_child(line)
  call_deferred("_scroll_bottom")
 
 func _scroll_bottom() -> void:
@@ -357,7 +336,7 @@ func resume() -> bool:
  if bookmark.is_empty() or not stories.has(str(bookmark.get("story",""))):return false
  var id:=str(bookmark.story);var node:=str(bookmark.get("node",""))
  if not stories[id].nodes.has(node):return false
- context=bookmark.get("context",{});start(id,node);return true
+ context=bookmark.get("context",{});var saved_trail:Array=bookmark.get("trail",[]).duplicate(true);start(id,node);trail=saved_trail;state.bookmark.trail=trail.duplicate(true);_refresh_hint();return true
 
 func _save_state() -> bool:
  var file:=FileAccess.open(save_path+".tmp",FileAccess.WRITE)
@@ -370,3 +349,58 @@ func _load_state() -> void:
  var value=JSON.parse_string(FileAccess.get_file_as_string(save_path))
  if value is Dictionary and value.get("version",0)==1 and value.get("seen") is Dictionary and value.get("flags") is Dictionary and value.get("history") is Array and value.get("bookmark") is Dictionary:
   state=value
+
+func fast_forwarding()->bool:return skip_play or Input.is_physical_key_pressed(KEY_CTRL)
+
+func auto_delay()->float:
+ return .12 if fast_forwarding() else maxf(float(reading.wait),float(text_label.get_total_character_count())*.045)
+
+func set_skip(value:bool)->void:
+ skip_play=value;dwell=0
+ if value:auto_play=false
+ _refresh_hint()
+
+func _reading_snapshot()->Dictionary:
+ return {"story":current_story,"node":current_node,"context":context.duplicate(true),"flags":state.flags.duplicate(true),"seen":state.seen.duplicate(true),"history":state.history.slice(0,line_start_history).duplicate(true),"route":str(game.get("route_destination"))}
+
+func previous_line()->void:
+ if not active or trail.is_empty():return
+ var previous:Dictionary=trail.pop_back();auto_play=false;skip_play=false
+ state.flags=previous.flags;state.seen=previous.seen;state.history=previous.history
+ if game.has_method("set_route"):game.set_route(previous.get("route",""))
+ current_story=previous.story;current_node=previous.node;context=previous.context;_show_line()
+
+func quick_save()->void:
+ if not active:return
+ var old:Dictionary=state.get("quick_save",{}).duplicate(true)
+ var snapshot:=_reading_snapshot();snapshot.trail=trail.duplicate(true);snapshot.completed=not is_typing();state.quick_save=snapshot
+ if _save_state():view.message("已快存 · "+str(stories[current_story].title))
+ else:state.quick_save=old;view.message("快存失败，请重试。")
+ view.refresh()
+
+func quick_load()->void:
+ var snapshot:Dictionary=state.get("quick_save",{}).duplicate(true)
+ if snapshot.is_empty():return
+ state.flags=snapshot.flags;state.seen=snapshot.seen;state.history=snapshot.history;context=snapshot.context
+ if game.has_method("set_route"):game.set_route(snapshot.get("route",""))
+ start(snapshot.story,snapshot.node);trail=snapshot.trail;state.bookmark.trail=trail.duplicate(true)
+ if snapshot.completed:_line_complete()
+ _save_state();_refresh_hint();view.message("已读取快存")
+
+func jump_history(index:int)->void:
+ var entry:Dictionary=state.history[index].duplicate(true)
+ state.history=state.history.slice(0,index);state.flags=entry.get("flags",state.flags).duplicate(true);context=entry.get("context",{}).duplicate(true)
+ start(entry.story,entry.node)
+
+func toggle_hidden()->void:
+ ui_hidden=not ui_hidden;view.chrome.visible=not ui_hidden;dwell=0
+
+func show_config()->void:
+ if not active:return
+ backlog_open=false;backlog.hide();config_open=true;view.config.show();choice_panel.hide();dwell=0
+
+func hide_config()->void:
+ save_reading();config_open=false;view.config.hide();choice_panel.visible=not choice_buttons.is_empty() and not is_typing();dwell=0
+
+func save_reading()->void:
+ chars_per_second=float(reading.speed);state.reading=reading.duplicate(true);_save_state()

@@ -27,16 +27,10 @@ func _draw()->void:
  var pressed:=is_pressed() and not disabled
  var shift:=Vector2(3,5) if pressed else (Vector2(0,-2) if is_hovered() and not disabled else Vector2.ZERO)
  var tint:=Color("b1bed9") if disabled else Color("638eff")
- var outer:=Rect2(Vector2(2,1)+shift,size-Vector2(12,14))
- _box(tint,tint,0,int(h*.33)).draw(get_canvas_item(),Rect2(Vector2(8,9),size-Vector2(12,14)))
- _box(Color.WHITE,Color.WHITE,0,int(h*.33)).draw(get_canvas_item(),outer)
- var face:=outer.grow(-6)
- _box(Color("f5fbff") if is_hovered() and not disabled else Color("fcfdff"),Color("e0efff"),1,int(h*.25)).draw(get_canvas_item(),face)
- var inner:=face.grow(-3)
- _box(Color.TRANSPARENT,accent.lightened(.35) if disabled else accent,2,int(h*.21)).draw(get_canvas_item(),inner)
- # White interruptions give the inset the printed, slightly broken line of the reference.
- for fraction in [.20,.67,.83]:
-  draw_line(Vector2(inner.position.x+inner.size.x*fraction,inner.position.y),Vector2(inner.position.x+inner.size.x*fraction+10,inner.position.y),Color.WHITE,3,true)
+ var face:=Rect2(Vector2(2,1)+shift,size-Vector2(5,9))
+ _box(tint,tint,0,int(h*.25)).draw(get_canvas_item(),Rect2(Vector2(2,5),size-Vector2(5,9)))
+ var edge:=Color("0879f4") if has_focus() else (accent.lightened(.35) if disabled else accent)
+ _box(Color("edf7ff") if is_hovered() and not disabled else Color("fcfdff"),edge,2,int(h*.25)).draw(get_canvas_item(),face)
  if icon_texture:
   var icon_h:=h*.72
   draw_texture_rect(icon_texture,Rect2(Vector2(18,(h-icon_h)*.40)+shift,Vector2(icon_h,icon_h)),false,Color(1,1,1,.5 if disabled else 1))
@@ -53,5 +47,3 @@ func _draw()->void:
    var outline:=PackedVector2Array(heart);outline.append(heart[0]);draw_polyline(outline,Color.WHITE,7,true);draw_colored_polygon(heart,Color("ff83bf"))
   else:
    draw_circle(center,18,Color.WHITE);draw_circle(center,12,accent)
- if has_focus():
-  _box(Color.TRANSPARENT,Color("2269df"),3,int(h*.34)).draw(get_canvas_item(),Rect2(Vector2(-4,-5),size+Vector2(2,0)))

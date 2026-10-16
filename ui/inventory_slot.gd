@@ -8,13 +8,15 @@ func configure(controller,id: String,count: int,dimensions: Vector2,chosen: bool
  S.card_button(self,chosen);texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
  if id=="":
   disabled=true;mouse_filter=Control.MOUSE_FILTER_IGNORE;add_theme_stylebox_override("disabled",S.frame("empty"));return
+ var colors:=S.palette(str(controller.definitions[id].kind))
+ S.surface(self,Color.WHITE,colors.wash,3,11)
  name="Item_"+id;tooltip_text=str(controller.definitions[id].name)+"\n"+str(controller.definitions[id].get("effect_summary",""))
  controller._icon(self,id,Vector2((dimensions.x-66)/2,5),Vector2(66,minf(59,dimensions.y-34)))
- var number:=S.label(self,"×"+str(count),Vector2(32,5),Vector2(dimensions.x-38,22),16,S.INK);number.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
- number.add_theme_color_override("font_outline_color",Color("edf0fc"));number.add_theme_constant_override("outline_size",4)
- var title:=S.label(self,str(controller.definitions[id].name),Vector2(5,dimensions.y-29),Vector2(dimensions.x-10,23),16)
+ var number:=S.label(self,"×"+str(count),Vector2(32,5),Vector2(dimensions.x-38,22),12,colors.ink);number.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
+ var title:=S.label(self,str(controller.definitions[id].name),Vector2(5,dimensions.y-27),Vector2(dimensions.x-10,23),14)
  title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;title.autowrap_mode=TextServer.AUTOWRAP_OFF;title.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
- if favorite:S.label(self,"★",Vector2(6,5),Vector2(23,23),16,S.BLUE)
+ if chosen:S.label(self,"✓",Vector2(6,5),Vector2(23,23),14,S.BLUE)
+ if favorite:S.label(self,"★",Vector2(25 if chosen else 6,5),Vector2(23,23),14,S.GOLD)
  if equipped:
   var tag:=S.panel(self,Vector2(5,dimensions.y-47),Vector2(43,19),"dark")
   S.label(tag,"装备",Vector2(3,-1),Vector2(38,19),12,Color("b6f4e4"))
