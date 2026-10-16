@@ -13,5 +13,11 @@
   "rise_seconds": [0.8, 1.8],
   "hold_seconds": [0.5, 2.0],
   "fall_seconds": [1.7, 3.6],
-  "gust_strength": [0.20, 0.50]
+  "gust_strength": [0.20, 0.50],
+  "tree_background_sway_degrees": 4.0,
+  "tree_field_sway_degrees": 7.0,
+  "tree_sway_frequency": 1.40,
+  "tree_lean_degrees": 3.0,
+  "tree_cross_sway_degrees": 1.6,
+  "crown_follow_degrees": 2.5
 }
