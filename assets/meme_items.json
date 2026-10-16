@@ -6,7 +6,7 @@
     "description": "彩色折线航迹把潮汐转弯也标得清清楚楚，金色圆点是适合停靠的浅滩。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/map_route.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/map_route.png"
   },
   "backpack_crown": {
     "name": "皇冠背包",
@@ -15,7 +15,7 @@
     "description": "轻便帆布背包缝着一枚小皇冠，背带加厚，侧袋刚好放下一瓶水。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/backpack_crown.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/backpack_crown.png"
   },
   "checklist": {
     "name": "任务清单",
@@ -24,7 +24,7 @@
     "description": "厚纸清单按圆点分栏，完成一项就能把小星星贴上去。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/checklist.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/checklist.png"
   },
   "chat_bubbles": {
     "name": "聊天气泡",
@@ -33,7 +33,7 @@
     "description": "两颗半透明气泡叠在一起，像是把一段对话冻成了轻轻摇晃的玻璃。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/chat_bubbles.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/chat_bubbles.png"
   },
   "wave_handbag": {
     "name": "海浪手提包",
@@ -42,7 +42,7 @@
     "description": "手提包用海蓝与薄荷绿织出起伏波纹，内袋藏着一枚贝壳扣。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/wave_handbag.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/wave_handbag.png"
   },
   "vinyl_music": {
     "name": "黑胶唱片",
@@ -51,7 +51,7 @@
     "description": "深蓝唱片压着细密同心纹，唱针落下前，标签上的小鲸鱼正好对着你。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/vinyl_music.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/vinyl_music.png"
   },
   "collectible_cards": {
     "name": "收藏卡牌",
@@ -60,7 +60,7 @@
     "description": "几张亮面卡片收在透明卡套里，边角圆润，背面各画着不同的小图案。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/collectible_cards.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/collectible_cards.png"
   },
   "settings_gear": {
     "name": "设置齿轮",
@@ -69,7 +69,7 @@
     "description": "一枚黄铜色齿轮，齿面磨得平滑，侧边留着适合细绳穿过的小孔。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/settings_gear.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/settings_gear.png"
   },
   "heart_letter": {
     "name": "爱心信封",
@@ -78,7 +78,7 @@
     "description": "奶白信封用珊瑚粉封口，背面压着一枚小小的心形印记。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/heart_letter.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/heart_letter.png"
   },
   "gift_box": {
     "name": "礼物盒",
@@ -87,7 +87,7 @@
     "description": "方方正正的礼盒系着蓝金双色缎带，盒盖边缘压出柔软的圆角。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/gift_box.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/gift_box.png"
   },
   "water_drop": {
     "name": "水滴",
@@ -96,7 +96,7 @@
     "description": "清透水滴装在随身小瓶里，瓶身没有字，只有一道被阳光照亮的蓝线。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/water_drop.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/water_drop.png",
     "storage_group": "food"
   },
   "crystal_sword": {
@@ -106,7 +106,7 @@
     "description": "透明水晶锻成的短剑，刃脊里封着一颗淡蓝星点，握柄缠了柔软防滑带。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/crystal_sword.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/crystal_sword.png"
   },
   "star_shield": {
     "name": "星星盾牌",
@@ -115,7 +115,7 @@
     "description": "圆润的浅蓝盾面嵌着一枚金星，边缘包了软木色护圈。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/star_shield.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/star_shield.png"
   },
   "lightning_bolt": {
     "name": "闪电",
@@ -124,7 +124,7 @@
     "description": "闪电形蓝色能量徽片边缘透亮，握紧时会泛起一圈轻微电光。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/lightning_bolt.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/lightning_bolt.png"
   },
   "first_aid_kit": {
     "name": "急救箱",
@@ -133,7 +133,7 @@
     "description": "小型急救箱内分开放着绷带、棉片和消毒贴，每件用品都整齐可取。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/first_aid_kit.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/first_aid_kit.png"
   },
   "heart_potion": {
     "name": "爱心药水",
@@ -142,7 +142,7 @@
     "description": "玫粉色药水在玻璃瓶里缓缓旋转，软木塞上系着一颗小爱心。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/heart_potion.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/heart_potion.png",
     "storage_group": "food"
   },
   "mana_potion": {
@@ -152,7 +152,7 @@
     "description": "湖蓝药水带着细小星泡，瓶口绕着一圈浅金色保护线。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/mana_potion.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/mana_potion.png",
     "storage_group": "food"
   },
   "heart_key": {
@@ -162,7 +162,7 @@
     "description": "钥匙齿做成圆润心形，钥匙柄中央镶着一粒淡粉色玻璃珠。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/heart_key.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/heart_key.png"
   },
   "star_bomb": {
     "name": "星星炸弹",
@@ -171,7 +171,7 @@
     "description": "星形外壳包着一团稳定的粉蓝光，安全扣被做成显眼的黄色小环。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/star_bomb.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/star_bomb.png"
   },
   "magic_scroll": {
     "name": "魔法卷轴",
@@ -180,7 +180,7 @@
     "description": "柔韧的浅金卷轴用蓝色细绳系住，展开后能看到手绘的波浪纹样。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/magic_scroll.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/magic_scroll.png"
   },
   "crystal_cluster": {
     "name": "彩色水晶",
@@ -189,7 +189,7 @@
     "description": "一簇半透明海蓝晶体大小错落，断面带着浅粉与薄荷绿的折光。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/crystal_cluster.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/crystal_cluster.png"
   },
   "star_orb_bomb": {
     "name": "星星能量球",
@@ -198,7 +198,7 @@
     "description": "掌心大小的星球能量球，外壳上的细环像行星轨道一样交错。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/star_orb_bomb.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/star_orb_bomb.png"
   },
   "milk_carton": {
     "name": "牛奶盒",
@@ -207,7 +207,7 @@
     "description": "冷藏牛奶装在短胖纸盒里，顶部有一层防潮折边，拿取时不容易滑手。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/milk_carton.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/milk_carton.png",
     "storage_group": "food"
   },
   "bread_loaf": {
@@ -217,7 +217,7 @@
     "description": "刚烤好的软面包表皮泛着浅金色，切面松软，边缘撒了几粒芝麻。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/bread_loaf.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/bread_loaf.png",
     "storage_group": "food"
   },
   "red_alarm_clock": {
@@ -227,7 +227,7 @@
     "description": "红色闹钟用两只圆耳朵托住铃锤，刻度清楚，背面还有手动上弦钮。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/red_alarm_clock.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/red_alarm_clock.png"
   },
   "frying_pan": {
     "name": "平底锅",
@@ -236,7 +236,7 @@
     "description": "轻巧平底锅带有浅蓝珐琅锅沿，木纹手柄被磨成舒服的弧度。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/frying_pan.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/frying_pan.png"
   },
   "soap_bar": {
     "name": "香皂",
@@ -245,7 +245,7 @@
     "description": "香皂裹在防潮纸里，表面压着细小泡泡纹，闻起来像干净的海盐风。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/soap_bar.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/soap_bar.png"
   },
   "bedside_lamp": {
     "name": "床头灯",
@@ -254,7 +254,7 @@
     "description": "奶油黄床头灯罩内涂了柔金反光层，灯座边缘刻着细细的鲸尾纹。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/bedside_lamp.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/bedside_lamp.png"
   },
   "electric_kettle": {
     "name": "电热水壶",
@@ -263,7 +263,7 @@
     "description": "电热水壶壶嘴带防滴回流边，圆把手与底座卡扣严密，表面覆着雾蓝搪瓷。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/electric_kettle.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/electric_kettle.png"
   },
   "potted_plant": {
     "name": "盆栽",
@@ -272,7 +272,7 @@
     "description": "薄荷绿陶盆里长着几片新叶，土面铺着浅色小石子，叶缘有清晰的细脉。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/potted_plant.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/potted_plant.png"
   },
   "rubber_duck": {
     "name": "黄色小鸭",
@@ -281,7 +281,7 @@
     "description": "黄色小鸭的翅膀印着波点，底部压了防滑纹，吹气孔藏在尾巴下方。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/rubber_duck.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/rubber_duck.png"
   },
   "spray_bottle": {
     "name": "清洁喷雾",
@@ -290,7 +290,7 @@
     "description": "透明喷壶里装着淡蓝清洁液，喷头有细雾与直射两档，瓶身刻着水位线。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/spray_bottle.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/spray_bottle.png"
   },
   "game_controller": {
     "name": "游戏手柄",
@@ -299,7 +299,7 @@
     "description": "薄荷蓝手柄握把带有细颗粒防滑面，按键高低不同，摇杆阻尼轻柔。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/game_controller.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/game_controller.png"
   },
   "snack_basket": {
     "name": "零食篮",
@@ -308,7 +308,7 @@
     "description": "小篮子里分装着脆饼、果干和软糖，每一格都用纸托隔开。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/snack_basket.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/snack_basket.png",
     "storage_group": "food"
   },
   "retro_radio": {
@@ -318,7 +318,7 @@
     "description": "复古收音机的旋钮带细密刻度，布面扬声孔后藏着一圈金色边框。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/retro_radio.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/retro_radio.png"
   },
   "blue_alarm_clock": {
     "name": "蓝色闹钟",
@@ -327,7 +327,7 @@
     "description": "海蓝闹钟的指针涂了夜光漆，双铃之间嵌着一颗很小的白色星星。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/blue_alarm_clock.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/blue_alarm_clock.png"
   },
   "bento_box": {
     "name": "便当盒",
@@ -336,7 +336,7 @@
     "description": "双层便当盒用弹簧扣锁紧，上层是软饭团和蔬菜，下层放着一小块面包。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/bento_box.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/bento_box.png",
     "storage_group": "food"
   },
   "rice_cooker": {
@@ -346,7 +346,7 @@
     "description": "圆润电饭煲配有防烫把手、泄压孔和可拆洗内胆，按键图标清晰分区。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/rice_cooker.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/rice_cooker.png"
   },
   "instant_camera": {
     "name": "拍立得相机",
@@ -355,7 +355,7 @@
     "description": "拍立得镜头外圈有细小焦距刻度，机身侧边留着照片出口与腕带环。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/instant_camera.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/instant_camera.png"
   },
   "blender": {
     "name": "搅拌机",
@@ -364,7 +364,7 @@
     "description": "搅拌杯带有防滑底圈，杯盖锁扣双重固定，刀头组件可拆开清洗。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/blender.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/blender.png"
   },
   "tea_cup": {
     "name": "茶杯",
@@ -373,7 +373,7 @@
     "description": "厚壁茶杯外沿描了一圈浅金，杯耳留足两指宽度，温度不会一下传到手心。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/tea_cup.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/tea_cup.png",
     "storage_group": "food"
   },
   "sleep_mask": {
@@ -383,7 +383,7 @@
     "description": "柔软睡眠眼罩内侧用了亲肤短绒，鼻梁位置做了弧形遮光片，松紧带不夹头发。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/sleep_mask.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/sleep_mask.png"
   },
   "scented_candle": {
     "name": "香薰蜡烛",
@@ -392,7 +392,7 @@
     "description": "小蜡烛盛在磨砂玻璃杯里，烛芯居中，杯底贴着一片星形软木垫。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/scented_candle.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/scented_candle.png"
   },
   "lotion_bottle": {
     "name": "乳液瓶",
@@ -401,7 +401,7 @@
     "description": "护肤乳装在按压瓶里，泵头可以锁住，瓶身圆角不硌手，淡香清新。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/lotion_bottle.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/lotion_bottle.png"
   },
   "hair_comb": {
     "name": "梳子",
@@ -410,7 +410,7 @@
     "description": "宽齿梳的齿尖做了圆磨，梳背嵌着一片贝壳色装饰，握柄有防滑凹槽。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/hair_comb.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/hair_comb.png"
   },
   "sunglasses": {
     "name": "太阳镜",
@@ -419,7 +419,7 @@
     "description": "浅蓝镜片有防眩光涂层，镜腿向内收弯，鼻托柔软，适合长时间佩戴。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/sunglasses.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/sunglasses.png"
   },
   "heart_keychain": {
     "name": "爱心钥匙扣",
@@ -428,7 +428,7 @@
     "description": "心形钥匙扣由两层珐琅片叠成，金属环留有弹性，挂在包侧不容易刮手。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/heart_keychain.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/heart_keychain.png"
   },
   "wallet": {
     "name": "钱包",
@@ -437,7 +437,7 @@
     "description": "折叠钱包设有透明证件窗、两格卡位和拉链零钱袋，缝线紧密整齐。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/wallet.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/wallet.png"
   },
   "smartphone": {
     "name": "手机",
@@ -446,7 +446,7 @@
     "description": "轻薄手机用磨砂蓝外壳包边，侧键略微凸起，镜头模组有一圈软胶保护。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/smartphone.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/smartphone.png"
   },
   "graphics_card": {
     "name": "显卡",
@@ -455,7 +455,7 @@
     "description": "显卡散热片由多层铝鳍片组成，边缘圆钝，供电接口盖着防尘帽。",
     "quote": "捡到的闪光，也可以成为纪念。",
     "use": "检查过质地与接口，确认状态良好。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/graphics_card.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/graphics_card.png"
   },
   "memory_module": {
     "name": "内存条",
@@ -464,7 +464,7 @@
     "description": "内存模块外侧有透明防静电罩，金手指整齐平直，标签只写着一串日期。",
     "quote": "把没走完的路留给下次。",
     "use": "读完后你把它收好，留作之后的线索。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/memory_module.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/memory_module.png"
   },
   "token_snack": {
     "name": "Token 零食",
@@ -473,7 +473,7 @@
     "description": "一袋薄脆小零食做成星星与圆片两种形状，封口能反复压紧。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/token_snack.png",
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/token_snack.png",
     "storage_group": "food"
   },
   "star_coin": {
@@ -483,7 +483,7 @@
     "description": "星星金币正反两面都有浅浮雕，外缘一圈微小凹点方便从口袋里摸出来。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/star_coin.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/star_coin.png"
   },
   "keyboard": {
     "name": "键盘",
@@ -492,7 +492,7 @@
     "description": "键帽表面带柔和磨砂纹，空格键加宽，底部脚撑有两档高度。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/keyboard.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/keyboard.png"
   },
   "computer_mouse": {
     "name": "电脑鼠标",
@@ -501,7 +501,7 @@
     "description": "鼠标侧裙带有细颗粒防滑纹，滚轮阻尼均匀，底部传感器窗口保持洁净。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/computer_mouse.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/computer_mouse.png"
   },
   "pencil_cup": {
     "name": "笔筒",
@@ -510,7 +510,7 @@
     "description": "笔筒分成三格收纳长短不同的铅笔，底部加了软垫，拿取时不会碰响桌面。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/pencil_cup.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/pencil_cup.png"
   },
   "handheld_console": {
     "name": "掌机",
@@ -519,7 +519,7 @@
     "description": "掌机屏幕覆着磨砂保护膜，十字键边缘略微凸起，两侧握柄贴合手掌弧度。",
     "quote": "喜欢的东西，值得认真收好。",
     "use": "你仔细看了看，发现边角也收拾得很整齐。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/handheld_console.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/handheld_console.png"
   },
   "digital_camera": {
     "name": "数码相机",
@@ -528,7 +528,7 @@
     "description": "数码相机的镜头环能逐级转动，握柄有防滑纹，背屏铰链卡位稳固。",
     "quote": "带上轻装，去看更远的海。",
     "use": "摸过表面，做工细致，已经可以放心随身携带。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/digital_camera.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/digital_camera.png"
   },
   "cosmetic_jar": {
     "name": "护肤罐",
@@ -537,6 +537,6 @@
     "description": "护肤霜装在双层密封罐里，内盖隔绝空气，罐口边缘圆滑易擦拭。",
     "quote": "先照顾好自己，再继续赶路。",
     "use": "补给入口后，疲劳与饥饿感缓和了许多。",
-    "icon_path": "res://assets/ui/generated_icons_20261016/cosmetic_jar.png"
+    "icon_path": "res://assets/ui/inventory_icons_soft_edges_20261016/cosmetic_jar.png"
   }
 }
