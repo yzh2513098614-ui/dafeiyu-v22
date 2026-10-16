@@ -205,6 +205,33 @@ func run() -> void:
  var pv_head: float=music._players[music._slot].get_playback_position()
  check(pv_head>0.0,"piano variation advances on the real player (%.2fs)"%[pv_head])
  music.exit_gallery()
+
+ # ---------- 4h. 《灯塔变奏》另外五首：每首与自己的原曲同处一个场合轮换 ----------
+ var var_map:={
+  "lighthouse/lighthouse_daily_var":["title","day"],
+  "lighthouse/lighthouse_indoor_var":["indoor"],
+  "lighthouse/lighthouse_rain_var":["night","indoor"],
+  "lighthouse/lighthouse_tension_var":["battle"],
+  "lighthouse/lighthouse_hope_var":["hope"]}
+ var var_bad: Array=[]
+ var var_rot: Array=[]
+ for vid in var_map:
+  var seen:=false
+  for row in gg:
+   if str(row["id"])==vid:
+    seen=true
+    if float(row.get("seconds",0.0))<=30.0:var_bad.append(str(vid))
+  if not seen:var_bad.append(str(vid))
+  for mood in var_map[vid]:
+   if not music.STYLE_SETS["galgame"]["tracks"][mood].has(vid):var_rot.append("%s@%s"%[str(vid),str(mood)])
+ check(var_bad.is_empty(),"all five new piano variations are listed and readable (bad: %s)"%[str(var_bad)])
+ check(var_rot.is_empty(),"each variation sits with its original in the rotations (bad: %s)"%[str(var_rot)])
+ music.select_gallery("lighthouse/lighthouse_tension_var")
+ check(music.gallery_track()=="lighthouse/lighthouse_tension_var","gallery accepts the tension variation id")
+ await frames(12)
+ var tv_head: float=music._players[music._slot].get_playback_position()
+ check(tv_head>0.0,"tension variation advances on the real player (%.2fs)"%[tv_head])
+ music.exit_gallery()
  music.set_style(style_home)
 
  # ---------- 5. 主菜单「音乐鉴赏」页的真控件 ----------
