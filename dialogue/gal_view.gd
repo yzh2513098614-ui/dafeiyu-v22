@@ -65,13 +65,15 @@ func build()->void:
  d.shade=ColorRect.new();d.shade.name="SceneTint";d.shade.color=Color("68465c14");d.root.add_child(d.shade);d.UiFit.fill(d.shade);d.shade.gui_input.connect(d._click_advance)
  d.portrait=TextureRect.new();d.portrait.name="Portrait";d.portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;d.portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;d.portrait.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;d.portrait.mouse_filter=Control.MOUSE_FILTER_IGNORE;d.portrait.set_meta("runtime_texture",true);d.root.add_child(d.portrait)
  chrome=Control.new();chrome.name="ReadingChrome";chrome.mouse_filter=Control.MOUSE_FILTER_IGNORE;d.root.add_child(chrome);d.UiFit.fill(chrome)
- chapter=panel(chrome,"Chapter",Vector2(310,130));Shared.surface(chapter,Color("fffdf9ed"),Color("eee9ffdc"),3,13)
- chapter_kicker=label(chapter,"CHAPTER",Vector2(22,18),Vector2(86,20),11,MUTED)
- chapter_number=label(chapter,"01",Vector2(112,17),Vector2(30,22),12);chapter_number.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;chapter_number.add_theme_stylebox_override("normal",frame(Color("fbebf4"),Color("e3bfd5"),1))
- chapter_title=label(chapter,"海风与来信",Vector2(22,47),Vector2(274,36),24)
- d.location_text=label(chapter,"",Vector2(41,93),Vector2(247,23),11,MUTED);d.location_text.autowrap_mode=TextServer.AUTOWRAP_OFF;d.location_text.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
- icon(chapter,"gal-letter",Vector2(22,97),Vector2(13,13),Color("ca9cbb"))
- var ribbon:=ColorRect.new();ribbon.position=Vector2(263,0);ribbon.size=Vector2(25,35);ribbon.color=Color("ca9cbb");ribbon.mouse_filter=Control.MOUSE_FILTER_IGNORE;chapter.add_child(ribbon);icon(ribbon,"star",Vector2(6,8),Vector2(13,13))
+ chapter=panel(chrome,"Chapter",Vector2(336,142));Shared.surface(chapter,Color("fffdf9ed"),Color("eee9ffdc"),3,13)
+ chapter_kicker=label(chapter,"CHAPTER",Vector2(22,17),Vector2(86,24),12,MUTED)
+ chapter_number=label(chapter,"01",Vector2(112,16),Vector2(38,26),14);chapter_number.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;chapter_number.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ var number_tag:=frame(Color("fbebf4"),Color("e3bfd5"),1);number_tag.set_corner_radius_all(7);number_tag.shadow_size=0;number_tag.shadow_offset=Vector2.ZERO;chapter_number.add_theme_stylebox_override("normal",number_tag)
+ chapter_title=label(chapter,"海风与来信",Vector2(22,46),Vector2(292,52),25);chapter_title.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;chapter_title.max_lines_visible=2;chapter_title.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;chapter_title.add_theme_font_override("font",preload("res://assets/fonts/misans/MiSans-Bold.ttf"))
+ d.location_text=label(chapter,"",Vector2(42,105),Vector2(272,24),13,MUTED);d.location_text.autowrap_mode=TextServer.AUTOWRAP_OFF;d.location_text.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;d.location_text.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+ icon(chapter,"gal-letter",Vector2(22,110),Vector2(14,14),Color("ca9cbb"))
+ var ribbon:=ColorRect.new();ribbon.position=Vector2(280,0);ribbon.size=Vector2(28,43);ribbon.color=Color("ca9cbb");ribbon.mouse_filter=Control.MOUSE_FILTER_IGNORE
+ var ribbon_material:=ShaderMaterial.new();ribbon_material.shader=preload("res://assets/ui/sticker/chapter_ribbon.gdshader");ribbon.material=ribbon_material;chapter.add_child(ribbon);icon(ribbon,"star",Vector2(7,10),Vector2(14,14))
  d.box=Panel.new();d.box.name="DialogueWash";d.box.add_theme_stylebox_override("panel",StyleBoxEmpty.new());chrome.add_child(d.box);d.box.gui_input.connect(d._click_advance)
  wash=ColorRect.new();wash.name="PinkGradient";wash.mouse_filter=Control.MOUSE_FILTER_IGNORE;var material:=ShaderMaterial.new();material.shader=preload("res://assets/ui/sticker/dialogue_wash.gdshader");wash.material=material;d.box.add_child(wash);d.UiFit.fill(wash)
  letter=icon(d.box,"gal-letter",Vector2.ZERO,Vector2(92,83));letter.modulate.a=.16

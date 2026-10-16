@@ -146,7 +146,8 @@ static func changes(id:String)->Dictionary:
    var name:String=property.name
    if int(property.usage)&PROPERTY_USAGE_STORAGE and (is_visual(name) or (name=="text" and bool(a.get_meta("design_edit_text",false)))) and before_properties.has(name):
     var new_value:Variant=a.get(name);var old_value:Variant=b.get(name)
-    if fingerprint(new_value)!=fingerprint(old_value):properties[name]=new_value
+    var after_value:Variant=fingerprint(new_value);var before_value:Variant=fingerprint(old_value)
+    if typeof(after_value)!=typeof(before_value) or after_value!=before_value:properties[name]=new_value
   # Removed Theme Overrides must remove the corresponding runtime override.
   for property in b.get_property_list():
    var name:String=property.name

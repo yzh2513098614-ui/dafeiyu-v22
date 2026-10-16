@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" path="res://assets/ui/sticker/icons/gal-config.svg" id="15_pq4o2"]
 [ext_resource type="Texture2D" path="res://assets/ui/sticker/icons/gal-eye.svg" id="16_8pqsu"]
 
+[ext_resource type="FontFile" path="res://assets/fonts/misans/MiSans-Bold.ttf" id="chapter_bold"]
+
+[ext_resource type="Shader" path="res://assets/ui/sticker/chapter_ribbon.gdshader" id="chapter_ribbon"]
+
 [sub_resource type="Theme" id="Theme_shlry"]
 default_font = ExtResource("1_b8bxh")
 
@@ -222,13 +226,13 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8901961, 0.7490196, 0.8352941, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 shadow_color = Color(0.72156864, 0.5803922, 0.7058824, 1)
-shadow_size = 1
-shadow_offset = Vector2(0, 4)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgkti"]
 
@@ -906,6 +910,9 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0.72156864, 0.5803922, 0.7058824, 1)
 shadow_offset = Vector2(0, 4)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chapter_ribbon"]
+shader = ExtResource("chapter_ribbon")
+
 [node name="UI_dialogue_gal_choices" type="Control" unique_id=1789735161]
 layout_mode = 3
 anchors_preset = 0
@@ -968,8 +975,8 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 layout_mode = 0
 offset_left = 73.288345
 offset_top = 42.64049
-offset_right = 383.28833
-offset_bottom = 172.64049
+offset_right = 409.288345
+offset_bottom = 184.64049
 scale = Vector2(1.3325154, 1.3325154)
 theme_override_styles/panel = SubResource("StyleBoxFlat_wkllv")
 metadata/design_id = "2/0"
@@ -982,8 +989,8 @@ material = SubResource("ShaderMaterial_myar6")
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 307.0
-offset_bottom = 127.0
+offset_right = 333.0
+offset_bottom = 139.0
 mouse_filter = 2
 metadata/design_id = "2/0/0"
 metadata/design_native_class = "ColorRect"
@@ -993,11 +1000,11 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="01_Label_CHAPTER" type="Label" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=1416714731]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 18.0
+offset_top = 17.0
 offset_right = 108.0
 offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.6117647, 0.45490196, 0.54509807, 1)
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 12
 text = "CHAPTER"
 autowrap_mode = 3
 metadata/design_id = "2/0/1"
@@ -1008,11 +1015,11 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 [node name="02_Label_01" type="Label" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=1785107446]
 layout_mode = 0
 offset_left = 112.0
-offset_top = 17.0
-offset_right = 142.0
-offset_bottom = 40.0
+offset_top = 16.0
+offset_right = 150.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.4509804, 0.33333334, 0.42352942, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_g6bdw")
 text = "01"
 horizontal_alignment = 1
@@ -1021,45 +1028,51 @@ metadata/design_id = "2/0/2"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+vertical_alignment = 1
 
 [node name="03_Label_第一次来到鲸落港" type="Label" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=977959230]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 47.0
-offset_right = 296.0
-offset_bottom = 83.0
+offset_top = 46.0
+offset_right = 314.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(0.4509804, 0.33333334, 0.42352942, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 25
 text = "第一次来到鲸落港"
 autowrap_mode = 3
 metadata/design_id = "2/0/3"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme_override_fonts/font = ExtResource("chapter_bold")
+vertical_alignment = 1
+max_lines_visible = 2
+text_overrun_behavior = 3
 
 [node name="04_Label_海风码头 · 海风与来信" type="Label" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=2090173474]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 93.0
-offset_right = 288.0
-offset_bottom = 116.0
+offset_left = 42.0
+offset_top = 105.0
+offset_right = 314.0
+offset_bottom = 129.0
 theme_override_colors/font_color = Color(0.6117647, 0.45490196, 0.54509807, 1)
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 13
 text = "海风码头 · 海风与来信"
 text_overrun_behavior = 3
 metadata/design_id = "2/0/4"
 metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+vertical_alignment = 1
 
 [node name="05_TextureRect" type="TextureRect" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=1948905327]
 self_modulate = Color(0.7921569, 0.6117647, 0.73333335, 1)
 texture_filter = 2
 layout_mode = 0
 offset_left = 22.0
-offset_top = 97.0
-offset_right = 35.0
-offset_bottom = 110.0
+offset_top = 110.0
+offset_right = 36.0
+offset_bottom = 124.0
 mouse_filter = 2
 texture = ExtResource("5_m8nop")
 expand_mode = 1
@@ -1071,24 +1084,26 @@ metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数�
 
 [node name="06_ColorRect" type="ColorRect" parent="00_GalDialogue/02_ReadingChrome/00_Chapter" unique_id=1748555785]
 layout_mode = 0
-offset_left = 263.0
-offset_right = 288.0
-offset_bottom = 35.0
+offset_left = 280.0
+offset_right = 308.0
+offset_bottom = 43.0
 mouse_filter = 2
 color = Color(0.7921569, 0.6117647, 0.73333335, 1)
 metadata/design_id = "2/0/6"
 metadata/design_native_class = "ColorRect"
 metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_top = 0.0
+material = SubResource("ShaderMaterial_chapter_ribbon")
 
 [node name="00_TextureRect" type="TextureRect" parent="00_GalDialogue/02_ReadingChrome/00_Chapter/06_ColorRect" unique_id=1997771622]
 self_modulate = Color(1, 0.98039216, 0.9882353, 1)
 texture_filter = 2
 layout_mode = 0
-offset_left = 6.0
-offset_top = 8.0
-offset_right = 19.0
-offset_bottom = 21.0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 21.0
+offset_bottom = 24.0
 mouse_filter = 2
 texture = ExtResource("6_fp3lw")
 expand_mode = 1
