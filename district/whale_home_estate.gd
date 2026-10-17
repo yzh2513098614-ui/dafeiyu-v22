@@ -120,6 +120,38 @@ func _planting(parent: Node3D) -> void:
 		if x > gate_x - 7 and x < gate_x + 7: continue
 		b.Pastel.clump(parent, Vector3(x, .52, 25.2), Vector3(2.7, .95, 1.1), b.GREEN)
 		b._flower(parent, Vector3(x, 1.02, 25.1), b.SAKURA if x % 2 else CAP, .33)
+	_formal_beds(parent)
+
+func _formal_beds(parent: Node3D) -> void:
+	var root: Node3D = b._group(parent, "FrontCourtRoseParterres")
+	# Reuse the existing lawns and clip their borders to the paved walking lanes.
+	for lawn: Rect2 in [Rect2(-14.4,12.5,8.2,9.0),Rect2(10.85,12.5,3.55,9.0),Rect2(-28.5,15.3,9,10.4),Rect2(19.5,15.3,9,10.4)]:
+		for rect: Rect2 in Ground._remaining(lawn):
+			if rect.size.x < 2.5 or rect.size.y < 2.5: continue
+			var a := rect.position + Vector2(.22,.22)
+			var c := rect.end - Vector2(.22,.22)
+			_flower_edge(root, Vector2(a.x,c.y), c)
+			_flower_edge(root, a, Vector2(a.x,c.y))
+			_flower_edge(root, Vector2(c.x,a.y), c)
+			if rect.position.x < -14.0 and rect.end.x > -7.0:
+				# The porch-side opening lines up with the existing entrance path.
+				_flower_edge(root, a, Vector2(-11.1,a.y))
+				_flower_edge(root, Vector2(-8.1,a.y), Vector2(c.x,a.y))
+			else:
+				_flower_edge(root, a, Vector2(c.x,a.y))
+
+func _flower_edge(parent: Node3D, a: Vector2, c: Vector2) -> void:
+	var length: float = a.distance_to(c)
+	var root: Node3D = b._group(parent, "LowCreamRoseBorder", Vector3((a.x+c.x)*.5,0,(a.y+c.y)*.5))
+	root.rotation.y = -atan2(c.y-a.y,c.x-a.x)
+	b._box(root, Vector3(length,.18,.48), Vector3(0,.13,0), CREAM, 0, .035)
+	b._box(root, Vector3(length,.44,.58), Vector3(0,.39,0), Color("82a878"), 0, .035)
+	var count: int = maxi(1,ceili(length/.72))
+	for i in count:
+		var x: float = (float(i)+.5)*length/count-length*.5
+		b.Pastel.clump(root, Vector3(x,.54,0), Vector3(.92,.60,.78), Color("82a878"))
+		b._flower(root, Vector3(x,.82,.16), Color("e2a1b6") if i%3 else CAP, .24)
+		if i%2==0:b._flower(root, Vector3(x-.19,.68,-.20), CAP, .19)
 
 func _promenade(parent: Node3D) -> void:
 	for side in [-1.0, 1.0]:

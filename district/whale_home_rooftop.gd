@@ -97,10 +97,13 @@ func _guard(a: Vector2,c: Vector2,height: float=HEIGHT,parent: Node3D=null) -> v
 	root.rotation.y=-atan2(d.y,d.x)
 	b._box(root,Vector3(d.length()+.3,.22,.55),Vector3(0,-.17,0),b.WHITE)
 	b._box(root,Vector3(d.length(),.4,.32),Vector3(0,.2,0),b.WHITE)
-	b._box(root,Vector3(d.length(),.08,.42),Vector3(0,.44,0),b.MINT)
-	for i in ceili(d.length()/1.6)+1:
-		var x: float=minf(i*1.6,d.length())-d.length()*.5
-		Geo.rod(root,Vector3(x,.44,0),Vector3(x,1.35,0),.045,Color("547a9c"))
+	b._box(root,Vector3(d.length(),.08,.42),Vector3(0,.44,0),Color("eee6d2"))
+	for i in ceili(d.length()/.55)+1:
+		var x: float=minf(i*.55,d.length())-d.length()*.5
+		Geo.rod(root,Vector3(x,.44,0),Vector3(x,1.35,0),.028,Color("547a9c"))
+		if i%3==0:
+			var ornament: MeshInstance3D=b._box(root,Vector3(.13,.13,.05),Vector3(x,.88,.025),b.GOLD,0,.006)
+			ornament.rotation.z=PI*.25
 	Geo.rod(root,Vector3(-d.length()*.5,1.35,0),Vector3(d.length()*.5,1.35,0),.065,Color("5a6a76"))
 	b._coll(root,Vector3(d.length(),1.35,.34),Vector3(0,.675,0))
 

@@ -303,9 +303,11 @@ func _rail(parent: Node3D, a: Vector3, b: Vector3, glass_panel: bool=true) -> vo
 		_box(root,Vector3(.21,.07,.22),Vector3(x,1.15,0),WHITE,0,.015)
 		_sphere(root,Vector3(x,1.28,0),Vector3.ONE*.23,WHITE)
 		if glass_panel and i<count:
-			var pane: MeshInstance3D=_box(root,Vector3(length/count-.22,.84,.018),Vector3(x+length/count*.5,.65,0),LIGHT,0,.005);pane.material_override=glass;pane.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-			for y in [.32,.95]:
-				for edge in [-1.0,1.0]:_box(root,Vector3(.06,.07,.04),Vector3(x+length/count*.5+edge*(length/count*.5-.14),y,.018),TEAL,0,.006)
+			for j in 4:
+				var bar_x: float=x+(j+1)*length/count/5.0
+				Geo.rod(root,Vector3(bar_x,.20,0),Vector3(bar_x,1.13,0),.027,Color("547a9c"))
+			var ornament: MeshInstance3D=_box(root,Vector3(.16,.16,.055),Vector3(x+length/count*.5,.68,.025),GOLD,0,.008)
+			ornament.rotation.z=PI*.25
 	for x in [-length*.5,length*.5]:_box(root,Vector3(.075,.13,.19),Vector3(x,1.16,0),WHITE,0,.015)
 	_coll(root,Vector3(length+.10,1.39,.25),Vector3(0,.695,0))
 
@@ -827,9 +829,10 @@ func _pastel_garden(parent: Node3D) -> void:
 		[Vector3(24.1,.06,-20.5),1.8,false],[Vector3(24.3,.06,-3.2),1.65,true],
 		[Vector3(24.4,.06,8.4),1.9,true],[Vector3(23.8,.06,20.2),1.65,true],
 		[Vector3(-24.0,.06,19.0),1.7,true],[Vector3(24.0,.06,19.0),1.75,true]]
-	for spec: Array in tree_specs:
+	for i in tree_specs.size():
+		var spec: Array=tree_specs[i]
 		var point: Vector3=spec[0]
-		if absf(point.x)>14.0:point.x+=signf(point.x)*SIDE_GARDEN_OFFSET
+		if i<8:point.x+=signf(point.x)*SIDE_GARDEN_OFFSET
 		spec[0]=point
 	tree_specs.append_array([[Vector3(-38,.06,-36),1.5,false],[Vector3(38,.06,-36),1.5,false],[Vector3(-20,.06,-40),1.4,true],[Vector3(20,.06,-40),1.4,true]])
 	var ground: Dictionary=Ground.gardens(parent,tree_specs,SIDE_GARDEN_OFFSET,67.0)

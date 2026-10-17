@@ -8,6 +8,8 @@ const BLUE := Color("6587b2")
 const RIDGE := Color("4a668a")
 const PANE := Color("739ba8")
 const GOLD := Color("d9b876")
+const ROSE := Color("df93ad")
+const LEAF := Color("75a276")
 static var stone_materials: Dictionary = {}
 var b
 var exterior
@@ -21,7 +23,7 @@ static func stone(color: Color) -> ShaderMaterial:
 func build(builder, facade, villa: Node3D) -> void:
 	b = builder; exterior = facade
 	_pavilion(villa, "WestSlateGallery", Rect2(-28.35, -30.0, 8.5, 26.0), 14.1, 3.1, -24.1)
-	_pavilion(villa, "EastSlateHall", Rect2(.65, -27.4, 27.7, 23.0), 14.0, 4.8, 24.0)
+	_pavilion(villa, "EastSlateHall", Rect2(.65, -27.4, 27.7, 23.0), 14.0, 7.0, 24.0, true)
 	var cx: float = facade.entry_x
 	var center_rect := Rect2(cx - 6.7, -7.3, 13.4, 17.05)
 	var center: Node3D = b._group(villa, "CentralCastlePediment")
@@ -29,24 +31,25 @@ func build(builder, facade, villa: Node3D) -> void:
 	_gable(center, center_rect, 15.62, 4.25)
 	exterior._gable_wall(center, 9.35, 15.62, 4.25)
 	exterior._round_window(center, Vector3(cx, 17.1, 9.58))
-	for spec: Array in [[Vector3(-27.5, 0, 5.5), 1.8, 13.6, 6.6], [Vector3(-27.5, 0, -29.1), 1.8, 15.1, 6.5], [Vector3(27.5, 0, 5.5), 1.8, 12.8, 6.2], [Vector3(27.5, 0, -28.8), 1.8, 14.7, 6.1]]:
+	_hall_balustrade(center, cx)
+	for spec: Array in [[Vector3(-26.8, 0, 9.1), 2.85, 14.4, 6.6], [Vector3(-27.5, 0, -29.1), 2.35, 15.8, 6.5], [Vector3(26.8, 0, 9.1), 2.85, 13.6, 6.2], [Vector3(27.5, 0, -28.8), 2.35, 15.4, 6.1]]:
 		_tower(villa, spec[0], spec[1], spec[2], spec[3], true)
 	var boundary: Node3D = b._group(b.level.get_node("Island"), "GardenCornerTurrets")
 	for point: Vector3 in [Vector3(-44.2, 0, 25.0), Vector3(44.2, 0, 25.0)]:
-		_tower(boundary, point, 1.65, 6.2, 4.4, true)
+		_tower(boundary, point, 2.1, 6.5, 4.4, true)
 	# Low rear sentries leave the higher house towers readable in silhouette.
 	for point: Vector3 in [Vector3(-44.2, 0, -44.2), Vector3(44.2, 0, -44.2)]:
-		_tower(boundary, point, 1.35, 4.7, 3.3, true)
+		_tower(boundary, point, 1.6, 5.0, 3.3, true)
 	_terrace_greenery(villa)
+	_stair_garden_porch(villa)
 	_balconettes(villa)
-	for z: float in [-22.5, -16.0, -9.5]:
-		_dormer(villa, Vector3(5.4, 15.65, z), -PI * .5)
-	for point: Vector3 in [Vector3(9.0, 17.1, -23), Vector3(19.6, 17.1, -9.3)]:
+	_climbing_roses(villa)
+	for point: Vector3 in [Vector3(9.0, 20.45, -17.5), Vector3(21.0, 20.45, -14.2)]:
 		var chimney: Node3D = b._group(villa, "CreamCappedChimney", point)
 		b._box(chimney, Vector3(1.35, 2.7, 1.4), Vector3(0, .6, 0), CREAM)
 		for y: float in [1.3, 1.9]: b._box(chimney, Vector3(1.65, .22, 1.7), Vector3(0, y, 0), TRIM)
 		for x: float in [-.48, .48]: b._box(chimney, Vector3(.32, .44, 1.1), Vector3(x, 2.15, 0), CREAM)
-	b.level.set_meta("castle_revision", "slate_pavilions_octagonal_towers_v1")
+	b.level.set_meta("castle_revision", "cross_gabled_castle_rose_garden_v2")
 	b.level.set_meta("castle_tower_count", 9)
 
 func _balconettes(parent: Node3D) -> void:
@@ -65,7 +68,69 @@ func _balconettes(parent: Node3D) -> void:
 			b.Pastel.clump(root,Vector3(x,.41,.70),Vector3(.85,.65,.85),b.GREEN)
 			b._flower(root,Vector3(x,.79,.85),b.SAKURA if i%2 else TRIM,.27)
 
-func _pavilion(parent: Node3D, label: String, rect: Rect2, eave: float, rise: float, passage_x: float) -> void:
+func _hall_balustrade(parent: Node3D, cx: float) -> void:
+	var root: Node3D = b._group(parent, "GrandHallStoneBalconette", Vector3(cx,10.4,9.3))
+	b._box(root, Vector3(10.2,.26,1.65), Vector3(0,-.04,.40), TRIM)
+	for side in [-1.0,1.0]:
+		var x: float = side*4.9
+		b._box(root, Vector3(.40,1.13,1.50), Vector3(x,.55,.40), CREAM)
+		b._box(root, Vector3(.54,.16,1.65), Vector3(x,1.14,.40), TRIM)
+		b._box(root, Vector3(.55,.75,.60), Vector3(x,-.48,.10), CREAM)
+	for y: float in [.22,1.12]:b._box(root,Vector3(9.7,.16,.35),Vector3(0,y,1.03),TRIM)
+	for i in 19:
+		var x: float = -4.5+i*.5
+		Geo.cylinder(root,.075,.75,Vector3(x,.66,1.03),TRIM)
+		Geo.cylinder(root,.135,.25,Vector3(x,.61,1.03),TRIM,.10)
+	for x: float in [-4.8,4.8]:
+		b.Pastel.clump(root,Vector3(x,1.35,.36),Vector3(.88,.68,1.1),LEAF)
+		for i in 3:b._flower(root,Vector3(x+(i-1)*.22,1.66,.52),ROSE if i%2 else TRIM,.27)
+
+func _stair_garden_porch(parent: Node3D) -> void:
+	var spec: Dictionary = b.floors[2].get_node("MoonriseStairs_3F_4F").get_meta("home_stair")
+	var root: Node3D = b._group(parent, "FloweredStairPorch", Vector3(spec.x,spec.base,spec.front+.5))
+	for x: float in [-2.3,2.3]:
+		for z: float in [-1.35,0.0]:
+			b._box(root,Vector3(.48,.20,.48),Vector3(x,.12,z),TRIM)
+			b._box(root,Vector3(.30,3.55,.30),Vector3(x,1.92,z),CREAM)
+			b._box(root,Vector3(.50,.18,.50),Vector3(x,3.72,z),TRIM)
+			b._coll(root,Vector3(.48,3.8,.48),Vector3(x,1.9,z))
+		b._vines(root,Vector3(x,.40,.16),Vector3(x,3.75,.16),.05)
+		for i in 4:
+			b.Pastel.clump(root,Vector3(x,1.10+i*.70,.10),Vector3(.55,.80,.50),LEAF)
+			b._flower(root,Vector3(x+.12,1.3+i*.70,.39),ROSE,.27)
+	b._box(root,Vector3(5.0,.23,1.85),Vector3(0,3.77,-.6),TRIM)
+	_gable(root,Rect2(-2.55,-1.9,5.1,3.4),3.85,1.25)
+	for i in 7:
+		b.Pastel.clump(root,Vector3(-2.1+i*.70,3.87,1.46),Vector3(.85,.54,.55),LEAF)
+		b._flower(root,Vector3(-2.1+i*.70,4.08,1.64),ROSE if i%2 else TRIM,.27)
+	for side: float in [-1.0,1.0]:
+		var a := Vector3(spec.x+side*2.12,spec.base+.90,spec.front)
+		var c := Vector3(a.x,spec.base+6.0,spec.back)
+		b._vines(parent,a,c,.08)
+		for i in 7:
+			var point: Vector3 = a.lerp(c,i/6.0)
+			b.Pastel.clump(parent,point,Vector3(.62,.62,.72),LEAF)
+			b._flower(parent,point+Vector3(side*.18,.20,.20),ROSE if i%3 else TRIM,.27)
+	for rect: Rect2 in [Rect2(-17.8,-3.9,3.0,4.6),Rect2(-6.7,-3.8,2.7,4.8),Rect2(12.2,-4.1,8.4,.95)]:
+		_terrace_rose_bed(parent,rect,spec.base)
+
+func _terrace_rose_bed(parent: Node3D, rect: Rect2, height: float) -> void:
+	var root: Node3D = b._group(parent,"RaisedTerraceRoseBed",Vector3(rect.get_center().x,height,rect.get_center().y))
+	b._box(root,Vector3(rect.size.x,.42,rect.size.y),Vector3(0,.23,0),CREAM)
+	b._box(root,Vector3(rect.size.x+.12,.13,rect.size.y+.12),Vector3(0,.46,0),TRIM)
+	b._box(root,Vector3(rect.size.x-.16,.10,rect.size.y-.16),Vector3(0,.55,0),Color("7b8d64"))
+	var rows: int = maxi(1,ceili(rect.size.y/.90))
+	var columns: int = maxi(1,ceili(rect.size.x/.90))
+	for row in rows:
+		for column in columns:
+			var x: float = (column+.5)*rect.size.x/columns-rect.size.x*.5
+			var z: float = (row+.5)*rect.size.y/rows-rect.size.y*.5
+			var y: float = .80+sin(row*2.1+column)*.08
+			b.Pastel.clump(root,Vector3(x,y,z),Vector3(.94,.72,.94),LEAF)
+			b._flower(root,Vector3(x+.12,y+.31,z+.12),ROSE if (row+column)%3 else TRIM,.29)
+	b._coll(root,Vector3(rect.size.x+.12,.8,rect.size.y+.12),Vector3(0,.4,0))
+
+func _pavilion(parent: Node3D, label: String, rect: Rect2, eave: float, rise: float, passage_x: float, cross_roof: bool = false) -> void:
 	var root: Node3D = b._group(parent, label)
 	var bottom := 10.4
 	var height: float = eave - bottom
@@ -93,6 +158,9 @@ func _pavilion(parent: Node3D, label: String, rect: Rect2, eave: float, rise: fl
 		b._box(end, Vector3(4.2, .25, .24), Vector3(passage_x, height - .125, 0), TRIM)
 		for x: float in [gate_left - .08, gate_right + .08]:
 			b._box(end, Vector3(.17, height, .30), Vector3(x, height * .5, 0), TRIM)
+	if cross_roof:
+		_cross_roof(root, rect, eave, rise)
+		return
 	_gable(root, rect, eave, rise)
 	for z: float in [rect.position.y + .25, rect.end.y - .25]:
 		var tool := SurfaceTool.new(); tool.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -103,6 +171,26 @@ func _pavilion(parent: Node3D, label: String, rect: Rect2, eave: float, rise: fl
 		_arch_window(frame, minf(2.8, rect.size.x * .22), minf(2.8, rise - .6))
 	for spec: Vector2 in [Vector2(rect.position.x + .2, rect.get_center().y - 5.2), Vector2(rect.end.x - .2, rect.get_center().y + 4.0)]:
 		_dormer(root, Vector3(spec.x, eave + .30, spec.y), -PI * .5 if spec.x < rect.get_center().x else PI * .5)
+
+func _cross_roof(parent: Node3D, rect: Rect2, eave: float, rise: float) -> void:
+	# A long east-west ridge exposes the front slate slope and its dormers.
+	var center: Vector2 = rect.get_center()
+	var roof: Node3D = b._group(parent, "TransverseSlateRoof", Vector3(center.x, 0, center.y))
+	roof.rotation.y = PI * .5
+	_gable(roof, Rect2(-rect.size.y * .5, -rect.size.x * .5, rect.size.y, rect.size.x), eave, rise)
+	for x: float in [rect.position.x + .3, rect.end.x - .3]:
+		var tool := SurfaceTool.new(); tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+		Geo._face(tool, [Vector3(x, eave, rect.position.y + .3), Vector3(x, eave, rect.end.y - .3), Vector3(x, eave + rise - .1, center.y)], Vector3.LEFT if x < center.x else Vector3.RIGHT)
+		var wall := MeshInstance3D.new(); wall.mesh = tool.commit(); wall.material_override = stone(CREAM); parent.add_child(wall)
+		var frame: Node3D = b._group(parent, "TransverseGableArch", Vector3(x + (-.035 if x < center.x else .035), eave + .25, center.y))
+		frame.rotation.y = -PI * .5 if x < center.x else PI * .5
+		_arch_window(frame, 2.8, 2.8)
+	for x: float in [4.8, 12.0, 19.2]:
+		_dormer(parent, Vector3(x, 15.35, -7.2), 0)
+		for z: float in [rect.position.y + .13, rect.end.y - .13]:
+			var frame: Node3D = b._group(parent, "FrontAtticArchedBay", Vector3(x, 11.0, z))
+			if z < center.y: frame.rotation.y = PI
+			_arch_window(frame, 2.0, 2.5)
 
 func _gable(parent: Node3D, rect: Rect2, eave: float, rise: float) -> void:
 	var root: Node3D = b._group(parent, "LayeredSlateRoof")
@@ -177,13 +265,22 @@ func _tower(parent: Node3D, point: Vector3, radius: float, height: float, rise: 
 	_octagon(root, radius, height, height * .5, CREAM)
 	for y: float in [.16, .55, height - .45, height - .12]:
 		_octagon(root, radius + (.24 if y > height - .5 else .12), .20, y, TRIM)
-	for y: float in [height * .35, height * .68]:
-		_octagon(root, radius + .025, .065, y, Color("ded4bf"))
-	for angle: float in [0.0, PI * .5, PI, PI * 1.5]:
-		var face: Node3D = b._group(root, "TurretArchedWindow", Vector3(sin(angle) * (radius * .925 + .02), height - minf(4.2, height * .65), cos(angle) * (radius * .925 + .02)))
-		face.rotation.y = angle
-		_arch_window(face, minf(1.35, radius * .85), minf(3.0, height * .48))
+	var levels: int = ceili(height / 5.2) if radius >= 2.0 else 1
+	var storey: float = height / levels
+	for level in range(1, levels):
+		_octagon(root, radius + .035, .10, storey * level, Color("ded4bf"))
+	for level in levels:
+		for angle: float in [0.0, PI * .5, PI, PI * 1.5]:
+			var sill: float = storey * level + .70 if levels > 1 else height - minf(4.2,height*.65)
+			var face: Node3D = b._group(root, "TurretArchedWindow", Vector3(sin(angle) * (radius * .925 + .02), sill, cos(angle) * (radius * .925 + .02)))
+			face.rotation.y = angle
+			_arch_window(face, minf(1.35, radius * .85), minf(3.0,storey-1.4) if levels > 1 else minf(3.0,height*.48))
 	_cone(root, radius + .32, height, rise)
+	if radius >= 2.0:
+		for angle: float in [0.0,PI*.5,PI,PI*1.5]:
+			var dormer: Node3D = b._group(root,"SpireRoofArchedDormer",Vector3(sin(angle)*(radius+.10),height+.18,cos(angle)*(radius+.10)))
+			dormer.rotation.y = angle; dormer.scale = Vector3.ONE*.46
+			_dormer(dormer,Vector3.ZERO,0)
 	if collision:
 		var body := StaticBody3D.new(); var shape := CollisionShape3D.new(); var cylinder := CylinderShape3D.new()
 		cylinder.radius = radius; cylinder.height = height
@@ -191,6 +288,11 @@ func _tower(parent: Node3D, point: Vector3, radius: float, height: float, rise: 
 	return root
 
 func _cone(parent: Node3D, radius: float, y: float, rise: float) -> void:
+	# A continuous slate shell closes the joints between individual shingle faces.
+	var shell := MeshInstance3D.new(); var cone := CylinderMesh.new()
+	cone.radial_segments = 8; cone.rings = 1; cone.bottom_radius = radius - .025; cone.top_radius = 0; cone.height = rise - .04
+	shell.mesh = cone; shell.position.y = y + rise * .5 - .02; shell.rotation.y = PI / 8.0
+	shell.material_override = Geo.material(RIDGE); parent.add_child(shell)
 	var tools: Array[SurfaceTool] = []
 	for i in 3:
 		var tool := SurfaceTool.new(); tool.begin(Mesh.PRIMITIVE_TRIANGLES); tools.append(tool)
@@ -215,8 +317,30 @@ func _cone(parent: Node3D, radius: float, y: float, rise: float) -> void:
 	Geo.cylinder(parent, .13, 1.5, Vector3(0, y + rise + .55, 0), GOLD, .018)
 	b._sphere(parent, Vector3(0, y + rise + .12, 0), Vector3(.31, .35, .31), GOLD)
 
+func _climbing_roses(parent: Node3D) -> void:
+	for spec: Array in [[Vector3(-17.8, 0, 9.53), 0.0], [Vector3(17.0, 0, 9.53), 0.0], [Vector3(-28.52, 0, -12.4), -PI * .5], [Vector3(-28.52, 0, -23.4), -PI * .5]]:
+		var root: Node3D = b._group(parent, "ClimbingRoseEspalier", spec[0]); root.rotation.y = spec[1]
+		for side in [-1.0, 1.0]:
+			b._vines(root, Vector3(side * .18, .25, .03), Vector3(side * .95, 9.1, .03), .25)
+		for i in 12:
+			var y: float = .9 + i * .70
+			var x: float = sin(i * 1.75) * .72
+			b.Pastel.clump(root, Vector3(x, y, .14), Vector3(1.25, 1.15, .62), LEAF)
+			b._flower(root, Vector3(x + .18, y + .28, .48), ROSE if i % 4 else TRIM, .32)
+			if i % 3 == 0:
+				b.Pastel.clump(root, Vector3(x + .65, y + .28, .12), Vector3(1.0, .85, .58), LEAF)
+				b._flower(root, Vector3(x + .66, y + .51, .46), ROSE, .29)
+	for x: float in [-19.0, -15.5, 14.5, 18.0, 21.5]:
+		var cascade: Node3D = b._group(parent, "TerraceTrailingRoses", Vector3(x, 10.9, 8.95))
+		for strand in 3:
+			var offset: float = (strand - 1) * .55
+			b._vines(cascade, Vector3(offset, .15, 0), Vector3(offset + .20, -1.8 + strand * .24, .18), .12)
+			for i in 3:
+				b.Pastel.clump(cascade, Vector3(offset, -.15 - i * .55, .13), Vector3(.86, .84, .68), LEAF)
+				b._flower(cascade, Vector3(offset + .13, -.04 - i * .55, .52), ROSE if (i + strand) % 3 else TRIM, .26)
+
 func _terrace_greenery(parent: Node3D) -> void:
-	for point: Vector3 in [Vector3(-25,0,10.6),Vector3(-16,0,10.6),Vector3(-5.5,0,10.6),Vector3(12.7,0,10.6),Vector3(25,0,10.6)]:
+	for point: Vector3 in [Vector3(-16,0,10.6),Vector3(-5.5,0,10.6),Vector3(12.7,0,10.6)]:
 		var topiary: Node3D = b._group(parent, "PottedGardenTopiary", point)
 		Geo.cylinder(topiary,.48,.75,Vector3(0,.38,0),CREAM,.60)
 		Geo.cylinder(topiary,.63,.13,Vector3(0,.76,0),TRIM)
@@ -236,13 +360,27 @@ func _terrace_greenery(parent: Node3D) -> void:
 	# A shaded seating group fills the wider east terrace while keeping the front lane.
 	var garden: Node3D=b._model(parent,b.PERGOLA,Vector3(-20.4,10.4,1.0),true)
 	for x: float in [-2.0,2.0]:
-		for z: float in [-1.65,1.65]:b._coll(garden,Vector3(.22,3.35,.22),Vector3(x,1.675,z))
+		for z: float in [-1.65,1.65]:
+			b._coll(garden,Vector3(.22,3.35,.22),Vector3(x,1.675,z))
+			b._vines(garden,Vector3(x,.45,z+.12),Vector3(x,3.25,z+.12),.10)
+			for i in 4:
+				b.Pastel.clump(garden,Vector3(x,.8+i*.65,z),Vector3(.60,.80,.6),LEAF)
+				b._flower(garden,Vector3(x+.13,1.0+i*.65,z+.35),ROSE,.27)
 	b._table(garden,Vector3.ZERO,2.7,1.4,.72,"garden_table")
 	for side: float in [-1.0,1.0]:b._chair(garden,Vector3(side*2.0,0,0),side*90)
 	b._vines(garden,Vector3(-2,3.2,1.7),Vector3(2,3.2,1.7),.30)
 	for x: float in [-1.5,-.5,.5,1.5]:
 		b.Pastel.clump(garden,Vector3(x,3.25,1.65),Vector3(1.2,.55,.80),b.GREEN)
 		b._flower(garden,Vector3(x,3.4,1.8),b.SAKURA,.35)
+	for x: float in [11.6,21.7]:
+		var planter: Node3D = b._group(parent,"EastTerraceRoseUrn",Vector3(x,10.4,-2.35))
+		Geo.cylinder(planter,.44,.60,Vector3(0,.30,0),CREAM,.58)
+		Geo.cylinder(planter,.60,.14,Vector3(0,.65,0),TRIM)
+		b.Pastel.clump(planter,Vector3(0,1.08,0),Vector3(1.25,1.05,1.25),LEAF)
+		for i in 5:
+			var angle: float = i*TAU/5.0
+			b._flower(planter,Vector3(cos(angle)*.38,1.50,sin(angle)*.38),ROSE if i%2 else TRIM,.29)
+		b._coll(planter,Vector3(1.15,.85,1.15),Vector3(0,.425,0))
 	var seating: Node3D = b._group(parent, "EastTerraceSunshade", Vector3(17.5, 10.4, 1.7))
 	b._table(seating, Vector3.ZERO, 2.8, 1.5, .72, "garden_table")
 	for side in [-1.0, 1.0]: b._chair(seating, Vector3(side * 2.3, 0, 0), 90 * side)

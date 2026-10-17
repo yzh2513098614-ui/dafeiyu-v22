@@ -355,12 +355,13 @@ func _tower() -> void:
 	# on that slab so the spire reads as the building's vertical core.
 	# Do not build an invisible hip roof: the static merger would resurrect it.
 	var builder:=Castle.new();builder.b=b
-	var crown: Node3D=builder._tower(tower,Vector3(-10.1,20.82,-22.8),2.8,3.8,7.8,true)
+	var crown: Node3D=builder._tower(tower,Vector3(-10.1,20.82,-22.8),2.8,8.0,8.2,true)
 	crown.name="OctagonalDaylightCrown"
-	var mast: Node3D=b._group(tower,"WhaleSpireMast",Vector3(-10.1,33.0,-22.8))
-	Geo.rod(mast,Vector3.ZERO,Vector3(0,1.1,0),.045,b.GOLD)
-	var flag: MeshInstance3D=b._box(mast,Vector3(1.15,.58,.035),Vector3(.58,.62,0),ROOF,0,.01)
-	flag.rotation.z=-.12
+	var mast: Node3D=b._group(tower,"WhaleSpireMast",Vector3(-10.1,38.1,-22.8))
+	Geo.rod(mast,Vector3.ZERO,Vector3(0,1.65,0),.045,b.GOLD)
+	var flag: Node3D=b._group(mast,"BlueWhalePennant",Vector3(1.02,1.0,0));flag.rotation.z=-.08
+	b._box(flag,Vector3(2.0,1.0,.035),Vector3.ZERO,ROOF,0,.012)
+	b._whale(flag,Vector3(0,0,.055),.32,90,TRIM)
 	_observatory_roof(tower,builder)
 	b._batch(tower)
 	b.level.set_meta("tower_exterior",tower)
