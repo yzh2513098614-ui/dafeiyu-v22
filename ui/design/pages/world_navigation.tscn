@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" path="res://assets/ui/arrow_up.svg" id="20_5c3f4"]
 [ext_resource type="Script" path="res://ui/handheld_panel.gd" id="21_dw307"]
 
+[ext_resource type="PackedScene" path="res://ui/design/pages/world_trial_progress.tscn" id="encounter_progress"]
+[ext_resource type="PackedScene" path="res://ui/design/pages/world_encounter_prompt.tscn" id="encounter_prompt"]
 [sub_resource type="Theme" id="Theme_sdfit"]
 default_font = ExtResource("1_dr84n")
 
@@ -1384,94 +1386,14 @@ metadata/design_native_class = "Label"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="11_Panel" type="Panel" parent="02_Control" unique_id=789103098]
+[node name="11_Panel" parent="02_Control" instance=ExtResource("encounter_progress")]
 visible = false
-texture_filter = 2
-layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -414.0
-offset_top = 349.0
+offset_top = 118.0
 offset_right = -48.0
-offset_bottom = 633.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xel5q")
-script = ExtResource("21_dw307")
-metadata/design_id = "11"
-metadata/design_native_class = "Panel"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="00_Label_潮汐试炼" type="Label" parent="02_Control/11_Panel" unique_id=740142361]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 11.0
-offset_right = 348.0
-offset_bottom = 46.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-theme_override_font_sizes/font_size = 26
-text = "潮汐试炼"
-autowrap_mode = 3
-metadata/design_id = "11/0"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="01_Label_" type="Label" parent="02_Control/11_Panel" unique_id=70281785]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 54.0
-offset_right = 348.0
-offset_bottom = 87.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-theme_override_font_sizes/font_size = 19
-autowrap_mode = 3
-metadata/design_id = "11/1"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="02_Label_靠近怪物点「战斗」。每回合抽 5 张" type="Label" parent="02_Control/11_Panel" unique_id=303025783]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 92.0
-offset_right = 348.0
-offset_bottom = 176.0
-theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
-theme_override_font_sizes/font_size = 18
-text = "靠近怪物点「战斗」。每回合抽 5 张牌、获得 3 点能量；结束回合后敌人行动。"
-autowrap_mode = 3
-metadata/design_id = "11/2"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="03_Button_返回港口" type="Button" parent="02_Control/11_Panel" unique_id=1578970695]
-texture_filter = 1
-layout_mode = 0
-offset_left = 17.0
-offset_top = 184.0
-offset_right = 348.0
-offset_bottom = 220.0
-theme_override_font_sizes/font_size = 20
-text = "返回港口"
-metadata/design_id = "11/3"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="04_Button_再练一次 · 经验照给" type="Button" parent="02_Control/11_Panel" unique_id=1142817923]
-texture_filter = 1
-layout_mode = 0
-offset_left = 17.0
-offset_top = 228.0
-offset_right = 348.0
-offset_bottom = 268.0
-theme_override_font_sizes/font_size = 20
-text = "再练一次 · 经验照给"
-metadata/design_id = "11/4"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_bottom = 264.0
 
 [node name="12_Button_潮汐试炼 · 前往训练场" type="Button" parent="02_Control" unique_id=365756919]
 texture_filter = 1
@@ -1487,78 +1409,12 @@ metadata/design_native_class = "Button"
 metadata/design_edit_text = true
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
 
-[node name="13_Panel" type="Panel" parent="02_Control" unique_id=1504470015]
+[node name="13_Panel" parent="02_Control" instance=ExtResource("encounter_prompt")]
 visible = false
-texture_filter = 2
-layout_mode = 0
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -320.0
-offset_top = 790.0
-offset_right = 320.0
-offset_bottom = 942.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_xel5q")
-script = ExtResource("21_dw307")
-metadata/design_id = "13"
-metadata/design_native_class = "Panel"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="00_Label_" type="Label" parent="02_Control/13_Panel" unique_id=1775136399]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 14.0
-offset_right = 616.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.21960784, 0.21176471, 0.33333334, 1)
-theme_override_font_sizes/font_size = 25
-autowrap_mode = 3
-metadata/design_id = "13/0"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="01_Label_" type="Label" parent="02_Control/13_Panel" unique_id=340083435]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 52.0
-offset_right = 617.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(0.4117647, 0.42745098, 0.5647059, 1)
-theme_override_font_sizes/font_size = 17
-autowrap_mode = 3
-metadata/design_id = "13/1"
-metadata/design_native_class = "Label"
-metadata/design_edit_text = false
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="02_Button_战斗" type="Button" parent="02_Control/13_Panel" unique_id=994774890]
-texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_top = 92.0
-offset_right = 310.0
-offset_bottom = 138.0
-theme_override_font_sizes/font_size = 20
-text = "战斗"
-metadata/design_id = "13/2"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
-
-[node name="03_Button_绕开" type="Button" parent="02_Control/13_Panel" unique_id=2101169503]
-texture_filter = 1
-layout_mode = 0
-offset_left = 330.0
-offset_top = 92.0
-offset_right = 616.0
-offset_bottom = 138.0
-theme_override_font_sizes/font_size = 20
-text = "绕开"
-metadata/design_id = "13/3"
-metadata/design_native_class = "Button"
-metadata/design_edit_text = true
-metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+offset_left = 28.0
+offset_top = 706.0
+offset_right = 628.0
+offset_bottom = 890.0
 
 [node name="14_Button_F11 研究中心 · 搜打撤" type="Button" parent="02_Control" unique_id=886326879]
 texture_filter = 1

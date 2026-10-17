@@ -123,6 +123,10 @@ var title_label: Label
 var round_label: Label
 var log_box: Panel
 var log_text: RichTextLabel
+var log_history_panel: Panel
+var log_history_text: RichTextLabel
+var log_history: Array[String] = []
+var log_idle := 0.0
 var command_box: Panel
 var skill_box: Panel
 var skill_list: VBoxContainer
@@ -241,6 +245,8 @@ func open(battle_engine, open_context: Dictionary = {}) -> void:
 	if layer == null:
 		_build()
 	log_lines.clear()
+	log_history.clear()
+	log_idle = 0.0
 	queue.clear()
 	mode = "command"
 	_bob = 0.0
@@ -832,6 +838,15 @@ func _build_dock() -> void:
 
 ## Block has no maximum: show its remaining amount rather than an arbitrary percentage.
 func _build_block_badge(parent:Node,show_caption:bool=true)->Dictionary:
+	var gauge:=_gauge(parent,"格挡",Color("46c9c1"),"block")
+	gauge["panel"]=gauge.group
+	gauge["caption"]=gauge.title
+	gauge["show_caption"]=show_caption
+	gauge.title.visible=show_caption
+	gauge.group.name="BlockGauge"
+	gauge.group.mouse_filter=Control.MOUSE_FILTER_PASS
+	gauge.group.tooltip_text="格挡会先吸收受到的伤害；它没有固定上限，显示为当前剩余值。"
+	return gauge
 	var panel:=Panel.new()
 	panel.name="BlockBadge"
 	panel.size=Vector2(174,40) if show_caption else Vector2(90,40)
@@ -865,6 +880,21 @@ func _build_block_badge(parent:Node,show_caption:bool=true)->Dictionary:
 	return {"panel":panel,"icon":icon,"caption":caption,"value":value,"style":style}
 
 func _set_block_badge(badge:Dictionary,amount:float,always_visible:bool=false)->void:
+	if badge.has("group"):
+		var active_gauge:=amount>0.0
+		badge.group.visible=active_gauge or always_visible
+		badge["block_amount"]=maxf(0,amount)
+		badge.value.text=str(ceili(maxf(0,amount)))
+		badge.value.add_theme_font_size_override("font_size",24 if badge.value.text.length()>3 else 26)
+		_set_gauge(badge,maxf(0,amount),maxf(1,amount),badge.value.text)
+		badge.style.bg_color=Color("46c9c1") if active_gauge else Color("b8c4d8")
+		badge.style.border_color=Color("d9fff8") if active_gauge else Color("8b99b3")
+		badge.icon.modulate=Color.WHITE if active_gauge else Color(.78,.85,.87,.65)
+		badge.caption.add_theme_color_override("font_color",Color("eafff9") if active_gauge else Color("6f7b94"))
+		badge.value.add_theme_color_override("font_color",Color("f5fffd") if active_gauge else Color("6f7b94"))
+		badge.gloss.visible=active_gauge
+		badge.group.tooltip_text="格挡：%d 点。受到伤害时先消耗格挡，再扣除生命；与按回合持续的护盾效果独立。" % ceili(maxf(0,amount))
+		return
 	var active:=amount>0
 	badge.panel.visible=active or always_visible
 	badge.value.text=str(ceili(maxf(0,amount)))
@@ -881,6 +911,9 @@ func _set_block_badge(badge:Dictionary,amount:float,always_visible:bool=false)->
 	badge.icon.modulate=Color.WHITE if active else Color(.78,.85,.87,.65)
 	badge.caption.add_theme_color_override("font_color",Color("383655") if active else Color("696d90"))
 	badge.value.add_theme_color_override("font_color",Color("414a7b") if active else Color("696d90"))
+	if engine.card_mode:
+		badge.caption.add_theme_color_override("font_color", InventorySkin.INK if active else InventorySkin.MUTED)
+		badge.value.add_theme_color_override("font_color", InventorySkin.INK if active else InventorySkin.MUTED)
 
 func _gauge(parent: Node, title: String, fill: Color, icon_name: String = "") -> Dictionary:
 	var group := Control.new()
@@ -1148,7 +1181,8 @@ func _layout_one_enemy(slot: Dictionary, cx: float, cell_w: float) -> void:
 	var active_status:Array=[]
 	for si in status:
 		if si.visible:active_status.append(si)
-	var badge:Panel=slot.block_badge.panel
+	_layout_block_badge(slot.block_badge,minf(180.0,cell_w*.72),engine.card_mode)
+	var badge:Control=slot.block_badge.panel
 	var status_width:=float(active_status.size())*34.0
 	var badge_width:=badge.size.x+8 if badge.visible else 0.0
 	var status_x:=cx-(status_width+badge_width)*.5
@@ -1224,8 +1258,40 @@ func _layout_dock() -> void:
 			title.add_theme_font_size_override("font_size",20)
 			value.position=Vector2(gw-142,21);value.size=Vector2(142,32)
 			value.add_theme_font_size_override("font_size",22)
-	var block_panel:Panel=dash.block_badge.panel
+	_layout_block_badge(dash.block_badge,180.0 if compact else 220.0,compact)
+	var block_panel:Control=dash.block_badge.panel
 	block_panel.position=Vector2(124,70) if compact else Vector2(146,72)
+
+func _layout_block_badge(badge:Dictionary,width:float,compact:bool=false)->void:
+	if not badge.has("group") or not is_instance_valid(badge.group):
+		return
+	var group:Control=badge.group
+	var h:float=34.0 if not bool(badge.get("show_caption",true)) else (42.0 if compact else 58.0)
+	group.size=Vector2(maxf(96.0,width),h)
+	var tile:Panel=group.get_node("StatusTile")
+	tile.position=Vector2.ZERO
+	tile.size=group.size
+	tile.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
+	var icon:TextureRect=badge.icon
+	var icon_size:float=22.0 if compact or not bool(badge.get("show_caption",true)) else 28.0
+	icon.position=Vector2(0.0,2.0)
+	icon.size=Vector2(icon_size,icon_size)
+	var caption:Label=badge.caption
+	caption.visible=bool(badge.get("show_caption",true))
+	caption.position=Vector2(icon_size+6.0,1.0)
+	caption.size=Vector2(54.0,24.0)
+	caption.add_theme_font_size_override("font_size",16 if compact else 18)
+	var value:Label=badge.value
+	value.position=Vector2(icon_size+74.0 if caption.visible else icon_size+6.0,0.0)
+	value.size=Vector2(maxf(46.0,group.size.x-value.position.x),24.0)
+	value.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
+	value.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+	value.add_theme_font_size_override("font_size",22 if compact else 24)
+	var back:Panel=badge.back
+	back.position=Vector2(0.0,h-11.0)
+	back.size=Vector2(group.size.x,8.0 if compact else 11.0)
+	var current:=float(badge.get("block_amount",0.0))
+	_set_gauge(badge,current,maxf(1.0,current),str(ceili(current)))
 
 func _layout_command() -> void:
 	if command_box != null:
@@ -1276,6 +1342,27 @@ func _hud_frame(panel: Panel, background: Color, radius: int = 24, inner: bool =
 	style.shadow_offset = Vector2.ZERO if inner else Vector2(2, 3)
 	panel.add_theme_stylebox_override("panel", style)
 
+func _inventory_panel(panel: Panel, kind: String = "panel", compact: bool = false) -> void:
+	panel.set_script(null)
+	var face: StyleBoxFlat = InventorySkin.frame(kind)
+	if compact:
+		face = face.duplicate()
+		face.set_border_width_all(2)
+		face.set_corner_radius_all(16)
+		face.border_color = Color("b7cbee")
+		face.shadow_size = 0
+		face.shadow_offset = Vector2(0, 3)
+	panel.add_theme_stylebox_override("panel", face)
+	if kind not in ["panel", "paper", "bag", "detail", "status"]:
+		return
+	var colors: Dictionary = {"bag": [Color("dfeefa"), Color("eaf4ff")], "detail": [Color("f2edff"), Color("fcfdff")], "status": [Color("e4f3ff"), Color("f1edff")]}
+	var pair: Array = colors.get(kind, [Color("fcfdff"), Color("edf4ff")])
+	var border := face.get_border_width(SIDE_LEFT)
+	var surface := InventorySkin.surface(panel, pair[0], pair[1], border + 1, maxf(2, face.corner_radius_top_left - border))
+	# Internal decoration draws first without changing UiDesign's public child indices.
+	panel.remove_child(surface)
+	panel.add_child(surface, false, Node.INTERNAL_MODE_FRONT)
+
 func _hud_text(label: Label, font_size: int) -> void:
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_color_override("font_color", Color("31547e"))
@@ -1284,7 +1371,7 @@ func _hud_text(label: Label, font_size: int) -> void:
 func _style_card_battle() -> void:
 	_card_overlay(card_panel, Color.TRANSPARENT)
 	dash.dock.set_script(null)
-	dash.dock.add_theme_stylebox_override("panel", InventorySkin.frame("panel"))
+	_inventory_panel(dash.dock, "panel", true)
 	_card_overlay(dash.portrait_frame, Color.TRANSPARENT)
 	dash["level"] = WhaleStyle.label(dash.dock, "", Vector2(106, 56), Vector2(188, 26), 18, Color("647c99"))
 	dash.level.name = "CompactLevel"
@@ -1294,11 +1381,11 @@ func _style_card_battle() -> void:
 	# Keep existing child indices for UiDesign; the bag surface draws below content via z_index.
 	for child in dash.dock.get_children():
 		child.z_index = 1
-	InventorySkin.surface(dash.dock, Color("fcfdff"), Color("edf4ff"), 4, 17)
 	_build_status_meters()
-	_hud_frame(title_plate, Color("cedfff"), 18)
+	_inventory_panel(title_plate, "panel", true)
 	_hud_frame(phase_plate, Color("ade4e7"), 18)
-	_hud_frame(log_box, Color("e4edff"), 18)
+	_inventory_panel(log_box, "panel", true)
+	_build_card_log()
 	_hud_frame(card_panel.get_node("CardEnergyBadge"), Color("4d77c5"), 52)
 	var resources := Panel.new()
 	resources.name = "EnergyResourcesFrame"
@@ -1312,7 +1399,7 @@ func _style_card_battle() -> void:
 	resources.add_child(counts_frame)
 	_hud_frame(counts_frame, Color("edf3ff"), 12, true)
 	var log_caption: Panel = log_box.get_node("LogCaption")
-	_hud_frame(log_caption, Color("cbdfff"), 12, true)
+	log_caption.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
 	log_caption.show()
 	tactics_box.hide()
 	_hud_text(dash.name, 24)
@@ -1322,7 +1409,6 @@ func _style_card_battle() -> void:
 	round_label.add_theme_color_override("font_color", Color("4973ae"))
 	for action in [speed_button, card_panel.get_node("CardTargetButton"), card_item_button, card_link_button, card_end_button]:
 		_style_card_action(action, action == card_end_button)
-	_card_overlay(dash.block_badge.panel, Color.TRANSPARENT)
 	for gauge in dash.gauges:
 		gauge.group.hide()
 	for label in [dash.name, dash.level, dash.block_badge.caption, dash.block_badge.value]:
@@ -1372,9 +1458,18 @@ func _build_status_meters() -> void:
 	status_meters.model = values
 	add_child(status_meters)
 	for spec in [["health", "生命", "f4407e"], ["stamina", "体力", "23cbd4"], ["mood", "连携", "638eff"]]:
-		status_meters._meter(dash.dock, spec[0], spec[1], Vector2(18, 112 + status_meters.meters.size() * 60), Vector2(276, 42), Color(spec[2]), spec[0])
+		status_meters._meter(dash.dock, spec[0], spec[1], Vector2(16, 100 + status_meters.meters.size() * 36), Vector2(268, 32), Color(spec[2]), spec[0])
 		var meter: Dictionary = status_meters.meters[spec[0]]
-		meter.fill.get_parent().z_index = 1
+		var caption: Label = meter.fill.get_parent().get_child(1)
+		caption.add_theme_font_size_override("font_size", 14)
+		meter.text.position = Vector2(184, 0)
+		meter.text.size = Vector2(84, 32)
+		meter.text.add_theme_font_size_override("font_size", 13)
+		meter.fill.position = Vector2(66, 8)
+		meter.fill.size = Vector2(110, 16)
+		meter.overlay.position = meter.fill.position
+		meter.overlay.size = meter.fill.size
+		for face in meter.faces.values(): face.set_corner_radius_all(8)
 	# Link retains its battle icon; its rim, track, readings and effects come from the HUD.
 	var link_meter: Dictionary = status_meters.meters.mood
 	link_meter.icon_art.hide()
@@ -1420,38 +1515,88 @@ func _style_card_action(button: Button, primary: bool = false) -> void:
 
 func _layout_card_dock() -> void:
 	var dock: Panel = dash.dock
-	UiFit.pin_left(dock, 312, 28, 376, 390)
-	dash.portrait_frame.position = Vector2(18, 18)
-	dash.portrait_frame.size = Vector2(72, 72)
+	UiFit.pin_left(dock, 300, 28, 538, 228)
+	dash.portrait_frame.position = Vector2(16, 14)
+	dash.portrait_frame.size = Vector2(64, 64)
 	dash.portrait.position = Vector2.ZERO
-	dash.portrait.size = Vector2(72, 72)
-	dash.name.position = Vector2(106, 20)
-	dash.name.size = Vector2(188, 32)
+	dash.portrait.size = Vector2(64, 64)
+	dash.name.position = Vector2(92, 17)
+	dash.name.size = Vector2(110, 26)
 	dash.name.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	dash.name.autowrap_mode = TextServer.AUTOWRAP_OFF
+	dash.name.add_theme_font_size_override("font_size", 20)
+	dash.level.position = Vector2(92, 47)
+	dash.level.size = Vector2(112, 22)
+	dash.level.add_theme_font_size_override("font_size", 14)
 	dash.vitals.hide()
-	dash.block_badge.panel.position = Vector2(18, 326)
-	dash.status_icons.position = Vector2(210, 328)
-	dash.status_icons.size = Vector2(84, 24)
+	_layout_card_block()
+	dash.status_icons.position = Vector2(210, 52)
+	dash.status_icons.size = Vector2(72, 20)
 	for i in dash.icons.size():
 		var icon: TextureRect = dash.icons.values()[i]
-		icon.position = Vector2(i * 30, 0)
-		icon.size = Vector2(24, 24)
-	for i in dash.gauges.size():
-		var gauge: Dictionary = dash.gauges[i]
-		gauge.group.position = Vector2(18, [112.0, 264.0, 316.0][i])
-		gauge.group.size = Vector2(276, 96 if i == 0 else 38)
-		var tile: Panel = gauge.group.get_node("StatusTile")
-		tile.position = Vector2(-2, -8 if i == 0 else -4)
-		tile.size = Vector2(280, 148 if i == 0 else 44)
-		gauge.icon.position = Vector2(0, 0)
-		gauge.icon.size = Vector2(24, 24)
-		gauge.title.position = Vector2(30, -2)
-		gauge.title.size = Vector2(76, 26)
-		gauge.value.position = Vector2(72, 24) if i == 0 else Vector2(100, -2)
-		gauge.value.size = Vector2(104, 44) if i == 0 else Vector2(176, 26)
-		gauge.value.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM if i == 0 else VERTICAL_ALIGNMENT_CENTER
-		gauge.back.position = Vector2(0, 78 if i == 0 else 30)
-		gauge.back.size = Vector2(276, 16 if i == 0 else 6)
+		icon.position = Vector2(i * 26, 0)
+		icon.size = Vector2(20, 20)
+
+func _layout_card_block() -> void:
+	var badge: Dictionary = dash.block_badge
+	badge.panel.position = Vector2(206, 15)
+	badge.panel.size = Vector2(78, 28)
+	badge.panel.get_node("StatusTile").add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+	badge.caption.hide()
+	badge.back.hide()
+	badge.gloss.hide()
+	badge.icon.position = Vector2(0, 4)
+	badge.icon.size = Vector2(20, 20)
+	badge.value.position = Vector2(26, 0)
+	badge.value.size = Vector2(52, 28)
+	badge.value.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	badge.value.add_theme_font_size_override("font_size", 17)
+	badge.value.add_theme_color_override("font_color", InventorySkin.INK if float(badge.get("block_amount", 0)) > 0 else InventorySkin.MUTED)
+
+func _build_card_log() -> void:
+	var toggle := Button.new()
+	toggle.name = "BattleLogToggle"
+	toggle.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	toggle.tooltip_text = "展开完整战斗记录"
+	for state in ["normal", "hover", "pressed", "focus"]: toggle.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	toggle.pressed.connect(_toggle_log_history)
+	log_box.add_child(toggle)
+	log_history_panel = Panel.new()
+	log_history_panel.name = "BattleLogHistory"
+	log_history_panel.z_index = 6
+	root.add_child(log_history_panel)
+	UiFit.pin_left(log_history_panel, 440, 28, 100, 324)
+	_inventory_panel(log_history_panel, "panel", true)
+	var close_log := Button.new()
+	close_log.name = "CloseBattleLog"
+	close_log.text = "战斗记录 · 收起 ⌃"
+	close_log.position = Vector2(14, 8)
+	close_log.size = Vector2(412, 28)
+	close_log.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	close_log.add_theme_font_size_override("font_size", 16)
+	close_log.add_theme_color_override("font_color", InventorySkin.INK)
+	for state in ["normal", "hover", "pressed", "focus"]: close_log.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	close_log.pressed.connect(_toggle_log_history)
+	log_history_panel.add_child(close_log)
+	log_history_text = RichTextLabel.new()
+	log_history_text.position = Vector2(14, 44)
+	log_history_text.size = Vector2(412, 264)
+	log_history_text.bbcode_enabled = true
+	log_history_text.scroll_following = true
+	log_history_text.add_theme_font_override("normal_font", WhaleStyle.body_font())
+	log_history_text.add_theme_font_size_override("normal_font_size", 16)
+	log_history_text.add_theme_color_override("default_color", InventorySkin.INK)
+	log_history_text.add_theme_constant_override("line_separation", 6)
+	log_history_panel.add_child(log_history_text)
+	log_history_panel.hide()
+
+func _toggle_log_history() -> void:
+	log_history_panel.visible = not log_history_panel.visible
+	log_box.visible = not log_history_panel.visible
+	log_idle = 0.0
+	log_box.modulate.a = 1.0
+	if log_history_panel.visible: log_history_panel.get_node("CloseBattleLog").grab_focus()
+	else: log_box.get_node("BattleLogToggle").grab_focus()
 
 func _layout_card_hand() -> void:
 	if card_panel == null:
@@ -1507,25 +1652,32 @@ func _layout_card_hand() -> void:
 		actions[i].add_theme_font_size_override("font_size", 20 if i == 3 else 18)
 	card_panel.get_node("CardPlayHint").hide()
 	card_preview.position = Vector2(root.size.x - 294, 120)
-	UiFit.pin_left(title_plate, 420, 24, 24, 54)
-	title_label.position = Vector2(14, 8)
-	title_label.size = Vector2(268, 32)
-	title_label.add_theme_font_size_override("font_size", 22)
-	round_label.position = Vector2(284, 8)
-	round_label.size = Vector2(122, 30)
+	UiFit.pin_left(title_plate, 420, 24, 24, 48)
+	title_label.position = Vector2(14, 7)
+	title_label.size = Vector2(268, 30)
+	title_label.add_theme_font_size_override("font_size", 20)
+	round_label.position = Vector2(296, 9)
+	round_label.size = Vector2(110, 26)
+	round_label.add_theme_font_size_override("font_size", 16)
 	UiFit.pin_center(phase_plate, 320, 24, 50)
 	phase_label.position = Vector2(12, 6)
 	phase_label.size = Vector2(296, 32)
 	UiFit.pin_right(speed_button, 150, 24, 24, 44)
-	UiFit.pin_left(log_box, 312, 28, 104, 118)
+	UiFit.pin_left(log_box, 300, 28, 100, 92)
 	var log_caption: Panel = log_box.get_node("LogCaption")
-	log_caption.position = Vector2(14, 10)
-	log_caption.size = Vector2(86, 28)
-	log_text.position = Vector2(18, 46)
-	log_text.size = Vector2(276, 62)
-	log_text.add_theme_font_size_override("normal_font_size", 17)
+	log_caption.position = Vector2(14, 8)
+	log_caption.size = Vector2(272, 22)
+	var log_title: Label = log_caption.get_child(0)
+	log_title.text = "战斗记录  ▾"
+	log_title.position = Vector2.ZERO
+	log_title.size = log_caption.size
+	log_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	log_title.add_theme_font_size_override("font_size", 15)
+	log_text.position = Vector2(14, 36)
+	log_text.size = Vector2(272, 46)
+	log_text.add_theme_font_size_override("normal_font_size", 16)
 	log_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	log_text.mouse_filter = Control.MOUSE_FILTER_STOP
+	log_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _backdrop_texture() -> Texture2D:
 	if ResourceLoader.exists(BACKGROUND_PATH):
@@ -1948,7 +2100,7 @@ func _refresh_ally() -> void:
 
 func _refresh_card_status(visible_ally: Dictionary, link: Dictionary) -> void:
 	dash.name.text = str(ally.name)
-	dash.level.text = "Lv.%d" % int(ally.level)
+	dash.level.text = "Lv.%d · 玩家" % int(ally.level)
 	status_meters.model.actor = visible_ally
 	status_meters.model.link = link
 	for kind in ["health", "stamina", "mood"]:
@@ -1959,18 +2111,7 @@ func _refresh_card_status(visible_ally: Dictionary, link: Dictionary) -> void:
 		row.tooltip_text = "%s：%d / %d" % [meter.title, ceili(status_meters.model.value(kind)), int(status_meters.model.maximum(kind))]
 	status_meters.meters.mood.icon.get_child(-1).self_modulate = Color("b1bed9") if status_meters.meters.mood.zero else Color.WHITE
 	dash.dock.tooltip_text += "\n" + str(link.desc if link.ready else link.reason)
-	var badge: Dictionary = dash.block_badge
-	badge.panel.size = Vector2(180, 28)
-	badge.icon.position = Vector2.ZERO
-	badge.icon.size = Vector2(24, 24)
-	badge.caption.position = Vector2(32, 2)
-	badge.caption.size = Vector2(42, 24)
-	badge.caption.add_theme_font_size_override("font_size", 16)
-	badge.value.position = Vector2(80, 0)
-	badge.value.size = Vector2(80, 28)
-	badge.value.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-	badge.value.add_theme_font_size_override("font_size", 22)
-	badge.value.add_theme_color_override("font_color", InventorySkin.INK if float(visible_ally.get("block", 0)) > 0 else InventorySkin.MUTED)
+	_layout_card_block()
 
 ## 状态图标的出现 / 消失演出。
 ## 直接切 visible 的话，「护盾没了」这件事几乎不会被注意到 —— 图标在视线边缘，
@@ -2320,6 +2461,11 @@ func _process(delta: float) -> void:
 	# 必须在这里就断掉：否则会去读已经释放的 slot.mark / dash 部件。
 	if not is_active():
 		return
+	if engine.card_mode:
+		log_idle += delta
+		var reading_log := log_box.get_global_rect().has_point(log_box.get_global_mouse_position())
+		var log_alpha := 1.0 if reading_log or log_idle < 4.0 else 0.45
+		log_box.modulate.a = move_toward(log_box.modulate.a, log_alpha, delta * 1.5)
 	if phase_label != null:
 		phase_label.text="行动演出中" if mode=="busy" else ("选择技能" if mode=="skill" else ("选择补给" if mode=="item" else ("交战结束" if mode=="result" else ("你的回合 · 打出手牌" if engine.card_mode else "你的回合 · 选择行动"))))
 	_bob += delta
@@ -2495,7 +2641,7 @@ func _apply_event(e: Dictionary) -> void:
 			_append_log(str(e.text), "9fb4d8")
 		"damage":
 			var crit := bool(e.get("crit", false))
-			_append_log("%s → %s  %d%s" % [str(e.actor), str(e.target), _display_damage_amount(e), " 暴击!" if crit else ""], "ffb3bd" if crit else "ffd9c0")
+			_append_log("%s对%s造成%d点伤害%s" % [str(e.actor), str(e.target), _display_damage_amount(e), "（暴击）" if crit else ""], "ffb3bd" if crit else "ffd9c0")
 			_play_damage_fx(e)
 		"card":
 			_append_log(str(e.text))
@@ -2864,12 +3010,16 @@ func _append_log(text: String, color: String = "") -> void:
 	var ink := "#293f52"
 	var line := "[color=%s]▌[/color] [color=%s]%s[/color]" % [bar, ink, text]
 	log_lines.append(line)
+	log_history.append(line)
+	log_idle = 0.0
 	while log_lines.size() > MAX_LOG_LINES:
 		log_lines.pop_front()
 	if log_text != null and is_instance_valid(log_text):
-		log_text.text = str(log_lines.back()) if engine != null and engine.card_mode else "\n".join(log_lines)
+		log_text.text = "\n".join(log_lines.slice(-2)) if engine != null and engine.card_mode else "\n".join(log_lines)
+		if log_history_text != null: log_history_text.text = "\n".join(log_history)
 		var tags:=RegEx.new();tags.compile("\\[/?[^\\]]+\\]")
 		log_text.tooltip_text = tags.sub("\n".join(log_lines),"",true)
+		if engine != null and engine.card_mode: log_box.modulate.a = 1.0
 
 # ---------------------------------------------------------------- 收尾与输入
 
@@ -2883,6 +3033,10 @@ func _on_continue() -> void:
 	queue_free()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(log_history_panel) and log_history_panel.visible and event.is_action_pressed("ui_cancel"):
+		_toggle_log_history()
+		get_viewport().set_input_as_handled()
+		return
 	if not is_active():
 		return
 	# 演出播放中按确认键 = 跳过剩下的事件（状态照常全部结算）

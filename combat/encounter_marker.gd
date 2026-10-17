@@ -15,6 +15,7 @@ extends Node3D
 ## 和 room_3d.gd 里玩家 avatar 的朝向口径一致 —— 这就是「匹配地图坐标轴」。
 
 const GroundShadow = preload("res://combat/ground_shadow.gd")
+const Badge = preload("res://ui/design/pages/world_monster_badge.tscn")
 
 ## 立绘贴地的高度微调：让脚底刚好压在地板上，而不是浮起或陷进去。
 const FOOT_LIFT := 0.04
@@ -34,7 +35,10 @@ var kind := ""
 var record: Dictionary = {}
 var data: Dictionary = {}
 var sprite: Sprite3D
-var caption: Label3D
+var caption: Label
+var caption_status: Label
+var bubble: Panel
+var caption_height := 1.5
 var ring: MeshInstance3D
 var shadow: MeshInstance3D
 var base_y := 0.0
@@ -94,31 +98,33 @@ func configure(owner_controller, spawn_record: Dictionary) -> void:
 	# 「这里可以打」由名字牌上的「可战斗」和走近后的提示条表达，不需要再占一层地面。
 	ring = null
 
-	caption = Label3D.new()
-	caption.font = controller.game._game_font()
-	caption.font_size = 23
-	caption.pixel_size = .010
-	caption.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	caption.position.y = world_height + .48
-	caption.modulate = Color("243a54")
-	caption.outline_size = 3
-	caption.outline_modulate = Color("fff8e7")
-	add_child(caption)
+	bubble = Badge.instantiate()
+	controller.game.district_canvas.add_child(bubble, false, Node.INTERNAL_MODE_FRONT)
+	caption = bubble.get_node("MonsterName")
+	caption_status = bubble.get_node("Availability")
+	caption_height = world_height + .42
 	_refresh_caption()
 
 func _refresh_caption() -> void:
 	if caption == null:
 		return
-	var label := "可战斗" if cooldown <= 0.0 else "暂时避开（%.0f 秒）" % cooldown
-	caption.text = "%s\n%s" % [str(data.get("name", kind)), label]
+	caption.text = str(data.get("name", kind))
+	caption_status.text = "可战斗" if cooldown <= 0.0 else "稍后再战 · %d秒" % ceili(cooldown)
+	bubble.modulate.a = 1.0 if cooldown <= 0.0 else .65
 
 func _process(delta: float) -> void:
 	age += delta
 	if cooldown > 0.0:
 		var before := cooldown
 		cooldown = maxf(0.0, cooldown - delta)
-		if before > 0.0 and cooldown <= 0.0:
+		if ceili(before) != ceili(cooldown):
 			_refresh_caption()
+	if is_instance_valid(bubble):
+		var camera: Camera3D = controller.game.camera
+		var point := global_position + Vector3(0, caption_height, 0)
+		bubble.visible = not defeated and is_visible_in_tree() and controller.game.character_controller.free_world() and not camera.is_position_behind(point)
+		if bubble.visible:
+			bubble.position = camera.unproject_position(point) - Vector2(bubble.size.x * .5, bubble.size.y + 22)
 	# 轻轻上下浮动，提示这是一个可以互动的点
 	if sprite != null and is_instance_valid(sprite):
 		sprite.position.y = base_y + sin(age * 1.5) * 0.035
@@ -130,6 +136,7 @@ func is_available() -> bool:
 
 func retire() -> void:
 	defeated = true
+	if is_instance_valid(bubble):bubble.hide()
 	if is_instance_valid(collision_body):collision_body.collision_layer=0
 	if ring != null and is_instance_valid(ring):
 		ring.hide()
@@ -138,3 +145,6 @@ func retire() -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "scale", Vector3(.1, .1, .1), .35)
 	tween.tween_callback(queue_free)
+
+func _exit_tree() -> void:
+	if is_instance_valid(bubble):bubble.queue_free()

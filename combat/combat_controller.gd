@@ -9,6 +9,8 @@ extends Node
 ## 旧的即时战（怪物追击 / 红圈蓄力 / J K L）已按决定替换为回合制。
 
 const Marker = preload("res://combat/encounter_marker.gd")
+const ProgressCard = preload("res://ui/design/pages/world_trial_progress.tscn")
+const EncounterPrompt = preload("res://ui/design/pages/world_encounter_prompt.tscn")
 const WhaleStyle = preload("res://ui/whale_skin.gd")
 const UiFit = preload("res://ui/ui_fit.gd")
 const BattleScreen = preload("res://battle/battle_screen.gd")
@@ -37,6 +39,8 @@ var screen = null
 var prompt: Panel
 var prompt_title: Label
 var prompt_sub: Label
+var prompt_portrait: TextureRect
+var prompt_kind := ""
 var fight_button: Button
 var avoid_button: Button
 var hud: Panel
@@ -52,13 +56,14 @@ var battle_no := 0
 
 func configure(owner_game) -> void:
 	game = owner_game
-	hud = WhaleStyle.panel(game.district_canvas, Vector2(1034, 349), Vector2(366, 284))
-	UiFit.pin_right(hud, 366, 48, 349, 284)
-	WhaleStyle.label(hud, "潮汐试炼", Vector2(17, 11), Vector2(331, 35), 26)
-	progress_label = WhaleStyle.label(hud, "", Vector2(18, 54), Vector2(330, 33), 19)
-	hint_label = WhaleStyle.label(hud, "靠近怪物点「战斗」。每回合抽 5 张牌、获得 3 点能量；结束回合后敌人行动。", Vector2(18, 92), Vector2(330, 84), 18, WhaleStyle.MUTED)
-	game._button("返回港口", Vector2(17, 184), Vector2(331, 36), hud, func():game.request_travel("city"))
-	practice_button = game._button("再练一次 · 经验照给", Vector2(17, 228), Vector2(331, 40), hud, start_practice)
+	hud = ProgressCard.instantiate()
+	game.district_canvas.add_child(hud)
+	UiFit.pin_right(hud, 366, 48, 118, 146)
+	progress_label = hud.get_node("ProgressText")
+	hint_label = hud.get_node("TrialHint")
+	hud.get_node("ReturnHarbor").pressed.connect(func():game.request_travel("city"))
+	practice_button = hud.get_node("PracticeButton")
+	practice_button.pressed.connect(start_practice)
 	# 试炼场入口按钮：不在试炼场时显示。漏掉它会让玩家没有直接进入的入口
 	entry_button = game._button("潮汐试炼 · 前往训练场", Vector2(48, 394), Vector2(450, 49), game.district_canvas, func():game.request_travel("trial"))
 	_build_prompt()
@@ -67,12 +72,16 @@ func configure(owner_game) -> void:
 # ---------------------------------------------------------------- 遭遇提示
 
 func _build_prompt() -> void:
-	prompt = WhaleStyle.panel(game.district_canvas, Vector2.ZERO, Vector2(640, 152))
-	UiFit.pin_center(prompt, 640, 790, 152)
-	prompt_title = WhaleStyle.label(prompt, "", Vector2(24, 14), Vector2(592, 36), 25)
-	prompt_sub = WhaleStyle.label(prompt, "", Vector2(25, 52), Vector2(592, 26), 17, WhaleStyle.MUTED)
-	fight_button = game._button("战斗", Vector2(24, 92), Vector2(286, 46), prompt, fight)
-	avoid_button = game._button("绕开", Vector2(330, 92), Vector2(286, 46), prompt, avoid)
+	prompt = EncounterPrompt.instantiate()
+	game.district_canvas.add_child(prompt)
+	UiFit.pin_left(prompt, 600, 28, 706, 184)
+	prompt_title = prompt.get_node("EncounterTitle")
+	prompt_sub = prompt.get_node("EncounterDetails")
+	prompt_portrait = prompt.get_node("MonsterPortrait")
+	fight_button = prompt.get_node("FightButton")
+	avoid_button = prompt.get_node("AvoidButton")
+	fight_button.pressed.connect(fight)
+	avoid_button.pressed.connect(avoid)
 	prompt.hide()
 
 func world_changed() -> void:
@@ -148,6 +157,9 @@ func _physics_process(delta: float) -> void:
 	near = _nearest_available() if free and game.location_id == "trial" else null
 	if near != null:
 		prompt_title.text = "遭遇  " + str(near.data.get("name", near.kind))
+		if prompt_kind != str(near.kind):
+			prompt_kind = str(near.kind)
+			prompt_portrait.texture = load(str(near.data.get("map_texture", near.data.get("texture", ""))))
 		prompt_sub.text = "生命 %d · 攻击 %d · 防御 %d" % [
 			int(near.data.get("health", 0)), int(near.data.get("attack", 0)), int(near.data.get("defense", 0))]
 		# 只在「提示从无到有」的那一刻响，不是每帧都响 ——
@@ -170,8 +182,9 @@ func _refresh() -> void:
 	if not visible_now:
 		return
 	var count: int = practice_defeated.size() if practice_mode else game.character_controller.model.state.combat.defeated.size()
-	progress_label.text = "已通关 %d / %d" % [count, int(balance.spawns.size()) + 1]
+	progress_label.text = "已通过 %d / %d 场" % [count, int(balance.spawns.size()) + 1]
 	practice_button.visible = count >= int(balance.spawns.size()) + 1 and pending.is_empty()
+	hud.offset_bottom = hud.offset_top + (184 if practice_button.visible else 146)
 
 # ---------------------------------------------------------------- 战斗
 

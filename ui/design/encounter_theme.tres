@@ -1,0 +1,141 @@
+[gd_resource type="Theme" load_steps=9 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/misans/MiSans-Bold.ttf" id="1_font"]
+
+[sub_resource type="StyleBoxFlat" id="PanelWhite"]
+bg_color = Color(0.973, 0.988, 1, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.64, 0.77, 0.97, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_left = 24
+corner_radius_bottom_right = 24
+shadow_color = Color(0.2, 0.43, 0.78, 0.22)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="Outline"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.98, 0.99, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.68, 0.94, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+
+[sub_resource type="StyleBoxFlat" id="Hover"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.86, 0.93, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.37, 0.56, 0.94, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+
+[sub_resource type="StyleBoxFlat" id="Primary"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35, 0.52, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.57, 0.72, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+
+[sub_resource type="StyleBoxFlat" id="Bubble"]
+content_margin_left = 44.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.24, 0.45, 0.72, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.97, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_left = 22
+corner_radius_bottom_right = 22
+shadow_color = Color(0.3, 0.49, 0.77, 0.3)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="BubbleHover"]
+content_margin_left = 44.0
+content_margin_right = 16.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.34, 0.57, 0.83, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_left = 22
+corner_radius_bottom_right = 22
+
+[sub_resource type="StyleBoxEmpty" id="Clear"]
+
+[resource]
+default_font = ExtResource("1_font")
+default_font_size = 20
+Label/colors/font_color = Color(0.08, 0.28, 0.66, 1)
+Panel/styles/panel = SubResource("PanelWhite")
+Button/colors/font_color = Color(0.08, 0.28, 0.66, 1)
+Button/colors/font_hover_color = Color(0.08, 0.28, 0.66, 1)
+Button/colors/font_pressed_color = Color(0.08, 0.28, 0.66, 1)
+Button/colors/font_disabled_color = Color(0.53, 0.63, 0.78, 1)
+Button/styles/normal = SubResource("Outline")
+Button/styles/hover = SubResource("Hover")
+Button/styles/pressed = SubResource("Hover")
+Button/styles/hover_pressed = SubResource("Hover")
+Button/styles/focus = SubResource("Outline")
+Button/styles/disabled = SubResource("Outline")
+EncounterPrimary/base_type = &"Button"
+EncounterPrimary/colors/font_color = Color(1, 1, 1, 1)
+EncounterPrimary/colors/font_hover_color = Color(1, 1, 1, 1)
+EncounterPrimary/colors/font_pressed_color = Color(1, 1, 1, 1)
+EncounterPrimary/styles/normal = SubResource("Primary")
+EncounterPrimary/styles/hover = SubResource("Primary")
+EncounterPrimary/styles/pressed = SubResource("Primary")
+WorldAction/base_type = &"Button"
+WorldAction/colors/font_color = Color(1, 1, 1, 1)
+WorldAction/colors/font_hover_color = Color(1, 1, 1, 1)
+WorldAction/colors/font_pressed_color = Color(1, 1, 1, 1)
+WorldAction/styles/normal = SubResource("Bubble")
+WorldAction/styles/hover = SubResource("BubbleHover")
+WorldAction/styles/pressed = SubResource("BubbleHover")
+WorldAction/styles/hover_pressed = SubResource("BubbleHover")
+WorldAction/styles/focus = SubResource("BubbleHover")
+WorldAction/styles/disabled = SubResource("Bubble")
+GhostAction/base_type = &"Button"
+GhostAction/styles/normal = SubResource("Clear")
+GhostAction/styles/hover = SubResource("Clear")
+GhostAction/styles/pressed = SubResource("Clear")
+GhostAction/styles/focus = SubResource("Clear")

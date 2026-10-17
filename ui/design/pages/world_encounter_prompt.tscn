@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Theme" path="res://ui/design/encounter_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/encounter_badge_icon.gd" id="2_icon"]
+[ext_resource type="Texture2D" path="res://assets/monsters/shore_crab.png" id="3_preview"]
+
+[node name="WorldEncounterPrompt" type="Panel"]
+offset_right = 600.0
+offset_bottom = 184.0
+theme = ExtResource("1_theme")
+
+[node name="MonsterPortrait" type="TextureRect" parent="."]
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 162.0
+offset_bottom = 156.0
+mouse_filter = 2
+texture = ExtResource("3_preview")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EncounterTitle" type="Label" parent="."]
+offset_left = 180.0
+offset_top = 22.0
+offset_right = 566.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 25
+text = "遭遇  珊瑚蟹"
+mouse_filter = 2
+
+[node name="EncounterDetails" type="Label" parent="."]
+offset_left = 180.0
+offset_top = 61.0
+offset_right = 566.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.4, 0.57, 0.79, 1)
+theme_override_font_sizes/font_size = 17
+text = "生命 42 · 攻击 17 · 防御 3"
+mouse_filter = 2
+
+[node name="FightButton" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 118.0
+offset_right = 300.0
+offset_bottom = 166.0
+text = "战斗"
+
+[node name="AvoidButton" type="Button" parent="."]
+offset_left = 324.0
+offset_top = 118.0
+offset_right = 572.0
+offset_bottom = 166.0
+theme_type_variation = &"EncounterPrimary"
+text = "绕开"
+
+[node name="CornerSparkle" type="Control" parent="."]
+offset_left = 575.0
+offset_top = -9.0
+offset_right = 607.0
+offset_bottom = 23.0
+mouse_filter = 2
+script = ExtResource("2_icon")
+kind = "sparkle"
+tint = Color(0.3, 0.56, 1, 1)

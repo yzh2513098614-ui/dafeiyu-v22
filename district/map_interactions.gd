@@ -168,7 +168,7 @@ func _render(target: Dictionary) -> void:
     primary.tooltip_text+=" · 右键"+("关门" if door.opened else "开门")
     if door.obstructed:primary.tooltip_text+=" · 请离开门扇转动范围"
   "chest":
-   primary.tooltip_text=str(target.node.display_name);primary.text="E 存取物品"
+   primary.tooltip_text=str(target.node.display_name);primary.text="E 调查" if game.location_id=="trial" else "E 存取物品"
   "object":
    if target.node.has_method("map_action"):
     primary.tooltip_text=str(target.node.get_meta("interaction_title","附近设施"))

@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" path="res://assets/ui/arrow_down.svg" id="19_ss47k"]
 [ext_resource type="Texture2D" path="res://assets/ui/arrow_up.svg" id="20_wx5xd"]
 
+[ext_resource type="Theme" path="res://ui/design/encounter_theme.tres" id="encounter_theme"]
+
 [sub_resource type="Theme" id="Theme_b765n"]
 default_font = ExtResource("1_v7esx")
 
@@ -1037,15 +1039,11 @@ offset_bottom = 500.0
 tooltip_text = "餐厅双门冷藏柜 · 5件 · 右键阅读便签"
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_okwp6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i7vaq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_p1lip")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h3rth")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_mef1k")
-theme_override_styles/focus = SubResource("StyleBoxFlat_lj334")
 text = "E 存取物品"
 text_overrun_behavior = 3
 metadata/design_id = "2"
 metadata/design_native_class = "Button"
-metadata/design_edit_text = true
+metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme = ExtResource("encounter_theme")
+theme_type_variation = &"WorldAction"

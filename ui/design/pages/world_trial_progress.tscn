@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://ui/design/encounter_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/encounter_badge_icon.gd" id="2_icon"]
+
+[node name="TrialProgressCard" type="Panel"]
+offset_right = 366.0
+offset_bottom = 146.0
+theme = ExtResource("1_theme")
+
+[node name="TrialTitle" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 14.0
+offset_right = 334.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 23
+text = "潮汐试炼场"
+mouse_filter = 2
+
+[node name="ProgressText" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 66.0
+offset_right = 316.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 18
+text = "已通过 1 / 5 场"
+mouse_filter = 2
+
+[node name="TrialHint" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 101.0
+offset_right = 316.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.37, 0.55, 0.8, 1)
+text = "靠近怪物并战斗"
+mouse_filter = 2
+
+[node name="ReturnHarbor" type="Button" parent="."]
+offset_left = 316.0
+offset_top = 64.0
+offset_right = 358.0
+offset_bottom = 128.0
+theme_type_variation = &"GhostAction"
+tooltip_text = "返回鲸落港"
+
+[node name="Chevron" type="Control" parent="ReturnHarbor"]
+offset_left = 11.0
+offset_top = 22.0
+offset_right = 31.0
+offset_bottom = 42.0
+mouse_filter = 2
+script = ExtResource("2_icon")
+kind = "chevron"
+tint = Color(0.36, 0.55, 0.88, 1)
+
+[node name="PracticeButton" type="Button" parent="."]
+visible = false
+offset_left = 72.0
+offset_top = 138.0
+offset_right = 342.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 16
+text = "再练一次 · 经验照给"
+
+[node name="TrialSparkle" type="Control" parent="."]
+offset_left = 23.0
+offset_top = 14.0
+offset_right = 53.0
+offset_bottom = 44.0
+mouse_filter = 2
+script = ExtResource("2_icon")
+kind = "sparkle"
+tint = Color(0.22, 0.47, 0.9, 1)
+
+[node name="ProgressSparkle" type="Control" parent="."]
+offset_left = 31.0
+offset_top = 76.0
+offset_right = 45.0
+offset_bottom = 90.0
+mouse_filter = 2
+script = ExtResource("2_icon")
+kind = "sparkle"
+tint = Color(0.5, 0.69, 1, 1)
+
+[node name="Divider" type="ColorRect" parent="."]
+offset_left = 70.0
+offset_top = 55.0
+offset_right = 342.0
+offset_bottom = 57.0
+mouse_filter = 2
+color = Color(0.79, 0.87, 1, 1)

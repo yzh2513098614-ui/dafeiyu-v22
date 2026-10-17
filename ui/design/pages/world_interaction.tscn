@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" path="res://assets/ui/arrow_down.svg" id="19_dko0g"]
 [ext_resource type="Texture2D" path="res://assets/ui/arrow_up.svg" id="20_2bdl5"]
 
+[ext_resource type="Theme" path="res://ui/design/encounter_theme.tres" id="encounter_theme"]
+
 [sub_resource type="Theme" id="Theme_nvoy6"]
 default_font = ExtResource("1_p41nr")
 
@@ -1014,15 +1016,11 @@ offset_bottom = 440.0
 tooltip_text = "走出海蓝餐厅 · 右键开门"
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_gk0vw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jtb2s")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tr21k")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kjjk2")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_6qgmt")
-theme_override_styles/focus = SubResource("StyleBoxFlat_0mqvc")
 text = "E 开门"
 text_overrun_behavior = 3
 metadata/design_id = "0"
 metadata/design_native_class = "Button"
-metadata/design_edit_text = true
+metadata/design_edit_text = false
 metadata/design_note = "只编辑视觉属性。文本、禁用、选中与数值由游戏数据更新。"
+theme = ExtResource("encounter_theme")
+theme_type_variation = &"WorldAction"
