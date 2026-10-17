@@ -1,5 +1,5 @@
 extends "res://district/harbor_terraces_controller.gd"
-## Three physical floors, open stairwells, and automatic upper-floor cutaways.
+## Four physical floors, open stairwells, and automatic upper-floor cutaways.
 const Home=preload("res://district/whale_home_map.gd")
 const CONTACT=preload("res://assets/whale_home/contact.gdshader")
 const Props=preload("res://assets/whale_home/pastel_props.gd")
@@ -20,6 +20,7 @@ var coastal_materials: Array[ShaderMaterial]=[]
 var room_wall_tops: Array=[]
 var exterior_showcase := false
 var overview_before_exterior := false
+var camera_angle_before_exterior := -28.0
 
 func is_active() -> bool:return is_instance_valid(level) and game.location_id=="whale_home"
 
@@ -61,7 +62,7 @@ func leave() -> void:
 	game.atmosphere.contact_shading.material_override.shader=previous_contact
 	game.atmosphere._apply_lighting()
 
-func overview_center() -> Vector3:return Vector3(0,4.5,-4.5)
+func overview_center() -> Vector3:return Vector3(0,5.0,-4.0)
 
 func set_layers() -> void:
 	if not is_active():return
@@ -70,10 +71,15 @@ func set_layers() -> void:
 	if exterior:exterior.visible=reveal_all
 	var tower: Node3D = level.get_node_or_null("TowerExterior")
 	var p: Vector3 = game.player.position
-	var top_floor: bool = p.y > Home.HEIGHT*2-.65
-	var indoors: bool = Home.Rooftop.TOWER.has_point(Vector2(p.x,p.z))
-	if tower:tower.visible=reveal_all or (top_floor and not indoors)
-	for i in 3:level.get_node("Floor"+str(i)).visible=reveal_all or game.player.position.y+1.0>=i*Home.HEIGHT
+	var upper_floor: bool = p.y > Home.HEIGHT*2-.65
+	var indoors: bool = p.y < Home.Rooftop.DECK_HEIGHT-.5 and Home.Rooftop.TOWER.has_point(Vector2(p.x,p.z))
+	indoors=indoors or (p.y>=Home.Rooftop.DECK_HEIGHT-.5 and p.y<Home.Rooftop.DECK_HEIGHT+3.0 and (level.get_meta("covered_roof_gallery") as Rect2).has_point(Vector2(p.x,p.z)))
+	if tower:tower.visible=reveal_all or (upper_floor and not indoors)
+	var floor_closure: Node3D=level.get_meta("observatory_floor_closure")
+	floor_closure.visible=reveal_all or p.y+1.0>=Home.HEIGHT*3.0 or (tower!=null and tower.visible)
+	for i in 4:level.get_node("Floor"+str(i)).visible=reveal_all or game.player.position.y+1.0>=i*Home.HEIGHT
+	var deck: Node3D=level.get_node_or_null("RoofDeck")
+	if deck:deck.visible=reveal_all or game.player.position.y+1.0>=Home.Rooftop.DECK_HEIGHT
 	# The complete roof is part of ExteriorVilla; keep the old cutaway ribs hidden.
 	level.get_node("Roof").visible=false
 	for facility in facilities:facility.visible=reveal_all or game.player.position.y+1.0>=float(facility.get_meta("floor_height",0.0))
@@ -94,12 +100,15 @@ func _update_exterior_showcase() -> void:
 	if outside:
 		exterior_showcase=true
 		overview_before_exterior=game.overview_mode
+		camera_angle_before_exterior=game.camera_angle
+		game.camera_angle=-32.0
 		game.overview_mode=true
 		game.view_size=game.overview_size
 		game.view_center=overview_center()
 		cutaway=false
 	else:
 		exterior_showcase=false
+		game.camera_angle=camera_angle_before_exterior
 		game.overview_mode=overview_before_exterior
 		game.view_size=game.overview_size if game.overview_mode else 15.0
 		game.view_center=overview_center() if game.overview_mode else game.player.position
@@ -139,12 +148,12 @@ func _process(delta: float) -> void:
 		halo.visible=game.atmosphere.effects and is_instance_valid(source) and source.is_visible_in_tree()
 	if hour>=8.0 and hour<17.0:
 		game.atmosphere.environment.background_color=Color("dcede5")
-		game.atmosphere.environment.ambient_light_color=Color("d3e4d8")
-		game.atmosphere.environment.ambient_light_energy=.35
+		game.atmosphere.environment.ambient_light_color=Color("d9e3ee")
+		game.atmosphere.environment.ambient_light_energy=.40
 		game.atmosphere.environment.ambient_light_sky_contribution=.32
-		game.atmosphere.sun.light_energy=.40
+		game.atmosphere.sun.light_energy=.52
 		game.atmosphere.sun.light_color=Color("fff2dc")
-		game.atmosphere.sun.shadow_opacity=.78
+		game.atmosphere.sun.shadow_opacity=.68
 	# Read the final map lighting after its daytime override, not fixed shader colours.
 	water.set_shader_parameter("sun_direction",game.atmosphere.sun.global_basis.z.normalized())
 	water.set_shader_parameter("sun_colour",game.atmosphere.sun.light_color)
@@ -189,7 +198,7 @@ func physics(delta: float) -> void:
 	_update_exterior_showcase()
 	set_layers()
 	var y: float=game.player.position.y
-	if y>.65 and absf(y-Home.HEIGHT)>.6 and absf(y-Home.HEIGHT*2)>.6:
-		game.zone_label.text="当前："+("1F ↔ 2F · 海风木楼梯" if y<Home.HEIGHT else "2F ↔ 3F · 星光木楼梯")
+	if y>.65 and absf(y-Home.HEIGHT)>.6 and absf(y-Home.HEIGHT*2)>.6 and absf(y-Home.HEIGHT*3)>.6:
+		game.zone_label.text="当前："+("1F ↔ 2F · 海风木楼梯" if y<Home.HEIGHT else ("2F ↔ 3F · 星光木楼梯" if y<Home.HEIGHT*2 else ("3F ↔ 4F · 月升观景楼梯" if y<Home.HEIGHT*3 else "4F ↔ 天台 · 灯塔楼梯")))
 	if notice_time>0:game.hint.text=notice
-	elif not game.dialog_open:game.hint.text="WASD 漫步 · 楼梯直达三层 · E 开门 / 家具交互 · H 楼层切面 · Z 总览 · M 导览"
+	elif not game.dialog_open:game.hint.text="WASD 漫步 · 楼梯直达四层与天台 · E 开门 / 家具交互 · H 楼层切面 · Z 总览 · M 导览"

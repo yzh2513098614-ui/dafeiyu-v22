@@ -6,8 +6,8 @@
   "tide_period": 90.0,
   "shore_wave_period": 7.5,
   "wet_memory_seconds": 12.0,
-  "island_half_size": [42.0, 35.0],
-  "island_center": [0.0, -10.0],
+  "island_half_size": [54.0, 44.0],
+  "island_center": [0.0, -9.0],
   "waves": [
     {"vector": [0.37, 0.25], "speed": 0.70, "weight": 0.60},
     {"vector": [-0.21, 0.53], "speed": 0.57, "weight": 0.28},

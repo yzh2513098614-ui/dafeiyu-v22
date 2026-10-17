@@ -1,6 +1,6 @@
 extends RefCounted
-## A fully modelled blue-whale home. Coordinates are metres; the three floors
-## share a real grounded player and open stairwells rather than teleport zones.
+## A fully modelled blue-whale home. Coordinates are metres; four interior
+## floors and the roof deck share one grounded player and real stairwells.
 const Geo=preload("res://district/story_geometry.gd")
 const Harbor=preload("res://district/harbor_terraces.gd")
 const Shape=preload("res://district/space_shape.gd")
@@ -29,6 +29,7 @@ const Interiors=preload("res://district/whale_home_interiors.gd")
 const Outdoors=preload("res://district/whale_home_outdoors.gd")
 const Rooftop=preload("res://district/whale_home_rooftop.gd")
 const Exterior=preload("res://district/whale_home_exterior.gd")
+const Estate=preload("res://district/whale_home_estate.gd")
 const PORCH=preload("res://models/whale_home/porch_arch.tscn")
 const WINDOW=preload("res://models/whale_home/round_window.tscn")
 const ROOF_TILE=preload("res://models/whale_home/curved_roof_tile.tscn")
@@ -43,10 +44,11 @@ const PLANTER=preload("res://models/whale_home/flower_planter.tscn")
 const DOCK_POST=preload("res://models/whale_home/dock_post.tscn")
 const ROWBOAT=preload("res://models/whale_home/whale_rowboat.tscn")
 const HEIGHT := 5.2
-const FLOOR_RECTS = [Rect2(-28,-32,56,40),Rect2(-28,-34,56,36),Rooftop.PLATFORM]
-const ISLAND_RECT = Rect2(-42,-45,84,70)
+const FLOOR_RECTS = [Rect2(-28,-32,56,40),Rect2(-28,-34,56,36),Rooftop.PLATFORM,Rooftop.OBSERVATORY]
+const ISLAND_RECT = Rect2(-54,-53,108,88)
+const DOCK_SHIFT := 10.0
 const SIDE_GARDEN_OFFSET := 14.0
-const DOCK_RECTS = [Rect2(-3,24,6,12),Rect2(-22,24,5.5,10),Rect2(-22,28,19,3.0)]
+const DOCK_RECTS = [Rect2(-3,34,6,12),Rect2(-22,34,5.5,10),Rect2(-22,38,19,3.0)]
 const WHITE=Color("f3eedb")
 const BLUE=Color("639cdb")
 const DEEP=Color("3a71b5")
@@ -69,6 +71,8 @@ var cloth_cache: Dictionary = {}
 var sphere_mesh: SphereMesh
 var plant_rim_mesh: TorusMesh
 var star_mesh: ArrayMesh
+var petal_mesh: ArrayMesh
+var soft_ball_mesh: SphereMesh
 var blade_cache: Dictionary = {}
 var furniture_count := 0
 var detail_count := 0
@@ -108,6 +112,12 @@ func _sphere(parent: Node3D, point: Vector3, size: Vector3, color: Color) -> Mes
 	var mesh:=MeshInstance3D.new();mesh.mesh=sphere_mesh;mesh.material_override=Geo.material(color)
 	mesh.position=point;mesh.scale=size;parent.add_child(mesh);return mesh
 
+func _soft_ball(parent: Node3D, point: Vector3, scale_value: Vector3, color: Color) -> MeshInstance3D:
+	if not soft_ball_mesh:
+		soft_ball_mesh=SphereMesh.new();soft_ball_mesh.radius=.5;soft_ball_mesh.height=1.0;soft_ball_mesh.radial_segments=10;soft_ball_mesh.rings=5
+	var mesh:=MeshInstance3D.new();mesh.mesh=soft_ball_mesh;mesh.material_override=Geo.material(color)
+	mesh.position=point;mesh.scale=scale_value;parent.add_child(mesh);return mesh
+
 func _cloth(node: MeshInstance3D, color: Color, pattern: int=0) -> void:
 	var key: String=str(color)+str(pattern)
 	if not cloth_cache.has(key):
@@ -128,7 +138,7 @@ func _art(parent: Node3D, point: Vector3, size: Vector2, rug: bool=false) -> voi
 		image.rotation.x=-PI*.5;image.position=Vector3(point.x,floor_height+.040,point.z)
 		var rugs: Array=level.get_meta("rug_surfaces",[]);rugs.append(image.position);level.set_meta("rug_surfaces",rugs)
 
-func _star(parent: Node3D, point: Vector3, size: float=.4) -> void:
+func _star(parent: Node3D, point: Vector3, size: float=.4, color: Color=GOLD) -> void:
 	if not star_mesh:
 		var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 		var outline: Array[Vector2] = []
@@ -140,7 +150,7 @@ func _star(parent: Node3D, point: Vector3, size: float=.4) -> void:
 			Geo._face(tool,[Vector3(0,0,-.06),Vector3(b.x,b.y,-.06),Vector3(a.x,a.y,-.06)],Vector3.FORWARD)
 			Geo._face(tool,[Vector3(a.x,a.y,-.06),Vector3(b.x,b.y,-.06),Vector3(b.x,b.y,.06),Vector3(a.x,a.y,.06)],Vector3(a.x+b.x,a.y+b.y,0).normalized())
 		star_mesh=tool.commit()
-	var node:=MeshInstance3D.new();node.mesh=star_mesh;node.position=point;node.scale=Vector3.ONE*size;node.material_override=Geo.material(GOLD);parent.add_child(node)
+	var node:=MeshInstance3D.new();node.mesh=star_mesh;node.position=point;node.scale=Vector3.ONE*size;node.material_override=Geo.material(color);parent.add_child(node)
 
 func _blade(outlines: Array, thickness: float, axis: Vector3) -> ArrayMesh:
 	var key: String=str(outlines)+":"+str(thickness)+":"+str(axis)
@@ -204,9 +214,20 @@ func dorsal_outline() -> Array[Vector2]:
 	return [Vector2(.16,0),Vector2(.06,.16),Vector2(-.10,.26),Vector2(-.22,.18),Vector2(-.20,.04)]
 
 func _flower(parent: Node3D, point: Vector3, color: Color=Color("f8c6d1"), size: float=.20) -> void:
-	for i in 5:
-		var a: float=i*TAU/5.;_sphere(parent,point+Vector3(cos(a)*size*.40,0,sin(a)*size*.40),Vector3(size*.65,size*.22,size*.65),color)
-	_sphere(parent,point+Vector3.UP*size*.1,Vector3.ONE*size*.35,GOLD)
+	# Five radiating petals extruded as one cached blade ring plus a layered
+	# low-poly core: reads as a real blossom from the dollhouse camera angle.
+	if not petal_mesh:
+		var outlines: Array=[]
+		for i in 5:
+			var a: float=i*TAU/5.;var ring: Array[Vector2]=[]
+			for p: Vector2 in [Vector2(.04,.02),Vector2(.16,.12),Vector2(.27,.32),Vector2(.30,.58),Vector2(.21,.82),Vector2(.07,.97),Vector2(-.05,.86),Vector2(-.18,.60),Vector2(-.22,.32),Vector2(-.13,.10)]:
+				ring.append(Vector2(-p.x*sin(a)+p.y*cos(a),-p.x*cos(a)-p.y*sin(a)))
+			outlines.append(ring)
+		petal_mesh=_blade(outlines,.05,Vector3.UP)
+	var node:=MeshInstance3D.new();node.mesh=petal_mesh;node.material_override=Geo.material(color)
+	node.position=point+Vector3.UP*size*.06;node.scale=Vector3.ONE*size;parent.add_child(node)
+	_soft_ball(parent,point+Vector3.UP*size*.08,Vector3(size*.52,size*.13,size*.52),Color("ffd98c"))
+	_soft_ball(parent,point+Vector3.UP*size*.13,Vector3.ONE*size*.24,GOLD)
 
 func _plant(parent: Node3D, point: Vector3, size: float=1.0, flowers: bool=false) -> void:
 	var root: Node3D=_furniture(parent,"FlowerPot" if flowers else "HousePlant",point);root.scale=Vector3.ONE*size
@@ -291,7 +312,7 @@ func _rail(parent: Node3D, a: Vector3, b: Vector3, glass_panel: bool=true) -> vo
 func _curved_balcony(parent: Node3D, left: float, right: float, front: float, height: float, zone_name: String) -> void:
 	var polygon: PackedVector2Array=PackedVector2Array([Vector2(left,front-.03)])
 	for i in 25:
-		var t: float=i/24.;polygon.append(Vector2(lerpf(left,right,t),front+sin(t*PI)*3.5))
+		var t: float=i/24.;polygon.append(Vector2(lerpf(left,right,t),front+sin(t*PI)*5.5))
 	polygon.append(Vector2(right,front-.03))
 	var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var indices: PackedInt32Array=Geometry2D.triangulate_polygon(polygon)
@@ -310,10 +331,10 @@ func _curved_balcony(parent: Node3D, left: float, right: float, front: float, he
 	for p in polygon:vertices.append(Vector3(p.x,height+.025,p.y));vertices.append(Vector3(p.x,height-.25,p.y))
 	convex.points=vertices;hit.shape=convex;body.add_child(hit);parent.add_child(body);body.set_meta("walkable_top",height+.025)
 	var slabs: Array=level.get_meta("walkable_slabs");slabs.append(body);level.set_meta("walkable_slabs",slabs)
-	var rect:=Rect2(left,front-.05,right-left,3.6)
+	var rect:=Rect2(left,front-.05,right-left,5.6)
 	zones.append({"id":zone_name,"name":("2F" if height<HEIGHT*2 else "3F")+" · 弧形海景露台","rect":rect,"polygon":polygon,"height":height,"center":Vector3(rect.get_center().x,height,rect.get_center().y),"paths":[],"door_clear":[]})
 
-func _wall(parent: Node3D, rect: Rect2, height: float, partition: bool=false) -> void:
+func _wall(parent: Node3D, rect: Rect2, height: float) -> void:
 	var back: Node3D=_group(parent,"BluePaneledBackWall",Vector3(rect.get_center().x,height,rect.position.y))
 	_box(back,Vector3(rect.size.x,3.8,.24),Vector3(0,1.90,0),WHITE,0,.025)
 	for i in ceili(rect.size.x/.70):
@@ -326,7 +347,6 @@ func _wall(parent: Node3D, rect: Rect2, height: float, partition: bool=false) ->
 	_box(back,Vector3(rect.size.x+.16,.08,.51),Vector3(0,4.055,.025),MINT,0,.015)
 	_coll(back,Vector3(rect.size.x,3.95,.28),Vector3(0,1.95,0))
 	WallDetails.back_wall(self,back,rect.size.x)
-	if partition:return
 	for side in [-1.0,1.0]:
 		var side_wall: Node3D=_group(parent,"LowSideWall",Vector3(rect.position.x if side<0 else rect.end.x,height,rect.get_center().y))
 		_box(side_wall,Vector3(.23,1.10,rect.size.y),Vector3(0,.55,0),WHITE,0,.024)
@@ -418,11 +438,14 @@ func _kitchen(parent: Node3D) -> void:
 	for i in 6:_sphere(island,Vector3(.40+sin(i*2.1)*.20,1.40+float(i%2)*.06,cos(i*2.1)*.20),Vector3(.16,.14,.16),Color("f2bf69") if i%2 else Color("e88c83"))
 	_box(island,Vector3(.8,.055,.48),Vector3(-1.12,1.28,0),WOOD,1,.04)
 	_box(island,Vector3(.5,.02,.3),Vector3(-1.12,1.325,0),WHITE,0,.02)
-	_chair(parent,Vector3(-6.2,0,-3.35),0,true);_chair(parent,Vector3(-3.8,0,-3.35),0,true)
+	# Move the loose stools to the baking bench, clear of the kitchen doorway.
+	_chair(parent,Vector3(19,0,-25.1),0,true);_chair(parent,Vector3(21,0,-25.1),0,true)
 	_fixture(parent,Vector3(-6.1,3.45,-5.0));_fixture(parent,Vector3(-3.6,3.45,-5.0))
 
 func _dining(parent: Node3D) -> void:
-	var table: Node3D=_table(parent,Vector3(2.0,0,1.6),4.4,2.55)
+	# The four-seat dining room now occupies the east half of the rear hall.
+	var center := Vector3(8,0,-23.3)
+	var table: Node3D=_table(parent,center,4.4,2.55)
 	for x in [-1.3,1.3]:
 		for z in [-.73,.73]:
 			Geo.cylinder(table,.35,.025,Vector3(x,1.14,z),WHITE)
@@ -430,13 +453,13 @@ func _dining(parent: Node3D) -> void:
 			_cup(table,Vector3(x+.37,1.15,z),WHITE)
 			Geo.rod(table,Vector3(x-.47,1.15,z-.2),Vector3(x-.47,1.15,z+.2),.012,GOLD)
 	_plant(table,Vector3(0,1.13,0),.45,true)
-	for x in [.7,3.3]:
-		_chair(parent,Vector3(x,0,3.72),0);_chair(parent,Vector3(x,0,-.53),180)
-	var tea: Action=_action("tea","dining_tea","鲸鱼茶桌 · 海盐花茶",Vector3(2,0,1.6),0)
+	for x in [-1.3,1.3]:
+		_chair(parent,center+Vector3(x,0,2.12),0);_chair(parent,center+Vector3(x,0,-2.13),180)
+	var tea: Action=_action("tea","dining_tea","后厅餐桌 · 海盐花茶",center,0)
 	var teapot: Node3D=_group(tea,"Teapot",Vector3(0,1.19,.72));_sphere(teapot,Vector3(0,.16,0),Vector3(.48,.32,.42),BLUE)
 	Geo.cylinder(teapot,.11,.04,Vector3(0,.34,0),GOLD);Geo.rod(teapot,Vector3(.20,.16,0),Vector3(.36,.28,0),.06,BLUE);tea.parts.append(teapot)
-	_fixture(parent,Vector3(2,3.40,1.6))
-	var pantry: Action=_action("cabinet","pantry","餐具收藏柜",Vector3(6.8,0,-9.6),0)
+	_fixture(parent,center+Vector3(0,3.40,0))
+	var pantry: Action=_action("cabinet","pantry","餐具收藏柜",Vector3(5.4,0,-6),0)
 	pantry.set_meta("furniture_finish","cabinet")
 	_finish_box(pantry,Vector3(2.8,2.9,1.15),Vector3(0,1.45,0),"cabinet","body",.05)
 	for y in [.4,1.15,1.9,2.63]:
@@ -494,7 +517,7 @@ func _study(parent: Node3D) -> void:
 	StudyDetails.computer(self,desk)
 	_cup(desk,Vector3(-1.7,1.15,.36),BLUE);_fixture(desk,Vector3(1.76,1.16,-.33),false)
 	_chair(parent,Vector3(5.8,h,-10.3),0)
-	_shelf(parent,Vector3(10.8,h,-14.9),4.15,3.4)
+	_shelf(parent,Vector3(21,h,-5.2),4.15,3.4)
 	_porthole(parent,Vector3(5.2,h+2.8,-15.78),1.04)
 	var root: Node3D=_furniture(parent,"ReadingSideboard",Vector3(5.1,h,-5.9))
 	root.set_meta("furniture_finish","cream_cabinet")
@@ -509,7 +532,7 @@ func _living(parent: Node3D) -> void:
 	_aquarium(parent);_study(parent)
 	var h: float=HEIGHT
 	_art(parent,Vector3(-2.8,h+.055,-6.0),Vector2(7.7,5.2),true)
-	_sofa(parent,Vector3(-3.0,h,-9.4),5.9)
+	_sofa(parent,Vector3(-3.6,h,-10.2),5.9)
 	var table: Node3D=_table(parent,Vector3(-2.8,h,-5.2),3.7,1.7,.60,"tea_table")
 	for x in [-1.15,0,1.15]:_cup(table,Vector3(x,.69,0),WHITE)
 	Geo.cylinder(table,.35,.05,Vector3(.1,.70,.22),GOLD)
@@ -519,7 +542,7 @@ func _living(parent: Node3D) -> void:
 	_plant(parent,Vector3(-7.2,h,-10.5),1.0,true)
 	_plant(parent,Vector3(7.8,h,-4.5),1.2,true)
 	_fixture(parent,Vector3(-6.1,h+3.5,-8.0));_fixture(parent,Vector3(0,h+3.5,-8.0))
-	for x in [-4.8,0,4.8]:
+	for x in [-2.9,0,4.8]:
 		var root: Node3D=_furniture(parent,"BalconyPlanter",Vector3(x,h,1.1))
 		_box(root,Vector3(2.0,.42,.64),Vector3(0,.21,0),WHITE,0,.055)
 		for i in 4:_plant(root,Vector3(-.70+i*.47,.36,0),.45,true)
@@ -534,15 +557,15 @@ func _bedroom(parent: Node3D) -> void:
 	_action("bed","whale_bed","柔软鲸鱼床 · 海景卧室",Vector3(-2.6,h,-9.95),h)
 	for x in [-6.4,1.12]:
 		# The west stair landing needs a full-width route past the bed.
-		var point: Vector3=Vector3(-5.8,h,-18.15) if x<0 else Vector3(x,h,-14.4)
+		var point: Vector3=Vector3(-4.8,h,-18.9) if x<0 else Vector3(x,h,-14.4)
 		var nightstand: Node3D=_cabinet(parent,point,1.18,.82,"cream_cabinet")
 		_fixture(nightstand,Vector3(0,.89,-.1),false);_cup(nightstand,Vector3(.26,.9,.28))
 	_porthole(parent,Vector3(-2.7,h+2.83,-19.8),1.20)
-	var dresser: Node3D=_cabinet(parent,Vector3(6.0,h,-18.8),4.2,1.3,"cream_cabinet")
-	_art(parent,Vector3(6.0,h+2.7,-19.82),Vector2(2.1,1.8))
+	var dresser: Node3D=_cabinet(parent,Vector3(5.6,h,-18.8),4.2,1.3,"cream_cabinet")
+	_art(parent,Vector3(5.6,h+2.7,-19.82),Vector2(2.1,1.8))
 	_plant(dresser,Vector3(1.34,1.4,0),.62,true)
 	_whale(dresser,Vector3(-.7,1.39,0),.39)
-	_shelf(parent,Vector3(11.4,h,-18.8),2.0,3.5)
+	_shelf(parent,Vector3(12.2,h,-16.2),2.0,3.5)
 	for i in 5:
 		var x: float=-6.0+i*1.68
 		_fixture(parent,Vector3(x,h+3.20,-18.5),true,true)
@@ -556,33 +579,35 @@ func _telescope(parent: Node3D) -> void:
 	_chair(parent,Vector3(6.1,h,-8.8),28,true)
 	var tea: Node3D=_table(parent,Vector3(6.5,h,-5.4),2.0,1.4,.66,"tea_table");_cup(tea,Vector3(-.35,.76,0),BLUE);_books(tea,Vector3(.20,.75,-.05),3)
 	Optics.eyepiece_tray(self,tea)
-	_sofa(parent,Vector3(10.8,h,-4.1),2.8,-28)
+	_sofa(parent,Vector3(11.0,h,-6.4),2.8,-28)
 	_plant(parent,Vector3(12.8,h,-8.0),1.1,true)
 	_whale(parent,Vector3(2.8,h,-4.6),.44,15)
 	_fixture(parent,Vector3(10.6,h+3.2,-5.2),true,true)
 	_action("lamp","star_lights","星星灯串开关",Vector3(11.2,h,-5.8),h)
 
 func _entry_details(parent: Node3D) -> void:
-	var bench: Node3D=_furniture(parent,"EntryBenchAndShoeStorage",Vector3(-10.6,0,1.1))
+	var bench: Node3D=_furniture(parent,"EntryBenchAndShoeStorage",Vector3(-11.6,0,1.1))
 	EntryDetails.shoe_bench(self,bench)
 	_coll(bench,Vector3(3.8,.8,1.12),Vector3(0,.4,0))
 	var rack: Node3D=_furniture(parent,"BrassCoatTree",Vector3(-12.8,0,3.1))
 	EntryDetails.coat_tree(self,rack)
 	_coll(rack,Vector3(.80,2.6,.8),Vector3(0,1.3,0))
-	var dresser: Node3D=_cabinet(parent,Vector3(-6.2,0,5.7),2.25,.90,"cream_cabinet")
+	var dresser: Node3D=_cabinet(parent,Vector3(-25,0,2.5),2.25,.90,"cream_cabinet")
+	dresser.set_meta("home_storage_id","cabinet_m6p2_0p0_6p6")
 	_plant(dresser,Vector3(.62,1.02,.0),.47,true);_books(dresser,Vector3(-.82,1.02,0),4)
 	_whale(dresser,Vector3(.03,.99,.13),.25)
-	var baking: Node3D=_table(parent,Vector3(4.1,0,-4.6),3.6,1.7,1.14,"desk")
+	var baking: Node3D=_table(parent,Vector3(20,0,-26.5),3.6,1.7,1.14,"desk")
 	_box(baking,Vector3(1.35,.07,.86),Vector3(-.55,1.25,0),WOOD,1,.03)
 	for i in 5:_star(baking,Vector3(-1.03+i*.21,1.315,.09),.16)
 	Geo.rod(baking,Vector3(.36,1.27,.32),Vector3(1.3,1.27,.32),.075,WOOD)
 	Geo.cylinder(baking,.26,.25,Vector3(.55,1.32,-.22),WHITE,.29)
 	for i in 3:Geo.cylinder(baking,.12,.25,Vector3(-.80+i*.38,.23,0),LIGHT)
-	var laundry: Node3D=_furniture(parent,"WhaleLaundryStation",Vector3(-11.3,0,-3.2))
+	var laundry: Node3D=_furniture(parent,"WhaleLaundryStation",Vector3(-25.4,0,-27))
 	EntryDetails.washer(self,laundry)
 	_coll(laundry,Vector3(1.58,1.90,1.34),Vector3(0,.95,0))
 
 func _bathroom(parent: Node3D) -> void:
+	parent=_group(parent,"WhaleBathroom",Vector3(0,0,-12))
 	var h: float=HEIGHT*2
 	var bath: Node3D=_furniture(parent,"WhaleFootedBath",Vector3(-11.25,h,-18.40))
 	Fixtures.bath(self,bath)
@@ -590,13 +615,13 @@ func _bathroom(parent: Node3D) -> void:
 	var vanity: Node3D=_cabinet(parent,Vector3(-7.0,h,-18.7),2.1,1.02)
 	Fixtures.vanity_sink(self,vanity)
 	_porthole(parent,Vector3(-7.0,h+2.75,-19.8),.70)
-	var cabinet: Node3D=_cabinet(parent,Vector3(-6.5,h,-7.1),1.55,2.15)
+	var cabinet: Node3D=_cabinet(parent,Vector3(-11.7,h,-12.4),1.55,2.15)
 	for i in 3:
 		var towel: MeshInstance3D=_box(cabinet,Vector3(1.25,.10,.60),Vector3(0,2.28+i*.11,0),BLUE if i%2 else WHITE,0,.03);_cloth(towel,BLUE if i%2 else WHITE,1)
 
 func _hobby(parent: Node3D) -> void:
 	var h: float=HEIGHT
-	var cart: Node3D=_furniture(parent,"WhaleTeaTrolley",Vector3(1.65,h,-9.15))
+	var cart: Node3D=_furniture(parent,"WhaleTeaTrolley",Vector3(1.1,h,-12.2))
 	StudyDetails.tea_trolley(self,cart)
 	_coll(cart,Vector3(1.35,1.08,.82),Vector3(0,.54,0))
 	var hobby: Node3D=_table(parent,Vector3(6.0,h,-2.0),3.1,1.5,.82,"craft_table")
@@ -607,7 +632,7 @@ func _hobby(parent: Node3D) -> void:
 	for i in 5:Geo.rod(hobby,Vector3(1.02,1.08,-.24),Vector3(1.02+sin(i)*.12,1.51, -.24+cos(i)*.10),.012,Color("dd99ad") if i%2 else BLUE)
 	_chair(parent,Vector3(5.6,h,-.40),0,true)
 	_plant(parent,Vector3(3.50,h,-2.13),.95,true)
-	var shelf: Node3D=_shelf(parent,Vector3(11.4,h,-10.8),3.2,1.9,"display_shelf")
+	var shelf: Node3D=_shelf(parent,Vector3(21,h,-1.5),3.2,1.9,"display_shelf")
 	_art(shelf,Vector3(.6,2.64,-.25),Vector2(1.10,1.1))
 	var basket: Node3D=_furniture(parent,"CushionBasket",Vector3(-7.35,h,-12.0))
 	EntryDetails.cushion_basket(self,basket)
@@ -629,9 +654,9 @@ func _annexes() -> void:
 	var pot: Node3D=_group(tea,"AnnexTeapot",Vector3(0,.85,0))
 	_sphere(pot,Vector3.ZERO,Vector3(.5,.35,.44),BLUE);Geo.cylinder(pot,.11,.05,Vector3(0,.19,0),GOLD)
 	tea.parts.append(pot)
-	var baking: Node3D=_table(first,Vector3(0,0,-23.3),6.4,3.0,1.05,"ash_table")
+	var baking: Node3D=_table(first,Vector3(-5,0,-23.3),6.4,3.0,1.05,"ash_table")
 	for x in [-2.0,0.0,2.0]:
-		_chair(first,Vector3(x,0,-20.8));_chair(first,Vector3(x,0,-25.8),180)
+		_chair(first,Vector3(x-5,0,-20.8));_chair(first,Vector3(x-5,0,-25.8),180)
 		_cup(baking,Vector3(x,1.15,.8),WHITE);_cup(baking,Vector3(x,1.15,-.8),BLUE)
 	_plant(baking,Vector3(0,1.15,0),.5,true)
 	for x in [-9.0,9.0]:_shelf(first,Vector3(x,0,-30.9),5.8,2.8,"display_shelf")
@@ -642,10 +667,10 @@ func _annexes() -> void:
 	for point in [Vector3(-21,0,-18),Vector3(21,0,-5)]:_plant(first,point,1.3,true)
 	for x in [-21.0,0.0,21.0]:
 		_porthole(first,Vector3(x,2.8,-31.8),1.1)
-		_fixture(first,Vector3(x,3.45,-23.3))
+		_fixture(first,Vector3(-5 if x==0 else x,3.45,-23.3))
 	_zone("annex_tea","1F · 海风会客厅",Rect2(-28,-32,14,40))
 	_zone("annex_craft","1F · 花艺与烘焙工坊",Rect2(14,-32,14,40))
-	_zone("annex_dining","1F · 家庭长桌厅",Rect2(-14,-32,28,20))
+	_zone("annex_dining","1F · 家庭长桌厅",Rect2(-14,-32,17.5,20))
 	var second: Node3D=floors[1];var h: float=HEIGHT
 	_art(second,Vector3(-21,h+.055,-18.4),Vector2(8.5,8.0),true)
 	_sofa(second,Vector3(-21,h,-22.0),5.6)
@@ -728,18 +753,20 @@ func _rock(parent: Node3D, point: Vector3, size: Vector3, variant: int=0) -> voi
 
 func _garden(parent: Node3D) -> void:
 	for side in [-1.0,1.0]:
-		for i in 18:
-			var z: float=-43.5+i*3.75
-			_rock(parent,Vector3(side*41.5,-.75,z),Vector3(2.8,2.4,3.8),i)
-			if i%2==0:
+		for i in 24:
+			var z: float=-52+i*3.75
+			_rock(parent,Vector3(side*53.7,-.75,z),Vector3(2.8,2.4,3.8),i)
+			if i%2==0 and z>=-43 and z<=23:
 				for j in 3:
-					var point:=Vector3(side*(39.8+j*.30),.05,z+(j-1)*.65)
-					_sphere(parent,point+Vector3.UP*.35,Vector3(1.2,.70,1.2),GREEN)
-					for f in 4:_flower(parent,point+Vector3(sin(f*2.0)*.40,.73,cos(f*2.0)*.4),WHITE if f%2 else Color("f0b5c9"),.31)
-	for i in 27:
-		var x: float=-41+i*3.16
-		_rock(parent,Vector3(x,-.6,-45.0),Vector3(3.7,2.6,2.8),i)
-		if absf(x)>5:_rock(parent,Vector3(x,-.60,24.5),Vector3(3.7,2.4,2.8),i+1)
+					var point:=Vector3(side*(43.0+j*.24),.05,z+(j-1)*.65)
+					for k in 3:
+						var a: float=z*.7+j*2.1+k*TAU/3.
+						_soft_ball(parent,point+Vector3(cos(a)*.34,.30+float(k%2)*.18,sin(a)*.34),Vector3(.95,.72,.95),GREEN if k%2 else Color("9dbb74"))
+					for f in 4:_flower(parent,point+Vector3(sin(f*2.0)*.40,.72,cos(f*2.0)*.4),WHITE if f%2 else Color("f0b5c9"),.31)
+	for i in 35:
+		var x: float=-53+i*3.12
+		_rock(parent,Vector3(x,-.6,-53.0),Vector3(3.7,2.6,2.8),i)
+		if absf(x)>4.2 and (x < -23.4 or x > -15.0):_rock(parent,Vector3(x,-.60,34.8),Vector3(3.7,2.4,2.8),i+1)
 	for side in [-1.0,1.0]:
 		for i in 7:
 			var p:=Vector3(side*34.5,.03,-18+i*5.8)
@@ -767,7 +794,7 @@ func _garden(parent: Node3D) -> void:
 		_whale(root,Vector3(0,1.52,0),.25)
 	for i in 10:
 		var x: float=-12.8+i*2.85
-		if absf(x+9.2)<2.1 or absf(x-3.5)<5.0:continue
+		if absf(x+9.2)<2.1 or absf(x-3.5)<5.0 or absf(x-10.8)<2.4:continue
 		_plant(parent,Vector3(x,.06,8.6),.8,true)
 	var picnic: Node3D=_table(parent,Vector3(-35.5,0,10.3),3.6,2.2,.85,"garden_table")
 	for i in 4:_cup(picnic,Vector3(-1.1+i*.73,.95,.14),BLUE if i%2 else WHITE)
@@ -797,7 +824,7 @@ func _pastel_garden(parent: Node3D) -> void:
 		[Vector3(-24.2,.06,5.4),1.6,false],[Vector3(-24.0,.06,19.0),1.65,false],
 		[Vector3(24.1,.06,-20.5),1.8,false],[Vector3(24.3,.06,-3.2),1.65,true],
 		[Vector3(24.4,.06,8.4),1.9,true],[Vector3(23.8,.06,20.2),1.65,true],
-		[Vector3(-12.0,.06,21.2),1.7,false],[Vector3(10.8,.06,21.2),1.75,true]]
+		[Vector3(-24.0,.06,19.0),1.7,true],[Vector3(24.0,.06,19.0),1.75,true]]
 	for spec: Array in tree_specs:
 		var point: Vector3=spec[0]
 		if absf(point.x)>14.0:point.x+=signf(point.x)*SIDE_GARDEN_OFFSET
@@ -834,7 +861,7 @@ func _pastel_garden(parent: Node3D) -> void:
 	petals.multimesh=multimesh;petals.material_override=material;parent.add_child(petals)
 	level.set_meta("garden_petals",petals);level.set_meta("blossom_origins",blossom_origins)
 	level.set_meta("pastel_trees",tree_specs.size());level.set_meta("pastel_benches",4)
-	level.set_meta("tree_form_counts",{"tall_green":5,"low_green":3,"sakura":6})
+	level.set_meta("tree_form_counts",{"tall_green":5,"low_green":2,"sakura":7})
 
 func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> Node3D:
 	var root: Node3D=_model(parent,ROWBOAT,point);root.rotation_degrees.y=yaw;root.set_meta("boat_origin",point);root.set_meta("home_dynamic",true)
@@ -843,8 +870,10 @@ func _boat(parent: Node3D, point: Vector3, yaw: float=0.0) -> Node3D:
 	level.set_meta("boat_surfaces",int(level.get_meta("boat_surfaces",0))+count)
 	return root
 
-func _dock(parent: Node3D, sea: Node3D) -> void:
-	for rect in DOCK_RECTS:
+func _dock(island: Node3D, sea: Node3D) -> void:
+	var parent: Node3D=_group(island,"ExpandedShoreDocks",Vector3(0,0,DOCK_SHIFT))
+	for world_rect: Rect2 in DOCK_RECTS:
+		var rect:=Rect2(world_rect.position-Vector2(0,DOCK_SHIFT),world_rect.size)
 		var dock: Node3D=_group(parent,"TimberDock")
 		_slab(dock,rect,0)
 		# Keep the original continuous collider; timber replaces the solid grey shell.
@@ -870,10 +899,10 @@ func _dock(parent: Node3D, sea: Node3D) -> void:
 		for z in [28.16,30.84]:Coastal.pile(parent,Vector3(x,0,z))
 		Coastal.trestle(parent,Vector3(x,0,28.16),Vector3(x,0,30.84))
 	for point: Vector3 in Coastal.bridge_ropes(parent):_coll(parent,Vector3(.24,.78,.24),point+Vector3(0,.35,0))
-	var east_boat: Node3D=_boat(sea,Vector3(7.2,-.93,30.2),-22)
-	var west_boat: Node3D=_boat(sea,Vector3(-25.0,-.93,29.6),15)
+	var east_boat: Node3D=_boat(sea,Vector3(7.2,-.93,30.2+DOCK_SHIFT),-22)
+	var west_boat: Node3D=_boat(sea,Vector3(-25.0,-.93,29.6+DOCK_SHIFT),15)
 	var moorings: Array=[]
-	for spec in [[east_boat,"MooringEyeLeft",Vector3(2.6,.59,30.4)],[west_boat,"MooringEyeRight",Vector3(-21.7,.40,29.3)]]:
+	for spec in [[east_boat,"MooringEyeLeft",Vector3(2.6,.59,30.4+DOCK_SHIFT)],[west_boat,"MooringEyeRight",Vector3(-21.7,.40,29.3+DOCK_SHIFT)]]:
 		var line: MultiMeshInstance3D=Pastel.mooring(sea);var eye: Node3D=spec[0].get_node(spec[1])
 		Pastel.update_mooring(line,spec[2],eye.global_position)
 		moorings.append({"line":line,"eye":eye,"dock":spec[2]})
@@ -881,7 +910,7 @@ func _dock(parent: Node3D, sea: Node3D) -> void:
 	for side in [-1.0,1.0]:_rail(parent,Vector3(side*3.0,0,24.6),Vector3(side*3.0,0,28.0),false)
 	var dock_whale: Node3D=_whale(parent,Vector3(-20.9,0,32.4),.47,25)
 	_coll(dock_whale,Vector3(1.52,1.45,2.70),Vector3(0,.70,-.10))
-	var sign: Node3D=_furniture(parent,"WhaleHomeWelcomeSign",Vector3(-8.7,0,18.2))
+	var sign: Node3D=_furniture(island,"WhaleHomeWelcomeSign",Vector3(-8.7,0,18.2))
 	for x in [-1.42,1.42]:_box(sign,Vector3(.14,1.7,.14),Vector3(x,.85,0),WOOD,1,.02)
 	_box(sign,Vector3(3.85,.95,.18),Vector3(0,1.10,0),WOOD,1,.07)
 	_whale(sign,Vector3(-.95,1.50,0),.35,0)
@@ -934,17 +963,17 @@ func build(owner_game) -> Dictionary:
 	game=owner_game;level=_group(game.world,"WhaleHome");level.set_meta("walkable_slabs",[])
 	garden_wind=GardenWind.new();garden_wind.configure(game);level.add_child(garden_wind)
 	glass=StandardMaterial3D.new();glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA;glass.albedo_color=Color(.58,.85,.96,.12);glass.roughness=.18;glass.cull_mode=BaseMaterial3D.CULL_DISABLED
-	game.shell.set_meta("layout_revision","whale_home_rooftop_tower_v2")
+	game.shell.set_meta("layout_revision","whale_home_enclosed_castle_v1")
 	level.set_meta("visual_style","pastel_diorama_v1")
 	level.set_meta("model_revision","pastel_models_v2");level.set_meta("editable_components",13)
-	level.set_meta("building_revision","sea_tower_rooftop_v2")
+	level.set_meta("building_revision","sea_tower_rooftop_v3")
 	level.set_meta("floor_footprints",FLOOR_RECTS)
 	level.set_meta("building_footprint_m2",FLOOR_RECTS[0].get_area())
-	level.set_meta("gross_floor_area_m2",FLOOR_RECTS[0].get_area()+FLOOR_RECTS[1].get_area()+Rooftop.TOWER.get_area())
-	level.set_meta("outdoor_rooftop_area_m2",Rooftop.PLATFORM.get_area()-Rooftop.TOWER.get_area())
+	level.set_meta("gross_floor_area_m2",FLOOR_RECTS[0].get_area()+FLOOR_RECTS[1].get_area()+Rooftop.TOWER.get_area()+Rooftop.OBSERVATORY.get_area())
+	level.set_meta("outdoor_rooftop_area_m2",Rooftop.PLATFORM.get_area()-Rooftop.OBSERVATORY.get_area())
 	game.shell.set_meta("guide_anchor",Vector3(-5.2,.05,18.0))
 	var island: Node3D=_group(level,"Island");var sea: Node3D=_group(level,"Sea");var roof: Node3D=_group(level,"Roof")
-	for i in 3:
+	for i in 4:
 		var floor_group: Node3D=_group(level,"Floor"+str(i));floor_group.set_meta("floor_height",i*HEIGHT);floors.append(floor_group)
 	var ocean:=MeshInstance3D.new();ocean.name="CoastalOcean";var plane:=PlaneMesh.new();plane.size=Vector2(180,170);plane.subdivide_width=95;plane.subdivide_depth=87;ocean.mesh=plane;ocean.position=Vector3(0,-1.1,-5);ocean.extra_cull_margin=.12
 	var water:=ShaderMaterial.new();water.shader=SEA;ocean.material_override=water;ocean.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF;sea.add_child(ocean);level.set_meta("sea_material",water)
@@ -952,30 +981,32 @@ func build(owner_game) -> Dictionary:
 	level.set_meta("coastal_revision","timber_reefs_v1")
 	_slab(island,ISLAND_RECT,0)
 	Ground.base(island,ISLAND_RECT)
-	Ground.path(island,Rect2(-4.25,8.7,8.5,15.3),"MainStonePromenade")
-	Ground.path(island,Rect2(-3,24,6,1),"MainDockStoneLanding")
-	Ground.path(island,Rect2(-22,24,5.5,1),"WestDockStoneLanding")
+	Ground.path(island,Rect2(-4.25,8.7,15.0,25.3),"MainStonePromenade")
+	Ground.path(island,Rect2(-3,34,6,1),"MainDockStoneLanding")
+	Ground.path(island,Rect2(-22,34,5.5,1),"WestDockStoneLanding")
 	Ground.path(island,Rect2(-33,21.5,66,2.5),"FrontGardenConnection")
 	Ground.path(island,Rect2(-33,-43,66,2.5),"RearGardenConnection")
 	for side in [-1.0,1.0]:
 		Ground.path(island,Rect2(side*31.0-2.0,-43,4.0,67.0),"SideStoneWalk")
-		_rail(island,Vector3(side*42,0,-44.8),Vector3(side*42,0,24.8),false)
-	_rail(island,Vector3(-42,0,-45),Vector3(42,0,-45),false)
-	for span in [Vector2(-42,-22.3),Vector2(-16.2,-3.4),Vector2(3.4,42)]:_picket(island,Vector3(span.x,0,25),Vector3(span.y,0,25))
+	# The enclosing wall is outside all planted ground; the public walk is outside it.
+	Ground.path(island,Rect2(-52,-51,104,4),"NorthSeafrontWalk")
+	Ground.path(island,Rect2(-52,28.5,104,5.0),"SouthSeafrontWalk")
+	for side in [-1.0,1.0]:Ground.path(island,Rect2(side*49.5-2.5,-51,5,84.5),"OuterSeafrontWalk")
 	_deck(floors[0],FLOOR_RECTS[0],0)
-	_wall(floors[0],Rect2(-14,-12,28,20),0,true)
 	# East stairwell in 2F and west stairwell in 3F remain open all the way
 	# through the floor slabs, so the character's head never hits a landing.
-	for rect in [Rect2(-28,-34,36.4,36),Rect2(8.4,-34,19.6,28),Rect2(14,-6,14,8)]:_slab(floors[1],rect,HEIGHT);_deck(floors[1],rect,HEIGHT)
-	_wall(floors[1],Rect2(-14,-16,28,18),HEIGHT,true)
+	for rect in [Rect2(-28,-34,36.4,36),Rect2(8.4,-34,19.6,25.5),Rect2(14,-8.5,14,10.5)]:_slab(floors[1],rect,HEIGHT);_deck(floors[1],rect,HEIGHT)
 	for i in 2:_wall(floors[i],FLOOR_RECTS[i],i*HEIGHT)
-	_stairs(floors[0],10.8,6.6,-6.0,0,"SeaBreezeStairs_1F_2F")
+	# Keep a deep landing between the front doors and the bottom stair rails.
+	_stairs(floors[0],10.8,2.0,-8.5,0,"SeaBreezeStairs_1F_2F")
 	_stairs(floors[1],-10.8,-1.4,-14.0,HEIGHT,"StarLightStairs_2F_3F")
 	_curved_balcony(floors[1],-28,8.4,2,HEIGHT,"curved_lounge_balcony")
-	_rail(floors[1],Vector3(8.4,HEIGHT,-5.9),Vector3(8.4,HEIGHT,2))
+	_rail(floors[1],Vector3(8.4,HEIGHT,-8.4),Vector3(8.4,HEIGHT,2))
 	for i in 2:
 		var h: float=i*HEIGHT;var front: float=8-i*5
-		for x in [-12.8,12.8]:_plant(floors[i],Vector3(x,h,front-1.1),1.15,true)
+		for x in [-12.8,12.8]:
+			var point := Vector3(25.5,0,4.5) if i==0 and x>0 else Vector3(x,h,front-1.1)
+			_plant(floors[i],point,1.15,true)
 	_kitchen(floors[0]);_dining(floors[0])
 	_porthole(floors[0],Vector3(.3,2.73,-11.80),1.0)
 	var entry: Node3D=_model(floors[0],PORCH,Vector3(-9.6,0,7.4),true)
@@ -993,22 +1024,24 @@ func build(owner_game) -> Dictionary:
 	LoungePassage.terrace_door(self)
 	Rooftop.new().build(self)
 	Exterior.new().build(self)
-	Outdoors.new().build(self)
 	_garden(island);_dock(island,sea)
+	for i in Coastal.stone_materials.size():Coastal.stone_materials[i].set_shader_parameter("stone_color",[Color("9c9f99"),Color("a9a99c"),Color("b8b3a2")][i])
+	Estate.new().build(self)
+	Outdoors.new().build(self)
 	preload("res://district/whale_home_life.gd").new().build(self)
 	_zone("kitchen","1F · 海盐厨房与中岛",Rect2(-14,-12,19,9.8))
-	_zone("pantry","1F · 蓝鲸餐具收藏柜",Rect2(5,-12,4,5))
-	_zone("dining","1F · 鲸鱼餐厅",Rect2(-3,-2,11,9.8))
-	_zone("entry","1F · 花藤门廊",Rect2(-14,-2,11,10))
+	_zone("pantry","1F · 蓝鲸餐具收藏柜",Rect2(5,-8,3.4,5.8))
+	_zone("dining","1F · 后厅鲸鱼餐厅",Rect2(3.5,-32,10.5,20))
+	_zone("entry","1F · 海风前厅",Rect2(-14,-2,22.4,10))
 	_zone("aquarium","2F · 全景水族客厅",Rect2(-8,-16,10,9.0),HEIGHT)
 	_zone("study","2F · 海景书房",Rect2(2,-16,12,12),HEIGHT)
 	_zone("lounge","2F · 鲸鱼茶会与玻璃露台",Rect2(-8,-7,16,9),HEIGHT)
-	_zone("west_garden","花园 · 茶点庭院",Rect2(-42,-45,14,70))
-	_zone("east_garden","花园 · 蓝鲸花径",Rect2(28,-45,14,70))
-	_zone("front_garden","花园 · 迎风前庭",Rect2(-28,8,56,17))
-	_zone("rear_garden","花园 · 屋后环行步道",Rect2(-28,-45,56,7))
-	_zone("dock","海面栈桥 · 蓝鲸小船",Rect2(-22,25,30,12))
+	_zone("west_garden","花园 · 茶点庭院",Rect2(-46,-46,18,73))
+	_zone("east_garden","花园 · 蓝鲸花径",Rect2(28,-46,18,73))
+	_zone("front_garden","花园 · 迎风前庭",Rect2(-28,8,56,19))
+	_zone("rear_garden","花园 · 屋后环行步道",Rect2(-46,-46,92,12))
+	_zone("dock","海面栈桥 · 蓝鲸小船",Rect2(-22,35,30,12))
 	level.set_meta("home_lights",lights);level.set_meta("furniture_count",furniture_count);level.set_meta("zone_count",zones.size())
-	for group: Node3D in [island,floors[0],floors[1],floors[2],roof]:_batch(group)
+	for group: Node3D in [island,floors[0],floors[1],floors[2],floors[3],roof]:_batch(group)
 	level.set_meta("detail_meshes",detail_count);level.set_meta("static_surfaces",batched_surfaces)
-	return {"level":level,"bounds":Vector2(104,108),"spawn":Vector3(-9.6,.05,11.0),"exit":Vector3(0,0,33.7),"zones":zones,"camera_size":88.0}
+	return {"level":level,"bounds":Vector2(124,126),"spawn":Vector3(-9.6,.05,11.0),"exit":Vector3(0,0,43.7),"zones":zones,"camera_size":114.0}

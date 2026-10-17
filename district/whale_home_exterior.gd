@@ -1,15 +1,16 @@
 extends RefCounted
 ## A continuous three-storey home articulated as a hall and two coastal wings.
 const Geo = preload("res://district/story_geometry.gd")
-const WALL = Color("ede8d8")
-const LINK_WALL = Color("dce3d8")
-const TRIM = Color("f5efdf")
+const Castle = preload("res://district/whale_home_castle.gd")
+const WALL = Color("e6ddc9")
+const LINK_WALL = Color("e7deca")
+const TRIM = Color("f3ead6")
 const BASE = Color("b5bcb2")
 const FRAME = Color("799b94")
 const PANE = Color("a7c8c8")
 const WOOD = Color("baa986")
-const ROOF = Color("789693")
-const RIDGE = Color("647f7e")
+const ROOF = Color("6c8db4")
+const RIDGE = Color("4e6d91")
 const WALL_HEIGHT := 5.2
 const THICKNESS := .36
 const FRONT := 8.18
@@ -37,19 +38,21 @@ func build(builder) -> void:
 				Vector3(0, h, FRONT + mass.projection), 0, _front_windows(mass.name, i), mass.projection, mass.color)
 		var rect: Rect2 = b.FLOOR_RECTS[i]
 		_elevation(villa, "WestWall" + str(i), rect.position.y, FRONT + .85, Vector3(-28.18, h, 0), -PI * .5,
-			[_window_spec(-22, 4.4, 1.25, 4.05, "paired" if i == 2 else "wide")])
+			[_window_spec(-26, 2.7, 1.0, 4.1, "paired"), _window_spec(-17, 2.7, 1.0, 4.1, "paired"), _window_spec(-8, 2.7, 1.0, 4.1, "paired"), _window_spec(1, 2.7, 1.0, 4.1, "paired")])
 		_elevation(villa, "EastWall" + str(i), -FRONT - .85, -rect.position.y, Vector3(28.18, h, 0), PI * .5,
-			[_window_spec(20, 4.4, 1.25, 4.05, "paired" if i == 2 else "wide")])
+			[_window_spec(26, 2.7, 1.0, 4.1, "paired"), _window_spec(17, 2.7, 1.0, 4.1, "paired"), _window_spec(8, 2.7, 1.0, 4.1, "paired"), _window_spec(-1, 2.7, 1.0, 4.1, "paired")])
 		_elevation(villa, "RearWall" + str(i), -28, 28, Vector3(0, h, rect.position.y - .18), PI,
 			[_window_spec(0, 5.2, 1.25, 4.05, "wide")])
 		if i > 0:
 			_floor_extension(villa, i, rect.end.y)
 	_vertical_members(villa)
+	_facade_roof_closure(villa)
 	_entry(villa, gate)
 	_tower()
+	Castle.new().build(b, self, villa)
 	b._batch(villa)
 	b.level.set_meta("exterior_villa", villa)
-	villa.set_meta("exterior_revision", "sea_tower_rooftop_v5")
+	villa.set_meta("exterior_revision", "enclosed_slate_castle_v1")
 	villa.set_meta("enclosed_front", FRONT)
 	villa.set_meta("principal_roofs", 1)
 	villa.set_meta("facade_masses", masses)
@@ -84,7 +87,7 @@ func _floor_extension(villa: Node3D, floor_index: int, recessed_front: float) ->
 		b._box(floor_body, Vector3(width, .34, depth), Vector3((mass.left + mass.right) * .5, h - .22, recessed_front + depth * .5), WALL, 0, .012)
 	floor_body.set_meta("enclosed_projection", Rect2(-28, recessed_front, 56, FRONT - recessed_front))
 
-func _elevation(villa: Node3D, label: String, left: float, right: float, origin: Vector3, yaw: float, windows: Array, projection: float = 0, color: Color = WALL) -> void:
+func _elevation(villa: Node3D, label: String, left: float, right: float, origin: Vector3, yaw: float, windows: Array, projection: float = 0, color: Color = WALL, wall_height: float = WALL_HEIGHT) -> void:
 	var face: Node3D = b._group(villa, label, origin)
 	face.rotation.y = yaw
 	face.set_meta("wall_projection", projection)
@@ -109,15 +112,24 @@ func _elevation(villa: Node3D, label: String, left: float, right: float, origin:
 	for opening: Dictionary in openings:
 		var start: float = opening.x - opening.width * .5
 		var end: float = opening.x + opening.width * .5
-		_wall_piece(face, cursor, start, 0, WALL_HEIGHT)
+		_wall_piece(face, cursor, start, 0, wall_height)
 		_wall_piece(face, start, end, 0, opening.bottom)
-		_wall_piece(face, start, end, opening.top, WALL_HEIGHT)
+		_wall_piece(face, start, end, opening.top, wall_height)
 		if not opening.door: _window(face, opening)
 		cursor = end
-	_wall_piece(face, cursor, right, 0, WALL_HEIGHT)
+	_wall_piece(face, cursor, right, 0, wall_height)
 	# Quiet, short cornices follow each mass instead of striping the whole building.
-	b._box(face, Vector3(right - left, .09, .48), Vector3((left + right) * .5, WALL_HEIGHT - .055, .045), TRIM, 0, .014)
+	b._box(face, Vector3(right - left, .09, .48), Vector3((left + right) * .5, wall_height - .055, .045), TRIM, 0, .014)
 	face.set_meta("facade_openings", openings)
+	face.set_meta("facade_height",wall_height)
+
+func _facade_roof_closure(villa: Node3D) -> void:
+	# The facade projects past the original third-floor edge. Close its roof
+	# horizontally, behind the existing cornice and outside the terrace guard.
+	var root: Node3D=b._group(villa,"FacadeRoofClosure")
+	for mass: Dictionary in masses:
+		var end: float=FRONT+mass.projection+.28
+		b._box(root,Vector3(mass.right-mass.left,.30,end-8.0),Vector3((mass.left+mass.right)*.5,10.26,(end+8.0)*.5),TRIM,0,.014)
 
 func _wall_piece(face: Node3D, left: float, right: float, bottom: float, top: float) -> void:
 	if right - left < .001 or top - bottom < .001: return
@@ -125,7 +137,8 @@ func _wall_piece(face: Node3D, left: float, right: float, bottom: float, top: fl
 	var x: float = (left + right) * .5
 	var projection: float = face.get_meta("wall_projection")
 	var depth: float = THICKNESS + projection
-	b._box(face, Vector3(width, top - bottom, depth), Vector3(x, (top + bottom) * .5, -projection * .5), face.get_meta("wall_color"), 0, .015)
+	var wall: MeshInstance3D=b._box(face, Vector3(width, top - bottom, depth), Vector3(x, (top + bottom) * .5, -projection * .5), face.get_meta("wall_color"), 0, .015)
+	wall.material_override=Castle.stone(face.get_meta("wall_color"))
 	if bottom == 0 and face.position.y < .1:
 		b._box(face, Vector3(width, .60, depth + .12), Vector3(x, .31, -projection * .5 + .03), BASE, 0, .02)
 		b._box(face, Vector3(width, .075, .52), Vector3(x, .65, .07), TRIM, 0, .012)
@@ -133,30 +146,30 @@ func _wall_piece(face: Node3D, left: float, right: float, bottom: float, top: fl
 			b._box(face, Vector3(width, .018, .02), Vector3(x, y, .255), WALL, 0, .003)
 
 func _window(face: Node3D, opening: Dictionary) -> void:
-	var window: Node3D = b._group(face, "RecessedWindow", Vector3(opening.x, opening.bottom, 0))
-	var width: float = opening.width
-	var height: float = opening.top - opening.bottom
-	var projection: float = face.get_meta("wall_projection")
-	var depth: float = THICKNESS + projection
-	var pane: MeshInstance3D = b._box(window, Vector3(width - .22, height - .22, .045), Vector3(0, height * .5, -.19), PANE, 0, .008)
-	pane.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	for side in [-1.0, 1.0]:
-		b._box(window, Vector3(.12, height, depth), Vector3(side * (width - .12) * .5, height * .5, -projection * .5), TRIM, 0, .012)
-		b._box(window, Vector3(width, .12, depth), Vector3(0, .06 if side < 0 else height - .06, -projection * .5), TRIM, 0, .012)
-		b._box(window, Vector3(.065, height - .12, .08), Vector3(side * (width - .22) * .5, height * .5, -.09), FRAME, 0, .007)
-	var style: String = opening.style
-	var mullions: Array = [-width / 6.0, width / 6.0] if style in ["wide", "hall"] else [0.0]
-	if style == "stair": mullions = []
-	for x: float in mullions:
-		b._box(window, Vector3(.09 if style == "paired" else .065, height - .18, .12), Vector3(x, height * .5, -.08), FRAME, 0, .007)
-	b._box(window, Vector3(width - .18, .06, .12), Vector3(0, height * .74, -.08), TRIM, 0, .007)
-	b._box(window, Vector3(width + .34, .14, .72), Vector3(0, -.08, .16), TRIM, 0, .02)
-	b._box(window, Vector3(width + .22, .14, .47), Vector3(0, height + .08, .045), TRIM, 0, .018)
-	if style in ["hall", "stair"]:
-		for side in [-1.0, 1.0]:
-			b._box(window, Vector3(.16, height + .30, .12), Vector3(side * (width + .35) * .5, height * .5, .13), WOOD, 1, .016)
-	window.set_meta("recess_depth", .37)
-	window.set_meta("window_style", style)
+	var window: Node3D=b._group(face,"RecessedWindow",Vector3(opening.x,opening.bottom,0))
+	var width: float=opening.width
+	var height: float=opening.top-opening.bottom
+	var helper:=Castle.new();helper.b=b
+	var count: int=2 if opening.style in ["wide","paired"] and width>3.3 else 1
+	var span: float=width/count
+	for index in count:
+		var cx: float=-width*.5+(index+.5)*span
+		var arch: Node3D=b._group(window,"RecessedStoneArch",Vector3(cx,.12,-.10))
+		var arc_width: float=span-.30
+		var arc_height: float=height-.22
+		helper._arch_window(arch,arc_width,arc_height)
+		var radius: float=arc_width*.5
+		var spring: float=arc_height-radius
+		var fill:=SurfaceTool.new();fill.begin(Mesh.PRIMITIVE_TRIANGLES)
+		for i in 16:
+			var angle: float=i*PI/16.;var next: float=(i+1)*PI/16.
+			var x: float=cos(angle)*radius;var end: float=cos(next)*radius
+			Geo._face(fill,[Vector3(cx+x,.12+spring+sin(angle)*radius,.01),Vector3(cx+end,.12+spring+sin(next)*radius,.01),Vector3(cx+end,height,.01),Vector3(cx+x,height,.01)],Vector3.BACK)
+		var infill:=MeshInstance3D.new();infill.mesh=fill.commit();infill.material_override=Geo.material(face.get_meta("wall_color"));window.add_child(infill)
+	for side in [-1.0,1.0]:
+		b._box(window,Vector3(.16,height,.30),Vector3(side*(width-.15)*.5,height*.5,-.03),TRIM)
+	b._box(window,Vector3(width+.35,.16,.67),Vector3(0,-.06,.10),TRIM)
+	window.set_meta("recess_depth",.37);window.set_meta("window_style",opening.style)
 
 func _vertical_members(villa: Node3D) -> void:
 	var root: Node3D = b._group(villa, "FullHeightPiers")
@@ -312,35 +325,108 @@ func _tower() -> void:
 	var tower: Node3D=b._group(b.level,"TowerExterior")
 	tower.set_meta("home_dynamic",true)
 	var h: float=contract.HEIGHT
+	var upper_h: float=h+b.HEIGHT
 	var rect: Rect2=contract.TOWER
+	_tower_floor_closure(upper_h)
 	_elevation(tower,"TowerWest",-30,-6,Vector3(-20.18,h,0),-PI*.5,[_window_spec(-25.5,3.8,1.25,4.05,"paired")])
 	_elevation(tower,"TowerEast",6,30,Vector3(.18,h,0),PI*.5,[_window_spec(15.5,4.6,1.25,4.05,"wide"),_window_spec(26,2.8,1.6,4.05,"paired")])
-	_elevation(tower,"TowerRear",-20,0,Vector3(0,h,-30.18),PI,[_window_spec(-16.75,3.6,1.25,4.05,"paired")])
+	_elevation(tower,"TowerRear",0,20,Vector3(0,h,-30.18),PI,[_window_spec(16.75,3.6,1.25,4.05,"paired")])
 	var front: Node3D=b._group(tower,"TowerFront",Vector3(0,h,-6))
 	front.set_meta("wall_projection",0.0);front.set_meta("wall_color",WALL)
 	_wall_piece(front,-20,-18.25,0,5.2)
 	_wall_piece(front,-15.25,-13.5,0,5.2)
 	_wall_piece(front,-8.5,0,0,5.2)
 	_wall_piece(front,-18.25,-15.25,3.05,5.2)
-	b._box(tower,Vector3(rect.size.x+1.3,.16,rect.size.y+1.3),Vector3(rect.get_center().x,h+5.18,rect.get_center().y),TRIM)
-	var roof: Node3D=_hip_roof(tower,"TowerHipRoof",rect.grow(.65),h+5.26,3.6)
-	roof.set_meta("principal_roof",true)
-	# An octagonal glazed lantern, with no extra usable floor.
-	var crown: Node3D=b._group(tower,"OctagonalDaylightCrown",Vector3(-10,19.26,-18))
-	for i in 8:
-		var a: float=i*TAU/8.0
-		var c: float=(i+1)*TAU/8.0
-		var v:=Vector3(cos(a)*1.65,0,sin(a)*1.65)
-		var w:=Vector3(cos(c)*1.65,0,sin(c)*1.65)
-		var apron:=SurfaceTool.new();apron.begin(Mesh.PRIMITIVE_TRIANGLES)
-		Geo._face(apron,[v-Vector3.UP*1.3,w-Vector3.UP*1.3,w,v],Vector3(cos(a+.39),0,sin(a+.39)))
-		_roof_mesh(crown,apron)
-		Geo.rod(crown,v,w,.09,TRIM)
-		Geo.rod(crown,v,v+Vector3.UP*1.65,.085,TRIM)
-		var pane: MeshInstance3D=b._box(crown,Vector3(v.distance_to(w)-.08,1.48,.055),(v+w)*.5+Vector3.UP*.82,PANE)
-		pane.rotation.y=-atan2(w.z-v.z,w.x-v.x)
-		var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
-		Geo._face(tool,[v+Vector3.UP*1.65,w+Vector3.UP*1.65,Vector3(0,2.65,0)],Vector3(cos(a+.39),1,sin(a+.39)).normalized())
-		_roof_mesh(crown,tool)
+	var top_rect: Rect2=contract.OBSERVATORY
+	_elevation(tower,"ObservatoryWest",top_rect.position.y,top_rect.end.y,Vector3(top_rect.position.x-.18,upper_h,0),-PI*.5,[_window_spec(-24,2.5,.85,4.5,"paired"),_window_spec(-17.5,2.5,.85,4.5,"paired"),_window_spec(-11,2.5,.85,4.5,"paired")])
+	_elevation(tower,"ObservatoryEast",-top_rect.end.y,-top_rect.position.y,Vector3(top_rect.end.x+.18,upper_h,0),PI*.5,[_window_spec(12,2.5,.85,4.5,"paired"),_window_spec(19,2.5,.85,4.5,"paired"),_window_spec(25,2.5,.85,4.5,"paired")])
+	_elevation(tower,"ObservatoryRear",-top_rect.end.x,-top_rect.position.x,Vector3(0,upper_h,top_rect.position.y-.18),PI,[_window_spec(10.0,4.8,1.0,4.15,"wide")])
+	var upper_front: Node3D=b._group(tower,"ObservatoryFront",Vector3(0,upper_h,top_rect.end.y+.18))
+	upper_front.set_meta("wall_projection",0.0);upper_front.set_meta("wall_color",TRIM)
+	_wall_piece(upper_front,top_rect.position.x,top_rect.end.x,0,5.2)
+	for x in [-15.2,-10.0,-4.8]:
+		var frame: Node3D=b._group(upper_front,"ObservatoryArchedBay",Vector3(x,.85,.21))
+		var details:=Castle.new();details.b=b;details._arch_window(frame,2.7,3.6)
+	b._box(tower,Vector3(top_rect.size.x+1.1,.16,top_rect.size.y+1.1),Vector3(top_rect.get_center().x,upper_h+5.18,top_rect.get_center().y),TRIM)
+	# The observatory uses a flat service roof. The octagonal lantern sits directly
+	# on that slab so the spire reads as the building's vertical core.
+	# Do not build an invisible hip roof: the static merger would resurrect it.
+	var builder:=Castle.new();builder.b=b
+	var crown: Node3D=builder._tower(tower,Vector3(-10.1,20.82,-22.8),2.8,3.8,7.8,true)
+	crown.name="OctagonalDaylightCrown"
+	var mast: Node3D=b._group(tower,"WhaleSpireMast",Vector3(-10.1,33.0,-22.8))
+	Geo.rod(mast,Vector3.ZERO,Vector3(0,1.1,0),.045,b.GOLD)
+	var flag: MeshInstance3D=b._box(mast,Vector3(1.15,.58,.035),Vector3(.58,.62,0),ROOF,0,.01)
+	flag.rotation.z=-.12
+	_observatory_roof(tower,builder)
 	b._batch(tower)
 	b.level.set_meta("tower_exterior",tower)
+
+func _tower_floor_closure(height: float) -> void:
+	# Bridge the 1.5 m setback to the lower walls. The central stair opening is
+	# preserved; the new stone ring has the same floor support as the hall.
+	var root: Node3D=b._group(b.level,"ObservatoryFloorClosure")
+	var regions: Array[Rect2]=[Rect2(-20.42,-30.42,1.92,24.84),Rect2(-1.5,-30.42,1.92,24.84),Rect2(-18.5,-30.42,17,1.92),Rect2(-18.5,-7.5,5.5,1.92),Rect2(-8.6,-7.5,7.1,1.92)]
+	for rect: Rect2 in regions:
+		var piece: Node3D=b._group(root,"StoneSetbackSlab")
+		b._slab(piece,rect,height)
+		piece.get_child(0).free()
+		b._box(piece,Vector3(rect.size.x,.34,rect.size.y),Vector3(rect.get_center().x,height-.14,rect.get_center().y),TRIM,0,.014)
+	root.set_meta("closure_regions",regions)
+	root.set_meta("closure_floor_height",height)
+	b.level.set_meta("observatory_floor_closure",root)
+	for point: Vector3 in [Vector3(-19.4,height,-26),Vector3(-19.4,height,-19),Vector3(-19.4,height,-11),Vector3(-17,height,-6.45),Vector3(-3.5,height,-6.45),Vector3(-.6,height,-26)]:
+		var planter: Node3D=b._group(root,"SetbackFlowerPlanter",point)
+		Geo.cylinder(planter,.34,.5,Vector3(0,.25,0),TRIM,.45)
+		Geo.cylinder(planter,.48,.10,Vector3(0,.52,0),TRIM)
+		b.Pastel.clump(planter,Vector3(0,.85,0),Vector3(1.05,.78,1.05),b.GREEN)
+		for i in 3:b._flower(planter,Vector3(sin(i*2.1)*.25,1.22,cos(i*2.1)*.25),b.SAKURA if i%2 else TRIM,.25)
+	b._batch(root)
+
+func _observatory_roof(tower: Node3D, details) -> void:
+	# A glazed roof gallery meets the sloping slate roof; the spire garden
+	# remains open behind it. All windows share the existing stone arch details.
+	var roof: Node3D=b._group(tower,"ObservatorySlateGable")
+	var gallery_rect:=Rect2(-18.5,-18.4,17,10.9)
+	var base: float=20.8
+	var eave: float=23.45
+	details._gable(roof,Rect2(-18.9,-18.4,17.8,11.5),eave,3.9)
+	var windows: Array=[]
+	for x: float in [-16.8,-13.4,-10.0,-6.6,-3.2]:windows.append(_window_spec(x,2.4,.55,2.40,"paired"))
+	_elevation(roof,"GlazedLookoutFront",-18.5,-1.5,Vector3(0,base,-7.5),0,windows,0,WALL,eave-base)
+	_elevation(roof,"GlazedLookoutWest",-18.4,-7.5,Vector3(-18.5,base,0),-PI*.5,[_window_spec(-16,1.9,.55,2.40,"paired"),_window_spec(-12.8,1.9,.55,2.40,"paired"),_window_spec(-9.6,1.9,.55,2.40,"paired")],0,WALL,eave-base)
+	_elevation(roof,"GlazedLookoutEast",7.5,18.4,Vector3(-1.5,base,0),PI*.5,[_window_spec(9.6,1.9,.55,2.40,"paired"),_window_spec(12.8,1.9,.55,2.40,"paired"),_window_spec(16,1.9,.55,2.40,"paired")],0,WALL,eave-base)
+	for x: float in [-18.5,-1.5]:b._box(roof,Vector3(.40,eave-base,.40),Vector3(x,(base+eave)*.5,-7.5),TRIM)
+	b.level.set_meta("covered_roof_gallery",gallery_rect)
+	var tool:=SurfaceTool.new();tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var shoulder: float=eave+3.9*(.4/8.9)
+	Geo._face(tool,[Vector3(-18.5,eave,-7.5),Vector3(-1.5,eave,-7.5),Vector3(-1.5,shoulder,-7.5),Vector3(-10,eave+3.9,-7.5),Vector3(-18.5,shoulder,-7.5)],Vector3.BACK)
+	var wall:=MeshInstance3D.new();wall.mesh=tool.commit();wall.material_override=Castle.stone(WALL);roof.add_child(wall)
+	var arch: Node3D=b._group(roof,"LookoutGableArch",Vector3(-10,eave+.35,-7.43))
+	details._arch_window(arch,2.25,2.6)
+	for x: float in [-16.0,-12.0,-8.0,-4.0]:
+		var flowers: Node3D=b._group(roof,"SpireGardenParapetFlowers",Vector3(x,20.8,-28.10))
+		b._box(flowers,Vector3(2.55,.45,.45),Vector3(0,.55,0),TRIM)
+		for i in 4:
+			b.Pastel.clump(flowers,Vector3(-.9+i*.6,.94,0),Vector3(.85,.65,.70),b.GREEN)
+			b._flower(flowers,Vector3(-.9+i*.6,1.29,.03),b.SAKURA,.27)
+	var stair: Node3D=b.floors[2].get_node("MoonriseStairs_3F_4F")
+	var stair_spec: Dictionary=stair.get_meta("home_stair")
+	for child in stair.get_children():
+		if child is MeshInstance3D and child.mesh is ArrayMesh and child.mesh.get_aabb().size.x>3.0:
+			child.material_override=Castle.stone(TRIM)
+	# Stone cheeks follow the actual 3.5 m stair, including solid end caps.
+	for side: float in [-1.0,1.0]:
+		var x: float=stair_spec.x+side*(stair_spec.width*.5+.25)
+		var panel:=SurfaceTool.new();panel.begin(Mesh.PRIMITIVE_TRIANGLES)
+		var front:=Vector3(x,stair_spec.base,stair_spec.front)
+		var back:=Vector3(x,stair_spec.top,stair_spec.back)
+		for face: float in [-1.0,1.0]:
+			var delta:=Vector3(face*.12,0,0)
+			Geo._face(panel,[front+delta,back+delta,back+Vector3.UP*1.05+delta,front+Vector3.UP*1.05+delta],Vector3.RIGHT*face)
+		var half:=Vector3(.12,0,0)
+		Geo._face(panel,[front-half+Vector3.UP*1.05,back-half+Vector3.UP*1.05,back+half+Vector3.UP*1.05,front+half+Vector3.UP*1.05],Vector3.UP)
+		Geo._face(panel,[front-half,front+half,front+half+Vector3.UP*1.05,front-half+Vector3.UP*1.05],Vector3.BACK)
+		Geo._face(panel,[back-half,back+half,back+half+Vector3.UP*1.05,back-half+Vector3.UP*1.05],Vector3.FORWARD)
+		var cheek:=MeshInstance3D.new();cheek.mesh=panel.commit();cheek.material_override=Castle.stone(WALL);roof.add_child(cheek)
+		Geo.rod(roof,front+Vector3.UP*1.08,back+Vector3.UP*1.08,.11,TRIM)
