@@ -215,6 +215,7 @@ func _sea_windows() -> void:
 		var point: Vector3 = spec[2]
 		var curtain: Node3D = b._action("curtain", spec[0], spec[1], point, point.y)
 		var frame: Node3D = b._furniture(curtain, "SeaViewWindow", Vector3(float(spec[3]) * 1.25, 0, 0))
+		if spec[0]=="guest_curtain":frame.set_meta("home_dynamic",true)
 		frame.rotation.y = -float(spec[3]) * PI * .5
 		for x in [-2.7, 0.0, 2.7]:
 			b._box(frame, Vector3(.12, 2.3, .18), Vector3(x, 2.3, 0), b.WHITE)
@@ -237,6 +238,7 @@ func _sea_windows() -> void:
 		Geo.rod(curtain, Vector3(0, 1.25, 0), frame.position + frame.basis * Vector3(0, 3.7, .28), .016, b.GOLD)
 		b._sphere(curtain, Vector3(0, 1.22, 0), Vector3(.09, .15, .09), b.WOOD)
 		curtain.restore_pose()
+		if spec[0]=="guest_curtain":b._batch(frame,false)
 		b._batch(curtain)
 
 func _reading_lamps() -> void:

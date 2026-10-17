@@ -7,6 +7,7 @@ const DECK_HEIGHT := 20.8
 const HEIGHT := 10.4
 const Door = preload("res://district/interactive_door.gd")
 const Geo = preload("res://district/story_geometry.gd")
+const Suite = preload("res://district/whale_home_suite.gd")
 var b
 var floor_root: Node3D
 
@@ -15,6 +16,10 @@ func build(builder) -> void:
 	# Four closed slabs leave the existing west stairwell open through the soffit.
 	for rect: Rect2 in [Rect2(-28,-34,56,20),Rect2(-28,-14,14,22.18),Rect2(-8.4,-14,36.4,22.18),Rect2(-14,-1.4,5.6,9.58)]:
 		b._slab(floor_root,rect,HEIGHT);_paving(floor_root,rect,HEIGHT)
+	# A front landing connects the terrace to the next flight. The lower
+	# staircase keeps its headroom beneath it, and opens behind it at z=-14.
+	var third_landing:=Rect2(-13,-5.2,4.4,3.8)
+	b._slab(floor_root,third_landing,HEIGHT);_paving(floor_root,third_landing,HEIGHT)
 	for edge: Array in [[Vector2(-28,-34),Vector2(28,-34)],[Vector2(28,-34),Vector2(28,8.18)],[Vector2(28,8.18),Vector2(-28,8.18)],[Vector2(-28,8.18),Vector2(-28,-34)]]:
 		_guard(edge[0],edge[1])
 	# The open stair runs south beyond the tower; guard its exposed upper rim.
@@ -32,11 +37,11 @@ func build(builder) -> void:
 	# Stair opening continues through the front wall between x=-13.5 and -8.5.
 	_wall(Vector2(-20,-6),Vector2(-13.5,-6),[[-16.75,3.0,"rooftop_entry","海景天台门"]])
 	_wall(Vector2(-8.5,-6),Vector2(0,-6))
-	_bed("WhaleDreamBed",Vector3(-4.25,HEIGHT,-15.5),false,"whale_bed")
-	_bed("WhaleGuestBed",Vector3(-16.75,HEIGHT,-25.5),true,"guest_bed")
+	_bed("WhaleDreamBed",Vector3(-4.25,HEIGHT,-15.0),false,"whale_bed")
+	_bed("WhaleGuestBed",Vector3(-16.0,HEIGHT,-24.1),true,"guest_bed")
 	# Explicit old storage keys preserve every migrated cabinet's contents.
 	var specs := [
-		[Vector3(-4.8,HEIGHT,-20.9),1.18,.82,"cabinet_m4p8_10p4_m18p9"],
+		[Vector3(-3.7,HEIGHT,-20.9),1.18,.82,"cabinet_m4p8_10p4_m18p9"],
 		[Vector3(-2.0,HEIGHT,-20.9),1.18,.82,"cabinet_1p1_10p4_m14p4"],
 		[Vector3(-4.25,HEIGHT,-7.1),4.2,1.3,"cabinet_5p6_10p4_m18p8"],
 		[Vector3(-18.6,HEIGHT,-28.8),1.3,.85,"cabinet_m24p0_10p4_m30p0"],
@@ -58,6 +63,7 @@ func build(builder) -> void:
 	var wardrobe: Node3D=b.game.world.get_node("HomeAction_guest_wardrobe")
 	wardrobe.position=Vector3(-19,HEIGHT,-15.4);wardrobe.rotation.y=PI*.5
 	var luggage: Node3D=floor_root.get_node("GuestLuggageRack");luggage.position=Vector3(15,HEIGHT,-29)
+	Suite.new().build(b,floor_root)
 	var outdoors=preload("res://district/whale_home_outdoors.gd").new();outdoors.b=b;outdoors._sea_recliner()
 	b.game.world.get_node("HomeAction_balcony_rest").position=Vector3(6,HEIGHT,-31)
 	var scope: Node3D=b._action("scope","stargazer","观星望远镜 · 灯塔与星空",Vector3(19,HEIGHT,-15),HEIGHT)
@@ -102,7 +108,7 @@ func _build_observatory() -> void:
 	var h: float=b.HEIGHT*3.0
 	var root: Node3D=b.floors[3]
 	root.set_meta("floor_height",h)
-	for rect: Rect2 in [Rect2(-18.5,-28.5,17,7.2),Rect2(-18.5,-21.3,17,4.1),Rect2(-18.5,-17.2,9.9,9.7),Rect2(-8.6,-17.2,7.1,9.7)]:
+	for rect: Rect2 in [Rect2(-18.5,-28.5,17,7.2),Rect2(-18.5,-21.3,17,4.1),Rect2(-18.5,-17.2,9.9,9.7),Rect2(-8.6,-17.2,7.1,9.7),Rect2(-13,-7.5,4.4,2.0)]:
 		b._slab(root,rect,h);_paving(root,rect,h)
 	# A sheltered service spine keeps the windward edge open and preserves a
 	# continuous view line from the stair landing to the sea.
@@ -114,12 +120,16 @@ func _build_observatory() -> void:
 		_guard(edge[0],edge[1],h,root)
 	_guard(Vector2(-18.5,-7.5),Vector2(-13.0,-7.5),h,root)
 	_guard(Vector2(-8.6,-7.5),Vector2(-1.5,-7.5),h,root)
+	for edge: Array in [[Vector2(-13,-7.5),Vector2(-13,-5.5)],[Vector2(-8.6,-7.5),Vector2(-8.6,-5.5)]]:
+		_guard(edge[0],edge[1],h,root)
 	# These two slab seams have supported floor on both sides. A transverse
 	# guard here would cut off the observatory from the stair landing.
 	# Open the west stair approach with a low wind screen instead of a full wall.
 	b._box(root,Vector3(4.8,1.35,.20),Vector3(-16.1,0.68,-20.5),b.MINT,0,.018)
 	b._coll(root,Vector3(4.8,1.35,.24),Vector3(-16.1,0.68,-20.5))
-	b._stairs(b.floors[2],-10.8,-5.2,-16.4,h-HEIGHT,"MoonriseStairs_3F_4F")
+	# Start on the front terrace, clear of the lower flight's upper landing.
+	b._stairs(b.floors[2],-10.8,3.0,-5.5,HEIGHT,"MoonriseStairs_3F_4F")
+	b.floors[2].get_node("MoonriseStairs_3F_4F").set_meta("home_dynamic",true)
 	b._stairs(root,-10.8,-7.0,-16.7,h,"LanternStairs_4F_Roof")
 	# Stand just behind the eyepiece so the E-ray does not pass through the
 	# telescope pedestal; the visual scope remains centered on the sea axis.
@@ -148,7 +158,7 @@ func _build_roof_deck() -> void:
 	deck.set_meta("floor_height",DECK_HEIGHT);deck.set_meta("home_dynamic",true)
 	# The roof terrace belongs to the observatory, not to the whole lower villa.
 	# Keep the original stair opening and its four-metre landing unobstructed.
-	for rect: Rect2 in [Rect2(-18.5,-28.5,17,11.3),Rect2(-18.5,-17.2,5.5,9.7),Rect2(-8.6,-17.2,7.1,9.7)]:
+	for rect: Rect2 in [Rect2(-18.5,-28.5,17,11.8),Rect2(-18.5,-16.7,5.5,9.2),Rect2(-8.6,-16.7,7.1,9.2)]:
 		b._slab(deck,rect,DECK_HEIGHT)
 		var rows: int=ceili(rect.size.y/3.0)
 		var columns: int=ceili(rect.size.x/3.4)
@@ -159,7 +169,7 @@ func _build_roof_deck() -> void:
 				b._box(deck,Vector3(width-.035,.045,depth-.035),Vector3(rect.position.x+(column+.5)*width,DECK_HEIGHT+.045,rect.position.y+(row+.5)*depth),Color("e4dcc9"),0,.018)
 	for edge: Array in [[Vector2(-18.5,-28.5),Vector2(-1.5,-28.5)],[Vector2(-1.5,-28.5),Vector2(-1.5,-7.5)],[Vector2(-1.5,-7.5),Vector2(-8.6,-7.5)],[Vector2(-13,-7.5),Vector2(-18.5,-7.5)],[Vector2(-18.5,-7.5),Vector2(-18.5,-28.5)]]:
 		_guard(edge[0],edge[1],DECK_HEIGHT,deck)
-	for edge: Array in [[Vector2(-13,-17.2),Vector2(-13,-7.5)],[Vector2(-8.6,-17.2),Vector2(-8.6,-7.5)]]:
+	for edge: Array in [[Vector2(-13,-16.7),Vector2(-13,-7.5)],[Vector2(-8.6,-16.7),Vector2(-8.6,-7.5)]]:
 		_guard(edge[0],edge[1],DECK_HEIGHT,deck)
 	var tea: Node3D=b._table(deck,Vector3(-5.2,DECK_HEIGHT,-11.0),2.0,1.3,.66,"tea_table")
 	b._cup(tea,Vector3(-.55,.76,0),b.BLUE);b._cup(tea,Vector3(.55,.76,0),b.WHITE)
@@ -180,8 +190,12 @@ func _build_roof_deck() -> void:
 
 func _bed(label: String,point: Vector3,guest: bool,id: String) -> void:
 	var bed: Node3D=b._furniture(floor_root,label,point)
-	b.Beds.build(b,bed,guest)
-	b._coll(bed,Vector3(3.9,1.95,5.1) if guest else Vector3(5.28,2.35,6.42),Vector3(0,.98 if guest else 1.18,0))
+	var bedding: Node3D=b._group(bed,"FittedBedding")
+	bedding.scale=Vector3(.60,1,.75) if guest else Vector3(.72,1,.75)
+	b.Beds.build(b,bedding,guest)
+	# Scale the visible bedding and the collider together without scaling a
+	# physics body. Both sides remain wide enough for the real silhouette.
+	b._coll(bed,(Vector3(3.9,1.95,5.1) if guest else Vector3(5.28,2.35,6.42))*bedding.scale,Vector3(0,.98 if guest else 1.18,0))
 	b._action("bed",id,"海景卧室 · 休息",point+Vector3(0,0,3.0 if guest else 3.65),HEIGHT)
 
 func _wall(a: Vector2,c: Vector2,cuts: Array=[]) -> void:
@@ -203,13 +217,11 @@ func _wall(a: Vector2,c: Vector2,cuts: Array=[]) -> void:
 			b.level.get_meta("home_room_doors").append(door)
 		start=offset+spec[1]*.5
 	_span(wall,upper,start,d.length()*.5)
+	Suite.wall_details(b,wall,upper,cuts)
 	b._batch(upper)
 
 func _span(wall: Node3D,upper: Node3D,start: float,end: float) -> void:
-	if end<=start:return
-	b._box(wall,Vector3(end-start,1.15,.25),Vector3((start+end)*.5,.575,0),b.WHITE)
-	b._box(upper,Vector3(end-start,4.05,.25),Vector3((start+end)*.5,3.175,0),b.WHITE)
-	b._coll(wall,Vector3(end-start,5.2,.25),Vector3((start+end)*.5,2.6,0))
+	Suite.wall_span(b,wall,upper,start,end)
 
 func _paving(parent: Node3D,rect: Rect2,height: float) -> void:
 	var cols: int=ceili(rect.size.x/3.0)

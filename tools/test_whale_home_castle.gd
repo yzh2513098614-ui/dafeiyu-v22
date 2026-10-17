@@ -36,20 +36,22 @@ func route(points: Array[Vector3]) -> bool:
 				return false
 	return true
 
-func stairs(spec: Array, up: bool) -> bool:
-	var front: float = spec[1]; var back: float = spec[2]; var height: float = spec[3]
-	place(Vector3(spec[0], height + (.05 if up else 5.25), front if up else back + .25))
+func stairs(node: Node3D, up: bool) -> bool:
+	var spec: Dictionary=node.get_meta("home_stair")
+	var front: float=spec.front;var back: float=spec.back;var height: float=spec.base
+	place(Vector3(spec.x,height+(.05 if up else 5.25),front+.7 if up else back-.7))
 	await settle()
 	var arrived := false
 	for i in 240:
 		game.player.velocity = Vector3(0, -2, -4.2 if up else 4.2)
-		game.player.move_and_slide()
+		game._move_character(1.0/60.0,true)
 		game.silhouette_body.global_position = game.player.position
+		game.home_controller.set_layers()
 		await physics_frame
 		if (up and game.player.position.z < back - .5) or (not up and game.player.position.z > front + .4):
 			arrived = true; break
 	if not arrived: print("CASTLE STAIR BLOCKED: ", spec, " up=", up, " ", game.player.position)
-	return arrived
+	return arrived and absf(game.player.position.y-(height+5.2 if up else height))<.30 and Safety.supported(game.player,game.player.position)
 
 func review() -> void:
 	var prefs = root.get_node("HarborPrefs")
@@ -110,9 +112,10 @@ func review() -> void:
 	check(route([Vector3(-24,10.45,-32.5),Vector3(-24,10.45,5),Vector3(24,10.45,5),Vector3(24,10.45,-32.5),Vector3(-24,10.45,-32.5)]), "third-floor routes pass through the new roof galleries")
 	place(Vector3(-16,20.85,-27))
 	check(route([Vector3(-16,20.85,-27),Vector3(-4,20.85,-27),Vector3(-4,20.85,-18.6),Vector3(-10.8,20.85,-18.6)]), "upper terrace route clears the main spire and stair landing")
-	for spec: Array in [[10.8,2.0,-8.5,0.0],[-10.8,-1.4,-14.0,5.2],[-10.8,-5.2,-16.4,10.4],[-10.8,-7.0,-16.7,15.6]]:
-		check(await stairs(spec, true), "actual player climbs stair from " + str(spec[3]))
-		check(await stairs(spec, false), "actual player descends stair from " + str(spec[3]))
+	for path: String in ["Floor0/SeaBreezeStairs_1F_2F","Floor1/StarLightStairs_2F_3F","Floor2/MoonriseStairs_3F_4F","Floor3/LanternStairs_4F_Roof"]:
+		var stair: Node3D=home.get_node(path)
+		check(await stairs(stair,true),"actual player reaches the upper floor via "+stair.name)
+		check(await stairs(stair,false),"actual player returns to the lower floor via "+stair.name)
 	place(Vector3(-10.8,15.65,-18.7))
 	check(route([Vector3(-10.8,15.65,-18.7),Vector3(-4.2,15.65,-18.7),Vector3(-4.2,15.65,-18.3)]), "fourth-floor landing connects to the telescope approach")
 	var ring_supported:=true
@@ -121,7 +124,7 @@ func review() -> void:
 	check(ring_supported,"setback between storeys has continuous structural floor support")
 	game.home_controller.exterior_showcase=false;game.home_controller.cutaway=true
 	place(Vector3(9,10.45,-8))
-	check(home.get_meta("observatory_floor_closure").is_visible_in_tree(),"storey closure remains visible from the third-floor outdoor terrace")
+	check(home.get_meta("observatory_floor_closure").is_visible_in_tree() and home.get_node("Floor3").visible,"storey closure and observatory floor remain visible from the third-floor outdoor terrace")
 	place(Vector3(-5.2,20.85,-11))
 	check(not home.get_node("TowerExterior").visible,"covered roof gallery cuts away around the player")
 	place(Vector3(-4,20.85,-27))

@@ -702,7 +702,9 @@ func _stairs(parent: Node3D, x: float, front: float, back: float, base: float, l
 	var body:=StaticBody3D.new();body.name="SmoothStairSupport";body.collision_layer=10;body.collision_mask=4
 	var hit:=CollisionShape3D.new();var ramp:=ConvexPolygonShape3D.new();var points:=PackedVector3Array()
 	for side in [-width*.5,width*.5]:
-		points.append(Vector3(side,.025,run*.5));points.append(Vector3(side,HEIGHT+.025,-run*.5))
+		# Sink the entry tip into the landing so the foot cylinder meets the
+		# slope rather than the convex hull's near-vertical leading corner.
+		points.append(Vector3(side,-.025,run*.5));points.append(Vector3(side,HEIGHT+.025,-run*.5))
 		points.append(Vector3(side,-.22,run*.5));points.append(Vector3(side,-.22,-run*.5))
 	ramp.points=points;hit.shape=ramp;body.add_child(hit);root.add_child(body);body.set_meta("walkable_stair",hit);body.set_meta("walkable_top",base+HEIGHT+.025)
 	var slabs: Array=level.get_meta("walkable_slabs",[]);slabs.append(body);level.set_meta("walkable_slabs",slabs)

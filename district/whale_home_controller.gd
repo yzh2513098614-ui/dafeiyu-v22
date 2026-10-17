@@ -75,9 +75,13 @@ func set_layers() -> void:
 	var indoors: bool = p.y < Home.Rooftop.DECK_HEIGHT-.5 and Home.Rooftop.TOWER.has_point(Vector2(p.x,p.z))
 	indoors=indoors or (p.y>=Home.Rooftop.DECK_HEIGHT-.5 and p.y<Home.Rooftop.DECK_HEIGHT+3.0 and (level.get_meta("covered_roof_gallery") as Rect2).has_point(Vector2(p.x,p.z)))
 	if tower:tower.visible=reveal_all or (upper_floor and not indoors)
+	# The exterior access flight belongs to the terrace view. Hide it when
+	# looking into the lower rooms, where its destination floor is cut away.
+	var access_stair: Node3D=level.get_node("Floor2/MoonriseStairs_3F_4F")
+	access_stair.visible=reveal_all or p.y>Home.HEIGHT*3-.7 or not Home.Rooftop.TOWER.has_point(Vector2(p.x,p.z))
 	var floor_closure: Node3D=level.get_meta("observatory_floor_closure")
 	floor_closure.visible=reveal_all or p.y+1.0>=Home.HEIGHT*3.0 or (tower!=null and tower.visible)
-	for i in 4:level.get_node("Floor"+str(i)).visible=reveal_all or game.player.position.y+1.0>=i*Home.HEIGHT
+	for i in 4:level.get_node("Floor"+str(i)).visible=reveal_all or p.y+1.0>=i*Home.HEIGHT or (i==3 and tower!=null and tower.visible)
 	var deck: Node3D=level.get_node_or_null("RoofDeck")
 	if deck:deck.visible=reveal_all or game.player.position.y+1.0>=Home.Rooftop.DECK_HEIGHT
 	# The complete roof is part of ExteriorVilla; keep the old cutaway ribs hidden.

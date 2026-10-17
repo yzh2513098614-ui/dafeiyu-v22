@@ -49,6 +49,7 @@ func build(builder) -> void:
 	_facade_roof_closure(villa)
 	_entry(villa, gate)
 	_tower()
+	b._batch(b.floors[2].get_node("MoonriseStairs_3F_4F"))
 	Castle.new().build(b, self, villa)
 	b._batch(villa)
 	b.level.set_meta("exterior_villa", villa)
@@ -343,8 +344,10 @@ func _tower() -> void:
 	_elevation(tower,"ObservatoryRear",-top_rect.end.x,-top_rect.position.x,Vector3(0,upper_h,top_rect.position.y-.18),PI,[_window_spec(10.0,4.8,1.0,4.15,"wide")])
 	var upper_front: Node3D=b._group(tower,"ObservatoryFront",Vector3(0,upper_h,top_rect.end.y+.18))
 	upper_front.set_meta("wall_projection",0.0);upper_front.set_meta("wall_color",TRIM)
-	_wall_piece(upper_front,top_rect.position.x,top_rect.end.x,0,5.2)
-	for x in [-15.2,-10.0,-4.8]:
+	_wall_piece(upper_front,top_rect.position.x,-13.0,0,5.2)
+	_wall_piece(upper_front,-8.6,top_rect.end.x,0,5.2)
+	_wall_piece(upper_front,-13.0,-8.6,3.0,5.2)
+	for x in [-15.2,-4.8]:
 		var frame: Node3D=b._group(upper_front,"ObservatoryArchedBay",Vector3(x,.85,.21))
 		var details:=Castle.new();details.b=b;details._arch_window(frame,2.7,3.6)
 	b._box(tower,Vector3(top_rect.size.x+1.1,.16,top_rect.size.y+1.1),Vector3(top_rect.get_center().x,upper_h+5.18,top_rect.get_center().y),TRIM)
