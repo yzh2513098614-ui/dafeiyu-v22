@@ -26,7 +26,7 @@ func configure(entry:Dictionary, dimensions:=Vector2(172,252), large:=false)->vo
   paintings=JSON.parse_string(FileAccess.get_file_as_string("res://assets/cards/cute_v22/paintings.json"))
  custom_minimum_size=dimensions;size=dimensions;size_flags_vertical=Control.SIZE_SHRINK_CENTER
  pivot_offset=Vector2(dimensions.x*.5,dimensions.y)
- texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
+ texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
  var kind:=str(entry.effects[0].kind) if not entry.get("effects",[]).is_empty() else "draw"
  var accent:Color={"damage":Color("596cde"),"heal":Color("238d85"),"block":Color("7765c7"),"stamina":Color("238d85"),"cleanse":Color("238d85"),"bind":Color("ac527c")}.get(kind,Color("6764bd"))
  var ready:=bool(entry.get("ready",true))
