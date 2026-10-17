@@ -17,6 +17,7 @@ var moorings: Array=[]
 var sea_motion := SeaMotion.new()
 var sea_surface: MeshInstance3D
 var coastal_materials: Array[ShaderMaterial]=[]
+var fountain
 var room_wall_tops: Array=[]
 var exterior_showcase := false
 var overview_before_exterior := false
@@ -27,6 +28,7 @@ func is_active() -> bool:return is_instance_valid(level) and game.location_id=="
 func build() -> Dictionary:
 	var result: Dictionary=Home.new().build(game)
 	level=result.level;spawn=result.spawn;cutaway=HarborPrefs.values.follow
+	fountain=level.get_meta("estate_fountain")
 	room_wall_tops=level.get_meta("home_wall_tops")
 	boats.clear();fish.clear();gulls.clear();facilities.clear();sea_clock=0.0
 	for node in level.find_children("*","Node3D",true,false):
@@ -56,6 +58,7 @@ func build() -> Dictionary:
 func leave() -> void:
 	super.leave();fish.clear();garden_petals=null;blossom_origins.clear();moorings.clear()
 	sea_surface=null;coastal_materials.clear()
+	fountain=null
 	room_wall_tops.clear()
 	exterior_showcase=false
 	overview_before_exterior=false
@@ -123,6 +126,7 @@ func _update_exterior_showcase() -> void:
 func _process(delta: float) -> void:
 	if not is_active() or (game.pause_menu and game.pause_menu.active):return
 	sea_clock+=delta;feeding=maxf(0.0,feeding-delta);notice_time=maxf(0.0,notice_time-delta)
+	fountain.advance(delta)
 	_update_sea()
 	game.atmosphere.contact_shading.material_override.shader=CONTACT
 	garden_petals.visible=game.atmosphere.effects

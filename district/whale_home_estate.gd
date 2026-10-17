@@ -3,6 +3,7 @@ extends RefCounted
 const Geo = preload("res://district/story_geometry.gd")
 const Ground = preload("res://assets/whale_home/garden_ground.gd")
 const Door = preload("res://district/interactive_door.gd")
+const Fountain = preload("res://district/whale_home_fountain.gd")
 const WALL_RECT := Rect2(-46, -46, 92, 73)
 const CREAM := Color("eee6d2")
 const CAP := Color("f8efd9")
@@ -86,21 +87,8 @@ func _gate(parent: Node3D) -> void:
 	b.level.set_meta("garden_gate", door)
 
 func _fountain(parent: Node3D) -> void:
-	var root: Node3D = b._group(parent, "CourtyardSeaFountain", Vector3(gate_x, 0, 17.0))
-	Geo.cylinder(root, 2.85, .12, Vector3(0, .07, 0), Color("c4cba4"))
-	Geo.cylinder(root, 2.32, .28, Vector3(0, .19, 0), CREAM)
-	var ring := MeshInstance3D.new()
-	var torus := TorusMesh.new(); torus.inner_radius = 1.98; torus.outer_radius = 2.30
-	torus.rings = 40; torus.ring_segments = 8
-	ring.mesh = torus; ring.position.y = .40; ring.material_override = Geo.material(CAP); root.add_child(ring)
-	Geo.cylinder(root, 1.99, .06, Vector3(0, .30, 0), Color("79bfca"))
-	Geo.cylinder(root, .42, .80, Vector3(0, .73, 0), CAP, .30)
-	Geo.cylinder(root, 1.10, .16, Vector3(0, 1.17, 0), CAP, .92)
-	Geo.cylinder(root, .84, .035, Vector3(0, 1.27, 0), Color("8acbd0"))
-	b._whale(root, Vector3(0, 1.35, 0), .58, -25, CAP)
-	for i in 8:
-		var angle: float = i * TAU / 8.0
-		Geo.rod(root, Vector3(cos(angle) * .88, 1.15, sin(angle) * .88), Vector3(cos(angle) * 1.25, .40, sin(angle) * 1.25), .018, Color("b6e0df"))
+	var root := Fountain.new(); root.name = "CourtyardSeaFountain"; root.position = Vector3(gate_x,0,17.0)
+	parent.add_child(root); root.build(b)
 	b._coll(root, Vector3(4.65, 1.35, 4.65), Vector3(0, .675, 0))
 	b.level.set_meta("estate_fountain", root)
 
