@@ -52,4 +52,4 @@ UiDesign="*res://ui/design/design_runtime.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ui_designer/plugin.cfg")
+enabled=PackedStringArray("res://addons/ui_designer/plugin.cfg", "res://addons/ui_texture_import/plugin.cfg")
